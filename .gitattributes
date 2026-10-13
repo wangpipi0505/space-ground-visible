@@ -1,7 +1,8 @@
 # 统一源码行尾，保留验证数据的原始字节与 Markdown 有意义的换行空格
 * text=auto eol=lf
 *.md whitespace=-blank-at-eol
-test-data/** -text
+# 原参考数据与数值基准保留字节，不参与源码行尾和空白修整
+test-data/** -text -whitespace
 verification/**/*.txt -text whitespace=cr-at-eol
 *.jar binary
 *.png binary

@@ -1,0 +1,668 @@
+{
+  "referenceUtc": "2026/07/01 07:57:00.000",
+  "payloadType": "对地监视",
+  "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+  "best":
+  {
+    "offsetSecond": 1220,
+    "launchTimeUtc": "2026/07/01 08:17:20.000",
+    "launchTimeJ2000Sec": 836165839.999999900,
+    "payloadType": "对地监视",
+    "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+    "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+    "visibleArcCount": 4,
+    "visiblePointCount": 788,
+    "visibleDurationSec": 784.000000000,
+    "targets": [
+      {
+        "targetId": "TGT-001",
+        "targetName": "真实弹道首历元",
+        "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:00.000",
+        "launchUTC": "2026/07/01 08:17:20.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165839.999999900,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166340.999999900, "endJ2000Sec": 836166519.999999900, "durationSeconds": 179.000000000},
+        "visibleWindows": [
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-1", "payloadName": "基准载荷1", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166340.999999900, "endJ2000Sec": 836166519.999999900, "durationSeconds": 179.000000000, "pointCount": 180},
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-2", "payloadName": "基准载荷2", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166340.999999900, "endJ2000Sec": 836166519.999999900, "durationSeconds": 179.000000000, "pointCount": 180}
+        ]
+      },
+      {
+        "targetId": "TGT-002",
+        "targetName": "真实弹道独立发射历元",
+        "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:10.000",
+        "launchUTC": "2026/07/01 08:17:30.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165850.000000100,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+        "visibleWindows": [
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-1", "payloadName": "基准载荷1", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000, "pointCount": 214},
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-2", "payloadName": "基准载荷2", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000, "pointCount": 214}
+        ]
+      }
+    ],
+    "visibleSatellites": [
+      {
+        "satelliteId": "SAT-A",
+        "satelliteName": "SAT-A",
+        "satelliteIndex": 1,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+        "payloadResults": [
+          {
+            "payloadId": "PAYLOAD-1",
+            "payloadName": "基准载荷1",
+            "payloadType": "对地监视",
+            "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+            "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "payloadId": "PAYLOAD-1",
+                "payloadName": "基准载荷1",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-1",
+                    "payloadName": "基准载荷1",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:41.000",
+                    "endTime": "2026/07/01 08:28:40.000",
+                    "startJ2000Sec": 836166340.999999900,
+                    "endJ2000Sec": 836166519.999999900,
+                    "durationSeconds": 179.000000000,
+                    "pointCount": 180,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "payloadId": "PAYLOAD-1",
+                "payloadName": "基准载荷1",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-1",
+                    "payloadName": "基准载荷1",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:36.000",
+                    "endTime": "2026/07/01 08:29:09.000",
+                    "startJ2000Sec": 836166336.000000100,
+                    "endJ2000Sec": 836166549.000000100,
+                    "durationSeconds": 213.000000000,
+                    "pointCount": 214,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "payloadId": "PAYLOAD-2",
+            "payloadName": "基准载荷2",
+            "payloadType": "对地监视",
+            "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+            "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "payloadId": "PAYLOAD-2",
+                "payloadName": "基准载荷2",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-2",
+                    "payloadName": "基准载荷2",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:41.000",
+                    "endTime": "2026/07/01 08:28:40.000",
+                    "startJ2000Sec": 836166340.999999900,
+                    "endJ2000Sec": 836166519.999999900,
+                    "durationSeconds": 179.000000000,
+                    "pointCount": 180,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "payloadId": "PAYLOAD-2",
+                "payloadName": "基准载荷2",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-2",
+                    "payloadName": "基准载荷2",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:36.000",
+                    "endTime": "2026/07/01 08:29:09.000",
+                    "startJ2000Sec": 836166336.000000100,
+                    "endJ2000Sec": 836166549.000000100,
+                    "durationSeconds": 213.000000000,
+                    "pointCount": 214,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "allResults": [
+  {
+    "offsetSecond": 1200,
+    "launchTimeUtc": "2026/07/01 08:17:00.000",
+    "launchTimeJ2000Sec": 836165819.999999900,
+    "payloadType": "对地监视",
+    "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+    "finalVisibleWindow": {"startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166349.000000100, "endJ2000Sec": 836166488.000000100, "durationSeconds": 139.000000000},
+    "visibleArcCount": 4,
+    "visiblePointCount": 452,
+    "visibleDurationSec": 448.000000000,
+    "targets": [
+      {
+        "targetId": "TGT-001",
+        "targetName": "真实弹道首历元",
+        "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:00.000",
+        "launchUTC": "2026/07/01 08:17:00.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165819.999999900,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:26:04.000", "endTime": "2026/07/01 08:27:29.000", "startJ2000Sec": 836166363.999999900, "endJ2000Sec": 836166448.999999900, "durationSeconds": 85.000000000},
+        "visibleWindows": [
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-1", "payloadName": "基准载荷1", "payloadType": "对地监视", "startTime": "2026/07/01 08:26:04.000", "endTime": "2026/07/01 08:27:29.000", "startJ2000Sec": 836166363.999999900, "endJ2000Sec": 836166448.999999900, "durationSeconds": 85.000000000, "pointCount": 86},
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-2", "payloadName": "基准载荷2", "payloadType": "对地监视", "startTime": "2026/07/01 08:26:04.000", "endTime": "2026/07/01 08:27:29.000", "startJ2000Sec": 836166363.999999900, "endJ2000Sec": 836166448.999999900, "durationSeconds": 85.000000000, "pointCount": 86}
+        ]
+      },
+      {
+        "targetId": "TGT-002",
+        "targetName": "真实弹道独立发射历元",
+        "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:10.000",
+        "launchUTC": "2026/07/01 08:17:10.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165830.000000100,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166349.000000100, "endJ2000Sec": 836166488.000000100, "durationSeconds": 139.000000000},
+        "visibleWindows": [
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-1", "payloadName": "基准载荷1", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166349.000000100, "endJ2000Sec": 836166488.000000100, "durationSeconds": 139.000000000, "pointCount": 140},
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-2", "payloadName": "基准载荷2", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166349.000000100, "endJ2000Sec": 836166488.000000100, "durationSeconds": 139.000000000, "pointCount": 140}
+        ]
+      }
+    ],
+    "visibleSatellites": [
+      {
+        "satelliteId": "SAT-A",
+        "satelliteName": "SAT-A",
+        "satelliteIndex": 1,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166349.000000100, "endJ2000Sec": 836166488.000000100, "durationSeconds": 139.000000000},
+        "payloadResults": [
+          {
+            "payloadId": "PAYLOAD-1",
+            "payloadName": "基准载荷1",
+            "payloadType": "对地监视",
+            "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+            "finalVisibleWindow": {"startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166349.000000100, "endJ2000Sec": 836166488.000000100, "durationSeconds": 139.000000000},
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "payloadId": "PAYLOAD-1",
+                "payloadName": "基准载荷1",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-1",
+                    "payloadName": "基准载荷1",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:26:04.000",
+                    "endTime": "2026/07/01 08:27:29.000",
+                    "startJ2000Sec": 836166363.999999900,
+                    "endJ2000Sec": 836166448.999999900,
+                    "durationSeconds": 85.000000000,
+                    "pointCount": 86,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "payloadId": "PAYLOAD-1",
+                "payloadName": "基准载荷1",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-1",
+                    "payloadName": "基准载荷1",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:49.000",
+                    "endTime": "2026/07/01 08:28:08.000",
+                    "startJ2000Sec": 836166349.000000100,
+                    "endJ2000Sec": 836166488.000000100,
+                    "durationSeconds": 139.000000000,
+                    "pointCount": 140,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "payloadId": "PAYLOAD-2",
+            "payloadName": "基准载荷2",
+            "payloadType": "对地监视",
+            "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+            "finalVisibleWindow": {"startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166349.000000100, "endJ2000Sec": 836166488.000000100, "durationSeconds": 139.000000000},
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "payloadId": "PAYLOAD-2",
+                "payloadName": "基准载荷2",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-2",
+                    "payloadName": "基准载荷2",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:26:04.000",
+                    "endTime": "2026/07/01 08:27:29.000",
+                    "startJ2000Sec": 836166363.999999900,
+                    "endJ2000Sec": 836166448.999999900,
+                    "durationSeconds": 85.000000000,
+                    "pointCount": 86,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "payloadId": "PAYLOAD-2",
+                "payloadName": "基准载荷2",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-2",
+                    "payloadName": "基准载荷2",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:49.000",
+                    "endTime": "2026/07/01 08:28:08.000",
+                    "startJ2000Sec": 836166349.000000100,
+                    "endJ2000Sec": 836166488.000000100,
+                    "durationSeconds": 139.000000000,
+                    "pointCount": 140,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "offsetSecond": 1210,
+    "launchTimeUtc": "2026/07/01 08:17:10.000",
+    "launchTimeJ2000Sec": 836165829.999999900,
+    "payloadType": "对地监视",
+    "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+    "finalVisibleWindow": {"startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166341.000000100, "endJ2000Sec": 836166520.000000100, "durationSeconds": 179.000000000},
+    "visibleArcCount": 4,
+    "visiblePointCount": 640,
+    "visibleDurationSec": 636.000000000,
+    "targets": [
+      {
+        "targetId": "TGT-001",
+        "targetName": "真实弹道首历元",
+        "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:00.000",
+        "launchUTC": "2026/07/01 08:17:10.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165829.999999900,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166348.999999900, "endJ2000Sec": 836166487.999999900, "durationSeconds": 139.000000000},
+        "visibleWindows": [
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-1", "payloadName": "基准载荷1", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166348.999999900, "endJ2000Sec": 836166487.999999900, "durationSeconds": 139.000000000, "pointCount": 140},
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-2", "payloadName": "基准载荷2", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:49.000", "endTime": "2026/07/01 08:28:08.000", "startJ2000Sec": 836166348.999999900, "endJ2000Sec": 836166487.999999900, "durationSeconds": 139.000000000, "pointCount": 140}
+        ]
+      },
+      {
+        "targetId": "TGT-002",
+        "targetName": "真实弹道独立发射历元",
+        "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:10.000",
+        "launchUTC": "2026/07/01 08:17:20.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165840.000000100,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166341.000000100, "endJ2000Sec": 836166520.000000100, "durationSeconds": 179.000000000},
+        "visibleWindows": [
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-1", "payloadName": "基准载荷1", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166341.000000100, "endJ2000Sec": 836166520.000000100, "durationSeconds": 179.000000000, "pointCount": 180},
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-2", "payloadName": "基准载荷2", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166341.000000100, "endJ2000Sec": 836166520.000000100, "durationSeconds": 179.000000000, "pointCount": 180}
+        ]
+      }
+    ],
+    "visibleSatellites": [
+      {
+        "satelliteId": "SAT-A",
+        "satelliteName": "SAT-A",
+        "satelliteIndex": 1,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166341.000000100, "endJ2000Sec": 836166520.000000100, "durationSeconds": 179.000000000},
+        "payloadResults": [
+          {
+            "payloadId": "PAYLOAD-1",
+            "payloadName": "基准载荷1",
+            "payloadType": "对地监视",
+            "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+            "finalVisibleWindow": {"startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166341.000000100, "endJ2000Sec": 836166520.000000100, "durationSeconds": 179.000000000},
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "payloadId": "PAYLOAD-1",
+                "payloadName": "基准载荷1",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-1",
+                    "payloadName": "基准载荷1",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:49.000",
+                    "endTime": "2026/07/01 08:28:08.000",
+                    "startJ2000Sec": 836166348.999999900,
+                    "endJ2000Sec": 836166487.999999900,
+                    "durationSeconds": 139.000000000,
+                    "pointCount": 140,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "payloadId": "PAYLOAD-1",
+                "payloadName": "基准载荷1",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-1",
+                    "payloadName": "基准载荷1",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:41.000",
+                    "endTime": "2026/07/01 08:28:40.000",
+                    "startJ2000Sec": 836166341.000000100,
+                    "endJ2000Sec": 836166520.000000100,
+                    "durationSeconds": 179.000000000,
+                    "pointCount": 180,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "payloadId": "PAYLOAD-2",
+            "payloadName": "基准载荷2",
+            "payloadType": "对地监视",
+            "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+            "finalVisibleWindow": {"startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166341.000000100, "endJ2000Sec": 836166520.000000100, "durationSeconds": 179.000000000},
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "payloadId": "PAYLOAD-2",
+                "payloadName": "基准载荷2",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-2",
+                    "payloadName": "基准载荷2",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:49.000",
+                    "endTime": "2026/07/01 08:28:08.000",
+                    "startJ2000Sec": 836166348.999999900,
+                    "endJ2000Sec": 836166487.999999900,
+                    "durationSeconds": 139.000000000,
+                    "pointCount": 140,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "payloadId": "PAYLOAD-2",
+                "payloadName": "基准载荷2",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-2",
+                    "payloadName": "基准载荷2",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:41.000",
+                    "endTime": "2026/07/01 08:28:40.000",
+                    "startJ2000Sec": 836166341.000000100,
+                    "endJ2000Sec": 836166520.000000100,
+                    "durationSeconds": 179.000000000,
+                    "pointCount": 180,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "offsetSecond": 1220,
+    "launchTimeUtc": "2026/07/01 08:17:20.000",
+    "launchTimeJ2000Sec": 836165839.999999900,
+    "payloadType": "对地监视",
+    "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+    "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+    "visibleArcCount": 4,
+    "visiblePointCount": 788,
+    "visibleDurationSec": 784.000000000,
+    "targets": [
+      {
+        "targetId": "TGT-001",
+        "targetName": "真实弹道首历元",
+        "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:00.000",
+        "launchUTC": "2026/07/01 08:17:20.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165839.999999900,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166340.999999900, "endJ2000Sec": 836166519.999999900, "durationSeconds": 179.000000000},
+        "visibleWindows": [
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-1", "payloadName": "基准载荷1", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166340.999999900, "endJ2000Sec": 836166519.999999900, "durationSeconds": 179.000000000, "pointCount": 180},
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-2", "payloadName": "基准载荷2", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:41.000", "endTime": "2026/07/01 08:28:40.000", "startJ2000Sec": 836166340.999999900, "endJ2000Sec": 836166519.999999900, "durationSeconds": 179.000000000, "pointCount": 180}
+        ]
+      },
+      {
+        "targetId": "TGT-002",
+        "targetName": "真实弹道独立发射历元",
+        "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:10.000",
+        "launchUTC": "2026/07/01 08:17:30.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165850.000000100,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+        "visibleWindows": [
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-1", "payloadName": "基准载荷1", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000, "pointCount": 214},
+          {"satelliteId": "SAT-A", "satelliteName": "SAT-A", "satelliteIndex": 1, "arcIndex": 1, "payloadId": "PAYLOAD-2", "payloadName": "基准载荷2", "payloadType": "对地监视", "startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000, "pointCount": 214}
+        ]
+      }
+    ],
+    "visibleSatellites": [
+      {
+        "satelliteId": "SAT-A",
+        "satelliteName": "SAT-A",
+        "satelliteIndex": 1,
+        "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+        "payloadResults": [
+          {
+            "payloadId": "PAYLOAD-1",
+            "payloadName": "基准载荷1",
+            "payloadType": "对地监视",
+            "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+            "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "payloadId": "PAYLOAD-1",
+                "payloadName": "基准载荷1",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-1",
+                    "payloadName": "基准载荷1",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:41.000",
+                    "endTime": "2026/07/01 08:28:40.000",
+                    "startJ2000Sec": 836166340.999999900,
+                    "endJ2000Sec": 836166519.999999900,
+                    "durationSeconds": 179.000000000,
+                    "pointCount": 180,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "payloadId": "PAYLOAD-1",
+                "payloadName": "基准载荷1",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-1",
+                    "payloadName": "基准载荷1",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:36.000",
+                    "endTime": "2026/07/01 08:29:09.000",
+                    "startJ2000Sec": 836166336.000000100,
+                    "endJ2000Sec": 836166549.000000100,
+                    "durationSeconds": 213.000000000,
+                    "pointCount": 214,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "payloadId": "PAYLOAD-2",
+            "payloadName": "基准载荷2",
+            "payloadType": "对地监视",
+            "visibilityConstraint": {"payloadType": "对地监视", "maxDetectRangeKm": 0.000000000, "sunExclusionAngleDeg": 0.000000000, "simpleConeHalfAngleDeg": 70.000000000, "halfConeAngleDeg": 70.000000000, "innerConeAngleDeg": null, "outerConeAngleDeg": null},
+            "finalVisibleWindow": {"startTime": "2026/07/01 08:25:36.000", "endTime": "2026/07/01 08:29:09.000", "startJ2000Sec": 836166336.000000100, "endJ2000Sec": 836166549.000000100, "durationSeconds": 213.000000000},
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "payloadId": "PAYLOAD-2",
+                "payloadName": "基准载荷2",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-2",
+                    "payloadName": "基准载荷2",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:41.000",
+                    "endTime": "2026/07/01 08:28:40.000",
+                    "startJ2000Sec": 836166340.999999900,
+                    "endJ2000Sec": 836166519.999999900,
+                    "durationSeconds": 179.000000000,
+                    "pointCount": 180,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "payloadId": "PAYLOAD-2",
+                "payloadName": "基准载荷2",
+                "payloadType": "对地监视",
+                "visibleArcs": [
+                  {
+                    "arcIndex": 1,
+                    "payloadId": "PAYLOAD-2",
+                    "payloadName": "基准载荷2",
+                    "payloadType": "对地监视",
+                    "startTime": "2026/07/01 08:25:36.000",
+                    "endTime": "2026/07/01 08:29:09.000",
+                    "startJ2000Sec": 836166336.000000100,
+                    "endJ2000Sec": 836166549.000000100,
+                    "durationSeconds": 213.000000000,
+                    "pointCount": 214,
+                    "trajectoryPoints": [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  ]
+}

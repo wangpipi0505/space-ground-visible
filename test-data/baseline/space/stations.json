@@ -1,0 +1,14 @@
+[ {
+  "id" : "T04-STATION",
+  "name" : "基准星下站",
+  "longitude" : -39.134128,
+  "latitude" : 0.129382,
+  "height" : 0,
+  "minElevation" : null,
+  "maxElevation" : null,
+  "createBy" : null,
+  "createOrgId" : null,
+  "createTime" : null,
+  "updateBy" : null,
+  "updateTime" : null
+} ]

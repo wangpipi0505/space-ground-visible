@@ -1,0 +1,20 @@
+{
+  "startTime" : "2026-07-01T10:00:00Z",
+  "endTime" : "2026-07-01T10:10:00Z",
+  "coarseStepSec" : 60.0,
+  "fineStepSec" : 1.0,
+  "satelliteIds" : [ 1 ],
+  "preGuardSec" : 0.0,
+  "postGuardSec" : 0.0,
+  "allowedGapSec" : 0.0,
+  "satelliteIllumination" : "ANY",
+  "stations" : [ {
+    "stationId" : "T04-STATION",
+    "minElevationDeg" : 0.0,
+    "maxElevationDeg" : 90.0
+  } ],
+  "links" : [ {
+    "satelliteId" : 1,
+    "stationId" : "T04-STATION"
+  } ]
+}

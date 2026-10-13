@@ -1,0 +1,11 @@
+{
+  "taskName" : "defaultSimTask",
+  "targetCount" : 1,
+  "files" : [ {
+    "targetId" : "SIM-001",
+    "model" : "SYSTEM_SIMULATED_LAMBERT",
+    "csvPath" : "trajectory-0.csv",
+    "pointCount" : 2576,
+    "warnings" : [ "系统模拟使用端点约束Lambert射击法和二体RK4传播。", "落点时间作为硬端点约束输入。落点时间=2026-06-04 04:42:55.000, 飞行时长秒=2575.000, 计算初速度米每秒=6817.698301", "端点闭合检查：最终ECI偏差=0.000004 m." ]
+  } ]
+}

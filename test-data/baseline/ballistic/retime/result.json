@@ -1,0 +1,11 @@
+{
+  "taskName" : "T04-retime",
+  "targetCount" : 1,
+  "files" : [ {
+    "targetId" : "RETIMED-TGT",
+    "model" : "RETIMED_TRAJECTORY",
+    "csvPath" : "trajectory-0.csv",
+    "pointCount" : 2576,
+    "warnings" : [ "弹道文件重定时保持ECEF位置和速度不变；按新的绝对时刻重算ECI位置和速度，并更新时间列、dt列和timeIntervalMs列。" ]
+  } ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "mutation": "窗口边界",
+    "detected": true,
+    "differences": [
+      "$.allResults[0].visibleSatellites[0].payloadResults[0].targets[0].visibleArcs[0].endJ2000Sec: 值不同 836166463.000000100 / 836166463.001000100"
+    ]
+  },
+  {
+    "mutation": "删除弧段",
+    "detected": true,
+    "differences": [
+      "$.allResults[0].visibleSatellites[0].payloadResults[0].targets[0].visibleArcs: 数组长度不同"
+    ]
+  },
+  {
+    "mutation": "最佳偏移",
+    "detected": true,
+    "differences": [
+      "$.best.offsetSecond: 值不同 1220 / 1221"
+    ]
+  },
+  {
+    "mutation": "轨迹坐标",
+    "detected": true,
+    "differences": [
+      "$.allResults[0].visibleSatellites[0].payloadResults[0].targets[0].visibleArcs[0].trajectoryPoints[0].longitudeDeg: 值不同 95.765921453 / 95.765922453"
+    ]
+  }
+]

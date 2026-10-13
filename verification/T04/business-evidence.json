@@ -1,0 +1,169 @@
+{
+  "testSuites": {
+    "ballistic": {
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "space-java8-corrected": {
+      "tests": 162,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "space-jdk17-original": {
+      "tests": 162,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "artifacts": [
+    {
+      "path": "test-data/reference/ballistic/orbit_visibility_multi_payload_default.json",
+      "bytes": 1726,
+      "sha256": "f2f003350fd0f831fac9e6c7b5f7878e5bed05d9fa3bc71e3d2b2208ee7b46c9"
+    },
+    {
+      "path": "test-data/reference/ballistic/target_trajectory_fit_package102_default.json",
+      "bytes": 8535,
+      "sha256": "a31d93f2baf67467aaf73b4f6cf46c55fedcf59f2e11bf3860e6efb328effab7"
+    },
+    {
+      "path": "test-data/reference/ballistic/target_trajectory_simulate_default.json",
+      "bytes": 646,
+      "sha256": "fbca1c68adfff9cd12a56f79b72047f448627be5bb501a6f92e47d2b80ae0aca"
+    },
+    {
+      "path": "test-data/reference/ballistic/trajectory-0.1s-standard.csv",
+      "bytes": 1507045,
+      "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+    },
+    {
+      "path": "test-data/reference/ballistic/仿真弹道.csv",
+      "bytes": 2206,
+      "sha256": "13e9651ec58b8729d98b4308a3e41b097046961a911cd527659ee53327c1da78"
+    },
+    {
+      "path": "test-data/baseline/ballistic/conditions.json",
+      "bytes": 29201,
+      "sha256": "d8e9d79c6d60a31da1466f0eadc0223d7d079c48a5de9d86e684a239926621fb"
+    },
+    {
+      "path": "test-data/baseline/space/downlink-request.json",
+      "bytes": 476,
+      "sha256": "64be1a687e96c58619d91190897aa3dd4633623054e11abcb10a5cabeafc6052"
+    },
+    {
+      "path": "test-data/baseline/space/downlink.json",
+      "bytes": 556,
+      "sha256": "5b7bfd206132bf2eaeda7e0981be3be73a65d523d5e1e83f84e5abf6212d49d1"
+    },
+    {
+      "path": "test-data/baseline/space/payload-profile.json",
+      "bytes": 522,
+      "sha256": "063b994566fdafd78ebef5db2b134ed8bd3b603fc153f4e695ff1cafa0e87c9c"
+    },
+    {
+      "path": "test-data/baseline/space/satellites.json",
+      "bytes": 1026,
+      "sha256": "1cc4cb8cc1409f116ba2e8173e738afd9e84ff6e50ce37bc7c181a4b309bfc54"
+    },
+    {
+      "path": "test-data/baseline/space/stations.json",
+      "bytes": 304,
+      "sha256": "defe5166a588c4eef2280b5d82ee7c239a98fe87248b40c9ba9ffa3230e2e716"
+    },
+    {
+      "path": "test-data/baseline/space/target-query-request.json",
+      "bytes": 382,
+      "sha256": "9e708fe6377fd8552eca85a57bcb5e7d4a106bdc924376982b65d99716cd361a"
+    },
+    {
+      "path": "test-data/baseline/space/target-query.json",
+      "bytes": 1214,
+      "sha256": "a95c90f2cf74f3d00b7a85eb7afa7530bd6d3bb6510a681c38f3a9cd09dcfe5f"
+    },
+    {
+      "path": "test-data/baseline/space/visibility-request.json",
+      "bytes": 505,
+      "sha256": "bafbffcd124ae09f83280b26b5a90a997957dba85ad7b549e1d9877a3a772825"
+    },
+    {
+      "path": "test-data/baseline/space/visibility.json",
+      "bytes": 1838,
+      "sha256": "09dce2c29c99c22c3e299ad5364ef66e7f924023e47fef0fdc4a2b12c6ad6844"
+    },
+    {
+      "path": "test-data/baseline/ballistic/fit/result.json",
+      "bytes": 2918,
+      "sha256": "405f89787a99402dcb53d095446203964a124a88a30f6bb82ecfa204953b8af6"
+    },
+    {
+      "path": "test-data/baseline/ballistic/fit/trajectory-0.csv",
+      "bytes": 327928,
+      "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2"
+    },
+    {
+      "path": "test-data/baseline/ballistic/fit/trajectory-1.csv",
+      "bytes": 6475,
+      "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18"
+    },
+    {
+      "path": "test-data/baseline/ballistic/retime/result.json",
+      "bytes": 390,
+      "sha256": "0e5d4fe6a992f855f82cf77e63c38419804c75a2c106828a39831a80c3cebfac"
+    },
+    {
+      "path": "test-data/baseline/ballistic/retime/trajectory-0.csv",
+      "bytes": 593970,
+      "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e"
+    },
+    {
+      "path": "test-data/baseline/ballistic/simulate/result.json",
+      "bytes": 509,
+      "sha256": "8075dbcb7f9583ac56ca0d2baaebcbf509eb8db192e0b628794103f47b1e637b"
+    },
+    {
+      "path": "test-data/baseline/ballistic/simulate/trajectory-0.csv",
+      "bytes": 561736,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4"
+    },
+    {
+      "path": "test-data/baseline/ballistic/visibility-http-ground/result.json",
+      "bytes": 6627,
+      "sha256": "961ae15c04d6fd55a5c29bfef251b339c948d068ec38fa3fbb893e40aa5eeb50"
+    },
+    {
+      "path": "test-data/baseline/ballistic/visibility-j2_numerical-points0/result.json",
+      "bytes": 37413,
+      "sha256": "9cecd29deb9779834beda88607c859a99567d18fcabbbf6745970831ed1cc192"
+    },
+    {
+      "path": "test-data/baseline/ballistic/visibility-j2_numerical-points1/result.json",
+      "bytes": 805749,
+      "sha256": "a023eff779a6f30377600b67719adbdab1bdc57fecad2fd06e658d06199c1931"
+    },
+    {
+      "path": "test-data/baseline/ballistic/visibility-j2_secular-points0/result.json",
+      "bytes": 37413,
+      "sha256": "0b23a0fafc2eac2ab7d01d237ee960dd62db56dfe7fa1a6cfe5dd43c304ca6b2"
+    },
+    {
+      "path": "test-data/baseline/ballistic/visibility-j2_secular-points1/result.json",
+      "bytes": 668085,
+      "sha256": "e1e96e982845157de94aaded80e0ef35c06f673afcc88426abf954e72566335c"
+    },
+    {
+      "path": "test-data/baseline/ballistic/visibility-two_body-points0/result.json",
+      "bytes": 34529,
+      "sha256": "17ed77e5364c8a7b1543a0bfad6bc1eb4eb5b883f28f9862ebab318be2bea589"
+    },
+    {
+      "path": "test-data/baseline/ballistic/visibility-two_body-points1/result.json",
+      "bytes": 605879,
+      "sha256": "48eff1b05edad5e8e129051a2da3d5a0e88c1a66bfa33d74b4ca083f731377b3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "ballistics": [
+    {
+      "csvPath": "trajectory-0.1s-standard.csv",
+      "baseLaunchUTC": "2026/07/01 07:57:00.000",
+      "targetId": "TGT-001",
+      "targetName": "默认目标"
+    }
+  ],
+  "startOffsetSec": -600,
+  "stepSizeSec": 10,
+  "numCalculations": 121,
+  "targetSampleStepSec": 1.0,
+  "trajectoryPointOutput": 1,
+  "orbitModel": "J2_NUMERICAL",
+  "satellites": [
+    {
+      "satelliteId": "SAT-A",
+      "name": "SAT-A",
+      "semiMajorAxisM": 7530612.0,
+      "eccentricity": 0.00085,
+      "inclinationDeg": 64.8,
+      "raanDeg": 120.0,
+      "argumentOfPerigeeDeg": 270.0,
+      "meanAnomalyDeg": 30.0,
+      "epochUtc": "2026/07/01 10:00:00.000",
+      "payloads": [
+        {
+          "payloadId": "SAT-A-GROUND-SURVEY",
+          "payloadName": "对地监视载荷",
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 2500.0,
+          "sunExclusionAngleDeg": 45.0
+        },
+        {
+          "payloadId": "SAT-A-AIR-TRACK",
+          "payloadName": "对空跟踪载荷",
+          "payloadType": "对空跟踪",
+          "maxDetectRangeKm": 1200.0,
+          "sunExclusionAngleDeg": 45.0
+        }
+      ]
+    },
+    {
+      "satelliteId": "SAT-B",
+      "name": "SAT-B",
+      "semiMajorAxisM": 7530612.0,
+      "eccentricity": 0.00085,
+      "inclinationDeg": 64.8,
+      "raanDeg": 120.0,
+      "argumentOfPerigeeDeg": 270.0,
+      "meanAnomalyDeg": 0.0,
+      "epochUtc": "2026/07/01 10:00:00.000",
+      "payloads": [
+        {
+          "payloadId": "SAT-B-AIR-SURVEY",
+          "payloadName": "对空监视载荷",
+          "payloadType": "对空监视",
+          "maxDetectRangeKm": 1600.0,
+          "sunExclusionAngleDeg": 45.0
+        }
+      ]
+    }
+  ]
+}

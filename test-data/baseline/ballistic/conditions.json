@@ -1,0 +1,857 @@
+[
+  {
+    "name": "visibility-two_body-points0",
+    "operation": "visibility-legacy",
+    "request": {
+      "ballistics": [
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元"
+        },
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-002",
+          "targetName": "真实弹道独立发射历元",
+          "baseLaunchUTC": "2026/07/01 07:57:10.000"
+        }
+      ],
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 3,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 0,
+      "orbitModel": "TWO_BODY",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "visibility-two_body-points1",
+    "operation": "visibility-legacy",
+    "request": {
+      "ballistics": [
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元"
+        },
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-002",
+          "targetName": "真实弹道独立发射历元",
+          "baseLaunchUTC": "2026/07/01 07:57:10.000"
+        }
+      ],
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 3,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 1,
+      "orbitModel": "TWO_BODY",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "visibility-j2_secular-points0",
+    "operation": "visibility-legacy",
+    "request": {
+      "ballistics": [
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元"
+        },
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-002",
+          "targetName": "真实弹道独立发射历元",
+          "baseLaunchUTC": "2026/07/01 07:57:10.000"
+        }
+      ],
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 3,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 0,
+      "orbitModel": "J2_SECULAR",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "visibility-j2_secular-points1",
+    "operation": "visibility-legacy",
+    "request": {
+      "ballistics": [
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元"
+        },
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-002",
+          "targetName": "真实弹道独立发射历元",
+          "baseLaunchUTC": "2026/07/01 07:57:10.000"
+        }
+      ],
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 3,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 1,
+      "orbitModel": "J2_SECULAR",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "visibility-j2_numerical-points0",
+    "operation": "visibility-legacy",
+    "request": {
+      "ballistics": [
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元"
+        },
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-002",
+          "targetName": "真实弹道独立发射历元",
+          "baseLaunchUTC": "2026/07/01 07:57:10.000"
+        }
+      ],
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 3,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 0,
+      "orbitModel": "J2_NUMERICAL",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "visibility-j2_numerical-points1",
+    "operation": "visibility-legacy",
+    "request": {
+      "ballistics": [
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元"
+        },
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-002",
+          "targetName": "真实弹道独立发射历元",
+          "baseLaunchUTC": "2026/07/01 07:57:10.000"
+        }
+      ],
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 3,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 1,
+      "orbitModel": "J2_NUMERICAL",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "visibility-http-ground",
+    "operation": "visibility",
+    "request": {
+      "ballistics": [
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元"
+        },
+        {
+          "csvPath": "<WORKSPACE>\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+          "targetId": "TGT-002",
+          "targetName": "真实弹道独立发射历元",
+          "baseLaunchUTC": "2026/07/01 07:57:10.000"
+        }
+      ],
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 3,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 1,
+      "orbitModel": "J2_NUMERICAL",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "fit",
+    "operation": "fit",
+    "request": {
+      "taskName": "defaultFitTask",
+      "taskStartTime": "2026-07-01 07:56:55.000",
+      "taskEndTime": "2026-07-01 07:57:10.000",
+      "interpolationStepSec": 0.5,
+      "outputDir": "output/trajectory-fit",
+      "package102": [
+        {
+          "track_tgt_id": "TGT-001",
+          "tack3d_time_code": "2026-07-01 07:57:00.000",
+          "tack3d_tgt_pos_x": "70000000",
+          "tack3d_tgt_pos_y": "0",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-001",
+          "tack3d_time_code": "2026-07-01 07:57:01.000",
+          "tack3d_tgt_pos_x": "70010000",
+          "tack3d_tgt_pos_y": "1000",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-001",
+          "tack3d_time_code": "2026-07-01 07:57:02.000",
+          "tack3d_tgt_pos_x": "70020000",
+          "tack3d_tgt_pos_y": "2000",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-001",
+          "tack3d_time_code": "2026-07-01 07:57:03.000",
+          "tack3d_tgt_pos_x": "70030000",
+          "tack3d_tgt_pos_y": "3000",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-002",
+          "tack3d_time_code": "2026-07-01 07:57:00.000",
+          "tack3d_tgt_pos_x": "68000000",
+          "tack3d_tgt_pos_y": "100000",
+          "tack3d_tgt_pos_z": "50000",
+          "tack3d_tgt_vel_x": "0",
+          "tack3d_tgt_vel_y": "76000000",
+          "tack3d_tgt_vel_z": "100000",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x02",
+          "prop_tgt_shape_8": "0xFF",
+          "prop_tgt_flight_phase_8": "0xFF",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "68000000",
+          "launch_pos_y": "-280000",
+          "launch_pos_z": "49500",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "68000000",
+          "impact_pos_y": "860000",
+          "impact_pos_z": "51000",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-002",
+          "tack3d_time_code": "2026-07-01 07:57:01.000",
+          "tack3d_tgt_pos_x": "68000000",
+          "tack3d_tgt_pos_y": "176000",
+          "tack3d_tgt_pos_z": "50100",
+          "tack3d_tgt_vel_x": "0",
+          "tack3d_tgt_vel_y": "76000000",
+          "tack3d_tgt_vel_z": "100000",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x02",
+          "prop_tgt_shape_8": "0xFF",
+          "prop_tgt_flight_phase_8": "0xFF",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "68000000",
+          "launch_pos_y": "-280000",
+          "launch_pos_z": "49500",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "68000000",
+          "impact_pos_y": "860000",
+          "impact_pos_z": "51000",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-002",
+          "tack3d_time_code": "2026-07-01 07:57:02.000",
+          "tack3d_tgt_pos_x": "68000000",
+          "tack3d_tgt_pos_y": "252000",
+          "tack3d_tgt_pos_z": "50200",
+          "tack3d_tgt_vel_x": "0",
+          "tack3d_tgt_vel_y": "76000000",
+          "tack3d_tgt_vel_z": "100000",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x02",
+          "prop_tgt_shape_8": "0xFF",
+          "prop_tgt_flight_phase_8": "0xFF",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "68000000",
+          "launch_pos_y": "-280000",
+          "launch_pos_z": "49500",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "68000000",
+          "impact_pos_y": "860000",
+          "impact_pos_z": "51000",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-002",
+          "tack3d_time_code": "2026-07-01 07:57:03.000",
+          "tack3d_tgt_pos_x": "68000000",
+          "tack3d_tgt_pos_y": "328000",
+          "tack3d_tgt_pos_z": "50300",
+          "tack3d_tgt_vel_x": "0",
+          "tack3d_tgt_vel_y": "76000000",
+          "tack3d_tgt_vel_z": "100000",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x02",
+          "prop_tgt_shape_8": "0xFF",
+          "prop_tgt_flight_phase_8": "0xFF",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "68000000",
+          "launch_pos_y": "-280000",
+          "launch_pos_z": "49500",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "68000000",
+          "impact_pos_y": "860000",
+          "impact_pos_z": "51000",
+          "impact_pos_unit": "0.1m"
+        }
+      ]
+    }
+  },
+  {
+    "name": "simulate",
+    "operation": "simulate",
+    "request": {
+      "taskName": "defaultSimTask",
+      "targetId": "SIM-001",
+      "launchTimeUtc": "2026-06-04 04:00:00.000",
+      "impactTimeUtc": "2026-06-04 04:42:55.000",
+      "taskStartTime": "2026-06-04 04:00:00.000",
+      "taskEndTime": "2026-06-04 04:42:55.000",
+      "launchPointX": 2167790.227,
+      "launchPointY": 4775481.109,
+      "launchPointZ": 3618557.253,
+      "launchPointCoordFrame": "J2000",
+      "launchPointUnit": "m",
+      "impactPointX": 3578635.76,
+      "impactPointY": 3522525.227,
+      "impactPointZ": 3919735.591,
+      "impactPointCoordFrame": "J2000",
+      "impactPointUnit": "m",
+      "outputPointDurationSec": 1.0,
+      "phaseEvents": [],
+      "outputDir": "output/trajectory-fit"
+    }
+  },
+  {
+    "name": "retime",
+    "operation": "retime",
+    "request": {
+      "taskName": "T04-retime",
+      "targetId": "RETIMED-TGT",
+      "trajectoryCsvPath": "<WORKSPACE>\\verification\\runtime\\T04\\retime-source.csv",
+      "launchTimeUtc": "2026-07-02 07:57:00.000"
+    }
+  }
+]
