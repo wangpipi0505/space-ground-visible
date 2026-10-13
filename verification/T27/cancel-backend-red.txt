@@ -1,0 +1,243 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 14 resources
+[INFO]
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 82 source files to G:\5-YG\space-ground-visible\backend\target\test-classes
+[INFO] /G:/5-YG/space-ground-visible/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: G:\5-YG\space-ground-visible\backend\src\test\java\com\runisys\orbit\spacevisibility\infrastructure\web\Nio2ShutdownRaceTest.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /G:/5-YG/space-ground-visible/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO]
+[INFO] --- surefire:2.22.2:test (default-test) @ space-target-visible ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest
+23:31:10.252 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+23:31:10.258 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+23:31:10.276 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+23:31:10.284 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest], using SpringBootContextLoader
+23:31:10.286 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: class path resource [com/runisys/orbit/spacevisibility/api/PlanningTaskControllerIntegrationTest-context.xml] does not exist
+23:31:10.286 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: class path resource [com/runisys/orbit/spacevisibility/api/PlanningTaskControllerIntegrationTestContext.groovy] does not exist
+23:31:10.286 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:31:10.286 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: PlanningTaskControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:31:10.317 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]
+23:31:10.377 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [G:\5-YG\space-ground-visible\backend\target\classes\com\runisys\orbit\spacevisibility\SpaceTargetVisibleApplication.class]
+23:31:10.377 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication for test class com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest
+23:31:10.427 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: using defaults.
+23:31:10.427 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+23:31:10.436 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@238d68ff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4b86805d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5852c06f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4149c063, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@9cb8225, org.springframework.test.context.support.DirtiesContextTestExecutionListener@76b07f29, org.springframework.test.context.transaction.TransactionalTestExecutionListener@38af9828, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@376a0d86, org.springframework.test.context.event.EventPublishingTestExecutionListener@62656be4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@17d919b6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@53f3bdbd, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@34129c78, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7d61eb55, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@222a59e6, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6c7a164b]
+23:31:10.438 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@3576ddc2 testClass = PlanningTaskControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35b74c5c testClass = PlanningTaskControllerIntegrationTest, locations = '{}', classes = '{class com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@2e570ded key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7eac9008, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1a677343, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@752325ad, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@65e98b1c, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2df3b89c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4cf777e8], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-13 23:31:10.650  INFO 64096 --- [           main] .a.PlanningTaskControllerIntegrationTest : Starting PlanningTaskControllerIntegrationTest using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 64096 (started by Administrator in G:\5-YG\space-ground-visible\backend)
+2026-10-13 23:31:10.651  INFO 64096 --- [           main] .a.PlanningTaskControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+ _ _   |_  _ _|_. ___ _ |    _
+| | |\/|_)(_| | |_\  |_)||_|_\
+     /               |
+                        3.5.5
+2026-10-13 23:31:11.551  INFO 64096 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-13 23:31:11.691  INFO 64096 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-13 23:31:11.712  INFO 64096 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-13 23:31:11.713  INFO 64096 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:space_target_visible (H2 1.4)
+2026-10-13 23:31:11.796  INFO 64096 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.055s)
+2026-10-13 23:31:11.804  INFO 64096 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-13 23:31:11.830  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-13 23:31:11.834  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - create space visibility tables"
+2026-10-13 23:31:11.853  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - ReplaceNameUniqueKeys"
+2026-10-13 23:31:11.870  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - AddSpaceTrackCatalogFields"
+2026-10-13 23:31:11.920  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "4 - AddSatelliteWeight"
+2026-10-13 23:31:11.925  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - create visibility task result"
+2026-10-13 23:31:11.929  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "6 - normalize space payload distance unit"
+2026-10-13 23:31:11.935  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "7 - add skipped pairs to visibility task result"
+2026-10-13 23:31:11.943  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "8 - align wintool space payload rate markers"
+2026-10-13 23:31:11.953  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "9 - add selection json to visibility task result"
+2026-10-13 23:31:11.958  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "10 - align station max elevation with wintool"
+2026-10-13 23:31:11.963  INFO 64096 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 10 migrations to schema "public", now at version v10 (execution time 00:00.137s)
+2026-10-13 23:31:12.836  INFO 64096 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-10-13 23:31:13.548  INFO 64096 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-13 23:31:13.548  INFO 64096 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-13 23:31:13.549  INFO 64096 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-13 23:31:13.583  INFO 64096 --- [           main] .a.PlanningTaskControllerIntegrationTest : Started PlanningTaskControllerIntegrationTest in 3.123 seconds (JVM running for 3.686)
+2026-10-13 23:31:14.147  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=b2ae80cd-75c3-4b44-b5d3-ce20d9c95718
+2026-10-13 23:31:14.303  INFO 64096 --- [planning-task-1] c.r.o.s.d.orbit.OrekitDataInitializer    : �ѹ��� Orekit ����Ŀ¼��G:\5-YG\space-ground-visible\backend\orekit-data
+2026-10-13 23:31:14.387  INFO 64096 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : Ŀ��۲�滮��ʼ��Ŀ����Դ=ǰ��ɸѡ������۲�����=1��ɸѡ��Ŀ����=1������ʱЧ������=0���������ʱ��=14�죬���Լ����=1��ʱ��=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z����ѡ����=1.0s����ѡ����=1.0s������ģʽ=ANY
+2026-10-13 23:31:14.450  INFO 64096 --- [ce-visibility-1] c.r.o.s.d.orbit.OrekitDataInitializer    : ��ȷ�� WinTool ̫��������JPL DE405���ļ�=G:\5-YG\space-ground-visible\backend\orekit-data\DE-405-ephemerides\unxp2000.405����С=4666512�ֽڣ�SHA-256ǰ׺=83EB7159D065
+2026-10-13 23:31:14.507  INFO 64096 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : ͬ��Ŀ��۲�滮��ɣ������=1��������=1����Ч�����=1�����������=0����������={}��ɨ�����=1����������=6���ݹ�̽��=0����ѡ����=0����ʱ=118ms
+2026-10-13 23:31:14.516  INFO 64096 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : Ŀ��۲�滮��ɣ��۲�����=1��ɸѡĿ����=1����Ч���������=1������۲�����=1�����������=0����ʱ=366ms
+2026-10-13 23:31:14.517  INFO 64096 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮������ɣ�taskId=b2ae80cd-75c3-4b44-b5d3-ce20d9c95718
+2026-10-13 23:31:14.701  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=e8b256ff-1cc4-49e9-a8f9-3c74dcda31e7
+2026-10-13 23:31:14.703  INFO 64096 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮������ɣ�taskId=e8b256ff-1cc4-49e9-a8f9-3c74dcda31e7
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /api/v1/space/visibility/tasks/e8b256ff-1cc4-49e9-a8f9-3c74dcda31e7
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#cancelTask(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"e8b256ff-1cc4-49e9-a8f9-3c74dcda31e7","status":"RUNNING","totalPairs":1,"completedPairs":1,"totalTargets":0,"completedTargets":0,"errorMessage":null,"createdAt":"2026-10-13T15:31:14.701Z","completedAt":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/e8b256ff-1cc4-49e9-a8f9-3c74dcda31e7
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskStatus(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"e8b256ff-1cc4-49e9-a8f9-3c74dcda31e7","status":"SUCCEEDED","totalPairs":1,"completedPairs":1,"totalTargets":0,"completedTargets":0,"errorMessage":null,"createdAt":"2026-10-13T15:31:14.701Z","completedAt":"2026-10-13T15:31:14.703Z"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:31:14.726  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=93ab6052-625c-41ea-9351-28e1acff776f
+2026-10-13 23:31:14.727  WARN 64096 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮����ʧ�ܣ�taskId=93ab6052-625c-41ea-9351-28e1acff776f���쳣����=IllegalArgumentException������=����δ�ҵ��Ĺ۲�����
+[ERROR] Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.525 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest
+[ERROR] returnsConflictAfterCancellationAcceptedBeforeFinalPublication  Time elapsed: 0.023 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError:
+
+expected: "CANCELLED"
+ but was: "SUCCEEDED"
+	at com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest.returnsConflictAfterCancellationAcceptedBeforeFinalPublication(PlanningTaskControllerIntegrationTest.java:164)
+
+[INFO] Running com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest
+2026-10-13 23:31:14.756  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮������ɣ�taskId=463bd981-93fe-4c53-9f81-e8b68e7327a9
+2026-10-13 23:31:14.756  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=463bd981-93fe-4c53-9f81-e8b68e7327a9
+2026-10-13 23:31:14.764  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=3d89138c-b1b2-4935-bee5-9e8f8477ef4e
+2026-10-13 23:31:14.764  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=e61b3536-2771-42a9-8b49-751514b064e6
+2026-10-13 23:31:14.766  INFO 64096 --- [pool-1-thread-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮������ɣ�taskId=3d89138c-b1b2-4935-bee5-9e8f8477ef4e
+2026-10-13 23:31:14.767  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=T27-final-batch
+2026-10-13 23:31:14.768  INFO 64096 --- [pool-2-thread-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮������ɣ�taskId=T27-final-batch
+2026-10-13 23:31:14.770  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=69af7b2f-444c-49db-9468-3a4e21438347
+2026-10-13 23:31:14.770  WARN 64096 --- [pool-3-thread-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮����ʧ�ܣ�taskId=69af7b2f-444c-49db-9468-3a4e21438347���쳣����=RuntimeException������=�����װ�쳣������IllegalArgumentException: Ŀ�� TLE �ѳ�����Ч��
+2026-10-13 23:31:14.782  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=435ea79f-b0dc-4149-ae11-f2b1a4e6283c
+2026-10-13 23:31:14.782  INFO 64096 --- [pool-4-thread-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮������ȡ����taskId=435ea79f-b0dc-4149-ae11-f2b1a4e6283c
+2026-10-13 23:31:14.797  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=9639f6da-6807-4947-b7d7-5b4b804f667e
+2026-10-13 23:31:14.797  INFO 64096 --- [pool-6-thread-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮������ɣ�taskId=9639f6da-6807-4947-b7d7-5b4b804f667e
+2026-10-13 23:31:14.812  INFO 64096 --- [           main] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮�������ύ��taskId=f1c03cfd-eca5-454b-894f-628db9bd30a4
+2026-10-13 23:31:14.813  WARN 64096 --- [pool-7-thread-1] c.r.o.s.application.PlanningTaskService  : �첽�ɼ��Թ滮����ʧ�ܣ�taskId=f1c03cfd-eca5-454b-894f-628db9bd30a4���쳣����=IllegalArgumentException������=������ѡ��һ�Ź۲�����
+[ERROR] Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.05 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest
+[ERROR] keepsSuccessfulTerminalStateWhenCancelledAfterPublication  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError:
+
+Expecting value to be false but was true
+	at com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest.keepsSuccessfulTerminalStateWhenCancelledAfterPublication(PlanningTaskServiceTest.java:176)
+
+[ERROR] cancelsCompletedWorkBeforePublishingResult  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError:
+
+expected: CANCELLED
+ but was: SUCCEEDED
+	at com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest.cancelsCompletedWorkBeforePublishingResult(PlanningTaskServiceTest.java:157)
+
+2026-10-13 23:31:14.846  INFO 64096 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-13 23:31:14.849  INFO 64096 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO]
+[INFO] Results:
+[INFO]
+[ERROR] Failures:
+[ERROR]   PlanningTaskControllerIntegrationTest.returnsConflictAfterCancellationAcceptedBeforeFinalPublication:164
+expected: "CANCELLED"
+ but was: "SUCCEEDED"
+[ERROR]   PlanningTaskServiceTest.cancelsCompletedWorkBeforePublishingResult:157
+expected: CANCELLED
+ but was: SUCCEEDED
+[ERROR]   PlanningTaskServiceTest.keepsSuccessfulTerminalStateWhenCancelledAfterPublication:176
+Expecting value to be false but was true
+[INFO]
+[ERROR] Tests run: 12, Failures: 3, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.941 s
+[INFO] Finished at: 2026-10-13T23:31:15+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project space-target-visible: There are test failures.
+[ERROR]
+[ERROR] Please refer to G:\5-YG\space-ground-visible\backend\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.SatelliteEntity;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.SatelliteMapper;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.TargetMapper;
+import com.runisys.orbit.spacevisibility.application.PlanningTaskService;
+import com.runisys.orbit.spacevisibility.application.VisibilityObservationResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -36,6 +41,8 @@ class PlanningTaskControllerIntegrationTest {
     private SatelliteMapper satelliteMapper;
     @Autowired
     private TargetMapper targetMapper;
+    @Autowired
+    private PlanningTaskService planningTaskService;
 
     @BeforeEach
     void resetReferenceData() {
@@ -131,6 +138,37 @@ class PlanningTaskControllerIntegrationTest {
                 .andExpect(status().isNotFound());
         mockMvc.perform(delete("/api/v1/space/visibility/tasks/{taskId}", "missing"))
                 .andExpect(status().isNotFound());
+    }
+
+    /** 真实服务在最后批完成后被DELETE取消：接口先仍RUNNING，任务退出必须CANCELLED且结果409。 */
+    @Test
+    void returnsConflictAfterCancellationAcceptedBeforeFinalPublication() throws Exception {
+        CountDownLatch workCompleted = new CountDownLatch(1);
+        CountDownLatch allowReturn = new CountDownLatch(1);
+        try {
+            String taskId = planningTaskService.submit(running -> {
+                running.reportProgress(1L, 1L);
+                workCompleted.countDown();
+                try {
+                    assertThat(allowReturn.await(5, TimeUnit.SECONDS)).isTrue();
+                } catch (InterruptedException exception) {
+                    Thread.currentThread().interrupt();
+                    throw new IllegalStateException(exception);
+                }
+                return new SpaceApiModels.VisibilityPlanResponse(Collections.<VisibilityObservationResult>emptyList());
+            }).getTaskId();
+            assertThat(workCompleted.await(5, TimeUnit.SECONDS)).isTrue();
+            mockMvc.perform(delete("/api/v1/space/visibility/tasks/{taskId}", taskId))
+                    .andExpect(status().isOk()).andExpect(jsonPath("$.status").value("RUNNING"));
+            allowReturn.countDown();
+            assertThat(pollUntilTerminal(taskId).get("status").asText()).isEqualTo("CANCELLED");
+            mockMvc.perform(get("/api/v1/space/visibility/tasks/{taskId}/result", taskId))
+                    .andExpect(status().isConflict());
+            mockMvc.perform(delete("/api/v1/space/visibility/tasks/{taskId}", taskId))
+                    .andExpect(status().isOk()).andExpect(jsonPath("$.status").value("CANCELLED"));
+        } finally {
+            allowReturn.countDown();
+        }
     }
 
     /** 轮询任务状态直到进入终态，避免异步执行时序导致的偶发失败。 */

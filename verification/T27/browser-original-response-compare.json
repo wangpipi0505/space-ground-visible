@@ -1,0 +1,17 @@
+[
+  {
+    "operation": "fit",
+    "allJsonFieldsExactEqual": true,
+    "normalization": "仅csvPath映射本次管理文件路径至原黄金路径；完整Decimal与数组顺序严格相同"
+  },
+  {
+    "operation": "simulation",
+    "allJsonFieldsExactEqual": true,
+    "normalization": "仅csvPath映射本次管理文件路径至原黄金路径；完整Decimal与数组顺序严格相同"
+  },
+  {
+    "operation": "retime",
+    "allJsonFieldsExactEqual": true,
+    "normalization": "仅csvPath映射本次管理文件路径至原黄金路径；完整Decimal与数组顺序严格相同"
+  }
+]

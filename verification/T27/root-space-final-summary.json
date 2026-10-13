@@ -1,0 +1,1858 @@
+{
+  "calls": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "request": null,
+      "response": {
+        "activePayloadType": "SPACE",
+        "profiles": [
+          {
+            "payloadType": "SPACE",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 200,
+            "maxDistanceKm": 8000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          },
+          {
+            "payloadType": "GROUND",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 1000,
+            "maxDistanceKm": 4000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": -91,
+            "elevationMaxDeg": 0,
+            "angleRateDegPerSec": 1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          }
+        ]
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "http://127.0.0.1:15178/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "request": {
+        "payloadType": "SPACE",
+        "minDistanceKm": 200,
+        "maxDistanceKm": 8000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": null,
+        "elevationMaxDeg": null,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null
+      },
+      "response": {
+        "activePayloadType": "SPACE",
+        "profiles": [
+          {
+            "payloadType": "SPACE",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 200,
+            "maxDistanceKm": 8000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          },
+          {
+            "payloadType": "GROUND",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 1000,
+            "maxDistanceKm": 4000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": -91,
+            "elevationMaxDeg": 0,
+            "angleRateDegPerSec": 1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:15178/api/v1/space/downlink/plan",
+      "status": 200,
+      "request": {
+        "startTime": "2026-07-01T10:00:00.000Z",
+        "endTime": "2026-07-01T10:10:00.000Z",
+        "satelliteIds": [
+          1
+        ],
+        "coarseStepSec": 60,
+        "fineStepSec": 1,
+        "preGuardSec": 0,
+        "postGuardSec": 0,
+        "allowedGapSec": 0,
+        "satelliteIllumination": "ANY",
+        "stations": [
+          {
+            "stationId": "T04-STATION",
+            "minElevationDeg": 0,
+            "maxElevationDeg": 90
+          }
+        ],
+        "links": [
+          {
+            "satelliteId": 1,
+            "stationId": "T04-STATION"
+          }
+        ]
+      },
+      "response": {
+        "satelliteStationWindows": [
+          {
+            "satelliteId": 1,
+            "stationId": "T04-STATION",
+            "windows": [
+              {
+                "startTime": "2026-07-01T10:00:00.000Z",
+                "endTime": "2026-07-01T10:07:21.000Z",
+                "durationSec": 441
+              }
+            ]
+          }
+        ],
+        "coverageWindows": [
+          {
+            "startTime": "2026-07-01T10:00:00.000Z",
+            "endTime": "2026-07-01T10:07:21.000Z",
+            "durationSec": 441,
+            "links": [
+              {
+                "satelliteId": 1,
+                "stationId": "T04-STATION"
+              }
+            ]
+          }
+        ],
+        "skippedLinks": [],
+        "totalSkippedLinks": 0
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:15178/api/v1/space/targets/query",
+      "status": 200,
+      "request": {
+        "belongs": [],
+        "minTleEpochCode": "",
+        "pageNumber": 1,
+        "pageSize": 50
+      },
+      "response": {
+        "total": 1,
+        "pageNumber": 1,
+        "pageSize": 50,
+        "targets": [
+          {
+            "id": 2,
+            "type": null,
+            "libraryModelId": null,
+            "name": "基准目标星",
+            "scid": null,
+            "objectId": null,
+            "objectName": null,
+            "noradCatId": null,
+            "country": null,
+            "period": null,
+            "catalogInclination": null,
+            "apogee": null,
+            "perigee": null,
+            "rcsSize": null,
+            "rcsValue": null,
+            "launchDate": "2020-01-01",
+            "catalogComment": null,
+            "modelType": "KEPLER_6",
+            "epochTime": "2026-07-01T10:00:00",
+            "semiMajorAxis": 7278137,
+            "eccentricity": 0,
+            "inclination": 50,
+            "meanAnomaly": 30,
+            "raan": 30,
+            "argumentOfPerigee": 0,
+            "firstOrbit": null,
+            "secondOrbit": null,
+            "belong": "US",
+            "weight": 120,
+            "createBy": null,
+            "updateBy": null,
+            "createOrgId": null,
+            "createTime": null,
+            "updateTime": null
+          }
+        ],
+        "targetIds": [
+          2
+        ],
+        "filterBreakdown": {
+          "belongsHit": 1,
+          "weightHit": 1,
+          "epochHit": 1,
+          "epochConstraintHit": 1,
+          "ephemerisWarningHit": 0,
+          "excludeHit": 1,
+          "maxApproximationDays": 0
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks",
+      "status": 200,
+      "request": {
+        "startTime": "2026-07-01T10:00:00.000Z",
+        "endTime": "2026-07-01T10:07:21.000Z",
+        "observerSatelliteIds": [
+          1
+        ],
+        "targetIds": [
+          2
+        ],
+        "maxApproximationDays": 14,
+        "coarseStepSec": 60,
+        "fineStepSec": 0.001,
+        "illuminationConstraint": {
+          "mode": "ANY",
+          "observerStates": [],
+          "targetStates": []
+        },
+        "observationConstraints": []
+      },
+      "response": {
+        "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/314b51d2-74b5-403b-8cd0-606726eafc0e",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e",
+        "status": "RUNNING",
+        "totalPairs": 0,
+        "completedPairs": 0,
+        "totalTargets": 0,
+        "completedTargets": 0,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:44:05.562Z",
+        "completedAt": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/314b51d2-74b5-403b-8cd0-606726eafc0e",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e",
+        "status": "SUCCEEDED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "totalTargets": 1,
+        "completedTargets": 1,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:44:05.562Z",
+        "completedAt": "2026-10-13T15:44:05.981Z"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/314b51d2-74b5-403b-8cd0-606726eafc0e/result",
+      "status": 200,
+      "request": null,
+      "response": {
+        "results": [
+          {
+            "targetId": "2",
+            "targetName": "基准目标星",
+            "observerSatelliteIds": [
+              "1"
+            ],
+            "observerSatelliteNames": [
+              "基准观测星"
+            ],
+            "arcs": [
+              {
+                "startTime": "2026-07-01T10:00:00.000Z",
+                "endTime": "2026-07-01T10:07:21.000Z",
+                "observerIlluminations": [
+                  {
+                    "satelliteId": "1",
+                    "satelliteName": "基准观测星",
+                    "state": "SUNLIT",
+                    "stateName": "阳照"
+                  }
+                ],
+                "targetIllumination": {
+                  "targetId": "2",
+                  "targetName": "基准目标星",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                },
+                "illuminationSegments": [
+                  {
+                    "startTime": "2026-07-01T10:00:00.000Z",
+                    "endTime": "2026-07-01T10:07:21.000Z",
+                    "observerIlluminations": [
+                      {
+                        "satelliteId": "1",
+                        "satelliteName": "基准观测星",
+                        "state": "SUNLIT",
+                        "stateName": "阳照"
+                      }
+                    ],
+                    "targetIllumination": {
+                      "targetId": "2",
+                      "targetName": "基准目标星",
+                      "state": "SUNLIT",
+                      "stateName": "阳照"
+                    },
+                    "durationSec": 441
+                  }
+                ],
+                "durationSec": 441
+              }
+            ],
+            "observationType": "SINGLE",
+            "observationTypeName": "单星观测",
+            "conciseSummary": "任务摘要：A(441.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)",
+            "targetNorad": "null",
+            "targetWeightKg": 120
+          }
+        ],
+        "skippedPairs": [],
+        "totalSkippedPairs": 0,
+        "targetFilterBreakdown": {
+          "belongsHit": 1,
+          "weightHit": 1,
+          "epochHit": 1,
+          "epochConstraintHit": 1,
+          "ephemerisWarningHit": 0,
+          "excludeHit": 1,
+          "maxApproximationDays": 14
+        },
+        "ephemerisWarnings": []
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks",
+      "status": 200,
+      "request": {
+        "startTime": "2026-07-01T10:00:00.000Z",
+        "endTime": "2026-07-01T10:07:21.000Z",
+        "observerSatelliteIds": [
+          1
+        ],
+        "targetIds": [
+          2
+        ],
+        "maxApproximationDays": 14,
+        "coarseStepSec": 0.005,
+        "fineStepSec": 0.001,
+        "illuminationConstraint": {
+          "mode": "ANY",
+          "observerStates": [],
+          "targetStates": []
+        },
+        "observationConstraints": []
+      },
+      "response": {
+        "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+        "status": "RUNNING",
+        "totalPairs": 0,
+        "completedPairs": 0,
+        "totalTargets": 0,
+        "completedTargets": 0,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:44:11.712Z",
+        "completedAt": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+        "status": "RUNNING",
+        "totalPairs": 0,
+        "completedPairs": 0,
+        "totalTargets": 0,
+        "completedTargets": 0,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:44:11.712Z",
+        "completedAt": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+        "status": "RUNNING",
+        "totalPairs": 0,
+        "completedPairs": 0,
+        "totalTargets": 0,
+        "completedTargets": 0,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:44:11.712Z",
+        "completedAt": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+        "status": "RUNNING",
+        "totalPairs": 0,
+        "completedPairs": 0,
+        "totalTargets": 0,
+        "completedTargets": 0,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:44:11.712Z",
+        "completedAt": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+        "status": "CANCELLED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "totalTargets": 1,
+        "completedTargets": 1,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:44:11.712Z",
+        "completedAt": "2026-10-13T15:44:16.868Z"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks",
+      "status": 200,
+      "request": {
+        "startTime": "2026-07-01T10:00:00.000Z",
+        "endTime": "2026-07-01T10:07:21.000Z",
+        "observerSatelliteIds": [
+          1
+        ],
+        "targetIds": [
+          2
+        ],
+        "maxApproximationDays": 14,
+        "coarseStepSec": 60,
+        "fineStepSec": 1,
+        "illuminationConstraint": {
+          "mode": "ANY",
+          "observerStates": [],
+          "targetStates": []
+        },
+        "observationConstraints": []
+      },
+      "response": {
+        "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+        "status": "RUNNING",
+        "totalPairs": 0,
+        "completedPairs": 0,
+        "totalTargets": 0,
+        "completedTargets": 0,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:47:19.057Z",
+        "completedAt": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+      "status": 200,
+      "request": null,
+      "response": {
+        "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+        "status": "SUCCEEDED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "totalTargets": 1,
+        "completedTargets": 1,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:47:19.057Z",
+        "completedAt": "2026-10-13T15:47:19.079Z"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/tasks/60ad8ca2-6fb5-4bac-8c83-97436256dd68/result",
+      "status": 200,
+      "request": null,
+      "response": {
+        "results": [
+          {
+            "targetId": "2",
+            "targetName": "基准目标星",
+            "observerSatelliteIds": [
+              "1"
+            ],
+            "observerSatelliteNames": [
+              "基准观测星"
+            ],
+            "arcs": [
+              {
+                "startTime": "2026-07-01T10:00:00.000Z",
+                "endTime": "2026-07-01T10:07:21.000Z",
+                "observerIlluminations": [
+                  {
+                    "satelliteId": "1",
+                    "satelliteName": "基准观测星",
+                    "state": "SUNLIT",
+                    "stateName": "阳照"
+                  }
+                ],
+                "targetIllumination": {
+                  "targetId": "2",
+                  "targetName": "基准目标星",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                },
+                "illuminationSegments": [
+                  {
+                    "startTime": "2026-07-01T10:00:00.000Z",
+                    "endTime": "2026-07-01T10:07:21.000Z",
+                    "observerIlluminations": [
+                      {
+                        "satelliteId": "1",
+                        "satelliteName": "基准观测星",
+                        "state": "SUNLIT",
+                        "stateName": "阳照"
+                      }
+                    ],
+                    "targetIllumination": {
+                      "targetId": "2",
+                      "targetName": "基准目标星",
+                      "state": "SUNLIT",
+                      "stateName": "阳照"
+                    },
+                    "durationSec": 441
+                  }
+                ],
+                "durationSec": 441
+              }
+            ],
+            "observationType": "SINGLE",
+            "observationTypeName": "单星观测",
+            "conciseSummary": "任务摘要：A(441.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)",
+            "targetNorad": "null",
+            "targetWeightKg": 120
+          }
+        ],
+        "skippedPairs": [],
+        "totalSkippedPairs": 0,
+        "targetFilterBreakdown": {
+          "belongsHit": 1,
+          "weightHit": 1,
+          "epochHit": 1,
+          "epochConstraintHit": 1,
+          "ephemerisWarningHit": 0,
+          "excludeHit": 1,
+          "maxApproximationDays": 14
+        },
+        "ephemerisWarnings": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/task-results?pageNumber=1&pageSize=20&keyword=60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+      "status": 200,
+      "request": null,
+      "response": {
+        "total": 1,
+        "pageNumber": 1,
+        "pageSize": 20,
+        "records": [
+          {
+            "id": "2110034655387160577",
+            "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:47:19.055",
+            "completeTime": "2026-10-13T15:47:19.079"
+          }
+        ]
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/task-results/2110034655387160577/selection",
+      "status": 200,
+      "request": {
+        "planningWindow": {
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:07:21.000Z"
+        },
+        "mergedTimeRange": {
+          "segments": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:07:21.000Z",
+              "durationSec": 441
+            }
+          ],
+          "totalDurationSec": 441
+        },
+        "selections": [
+          {
+            "targetId": "2",
+            "targetName": "基准目标星",
+            "noradCatId": "null",
+            "weightKg": 120,
+            "firstOrbitLine": null,
+            "secondOrbitLine": null,
+            "combination": "",
+            "mergedWindows": [
+              {
+                "startTime": "2026-07-01T10:00:00.000Z",
+                "endTime": "2026-07-01T10:07:21.000Z",
+                "durationSec": 441
+              }
+            ],
+            "totalDurationSec": 441,
+            "satellites": []
+          }
+        ]
+      },
+      "response": {
+        "recordId": "2110034655387160577",
+        "received": true,
+        "selectionCount": 1,
+        "mergedSegments": 1,
+        "message": "确认选择已保存",
+        "detail": {
+          "id": "2110034655387160577",
+          "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+          "taskType": "VISIBILITY",
+          "status": "SUCCEEDED",
+          "totalPairs": 1,
+          "completedPairs": 1,
+          "errorMessage": null,
+          "remark": null,
+          "createTime": "2026-10-13T15:47:19.055",
+          "completeTime": "2026-10-13T15:47:19.079",
+          "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":14,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:07:21Z\",\"coarseStepSec\":60.0,\"fineStepSec\":1.0,\"illuminationConstraint\":{\"mode\":\"ANY\",\"observerStates\":[],\"targetStates\":[]},\"observationConstraints\":[],\"winToolReport\":null}",
+          "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":441.0}],\"durationSec\":441.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(441.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+          "skippedPairsJson": null,
+          "selectionJson": "{\"planningWindow\":{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\"},\"mergedTimeRange\":{\"segments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441},\"selections\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"noradCatId\":\"null\",\"weightKg\":120,\"firstOrbitLine\":null,\"secondOrbitLine\":null,\"combination\":\"\",\"mergedWindows\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441,\"satellites\":[]}],\"remark\":null}"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/task-results?pageNumber=1&pageSize=20",
+      "status": 200,
+      "request": null,
+      "response": {
+        "total": 5,
+        "pageNumber": 1,
+        "pageSize": 20,
+        "records": [
+          {
+            "id": "2110034655387160577",
+            "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:47:19.055",
+            "completeTime": "2026-10-13T15:47:19.079"
+          },
+          {
+            "id": "2110033869622054914",
+            "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+            "taskType": "VISIBILITY",
+            "status": "CANCELLED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:44:11.711",
+            "completeTime": "2026-10-13T15:44:16.868"
+          },
+          {
+            "id": "2110033843827085314",
+            "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:44:05.554",
+            "completeTime": "2026-10-13T15:44:05.981"
+          },
+          {
+            "id": "2110028539236286465",
+            "taskId": "96d7219d-2d1d-43a4-9c62-56bcb34191d4",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:23:00.845",
+            "completeTime": "2026-10-13T15:23:05.959"
+          },
+          {
+            "id": "2110026274572173313",
+            "taskId": "3cd880f2-0426-41c3-8b27-8cf0bd38b6f7",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": "T27空间非空完整B/S验收",
+            "createTime": "2026-10-13T15:14:00.904",
+            "completeTime": "2026-10-13T15:14:01.255"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/task-results/2110034655387160577",
+      "status": 200,
+      "request": null,
+      "response": {
+        "id": "2110034655387160577",
+        "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+        "taskType": "VISIBILITY",
+        "status": "SUCCEEDED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "errorMessage": null,
+        "remark": null,
+        "createTime": "2026-10-13T15:47:19.055",
+        "completeTime": "2026-10-13T15:47:19.079",
+        "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":14,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:07:21Z\",\"coarseStepSec\":60.0,\"fineStepSec\":1.0,\"illuminationConstraint\":{\"mode\":\"ANY\",\"observerStates\":[],\"targetStates\":[]},\"observationConstraints\":[],\"winToolReport\":null}",
+        "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":441.0}],\"durationSec\":441.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(441.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+        "skippedPairsJson": null,
+        "selectionJson": "{\"planningWindow\":{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\"},\"mergedTimeRange\":{\"segments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441},\"selections\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"noradCatId\":\"null\",\"weightKg\":120,\"firstOrbitLine\":null,\"secondOrbitLine\":null,\"combination\":\"\",\"mergedWindows\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441,\"satellites\":[]}],\"remark\":null}"
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/task-results/2110034655387160577",
+      "status": 200,
+      "request": {
+        "remark": "T27修复后空间非空完整B/S验收"
+      },
+      "response": {
+        "id": "2110034655387160577",
+        "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+        "taskType": "VISIBILITY",
+        "status": "SUCCEEDED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "errorMessage": null,
+        "remark": "T27修复后空间非空完整B/S验收",
+        "createTime": "2026-10-13T15:47:19.055",
+        "completeTime": "2026-10-13T15:47:19.079",
+        "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":14,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:07:21Z\",\"coarseStepSec\":60.0,\"fineStepSec\":1.0,\"illuminationConstraint\":{\"mode\":\"ANY\",\"observerStates\":[],\"targetStates\":[]},\"observationConstraints\":[],\"winToolReport\":null}",
+        "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":441.0}],\"durationSec\":441.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(441.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+        "skippedPairsJson": null,
+        "selectionJson": "{\"planningWindow\":{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\"},\"mergedTimeRange\":{\"segments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441},\"selections\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"noradCatId\":\"null\",\"weightKg\":120,\"firstOrbitLine\":null,\"secondOrbitLine\":null,\"combination\":\"\",\"mergedWindows\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441,\"satellites\":[]}],\"remark\":null}"
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "http://127.0.0.1:15178/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "request": {
+        "payloadType": "GROUND",
+        "minDistanceKm": 1000,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 0,
+        "angleRateDegPerSec": 1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null
+      },
+      "response": {
+        "activePayloadType": "GROUND",
+        "profiles": [
+          {
+            "payloadType": "SPACE",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 200,
+            "maxDistanceKm": 8000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          },
+          {
+            "payloadType": "GROUND",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 1000,
+            "maxDistanceKm": 4000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": -91,
+            "elevationMaxDeg": 0,
+            "angleRateDegPerSec": 1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          }
+        ]
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "http://127.0.0.1:15178/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "request": {
+        "payloadType": "SPACE",
+        "minDistanceKm": 200,
+        "maxDistanceKm": 8000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": null,
+        "elevationMaxDeg": null,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null
+      },
+      "response": {
+        "activePayloadType": "SPACE",
+        "profiles": [
+          {
+            "payloadType": "SPACE",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 200,
+            "maxDistanceKm": 8000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          },
+          {
+            "payloadType": "GROUND",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 1000,
+            "maxDistanceKm": 4000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": -91,
+            "elevationMaxDeg": 0,
+            "angleRateDegPerSec": 1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/health",
+      "status": 200,
+      "request": null,
+      "response": {
+        "status": "UP"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/defaults",
+      "status": 200,
+      "request": null,
+      "response": {
+        "preGuardSec": 300,
+        "postGuardSec": 0,
+        "allowedGapSec": 0,
+        "orbitMaxApproximationDays": 14,
+        "targetMinTleEpochCode": "23340"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/targets/belong-options",
+      "status": 200,
+      "request": null,
+      "response": [
+        {
+          "code": "US",
+          "count": 1,
+          "description": "BELONG_=US，当前目标数=1"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/stations",
+      "status": 200,
+      "request": null,
+      "response": [
+        {
+          "id": "DEMO-STATION",
+          "name": "演示站（非生产资料）",
+          "longitude": 100,
+          "latitude": 30,
+          "height": 0,
+          "minElevation": 0,
+          "maxElevation": 90,
+          "createBy": null,
+          "createOrgId": null,
+          "createTime": null,
+          "updateBy": null,
+          "updateTime": null
+        },
+        {
+          "id": "T04-STATION",
+          "name": "基准星下站",
+          "longitude": -39.134128,
+          "latitude": 0.129382,
+          "height": 0,
+          "minElevation": 0,
+          "maxElevation": 90,
+          "createBy": null,
+          "createOrgId": null,
+          "createTime": null,
+          "updateBy": null,
+          "updateTime": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/satellites/page?pageNumber=1&pageSize=50",
+      "status": 200,
+      "request": null,
+      "response": {
+        "total": 2,
+        "pageNumber": 1,
+        "pageSize": 50,
+        "records": [
+          {
+            "id": 1,
+            "name": "基准观测星",
+            "modelType": "KEPLER_6",
+            "type": null,
+            "scid": null,
+            "objectId": null,
+            "objectName": null,
+            "noradCatId": null,
+            "country": null,
+            "period": null,
+            "catalogInclination": null,
+            "apogee": null,
+            "perigee": null,
+            "rcsSize": null,
+            "rcsValue": null,
+            "launchDate": null,
+            "catalogComment": null,
+            "weight": null
+          },
+          {
+            "id": 3,
+            "name": "基准共同观测星",
+            "modelType": "KEPLER_6",
+            "type": null,
+            "scid": null,
+            "objectId": null,
+            "objectName": null,
+            "noradCatId": null,
+            "country": null,
+            "period": null,
+            "catalogInclination": null,
+            "apogee": null,
+            "perigee": null,
+            "rcsSize": null,
+            "rcsValue": null,
+            "launchDate": null,
+            "catalogComment": null,
+            "weight": null
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "request": null,
+      "response": {
+        "activePayloadType": "SPACE",
+        "profiles": [
+          {
+            "payloadType": "SPACE",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 200,
+            "maxDistanceKm": 8000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          },
+          {
+            "payloadType": "GROUND",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 1000,
+            "maxDistanceKm": 4000,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": -91,
+            "elevationMaxDeg": 0,
+            "angleRateDegPerSec": 1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": null,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/task-results?pageNumber=1&pageSize=20",
+      "status": 200,
+      "request": null,
+      "response": {
+        "total": 5,
+        "pageNumber": 1,
+        "pageSize": 20,
+        "records": [
+          {
+            "id": "2110034655387160577",
+            "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": "T27修复后空间非空完整B/S验收",
+            "createTime": "2026-10-13T15:47:19.055",
+            "completeTime": "2026-10-13T15:47:19.079"
+          },
+          {
+            "id": "2110033869622054914",
+            "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+            "taskType": "VISIBILITY",
+            "status": "CANCELLED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:44:11.711",
+            "completeTime": "2026-10-13T15:44:16.868"
+          },
+          {
+            "id": "2110033843827085314",
+            "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:44:05.554",
+            "completeTime": "2026-10-13T15:44:05.981"
+          },
+          {
+            "id": "2110028539236286465",
+            "taskId": "96d7219d-2d1d-43a4-9c62-56bcb34191d4",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:23:00.845",
+            "completeTime": "2026-10-13T15:23:05.959"
+          },
+          {
+            "id": "2110026274572173313",
+            "taskId": "3cd880f2-0426-41c3-8b27-8cf0bd38b6f7",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": "T27空间非空完整B/S验收",
+            "createTime": "2026-10-13T15:14:00.904",
+            "completeTime": "2026-10-13T15:14:01.255"
+          }
+        ]
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/task-results/2110034655387160577",
+      "status": 200,
+      "request": null,
+      "response": null
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:15178/api/v1/space/visibility/task-results?pageNumber=1&pageSize=20",
+      "status": 200,
+      "request": null,
+      "response": {
+        "total": 4,
+        "pageNumber": 1,
+        "pageSize": 20,
+        "records": [
+          {
+            "id": "2110033869622054914",
+            "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+            "taskType": "VISIBILITY",
+            "status": "CANCELLED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:44:11.711",
+            "completeTime": "2026-10-13T15:44:16.868"
+          },
+          {
+            "id": "2110033843827085314",
+            "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:44:05.554",
+            "completeTime": "2026-10-13T15:44:05.981"
+          },
+          {
+            "id": "2110028539236286465",
+            "taskId": "96d7219d-2d1d-43a4-9c62-56bcb34191d4",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": null,
+            "createTime": "2026-10-13T15:23:00.845",
+            "completeTime": "2026-10-13T15:23:05.959"
+          },
+          {
+            "id": "2110026274572173313",
+            "taskId": "3cd880f2-0426-41c3-8b27-8cf0bd38b6f7",
+            "taskType": "VISIBILITY",
+            "status": "SUCCEEDED",
+            "totalPairs": 1,
+            "completedPairs": 1,
+            "errorMessage": null,
+            "remark": "T27空间非空完整B/S验收",
+            "createTime": "2026-10-13T15:14:00.904",
+            "completeTime": "2026-10-13T15:14:01.255"
+          }
+        ]
+      }
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "downlink": {
+    "status": 200,
+    "request": {
+      "startTime": "2026-07-01T10:00:00.000Z",
+      "endTime": "2026-07-01T10:10:00.000Z",
+      "satelliteIds": [
+        1
+      ],
+      "coarseStepSec": 60,
+      "fineStepSec": 1,
+      "preGuardSec": 0,
+      "postGuardSec": 0,
+      "allowedGapSec": 0,
+      "satelliteIllumination": "ANY",
+      "stations": [
+        {
+          "stationId": "T04-STATION",
+          "minElevationDeg": 0,
+          "maxElevationDeg": 90
+        }
+      ],
+      "links": [
+        {
+          "satelliteId": 1,
+          "stationId": "T04-STATION"
+        }
+      ]
+    },
+    "response": {
+      "satelliteStationWindows": [
+        {
+          "satelliteId": 1,
+          "stationId": "T04-STATION",
+          "windows": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:07:21.000Z",
+              "durationSec": 441
+            }
+          ]
+        }
+      ],
+      "coverageWindows": [
+        {
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:07:21.000Z",
+          "durationSec": 441,
+          "links": [
+            {
+              "satelliteId": 1,
+              "stationId": "T04-STATION"
+            }
+          ]
+        }
+      ],
+      "skippedLinks": [],
+      "totalSkippedLinks": 0
+    }
+  },
+  "nonempty": {
+    "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e",
+    "query": {
+      "total": 1,
+      "pageNumber": 1,
+      "pageSize": 50,
+      "targets": [
+        {
+          "id": 2,
+          "type": null,
+          "libraryModelId": null,
+          "name": "基准目标星",
+          "scid": null,
+          "objectId": null,
+          "objectName": null,
+          "noradCatId": null,
+          "country": null,
+          "period": null,
+          "catalogInclination": null,
+          "apogee": null,
+          "perigee": null,
+          "rcsSize": null,
+          "rcsValue": null,
+          "launchDate": "2020-01-01",
+          "catalogComment": null,
+          "modelType": "KEPLER_6",
+          "epochTime": "2026-07-01T10:00:00",
+          "semiMajorAxis": 7278137,
+          "eccentricity": 0,
+          "inclination": 50,
+          "meanAnomaly": 30,
+          "raan": 30,
+          "argumentOfPerigee": 0,
+          "firstOrbit": null,
+          "secondOrbit": null,
+          "belong": "US",
+          "weight": 120,
+          "createBy": null,
+          "updateBy": null,
+          "createOrgId": null,
+          "createTime": null,
+          "updateTime": null
+        }
+      ],
+      "targetIds": [
+        2
+      ],
+      "filterBreakdown": {
+        "belongsHit": 1,
+        "weightHit": 1,
+        "epochHit": 1,
+        "epochConstraintHit": 1,
+        "ephemerisWarningHit": 0,
+        "excludeHit": 1,
+        "maxApproximationDays": 0
+      }
+    },
+    "request": {
+      "startTime": "2026-07-01T10:00:00.000Z",
+      "endTime": "2026-07-01T10:07:21.000Z",
+      "observerSatelliteIds": [
+        1
+      ],
+      "targetIds": [
+        2
+      ],
+      "maxApproximationDays": 14,
+      "coarseStepSec": 60,
+      "fineStepSec": 0.001,
+      "illuminationConstraint": {
+        "mode": "ANY",
+        "observerStates": [],
+        "targetStates": []
+      },
+      "observationConstraints": []
+    },
+    "response": {
+      "results": [
+        {
+          "targetId": "2",
+          "targetName": "基准目标星",
+          "observerSatelliteIds": [
+            "1"
+          ],
+          "observerSatelliteNames": [
+            "基准观测星"
+          ],
+          "arcs": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:07:21.000Z",
+              "observerIlluminations": [
+                {
+                  "satelliteId": "1",
+                  "satelliteName": "基准观测星",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                }
+              ],
+              "targetIllumination": {
+                "targetId": "2",
+                "targetName": "基准目标星",
+                "state": "SUNLIT",
+                "stateName": "阳照"
+              },
+              "illuminationSegments": [
+                {
+                  "startTime": "2026-07-01T10:00:00.000Z",
+                  "endTime": "2026-07-01T10:07:21.000Z",
+                  "observerIlluminations": [
+                    {
+                      "satelliteId": "1",
+                      "satelliteName": "基准观测星",
+                      "state": "SUNLIT",
+                      "stateName": "阳照"
+                    }
+                  ],
+                  "targetIllumination": {
+                    "targetId": "2",
+                    "targetName": "基准目标星",
+                    "state": "SUNLIT",
+                    "stateName": "阳照"
+                  },
+                  "durationSec": 441
+                }
+              ],
+              "durationSec": 441
+            }
+          ],
+          "observationType": "SINGLE",
+          "observationTypeName": "单星观测",
+          "conciseSummary": "任务摘要：A(441.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)",
+          "targetNorad": "null",
+          "targetWeightKg": 120
+        }
+      ],
+      "skippedPairs": [],
+      "totalSkippedPairs": 0,
+      "targetFilterBreakdown": {
+        "belongsHit": 1,
+        "weightHit": 1,
+        "epochHit": 1,
+        "epochConstraintHit": 1,
+        "ephemerisWarningHit": 0,
+        "excludeHit": 1,
+        "maxApproximationDays": 14
+      },
+      "ephemerisWarnings": []
+    },
+    "progress": "任务状态：已完成已完成目标：1 / 1（配对 1 / 1）100%",
+    "resultText": [
+      "基准目标星目标 ID：21 个观测组合基准观测星单星观测共 441.000 秒，1 条弧段 我方卫星目标观测类型观测星光照目标光照起止时间时长基准观测星基准目标星单星观测基准观测星：阳照阳照2026/07/01 18:00:00.000（北京时间）2026/07/01 18:07:21.000（北京时间）441.000 秒"
+    ]
+  },
+  "cancel": {
+    "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+    "request": {
+      "startTime": "2026-07-01T10:00:00.000Z",
+      "endTime": "2026-07-01T10:07:21.000Z",
+      "observerSatelliteIds": [
+        1
+      ],
+      "targetIds": [
+        2
+      ],
+      "maxApproximationDays": 14,
+      "coarseStepSec": 0.005,
+      "fineStepSec": 0.001,
+      "illuminationConstraint": {
+        "mode": "ANY",
+        "observerStates": [],
+        "targetStates": []
+      },
+      "observationConstraints": []
+    },
+    "deleteStatus": 200,
+    "deleteResponse": {
+      "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+      "status": "RUNNING",
+      "totalPairs": 0,
+      "completedPairs": 0,
+      "totalTargets": 0,
+      "completedTargets": 0,
+      "errorMessage": null,
+      "createdAt": "2026-10-13T15:44:11.712Z",
+      "completedAt": null
+    },
+    "immediateDisplay": "任务状态：执行中已完成目标：0 / 0（配对 0 / 0）取消任务0%",
+    "terminalText": "任务状态：已取消已完成目标：1 / 1（配对 1 / 1）100%",
+    "resultStatus": 409
+  },
+  "recovered": {
+    "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+    "request": {
+      "startTime": "2026-07-01T10:00:00.000Z",
+      "endTime": "2026-07-01T10:07:21.000Z",
+      "observerSatelliteIds": [
+        1
+      ],
+      "targetIds": [
+        2
+      ],
+      "maxApproximationDays": 14,
+      "coarseStepSec": 60,
+      "fineStepSec": 1,
+      "illuminationConstraint": {
+        "mode": "ANY",
+        "observerStates": [],
+        "targetStates": []
+      },
+      "observationConstraints": []
+    },
+    "response": {
+      "results": [
+        {
+          "targetId": "2",
+          "targetName": "基准目标星",
+          "observerSatelliteIds": [
+            "1"
+          ],
+          "observerSatelliteNames": [
+            "基准观测星"
+          ],
+          "arcs": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:07:21.000Z",
+              "observerIlluminations": [
+                {
+                  "satelliteId": "1",
+                  "satelliteName": "基准观测星",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                }
+              ],
+              "targetIllumination": {
+                "targetId": "2",
+                "targetName": "基准目标星",
+                "state": "SUNLIT",
+                "stateName": "阳照"
+              },
+              "illuminationSegments": [
+                {
+                  "startTime": "2026-07-01T10:00:00.000Z",
+                  "endTime": "2026-07-01T10:07:21.000Z",
+                  "observerIlluminations": [
+                    {
+                      "satelliteId": "1",
+                      "satelliteName": "基准观测星",
+                      "state": "SUNLIT",
+                      "stateName": "阳照"
+                    }
+                  ],
+                  "targetIllumination": {
+                    "targetId": "2",
+                    "targetName": "基准目标星",
+                    "state": "SUNLIT",
+                    "stateName": "阳照"
+                  },
+                  "durationSec": 441
+                }
+              ],
+              "durationSec": 441
+            }
+          ],
+          "observationType": "SINGLE",
+          "observationTypeName": "单星观测",
+          "conciseSummary": "任务摘要：A(441.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)",
+          "targetNorad": "null",
+          "targetWeightKg": 120
+        }
+      ],
+      "skippedPairs": [],
+      "totalSkippedPairs": 0,
+      "targetFilterBreakdown": {
+        "belongsHit": 1,
+        "weightHit": 1,
+        "epochHit": 1,
+        "epochConstraintHit": 1,
+        "ephemerisWarningHit": 0,
+        "excludeHit": 1,
+        "maxApproximationDays": 14
+      },
+      "ephemerisWarnings": []
+    },
+    "displayed": [
+      "基准目标星目标 ID：21 个观测组合基准观测星单星观测共 441.000 秒，1 条弧段 我方卫星目标观测类型观测星光照目标光照起止时间时长基准观测星基准目标星单星观测基准观测星：阳照阳照2026/07/01 18:00:00.000（北京时间）2026/07/01 18:07:21.000（北京时间）441.000 秒"
+    ]
+  },
+  "selection": {
+    "status": 200,
+    "request": {
+      "planningWindow": {
+        "startTime": "2026-07-01T10:00:00.000Z",
+        "endTime": "2026-07-01T10:07:21.000Z"
+      },
+      "mergedTimeRange": {
+        "segments": [
+          {
+            "startTime": "2026-07-01T10:00:00.000Z",
+            "endTime": "2026-07-01T10:07:21.000Z",
+            "durationSec": 441
+          }
+        ],
+        "totalDurationSec": 441
+      },
+      "selections": [
+        {
+          "targetId": "2",
+          "targetName": "基准目标星",
+          "noradCatId": "null",
+          "weightKg": 120,
+          "firstOrbitLine": null,
+          "secondOrbitLine": null,
+          "combination": "",
+          "mergedWindows": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:07:21.000Z",
+              "durationSec": 441
+            }
+          ],
+          "totalDurationSec": 441,
+          "satellites": []
+        }
+      ]
+    },
+    "response": {
+      "recordId": "2110034655387160577",
+      "received": true,
+      "selectionCount": 1,
+      "mergedSegments": 1,
+      "message": "确认选择已保存",
+      "detail": {
+        "id": "2110034655387160577",
+        "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+        "taskType": "VISIBILITY",
+        "status": "SUCCEEDED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "errorMessage": null,
+        "remark": null,
+        "createTime": "2026-10-13T15:47:19.055",
+        "completeTime": "2026-10-13T15:47:19.079",
+        "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":14,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:07:21Z\",\"coarseStepSec\":60.0,\"fineStepSec\":1.0,\"illuminationConstraint\":{\"mode\":\"ANY\",\"observerStates\":[],\"targetStates\":[]},\"observationConstraints\":[],\"winToolReport\":null}",
+        "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":441.0}],\"durationSec\":441.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(441.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+        "skippedPairsJson": null,
+        "selectionJson": "{\"planningWindow\":{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\"},\"mergedTimeRange\":{\"segments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441},\"selections\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"noradCatId\":\"null\",\"weightKg\":120,\"firstOrbitLine\":null,\"secondOrbitLine\":null,\"combination\":\"\",\"mergedWindows\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441,\"satellites\":[]}],\"remark\":null}"
+      }
+    }
+  },
+  "confirmedTaskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+  "detail": {
+    "id": "2110034655387160577",
+    "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+    "taskType": "VISIBILITY",
+    "status": "SUCCEEDED",
+    "totalPairs": 1,
+    "completedPairs": 1,
+    "errorMessage": null,
+    "remark": null,
+    "createTime": "2026-10-13T15:47:19.055",
+    "completeTime": "2026-10-13T15:47:19.079",
+    "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":14,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:07:21Z\",\"coarseStepSec\":60.0,\"fineStepSec\":1.0,\"illuminationConstraint\":{\"mode\":\"ANY\",\"observerStates\":[],\"targetStates\":[]},\"observationConstraints\":[],\"winToolReport\":null}",
+    "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":441.0}],\"durationSec\":441.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(441.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+    "skippedPairsJson": null,
+    "selectionJson": "{\"planningWindow\":{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\"},\"mergedTimeRange\":{\"segments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441},\"selections\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"noradCatId\":\"null\",\"weightKg\":120,\"firstOrbitLine\":null,\"secondOrbitLine\":null,\"combination\":\"\",\"mergedWindows\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"durationSec\":441}],\"totalDurationSec\":441,\"satellites\":[]}],\"remark\":null}"
+  },
+  "remark": "T27修复后空间非空完整B/S验收",
+  "ground": {
+    "activePayloadType": "GROUND",
+    "profiles": [
+      {
+        "payloadType": "SPACE",
+        "legacyGroundProfile": false,
+        "minDistanceKm": 200,
+        "maxDistanceKm": 8000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": null,
+        "elevationMaxDeg": null,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null,
+        "sensorFullConeAngleDeg": null,
+        "maxDetectRangeKm": null,
+        "sunExclusionAngleDeg": null
+      },
+      {
+        "payloadType": "GROUND",
+        "legacyGroundProfile": false,
+        "minDistanceKm": 1000,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 0,
+        "angleRateDegPerSec": 1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null,
+        "sensorFullConeAngleDeg": null,
+        "maxDetectRangeKm": null,
+        "sunExclusionAngleDeg": null
+      }
+    ]
+  },
+  "spaceRestored": {
+    "activePayloadType": "SPACE",
+    "profiles": [
+      {
+        "payloadType": "SPACE",
+        "legacyGroundProfile": false,
+        "minDistanceKm": 200,
+        "maxDistanceKm": 8000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": null,
+        "elevationMaxDeg": null,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null,
+        "sensorFullConeAngleDeg": null,
+        "maxDetectRangeKm": null,
+        "sunExclusionAngleDeg": null
+      },
+      {
+        "payloadType": "GROUND",
+        "legacyGroundProfile": false,
+        "minDistanceKm": 1000,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 0,
+        "angleRateDegPerSec": 1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null,
+        "sensorFullConeAngleDeg": null,
+        "maxDetectRangeKm": null,
+        "sunExclusionAngleDeg": null
+      }
+    ]
+  },
+  "refreshedProfiles": {
+    "activePayloadType": "SPACE",
+    "profiles": [
+      {
+        "payloadType": "SPACE",
+        "legacyGroundProfile": false,
+        "minDistanceKm": 200,
+        "maxDistanceKm": 8000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": null,
+        "elevationMaxDeg": null,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null,
+        "sensorFullConeAngleDeg": null,
+        "maxDetectRangeKm": null,
+        "sunExclusionAngleDeg": null
+      },
+      {
+        "payloadType": "GROUND",
+        "legacyGroundProfile": false,
+        "minDistanceKm": 1000,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 0,
+        "angleRateDegPerSec": 1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": null,
+        "sensorFullConeAngleDeg": null,
+        "maxDetectRangeKm": null,
+        "sunExclusionAngleDeg": null
+      }
+    ]
+  },
+  "deleted": {
+    "recordId": "2110034655387160577",
+    "taskId": "60ad8ca2-6fb5-4bac-8c83-97436256dd68",
+    "status": 200,
+    "rowRemoved": true
+  },
+  "cancelStatus": {
+    "status": 200,
+    "body": {
+      "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+      "status": "CANCELLED",
+      "totalPairs": 1,
+      "completedPairs": 1,
+      "totalTargets": 1,
+      "completedTargets": 1,
+      "errorMessage": null,
+      "createdAt": "2026-10-13T15:44:11.712Z",
+      "completedAt": "2026-10-13T15:44:16.868Z"
+    }
+  },
+  "cancelResult": {
+    "status": 409,
+    "body": {
+      "error": "规划任务尚未成功完成，当前状态: CANCELLED"
+    }
+  },
+  "cancelPersisted": {
+    "status": 200,
+    "body": {
+      "total": 1,
+      "pageNumber": 1,
+      "pageSize": 20,
+      "records": [
+        {
+          "id": "2110033869622054914",
+          "taskId": "4e87ec6a-c3f2-4cd8-9042-f9f3c2c1828c",
+          "taskType": "VISIBILITY",
+          "status": "CANCELLED",
+          "totalPairs": 1,
+          "completedPairs": 1,
+          "errorMessage": null,
+          "remark": null,
+          "createTime": "2026-10-13T15:44:11.711",
+          "completeTime": "2026-10-13T15:44:16.868"
+        }
+      ]
+    }
+  },
+  "deletedDetail": {
+    "status": 404,
+    "body": null
+  },
+  "downlinkGoldenExact": true,
+  "persistedRecoveredResultExact": true,
+  "candidateJarSha256": "6f0cde71a608294585c40e512d9c649c80d826627d1c16f851b93bb1102e20cb",
+  "fixture": "本轮原新21文件对照生成的browser-fixture独立复制；保留原轨道和星下站数据，GUI保存真实profile",
+  "service": {
+    "pid": 55628,
+    "port": 18178,
+    "frontendPort": 15178,
+    "name": "root-space-final"
+  },
+  "chineseRemarkSupplement": "root-space-chinese-remark.json",
+  "closure": {
+    "pid": 55628,
+    "actualContextClose": true,
+    "mainReturned": true,
+    "processAbsent": true,
+    "portRebound": true,
+    "nonDaemonRemaining": false,
+    "shutdownLog": "T26_CONTEXT_CLOSE_BEGIN\n2026-10-13 23:50:14.508  INFO 55628 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-13 23:50:14.509  INFO 55628 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'\n2026-10-13 23:50:14.513  WARN 55628 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n sun.misc.Unsafe.park(Native Method)\n java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)\n java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)\n java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)\n java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n java.lang.Thread.run(Thread.java:750)\n2026-10-13 23:50:14.514  WARN 55628 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [System Clock] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n sun.misc.Unsafe.park(Native Method)\n java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)\n java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)\n java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)\n java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)\n java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n java.lang.Thread.run(Thread.java:750)\n2026-10-13 23:50:14.514  WARN 55628 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-planning-task-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n sun.misc.Unsafe.park(Native Method)\n java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)\n java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)\n java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n java.lang.Thread.run(Thread.java:750)\n2026-10-13 23:50:14.515  WARN 55628 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n sun.misc.Unsafe.park(Native Method)\n java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)\n java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)\n java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)\n java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n java.lang.Thread.run(Thread.java:750)\n2026-10-13 23:50:14.516  WARN 55628 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n sun.misc.Unsafe.park(Native Method)\n java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)\n java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)\n java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)\n java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n java.lang.Thread.run(Thread.java:750)\n2026-10-13 23:50:14.517  WARN 55628 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n sun.misc.Unsafe.park(Native Method)\n java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)\n java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)\n java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)\n java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n java.lang.Thread.run(Thread.java:750)\n2026-10-13 23:50:14.522  INFO 55628 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...\n2026-10-13 23:50:14.527  INFO 55628 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.\nT26_CONTEXT_CLOSE_END uncaught=0\nT26_MAIN_RETURN\n",
+    "note": "先前关闭调用WaitForExit已返回true；本次再次检查原日志、进程消失及端口复绑，不虚构已消失进程的退出码。"
+  }
+}

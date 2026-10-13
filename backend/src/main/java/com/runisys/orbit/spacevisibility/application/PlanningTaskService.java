@@ -109,7 +109,11 @@ public class PlanningTaskService {
         }
         try {
             task.markSucceeded(work.execute(task));
-            LOGGER.info("异步可见性规划任务完成：taskId={}", task.getTaskId());
+            if (task.getStatus() == PlanningTask.Status.CANCELLED) {
+                LOGGER.info("异步可见性规划任务已取消：taskId={}", task.getTaskId());
+            } else {
+                LOGGER.info("异步可见性规划任务完成：taskId={}", task.getTaskId());
+            }
         } catch (CancellationException exception) {
             task.markCancelled();
             LOGGER.info("异步可见性规划任务已取消：taskId={}", task.getTaskId());

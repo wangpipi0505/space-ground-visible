@@ -1,0 +1,18 @@
+[
+  {
+    "name": "cancel-final",
+    "pid": 45328,
+    "port": 18129,
+    "exitCode": 0,
+    "secondsToNaturalExit": 0.49289779970422387,
+    "jarSha256": "6f0cde71a608294585c40e512d9c649c80d826627d1c16f851b93bb1102e20cb",
+    "actualContextClose": true,
+    "mainReturned": true,
+    "portRebound": true,
+    "nonDaemonRemaining": false,
+    "shutdownNpe": false,
+    "shutdownAsyncCloseLogged": false,
+    "stderrBytes": 0,
+    "shutdownLog": "T26_CONTEXT_CLOSE_BEGIN\n2026-10-13 23:55:13.011  INFO 45328 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-13 23:55:13.013  INFO 45328 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'\n2026-10-13 23:55:13.019  INFO 45328 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...\n2026-10-13 23:55:13.022  INFO 45328 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.\nT26_CONTEXT_CLOSE_END uncaught=0\nT26_MAIN_RETURN\n"
+  }
+]

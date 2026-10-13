@@ -1,0 +1,2108 @@
+{
+  "passed": true,
+  "browser": "Chrome headless",
+  "locale": "zh-CN",
+  "timezone": "Asia/Shanghai",
+  "viewport": {
+    "width": 1920,
+    "height": 1200
+  },
+  "baseUrl": "http://127.0.0.1:15128",
+  "flows": {
+    "window": {
+      "browser": "Chrome",
+      "timezone": "Asia/Shanghai",
+      "evidence": [
+        {
+          "source": "原生文件选择器与实际HTTP上传",
+          "status": 201,
+          "reference": {
+            "fileId": "37a83b40-ca71-45cb-a8d6-ddfba928fd49",
+            "originalName": "trajectory-0.1s-standard.csv",
+            "sizeBytes": 1507045,
+            "contentType": "text/csv",
+            "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-8646379379809003041.csv"
+          },
+          "contentType": "multipart/form-data; boundary=----WebKitFormBoundaryePjTKcQH8GvHrhBd"
+        },
+        {
+          "source": "原生文件选择器与实际HTTP上传",
+          "status": 201,
+          "reference": {
+            "fileId": "7f3dc58b-da48-4cec-bb2e-8dbeccb89df8",
+            "originalName": "trajectory-0.1s-standard.csv",
+            "sizeBytes": 1507045,
+            "contentType": "text/csv",
+            "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-3257453764681360404.csv"
+          },
+          "contentType": "multipart/form-data; boundary=----WebKitFormBoundarylK1LdBCo82au0vMH"
+        }
+      ],
+      "request": {
+        "startOffsetSec": 1200,
+        "stepSizeSec": 10,
+        "numCalculations": 3,
+        "targetSampleStepSec": 1,
+        "trajectoryPointOutput": 1,
+        "orbitModel": "J2_NUMERICAL",
+        "satellites": [
+          {
+            "satelliteId": "MANUAL-1",
+            "name": "手工卫星1",
+            "payloads": [
+              {
+                "payloadId": "MANUAL-1-P1",
+                "payloadName": "载荷1",
+                "payloadType": "SPACE",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": -1,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              },
+              {
+                "payloadId": "MANUAL-1-P3",
+                "payloadName": "载荷3",
+                "payloadType": "GROUND",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": 180,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              }
+            ],
+            "semiMajorAxisM": 7530612,
+            "eccentricity": 0.00085,
+            "inclinationDeg": 64.8,
+            "raanDeg": 120,
+            "argumentOfPerigeeDeg": 270,
+            "meanAnomalyDeg": 30,
+            "epochUtc": "2026/07/01 10:00:00.000"
+          },
+          {
+            "satelliteId": "MANUAL-2",
+            "name": "手工卫星2",
+            "payloads": [
+              {
+                "payloadId": "MANUAL-2-P2",
+                "payloadName": "载荷2",
+                "payloadType": "SPACE",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": -1,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              },
+              {
+                "payloadId": "MANUAL-2-P4",
+                "payloadName": "载荷4",
+                "payloadType": "GROUND",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": 180,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              }
+            ],
+            "semiMajorAxisM": 7530612,
+            "eccentricity": 0.00085,
+            "inclinationDeg": 64.8,
+            "raanDeg": 120,
+            "argumentOfPerigeeDeg": 270,
+            "meanAnomalyDeg": 30,
+            "epochUtc": "2026/07/01 10:00:00.000"
+          }
+        ],
+        "ballistics": [
+          {
+            "targetId": "TARGET-1",
+            "targetName": "目标1",
+            "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-8646379379809003041.csv"
+          },
+          {
+            "targetId": "TARGET-2",
+            "targetName": "目标2",
+            "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-3257453764681360404.csv",
+            "baseLaunchUTC": "2026/07/01 07:57:10.000"
+          }
+        ]
+      },
+      "status": 200,
+      "rawTextEvidence": {
+        "path": "verification/runtime/T27/window-rawText.json",
+        "bytes": 1594513,
+        "sha256": "98d12d973ccd5d46b83144fba95eb3cdf10dadb4d3e14460f3bab8b7823f22c8"
+      },
+      "offsetEvidence": [
+        {
+          "offset": 1200,
+          "arcs": 8,
+          "satellites": 2,
+          "payloads": 4
+        },
+        {
+          "offset": 1210,
+          "arcs": 8,
+          "satellites": 2,
+          "payloads": 4
+        },
+        {
+          "offset": 1220,
+          "arcs": 8,
+          "satellites": 2,
+          "payloads": 4
+        }
+      ],
+      "originalDownloadName": "trajectory-0.1s-standard.csv",
+      "jsonDownloadName": "弹道窗口原始响应.json",
+      "consoleErrors": []
+    },
+    "fit": {
+      "browser": "Chrome",
+      "timezone": "Asia/Shanghai",
+      "source": "原生filechooser读取冻结JSON；实际POST并逐目标登记/分页/全CSV读取/原字节下载",
+      "status": 200,
+      "request": {
+        "taskName": "defaultFitTask",
+        "taskStartTime": "2026-07-01 07:56:55.000",
+        "taskEndTime": "2026-07-01 07:57:10.000",
+        "interpolationStepSec": 0.5,
+        "package102": [
+          {
+            "track_tgt_id": "TGT-001",
+            "tack3d_time_code": "2026-07-01 07:57:00.000",
+            "tack3d_tgt_pos_x": "70000000",
+            "tack3d_tgt_pos_y": "0",
+            "tack3d_tgt_pos_z": "0",
+            "tack3d_tgt_vel_x": "10000000",
+            "tack3d_tgt_vel_y": "1000000",
+            "tack3d_tgt_vel_z": "0",
+            "tack3d_tgt_acc_x": "0",
+            "tack3d_tgt_acc_y": "0",
+            "tack3d_tgt_acc_z": "0",
+            "prop_tgt_type_8": "0x01",
+            "prop_tgt_shape_8": "0x02",
+            "prop_tgt_flight_phase_8": "0x01",
+            "prob_tgt_critical_incident": "0xFF",
+            "prob_tgt_critical_incident_time_code": "",
+            "launch_time_code": "2026-07-01 07:56:55.000",
+            "launch_coord_frame": "J2000",
+            "launch_pos_x": "69950000",
+            "launch_pos_y": "-5000",
+            "launch_pos_z": "0",
+            "launch_pos_unit": "0.1m",
+            "impact_time_code": "2026-07-01 07:57:10.000",
+            "impact_coord_frame": "J2000",
+            "impact_pos_x": "70100000",
+            "impact_pos_y": "10000",
+            "impact_pos_z": "0",
+            "impact_pos_unit": "0.1m"
+          },
+          {
+            "track_tgt_id": "TGT-001",
+            "tack3d_time_code": "2026-07-01 07:57:01.000",
+            "tack3d_tgt_pos_x": "70010000",
+            "tack3d_tgt_pos_y": "1000",
+            "tack3d_tgt_pos_z": "0",
+            "tack3d_tgt_vel_x": "10000000",
+            "tack3d_tgt_vel_y": "1000000",
+            "tack3d_tgt_vel_z": "0",
+            "tack3d_tgt_acc_x": "0",
+            "tack3d_tgt_acc_y": "0",
+            "tack3d_tgt_acc_z": "0",
+            "prop_tgt_type_8": "0x01",
+            "prop_tgt_shape_8": "0x02",
+            "prop_tgt_flight_phase_8": "0x01",
+            "prob_tgt_critical_incident": "0xFF",
+            "prob_tgt_critical_incident_time_code": "",
+            "launch_time_code": "2026-07-01 07:56:55.000",
+            "launch_coord_frame": "J2000",
+            "launch_pos_x": "69950000",
+            "launch_pos_y": "-5000",
+            "launch_pos_z": "0",
+            "launch_pos_unit": "0.1m",
+            "impact_time_code": "2026-07-01 07:57:10.000",
+            "impact_coord_frame": "J2000",
+            "impact_pos_x": "70100000",
+            "impact_pos_y": "10000",
+            "impact_pos_z": "0",
+            "impact_pos_unit": "0.1m"
+          },
+          {
+            "track_tgt_id": "TGT-001",
+            "tack3d_time_code": "2026-07-01 07:57:02.000",
+            "tack3d_tgt_pos_x": "70020000",
+            "tack3d_tgt_pos_y": "2000",
+            "tack3d_tgt_pos_z": "0",
+            "tack3d_tgt_vel_x": "10000000",
+            "tack3d_tgt_vel_y": "1000000",
+            "tack3d_tgt_vel_z": "0",
+            "tack3d_tgt_acc_x": "0",
+            "tack3d_tgt_acc_y": "0",
+            "tack3d_tgt_acc_z": "0",
+            "prop_tgt_type_8": "0x01",
+            "prop_tgt_shape_8": "0x02",
+            "prop_tgt_flight_phase_8": "0x01",
+            "prob_tgt_critical_incident": "0xFF",
+            "prob_tgt_critical_incident_time_code": "",
+            "launch_time_code": "2026-07-01 07:56:55.000",
+            "launch_coord_frame": "J2000",
+            "launch_pos_x": "69950000",
+            "launch_pos_y": "-5000",
+            "launch_pos_z": "0",
+            "launch_pos_unit": "0.1m",
+            "impact_time_code": "2026-07-01 07:57:10.000",
+            "impact_coord_frame": "J2000",
+            "impact_pos_x": "70100000",
+            "impact_pos_y": "10000",
+            "impact_pos_z": "0",
+            "impact_pos_unit": "0.1m"
+          },
+          {
+            "track_tgt_id": "TGT-001",
+            "tack3d_time_code": "2026-07-01 07:57:03.000",
+            "tack3d_tgt_pos_x": "70030000",
+            "tack3d_tgt_pos_y": "3000",
+            "tack3d_tgt_pos_z": "0",
+            "tack3d_tgt_vel_x": "10000000",
+            "tack3d_tgt_vel_y": "1000000",
+            "tack3d_tgt_vel_z": "0",
+            "tack3d_tgt_acc_x": "0",
+            "tack3d_tgt_acc_y": "0",
+            "tack3d_tgt_acc_z": "0",
+            "prop_tgt_type_8": "0x01",
+            "prop_tgt_shape_8": "0x02",
+            "prop_tgt_flight_phase_8": "0x01",
+            "prob_tgt_critical_incident": "0xFF",
+            "prob_tgt_critical_incident_time_code": "",
+            "launch_time_code": "2026-07-01 07:56:55.000",
+            "launch_coord_frame": "J2000",
+            "launch_pos_x": "69950000",
+            "launch_pos_y": "-5000",
+            "launch_pos_z": "0",
+            "launch_pos_unit": "0.1m",
+            "impact_time_code": "2026-07-01 07:57:10.000",
+            "impact_coord_frame": "J2000",
+            "impact_pos_x": "70100000",
+            "impact_pos_y": "10000",
+            "impact_pos_z": "0",
+            "impact_pos_unit": "0.1m"
+          },
+          {
+            "track_tgt_id": "TGT-002",
+            "tack3d_time_code": "2026-07-01 07:57:00.000",
+            "tack3d_tgt_pos_x": "68000000",
+            "tack3d_tgt_pos_y": "100000",
+            "tack3d_tgt_pos_z": "50000",
+            "tack3d_tgt_vel_x": "0",
+            "tack3d_tgt_vel_y": "76000000",
+            "tack3d_tgt_vel_z": "100000",
+            "tack3d_tgt_acc_x": "0",
+            "tack3d_tgt_acc_y": "0",
+            "tack3d_tgt_acc_z": "0",
+            "prop_tgt_type_8": "0x02",
+            "prop_tgt_shape_8": "0xFF",
+            "prop_tgt_flight_phase_8": "0xFF",
+            "prob_tgt_critical_incident": "0xFF",
+            "prob_tgt_critical_incident_time_code": "",
+            "launch_time_code": "2026-07-01 07:56:55.000",
+            "launch_coord_frame": "J2000",
+            "launch_pos_x": "68000000",
+            "launch_pos_y": "-280000",
+            "launch_pos_z": "49500",
+            "launch_pos_unit": "0.1m",
+            "impact_time_code": "2026-07-01 07:57:10.000",
+            "impact_coord_frame": "J2000",
+            "impact_pos_x": "68000000",
+            "impact_pos_y": "860000",
+            "impact_pos_z": "51000",
+            "impact_pos_unit": "0.1m"
+          },
+          {
+            "track_tgt_id": "TGT-002",
+            "tack3d_time_code": "2026-07-01 07:57:01.000",
+            "tack3d_tgt_pos_x": "68000000",
+            "tack3d_tgt_pos_y": "176000",
+            "tack3d_tgt_pos_z": "50100",
+            "tack3d_tgt_vel_x": "0",
+            "tack3d_tgt_vel_y": "76000000",
+            "tack3d_tgt_vel_z": "100000",
+            "tack3d_tgt_acc_x": "0",
+            "tack3d_tgt_acc_y": "0",
+            "tack3d_tgt_acc_z": "0",
+            "prop_tgt_type_8": "0x02",
+            "prop_tgt_shape_8": "0xFF",
+            "prop_tgt_flight_phase_8": "0xFF",
+            "prob_tgt_critical_incident": "0xFF",
+            "prob_tgt_critical_incident_time_code": "",
+            "launch_time_code": "2026-07-01 07:56:55.000",
+            "launch_coord_frame": "J2000",
+            "launch_pos_x": "68000000",
+            "launch_pos_y": "-280000",
+            "launch_pos_z": "49500",
+            "launch_pos_unit": "0.1m",
+            "impact_time_code": "2026-07-01 07:57:10.000",
+            "impact_coord_frame": "J2000",
+            "impact_pos_x": "68000000",
+            "impact_pos_y": "860000",
+            "impact_pos_z": "51000",
+            "impact_pos_unit": "0.1m"
+          },
+          {
+            "track_tgt_id": "TGT-002",
+            "tack3d_time_code": "2026-07-01 07:57:02.000",
+            "tack3d_tgt_pos_x": "68000000",
+            "tack3d_tgt_pos_y": "252000",
+            "tack3d_tgt_pos_z": "50200",
+            "tack3d_tgt_vel_x": "0",
+            "tack3d_tgt_vel_y": "76000000",
+            "tack3d_tgt_vel_z": "100000",
+            "tack3d_tgt_acc_x": "0",
+            "tack3d_tgt_acc_y": "0",
+            "tack3d_tgt_acc_z": "0",
+            "prop_tgt_type_8": "0x02",
+            "prop_tgt_shape_8": "0xFF",
+            "prop_tgt_flight_phase_8": "0xFF",
+            "prob_tgt_critical_incident": "0xFF",
+            "prob_tgt_critical_incident_time_code": "",
+            "launch_time_code": "2026-07-01 07:56:55.000",
+            "launch_coord_frame": "J2000",
+            "launch_pos_x": "68000000",
+            "launch_pos_y": "-280000",
+            "launch_pos_z": "49500",
+            "launch_pos_unit": "0.1m",
+            "impact_time_code": "2026-07-01 07:57:10.000",
+            "impact_coord_frame": "J2000",
+            "impact_pos_x": "68000000",
+            "impact_pos_y": "860000",
+            "impact_pos_z": "51000",
+            "impact_pos_unit": "0.1m"
+          },
+          {
+            "track_tgt_id": "TGT-002",
+            "tack3d_time_code": "2026-07-01 07:57:03.000",
+            "tack3d_tgt_pos_x": "68000000",
+            "tack3d_tgt_pos_y": "328000",
+            "tack3d_tgt_pos_z": "50300",
+            "tack3d_tgt_vel_x": "0",
+            "tack3d_tgt_vel_y": "76000000",
+            "tack3d_tgt_vel_z": "100000",
+            "tack3d_tgt_acc_x": "0",
+            "tack3d_tgt_acc_y": "0",
+            "tack3d_tgt_acc_z": "0",
+            "prop_tgt_type_8": "0x02",
+            "prop_tgt_shape_8": "0xFF",
+            "prop_tgt_flight_phase_8": "0xFF",
+            "prob_tgt_critical_incident": "0xFF",
+            "prob_tgt_critical_incident_time_code": "",
+            "launch_time_code": "2026-07-01 07:56:55.000",
+            "launch_coord_frame": "J2000",
+            "launch_pos_x": "68000000",
+            "launch_pos_y": "-280000",
+            "launch_pos_z": "49500",
+            "launch_pos_unit": "0.1m",
+            "impact_time_code": "2026-07-01 07:57:10.000",
+            "impact_coord_frame": "J2000",
+            "impact_pos_x": "68000000",
+            "impact_pos_y": "860000",
+            "impact_pos_z": "51000",
+            "impact_pos_unit": "0.1m"
+          }
+        ]
+      },
+      "rawTextEvidence": {
+        "path": "verification/runtime/T27/fit-rawText.json",
+        "bytes": 3159,
+        "sha256": "4a51151a49ac08fac45199615491dda30d7eb0988eef0afd158f8ac9fd52aef5"
+      },
+      "targetEvidence": [
+        {
+          "targetId": "TGT-001",
+          "model": "BALLISTIC_MIDCOURSE_TWO_BODY",
+          "pointCount": 1633,
+          "graphPathCounts": [
+            1633,
+            1633,
+            1633,
+            1633
+          ],
+          "originalPoints": 4,
+          "markers": 16,
+          "warnings": [
+            "已根据package102状态通过二体反向地面交点推算发射时间。推算发射时间=2026-07-01 07:52:18.000, 第一个package102时间=2026-07-01 07:57:00.000, 反推秒数=282.000",
+            "已根据package102状态通过二体正向地面交点推算落点时间。推算落点时间=2026-07-01 08:05:54.000, 最后一个package102时间=2026-07-01 07:57:03.000, 正推秒数=531.000",
+            "taskStartTime是任务/文件时间，不是物理发射时间。任务开始时间=2026-07-01 07:56:55.000, 推算发射时间=2026-07-01 07:52:18.000",
+            "taskEndTime是任务/文件时间，不是物理落点时间。任务结束时间=2026-07-01 07:57:10.000, 推算落点时间=2026-07-01 08:05:54.000",
+            "launch_time_code和发射点位置仅作为参考使用。推算发射时间=2026-07-01 07:52:18.000, 参考发射时间=2026-07-01 07:56:55.000, 时间差秒=-277.000, 位置偏差米=618718.118, 坐标系=J2000, 单位=0.1m",
+            "impact_time_code和落点位置仅作为参考使用。推算落点时间=2026-07-01 08:05:54.000, 参考落点时间=2026-07-01 07:57:10.000, 时间差秒=524.000, 位置偏差米=634931.133, 坐标系=J2000, 单位=0.1m",
+            "输出时间范围超出package102轨迹点覆盖区间，区间外已使用端点状态进行二体RK4外推。",
+            "Package102拟合在原始点之间使用受端点约束的Hermite平滑插值，区间外使用二体RK4动力学外推；命中package102原始时刻时保留源样本，以保证严格通过原始点。"
+          ],
+          "downloadName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv"
+        },
+        {
+          "targetId": "TGT-002",
+          "model": "ORBITAL_TWO_BODY",
+          "pointCount": 31,
+          "graphPathCounts": [
+            31,
+            31,
+            31,
+            31
+          ],
+          "originalPoints": 4,
+          "markers": 16,
+          "warnings": [
+            "在搜索范围内未能推算发射地面交点，使用launch_time_code作为兜底参考。发射时间=2026-07-01 07:56:55.000",
+            "在搜索范围内未能推算落地交点，使用秒级精度impact_time_code作为兜底参考。落点时间=2026-07-01 07:57:10.000",
+            "launch_time_code和发射点位置仅作为参考使用。推算发射时间=2026-07-01 07:56:55.000, 参考发射时间=2026-07-01 07:56:55.000, 时间差秒=0.000, 位置偏差米=163.169, 坐标系=J2000, 单位=0.1m",
+            "impact_time_code和落点位置仅作为参考使用。推算落点时间=2026-07-01 07:57:10.000, 参考落点时间=2026-07-01 07:57:10.000, 时间差秒=0.000, 位置偏差米=288.768, 坐标系=J2000, 单位=0.1m",
+            "输出时间范围超出package102轨迹点覆盖区间，区间外已使用端点状态进行二体RK4外推。",
+            "Package102拟合在原始点之间使用受端点约束的Hermite平滑插值，区间外使用二体RK4动力学外推；命中package102原始时刻时保留源样本，以保证严格通过原始点。"
+          ],
+          "downloadName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_231406_896.csv"
+        }
+      ],
+      "files": [
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/register-result",
+          "method": "POST",
+          "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T27\\\\nio\\\\storage\\\\results\\\\fit-77776907882652267\\\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv\",\"taskName\":\"defaultFitTask\",\"targetId\":\"TGT-001\"}",
+          "status": 201,
+          "type": "application/json",
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/fit-files-0-rawText.json",
+            "bytes": 421,
+            "sha256": "76f1b71824c063fef4ca92d04aa039fa55faf70ca1c23dce5822528403444ba8"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/register-result",
+          "method": "POST",
+          "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T27\\\\nio\\\\storage\\\\results\\\\fit-77776907882652267\\\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_231406_896.csv\",\"taskName\":\"defaultFitTask\",\"targetId\":\"TGT-002\"}",
+          "status": 201,
+          "type": "application/json",
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/fit-files-1-rawText.json",
+            "bytes": 419,
+            "sha256": "0c05e6b71477ccb5f1e13baea150ae3317798f707103e072eb79008a729f6d98"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d8ea5af7-c30f-4e30-a093-202bcd6ac027/download",
+          "method": "GET",
+          "request": null,
+          "status": 200,
+          "type": "text/csv",
+          "disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_231406_896.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_231406_896.csv"
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d8ea5af7-c30f-4e30-a093-202bcd6ac027/preview?page=1&limit=50",
+          "method": "GET",
+          "request": null,
+          "status": 200,
+          "type": "application/json",
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/fit-files-3-rawText.json",
+            "bytes": 7967,
+            "sha256": "fe9c984f7c94388c083190d9922dc14371f55b59ec9d978418c598abcf27b03b"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/57941ac0-cbb8-4fbd-b451-588d38c8e21a/download",
+          "method": "GET",
+          "request": null,
+          "status": 200,
+          "type": "text/csv",
+          "disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv"
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/57941ac0-cbb8-4fbd-b451-588d38c8e21a/preview?page=1&limit=50",
+          "method": "GET",
+          "request": null,
+          "status": 200,
+          "type": "application/json",
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/fit-files-5-rawText.json",
+            "bytes": 12539,
+            "sha256": "ca77336b9a4b3adb2791c42ab94524b9ebcb92719d60f87707c0d67d4131bc55"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/57941ac0-cbb8-4fbd-b451-588d38c8e21a/preview?page=2&limit=50",
+          "method": "GET",
+          "request": null,
+          "status": 200,
+          "type": "application/json",
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/fit-files-6-rawText.json",
+            "bytes": 12541,
+            "sha256": "92dc64ab7bb6e47e6ce9fa43ae9edcdeeb10a08d65d6d78030a7c4abd1e693c1"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/57941ac0-cbb8-4fbd-b451-588d38c8e21a/download",
+          "method": "GET",
+          "request": null,
+          "status": 200,
+          "type": "text/csv",
+          "disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv"
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d8ea5af7-c30f-4e30-a093-202bcd6ac027/download",
+          "method": "GET",
+          "request": null,
+          "status": 200,
+          "type": "text/csv",
+          "disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_231406_896.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_231406_896.csv"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    "simulation": {
+      "timezone": "Asia/Shanghai",
+      "status": 200,
+      "request": {
+        "taskName": "defaultSimTask",
+        "targetId": "SIM-001",
+        "launchTimeUtc": "2026-06-04 04:00:00.000",
+        "impactTimeUtc": "2026-06-04 04:42:55.000",
+        "taskStartTime": "2026-06-04 04:00:00.000",
+        "taskEndTime": "2026-06-04 04:42:55.000",
+        "launchPointX": 2167790.227,
+        "launchPointY": 4775481.109,
+        "launchPointZ": 3618557.253,
+        "launchPointCoordFrame": "J2000",
+        "launchPointUnit": "m",
+        "impactPointX": 3578635.76,
+        "impactPointY": 3522525.227,
+        "impactPointZ": 3919735.591,
+        "impactPointCoordFrame": "J2000",
+        "impactPointUnit": "m",
+        "outputPointDurationSec": 1,
+        "phaseEvents": []
+      },
+      "rawEvidence": {
+        "path": "verification/runtime/T27/simulation-raw.json",
+        "bytes": 625,
+        "sha256": "373a40d5f991beb0cef049f45ea61b6eaa1e063c961e64930b13ddc095b15b3b"
+      },
+      "pathCounts": [
+        2576,
+        2576,
+        2576,
+        2576
+      ],
+      "preview": {
+        "fileId": "d36702dd-9c61-4a8c-aa2d-03268eccd4dd",
+        "header": [
+          "YYYY",
+          "MM",
+          "dd",
+          "HH",
+          "mm",
+          "ss.SSS",
+          "ECEF_X",
+          "ECEF_Y",
+          "ECEF_Z",
+          "energy",
+          "dt",
+          "ECI_X",
+          "ECI_Y",
+          "ECI_Z",
+          "ECI_VX",
+          "ECI_VY",
+          "ECI_VZ",
+          "ECEF_Vx",
+          "ECEF_Vy",
+          "ECEF_Vz",
+          "isOriginal"
+        ],
+        "actualRowCount": 50,
+        "totalRows": 2576,
+        "page": 2,
+        "limit": 50,
+        "metadata": {}
+      },
+      "reference": {
+        "fileId": "d36702dd-9c61-4a8c-aa2d-03268eccd4dd",
+        "originalName": "defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_231108_315.csv",
+        "sizeBytes": 561736,
+        "contentType": "text/csv",
+        "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\results\\fit-6532639337760261103\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_231108_315.csv"
+      },
+      "winStatus": 200,
+      "winRequest": {
+        "startOffsetSec": 0,
+        "stepSizeSec": 10,
+        "numCalculations": 1,
+        "targetSampleStepSec": 1,
+        "trajectoryPointOutput": 1,
+        "orbitModel": "J2_NUMERICAL",
+        "satellites": [
+          {
+            "satelliteId": "MANUAL-1",
+            "name": "手工卫星1",
+            "payloads": [
+              {
+                "payloadId": "MANUAL-1-P1",
+                "payloadName": "载荷1",
+                "payloadType": "SPACE",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": 0,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": 0.07
+              }
+            ],
+            "semiMajorAxisM": 7530612,
+            "eccentricity": 0.00085,
+            "inclinationDeg": 64.8,
+            "raanDeg": 120,
+            "argumentOfPerigeeDeg": 270,
+            "meanAnomalyDeg": 30,
+            "epochUtc": "2026/06/04 04:00:00.000"
+          }
+        ],
+        "ballistics": [
+          {
+            "targetId": "SIM-001",
+            "targetName": "模拟/defaultSimTask/SIM-001",
+            "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\results\\fit-6532639337760261103\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_231108_315.csv"
+          }
+        ]
+      },
+      "winRawEvidence": {
+        "path": "verification/runtime/T27/simulation-winRaw.json",
+        "bytes": 992528,
+        "sha256": "3e448939f191dd92ffc7ef591b1e4fd913c7aa366ba6632054ff5074024d2811"
+      },
+      "auxiliary": [
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T27\\\\nio\\\\storage\\\\results\\\\fit-6532639337760261103\\\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_231108_315.csv\",\"taskName\":\"defaultSimTask\",\"targetId\":\"SIM-001\"}",
+          "rawEvidence": {
+            "path": "verification/runtime/T27/simulation-auxiliary-0-raw.json",
+            "bytes": 423,
+            "sha256": "e14710342a370064992d14056ff943d81b1210bd459a22748ec94ee17c6c099d"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d36702dd-9c61-4a8c-aa2d-03268eccd4dd/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d36702dd-9c61-4a8c-aa2d-03268eccd4dd/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/simulation-auxiliary-2-raw.json",
+            "bytes": 13388,
+            "sha256": "2e78c001928f0dc581ee25adda3b526a2e42a1e0a7c62ea057cba5241018f213"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d36702dd-9c61-4a8c-aa2d-03268eccd4dd/preview?page=2&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/simulation-auxiliary-3-raw.json",
+            "bytes": 13391,
+            "sha256": "33ec21122af5ddfd772be6218af37bd37e966de7e1803f684a2b0886efa725f0"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d36702dd-9c61-4a8c-aa2d-03268eccd4dd/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d36702dd-9c61-4a8c-aa2d-03268eccd4dd/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/simulation-auxiliary-5-raw.json",
+            "bytes": 13388,
+            "sha256": "2e78c001928f0dc581ee25adda3b526a2e42a1e0a7c62ea057cba5241018f213"
+          }
+        }
+      ],
+      "errors": [],
+      "pageErrors": []
+    },
+    "retime": {
+      "timezone": "Asia/Shanghai",
+      "inputReference": {
+        "fileId": "a7730fbf-3981-4e5a-a3a3-d189a5220331",
+        "originalName": "trajectory-0.csv",
+        "sizeBytes": 561736,
+        "contentType": "text/csv",
+        "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-915697532275264250.csv"
+      },
+      "computations": [
+        {
+          "name": "default",
+          "status": 200,
+          "request": {
+            "taskName": "T04-retime",
+            "targetId": "RETIMED-TGT",
+            "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-915697532275264250.csv",
+            "launchTimeUtc": "2026-07-02 07:57:00.000"
+          },
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-computations-0-raw.json",
+            "bytes": 484,
+            "sha256": "bcaa1d4197fbfbc1000b92ed112eba22a40a08177bc0fe2592871376107bd77d"
+          },
+          "pathCounts": [
+            2576,
+            2576,
+            2576,
+            2576
+          ],
+          "originalMarkers": 0
+        },
+        {
+          "name": "existing-simulation",
+          "status": 200,
+          "request": {
+            "taskName": "T25-existing-simulation",
+            "targetId": "RETIMED-TGT",
+            "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\results\\fit-2018456422795684216\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_231141_133.csv",
+            "launchTimeUtc": "2026-07-02 07:57:00.000"
+          },
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-computations-1-raw.json",
+            "bytes": 510,
+            "sha256": "32d575fcb2e1de32e10331977e5eb43cb8863a5004c92012d4838197ab5fa415"
+          },
+          "pathCounts": [
+            2576,
+            2576,
+            2576,
+            2576
+          ],
+          "originalMarkers": 0
+        },
+        {
+          "name": "retime-again",
+          "status": 200,
+          "request": {
+            "taskName": "T25-retime-again",
+            "targetId": "RETIMED-TGT",
+            "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\results\\fit-4996642799226174044\\T25-existing-simulation_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_231141_406.csv",
+            "launchTimeUtc": "2026-07-02 07:57:00.000"
+          },
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-computations-2-raw.json",
+            "bytes": 496,
+            "sha256": "8109f8277c01a882b836cc1422197bb6614f0599245d4a692a32e9c2179ef9da"
+          },
+          "pathCounts": [
+            2576,
+            2576,
+            2576,
+            2576
+          ],
+          "originalMarkers": 0
+        }
+      ],
+      "preview": {
+        "fileId": "d0ecb881-b622-435e-b6ec-3fb23bcc8140",
+        "header": [
+          "YYYY",
+          "MM",
+          "dd",
+          "HH",
+          "mm",
+          "ss.SSS",
+          "ECEF_X",
+          "ECEF_Y",
+          "ECEF_Z",
+          "energy",
+          "dt",
+          "ECI_X",
+          "ECI_Y",
+          "ECI_Z",
+          "ECI_VX",
+          "ECI_VY",
+          "ECI_VZ",
+          "ECEF_Vx",
+          "ECEF_Vy",
+          "ECEF_Vz",
+          "isOriginal",
+          "timeIntervalMs"
+        ],
+        "actualRowCount": 50,
+        "totalRows": 2576,
+        "page": 2,
+        "limit": 50,
+        "metadata": {}
+      },
+      "simulationStatus": 200,
+      "windowId": "b95fe1ef-9f45-42d7-839d-304f9cdace64",
+      "windowReference": {
+        "fileId": "b95fe1ef-9f45-42d7-839d-304f9cdace64",
+        "originalName": "T25-retime-again_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_231141_768.csv",
+        "sizeBytes": 593970,
+        "contentType": "text/csv",
+        "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\results\\fit-5182862820106586954\\T25-retime-again_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_231141_768.csv"
+      },
+      "winStatus": 200,
+      "winRequest": {
+        "startOffsetSec": 0,
+        "stepSizeSec": 10,
+        "numCalculations": 1,
+        "targetSampleStepSec": 1,
+        "trajectoryPointOutput": 1,
+        "orbitModel": "J2_NUMERICAL",
+        "satellites": [
+          {
+            "satelliteId": "MANUAL-1",
+            "name": "手工卫星1",
+            "payloads": [
+              {
+                "payloadId": "MANUAL-1-P1",
+                "payloadName": "载荷1",
+                "payloadType": "SPACE",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": 0,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": 0.07
+              }
+            ],
+            "semiMajorAxisM": 7530612,
+            "eccentricity": 0.00085,
+            "inclinationDeg": 64.8,
+            "raanDeg": 120,
+            "argumentOfPerigeeDeg": 270,
+            "meanAnomalyDeg": 30,
+            "epochUtc": "2026/07/02 07:57:00.000"
+          }
+        ],
+        "ballistics": [
+          {
+            "targetId": "RETIMED-TGT",
+            "targetName": "重定时/T25-retime-again/RETIMED-TGT",
+            "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\results\\fit-5182862820106586954\\T25-retime-again_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_231141_768.csv"
+          }
+        ]
+      },
+      "winRawEvidence": {
+        "path": "verification/runtime/T27/retime-winRaw.json",
+        "bytes": 1193384,
+        "sha256": "a97ac52654ecc2bd489c6dea3a796dc59a0468f9155049f95d55034807e88187"
+      },
+      "auxiliary": [
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files",
+          "status": 201,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-0-raw.json",
+            "bytes": 255,
+            "sha256": "9d1ab4286e3dd608205c5fbcbfc783693730ebc1d5e09f3c56f0ecde57e1c362"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/a7730fbf-3981-4e5a-a3a3-d189a5220331/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-1-raw.json",
+            "bytes": 13388,
+            "sha256": "071af72b501c151c1fbc77b7ca7719777e037d336c25ab46dd8271a021087888"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T27\\\\nio\\\\storage\\\\results\\\\fit-1881435911920619175\\\\T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_231140_147.csv\",\"taskName\":\"T04-retime\",\"targetId\":\"RETIMED-TGT\"}",
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-2-raw.json",
+            "bytes": 375,
+            "sha256": "8bb0b7a1c5001c3c4f3e2c104e9bc214e46f04e1d7a1831422ac75b3e5f3dea9"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d0ecb881-b622-435e-b6ec-3fb23bcc8140/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d0ecb881-b622-435e-b6ec-3fb23bcc8140/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-4-raw.json",
+            "bytes": 14092,
+            "sha256": "3f912c7ad5148526fbb2b5b920bccb3fe89efaeee5f9da0771858eec7f8e274a"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d0ecb881-b622-435e-b6ec-3fb23bcc8140/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/d0ecb881-b622-435e-b6ec-3fb23bcc8140/preview?page=2&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-6-raw.json",
+            "bytes": 14108,
+            "sha256": "beed27710c0be740a3d07244d75503da6cfd895de4ce3f9754d5a4b63b03b8ad"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T27\\\\nio\\\\storage\\\\results\\\\fit-2018456422795684216\\\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_231141_133.csv\",\"taskName\":\"defaultSimTask\",\"targetId\":\"SIM-001\"}",
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-7-raw.json",
+            "bytes": 423,
+            "sha256": "49e3c4518719d630c2bd16e162498e50d0839a93c8e3f36738a1c10a8ba3fab9"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/43d7475e-93fb-46f6-9259-74bfabef447b/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/43d7475e-93fb-46f6-9259-74bfabef447b/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-9-raw.json",
+            "bytes": 13388,
+            "sha256": "aa6208157d6b28be516209b9fae7ca48cbdb945e84d3e6b95df848e82d8750f3"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/43d7475e-93fb-46f6-9259-74bfabef447b/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-10-raw.json",
+            "bytes": 13388,
+            "sha256": "aa6208157d6b28be516209b9fae7ca48cbdb945e84d3e6b95df848e82d8750f3"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T27\\\\nio\\\\storage\\\\results\\\\fit-4996642799226174044\\\\T25-existing-simulation_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_231141_406.csv\",\"taskName\":\"T25-existing-simulation\",\"targetId\":\"RETIMED-TGT\"}",
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-11-raw.json",
+            "bytes": 401,
+            "sha256": "7b852ba31fa59b22d8bab5c4d4d4faaff0211baebed640f0ce41fd8978312b53"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/06cf9a99-aaec-4fac-b226-8d29aafb5500/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/06cf9a99-aaec-4fac-b226-8d29aafb5500/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-13-raw.json",
+            "bytes": 14092,
+            "sha256": "e0ffd6d1b33126262e7b4c3d1e684d79b5ceeee3fc56db37a45efc29bd4594fc"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/06cf9a99-aaec-4fac-b226-8d29aafb5500/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/06cf9a99-aaec-4fac-b226-8d29aafb5500/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-15-raw.json",
+            "bytes": 14092,
+            "sha256": "e0ffd6d1b33126262e7b4c3d1e684d79b5ceeee3fc56db37a45efc29bd4594fc"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T27\\\\nio\\\\storage\\\\results\\\\fit-5182862820106586954\\\\T25-retime-again_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_231141_768.csv\",\"taskName\":\"T25-retime-again\",\"targetId\":\"RETIMED-TGT\"}",
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-16-raw.json",
+            "bytes": 387,
+            "sha256": "8629d9d90be4937ed3ce125f63c19ad7834c5e8fd3f2685f25747b55ad0d0e3e"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/b95fe1ef-9f45-42d7-839d-304f9cdace64/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/b95fe1ef-9f45-42d7-839d-304f9cdace64/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-18-raw.json",
+            "bytes": 14092,
+            "sha256": "d106589bcda9c89c027803c615a0bf9c180c8557d84500eee751c1e72edc8278"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/b95fe1ef-9f45-42d7-839d-304f9cdace64/download",
+          "status": 200,
+          "request": null
+        },
+        {
+          "url": "http://127.0.0.1:15128/api/v1/ballistic/files/b95fe1ef-9f45-42d7-839d-304f9cdace64/preview?page=1&limit=50",
+          "status": 200,
+          "request": null,
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-auxiliary-20-raw.json",
+            "bytes": 14092,
+            "sha256": "d106589bcda9c89c027803c615a0bf9c180c8557d84500eee751c1e72edc8278"
+          }
+        }
+      ],
+      "errors": [],
+      "pageErrors": []
+    },
+    "window-edge": {
+      "evidence": [
+        {
+          "name": "点输出0三偏移",
+          "request": {
+            "startOffsetSec": 1200,
+            "stepSizeSec": 10,
+            "numCalculations": 3,
+            "targetSampleStepSec": 1,
+            "trajectoryPointOutput": 0,
+            "orbitModel": "J2_NUMERICAL",
+            "satellites": [
+              {
+                "satelliteId": "MANUAL-1",
+                "name": "手工卫星1",
+                "payloads": [
+                  {
+                    "payloadId": "MANUAL-1-P1",
+                    "payloadName": "载荷1",
+                    "payloadType": "SPACE",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": -1,
+                    "sunAvoidHalfAngleDeg": 0,
+                    "startupAngleRateDegPerSec": -1
+                  },
+                  {
+                    "payloadId": "MANUAL-1-P3",
+                    "payloadName": "载荷3",
+                    "payloadType": "GROUND",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": 180,
+                    "sunAvoidHalfAngleDeg": 0,
+                    "startupAngleRateDegPerSec": -1
+                  }
+                ],
+                "semiMajorAxisM": 7530612,
+                "eccentricity": 0.00085,
+                "inclinationDeg": 64.8,
+                "raanDeg": 120,
+                "argumentOfPerigeeDeg": 270,
+                "meanAnomalyDeg": 30,
+                "epochUtc": "2026/07/01 10:00:00.000"
+              },
+              {
+                "satelliteId": "MANUAL-2",
+                "name": "手工卫星2",
+                "payloads": [
+                  {
+                    "payloadId": "MANUAL-2-P2",
+                    "payloadName": "载荷2",
+                    "payloadType": "SPACE",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": -1,
+                    "sunAvoidHalfAngleDeg": 0,
+                    "startupAngleRateDegPerSec": -1
+                  },
+                  {
+                    "payloadId": "MANUAL-2-P4",
+                    "payloadName": "载荷4",
+                    "payloadType": "GROUND",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": 180,
+                    "sunAvoidHalfAngleDeg": 0,
+                    "startupAngleRateDegPerSec": -1
+                  }
+                ],
+                "semiMajorAxisM": 7530612,
+                "eccentricity": 0.00085,
+                "inclinationDeg": 64.8,
+                "raanDeg": 120,
+                "argumentOfPerigeeDeg": 270,
+                "meanAnomalyDeg": 30,
+                "epochUtc": "2026/07/01 10:00:00.000"
+              }
+            ],
+            "ballistics": [
+              {
+                "targetId": "TARGET-1",
+                "targetName": "目标1",
+                "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-8646379379809003041.csv"
+              },
+              {
+                "targetId": "TARGET-2",
+                "targetName": "目标2",
+                "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-3260519479324242723.csv",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000"
+              }
+            ]
+          },
+          "status": 200,
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/window-edge-evidence-0-rawText.json",
+            "bytes": 63145,
+            "sha256": "443488636eb68e080dbfd0e27b33e7f9b5f843b78148d732ba65e074130f61a4"
+          }
+        },
+        {
+          "name": "双星不同根数单偏移",
+          "request": {
+            "startOffsetSec": 1200,
+            "stepSizeSec": 10,
+            "numCalculations": 1,
+            "targetSampleStepSec": 1,
+            "trajectoryPointOutput": 1,
+            "orbitModel": "J2_NUMERICAL",
+            "satellites": [
+              {
+                "satelliteId": "MANUAL-1",
+                "name": "手工卫星1",
+                "payloads": [
+                  {
+                    "payloadId": "MANUAL-1-P1",
+                    "payloadName": "载荷1",
+                    "payloadType": "SPACE",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": -1,
+                    "sunAvoidHalfAngleDeg": 0,
+                    "startupAngleRateDegPerSec": -1
+                  },
+                  {
+                    "payloadId": "MANUAL-1-P3",
+                    "payloadName": "载荷3",
+                    "payloadType": "GROUND",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": 180,
+                    "sunAvoidHalfAngleDeg": 0,
+                    "startupAngleRateDegPerSec": -1
+                  }
+                ],
+                "semiMajorAxisM": 7530612,
+                "eccentricity": 0.00085,
+                "inclinationDeg": 64.8,
+                "raanDeg": 120,
+                "argumentOfPerigeeDeg": 270,
+                "meanAnomalyDeg": 30,
+                "epochUtc": "2026/07/01 10:00:00.000"
+              },
+              {
+                "satelliteId": "MANUAL-2",
+                "name": "手工卫星2",
+                "payloads": [
+                  {
+                    "payloadId": "MANUAL-2-P2",
+                    "payloadName": "载荷2",
+                    "payloadType": "SPACE",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": -1,
+                    "sunAvoidHalfAngleDeg": 0,
+                    "startupAngleRateDegPerSec": -1
+                  },
+                  {
+                    "payloadId": "MANUAL-2-P4",
+                    "payloadName": "载荷4",
+                    "payloadType": "GROUND",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": 180,
+                    "sunAvoidHalfAngleDeg": 0,
+                    "startupAngleRateDegPerSec": -1
+                  }
+                ],
+                "semiMajorAxisM": 7530612,
+                "eccentricity": 0.00085,
+                "inclinationDeg": 64.8,
+                "raanDeg": 120,
+                "argumentOfPerigeeDeg": 270,
+                "meanAnomalyDeg": 31,
+                "epochUtc": "2026/07/01 10:00:00.000"
+              }
+            ],
+            "ballistics": [
+              {
+                "targetId": "TARGET-1",
+                "targetName": "目标1",
+                "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-8646379379809003041.csv"
+              },
+              {
+                "targetId": "TARGET-2",
+                "targetName": "目标2",
+                "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-3260519479324242723.csv",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000"
+              }
+            ]
+          },
+          "status": 200,
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/window-edge-evidence-1-rawText.json",
+            "bytes": 729688,
+            "sha256": "e54251b153f5b397480c342407588d77f9a927fa7a32d8f15618f598653835e7"
+          }
+        },
+        {
+          "name": "真实太阳约束全空",
+          "request": {
+            "startOffsetSec": 1200,
+            "stepSizeSec": 10,
+            "numCalculations": 1,
+            "targetSampleStepSec": 1,
+            "trajectoryPointOutput": 1,
+            "orbitModel": "J2_NUMERICAL",
+            "satellites": [
+              {
+                "satelliteId": "MANUAL-1",
+                "name": "手工卫星1",
+                "payloads": [
+                  {
+                    "payloadId": "MANUAL-1-P1",
+                    "payloadName": "载荷1",
+                    "payloadType": "SPACE",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": -1,
+                    "sunAvoidHalfAngleDeg": 180,
+                    "startupAngleRateDegPerSec": -1
+                  },
+                  {
+                    "payloadId": "MANUAL-1-P3",
+                    "payloadName": "载荷3",
+                    "payloadType": "GROUND",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": 180,
+                    "sunAvoidHalfAngleDeg": 180,
+                    "startupAngleRateDegPerSec": -1
+                  }
+                ],
+                "semiMajorAxisM": 7530612,
+                "eccentricity": 0.00085,
+                "inclinationDeg": 64.8,
+                "raanDeg": 120,
+                "argumentOfPerigeeDeg": 270,
+                "meanAnomalyDeg": 30,
+                "epochUtc": "2026/07/01 10:00:00.000"
+              },
+              {
+                "satelliteId": "MANUAL-2",
+                "name": "手工卫星2",
+                "payloads": [
+                  {
+                    "payloadId": "MANUAL-2-P2",
+                    "payloadName": "载荷2",
+                    "payloadType": "SPACE",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": -1,
+                    "sunAvoidHalfAngleDeg": 180,
+                    "startupAngleRateDegPerSec": -1
+                  },
+                  {
+                    "payloadId": "MANUAL-2-P4",
+                    "payloadName": "载荷4",
+                    "payloadType": "GROUND",
+                    "minDistanceKm": 0,
+                    "maxDistanceKm": 0,
+                    "azimuthMinDeg": null,
+                    "azimuthMaxDeg": null,
+                    "elevationMinDeg": null,
+                    "elevationMaxDeg": null,
+                    "angleRateDegPerSec": 180,
+                    "sunAvoidHalfAngleDeg": 180,
+                    "startupAngleRateDegPerSec": -1
+                  }
+                ],
+                "semiMajorAxisM": 7530612,
+                "eccentricity": 0.00085,
+                "inclinationDeg": 64.8,
+                "raanDeg": 120,
+                "argumentOfPerigeeDeg": 270,
+                "meanAnomalyDeg": 31,
+                "epochUtc": "2026/07/01 10:00:00.000"
+              }
+            ],
+            "ballistics": [
+              {
+                "targetId": "TARGET-1",
+                "targetName": "目标1",
+                "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-8646379379809003041.csv"
+              },
+              {
+                "targetId": "TARGET-2",
+                "targetName": "目标2",
+                "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-3260519479324242723.csv",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000"
+              }
+            ]
+          },
+          "status": 200,
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/window-edge-evidence-2-rawText.json",
+            "bytes": 3402,
+            "sha256": "dcc3fe49aab85d279eb279f908470a2b39d86f98f8b2a51f018d81ce97fa880d"
+          }
+        }
+      ],
+      "invalidRequests": 0,
+      "identities": [
+        "MANUAL-1-P1",
+        "MANUAL-1-P3",
+        "MANUAL-2-P2",
+        "MANUAL-2-P4"
+      ],
+      "pageErrors": [],
+      "checks": [
+        "point0保持服务累计摘要",
+        "单偏移不同双星轨道",
+        "非法0步长无HTTP且清旧结果",
+        "真实180太阳约束全空",
+        "草稿跨tab保持",
+        "修改后明确原提交快照"
+      ]
+    },
+    "fit-edge": {
+      "browser": "Chrome",
+      "timezone": "Asia/Shanghai",
+      "evidence": [
+        {
+          "name": "非法JSON",
+          "actualComputeRequests": 0,
+          "message": "JSON格式错误，请检查引号、逗号与完整请求结构"
+        },
+        {
+          "name": "17位数字时间码未加引号",
+          "actualComputeRequests": 0,
+          "message": "JSON数字超出浏览器安全范围，请将时间码、ID和观测值按原DTO加引号编码为字符串"
+        },
+        {
+          "name": "两条有效观测与taskName:null原服务成功",
+          "request": {
+            "taskName": null,
+            "taskStartTime": "2026-07-01 07:56:55.000",
+            "taskEndTime": "2026-07-01 07:57:10.000",
+            "interpolationStepSec": 0.5,
+            "package102": [
+              {
+                "track_tgt_id": "TGT-002",
+                "tack3d_time_code": "2026-07-01 07:57:00.000",
+                "tack3d_tgt_pos_x": "68000000",
+                "tack3d_tgt_pos_y": "100000",
+                "tack3d_tgt_pos_z": "50000",
+                "tack3d_tgt_vel_x": "0",
+                "tack3d_tgt_vel_y": "76000000",
+                "tack3d_tgt_vel_z": "100000",
+                "tack3d_tgt_acc_x": "0",
+                "tack3d_tgt_acc_y": "0",
+                "tack3d_tgt_acc_z": "0",
+                "prop_tgt_type_8": "0x02",
+                "prop_tgt_shape_8": "0xFF",
+                "prop_tgt_flight_phase_8": "0xFF",
+                "prob_tgt_critical_incident": "0xFF",
+                "prob_tgt_critical_incident_time_code": "",
+                "launch_time_code": "2026-07-01 07:56:55.000",
+                "launch_coord_frame": "J2000",
+                "launch_pos_x": "68000000",
+                "launch_pos_y": "-280000",
+                "launch_pos_z": "49500",
+                "launch_pos_unit": "0.1m",
+                "impact_time_code": "2026-07-01 07:57:10.000",
+                "impact_coord_frame": "J2000",
+                "impact_pos_x": "68000000",
+                "impact_pos_y": "860000",
+                "impact_pos_z": "51000",
+                "impact_pos_unit": "0.1m"
+              },
+              {
+                "track_tgt_id": "TGT-002",
+                "tack3d_time_code": "2026-07-01 07:57:01.000",
+                "tack3d_tgt_pos_x": "68000000",
+                "tack3d_tgt_pos_y": "176000",
+                "tack3d_tgt_pos_z": "50100",
+                "tack3d_tgt_vel_x": "0",
+                "tack3d_tgt_vel_y": "76000000",
+                "tack3d_tgt_vel_z": "100000",
+                "tack3d_tgt_acc_x": "0",
+                "tack3d_tgt_acc_y": "0",
+                "tack3d_tgt_acc_z": "0",
+                "prop_tgt_type_8": "0x02",
+                "prop_tgt_shape_8": "0xFF",
+                "prop_tgt_flight_phase_8": "0xFF",
+                "prob_tgt_critical_incident": "0xFF",
+                "prob_tgt_critical_incident_time_code": "",
+                "launch_time_code": "2026-07-01 07:56:55.000",
+                "launch_coord_frame": "J2000",
+                "launch_pos_x": "68000000",
+                "launch_pos_y": "-280000",
+                "launch_pos_z": "49500",
+                "launch_pos_unit": "0.1m",
+                "impact_time_code": "2026-07-01 07:57:10.000",
+                "impact_coord_frame": "J2000",
+                "impact_pos_x": "68000000",
+                "impact_pos_y": "860000",
+                "impact_pos_z": "51000",
+                "impact_pos_unit": "0.1m"
+              }
+            ]
+          },
+          "status": 200,
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/fit-edge-evidence-2-rawText.json",
+            "bytes": 1364,
+            "sha256": "ff00faf7336b76a1b98da3f9ccbaabf277bdb3abe169e521ccce1715b1556f40"
+          }
+        },
+        {
+          "name": "单条观测由原服务拒绝：至少两个",
+          "request": {
+            "taskName": null,
+            "taskStartTime": "2026-07-01 07:56:55.000",
+            "taskEndTime": "2026-07-01 07:57:10.000",
+            "interpolationStepSec": 0.5,
+            "package102": [
+              {
+                "track_tgt_id": "TGT-002",
+                "tack3d_time_code": "2026-07-01 07:57:00.000",
+                "tack3d_tgt_pos_x": "68000000",
+                "tack3d_tgt_pos_y": "100000",
+                "tack3d_tgt_pos_z": "50000",
+                "tack3d_tgt_vel_x": "0",
+                "tack3d_tgt_vel_y": "76000000",
+                "tack3d_tgt_vel_z": "100000",
+                "tack3d_tgt_acc_x": "0",
+                "tack3d_tgt_acc_y": "0",
+                "tack3d_tgt_acc_z": "0",
+                "prop_tgt_type_8": "0x02",
+                "prop_tgt_shape_8": "0xFF",
+                "prop_tgt_flight_phase_8": "0xFF",
+                "prob_tgt_critical_incident": "0xFF",
+                "prob_tgt_critical_incident_time_code": "",
+                "launch_time_code": "2026-07-01 07:56:55.000",
+                "launch_coord_frame": "J2000",
+                "launch_pos_x": "68000000",
+                "launch_pos_y": "-280000",
+                "launch_pos_z": "49500",
+                "launch_pos_unit": "0.1m",
+                "impact_time_code": "2026-07-01 07:57:10.000",
+                "impact_coord_frame": "J2000",
+                "impact_pos_x": "68000000",
+                "impact_pos_y": "860000",
+                "impact_pos_z": "51000",
+                "impact_pos_unit": "0.1m"
+              }
+            ]
+          },
+          "status": 400,
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/fit-edge-evidence-3-rawText.json",
+            "bytes": 102,
+            "sha256": "c2637a8e5afbd52965010e8bfcffcd2298b10d4c0105c00be6f197a51cb473c4"
+          }
+        },
+        {
+          "name": "真正非法102观测由原服务400",
+          "request": {
+            "taskName": null,
+            "taskStartTime": "2026-07-01 07:56:55.000",
+            "taskEndTime": "2026-07-01 07:57:10.000",
+            "interpolationStepSec": 0.5,
+            "package102": [
+              {
+                "track_tgt_id": "TGT-002",
+                "tack3d_time_code": "2026-07-01 07:57:00.000",
+                "tack3d_tgt_pos_x": "非法坐标",
+                "tack3d_tgt_pos_y": "100000",
+                "tack3d_tgt_pos_z": "50000",
+                "tack3d_tgt_vel_x": "0",
+                "tack3d_tgt_vel_y": "76000000",
+                "tack3d_tgt_vel_z": "100000",
+                "tack3d_tgt_acc_x": "0",
+                "tack3d_tgt_acc_y": "0",
+                "tack3d_tgt_acc_z": "0",
+                "prop_tgt_type_8": "0x02",
+                "prop_tgt_shape_8": "0xFF",
+                "prop_tgt_flight_phase_8": "0xFF",
+                "prob_tgt_critical_incident": "0xFF",
+                "prob_tgt_critical_incident_time_code": "",
+                "launch_time_code": "2026-07-01 07:56:55.000",
+                "launch_coord_frame": "J2000",
+                "launch_pos_x": "68000000",
+                "launch_pos_y": "-280000",
+                "launch_pos_z": "49500",
+                "launch_pos_unit": "0.1m",
+                "impact_time_code": "2026-07-01 07:57:10.000",
+                "impact_coord_frame": "J2000",
+                "impact_pos_x": "68000000",
+                "impact_pos_y": "860000",
+                "impact_pos_z": "51000",
+                "impact_pos_unit": "0.1m"
+              },
+              {
+                "track_tgt_id": "TGT-002",
+                "tack3d_time_code": "2026-07-01 07:57:01.000",
+                "tack3d_tgt_pos_x": "非法坐标",
+                "tack3d_tgt_pos_y": "176000",
+                "tack3d_tgt_pos_z": "50100",
+                "tack3d_tgt_vel_x": "0",
+                "tack3d_tgt_vel_y": "76000000",
+                "tack3d_tgt_vel_z": "100000",
+                "tack3d_tgt_acc_x": "0",
+                "tack3d_tgt_acc_y": "0",
+                "tack3d_tgt_acc_z": "0",
+                "prop_tgt_type_8": "0x02",
+                "prop_tgt_shape_8": "0xFF",
+                "prop_tgt_flight_phase_8": "0xFF",
+                "prob_tgt_critical_incident": "0xFF",
+                "prob_tgt_critical_incident_time_code": "",
+                "launch_time_code": "2026-07-01 07:56:55.000",
+                "launch_coord_frame": "J2000",
+                "launch_pos_x": "68000000",
+                "launch_pos_y": "-280000",
+                "launch_pos_z": "49500",
+                "launch_pos_unit": "0.1m",
+                "impact_time_code": "2026-07-01 07:57:10.000",
+                "impact_coord_frame": "J2000",
+                "impact_pos_x": "68000000",
+                "impact_pos_y": "860000",
+                "impact_pos_z": "51000",
+                "impact_pos_unit": "0.1m"
+              }
+            ]
+          },
+          "status": 400,
+          "rawTextEvidence": {
+            "path": "verification/runtime/T27/fit-edge-evidence-4-rawText.json",
+            "bytes": 69,
+            "sha256": "5d1ee3bb5b254dff1e8e30beb8d30a16c469ad47d547f8d0b32b46cec5538eef"
+          }
+        }
+      ],
+      "twoPointGraphPathCounts": [
+        31,
+        31,
+        31,
+        31
+      ],
+      "pageErrors": [],
+      "expectedNetworkConsoleErrors": [
+        "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+        "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+      ],
+      "note": "404/400网络日志为主动真实负例；成功主流另已验证0console/pageerror，不把负例错误隐藏为成功。"
+    },
+    "retime-edge": {
+      "timezone": "Asia/Shanghai",
+      "boundary": {
+        "name": "boundary",
+        "status": 200,
+        "request": {
+          "taskName": "T25-boundary",
+          "targetId": "BOUNDARY-TGT",
+          "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-2482282465571504569.csv",
+          "launchTimeUtc": "2026-07-02 23:59:59.375"
+        },
+        "rawEvidence": {
+          "path": "verification/runtime/T27/retime-edge-boundary-raw.json",
+          "bytes": 487,
+          "sha256": "46fc733f9f20998db414f16ddf8f31c78544065e29fee59dd6899937ff7ee164"
+        },
+        "originalTable": "2026-07-02 23:59:59.375\t\t4349198.029\t2937627.909\t3612936.432\t4884.850996396\t2174.589731329\t4127.044542921\t1",
+        "inputReference": {
+          "fileId": "56e0b64f-ab90-4d7e-94f8-d479e70019f7",
+          "originalName": "retime-irregular-reordered-source.csv",
+          "sizeBytes": 848,
+          "contentType": "text/csv",
+          "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-2482282465571504569.csv"
+        },
+        "header": [
+          "ECEF_Vx",
+          "ECEF_Vy",
+          "ECEF_Vz",
+          "ECEF_X",
+          "ECEF_Y",
+          "ECEF_Z",
+          "ECI_VX",
+          "ECI_VY",
+          "ECI_VZ",
+          "ECI_X",
+          "ECI_Y",
+          "ECI_Z",
+          "HH",
+          "MM",
+          "YYYY",
+          "dd",
+          "energy",
+          "isOriginal",
+          "mm",
+          "ss.SSS",
+          "timeIntervalMs",
+          "来源说明"
+        ],
+        "pathCounts": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "originalMarkerCount": 4
+      },
+      "negatives": [
+        {
+          "name": "invalid-utc",
+          "status": 400,
+          "request": {
+            "taskName": "T25-boundary",
+            "targetId": "BOUNDARY-TGT",
+            "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-2482282465571504569.csv",
+            "launchTimeUtc": "非法UTC"
+          },
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-edge-negatives-0-raw.json",
+            "bytes": 66,
+            "sha256": "88f584bb8da733e9983ee505e5ab8eeb76e99e8f4b35d26e059751d488acd7c0"
+          }
+        },
+        {
+          "name": "invalid-header",
+          "status": 400,
+          "request": {
+            "taskName": "T25-boundary",
+            "targetId": "BOUNDARY-TGT",
+            "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-1373909004458256091.csv",
+            "launchTimeUtc": "2026-07-02 23:59:59.375"
+          },
+          "rawEvidence": {
+            "path": "verification/runtime/T27/retime-edge-negatives-1-raw.json",
+            "bytes": 71,
+            "sha256": "0fd5ce4fc01ea12b901b80782f4d9b36ed07984bd98d653db9138656898726c3"
+          },
+          "inputReference": {
+            "fileId": "8eb2153f-8265-43a0-babd-bd26bdbfbe78",
+            "originalName": "trajectory-0.1s-standard.csv",
+            "sizeBytes": 1507045,
+            "contentType": "text/csv",
+            "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\uploads\\upload-1373909004458256091.csv"
+          }
+        }
+      ],
+      "recoveryStatus": 200,
+      "successConsoleErrors": [],
+      "negativeConsoleErrors": [
+        "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+        "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+      ],
+      "pageErrors": []
+    },
+    "fit-aux-failure": {
+      "source": "精确本次管理CSV临时移走，真实HTTP404，未mock",
+      "preview": {
+        "url": "http://127.0.0.1:15128/api/v1/ballistic/files/57941ac0-cbb8-4fbd-b451-588d38c8e21a/preview?page=3&limit=50",
+        "status": 404,
+        "rawTextEvidence": {
+          "path": "verification/runtime/T27/fit-aux-failure-preview-rawText.json",
+          "bytes": 69,
+          "sha256": "d10122685ee86259b60ab9602723323635aa86f520771b300a898c9963e895e7"
+        }
+      },
+      "download": {
+        "url": "http://127.0.0.1:15128/api/v1/ballistic/files/57941ac0-cbb8-4fbd-b451-588d38c8e21a/download",
+        "status": 404,
+        "rawTextEvidence": {
+          "path": "verification/runtime/T27/fit-aux-failure-download-rawText.json",
+          "bytes": 69,
+          "sha256": "d10122685ee86259b60ab9602723323635aa86f520771b300a898c9963e895e7"
+        }
+      },
+      "browserDownloads": 0,
+      "originalComputeStillSuccessful": true,
+      "otherTargetUnaffected": true
+    },
+    "fit-aux-recovery": {
+      "source": "精确恢复同CSV后只重新登记并读取，原旧ID已注销",
+      "registration": {
+        "status": 201,
+        "reference": {
+          "fileId": "ea6d77c3-6e79-4a9a-81e4-8575a78fde0a",
+          "originalName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv",
+          "sizeBytes": 327928,
+          "contentType": "text/csv",
+          "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\nio\\storage\\results\\fit-77776907882652267\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv"
+        }
+      },
+      "preview": {
+        "url": "http://127.0.0.1:15128/api/v1/ballistic/files/ea6d77c3-6e79-4a9a-81e4-8575a78fde0a/preview?page=1&limit=50",
+        "status": 200,
+        "page": 1
+      },
+      "downloadName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_231406_896.csv",
+      "computeCalls": 0,
+      "errorsCleared": true
+    }
+  },
+  "downloads": [
+    {
+      "actual": {
+        "path": "verification/runtime/T27/window/download-original.csv",
+        "bytes": 1507045,
+        "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+      },
+      "expected": {
+        "path": "test-data/reference/ballistic/trajectory-0.1s-standard.csv",
+        "bytes": 1507045,
+        "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+      },
+      "exactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/fit/download-trajectory-0.csv",
+        "bytes": 327928,
+        "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2"
+      },
+      "expected": {
+        "path": "test-data/baseline/ballistic/fit/trajectory-0.csv",
+        "bytes": 327928,
+        "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2"
+      },
+      "exactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/fit/download-trajectory-1.csv",
+        "bytes": 6475,
+        "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18"
+      },
+      "expected": {
+        "path": "test-data/baseline/ballistic/fit/trajectory-1.csv",
+        "bytes": 6475,
+        "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18"
+      },
+      "exactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/fit/download-recovered.csv",
+        "bytes": 327928,
+        "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2"
+      },
+      "expected": {
+        "path": "test-data/baseline/ballistic/fit/trajectory-0.csv",
+        "bytes": 327928,
+        "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2"
+      },
+      "exactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/simulation/download-default.csv",
+        "bytes": 561736,
+        "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4"
+      },
+      "expected": {
+        "path": "test-data/baseline/ballistic/simulate/trajectory-0.csv",
+        "bytes": 561736,
+        "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4"
+      },
+      "exactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/retime/download-default.csv",
+        "bytes": 593970,
+        "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e"
+      },
+      "expected": {
+        "path": "test-data/baseline/ballistic/retime/trajectory-0.csv",
+        "bytes": 593970,
+        "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e"
+      },
+      "exactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/window/download-response.json",
+        "bytes": 1594513,
+        "sha256": "98d12d973ccd5d46b83144fba95eb3cdf10dadb4d3e14460f3bab8b7823f22c8"
+      },
+      "actualHttpBodyExactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/fit/download-response.json",
+        "bytes": 3159,
+        "sha256": "4a51151a49ac08fac45199615491dda30d7eb0988eef0afd158f8ac9fd52aef5"
+      },
+      "actualHttpBodyExactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/simulation/download-response.json",
+        "bytes": 625,
+        "sha256": "373a40d5f991beb0cef049f45ea61b6eaa1e063c961e64930b13ddc095b15b3b"
+      },
+      "actualHttpBodyExactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/simulation/download-window-response.json",
+        "bytes": 992528,
+        "sha256": "3e448939f191dd92ffc7ef591b1e4fd913c7aa366ba6632054ff5074024d2811"
+      },
+      "actualHttpBodyExactBytesEqual": true
+    },
+    {
+      "actual": {
+        "path": "verification/runtime/T27/retime/download-response.json",
+        "bytes": 484,
+        "sha256": "bcaa1d4197fbfbc1000b92ed112eba22a40a08177bc0fe2592871376107bd77d"
+      },
+      "actualHttpBodyExactBytesEqual": true
+    }
+  ],
+  "inputSources": [
+    {
+      "path": "test-data/reference/ballistic/trajectory-0.1s-standard.csv",
+      "bytes": 1507045,
+      "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+    },
+    {
+      "path": "test-data/reference/ballistic/target_trajectory_fit_package102_default.json",
+      "bytes": 8535,
+      "sha256": "a31d93f2baf67467aaf73b4f6cf46c55fedcf59f2e11bf3860e6efb328effab7"
+    },
+    {
+      "path": "test-data/reference/ballistic/target_trajectory_simulate_default.json",
+      "bytes": 646,
+      "sha256": "fbca1c68adfff9cd12a56f79b72047f448627be5bb501a6f92e47d2b80ae0aca"
+    },
+    {
+      "path": "test-data/baseline/ballistic/simulate/trajectory-0.csv",
+      "bytes": 561736,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4"
+    },
+    {
+      "path": "test-data/reference/ballistic/T25/retime-irregular-reordered-source.csv",
+      "bytes": 848,
+      "sha256": "ab1cf598862b211224e9666b5a4907db4f3de141940fdf04eb9e7971922ebfd6"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "verification/T27/screenshots/fit-aux-real-404-isolated.png",
+      "bytes": 303442,
+      "sha256": "39afb884c183ac6afa9f7e1425d036758c3cc7db7fbdfda8b1425fb131e24dd6"
+    },
+    {
+      "path": "verification/T27/screenshots/fit-aux-real-reregister-recovered.png",
+      "bytes": 284512,
+      "sha256": "c60bc60d0bb3aea6dd03d8f1cc3ba3fd9df418550c8c3d03777897b79c14a3b8"
+    },
+    {
+      "path": "verification/T27/screenshots/fit-invalid-observation-original-400.png",
+      "bytes": 73987,
+      "sha256": "d573c1d5c604646ea4e586aa15a7068d85fed27f48e0c328e164313b8731cb0e"
+    },
+    {
+      "path": "verification/T27/screenshots/fit-local-invalid-precision-blocked.png",
+      "bytes": 64467,
+      "sha256": "6e9460a57bb41e2ba16c344576028c8b3108203f3e4d3e15d50be5dccb102cdf"
+    },
+    {
+      "path": "verification/T27/screenshots/fit-submitted-snapshot-stale.png",
+      "bytes": 672543,
+      "sha256": "38c48daededf746f76c064bcc09f5ed39e379facc253a7233f741f4785aeab1e"
+    },
+    {
+      "path": "verification/T27/screenshots/fit-target-0-complete-trajectory.png",
+      "bytes": 112432,
+      "sha256": "cd2c295b8a68657939dc7a0041b1475b7e8ba14fb9aeca9a3366d11f92e3cfca"
+    },
+    {
+      "path": "verification/T27/screenshots/fit-target-1-complete-trajectory.png",
+      "bytes": 118846,
+      "sha256": "b08784783d02f4a02282fe1706d8ca6475bef3b6791f70f26b7425471fd57319"
+    },
+    {
+      "path": "verification/T27/screenshots/fit-two-original-points-real.png",
+      "bytes": 110695,
+      "sha256": "6dd57293bb8ad40c479ab2730fb0be6772be97e4abd4fb8f89bb61ce9401f3f8"
+    },
+    {
+      "path": "verification/T27/screenshots/retime-boundary-full-trajectory.png",
+      "bytes": 112366,
+      "sha256": "67e865609480e8706e6c3a5025a042d8c027e6cca235043af7905016ebfbb9eb"
+    },
+    {
+      "path": "verification/T27/screenshots/retime-default-full-trajectory.png",
+      "bytes": 119326,
+      "sha256": "2618e50f11d9a327c0e5431d813645e703b11be46506b889607af44547f7d218"
+    },
+    {
+      "path": "verification/T27/screenshots/retime-generated-window-result.png",
+      "bytes": 75783,
+      "sha256": "d755ff09aa5819ef8d1e4abf7784c43cf08bb8cf7f646fe82378816b1b84a1f8"
+    },
+    {
+      "path": "verification/T27/screenshots/retime-original-400-failure.png",
+      "bytes": 88797,
+      "sha256": "e4b24b8b201f59867f7dfad14d6c2d216b4b0fdbcc7558dd1446e5592a012bae"
+    },
+    {
+      "path": "verification/T27/screenshots/simulation-default-full-trajectory.png",
+      "bytes": 116161,
+      "sha256": "03174f301c755f426bd3bcc465a39d828c370e8281380518129864633cc3a7d1"
+    },
+    {
+      "path": "verification/T27/screenshots/simulation-generated-window-result.png",
+      "bytes": 75497,
+      "sha256": "88fe19afeeed1dd29e26d423c200137fecd57c358b62382405347550f11f6023"
+    },
+    {
+      "path": "verification/T27/screenshots/window-empty-real-constraint.png",
+      "bytes": 33855,
+      "sha256": "b1b202e3ba3b6091689736e123ee865c9d672a69c2226168cfc84153ac766f86"
+    },
+    {
+      "path": "verification/T27/screenshots/window-invalid-parameter.png",
+      "bytes": 513956,
+      "sha256": "9c4f04c9ccc4b8d0d7260ed02a68becce91a781b045d767e219bdfc38c4ba72a"
+    },
+    {
+      "path": "verification/T27/screenshots/window-point-output-zero.png",
+      "bytes": 198641,
+      "sha256": "48dc4c68520c55ddc66f367b7fec8ac66febb9eb468fcda45e5b5d742daafd80"
+    },
+    {
+      "path": "verification/T27/screenshots/window-results-offset-1200.png",
+      "bytes": 348674,
+      "sha256": "0428e1ded8f68f5318bf1b8c571c936640e3e22f82c2d45c918ad99db5d58b55"
+    },
+    {
+      "path": "verification/T27/screenshots/window-results-offset-1210.png",
+      "bytes": 290312,
+      "sha256": "384c6052d22304f593cad46c117b0117445006d0ac8b5bf69d9d195c3f666368"
+    },
+    {
+      "path": "verification/T27/screenshots/window-results-offset-1220.png",
+      "bytes": 349083,
+      "sha256": "f3ecd93a56d00afebfa4545648d009f3c5cf778e52ad8d0fb0d6924a8c9862f1"
+    },
+    {
+      "path": "verification/T27/screenshots/window-trajectory-real-points.png",
+      "bytes": 114891,
+      "sha256": "9f65c76c8fc15d818eb7419d64fef26e95a9adbcca58a34673b517d7cfbf73b3"
+    }
+  ],
+  "pnpmLock": {
+    "path": "frontend/pnpm-lock.yaml",
+    "bytes": 50535,
+    "sha256": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8"
+  },
+  "jar": {
+    "path": "verification/runtime/T27/space-target-visible-T27.jar",
+    "bytes": 72565205,
+    "sha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b"
+  }
+}

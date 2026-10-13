@@ -1,0 +1,13 @@
+{
+  "beforeSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+  "finalSha256": "6f0cde71a608294585c40e512d9c649c80d826627d1c16f851b93bb1102e20cb",
+  "checkedClasses": 287,
+  "changedClasses": [
+    "BOOT-INF/classes/com/runisys/orbit/spacevisibility/application/PlanningTask$Status.class",
+    "BOOT-INF/classes/com/runisys/orbit/spacevisibility/application/PlanningTask.class",
+    "BOOT-INF/classes/com/runisys/orbit/spacevisibility/application/PlanningTaskService.class"
+  ],
+  "allOtherClassesExactEqual": true,
+  "ballisticBrowserActualServer": "verification/runtime/T27/nio/server.jar",
+  "scope": "初轮四弹道主流实际311fc2包；最终仅任务生命周期3class变化（含Status枚举的源行号），数学/时标/传播/载荷/弹道计算及文件接口class完全相同"
+}

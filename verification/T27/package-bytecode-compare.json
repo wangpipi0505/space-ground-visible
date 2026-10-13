@@ -1,0 +1,6 @@
+{
+  "jarSha256": "6f0cde71a608294585c40e512d9c649c80d826627d1c16f851b93bb1102e20cb",
+  "checkedClasses": 287,
+  "changedClasses": [],
+  "scope": "本轮mvn test当前全部class与HTTP冻结正式包完全一致"
+}

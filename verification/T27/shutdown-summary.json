@@ -1,0 +1,18 @@
+[
+  {
+    "name": "nio",
+    "pid": 34200,
+    "port": 18128,
+    "exitCode": 0,
+    "secondsToNaturalExit": 0.5496633001603186,
+    "jarSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+    "actualContextClose": true,
+    "mainReturned": true,
+    "portRebound": true,
+    "nonDaemonRemaining": false,
+    "shutdownNpe": false,
+    "shutdownAsyncCloseLogged": false,
+    "stderrBytes": 0,
+    "shutdownLog": "T26_CONTEXT_CLOSE_BEGIN\n2026-10-13 23:43:08.339  INFO 34200 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-13 23:43:08.341  INFO 34200 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'\n2026-10-13 23:43:08.347  INFO 34200 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...\n2026-10-13 23:43:08.350  INFO 34200 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.\nT26_CONTEXT_CLOSE_END uncaught=0\nT26_MAIN_RETURN\n"
+  }
+]

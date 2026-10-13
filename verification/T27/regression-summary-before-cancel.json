@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "jarSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+  "comparisons": [
+    {
+      "name": "ballistic-10",
+      "fileCount": 15,
+      "differences": []
+    },
+    {
+      "name": "space-9",
+      "fileCount": 9,
+      "differences": []
+    },
+    {
+      "name": "space-complete-21",
+      "fileCount": 21,
+      "differences": []
+    }
+  ],
+  "ordinaryJava": [
+    "PASS Java=1.8.0_472; JDK-only domain classes; Spring/MyBatis/compatibility/POI/MinIO absent; 72 position / 24 native J2 state / 26 fitter state comparisons; exact bits; 6 histories x 12 queries, repeated/unordered/reverse; utcOffsetSec=0, queryOffsetSec is relative query time; absolute Cartesian epoch also checked",
+    "PASS Java=1.8.0_472; Spring/MyBatis/application absent; 3 real bindings from definitions; 24 position + 24 velocity + 3 state comparisons; exact bits"
+  ],
+  "comparison": "JSON Decimal exact values, structure and order; CSV/report exact bytes",
+  "phase": "本项新运行：产品源未修改，正式包与全部当前产品class逐字节绑定。"
+}

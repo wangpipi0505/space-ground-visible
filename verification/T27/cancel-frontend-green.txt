@@ -1,0 +1,9 @@
+$ vitest run "src/composables/useVisibilityWorkbench.spec.ts"
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  23:33:45
+   Duration  1.36s (transform 61ms, setup 0ms, import 927ms, tests 98ms, environment 219ms)

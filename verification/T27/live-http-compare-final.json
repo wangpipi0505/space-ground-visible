@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "requestStatuses": [
+    {
+      "path": "/api/orbit/health",
+      "status": 200,
+      "bytes": 2
+    },
+    {
+      "path": "/api/v1/ballistic/files",
+      "status": 201,
+      "bytes": 269
+    },
+    {
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 37102
+    }
+  ],
+  "allOffsetsCompared": 3,
+  "targetCount": 2,
+  "satelliteCount": 2,
+  "payloadCountPerSatellite": 2,
+  "bestOffsetSecond": 1220,
+  "visibleArcCount": 4,
+  "visiblePointCount": 788,
+  "visibleDurationSec": "784.000000000",
+  "inputSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+  "comparison": "同一实际上传路径，完整JSON结构/Decimal数值/顺序精确比较，无字段忽略或路径映射",
+  "reference": "独立URLClassLoader，父仅JDK，冻结原Controller来源路径实测断言",
+  "trajectoryPointOutput": 0
+}

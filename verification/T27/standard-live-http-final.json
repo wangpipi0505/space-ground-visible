@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "jarSha256": "6f0cde71a608294585c40e512d9c649c80d826627d1c16f851b93bb1102e20cb",
+  "requests": [
+    {
+      "name": "preview-SPACE",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "status": 200,
+      "bytes": 291
+    },
+    {
+      "name": "preview-GROUND",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "status": 200,
+      "bytes": 295
+    },
+    {
+      "name": "preview-invalid",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "status": 400,
+      "bytes": 123
+    },
+    {
+      "name": "mixed-points0",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 91507
+    },
+    {
+      "name": "mixed-points1",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 2388559
+    },
+    {
+      "name": "startup-None",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 91507
+    },
+    {
+      "name": "startup-0",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 91507
+    },
+    {
+      "name": "startup-0.1",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 91507
+    },
+    {
+      "name": "startup-1000000",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 91507
+    },
+    {
+      "name": "hidden-preview",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "status": 200,
+      "bytes": 306
+    },
+    {
+      "name": "empty-standard",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 6664
+    },
+    {
+      "name": "compute-invalid",
+      "path": "/api/orbit/visibility/search",
+      "status": 400,
+      "bytes": 30
+    }
+  ],
+  "offsetCount": 3,
+  "targetCount": 2,
+  "satelliteCount": 2,
+  "configuredPayloadsPerSatellite": 4,
+  "visiblePayloadsPerSatellite": 3,
+  "bestOffsetSecond": 1220,
+  "visibleArcCount": 12,
+  "visiblePointCount": 2364,
+  "startupMetadataVariants": [
+    -1,
+    null,
+    0,
+    0.1,
+    1000000
+  ],
+  "comparison": "点开关除轨迹点数组外完整Decimal JSON一致；startup各值完整JSON一致",
+  "scope": "新标准协议正确性与最终包真实HTTP，原版零差另由独立冻结控制器验证"
+}

@@ -1,0 +1,1645 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 14 resources
+[INFO]
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 71 source files to G:\5-YG\space-ground-visible\verification\runtime\T27\original-space-validation\target\classes
+[INFO]
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 42 source files to G:\5-YG\space-ground-visible\verification\runtime\T27\original-space-validation\target\test-classes
+[INFO]
+[INFO] --- surefire:2.22.2:test (default-test) @ space-target-visible ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.runisys.orbit.spacevisibility.api.ApiExceptionHandlerTest
+23:13:03.483 [main] ERROR com.runisys.orbit.spacevisibility.api.ApiExceptionHandler - 请求处理失败，requestId=2bde61e6-4257-49ea-baf8-6edfc5fcb31f
+java.lang.IllegalStateException: database detail
+	at com.runisys.orbit.spacevisibility.api.ApiExceptionHandlerTest.returnsSafeErrorWithTraceableRequestIdForUnexpectedFailure(ApiExceptionHandlerTest.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.279 s - in com.runisys.orbit.spacevisibility.api.ApiExceptionHandlerTest
+[INFO] Running com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest
+23:13:03.559 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+23:13:03.565 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+23:13:03.584 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+23:13:03.593 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest], using SpringBootContextLoader
+23:13:03.594 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: class path resource [com/runisys/orbit/spacevisibility/api/PlanningTaskControllerIntegrationTest-context.xml] does not exist
+23:13:03.594 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: class path resource [com/runisys/orbit/spacevisibility/api/PlanningTaskControllerIntegrationTestContext.groovy] does not exist
+23:13:03.594 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:13:03.595 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: PlanningTaskControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:13:03.622 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]
+23:13:03.675 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [G:\5-YG\space-ground-visible\verification\runtime\T27\original-space-validation\target\classes\com\runisys\orbit\spacevisibility\SpaceTargetVisibleApplication.class]
+23:13:03.675 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication for test class com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest
+23:13:03.723 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest]: using defaults.
+23:13:03.724 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+23:13:03.734 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b76ff4e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7a1234bf, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2f62ea70, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@24ba9639, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@38aa816f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@53f6fd09, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6bffbc6d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1b84f475, org.springframework.test.context.event.EventPublishingTestExecutionListener@7749bf93, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@13330ac6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@539d019, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@39a2bb97, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3ad2e17, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@8c3619e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4331d187]
+23:13:03.736 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@52c3cb31 testClass = PlanningTaskControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4b79ac84 testClass = PlanningTaskControllerIntegrationTest, locations = '{}', classes = '{class com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@53941c2f key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@16eb3ea3, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5032714f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4d1c005e, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@7188af83, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@61c4eee0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@23faf8f2], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-13 23:13:03.936  INFO 59328 --- [           main] .a.PlanningTaskControllerIntegrationTest : Starting PlanningTaskControllerIntegrationTest using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 59328 (started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\T27\original-space-validation)
+2026-10-13 23:13:03.937  INFO 59328 --- [           main] .a.PlanningTaskControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+ _ _   |_  _ _|_. ___ _ |    _
+| | |\/|_)(_| | |_\  |_)||_|_\
+     /               |
+                        3.5.5
+2026-10-13 23:13:04.779  INFO 59328 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-13 23:13:04.886  INFO 59328 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-13 23:13:04.905  INFO 59328 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-13 23:13:04.905  INFO 59328 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:space_target_visible (H2 1.4)
+2026-10-13 23:13:04.954  INFO 59328 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.018s)
+2026-10-13 23:13:04.961  INFO 59328 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-13 23:13:04.987  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-13 23:13:04.990  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - create space visibility tables"
+2026-10-13 23:13:05.007  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - ReplaceNameUniqueKeys"
+2026-10-13 23:13:05.025  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - AddSpaceTrackCatalogFields"
+2026-10-13 23:13:05.078  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "4 - AddSatelliteWeight"
+2026-10-13 23:13:05.084  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - create visibility task result"
+2026-10-13 23:13:05.089  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "6 - normalize space payload distance unit"
+2026-10-13 23:13:05.093  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "7 - add skipped pairs to visibility task result"
+2026-10-13 23:13:05.102  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "8 - align wintool space payload rate markers"
+2026-10-13 23:13:05.106  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "9 - add selection json to visibility task result"
+2026-10-13 23:13:05.111  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "10 - align station max elevation with wintool"
+2026-10-13 23:13:05.115  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 10 migrations to schema "public", now at version v10 (execution time 00:00.134s)
+2026-10-13 23:13:05.644  INFO 59328 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-10-13 23:13:05.917  INFO 59328 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-13 23:13:05.917  INFO 59328 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-13 23:13:05.918  INFO 59328 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-13 23:13:05.967  INFO 59328 --- [           main] .a.PlanningTaskControllerIntegrationTest : Started PlanningTaskControllerIntegrationTest in 2.217 seconds (JVM running for 3.105)
+2026-10-13 23:13:06.482  INFO 59328 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=aad3952a-8fa3-4827-bcea-bb64df0f4d66
+2026-10-13 23:13:06.605  INFO 59328 --- [planning-task-1] c.r.o.s.d.orbit.OrekitDataInitializer    : 未找到完整 Orekit 数据目录，仅使用内置闰秒文件
+2026-10-13 23:13:06.766  INFO 59328 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，光照模式=ANY
+2026-10-13 23:13:06.781  WARN 59328 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=1，目标=2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:06.781  INFO 59328 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=15ms
+2026-10-13 23:13:06.784  INFO 59328 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=0，输出观测结果数=0，跳过组合数=1，耗时=301ms
+2026-10-13 23:13:06.785  INFO 59328 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=aad3952a-8fa3-4827-bcea-bb64df0f4d66
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/space/visibility/tasks
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"146"]
+             Body = {"observerSatelliteIds":[1],"targetIds":[2],"startTime":"2000-01-01T12:00:00Z","endTime":"2000-01-01T12:00:05Z","coarseStepSec":1,"fineStepSec":1}
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#submitTask(VisibilityPlanRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"aad3952a-8fa3-4827-bcea-bb64df0f4d66"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/aad3952a-8fa3-4827-bcea-bb64df0f4d66
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskStatus(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"aad3952a-8fa3-4827-bcea-bb64df0f4d66","status":"RUNNING","totalPairs":0,"completedPairs":0,"totalTargets":0,"completedTargets":0,"errorMessage":null,"createdAt":"2026-10-13T15:13:06.481Z","completedAt":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/aad3952a-8fa3-4827-bcea-bb64df0f4d66
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskStatus(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"aad3952a-8fa3-4827-bcea-bb64df0f4d66","status":"RUNNING","totalPairs":0,"completedPairs":0,"totalTargets":0,"completedTargets":0,"errorMessage":null,"createdAt":"2026-10-13T15:13:06.481Z","completedAt":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/aad3952a-8fa3-4827-bcea-bb64df0f4d66
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskStatus(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"aad3952a-8fa3-4827-bcea-bb64df0f4d66","status":"RUNNING","totalPairs":0,"completedPairs":0,"totalTargets":0,"completedTargets":0,"errorMessage":null,"createdAt":"2026-10-13T15:13:06.481Z","completedAt":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/aad3952a-8fa3-4827-bcea-bb64df0f4d66
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskStatus(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"aad3952a-8fa3-4827-bcea-bb64df0f4d66","status":"RUNNING","totalPairs":0,"completedPairs":0,"totalTargets":0,"completedTargets":0,"errorMessage":null,"createdAt":"2026-10-13T15:13:06.481Z","completedAt":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/aad3952a-8fa3-4827-bcea-bb64df0f4d66
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskStatus(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"aad3952a-8fa3-4827-bcea-bb64df0f4d66","status":"RUNNING","totalPairs":0,"completedPairs":0,"totalTargets":0,"completedTargets":0,"errorMessage":null,"createdAt":"2026-10-13T15:13:06.481Z","completedAt":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/aad3952a-8fa3-4827-bcea-bb64df0f4d66
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskStatus(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"aad3952a-8fa3-4827-bcea-bb64df0f4d66","status":"RUNNING","totalPairs":1,"completedPairs":1,"totalTargets":1,"completedTargets":1,"errorMessage":null,"createdAt":"2026-10-13T15:13:06.481Z","completedAt":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/aad3952a-8fa3-4827-bcea-bb64df0f4d66
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskStatus(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"taskId":"aad3952a-8fa3-4827-bcea-bb64df0f4d66","status":"SUCCEEDED","totalPairs":1,"completedPairs":1,"totalTargets":1,"completedTargets":1,"errorMessage":null,"createdAt":"2026-10-13T15:13:06.481Z","completedAt":"2026-10-13T15:13:06.785Z"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/space/visibility/tasks/aad3952a-8fa3-4827-bcea-bb64df0f4d66/result
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.PlanningTaskController
+           Method = com.runisys.orbit.spacevisibility.api.PlanningTaskController#taskResult(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"results":[],"skippedPairs":[{"observerSatelliteId":"1","observerSatelliteName":"测试我方星","targetId":"2","targetName":"测试目标","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"}],"totalSkippedPairs":1,"targetFilterBreakdown":{"belongsHit":1,"weightHit":1,"epochHit":1,"epochConstraintHit":1,"ephemerisWarningHit":0,"excludeHit":1,"maxApproximationDays":14},"ephemerisWarnings":[]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:13:06.845  INFO 59328 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=367a85b3-7735-48cb-b84b-981ae9b074e0
+2026-10-13 23:13:06.847  WARN 59328 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务失败：taskId=367a85b3-7735-48cb-b84b-981ae9b074e0，异常类型=IllegalArgumentException，根因=存在未找到的观测卫星
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.288 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest
+[ERROR] submitsPollsAndFetchesVisibilityPlanTaskResult  Time elapsed: 0.427 s  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.results[0].targetName"
+	at com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest.submitsPollsAndFetchesVisibilityPlanTaskResult(PlanningTaskControllerIntegrationTest.java:100)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['results'][0]['targetName']
+
+[INFO] Running com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest
+2026-10-13 23:13:06.854  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest], using SpringBootContextLoader
+2026-10-13 23:13:06.855  INFO 59328 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2026-10-13 23:13:06.855  INFO 59328 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest]: SpaceVisibilityControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-13 23:13:06.859  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication for test class com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest
+2026-10-13 23:13:06.859  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2026-10-13 23:13:06.861  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6f315b08, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6c8efde4, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@24e5389c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3b170235, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5e9bf744, org.springframework.test.context.support.DirtiesContextTestExecutionListener@45e140ae, org.springframework.test.context.transaction.TransactionalTestExecutionListener@48cdb156, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4814d0, org.springframework.test.context.event.EventPublishingTestExecutionListener@4ae8fb2a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@54326e9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@20216016, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2b441e56, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@267891bf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3a109ff7, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@111a7973]
+2026-10-13 23:13:06.883  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=1，最小质量=50，最大质量=null，历元约束=null，兼容历元上限=2001-12-31T23:59:59Z，已设置名称排除规则=true，页码=1，每页记录数=50，命中目标数=0
+2026-10-13 23:13:06.921  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=1，地面站数=1，站星关系数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:01:00Z，粗选步长=1.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-13 23:13:06.926  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=1，地面站=ST-001，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:06.927  INFO 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=0，跳过链路数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=5ms
+2026-10-13 23:13:06.928  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=1，原始窗口数=0，连续覆盖窗口数=0，跳过链路数=1，耗时=12ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/space/downlink/plan
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"279"]
+             Body = {"startTime":"2000-01-01T12:00:00Z","endTime":"2000-01-01T12:01:00Z","coarseStepSec":1,"fineStepSec":1,"preGuardSec":0,"postGuardSec":0,"allowedGapSec":0,"satelliteIds":[1],"stations":[{"stationId":"ST-001","maxElevationDeg":90}],"links":[{"satelliteId":1,"stationId":"ST-001"}]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController
+           Method = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController#planDownlink(DownlinkPlanRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"satelliteStationWindows":[],"coverageWindows":[],"skippedLinks":[{"satelliteId":1,"satelliteName":"测试我方星","stationId":"ST-001","stationName":"测试站","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"}],"totalSkippedLinks":1}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:13:07.031  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=250，最大质量=null，历元约束=23340，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-13 23:13:07.056  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，光照模式=ANY
+2026-10-13 23:13:07.058  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=1，目标=2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.059  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:07.059  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=0，输出观测结果数=0，跳过组合数=1，耗时=6ms
+2026-10-13 23:13:07.102  WARN 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 预检跳过空间目标：目标=4，名称=测试目标二号，观测星数=1，原因=TLE 两行根数格式无效
+2026-10-13 23:13:07.103  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=0，星历时效风险数=1，建议近似时长=14天，组合约束数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，光照模式=ANY
+2026-10-13 23:13:07.103  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=0，批次数=0，有效组合数=0，跳过组合数=0，跳过分类={}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:07.104  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=0，有效单星组合数=0，输出观测结果数=0，跳过组合数=1，耗时=15ms
+2026-10-13 23:13:07.136  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=2，站星关系数=2，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-13 23:13:07.137  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=1，地面站=ST-001，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.138  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=3，地面站=ST-002，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.138  INFO 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=0，跳过链路数=2，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=2}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:07.138  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=0，连续覆盖窗口数=0，跳过链路数=2，耗时=5ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/space/downlink/plan
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"271"]
+             Body = {"startTime":"2000-01-01T12:00:00Z","endTime":"2000-01-01T12:00:05Z","coarseStepSec":1,"fineStepSec":1,"satelliteIds":[1,3],"stations":[{"stationId":"ST-001"},{"stationId":"ST-002"}],"links":[{"satelliteId":1,"stationId":"ST-001"},{"satelliteId":3,"stationId":"ST-002"}]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController
+           Method = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController#planDownlink(DownlinkPlanRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"satelliteStationWindows":[],"coverageWindows":[],"skippedLinks":[{"satelliteId":1,"satelliteName":"测试我方星","stationId":"ST-001","stationName":"测试站","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"},{"satelliteId":3,"satelliteName":"测试我方星二号","stationId":"ST-002","stationName":"测试站二号","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"}],"totalSkippedLinks":2}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:13:07.239  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=120，最大质量=null，历元约束=null，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=0
+2026-10-13 23:13:07.256  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=1，地面站数=1，站星关系数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-13 23:13:07.257  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=1，地面站=ST-001，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.258  INFO 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=0，跳过链路数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:07.258  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=1，原始窗口数=0，连续覆盖窗口数=0，跳过链路数=1，耗时=3ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/space/downlink/plan
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"207"]
+             Body = {"startTime":"2000-01-01T12:00:00Z","endTime":"2000-01-01T12:00:05Z","coarseStepSec":1,"fineStepSec":1,"satelliteIds":[1],"stations":[{"stationId":"ST-001"}],"links":[{"satelliteId":1,"stationId":"ST-001"}]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController
+           Method = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController#planDownlink(DownlinkPlanRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"satelliteStationWindows":[],"coverageWindows":[],"skippedLinks":[{"satelliteId":1,"satelliteName":"测试我方星","stationId":"ST-001","stationName":"测试站","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"}],"totalSkippedLinks":1}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:13:07.280  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=null，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=2
+2026-10-13 23:13:07.289  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=null，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=2
+2026-10-13 23:13:07.367  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，光照模式=ANY
+2026-10-13 23:13:07.370  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=1，目标=2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.370  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=3ms
+2026-10-13 23:13:07.370  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=0，输出观测结果数=0，跳过组合数=1，耗时=8ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/space/visibility/plan
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"213"]
+             Body = {"observerSatelliteIds":[1],"targetIds":[2],"startTime":"2000-01-01T12:00:00Z","endTime":"2000-01-01T12:00:05Z","coarseStepSec":1,"fineStepSec":1,"observationConstraints":[{"satelliteIds":[1],"minDurationSec":0}]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController
+           Method = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController#planVisibility(VisibilityPlanRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"results":[],"skippedPairs":[{"observerSatelliteId":"1","observerSatelliteName":"测试我方星","targetId":"2","targetName":"测试目标","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"}],"totalSkippedPairs":1,"targetFilterBreakdown":{"belongsHit":1,"weightHit":1,"epochHit":1,"epochConstraintHit":1,"ephemerisWarningHit":0,"excludeHit":1,"maxApproximationDays":14},"ephemerisWarnings":[]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:13:07.418  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=服务端兼容筛选，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，光照模式=ANY
+2026-10-13 23:13:07.419  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=1，目标=2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.419  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:07.421  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=0，输出观测结果数=0，跳过组合数=1，耗时=6ms
+2026-10-13 23:13:07.449  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=null，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=1，命中目标数=2
+2026-10-13 23:13:07.463  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=1，建议近似时长=0天，组合约束数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，光照模式=ANY
+2026-10-13 23:13:07.465  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=1，目标=2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.465  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:07.465  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=0，输出观测结果数=0，跳过组合数=1，耗时=5ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/space/visibility/plan
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"238"]
+             Body = {"observerSatelliteIds":[1],"targetIds":[2],"startTime":"2000-01-01T12:00:00Z","endTime":"2000-01-01T12:00:05Z","maxApproximationDays":0,"coarseStepSec":1,"fineStepSec":1,"observationConstraints":[{"satelliteIds":[1],"minDurationSec":0}]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController
+           Method = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController#planVisibility(VisibilityPlanRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"results":[],"skippedPairs":[{"observerSatelliteId":"1","observerSatelliteName":"测试我方星","targetId":"2","targetName":"测试目标","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"}],"totalSkippedPairs":1,"targetFilterBreakdown":{"belongsHit":1,"weightHit":1,"epochHit":1,"epochConstraintHit":1,"ephemerisWarningHit":1,"excludeHit":1,"maxApproximationDays":0},"ephemerisWarnings":[{"targetId":"2","targetName":"测试目标","reason":"星历时效风险：轨道历元超出建议近似传播时长（0天），已继续尝试计算；结果仅供参考。"}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:13:07.480  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=null，兼容历元上限=2000-12-31T23:59:59Z，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-13 23:13:07.522  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=1，地面站数=1，站星关系数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-13 23:13:07.522  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=1，地面站=ST-001，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.522  INFO 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=0，跳过链路数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:07.522  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=1，原始窗口数=0，连续覆盖窗口数=0，跳过链路数=1，耗时=2ms
+2026-10-13 23:13:07.523  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传时段校验完成：时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，覆盖满足=false
+2026-10-13 23:13:07.533  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=1，地面站数=1，站星关系数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-13 23:13:07.534  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=1，地面站=ST-001，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.534  INFO 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=0，跳过链路数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:07.534  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=1，原始窗口数=0，连续覆盖窗口数=0，跳过链路数=1，耗时=3ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/space/downlink/plan
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"207"]
+             Body = {"startTime":"2000-01-01T12:00:00Z","endTime":"2000-01-01T12:00:05Z","coarseStepSec":1,"fineStepSec":1,"satelliteIds":[1],"stations":[{"stationId":"ST-001"}],"links":[{"satelliteId":1,"stationId":"ST-001"}]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController
+           Method = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController#planDownlink(DownlinkPlanRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"satelliteStationWindows":[],"coverageWindows":[],"skippedLinks":[{"satelliteId":1,"satelliteName":"测试我方星","stationId":"ST-001","stationName":"测试站","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"}],"totalSkippedLinks":1}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:13:07.550  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2000-01-01T12:00:00Z~2000-01-01T12:00:05Z，粗选步长=1.0s，精选步长=0.001s，光照模式=ANY
+2026-10-13 23:13:07.551  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=1，目标=2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.551  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:07.551  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=0，输出观测结果数=0，跳过组合数=1，耗时=4ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/space/visibility/plan
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"265"]
+             Body = {"observerSatelliteIds":[1],"targetIds":[2],"startTime":"2000-01-01T12:00:00.000Z","endTime":"2000-01-01T12:00:05.000Z","coarseStepSec":1,"fineStepSec":0.001,"illuminationConstraint":{"mode":"ANY"},"observationConstraints":[{"satelliteIds":[1],"minDurationSec":0}]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController
+           Method = com.runisys.orbit.spacevisibility.api.SpaceVisibilityController#planVisibility(VisibilityPlanRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"results":[],"skippedPairs":[{"observerSatelliteId":"1","observerSatelliteName":"测试我方星","targetId":"2","targetName":"测试目标","stage":"SCAN","reason":"未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历"}],"totalSkippedPairs":1,"targetFilterBreakdown":{"belongsHit":1,"weightHit":1,"epochHit":1,"epochConstraintHit":1,"ephemerisWarningHit":0,"excludeHit":1,"maxApproximationDays":14},"ephemerisWarnings":[]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-13 23:13:07.567  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=null，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=2
+[ERROR] Tests run: 31, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.713 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest
+[ERROR] ignoresGroundPayloadProfileWhenPlanningDownlinkApi  Time elapsed: 0.043 s  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.satelliteStationWindows[0].windows.length()"
+	at com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest.ignoresGroundPayloadProfileWhenPlanningDownlinkApi(SpaceVisibilityControllerIntegrationTest.java:506)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['satelliteStationWindows'][0]['windows'].length()
+
+[ERROR] plansOnlyExplicitlySelectedSatelliteStationLinks  Time elapsed: 0.026 s  <<< FAILURE!
+java.lang.AssertionError: JSON path "$.satelliteStationWindows.length()" expected:<2> but was:<0>
+	at com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest.plansOnlyExplicitlySelectedSatelliteStationLinks(SpaceVisibilityControllerIntegrationTest.java:534)
+
+[ERROR] plansDownlinkWhenSatellitePayloadIsEmpty  Time elapsed: 0.015 s  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.satelliteStationWindows[0].satelliteId"
+	at com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest.plansDownlinkWhenSatellitePayloadIsEmpty(SpaceVisibilityControllerIntegrationTest.java:523)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['satelliteStationWindows'][0]['satelliteId']
+
+[ERROR] returnsReadableNamesAndSingleObservationTypeForVisibilityResults  Time elapsed: 0.022 s  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.results[0].targetName"
+	at com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest.returnsReadableNamesAndSingleObservationTypeForVisibilityResults(SpaceVisibilityControllerIntegrationTest.java:600)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['results'][0]['targetName']
+
+[ERROR] calculatesOutOfRangeEphemerisAndReturnsWarningInsteadOfFilteringItOut  Time elapsed: 0.014 s  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.results[0].targetId"
+	at com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest.calculatesOutOfRangeEphemerisAndReturnsWarningInsteadOfFilteringItOut(SpaceVisibilityControllerIntegrationTest.java:328)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['results'][0]['targetId']
+
+[ERROR] plansOnlyTheExplicitlySelectedSatelliteStationLink  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.satelliteStationWindows[0].satelliteId"
+	at com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest.plansOnlyTheExplicitlySelectedSatelliteStationLink(SpaceVisibilityControllerIntegrationTest.java:486)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['satelliteStationWindows'][0]['satelliteId']
+
+[ERROR] returnsReadableIlluminationStatesWithMillisecondTimes  Time elapsed: 0.016 s  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.results[0].arcs[0].observerIlluminations[0].satelliteName"
+	at com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest.returnsReadableIlluminationStatesWithMillisecondTimes(SpaceVisibilityControllerIntegrationTest.java:632)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['results'][0]['arcs'][0]['observerIlluminations'][0]['satelliteName']
+
+[INFO] Running com.runisys.orbit.spacevisibility.api.VisibilityTaskResultControllerIntegrationTest
+2026-10-13 23:13:07.575  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.runisys.orbit.spacevisibility.api.VisibilityTaskResultControllerIntegrationTest], using SpringBootContextLoader
+2026-10-13 23:13:07.575  INFO 59328 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.runisys.orbit.spacevisibility.api.VisibilityTaskResultControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2026-10-13 23:13:07.575  INFO 59328 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.runisys.orbit.spacevisibility.api.VisibilityTaskResultControllerIntegrationTest]: VisibilityTaskResultControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-13 23:13:07.579  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication for test class com.runisys.orbit.spacevisibility.api.VisibilityTaskResultControllerIntegrationTest
+2026-10-13 23:13:07.579  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2026-10-13 23:13:07.580  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b9aeedb, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63485d7, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@23ea8830, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@59a09be, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@790ac3e0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5bb2fb2b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2cee5365, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@796c68bf, org.springframework.test.context.event.EventPublishingTestExecutionListener@56d6a1b1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1a7163e3, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@44da7eb3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5e69cf07, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3d512652, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2c2e3460, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3b96f8b0]
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 s - in com.runisys.orbit.spacevisibility.api.VisibilityTaskResultControllerIntegrationTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.DownlinkPlanningServiceTest
+2026-10-13 23:13:07.742  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=2，地面站=ST-B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.742  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=1，地面站=ST-A，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.742  INFO 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=0，跳过链路数=2，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=2}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:07.764  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=1，地面站=ST-A，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.765  INFO 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=0，跳过链路数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:07.766  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=1，地面站=HEALTHY，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:07.767  WARN 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 跳过下传规划链路：卫星=2，地面站=FAILING，阶段=SCAN，原因=轨道传播失败：星历数据无法在当前任务时段完成计算，请核对星历时效和轨道参数。
+2026-10-13 23:13:07.767  INFO 59328 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=0，跳过链路数=2，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1, SCAN/轨道传播失败：星历数据无法在当前任务时段完成计算，请核对星历时效和轨道参数。=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+[ERROR] Tests run: 4, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 0.032 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.DownlinkPlanningServiceTest
+[ERROR] plansStationPairsInParallelAndSortsResults  Time elapsed: 0.025 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual:
+  []
+to contain exactly (and in same order):
+  [1L, 2L]
+but could not find the following elements:
+  [1L, 2L]
+
+	at com.runisys.orbit.spacevisibility.application.DownlinkPlanningServiceTest.plansStationPairsInParallelAndSortsResults(DownlinkPlanningServiceTest.java:34)
+
+[ERROR] plansPairUsingOnlyStationAndIlluminationConstraints  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at com.runisys.orbit.spacevisibility.application.DownlinkPlanningServiceTest.plansPairUsingOnlyStationAndIlluminationConstraints(DownlinkPlanningServiceTest.java:84)
+
+[ERROR] retainsHealthyLinkWhenAnotherLinkThrowsDuringPlanning  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual:
+  []
+to contain exactly (and in same order):
+  [1L]
+but could not find the following elements:
+  [1L]
+
+	at com.runisys.orbit.spacevisibility.application.DownlinkPlanningServiceTest.retainsHealthyLinkWhenAnotherLinkThrowsDuringPlanning(DownlinkPlanningServiceTest.java:114)
+
+[INFO] Running com.runisys.orbit.spacevisibility.application.DownlinkWindowValidatorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.application.DownlinkWindowValidatorTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.ObservationSampleEvaluatorTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.ObservationSampleEvaluatorTest
+[ERROR] evaluatesPayloadAndIlluminationFromOrbitStates  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.application.ObservationSampleEvaluatorTest.evaluatesPayloadAndIlluminationFromOrbitStates(ObservationSampleEvaluatorTest.java:37)
+
+[INFO] Running com.runisys.orbit.spacevisibility.application.PayloadConstraintFactoryTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in com.runisys.orbit.spacevisibility.application.PayloadConstraintFactoryTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.PlanningFacadeServiceLoggingTest
+2026-10-13 23:13:08.128  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=1，最小质量=250，最大质量=null，历元约束=null，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=2
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.319 s - in com.runisys.orbit.spacevisibility.application.PlanningFacadeServiceLoggingTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.PlanningFacadeServicePayloadTest
+2026-10-13 23:13:08.136  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-01-01T00:00:00Z~2026-01-01T00:00:01Z，粗选步长=1.0s，精选步长=1.0s，光照模式=ANY
+2026-10-13 23:13:08.136  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=1，目标=2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.136  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:08.136  INFO 59328 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=0，输出观测结果数=0，跳过组合数=1，耗时=1ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.runisys.orbit.spacevisibility.application.PlanningFacadeServicePayloadTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.PlanningFailureReasonFormatterTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.application.PlanningFailureReasonFormatterTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest
+2026-10-13 23:13:08.143  INFO 59328 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=3fd8f428-1e25-4532-8940-06810d6139aa
+2026-10-13 23:13:08.144  INFO 59328 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=fb55a01b-cedc-47b0-9286-8e22283a5d52
+2026-10-13 23:13:08.144  INFO 59328 --- [ool-18-thread-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=3fd8f428-1e25-4532-8940-06810d6139aa
+2026-10-13 23:13:08.146  INFO 59328 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=83108fa8-c961-4030-9edf-53b2e4f2a2c6
+2026-10-13 23:13:08.147  WARN 59328 --- [ool-19-thread-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务失败：taskId=83108fa8-c961-4030-9edf-53b2e4f2a2c6，异常类型=RuntimeException，根因=任务包装异常；根因：IllegalArgumentException: 目标 TLE 已超出有效期
+2026-10-13 23:13:08.159  INFO 59328 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=29e9461d-f704-4fc9-b2e4-c519419fbfe3
+2026-10-13 23:13:08.160  INFO 59328 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=5c7ba18a-29f6-43a6-9815-dfefbb0e824f
+2026-10-13 23:13:08.160  INFO 59328 --- [ool-22-thread-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=5c7ba18a-29f6-43a6-9815-dfefbb0e824f
+2026-10-13 23:13:08.174  INFO 59328 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=9210450a-04a9-4fb6-b661-90bafe05892a
+2026-10-13 23:13:08.174  WARN 59328 --- [ool-23-thread-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务失败：taskId=9210450a-04a9-4fb6-b661-90bafe05892a，异常类型=IllegalArgumentException，根因=请至少选择一颗观测卫星
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.VisibilityArcTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in com.runisys.orbit.spacevisibility.application.VisibilityArcTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.VisibilityConstraintPlannerTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in com.runisys.orbit.spacevisibility.application.VisibilityConstraintPlannerTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.VisibilityExecutorConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.application.VisibilityExecutorConfigurationTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest
+2026-10-13 23:13:08.216  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=T，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.217  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:08.219  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=T-1，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.219  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=T-2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.219  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=T-1，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.220  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=T-2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.220  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=4，批次数=4，有效组合数=0，跳过组合数=4，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=4}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:08.222  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=HEALTHY，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.222  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=FAILING，阶段=SCAN，原因=轨道传播失败：星历数据无法在当前任务时段完成计算，请核对星历时效和轨道参数。
+2026-10-13 23:13:08.222  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=0，跳过组合数=2，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1, SCAN/轨道传播失败：星历数据无法在当前任务时段完成计算，请核对星历时效和轨道参数。=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:08.225  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=T-2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.225  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=T-1，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.225  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=T-2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.225  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=T-1，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.226  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=4，批次数=1，有效组合数=0，跳过组合数=4，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=4}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:08.227  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=T-1，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.227  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=T-2，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.227  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=2，有效组合数=0，跳过组合数=2，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=2}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:08.229  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=T，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:08.229  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+[ERROR] Tests run: 6, Failures: 5, Errors: 1, Skipped: 0, Time elapsed: 0.012 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest
+[ERROR] ignoresStartupAngleRateForTargetVisibilityToMatchWinTool  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expected size: 1 but was: 0 in:
+[]
+	at com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest.ignoresStartupAngleRateForTargetVisibilityToMatchWinTool(VisibilityPlanningServiceTest.java:42)
+
+[ERROR] processesAllCatalogPairsInBatchesInsteadOfRejectingTheTotal  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expected size: 4 but was: 0 in:
+[]
+	at com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest.processesAllCatalogPairsInBatchesInsteadOfRejectingTheTotal(VisibilityPlanningServiceTest.java:126)
+
+[ERROR] retainsHealthyPairWhenAnotherPairThrowsDuringScan  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual:
+  []
+to contain exactly (and in same order):
+  ["HEALTHY"]
+but could not find the following elements:
+  ["HEALTHY"]
+
+	at com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest.retainsHealthyPairWhenAnotherPairThrowsDuringScan(VisibilityPlanningServiceTest.java:162)
+
+[ERROR] calculatesPairWindowsInParallelAndSortsResults  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual:
+  []
+to contain exactly (and in same order):
+  ["A", "A", "B", "B"]
+but could not find the following elements:
+  ["A", "A", "B", "B"]
+
+	at com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest.calculatesPairWindowsInParallelAndSortsResults(VisibilityPlanningServiceTest.java:99)
+
+[ERROR] reusesObserverOrbitStatesAcrossDifferentTargetsInTheSamePlan  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expected size: 2 but was: 0 in:
+[]
+	at com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest.reusesObserverOrbitStatesAcrossDifferentTargetsInTheSamePlan(VisibilityPlanningServiceTest.java:189)
+
+[ERROR] recordsIlluminationDetailsForEveryVisiblePairArc  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest.recordsIlluminationDetailsForEveryVisiblePairArc(VisibilityPlanningServiceTest.java:69)
+
+[INFO] Running com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceTest
+2026-10-13 23:13:08.230  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceTest], using SpringBootContextLoader
+2026-10-13 23:13:08.231  INFO 59328 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2026-10-13 23:13:08.231  INFO 59328 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceTest]: VisibilityTaskResultServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-13 23:13:08.256  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication for test class com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceTest
+2026-10-13 23:13:08.257  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2026-10-13 23:13:08.257  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4f7bb8df, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@269c7104, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6de84336, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@627bcd7e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@70543cae, org.springframework.test.context.support.DirtiesContextTestExecutionListener@350567f1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a5b7394, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@26f75d9c, org.springframework.test.context.event.EventPublishingTestExecutionListener@7717b4a0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@69b37f5c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@28b5662d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@34b2d51a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7e4ac598, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@cf10c92, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@f76872f]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-13 23:13:08.274  INFO 59328 --- [           main] .r.o.s.a.VisibilityTaskResultServiceTest : Starting VisibilityTaskResultServiceTest using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 59328 (started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\T27\original-space-validation)
+2026-10-13 23:13:08.275  INFO 59328 --- [           main] .r.o.s.a.VisibilityTaskResultServiceTest : No active profile set, falling back to 1 default profile: "default"
+ _ _   |_  _ _|_. ___ _ |    _
+| | |\/|_)(_| | |_\  |_)||_|_\
+     /               |
+                        3.5.5
+2026-10-13 23:13:08.635  INFO 59328 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-13 23:13:08.636  INFO 59328 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-13 23:13:08.636  INFO 59328 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-13 23:13:08.636  INFO 59328 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:space_target_visible (H2 1.4)
+2026-10-13 23:13:08.647  INFO 59328 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.009s)
+2026-10-13 23:13:08.661  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 10
+2026-10-13 23:13:08.661  INFO 59328 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-13 23:13:09.487  INFO 59328 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-10-13 23:13:09.743  INFO 59328 --- [           main] .r.o.s.a.VisibilityTaskResultServiceTest : Started VisibilityTaskResultServiceTest in 1.484 seconds (JVM running for 6.881)
+2026-10-13 23:13:09.828  WARN 59328 --- [           main] c.r.o.s.a.VisibilityTaskResultService    : 持久化可见性规划任务终态时未找到提交记录：taskId=task-missing
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.611 s - in com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceUnitTest
+2026-10-13 23:13:09.905  WARN 59328 --- [           main] c.r.o.s.a.VisibilityTaskResultService    : 持久化可见性规划任务结果 JSON 失败：taskId=task-oversized，结果字符数=106，原因=PacketTooBigException: Packet for query is too large
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceUnitTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.WinToolAzimuthConventionAnalysisTest
+2026-10-13 23:13:09.951  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.951  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.951  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.951  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=8ms
+2026-10-13 23:13:09.953  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=EXPLORER 40 ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.954  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=EXPLORER 40 ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.954  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=EXPLORER 40 ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.955  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=2ms
+2026-10-13 23:13:09.956  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS 2452，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.957  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS 2452，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.957  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS 2452，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.957  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:09.957  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=GLOBALSTAR M097，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.958  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=GLOBALSTAR M097，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.958  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=GLOBALSTAR M097，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.958  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:09.959  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-14 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.959  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-14 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.960  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-14 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.960  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:09.960  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.961  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.961  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.961  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:09.962  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=DIAMANT R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.962  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=DIAMANT R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.962  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=DIAMANT R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.962  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:09.964  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=GONETS M 04，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.965  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=GONETS M 04，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.965  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=GONETS M 04，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.965  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=2ms
+2026-10-13 23:13:09.966  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=EXPLORER 40 ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.966  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=EXPLORER 40 ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.966  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=EXPLORER 40 ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.966  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:09.967  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-14 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.967  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-14 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.967  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-14 R/B，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.967  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:09.968  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=DIAPASON ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.968  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=DIAPASON ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.968  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=DIAPASON ，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.969  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:09.969  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.969  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.969  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.969  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:09.972  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=GLOBALSTAR M039，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.974  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=GLOBALSTAR M039，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.974  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=GLOBALSTAR M039，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.974  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=3ms
+2026-10-13 23:13:09.976  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=GLOBALSTAR M093，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.977  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=GLOBALSTAR M093，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.977  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=GLOBALSTAR M093，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.977  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:09.977  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0458，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.978  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=ONEWEB-0458，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.978  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=ONEWEB-0458，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.978  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:09.978  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0448，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.978  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=ONEWEB-0448，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.979  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=ONEWEB-0448，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.979  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:09.979  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=GLOBALSTAR M058，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.979  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=GLOBALSTAR M058，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.979  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=GLOBALSTAR M058，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.981  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:09.981  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS 2467，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.981  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS 2467，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.982  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS 2467，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.982  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:09.983  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.983  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.984  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=GLOBALSTAR M091，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:09.984  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=3，批次数=3，有效组合数=0，跳过组合数=3，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=3}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=2ms
+
+===== 方位口径命中统计（57 数据点按 A/B/C 分列）=====
+观测星+X(沿速度)             A: 0/19  B: 0/19  C: 0/19
+观测星-X(相对-X)            A: 0/19  B: 0/19  C: 0/19
+观测星镜像(-方位)             A: 0/19  B: 0/19  C: 0/19
+观测星180-方位              A: 0/19  B: 0/19  C: 0/19
+目标星+X(沿速度)             A: 0/19  B: 0/19  C: 0/19
+目标星-X(相对-X)            A: 0/19  B: 0/19  C: 0/19
+目标星镜像(-方位)             A: 0/19  B: 0/19  C: 0/19
+目标星180-方位              A: 0/19  B: 0/19  C: 0/19
+俯仰(我方+90°)      A: 0/19  B: 0/19  C: 0/19
+距离(载荷区间极值)  A: 0/19  B: 0/19  C: 0/19
+最大相对角速度      A: 0/19  B: 0/19  C: 0/19
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.07 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.WinToolAzimuthConventionAnalysisTest
+[ERROR] fitsEveryDocumentedAzimuthRangeAgainstCandidateReferenceFrames  Time elapsed: 0.069 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual:
+  0
+to be greater than or equal to:
+  17
+
+	at com.runisys.orbit.spacevisibility.application.WinToolAzimuthConventionAnalysisTest.fitsEveryDocumentedAzimuthRangeAgainstCandidateReferenceFrames(WinToolAzimuthConventionAnalysisTest.java:172)
+
+[INFO] Running com.runisys.orbit.spacevisibility.application.WinToolReportFormatterTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.runisys.orbit.spacevisibility.application.WinToolReportFormatterTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.WinToolTargetWindowFourTargetCountReferenceTest
+2026-10-13 23:13:10.002  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.002  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.003  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.003  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.003  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.003  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.003  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.003  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.004  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.004  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=0，跳过组合数=9，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=9}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=2ms
+2026-10-13 23:13:10.007  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.008  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.008  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.008  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.008  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.008  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.009  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.009  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.009  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.009  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=0，跳过组合数=9，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=9}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=2ms
+2026-10-13 23:13:10.009  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=0，跳过组合数=9，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=9}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.011  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.012  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.012  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.012  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.012  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.012  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.012  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.012  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.012  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=0，跳过组合数=9，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=9}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+2026-10-13 23:13:10.012  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.013  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=0，跳过组合数=9，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=9}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.014  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.015  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=0，跳过组合数=9，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=9}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+ANGLE_RATE_AB current-0.30-0.30-0.30 => <none>
+ANGLE_RATE_AB stricter-0.20-0.20-0.20 => <none>
+ANGLE_RATE_AB stricter-0.10-0.10-0.10 => <none>
+ANGLE_RATE_AB literal-zero-for-A-B => <none>
+ANGLE_RATE_AB disabled-for-document-0-minus1 => <none>
+2026-10-13 23:13:10.015  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.016  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.016  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.016  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.016  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.016  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.016  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=JASON-3，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.016  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.017  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-469，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.017  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=0，跳过组合数=9，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=9}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=1ms
+[ERROR] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.WinToolTargetWindowFourTargetCountReferenceTest
+[ERROR] keepsTheThreeDeliveredCandidatesVisibleForTheThreeSatelliteConstraint  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual:
+  []
+to contain exactly in any order:
+  ["JASON-3", "SL-8-RB", "COSMOS-469"]
+but could not find the following elements:
+  ["JASON-3", "SL-8-RB", "COSMOS-469"]
+
+	at com.runisys.orbit.spacevisibility.application.WinToolTargetWindowFourTargetCountReferenceTest.keepsTheThreeDeliveredCandidatesVisibleForTheThreeSatelliteConstraint(WinToolTargetWindowFourTargetCountReferenceTest.java:70)
+
+[ERROR] comparesComputedRatesAgainstTheWinToolPublishedValues  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expected size: 3 but was: 0 in:
+{}
+	at com.runisys.orbit.spacevisibility.application.WinToolTargetWindowFourTargetCountReferenceTest.comparesComputedRatesAgainstTheWinToolPublishedValues(WinToolTargetWindowFourTargetCountReferenceTest.java:139)
+
+[INFO] Running com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixReferenceTest
+2026-10-13 23:13:10.019  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.019  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=0，跳过组合数=1，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=1}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=0ms
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixReferenceTest
+[ERROR] keepsObservationUntilDocumentWindowEndWhenStartupAngleRateIsConfigured  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expected size: 1 but was: 0 in:
+[]
+	at com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixReferenceTest.keepsObservationUntilDocumentWindowEndWhenStartupAngleRateIsConfigured(WinToolTargetWindowSixReferenceTest.java:52)
+
+[INFO] Running com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixTargetCountReferenceTest
+2026-10-13 23:13:10.022  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.023  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.023  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.023  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.023  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.023  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.023  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.023  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.024  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.025  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.025  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.025  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.025  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.025  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.025  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.025  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.025  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=24，批次数=24，有效组合数=0，跳过组合数=24，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=24}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=2ms
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.028  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.029  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.031  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.031  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.031  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.031  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.032  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=24，批次数=24，有效组合数=0，跳过组合数=24，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=24}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=3ms
+WINDOW_SIX_ANGLE_RATE_AB current-0.30 => []
+2026-10-13 23:13:10.034  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.035  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.035  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.035  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.035  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.035  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.035  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.036  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=A，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.036  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=B，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB-07426，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SL-8-RB-11136，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=COSMOS-1911，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=FREGAT-DEB-TANK，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.037  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=ONEWEB-0153，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.038  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=ONEWEB-0490，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.038  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SDA-1673，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.038  WARN 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 跳过可见性规划组合：观测星=C，目标=SDA-1680，阶段=SCAN，原因=未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+2026-10-13 23:13:10.038  INFO 59328 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=24，批次数=24，有效组合数=0，跳过组合数=24，跳过分类={SCAN/未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历=24}，扫描次数=0，采样次数=0，递归探针=0，精选区间=0，耗时=3ms
+WINDOW_SIX_ANGLE_RATE_AB disabled => []
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.016 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixTargetCountReferenceTest
+[ERROR] matchesTheEightDocumentTargetsForTheThreeSatelliteConstraint  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual:
+  []
+to contain exactly in any order:
+  ["SL-8-RB-07426",
+    "SL-8-RB-11136",
+    "COSMOS-1911",
+    "FREGAT-DEB-TANK",
+    "ONEWEB-0153",
+    "ONEWEB-0490",
+    "SDA-1673",
+    "SDA-1680"]
+but could not find the following elements:
+  ["SL-8-RB-07426",
+    "SL-8-RB-11136",
+    "COSMOS-1911",
+    "FREGAT-DEB-TANK",
+    "ONEWEB-0153",
+    "ONEWEB-0490",
+    "SDA-1673",
+    "SDA-1680"]
+
+	at com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixTargetCountReferenceTest.matchesTheEightDocumentTargetsForTheThreeSatelliteConstraint(WinToolTargetWindowSixTargetCountReferenceTest.java:54)
+
+[INFO] Running com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest
+[ERROR] Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest
+[ERROR] ignoresGroundStartupAngleRateToMatchWinTool  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest.ignoresGroundStartupAngleRateToMatchWinTool(DownlinkPlannerTest.java:73)
+
+[ERROR] retainsStationPassWhenStandardGroundPayloadRangeIsSatisfied  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest.retainsStationPassWhenStandardGroundPayloadRangeIsSatisfied(DownlinkPlannerTest.java:53)
+
+[ERROR] appliesDefaultStyleGuardsToVisibleStationPass  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest.appliesDefaultStyleGuardsToVisibleStationPass(DownlinkPlannerTest.java:108)
+
+[ERROR] filtersPassBySatelliteIlluminationRequirement  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest.filtersPassBySatelliteIlluminationRequirement(DownlinkPlannerTest.java:119)
+
+[ERROR] dropsEffectiveDownlinkWindowShorterThanThirtySeconds  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest.dropsEffectiveDownlinkWindowShorterThanThirtySeconds(DownlinkPlannerTest.java:89)
+
+[ERROR] rejectsStationPassWhenStandardGroundPayloadRangeIsNotSatisfied  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest.rejectsStationPassWhenStandardGroundPayloadRangeIsNotSatisfied(DownlinkPlannerTest.java:33)
+
+[INFO] Running com.runisys.orbit.spacevisibility.domain.downlink.IlluminationRequirementTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in com.runisys.orbit.spacevisibility.domain.downlink.IlluminationRequirementTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest
+[ERROR] matchesAllJanuaryWinToolDownlinkWindows  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest.verify(WinToolDownlinkReferenceTest.java:117)
+	at com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest.matchesAllJanuaryWinToolDownlinkWindows(WinToolDownlinkReferenceTest.java:53)
+
+[ERROR] matchesAllOctoberWinToolDownlinkWindows  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest.verify(WinToolDownlinkReferenceTest.java:117)
+	at com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest.matchesAllOctoberWinToolDownlinkWindows(WinToolDownlinkReferenceTest.java:90)
+
+[INFO] Running com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometryTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometryTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.orbit.KeplerOrbitStateProviderTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.302 s - in com.runisys.orbit.spacevisibility.domain.orbit.KeplerOrbitStateProviderTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProviderAlpha5Test
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProviderAlpha5Test
+[INFO] Running com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProviderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProviderTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.IlluminationConstraintTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.runisys.orbit.spacevisibility.domain.payload.IlluminationConstraintTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest
+[ERROR] Tests run: 8, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest
+[ERROR] rejectsSpaceTargetBelowMinimumDetectRange  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.rejectsSpaceTargetBelowMinimumDetectRange(PayloadVisibilityEvaluatorTest.java:74)
+
+[ERROR] rejectsSpaceTargetInsideSunAvoidanceHalfAngle  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.rejectsSpaceTargetInsideSunAvoidanceHalfAngle(PayloadVisibilityEvaluatorTest.java:131)
+
+[ERROR] acceptsGroundTargetInsideNadirFullCone  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.acceptsGroundTargetInsideNadirFullCone(PayloadVisibilityEvaluatorTest.java:36)
+
+[ERROR] evaluatesStandardGroundPayloadWithUnifiedAttitudeConstraints  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.evaluatesStandardGroundPayloadWithUnifiedAttitudeConstraints(PayloadVisibilityEvaluatorTest.java:56)
+
+[ERROR] rejectsSpaceTargetOutsideElevationWindow  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.rejectsSpaceTargetOutsideElevationWindow(PayloadVisibilityEvaluatorTest.java:110)
+
+[ERROR] evaluatesGeometryAndBothIlluminationStatesAtOneSample  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.evaluatesGeometryAndBothIlluminationStatesAtOneSample(PayloadVisibilityEvaluatorTest.java:20)
+
+[ERROR] rejectsSpaceTargetWhenTrackingRateExceedsPayloadLimit  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.rejectsSpaceTargetWhenTrackingRateExceedsPayloadLimit(PayloadVisibilityEvaluatorTest.java:149)
+
+[ERROR] rejectsSpaceTargetOutsideAzimuthWindow  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.rejectsSpaceTargetOutsideAzimuthWindow(PayloadVisibilityEvaluatorTest.java:91)
+
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest
+[ERROR] Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest
+[ERROR] temeSunDirectionMatchesIndependentCorrectEpochReference  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest.temeSunDirectionMatchesIndependentCorrectEpochReference(SolarGeometrySunSourceTest.java:20)
+
+[ERROR] exposesJplDe405AsTheOnlyProductionSunSource  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest.exposesJplDe405AsTheOnlyProductionSunSource(SolarGeometrySunSourceTest.java:47)
+
+[ERROR] cachesSunDirectionPerUtcSecond  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest.cachesSunDirectionPerUtcSecond(SolarGeometrySunSourceTest.java:34)
+
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.SolarGeometryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.payload.SolarGeometryTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.WinToolAttitudeConventionDiagnosticTest
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.domain.payload.WinToolAttitudeConventionDiagnosticTest
+[ERROR] acceptsDocumentAObservationWhenTheObserverIsInUmbra  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.WinToolAttitudeConventionDiagnosticTest.acceptsDocumentAObservationWhenTheObserverIsInUmbra(WinToolAttitudeConventionDiagnosticTest.java:112)
+
+[ERROR] exportsDocumentWindowFourAttitudeComponents  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: 未找到 Orekit 数据目录，无法加载 WinTool 要求的 JPL DE405 星历
+	at com.runisys.orbit.spacevisibility.domain.payload.WinToolAttitudeConventionDiagnosticTest.exportsDocumentWindowFourAttitudeComponents(WinToolAttitudeConventionDiagnosticTest.java:80)
+
+[INFO] Running com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculatorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculatorTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.window.ScanStatisticsAccumulatorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.window.ScanStatisticsAccumulatorTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.window.TimeWindowScannerTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.window.TimeWindowScannerTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.window.WindowNormalizerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.window.WindowNormalizerTest
+[INFO] Running com.runisys.orbit.spacevisibility.infrastructure.persistence.SatelliteMapperIntegrationTest
+2026-10-13 23:13:10.405  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.runisys.orbit.spacevisibility.infrastructure.persistence.SatelliteMapperIntegrationTest], using SpringBootContextLoader
+2026-10-13 23:13:10.406  INFO 59328 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.runisys.orbit.spacevisibility.infrastructure.persistence.SatelliteMapperIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2026-10-13 23:13:10.406  INFO 59328 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.runisys.orbit.spacevisibility.infrastructure.persistence.SatelliteMapperIntegrationTest]: SatelliteMapperIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-13 23:13:10.412  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication for test class com.runisys.orbit.spacevisibility.infrastructure.persistence.SatelliteMapperIntegrationTest
+2026-10-13 23:13:10.413  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2026-10-13 23:13:10.413  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@38ebc866, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6adcf059, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7962a746, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1c31de5d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7a7f9d45, org.springframework.test.context.support.DirtiesContextTestExecutionListener@772cf46b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1b98355f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@949d347, org.springframework.test.context.event.EventPublishingTestExecutionListener@f5ae29e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1fc5c0b2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@45ad3cd8, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2b90cc1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5a2f401a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6bdedbbd, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@47b961e2]
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.runisys.orbit.spacevisibility.infrastructure.persistence.SatelliteMapperIntegrationTest
+[INFO] Running com.runisys.orbit.spacevisibility.infrastructure.persistence.StationMapperIntegrationTest
+2026-10-13 23:13:10.485  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.runisys.orbit.spacevisibility.infrastructure.persistence.StationMapperIntegrationTest], using SpringBootContextLoader
+2026-10-13 23:13:10.485  INFO 59328 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.runisys.orbit.spacevisibility.infrastructure.persistence.StationMapperIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2026-10-13 23:13:10.485  INFO 59328 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.runisys.orbit.spacevisibility.infrastructure.persistence.StationMapperIntegrationTest]: StationMapperIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-13 23:13:10.487  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication for test class com.runisys.orbit.spacevisibility.infrastructure.persistence.StationMapperIntegrationTest
+2026-10-13 23:13:10.488  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2026-10-13 23:13:10.488  INFO 59328 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7976e536, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@670a4738, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@47ffdbba, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@ba0018e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@45311a99, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7037a680, org.springframework.test.context.transaction.TransactionalTestExecutionListener@492c8137, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@420b55ed, org.springframework.test.context.event.EventPublishingTestExecutionListener@f237ae7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@42edde25, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6fe5da76, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@77d95e5a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6339e604, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4f8900b0, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@e7e455d]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.runisys.orbit.spacevisibility.infrastructure.persistence.StationMapperIntegrationTest
+[INFO] Running com.runisys.orbit.spacevisibility.infrastructure.web.TomcatProtocolCustomizerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.runisys.orbit.spacevisibility.infrastructure.web.TomcatProtocolCustomizerTest
+2026-10-13 23:13:10.505  INFO 59328 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-13 23:13:10.507  INFO 59328 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-13 23:13:10.511  INFO 59328 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-10-13 23:13:10.513  INFO 59328 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+[INFO]
+[INFO] Results:
+[INFO]
+[ERROR] Failures:
+[ERROR]   PlanningTaskControllerIntegrationTest.submitsPollsAndFetchesVisibilityPlanTaskResult:100 No value at JSON path "$.results[0].targetName"
+[ERROR]   SpaceVisibilityControllerIntegrationTest.calculatesOutOfRangeEphemerisAndReturnsWarningInsteadOfFilteringItOut:328 No value at JSON path "$.results[0].targetId"
+[ERROR]   SpaceVisibilityControllerIntegrationTest.ignoresGroundPayloadProfileWhenPlanningDownlinkApi:506 No value at JSON path "$.satelliteStationWindows[0].windows.length()"
+[ERROR]   SpaceVisibilityControllerIntegrationTest.plansDownlinkWhenSatellitePayloadIsEmpty:523 No value at JSON path "$.satelliteStationWindows[0].satelliteId"
+[ERROR]   SpaceVisibilityControllerIntegrationTest.plansOnlyExplicitlySelectedSatelliteStationLinks:534 JSON path "$.satelliteStationWindows.length()" expected:<2> but was:<0>
+[ERROR]   SpaceVisibilityControllerIntegrationTest.plansOnlyTheExplicitlySelectedSatelliteStationLink:486 No value at JSON path "$.satelliteStationWindows[0].satelliteId"
+[ERROR]   SpaceVisibilityControllerIntegrationTest.returnsReadableIlluminationStatesWithMillisecondTimes:632 No value at JSON path "$.results[0].arcs[0].observerIlluminations[0].satelliteName"
+[ERROR]   SpaceVisibilityControllerIntegrationTest.returnsReadableNamesAndSingleObservationTypeForVisibilityResults:600 No value at JSON path "$.results[0].targetName"
+[ERROR]   DownlinkPlanningServiceTest.plansStationPairsInParallelAndSortsResults:34
+Expecting actual:
+  []
+to contain exactly (and in same order):
+  [1L, 2L]
+but could not find the following elements:
+  [1L, 2L]
+
+[ERROR]   DownlinkPlanningServiceTest.retainsHealthyLinkWhenAnotherLinkThrowsDuringPlanning:114
+Expecting actual:
+  []
+to contain exactly (and in same order):
+  [1L]
+but could not find the following elements:
+  [1L]
+
+[ERROR]   VisibilityPlanningServiceTest.calculatesPairWindowsInParallelAndSortsResults:99
+Expecting actual:
+  []
+to contain exactly (and in same order):
+  ["A", "A", "B", "B"]
+but could not find the following elements:
+  ["A", "A", "B", "B"]
+
+[ERROR]   VisibilityPlanningServiceTest.ignoresStartupAngleRateForTargetVisibilityToMatchWinTool:42
+Expected size: 1 but was: 0 in:
+[]
+[ERROR]   VisibilityPlanningServiceTest.processesAllCatalogPairsInBatchesInsteadOfRejectingTheTotal:126
+Expected size: 4 but was: 0 in:
+[]
+[ERROR]   VisibilityPlanningServiceTest.retainsHealthyPairWhenAnotherPairThrowsDuringScan:162
+Expecting actual:
+  []
+to contain exactly (and in same order):
+  ["HEALTHY"]
+but could not find the following elements:
+  ["HEALTHY"]
+
+[ERROR]   VisibilityPlanningServiceTest.reusesObserverOrbitStatesAcrossDifferentTargetsInTheSamePlan:189
+Expected size: 2 but was: 0 in:
+[]
+[ERROR]   WinToolAzimuthConventionAnalysisTest.fitsEveryDocumentedAzimuthRangeAgainstCandidateReferenceFrames:172
+Expecting actual:
+  0
+to be greater than or equal to:
+  17
+
+[ERROR]   WinToolTargetWindowFourTargetCountReferenceTest.comparesComputedRatesAgainstTheWinToolPublishedValues:139
+Expected size: 3 but was: 0 in:
+{}
+[ERROR]   WinToolTargetWindowFourTargetCountReferenceTest.keepsTheThreeDeliveredCandidatesVisibleForTheThreeSatelliteConstraint:70
+Expecting actual:
+  []
+to contain exactly in any order:
+  ["JASON-3", "SL-8-RB", "COSMOS-469"]
+but could not find the following elements:
+  ["JASON-3", "SL-8-RB", "COSMOS-469"]
+
+[ERROR]   WinToolTargetWindowSixReferenceTest.keepsObservationUntilDocumentWindowEndWhenStartupAngleRateIsConfigured:52
+Expected size: 1 but was: 0 in:
+[]
+[ERROR]   WinToolTargetWindowSixTargetCountReferenceTest.matchesTheEightDocumentTargetsForTheThreeSatelliteConstraint:54
+Expecting actual:
+  []
+to contain exactly in any order:
+  ["SL-8-RB-07426",
+    "SL-8-RB-11136",
+    "COSMOS-1911",
+    "FREGAT-DEB-TANK",
+    "ONEWEB-0153",
+    "ONEWEB-0490",
+    "SDA-1673",
+    "SDA-1680"]
+but could not find the following elements:
+  ["SL-8-RB-07426",
+    "SL-8-RB-11136",
+    "COSMOS-1911",
+    "FREGAT-DEB-TANK",
+    "ONEWEB-0153",
+    "ONEWEB-0490",
+    "SDA-1673",
+    "SDA-1680"]
+
+[ERROR] Errors:
+[ERROR]   DownlinkPlanningServiceTest.plansPairUsingOnlyStationAndIlluminationConstraints:84 » IndexOutOfBounds
+[ERROR]   ObservationSampleEvaluatorTest.evaluatesPayloadAndIlluminationFromOrbitStates:37 » IllegalState
+[ERROR]   VisibilityPlanningServiceTest.recordsIlluminationDetailsForEveryVisiblePairArc:69 » IndexOutOfBounds
+[ERROR]   DownlinkPlannerTest.appliesDefaultStyleGuardsToVisibleStationPass:108 » IllegalState
+[ERROR]   DownlinkPlannerTest.dropsEffectiveDownlinkWindowShorterThanThirtySeconds:89 » IllegalState
+[ERROR]   DownlinkPlannerTest.filtersPassBySatelliteIlluminationRequirement:119 » IllegalState
+[ERROR]   DownlinkPlannerTest.ignoresGroundStartupAngleRateToMatchWinTool:73 » IllegalState
+[ERROR]   DownlinkPlannerTest.rejectsStationPassWhenStandardGroundPayloadRangeIsNotSatisfied:33 » IllegalState
+[ERROR]   DownlinkPlannerTest.retainsStationPassWhenStandardGroundPayloadRangeIsSatisfied:53 » IllegalState
+[ERROR]   WinToolDownlinkReferenceTest.matchesAllJanuaryWinToolDownlinkWindows:53->verify:117 » IllegalState
+[ERROR]   WinToolDownlinkReferenceTest.matchesAllOctoberWinToolDownlinkWindows:90->verify:117 » IllegalState
+[ERROR]   PayloadVisibilityEvaluatorTest.acceptsGroundTargetInsideNadirFullCone:36 » IllegalState
+[ERROR]   PayloadVisibilityEvaluatorTest.evaluatesGeometryAndBothIlluminationStatesAtOneSample:20 » IllegalState
+[ERROR]   PayloadVisibilityEvaluatorTest.evaluatesStandardGroundPayloadWithUnifiedAttitudeConstraints:56 » IllegalState
+[ERROR]   PayloadVisibilityEvaluatorTest.rejectsSpaceTargetBelowMinimumDetectRange:74 » IllegalState
+[ERROR]   PayloadVisibilityEvaluatorTest.rejectsSpaceTargetInsideSunAvoidanceHalfAngle:131 » IllegalState
+[ERROR]   PayloadVisibilityEvaluatorTest.rejectsSpaceTargetOutsideAzimuthWindow:91 » IllegalState
+[ERROR]   PayloadVisibilityEvaluatorTest.rejectsSpaceTargetOutsideElevationWindow:110 » IllegalState
+[ERROR]   PayloadVisibilityEvaluatorTest.rejectsSpaceTargetWhenTrackingRateExceedsPayloadLimit:149 » IllegalState
+[ERROR]   SolarGeometrySunSourceTest.cachesSunDirectionPerUtcSecond:34 » IllegalState 未找...
+[ERROR]   SolarGeometrySunSourceTest.exposesJplDe405AsTheOnlyProductionSunSource:47 » IllegalState
+[ERROR]   SolarGeometrySunSourceTest.temeSunDirectionMatchesIndependentCorrectEpochReference:20 » IllegalState
+[ERROR]   WinToolAttitudeConventionDiagnosticTest.acceptsDocumentAObservationWhenTheObserverIsInUmbra:112 » IllegalState
+[ERROR]   WinToolAttitudeConventionDiagnosticTest.exportsDocumentWindowFourAttitudeComponents:80 » IllegalState
+[INFO]
+[ERROR] Tests run: 162, Failures: 20, Errors: 24, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.200 s
+[INFO] Finished at: 2026-10-13T23:13:11+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project space-target-visible: There are test failures.
+[ERROR]
+[ERROR] Please refer to G:\5-YG\space-ground-visible\verification\runtime\T27\original-space-validation\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

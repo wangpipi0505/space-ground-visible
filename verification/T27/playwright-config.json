@@ -1,0 +1,1 @@
+{"browser": {"browserName": "chromium", "launchOptions": {"channel": "chrome", "headless": true}, "contextOptions": {"locale": "zh-CN", "timezoneId": "Asia/Shanghai", "viewport": {"width": 1920, "height": 1200}, "acceptDownloads": true}}}

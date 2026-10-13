@@ -130,6 +130,64 @@ class PlanningTaskServiceTest {
         }
     }
 
+    /** 最后一批已产出结果但尚未返回时接受取消，任务体即使不再检查标志也不能发布成功。 */
+    @Test
+    void cancelsCompletedWorkBeforePublishingResult() throws Exception {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        CountDownLatch workCompleted = new CountDownLatch(1);
+        CountDownLatch allowReturn = new CountDownLatch(1);
+        CountDownLatch notified = new CountDownLatch(1);
+        try {
+            PlanningTaskService service = new PlanningTaskService(executor, 1);
+            PlanningTask task = service.submit("T27-final-batch", running -> {
+                running.reportProgress(1L, 1L);
+                workCompleted.countDown();
+                try {
+                    assertThat(allowReturn.await(5, TimeUnit.SECONDS)).isTrue();
+                } catch (InterruptedException exception) {
+                    Thread.currentThread().interrupt();
+                    throw new IllegalStateException(exception);
+                }
+                return new SpaceApiModels.VisibilityPlanResponse(Collections.<VisibilityObservationResult>emptyList());
+            }, terminal -> notified.countDown());
+            assertThat(workCompleted.await(5, TimeUnit.SECONDS)).isTrue();
+            assertThat(service.cancel(task.getTaskId()).getStatus()).isEqualTo(PlanningTask.Status.RUNNING);
+            allowReturn.countDown();
+            assertThat(notified.await(5, TimeUnit.SECONDS)).isTrue();
+            assertThat(task.getStatus()).isEqualTo(PlanningTask.Status.CANCELLED);
+            assertThat(task.getResult()).isNull();
+            assertThat(task.getCompletedAt()).isNotNull();
+        } finally {
+            allowReturn.countDown();
+            executor.shutdownNow();
+        }
+    }
+
+    /** 成功已发布后取消必须保持成功与原结果；不能把终态改写为已取消。 */
+    @Test
+    void keepsSuccessfulTerminalStateWhenCancelledAfterPublication() {
+        PlanningTaskService service = new PlanningTaskService(Runnable::run, 1);
+        SpaceApiModels.VisibilityPlanResponse result = new SpaceApiModels.VisibilityPlanResponse(
+                Collections.<VisibilityObservationResult>emptyList());
+        PlanningTask task = service.submit(running -> result);
+        service.cancel(task.getTaskId());
+        assertThat(task.getStatus()).isEqualTo(PlanningTask.Status.SUCCEEDED);
+        assertThat(task.getResult()).isSameAs(result);
+        assertThat(task.isCancellationRequested()).isFalse();
+    }
+
+    /** 普通业务异常仍保留原FAILED/错误根因；受理取消不能把真实领域故障伪装成正常取消退出。 */
+    @Test
+    void retainsOriginalFailureWhenCancelledWorkThrowsBusinessError() {
+        PlanningTaskService service = new PlanningTaskService(Runnable::run, 1);
+        PlanningTask task = service.submit(running -> {
+            running.requestCancellation();
+            throw new IllegalArgumentException("取消期间真实轨道数据错误");
+        });
+        assertThat(task.getStatus()).isEqualTo(PlanningTask.Status.FAILED);
+        assertThat(task.getErrorMessage()).isEqualTo("取消期间真实轨道数据错误");
+    }
+
     /** 验证查询和取消不存在的任务返回空。 */
     @Test
     void returnsNullForUnknownTaskId() {

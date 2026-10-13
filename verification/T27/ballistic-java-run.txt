@@ -1,0 +1,1 @@
+PASS Java=1.8.0_472; JDK-only domain classes; Spring/MyBatis/compatibility/POI/MinIO absent; 72 position / 24 native J2 state / 26 fitter state comparisons; exact bits; 6 histories x 12 queries, repeated/unordered/reverse; utcOffsetSec=0, queryOffsetSec is relative query time; absolute Cartesian epoch also checked

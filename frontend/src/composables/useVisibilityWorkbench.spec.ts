@@ -266,7 +266,7 @@ describe('useVisibilityWorkbench', () => {
     expect(workbench.visibilityPlan.value).toBeNull()
   })
 
-  it('cancels a running background task and stops polling', async () => {
+  it('真实CANCELLED取消响应停止轮询', async () => {
     vi.mocked(getApi).mockImplementation((path) => {
       const responses: Record<string, unknown> = {
         '/satellites/1/payload-profiles': configuredPayload,
@@ -283,11 +283,114 @@ describe('useVisibilityWorkbench', () => {
     await vi.advanceTimersByTimeAsync(0)
     expect(workbench.visibilityTaskRunning.value).toBe(true)
 
+    vi.mocked(deleteApi).mockResolvedValueOnce({ taskId: 'task-1', status: 'CANCELLED', totalPairs: 4, completedPairs: 1 } as never)
+
     await workbench.cancelVisibilityTaskPlan()
     await vi.advanceTimersByTimeAsync(0)
 
     expect(vi.mocked(deleteApi)).toHaveBeenCalledWith('/visibility/tasks/task-1')
     expect(workbench.visibilityTask.value).toMatchObject({ status: 'CANCELLED' })
     expect(workbench.visibilityTaskRunning.value).toBe(false)
+  })
+
+  /** DELETE只是接受取消时仍返回RUNNING，页面必须继续原轮询，直到服务真正进入终态。 */
+  it('接受取消仍RUNNING时不伪造终态并轮询到真实CANCELLED', async () => {
+    let status = 'RUNNING'
+    vi.mocked(getApi).mockImplementation((path) => Promise.resolve(path.endsWith('/payload-profiles')
+      ? configuredPayload : { taskId: 'task-1', status, totalPairs: 1, completedPairs: 0 }) as never)
+    const workbench = useVisibilityWorkbench()
+    await preparePlanning(workbench)
+    vi.mocked(postApi).mockResolvedValueOnce({ taskId: 'task-1' } as never)
+    await workbench.runVisibilityPlan()
+    await vi.advanceTimersByTimeAsync(0)
+    vi.mocked(deleteApi).mockResolvedValueOnce({ taskId: 'task-1', status: 'RUNNING', totalPairs: 1, completedPairs: 0 } as never)
+    await workbench.cancelVisibilityTaskPlan()
+    expect(workbench.visibilityTask.value?.status).toBe('RUNNING')
+    expect(workbench.visibilityTaskRunning.value).toBe(true)
+    status = 'CANCELLED'
+    await vi.advanceTimersByTimeAsync(2000)
+    expect(workbench.visibilityTask.value?.status).toBe('CANCELLED')
+    expect(workbench.visibilityTaskRunning.value).toBe(false)
+    expect(getApi).not.toHaveBeenCalledWith('/visibility/tasks/task-1/result')
+  })
+
+  /** 取消请求晚于成功发布时，使用服务器SUCCEEDED及真实结果，不能显示已取消。 */
+  it('取消返回既有SUCCEEDED时保留成功并读取结果', async () => {
+    vi.mocked(getApi).mockImplementation((path) => Promise.resolve(path.endsWith('/payload-profiles')
+      ? configuredPayload : path.endsWith('/result') ? { results: [] }
+        : { taskId: 'task-1', status: 'RUNNING', totalPairs: 1, completedPairs: 0 }) as never)
+    const workbench = useVisibilityWorkbench()
+    await preparePlanning(workbench)
+    vi.mocked(postApi).mockResolvedValueOnce({ taskId: 'task-1' } as never)
+    await workbench.runVisibilityPlan()
+    await vi.advanceTimersByTimeAsync(0)
+    vi.mocked(deleteApi).mockResolvedValueOnce({ taskId: 'task-1', status: 'SUCCEEDED', totalPairs: 1, completedPairs: 1 } as never)
+    await workbench.cancelVisibilityTaskPlan()
+    expect(workbench.visibilityTask.value?.status).toBe('SUCCEEDED')
+    expect(workbench.visibilityPlan.value).toEqual({ results: [] })
+    expect(workbench.visibilityTaskRunning.value).toBe(false)
+  })
+
+  /** DELETE迟到时，已由轮询确认的SUCCEEDED不能被旧RUNNING响应回退。 */
+  it('迟到取消响应不能回退已确认成功', async () => {
+    let status = 'RUNNING'
+    vi.mocked(getApi).mockImplementation((path) => Promise.resolve(path.endsWith('/payload-profiles')
+      ? configuredPayload : path.endsWith('/result') ? { results: [] }
+        : { taskId: 'task-1', status, totalPairs: 1, completedPairs: 0 }) as never)
+    const workbench = useVisibilityWorkbench()
+    await preparePlanning(workbench)
+    vi.mocked(postApi).mockResolvedValueOnce({ taskId: 'task-1' } as never)
+    await workbench.runVisibilityPlan()
+    await vi.advanceTimersByTimeAsync(0)
+    let finishCancel!: (value: unknown) => void
+    vi.mocked(deleteApi).mockImplementationOnce(() => new Promise((resolve) => { finishCancel = resolve }) as never)
+    const cancelling = workbench.cancelVisibilityTaskPlan()
+    status = 'SUCCEEDED'
+    await vi.advanceTimersByTimeAsync(2000)
+    expect(workbench.visibilityTask.value?.status).toBe('SUCCEEDED')
+    finishCancel({ taskId: 'task-1', status: 'RUNNING', totalPairs: 1, completedPairs: 0 })
+    await cancelling
+    expect(workbench.visibilityTask.value?.status).toBe('SUCCEEDED')
+    expect(workbench.visibilityPlan.value).toEqual({ results: [] })
+    expect(workbench.visibilityTaskRunning.value).toBe(false)
+  })
+
+  /** 前一个任务GET仍在传输时DELETE先确认CANCELLED，旧GET随后RUNNING不得恢复运行。 */
+  it('迟到轮询响应不能回退取消终态', async () => {
+    const workbench = useVisibilityWorkbench()
+    await preparePlanning(workbench)
+    let finishPoll!: (value: unknown) => void
+    vi.mocked(getApi).mockImplementationOnce(() => new Promise((resolve) => { finishPoll = resolve }) as never)
+    vi.mocked(postApi).mockResolvedValueOnce({ taskId: 'task-1' } as never)
+    await workbench.runVisibilityPlan()
+    vi.mocked(deleteApi).mockResolvedValueOnce({ taskId: 'task-1', status: 'CANCELLED', totalPairs: 1, completedPairs: 0 } as never)
+    await workbench.cancelVisibilityTaskPlan()
+    finishPoll({ taskId: 'task-1', status: 'RUNNING', totalPairs: 1, completedPairs: 0 })
+    await vi.advanceTimersByTimeAsync(0)
+    expect(workbench.visibilityTask.value?.status).toBe('CANCELLED')
+    expect(workbench.visibilityTaskRunning.value).toBe(false)
+  })
+
+  /** 当前窗口/任务切换之后，旧DELETE不能写入新任务ID、进度或停止新轮询。 */
+  it('旧取消回填不能污染新任务', async () => {
+    vi.mocked(getApi).mockImplementation((path) => Promise.resolve(path.endsWith('/payload-profiles')
+      ? configuredPayload : { taskId: path.endsWith('task-2') ? 'task-2' : 'task-1', status: 'RUNNING', totalPairs: 1, completedPairs: 0 }) as never)
+    const workbench = useVisibilityWorkbench()
+    await preparePlanning(workbench)
+    vi.mocked(postApi).mockResolvedValueOnce({ taskId: 'task-1' } as never)
+    await workbench.runVisibilityPlan()
+    await vi.advanceTimersByTimeAsync(0)
+    let finishCancel!: (value: unknown) => void
+    vi.mocked(deleteApi).mockImplementationOnce(() => new Promise((resolve) => { finishCancel = resolve }) as never)
+    const cancelling = workbench.cancelVisibilityTaskPlan()
+    vi.mocked(postApi).mockResolvedValueOnce({ taskId: 'task-2' } as never)
+    await workbench.runVisibilityPlan()
+    await vi.advanceTimersByTimeAsync(0)
+    finishCancel({ taskId: 'task-1', status: 'CANCELLED', totalPairs: 1, completedPairs: 0 })
+    await cancelling
+    expect(workbench.visibilityTask.value?.taskId).toBe('task-2')
+    expect(workbench.visibilityTask.value?.status).toBe('RUNNING')
+    expect(workbench.visibilityTaskRunning.value).toBe(true)
+    vi.clearAllTimers()
   })
 })

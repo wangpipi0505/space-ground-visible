@@ -1,0 +1,53 @@
+{
+  "calls": [
+    {
+      "method": "PUT",
+      "status": 200,
+      "request": {
+        "remark": "T27修复后空间非空完整B/S验收"
+      },
+      "response": {
+        "id": "2110033843827085314",
+        "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e",
+        "taskType": "VISIBILITY",
+        "status": "SUCCEEDED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "errorMessage": null,
+        "remark": "T27修复后空间非空完整B/S验收",
+        "createTime": "2026-10-13T15:44:05.554",
+        "completeTime": "2026-10-13T15:44:05.981",
+        "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":14,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:07:21Z\",\"coarseStepSec\":60.0,\"fineStepSec\":0.001,\"illuminationConstraint\":{\"mode\":\"ANY\",\"observerStates\":[],\"targetStates\":[]},\"observationConstraints\":[],\"winToolReport\":null}",
+        "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":441.0}],\"durationSec\":441.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(441.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+        "skippedPairsJson": null
+      }
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "response": {
+        "id": "2110033843827085314",
+        "taskId": "314b51d2-74b5-403b-8cd0-606726eafc0e",
+        "taskType": "VISIBILITY",
+        "status": "SUCCEEDED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "errorMessage": null,
+        "remark": "T27修复后空间非空完整B/S验收",
+        "createTime": "2026-10-13T15:44:05.554",
+        "completeTime": "2026-10-13T15:44:05.981",
+        "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":14,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:07:21Z\",\"coarseStepSec\":60.0,\"fineStepSec\":0.001,\"illuminationConstraint\":{\"mode\":\"ANY\",\"observerStates\":[],\"targetStates\":[]},\"observationConstraints\":[],\"winToolReport\":null}",
+        "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:07:21.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":441.0}],\"durationSec\":441.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(441.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+        "skippedPairsJson": null
+      }
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "candidateJarSha256": "6f0cde71a608294585c40e512d9c649c80d826627d1c16f851b93bb1102e20cb",
+  "service": {
+    "name": "root-space-zh",
+    "pid": 16896,
+    "port": 18178
+  }
+}

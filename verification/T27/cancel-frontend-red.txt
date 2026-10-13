@@ -1,0 +1,100 @@
+$ vitest run "src/composables/useVisibilityWorkbench.spec.ts"
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/composables/useVisibilityWorkbench.spec.ts (15 tests | 5 failed) 101ms
+     × 接受取消仍RUNNING时不伪造终态并轮询到真实CANCELLED 7ms
+     × 取消返回既有SUCCEEDED时保留成功并读取结果 4ms
+     × 迟到取消响应不能回退已确认成功 3ms
+     × 迟到轮询响应不能回退取消终态 6ms
+     × 旧取消回填不能污染新任务 19ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 接受取消仍RUNNING时不伪造终态并轮询到真实CANCELLED
+AssertionError: expected 'CANCELLED' to be 'RUNNING' // Object.is equality
+
+Expected: "RUNNING"
+Received: "CANCELLED"
+
+ ❯ src/composables/useVisibilityWorkbench.spec.ts:308:52
+    306|     vi.mocked(deleteApi).mockResolvedValueOnce({ taskId: 'task-1', sta…
+    307|     await workbench.cancelVisibilityTaskPlan()
+    308|     expect(workbench.visibilityTask.value?.status).toBe('RUNNING')
+       |                                                    ^
+    309|     expect(workbench.visibilityTaskRunning.value).toBe(true)
+    310|     status = 'CANCELLED'
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 取消返回既有SUCCEEDED时保留成功并读取结果
+AssertionError: expected 'CANCELLED' to be 'SUCCEEDED' // Object.is equality
+
+Expected: "SUCCEEDED"
+Received: "CANCELLED"
+
+ ❯ src/composables/useVisibilityWorkbench.spec.ts:329:52
+    327|     vi.mocked(deleteApi).mockResolvedValueOnce({ taskId: 'task-1', sta…
+    328|     await workbench.cancelVisibilityTaskPlan()
+    329|     expect(workbench.visibilityTask.value?.status).toBe('SUCCEEDED')
+       |                                                    ^
+    330|     expect(workbench.visibilityPlan.value).toEqual({ results: [] })
+    331|     expect(workbench.visibilityTaskRunning.value).toBe(false)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 迟到取消响应不能回退已确认成功
+AssertionError: expected 'RUNNING' to be 'SUCCEEDED' // Object.is equality
+
+Expected: "SUCCEEDED"
+Received: "RUNNING"
+
+ ❯ src/composables/useVisibilityWorkbench.spec.ts:350:52
+    348|     status = 'SUCCEEDED'
+    349|     await vi.advanceTimersByTimeAsync(2000)
+    350|     expect(workbench.visibilityTask.value?.status).toBe('SUCCEEDED')
+       |                                                    ^
+    351|     finishCancel({ taskId: 'task-1', status: 'RUNNING', totalPairs: 1,…
+    352|     await cancelling
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 迟到轮询响应不能回退取消终态
+AssertionError: expected 'RUNNING' to be 'CANCELLED' // Object.is equality
+
+Expected: "CANCELLED"
+Received: "RUNNING"
+
+ ❯ src/composables/useVisibilityWorkbench.spec.ts:370:52
+    368|     finishPoll({ taskId: 'task-1', status: 'RUNNING', totalPairs: 1, c…
+    369|     await vi.advanceTimersByTimeAsync(0)
+    370|     expect(workbench.visibilityTask.value?.status).toBe('CANCELLED')
+       |                                                    ^
+    371|     expect(workbench.visibilityTaskRunning.value).toBe(false)
+    372|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 旧取消回填不能污染新任务
+AssertionError: expected 'task-1' to be 'task-2' // Object.is equality
+
+Expected: "task-2"
+Received: "task-1"
+
+ ❯ src/composables/useVisibilityWorkbench.spec.ts:391:52
+    389|     finishCancel({ taskId: 'task-1', status: 'CANCELLED', totalPairs: …
+    390|     await cancelling
+    391|     expect(workbench.visibilityTask.value?.taskId).toBe('task-2')
+       |                                                    ^
+    392|     expect(workbench.visibilityTask.value?.status).toBe('RUNNING')
+    393|     expect(workbench.visibilityTaskRunning.value).toBe(true)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 10 passed (15)
+   Start at  23:34:20
+   Duration  1.34s (transform 60ms, setup 0ms, import 910ms, tests 101ms, environment 218ms)
+
+[ELIFECYCLE] Test failed. See above for more details.

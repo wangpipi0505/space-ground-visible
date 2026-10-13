@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "jarSha256": "6f0cde71a608294585c40e512d9c649c80d826627d1c16f851b93bb1102e20cb",
+  "comparisons": [
+    {
+      "name": "ballistic-10",
+      "fileCount": 15,
+      "differences": []
+    },
+    {
+      "name": "space-9",
+      "fileCount": 9,
+      "differences": []
+    },
+    {
+      "name": "space-complete-21",
+      "fileCount": 21,
+      "differences": []
+    }
+  ],
+  "ordinaryJava": [
+    "PASS Java=1.8.0_472; JDK-only domain classes; Spring/MyBatis/compatibility/POI/MinIO absent; 72 position / 24 native J2 state / 26 fitter state comparisons; exact bits; 6 histories x 12 queries, repeated/unordered/reverse; utcOffsetSec=0, queryOffsetSec is relative query time; absolute Cartesian epoch also checked",
+    "PASS Java=1.8.0_472; Spring/MyBatis/application absent; 3 real bindings from definitions; 24 position + 24 velocity + 3 state comparisons; exact bits"
+  ],
+  "comparison": "JSON Decimal exact values, structure and order; CSV/report exact bytes",
+  "phase": "取消修复后最终候选重新capture全部15/9/21文件；普通Java工具源未变，逐bits证据与最终未变数值class绑定。"
+}

@@ -7,7 +7,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * 表示一次异步空间目标可见性规划任务。
- * 进度和状态字段使用 volatile 保证执行线程与查询线程间的可见性，结果仅在任务成功后写入。
+ * 进度和状态字段使用 volatile 保证执行线程与查询线程间的可见性；取消受理与终态发布在同一任务锁内。
+ * 已受理的运行中取消可能等待当前批次退出，但即使最后批次不再检查标志，也不能发布成功结果。
  */
 public final class PlanningTask {
 
@@ -46,13 +47,16 @@ public final class PlanningTask {
     public Instant getCompletedAt() { return completedAt; }
 
     /**
-     * 请求取消任务。排队中的任务直接置为已取消，执行中的任务由规划循环在批次边界检查取消标志后退出。
+     * 请求取消任务。排队中的任务直接取消；运行中的任务仍显示RUNNING，直到当前批次实际退出。
+     * 共用终态发布锁：取消先受理且正常返回时收敛CANCELLED，普通异常仍FAILED；已发布终态保持原状态/结果。
      */
-    public void requestCancellation() {
+    public synchronized void requestCancellation() {
+        if (isTerminal()) {
+            return;
+        }
         cancellationRequested.set(true);
         if (status == Status.PENDING) {
-            status = Status.CANCELLED;
-            completedAt = Instant.now();
+            markCancelled();
         }
     }
 
@@ -74,30 +78,53 @@ public final class PlanningTask {
     }
 
     /** 尝试开始执行；已在排队期间被取消的任务不再进入运行状态。 */
-    boolean markRunning() {
+    synchronized boolean markRunning() {
+        if (isTerminal()) {
+            return false;
+        }
         if (cancellationRequested.get()) {
-            status = Status.CANCELLED;
-            completedAt = Instant.now();
+            markCancelled();
             return false;
         }
         status = Status.RUNNING;
         return true;
     }
 
-    void markSucceeded(SpaceApiModels.VisibilityPlanResponse planResult) {
+    /** 在同一短任务锁内裁决取消与成功；锁不覆盖数值计算或持久化监听器。 */
+    synchronized void markSucceeded(SpaceApiModels.VisibilityPlanResponse planResult) {
+        if (isTerminal()) {
+            return;
+        }
+        if (cancellationRequested.get()) {
+            markCancelled();
+            return;
+        }
         this.result = planResult;
+        this.completedAt = Instant.now();
         this.status = Status.SUCCEEDED;
-        this.completedAt = Instant.now();
     }
 
-    void markFailed(String message) {
+    /** 普通业务异常仍发布原FAILED及根因，只有CancellationException由服务明确发布取消终态。 */
+    synchronized void markFailed(String message) {
+        if (isTerminal()) {
+            return;
+        }
         this.errorMessage = message;
-        this.status = Status.FAILED;
         this.completedAt = Instant.now();
+        this.status = Status.FAILED;
     }
 
-    void markCancelled() {
-        this.status = Status.CANCELLED;
+    /** 实际任务退出后发布取消终态；已发布的任一终态均不得改写。 */
+    synchronized void markCancelled() {
+        if (isTerminal()) {
+            return;
+        }
         this.completedAt = Instant.now();
+        this.status = Status.CANCELLED;
+    }
+
+    /** 调用方均持有任务锁，保证取消标志与终态判断不会在成功发布间隙发生交错。 */
+    private boolean isTerminal() {
+        return status == Status.SUCCEEDED || status == Status.FAILED || status == Status.CANCELLED;
     }
 }

@@ -1,0 +1,131 @@
+{
+  "candidateJarSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+  "browser": {
+    "taskId": "96d7219d-2d1d-43a4-9c62-56bcb34191d4",
+    "request": {
+      "startTime": "2026-07-01T10:00:00.000Z",
+      "endTime": "2026-07-01T10:07:21.000Z",
+      "observerSatelliteIds": [
+        1
+      ],
+      "targetIds": [
+        2
+      ],
+      "maxApproximationDays": 14,
+      "coarseStepSec": 0.005,
+      "fineStepSec": 0.001,
+      "illuminationConstraint": {
+        "mode": "ANY",
+        "observerStates": [],
+        "targetStates": []
+      },
+      "observationConstraints": []
+    },
+    "deleteStatus": 200,
+    "deleteResponse": {
+      "taskId": "96d7219d-2d1d-43a4-9c62-56bcb34191d4",
+      "status": "RUNNING",
+      "totalPairs": 0,
+      "completedPairs": 0,
+      "totalTargets": 0,
+      "completedTargets": 0,
+      "errorMessage": null,
+      "createdAt": "2026-10-13T15:23:00.847Z",
+      "completedAt": null
+    },
+    "terminalText": "任务状态：已取消已完成目标：0 / 0（配对 0 / 0）0%"
+  },
+  "laterActualServer": {
+    "status": {
+      "httpStatus": 200,
+      "body": {
+        "taskId": "96d7219d-2d1d-43a4-9c62-56bcb34191d4",
+        "status": "SUCCEEDED",
+        "totalPairs": 1,
+        "completedPairs": 1,
+        "totalTargets": 1,
+        "completedTargets": 1,
+        "errorMessage": null,
+        "createdAt": "2026-10-13T15:23:00.847Z",
+        "completedAt": "2026-10-13T15:23:05.959Z"
+      }
+    },
+    "result": {
+      "httpStatus": 200,
+      "body": {
+        "results": [
+          {
+            "targetId": "2",
+            "targetName": "基准目标星",
+            "observerSatelliteIds": [
+              "1"
+            ],
+            "observerSatelliteNames": [
+              "基准观测星"
+            ],
+            "arcs": [
+              {
+                "startTime": "2026-07-01T10:00:00.000Z",
+                "endTime": "2026-07-01T10:07:21.000Z",
+                "observerIlluminations": [
+                  {
+                    "satelliteId": "1",
+                    "satelliteName": "基准观测星",
+                    "state": "SUNLIT",
+                    "stateName": "阳照"
+                  }
+                ],
+                "targetIllumination": {
+                  "targetId": "2",
+                  "targetName": "基准目标星",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                },
+                "illuminationSegments": [
+                  {
+                    "startTime": "2026-07-01T10:00:00.000Z",
+                    "endTime": "2026-07-01T10:07:21.000Z",
+                    "observerIlluminations": [
+                      {
+                        "satelliteId": "1",
+                        "satelliteName": "基准观测星",
+                        "state": "SUNLIT",
+                        "stateName": "阳照"
+                      }
+                    ],
+                    "targetIllumination": {
+                      "targetId": "2",
+                      "targetName": "基准目标星",
+                      "state": "SUNLIT",
+                      "stateName": "阳照"
+                    },
+                    "durationSec": 441.0
+                  }
+                ],
+                "durationSec": 441.0
+              }
+            ],
+            "observationType": "SINGLE",
+            "observationTypeName": "单星观测",
+            "conciseSummary": "任务摘要：A(441.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)",
+            "targetNorad": "null",
+            "targetWeightKg": 120.0
+          }
+        ],
+        "skippedPairs": [],
+        "totalSkippedPairs": 0,
+        "targetFilterBreakdown": {
+          "belongsHit": 1,
+          "weightHit": 1,
+          "epochHit": 1,
+          "epochConstraintHit": 1,
+          "ephemerisWarningHit": 0,
+          "excludeHit": 1,
+          "maxApproximationDays": 14
+        },
+        "ephemerisWarnings": []
+      }
+    }
+  },
+  "failedInvariant": "取消已接受时前端必须继续使用真实状态，成功发布不得覆盖该取消"
+}

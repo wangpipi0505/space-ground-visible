@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "publicTypes": 6,
+  "names": [
+    "com.runisys.orbit.spacevisibility.domain.payload.IlluminationConstraint",
+    "com.runisys.orbit.spacevisibility.domain.payload.IlluminationState",
+    "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraint",
+    "com.runisys.orbit.spacevisibility.domain.payload.PayloadType",
+    "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+    "com.runisys.orbit.spacevisibility.domain.payload.VisibilitySample"
+  ]
+}

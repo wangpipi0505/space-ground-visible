@@ -1,0 +1,5 @@
+23:08:30.668 [main] INFO com.runisys.orbit.spacevisibility.domain.orbit.OrekitDataInitializer - 已挂载 Orekit 数据目录：G:\5-YG\space-ground-visible\backend\orekit-data
+SPACE_KEPLER_J2_RK4 positionNormM=7018857.650570468 velocityNormMps=7526.178177324693 queries=8 position/8 velocity/1 state
+TLE_SGP4 positionNormM=6798249.664935348 velocityNormMps=7657.850497892627 queries=8 position/8 velocity/1 state
+TLE_SGP4 positionNormM=6887945.610887173 velocityNormMps=7602.091059527741 queries=8 position/8 velocity/1 state
+PASS Java=1.8.0_472; Spring/MyBatis/application absent; 3 real bindings from definitions; 24 position + 24 velocity + 3 state comparisons; exact bits

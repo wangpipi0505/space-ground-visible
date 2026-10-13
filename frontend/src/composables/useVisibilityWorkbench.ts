@@ -722,39 +722,52 @@ function createStationConstraint(stationId: string): StationConstraintForm {
   async function pollVisibilityTask(taskId: string): Promise<void> {
     try {
       const task = await getVisibilityTask(taskId)
-      visibilityTask.value = task
-      if (task.status === 'SUCCEEDED') {
-        stopVisibilityTaskPolling()
-        visibilityPlan.value = await getVisibilityTaskResult(taskId)
-        ElMessage.success('目标观测规划完成。')
-        return
-      }
-      if (task.status === 'FAILED') {
-        stopVisibilityTaskPolling()
-        ElMessage.error(task.errorMessage || '后台规划任务执行失败。')
-        return
-      }
-      if (task.status === 'CANCELLED') {
-        stopVisibilityTaskPolling()
-        ElMessage.info('后台规划任务已取消。')
-      }
+      await applyVisibilityTaskStatus(task)
     } catch (error) {
+      // 旧任务在窗口切换后迟到的响应/错误不能停止新任务的轮询。
+      if (visibilityTask.value?.taskId !== taskId) return
       stopVisibilityTaskPolling()
       ElMessage.error(failureMessage(error))
     }
   }
 
-  /** 取消正在执行的后台规划任务，并停止本地轮询。 */
+  /** GET与DELETE都只采用服务端真实状态；迟到的非终态响应不能覆盖已确认终态。 */
+  async function applyVisibilityTaskStatus(task: VisibilityPlanningTaskResponse): Promise<void> {
+    const current = visibilityTask.value
+    if (!current || current.taskId !== task.taskId
+      || ['SUCCEEDED', 'FAILED', 'CANCELLED'].includes(current.status)) return
+    visibilityTask.value = task
+    if (task.status === 'SUCCEEDED') {
+      stopVisibilityTaskPolling()
+      const result = await getVisibilityTaskResult(task.taskId)
+      if (visibilityTask.value?.taskId !== task.taskId) return
+      visibilityPlan.value = result
+      ElMessage.success('目标观测规划完成。')
+      return
+    }
+    if (task.status === 'FAILED') {
+      stopVisibilityTaskPolling()
+      ElMessage.error(task.errorMessage || '后台规划任务执行失败。')
+      return
+    }
+    if (task.status === 'CANCELLED') {
+      stopVisibilityTaskPolling()
+      ElMessage.info('后台规划任务已取消。')
+    }
+  }
+
+  /** 发出取消请求；服务仍RUNNING时保持轮询，只有服务确认终态后才停止并展示对应状态。 */
   async function cancelVisibilityTaskPlan(): Promise<void> {
     const task = visibilityTask.value
     if (!task) {
       return
     }
-    stopVisibilityTaskPolling()
     try {
-      await cancelVisibilityTask(task.taskId)
-      visibilityTask.value = { ...task, status: 'CANCELLED' }
-      ElMessage.info('后台规划任务已取消。')
+      const response = await cancelVisibilityTask(task.taskId)
+      await applyVisibilityTaskStatus(response)
+      if (visibilityTask.value?.taskId === task.taskId && visibilityTaskRunning.value) {
+        ElMessage.info('取消请求已提交，正在等待后台任务确认。')
+      }
     } catch (error) {
       ElMessage.error(failureMessage(error))
     }

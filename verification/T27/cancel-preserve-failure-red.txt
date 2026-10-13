@@ -1,0 +1,84 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 14 resources
+[INFO]
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 82 source files to G:\5-YG\space-ground-visible\backend\target\test-classes
+[INFO] /G:/5-YG/space-ground-visible/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: G:\5-YG\space-ground-visible\backend\src\test\java\com\runisys\orbit\spacevisibility\infrastructure\web\Nio2ShutdownRaceTest.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /G:/5-YG/space-ground-visible/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO]
+[INFO] --- surefire:2.22.2:test (default-test) @ space-target-visible ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest
+23:37:43.942 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮������ɣ�taskId=ee7a33e8-4771-4a9a-bfa4-e4512dff14ce
+23:37:43.943 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=ee7a33e8-4771-4a9a-bfa4-e4512dff14ce
+23:37:43.977 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=6d3b11a4-6567-4e09-bd09-6ea1f97077ca
+23:37:43.978 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=79d76fca-2cdf-4d3b-a4bf-07c93be272d2
+23:37:43.978 [pool-1-thread-1] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮������ɣ�taskId=6d3b11a4-6567-4e09-bd09-6ea1f97077ca
+23:37:43.979 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=T27-final-batch
+23:37:43.979 [pool-2-thread-1] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮������ȡ����taskId=T27-final-batch
+23:37:43.979 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=67ebc635-7887-42e3-b2a2-fb5970cd1faf
+23:37:43.979 [pool-3-thread-1] WARN com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮����ʧ�ܣ�taskId=67ebc635-7887-42e3-b2a2-fb5970cd1faf���쳣����=RuntimeException������=�����װ�쳣������IllegalArgumentException: Ŀ�� TLE �ѳ�����Ч��
+23:37:43.998 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=3000bc67-9781-437e-8635-745d77d7ba55
+23:37:44.000 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=a03026cc-366c-4fdf-b7c4-afdc31195ad2
+23:37:44.000 [pool-6-thread-1] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮������ɣ�taskId=a03026cc-366c-4fdf-b7c4-afdc31195ad2
+23:37:44.014 [main] WARN com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮����ʧ�ܣ�taskId=69900b67-4750-4e5c-b6f0-752d7f6d4fb4���쳣����=IllegalArgumentException������=ȡ���ڼ���ʵ������ݴ���
+23:37:44.014 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=69900b67-4750-4e5c-b6f0-752d7f6d4fb4
+23:37:44.023 [main] INFO com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮�������ύ��taskId=1c1032cf-cf7b-429c-80a3-d76138f28ea0
+23:37:44.023 [pool-7-thread-1] WARN com.runisys.orbit.spacevisibility.application.PlanningTaskService - �첽�ɼ��Թ滮����ʧ�ܣ�taskId=1c1032cf-cf7b-429c-80a3-d76138f28ea0���쳣����=IllegalArgumentException������=������ѡ��һ�Ź۲�����
+[ERROR] Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.329 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest
+[ERROR] retainsOriginalFailureWhenCancelledWorkThrowsBusinessError  Time elapsed: 0.01 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError:
+
+expected: FAILED
+ but was: CANCELLED
+	at com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest.retainsOriginalFailureWhenCancelledWorkThrowsBusinessError(PlanningTaskServiceTest.java:187)
+
+[INFO]
+[INFO] Results:
+[INFO]
+[ERROR] Failures:
+[ERROR]   PlanningTaskServiceTest.retainsOriginalFailureWhenCancelledWorkThrowsBusinessError:187
+expected: FAILED
+ but was: CANCELLED
+[INFO]
+[ERROR] Tests run: 9, Failures: 1, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.939 s
+[INFO] Finished at: 2026-10-13T23:37:44+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project space-target-visible: There are test failures.
+[ERROR]
+[ERROR] Please refer to G:\5-YG\space-ground-visible\backend\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
