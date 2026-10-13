@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "differences": [],
+  "default": {
+    "csvSHA256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+    "csvBytes": 561736,
+    "goldenResponseEqualAfterCsvPathMapping": true,
+    "responseRawDownloadBytesEqual": true
+  },
+  "window": {
+    "finalVisibleWindow": {
+      "startTime": "2026/06/04 04:08:57.000",
+      "endTime": "2026/06/04 04:37:19.000",
+      "startJ2000Sec": 833818137.0,
+      "endJ2000Sec": 833819839.0,
+      "durationSeconds": 1702.0
+    },
+    "visibleArcCount": 1,
+    "visiblePointCount": 1703,
+    "visibleDurationSec": 1702.0,
+    "rawDownloadBytesEqual": true,
+    "exactRegisteredSource": true
+  },
+  "frozenComparisons": [
+    {
+      "name": "km",
+      "status": 200,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true,
+      "csvBytesEqual": true,
+      "csvBytes": 561736,
+      "csvSHA256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "pointCount": 2576
+    },
+    {
+      "name": "estimated-events",
+      "status": 200,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true,
+      "csvBytesEqual": true,
+      "csvBytes": 47844,
+      "csvSHA256": "c148e7b14bc0ee47de3560032a9455b5ef0646a8d4b99b6f418993cbc304cabb",
+      "pointCount": 219
+    },
+    {
+      "name": "invalid-utc",
+      "status": 400,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true
+    },
+    {
+      "name": "invalid-frame",
+      "status": 400,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true
+    }
+  ],
+  "negativeLocalHttpCalls": 0
+}

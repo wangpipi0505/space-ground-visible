@@ -1,0 +1,57 @@
+{
+  "sourceFiles": [
+    {
+      "path": "frontend/src/App.vue",
+      "sha256": "77ed39471777f8af142bbed3206910a1f25beea885cf3e15dc3ba54590a15e65"
+    },
+    {
+      "path": "frontend/src/api/ballisticFiles.ts",
+      "sha256": "032cbd4fc3815b511471f02b1816e9030fbdcd79d1de13e344960e846c034700"
+    },
+    {
+      "path": "frontend/src/api/ballisticSimulation.ts",
+      "sha256": "e132cbe48751e64735a99ddf2136c8dd778441a0dfb6ff443d16cac3ae3be2ea"
+    },
+    {
+      "path": "frontend/src/api/ballisticSimulation.spec.ts",
+      "sha256": "d4f6722ca22c1ecbd7ae0e57107516d281d2434cf28d2a29f1fda51a5b745ec7"
+    },
+    {
+      "path": "frontend/src/components/BallisticFitFileResult.vue",
+      "sha256": "95966b726899a40906e4ce087f6cfa652d2350c9a3306427d611136d89456d32"
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowControls.vue",
+      "sha256": "9d631dc925b5d667aaf02fd88485d3b8879e63b64696b918d11d2ed0e4b516b6"
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowControls.spec.ts",
+      "sha256": "045cb378bb4507bcf53d50d349bc183bb2f1cbbdb7a36aec150e4c664cc0f127"
+    },
+    {
+      "path": "frontend/src/views/BallisticPayloadConfigurationView.vue",
+      "sha256": "0530af7033c3a6224c8ffb33861c56f1e1b3ff7db935ee1903340f9a2ff71b9a"
+    },
+    {
+      "path": "frontend/src/views/BallisticSimulationView.vue",
+      "sha256": "8b3c80c4c7d7274fdef0aed8ef260aef6b15b4f0360b26057ad5bbb81f200baf"
+    },
+    {
+      "path": "frontend/src/views/BallisticSimulationView.spec.ts",
+      "sha256": "eac44d43cdcd5a3c1ba0a4b53194bcff5f9ea2cb6d1eec3785b4c9757403dc53"
+    },
+    {
+      "path": "frontend/src/utils/ballisticSimulation.ts",
+      "sha256": "25fe79387a36dac6a1db91a6f132b0b28a85a09486e4ede25e2173d4d8c9e642"
+    },
+    {
+      "path": "frontend/src/utils/ballisticSimulation.spec.ts",
+      "sha256": "7629de0849dee5705b4b65aebd7b9b660ac423f4e11c7349a62ac0a6ff9897ef"
+    }
+  ],
+  "lockSHA256": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8",
+  "backendJarSHA256": "4bf492d0388f0b1ca8f024734cf7bf95e09b0b5fc75711e5bacfa540d2295e00",
+  "frontendTests": 94,
+  "viteModules": 1634,
+  "backendProductChanges": false
+}

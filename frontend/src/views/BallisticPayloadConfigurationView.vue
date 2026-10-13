@@ -7,6 +7,7 @@ import { computed, reactive, ref } from 'vue'
 import StandardPayloadEditor from '../components/StandardPayloadEditor.vue'
 import BallisticWindowControls from '../components/BallisticWindowControls.vue'
 import type { BallisticSatelliteDraft, SatelliteOrbitDraft } from '../api/ballisticWindowTypes'
+import type { GeneratedBallisticResult } from '../api/ballisticSimulation'
 import { emptySatelliteOrbit, applyReferenceOrbit } from '../utils/ballisticWindow'
 import { previewBallisticPayload } from '../api/ballisticPayloads'
 import type { BallisticPayloadDefinition } from '../api/ballisticPayloads'
@@ -15,7 +16,7 @@ import { createDefaultPayload, standardPayloadFields, validateStandardPayload } 
 import type { StandardPayloadRequest } from '../utils/standardPayload'
 
 defineOptions({ name: 'BallisticPayloadConfigurationView' })
-const props = defineProps<{ satellites: Satellite[] }>()
+const props = defineProps<{ satellites: Satellite[]; generatedResults?: GeneratedBallisticResult[] }>()
 
 /** 每颗星保持原选择顺序与载荷数组顺序；原空间数值主键仅在弹道包装层转成字符串。 */
 const selectedSatelliteIds = ref<number[]>([])
@@ -132,7 +133,7 @@ function updateOrbitNumber(satellite: BallisticSatelliteDraft, field: Exclude<ke
       <el-button :disabled="computing" data-test="add-manual-satellite" @click="addManualSatellite">新增手工卫星</el-button>
       <el-empty v-if="selectedSatellites.length === 0" :image-size="42" description="选择卫星后添加和编辑载荷" />
     </el-card>
-    <BallisticWindowControls :satellites="selectedSatellites" @busy="computing = $event">
+    <BallisticWindowControls :satellites="selectedSatellites" :generated-results="generatedResults" @busy="computing = $event">
     <el-card v-for="satellite in selectedSatellites" :key="satellite.satelliteId" :data-satellite-id="satellite.satelliteId" shadow="never" class="planning-card">
       <template #header><div class="compact-card-header"><h2>2. {{ satellite.name }} · {{ satellite.satelliteId }}</h2><el-button :disabled="computing" :data-test="`add-ballistic-payload-${satellite.satelliteId}`" @click="addPayload(satellite)">新增载荷</el-button></div></template>
       <fieldset :disabled="computing" class="ballistic-native-form"><legend>卫星轨道（目录身份不代表真实根数）</legend>

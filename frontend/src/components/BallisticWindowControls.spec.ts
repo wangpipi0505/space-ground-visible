@@ -8,6 +8,27 @@ import { createDefaultPayload } from '../utils/standardPayload'
 describe('T22 单一草稿文件与计算状态', () => {
   afterEach(() => vi.unstubAllGlobals())
   const satellites = [{ satelliteId: 'S1', name: '星甲', ...applyReferenceOrbit(), payloads: [{ payloadId: 'P1', payloadName: '甲', ...createDefaultPayload() }] }]
+  it('T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退', async () => {
+    const reference = { fileId: 'generated-1', originalName: '模拟.csv', serverPath: 'G:\\服务运行根\\模拟.csv', sizeBytes: 561736, contentType: 'text/csv' }
+    const generatedResults = [{ targetId: 'SIM-001', targetName: '默认模拟/SIM-001', reference }]
+    const fetchMock = vi.fn().mockImplementation((url: string) => Promise.resolve(url.includes('/preview') ? new Response('{"header":["原头"],"rows":[["原值"]],"page":1,"limit":50,"totalRows":2576,"metadata":{}}') : new Response('{"referenceUtc":"2026-06-04 04:00:00.000","best":null,"allResults":[]}')))
+    vi.stubGlobal('fetch', fetchMock)
+    const wrapper = mount(BallisticWindowControls, { props: { satellites, generatedResults } })
+    await wrapper.get('[data-test=window-source]').setValue('generated')
+    await wrapper.get('[data-test=generated-result-select]').setValue('generated-1'); await flushPromises()
+    expect(wrapper.text()).toContain('模拟.csv')
+    await wrapper.get('[data-test=compute-window]').trigger('click'); await flushPromises()
+    const body = JSON.parse(String(fetchMock.mock.calls.find(([url]) => String(url).endsWith('/search'))![1].body))
+    expect(body.ballistics[0]).toEqual({ targetId: 'SIM-001', targetName: '默认模拟/SIM-001', csvPath: reference.serverPath })
+    expect(body.satellites[0].payloads[0].payloadId).toBe('P1')
+    expect(wrapper.find('[data-test=window-success]').exists()).toBe(true)
+    await wrapper.setProps({ generatedResults: [] }); await flushPromises()
+    const before = fetchMock.mock.calls.length
+    await wrapper.get('[data-test=compute-window]').trigger('click')
+    expect(fetchMock.mock.calls).toHaveLength(before)
+    expect(wrapper.find('[data-test=window-success]').exists()).toBe(false)
+    expect(wrapper.text()).toContain('已失效')
+  })
   it('原生选择上传/预览后提交同一载荷UTC，计算失败清旧结果，替换失败清文件引用', async () => {
     let failUpload = false
     let failCompute = false

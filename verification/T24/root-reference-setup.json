@@ -1,0 +1,21 @@
+{
+  "purpose": "独立冻结原实现对照工具有效性，尚非新模拟页面验收",
+  "java": "Java8 1.8.0_472 headless",
+  "originalClasses": "verification/baseline-copies/ballistic/source/target/classes",
+  "originalDependencies": "verification/baseline-copies/ballistic/dependencies/runtime-jars",
+  "loader": "Controller与Fitter来源均断言为冻结classes；父加载器仅JDK",
+  "request": "test-data/reference/ballistic/target_trajectory_simulate_default.json",
+  "requestSha256": "fbca1c68adfff9cd12a56f79b72047f448627be5bb501a6f92e47d2b80ae0aca",
+  "onlyAdapter": "outputDir替换为本次runtime/T24/root-reference/default-output",
+  "status": 200,
+  "jsonOnlyCsvPathNormalizedGoldenEqual": true,
+  "csv": {
+    "rows": 2576,
+    "bytes": 561736,
+    "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+    "goldenByteEqual": true
+  },
+  "helperCompileExit": 0,
+  "helperRunExit": 0,
+  "initialCommandFailure": "PowerShell未引用-Dfile.encoding=UTF-8导致主类.encoding=UTF-8错误；只将JVM参数加引号后原命令实跑通过，无产品改动"
+}

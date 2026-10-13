@@ -1,0 +1,148 @@
+{
+  "timezone": "Asia/Shanghai",
+  "outcomes": [
+    {
+      "name": "km",
+      "status": 200,
+      "request": {
+        "taskName": "浏览器km原别名",
+        "targetId": "SIM-001",
+        "launchTimeUtc": "2026-06-04 04:00:00.000",
+        "impactTimeUtc": "2026-06-04 04:42:55.000",
+        "taskStartTime": "2026-06-04 04:00:00.000",
+        "taskEndTime": "2026-06-04 04:42:55.000",
+        "launchPointX": 2167.790227,
+        "launchPointY": 4775.481109,
+        "launchPointZ": 3618.557253,
+        "launchPointCoordFrame": "ECI_J2000",
+        "launchPointUnit": "kilometers",
+        "impactPointX": 3578.6357599999997,
+        "impactPointY": 3522.525227,
+        "impactPointZ": 3919.735591,
+        "impactPointCoordFrame": "eci-j2000",
+        "impactPointUnit": "kilometers",
+        "outputPointDurationSec": 1,
+        "phaseEvents": null
+      },
+      "raw": "{\"taskName\":\"浏览器km原别名\",\"targetCount\":1,\"files\":[{\"targetId\":\"SIM-001\",\"model\":\"SYSTEM_SIMULATED_LAMBERT\",\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T24\\\\storage\\\\results\\\\fit-7448925145151700817\\\\_km__2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_212132_700.csv\",\"pointCount\":2576,\"warnings\":[\"系统模拟使用端点约束Lambert射击法和二体RK4传播。\",\"落点时间作为硬端点约束输入。落点时间=2026-06-04 04:42:55.000, 飞行时长秒=2575.000, 计算初速度米每秒=6817.698301\",\"端点闭合检查：最终ECI偏差=0.000004 m.\"]}]}",
+      "pointCount": 2576,
+      "warnings": [
+        "系统模拟使用端点约束Lambert射击法和二体RK4传播。",
+        "落点时间作为硬端点约束输入。落点时间=2026-06-04 04:42:55.000, 飞行时长秒=2575.000, 计算初速度米每秒=6817.698301",
+        "端点闭合检查：最终ECI偏差=0.000004 m."
+      ]
+    },
+    {
+      "name": "estimated-events",
+      "status": 200,
+      "request": {
+        "taskName": null,
+        "targetId": "SIM-001",
+        "launchTimeUtc": "2026-06-04 04:00:00.000",
+        "impactTimeUtc": null,
+        "taskStartTime": "2026-06-04 04:00:00.000",
+        "taskEndTime": "2026-06-04 04:42:55.000",
+        "launchPointX": 120,
+        "launchPointY": 30,
+        "launchPointZ": 0,
+        "launchPointCoordFrame": "WGS84",
+        "launchPointUnit": "km",
+        "impactPointX": 121,
+        "impactPointY": 31,
+        "impactPointZ": 0,
+        "impactPointCoordFrame": "WGS84_LLA",
+        "impactPointUnit": "km",
+        "outputPointDurationSec": 0,
+        "phaseEvents": [
+          {
+            "phaseType": "BOOST",
+            "eventType": null,
+            "startTime": "原预留开始",
+            "endTime": null,
+            "eventTime": "ignored",
+            "dynamics": "旧动力学",
+            "directionMode": "CUSTOM",
+            "accelerationMs2": 30,
+            "deltaVms": 20,
+            "liftDragRatio": 2,
+            "dragCdAreaOverMass": 0.1
+          }
+        ],
+        "impactTime": "",
+        "outputStepSec": 2.5,
+        "integrationStepSec": 9,
+        "initialSpeedMs": 100000000000000000000,
+        "boostAccelerationMs2": 100
+      },
+      "raw": "{\"taskName\":\"simulation\",\"targetCount\":1,\"files\":[{\"targetId\":\"SIM-001\",\"model\":\"SYSTEM_SIMULATED_LAMBERT\",\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T24\\\\storage\\\\results\\\\fit-4532121094797528862\\\\simulation_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_212133_173.csv\",\"pointCount\":219,\"warnings\":[\"系统模拟使用端点约束Lambert射击法和二体RK4传播。\",\"落点时间由系统模拟模型计算得到。计算落点时间=2026-06-04 04:09:03.881, 飞行时长秒=543.881, 计算初速度米每秒=2562.476843\",\"phaseEvents已作为预留扩展数据接收，但当前端点Lambert模拟模型暂未使用。数量=1\",\"taskEndTime是系统模拟输出的任务/文件元数据；计算得到的物理落点时间=2026-06-04 04:09:03.881, 任务结束时间=2026-06-04 04:42:55.000\",\"端点闭合检查：最终ECI偏差=0.000000 m.\"]}]}",
+      "pointCount": 219,
+      "warnings": [
+        "系统模拟使用端点约束Lambert射击法和二体RK4传播。",
+        "落点时间由系统模拟模型计算得到。计算落点时间=2026-06-04 04:09:03.881, 飞行时长秒=543.881, 计算初速度米每秒=2562.476843",
+        "phaseEvents已作为预留扩展数据接收，但当前端点Lambert模拟模型暂未使用。数量=1",
+        "taskEndTime是系统模拟输出的任务/文件元数据；计算得到的物理落点时间=2026-06-04 04:09:03.881, 任务结束时间=2026-06-04 04:42:55.000",
+        "端点闭合检查：最终ECI偏差=0.000000 m."
+      ]
+    }
+  ],
+  "negatives": [
+    {
+      "name": "invalid-utc",
+      "status": 400,
+      "request": {
+        "taskName": "defaultSimTask",
+        "targetId": "SIM-001",
+        "launchTimeUtc": "非法UTC",
+        "impactTimeUtc": "2026-06-04 04:42:55.000",
+        "taskStartTime": "2026-06-04 04:00:00.000",
+        "taskEndTime": "2026-06-04 04:42:55.000",
+        "launchPointX": 2167790.227,
+        "launchPointY": 4775481.109,
+        "launchPointZ": 3618557.253,
+        "launchPointCoordFrame": "J2000",
+        "launchPointUnit": "m",
+        "impactPointX": 3578635.76,
+        "impactPointY": 3522525.227,
+        "impactPointZ": 3919735.591,
+        "impactPointCoordFrame": "J2000",
+        "impactPointUnit": "m",
+        "outputPointDurationSec": 1,
+        "phaseEvents": []
+      },
+      "raw": "{\"error\":\"NumberFormatException: For input string: \\\"非法U C\\\"\"}"
+    },
+    {
+      "name": "invalid-frame",
+      "status": 400,
+      "request": {
+        "taskName": "defaultSimTask",
+        "targetId": "SIM-001",
+        "launchTimeUtc": "2026-06-04 04:00:00.000",
+        "impactTimeUtc": "2026-06-04 04:42:55.000",
+        "taskStartTime": "2026-06-04 04:00:00.000",
+        "taskEndTime": "2026-06-04 04:42:55.000",
+        "launchPointX": 2167790.227,
+        "launchPointY": 4775481.109,
+        "launchPointZ": 3618557.253,
+        "launchPointCoordFrame": "原入口不支持的坐标",
+        "launchPointUnit": "m",
+        "impactPointX": 3578635.76,
+        "impactPointY": 3522525.227,
+        "impactPointZ": 3919735.591,
+        "impactPointCoordFrame": "J2000",
+        "impactPointUnit": "m",
+        "outputPointDurationSec": 1,
+        "phaseEvents": []
+      },
+      "raw": "{\"error\":\"IllegalArgumentException: 不支持的端点坐标系：原入口不支持的坐标。支持的取值：J2000/ECI、ECEF、LLA/LLH/WGS84。\"}"
+    }
+  ],
+  "invalidLocalHttpCalls": 0,
+  "recoveryStatus": 200,
+  "successConsoleErrors": [],
+  "negativeConsoleErrors": [
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,75 @@
+{
+  "source": "根代理独立Chrome原生JSON选择与正式模拟、登记及原字节下载",
+  "timezone": "Asia/Shanghai",
+  "status": 200,
+  "request": {
+    "taskName": "defaultSimTask",
+    "targetId": "SIM-001",
+    "launchTimeUtc": "2026-06-04 04:00:00.000",
+    "impactTimeUtc": "2026-06-04 04:42:55.000",
+    "taskStartTime": "2026-06-04 04:00:00.000",
+    "taskEndTime": "2026-06-04 04:42:55.000",
+    "launchPointX": 2167790.227,
+    "launchPointY": 4775481.109,
+    "launchPointZ": 3618557.253,
+    "launchPointCoordFrame": "J2000",
+    "launchPointUnit": "m",
+    "impactPointX": 3578635.76,
+    "impactPointY": 3522525.227,
+    "impactPointZ": 3919735.591,
+    "impactPointCoordFrame": "J2000",
+    "impactPointUnit": "m",
+    "outputPointDurationSec": 1,
+    "phaseEvents": []
+  },
+  "result": {
+    "taskName": "defaultSimTask",
+    "targetCount": 1,
+    "files": [
+      {
+        "targetId": "SIM-001",
+        "model": "SYSTEM_SIMULATED_LAMBERT",
+        "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T24\\storage\\results\\fit-7828234181144885457\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_211822_202.csv",
+        "pointCount": 2576,
+        "warnings": [
+          "系统模拟使用端点约束Lambert射击法和二体RK4传播。",
+          "落点时间作为硬端点约束输入。落点时间=2026-06-04 04:42:55.000, 飞行时长秒=2575.000, 计算初速度米每秒=6817.698301",
+          "端点闭合检查：最终ECI偏差=0.000004 m."
+        ]
+      }
+    ]
+  },
+  "reference": {
+    "fileId": "95913a17-5628-4133-b802-787851677114",
+    "originalName": "defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_211822_202.csv",
+    "sizeBytes": 561736,
+    "contentType": "text/csv",
+    "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T24\\storage\\results\\fit-7828234181144885457\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_211822_202.csv"
+  },
+  "graphPoints": [
+    2576,
+    2576,
+    2576,
+    2576
+  ],
+  "captions": [
+    "ECI XY投影 · 横轴 2167790.227…4692724.347 X m · 纵轴 3522525.227…6675938.23 Y m",
+    "ECI X / 相对UTC时间 · 横轴 0…2575 相对UTC s · 纵轴 2167790.227…4692724.347 X m",
+    "ECI Y / 相对UTC时间 · 横轴 0…2575 相对UTC s · 纵轴 3522525.227…6675938.23 Y m",
+    "ECI Z / 相对UTC时间 · 横轴 0…2575 相对UTC s · 纵轴 3618557.253…6012016.996 Z m"
+  ],
+  "markers": 0,
+  "csvName": "defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_211822_202.csv",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "csvComparison": {
+    "bytes": 561736,
+    "rows": 2576,
+    "goldenByteEqual": true,
+    "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+    "isOriginalRows": 0
+  },
+  "requestOnlyOutputDirOmittedEqual": true,
+  "responseOnlyManagedCsvPathEqual": true,
+  "rawResponseDownloadByteEqual": true
+}

@@ -1,0 +1,48 @@
+
+> frontend@0.0.0 test
+> vitest run src/views/BallisticSimulationView.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticSimulationView.spec.ts (4 tests | 1 failed) 60ms
+     × 核心数值框非法/舍入文本不能默默沿用旧合法JSON发起计算 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > 核心数值框非法/舍入文本不能默默沿用旧合法JSON发起计算
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array [
+      "/api/trajectory/simulate",
+      Object {
+        "body": "{"taskName":"defaultSimTask","targetId":"SIM-001","launchTimeUtc":"2026-06-04 04:00:00.000","impactTimeUtc":"2026-06-04 04:42:55.000","taskStartTime":"2026-06-04 04:00:00.000","taskEndTime":"2026-06-04 04:42:55.000","launchPointX":2167790.227,"launchPointY":4775481.109,"launchPointZ":3618557.253,"launchPointCoordFrame":"J2000","launchPointUnit":"m","impactPointX":3578635.76,"impactPointY":3522525.227,"impactPointZ":3919735.591,"impactPointCoordFrame":"J2000","impactPointUnit":"m","outputPointDurationSec":1,"phaseEvents":[]}",
+        "headers": Object {
+          "Content-Type": "application/json",
+        },
+        "method": "POST",
+      },
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/views/BallisticSimulationView.spec.ts:87:27
+     85|     await wrapper.get('[data-simulation-field=launchPointX]').setValue…
+     86|     await wrapper.get('[data-test=simulation-compute]').trigger('click…
+     87|     expect(fetchMock).not.toHaveBeenCalled()
+       |                           ^
+     88|     expect(wrapper.text()).toContain('launchPointX')
+     89|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  21:24:16
+   Duration  723ms (transform 252ms, setup 0ms, import 325ms, tests 60ms, environment 224ms)

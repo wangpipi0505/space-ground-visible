@@ -3,6 +3,8 @@
 import { computed, onMounted, ref } from 'vue'
 import BallisticPayloadConfigurationView from './views/BallisticPayloadConfigurationView.vue'
 import BallisticFitView from './views/BallisticFitView.vue'
+import BallisticSimulationView from './views/BallisticSimulationView.vue'
+import type { GeneratedBallisticResult } from './api/ballisticSimulation'
 import DownlinkPlanningStep from './components/DownlinkPlanningStep.vue'
 import ObservationConstraintPanel from './components/ObservationConstraintPanel.vue'
 import SatelliteStationLinkPanel from './components/SatelliteStationLinkPanel.vue'
@@ -74,7 +76,9 @@ const {
 } = useVisibilityWorkbench()
 
 /** 原工作台始终由 tabs 保留挂载；弹道草稿首次打开后同样保留，不重置任务、目录选择或草稿。 */
-const activeView = ref<'workbench' | 'records' | 'ballistic-payloads' | 'ballistic-fit'>('workbench')
+const activeView = ref<'workbench' | 'records' | 'ballistic-payloads' | 'ballistic-fit' | 'ballistic-simulation'>('workbench')
+/** 当前模拟实际登记引用经props/emits流转；不复制卫星载荷草稿、不自动覆盖窗口目标。 */
+const generatedBallisticResults = ref<GeneratedBallisticResult[]>([])
 /** 当前目录页加已选任务星，分页后仍可选到空间既有任务星；弹道拥有独立选择/草稿。 */
 const payloadSatelliteOptions = computed(() => [...new Map([...satellites.value, ...selectedTaskSatellites.value].map((satellite) => [satellite.id, satellite])).values()])
 
@@ -219,10 +223,13 @@ onMounted(() => {
         <TaskResultRecordsPanel :format-time="formatTime" />
       </el-tab-pane>
       <el-tab-pane label="弹道载荷配置" name="ballistic-payloads" lazy>
-        <BallisticPayloadConfigurationView :satellites="payloadSatelliteOptions" />
+        <BallisticPayloadConfigurationView :satellites="payloadSatelliteOptions" :generated-results="generatedBallisticResults" />
       </el-tab-pane>
       <el-tab-pane label="102包轨迹拟合" name="ballistic-fit" lazy>
         <BallisticFitView />
+      </el-tab-pane>
+      <el-tab-pane label="模拟弹道" name="ballistic-simulation" lazy>
+        <BallisticSimulationView @references="generatedBallisticResults = $event" />
       </el-tab-pane>
     </el-tabs>
   </main>

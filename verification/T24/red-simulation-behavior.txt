@@ -1,0 +1,172 @@
+
+> frontend@0.0.0 test
+> vitest run src/utils/ballisticSimulation.spec.ts src/views/BallisticSimulationView.spec.ts src/components/BallisticWindowControls.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/utils/ballisticSimulation.spec.ts (2 tests | 2 failed) 9ms
+     × 完整原字段、事件、null、别名、字面UTC、回退步长不转换不丢失 7ms
+     × 非法JSON、非有限数、精度丢失、字段类型错误在HTTP前阻止 1ms
+ ❯ src/views/BallisticSimulationView.spec.ts (2 tests | 2 failed) 20ms
+     × 原JSON导入、核心编辑保留高级字段、原结果全文、201引用、完整四曲线、快照与失败恢复 16ms
+     × 本地非法JSON不发送HTTP，忙时防重复 3ms
+ ❯ src/components/BallisticWindowControls.spec.ts (2 tests | 1 failed) 38ms
+     × T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退 22ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/BallisticWindowControls.spec.ts > T22 单一草稿文件与计算状态 > T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退
+Error: Unable to get [data-test=window-source] within: <section class="ballistic-window-controls" aria-label="弹道文件与窗口计算" generatedresults="[object Object]">
+  <fieldset class="ballistic-native-form">
+    <legend>1. 弹道目标与源文件</legend>
+    <p>本地文件通过 HTTP 上传；服务器引用与本机路径分离。网络支持 HTTP/HTTPS 直链、minio://host[:port]/bucket/object[?secure=true]（凭据由服务环境提供）。</p><button type="button">新增弹道目标</button>
+    <article data-target-id="TARGET-1" class="ballistic-target">
+      <fieldset>
+        <legend>目标1 · TARGET-1</legend>
+        <div class="ballistic-field-grid"><label>目标名称<input type="text"></label><label>基准发射 UTC（留空沿文件历元）<input placeholder="2026/07/01 07:57:10.000" type="text"></label><label>文件来源<select>
+              <option value="file">本地上传</option>
+              <option value="remote">网络地址导入</option>
+            </select></label></div><label>选择弹道 CSV / Excel（.csv/.xlsx/.xls/.xlsm）<input type="file" accept=".csv,.xlsx,.xls,.xlsm"></label>
+        <!--v-if-->
+        <!--v-if-->
+        <div class="ballistic-actions">
+          <!--v-if--><button type="button">删除目标</button>
+        </div>
+      </fieldset>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+    </article>
+  </fieldset>
+  <fieldset class="ballistic-native-form">
+    <legend>3. 原窗口扫描条件</legend>
+    <p>UTC 输入仅为 UTC 字面时间，浏览器时区不加减8小时。卫星历元留空使用原服务缺省 2026/07/01 10:00:00；目标基准发射时间留空沿各文件参考历元。</p>
+    <div class="ballistic-field-grid"><label>偏移起点（秒，可负）<input data-option="startOffsetSec" type="number" step="1"></label><label>偏移步长（秒，正整数）<input data-option="stepSizeSec" type="number" step="1"></label><label>计算次数（正整数）<input data-option="numCalculations" type="number" step="1"></label><label>目标采样步长（秒，≤0 自动）<input data-option="targetSampleStepSec" type="number" step="any"></label><label>轨道模型<select>
+          <option>TWO_BODY</option>
+          <option>J2_SECULAR</option>
+          <option>J2_NUMERICAL</option>
+        </select></label><label>轨迹点输出<select data-option="trajectoryPointOutput">
+          <option value="1">1 · 输出真实窗口内点</option>
+          <option value="0">0 · 仅窗口摘要</option>
+        </select></label></div>
+    <p>起点、步长、次数及末次偏移必须在浏览器安全整数范围内；不降低原采样或重新计算服务 best。</p><button type="button" data-test="compute-window">执行弹道窗口计算</button>
+  </fieldset>
+  <!--v-if-->
+  <!--v-if-->
+</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/components/BallisticWindowControls.spec.ts:17:19
+     15|     vi.stubGlobal('fetch', fetchMock)
+     16|     const wrapper = mount(BallisticWindowControls, { props: { satellit…
+     17|     await wrapper.get('[data-test=window-source]').setValue('generated…
+       |                   ^
+     18|     await wrapper.get('[data-test=generated-result-select]').setValue(…
+     19|     expect(wrapper.text()).toContain('模拟.csv')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/utils/ballisticSimulation.spec.ts > T24 原模拟输入合同 > 完整原字段、事件、null、别名、字面UTC、回退步长不转换不丢失
+AssertionError: expected { Object (request, omittedOutputDir) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+-   "omittedOutputDir": true,
+-   "request": {
+-     "azimuthDeg": 80,
+-     "boostAccelerationMs2": 11,
+-     "boostDurationSec": 30,
+-     "dragCdAreaOverMass": 0.01,
+-     "durationSec": 700,
+-     "elevationDeg": 30,
+-     "flightPhaseCode": "0x04",
+-     "impactPointCoordFrame": "J2000",
+-     "impactPointUnit": "m",
+-     "impactPointX": 3578635.76,
+-     "impactPointY": 3522525.227,
+-     "impactPointZ": 3919735.591,
+-     "impactTime": "2026/06/04 04:42:55.000",
+-     "impactTimeUtc": "2026-06-04 04:42:55.000",
+-     "initialSpeedMs": 1600,
+-     "integrationStepSec": 0.25,
+-     "launchHeightM": 100,
+-     "launchLatDeg": 20,
+-     "launchLonDeg": 120,
+-     "launchPointCoordFrame": "J2000",
+-     "launchPointUnit": "m",
+-     "launchPointX": 2167790.227,
+-     "launchPointY": 4775481.109,
+-     "launchPointZ": 3618557.253,
+-     "launchTimeUtc": "2026-06-04 04:00:00.000",
+-     "outputPointDurationSec": 0,
+-     "outputStepSec": 2.5,
+-     "phaseEvents": [
+-       {
+-         "accelerationMs2": 12,
+-         "deltaVms": 3,
+-         "directionMode": "旧方向",
+-         "dragCdAreaOverMass": 0.02,
+-         "dynamics": "旧模式",
+-         "endTime": null,
+-         "eventTime": "原值",
+-         "eventType": null,
+-         "liftDragRatio": 2,
+-         "phaseType": "boost",
+-         "startTime": "原文本",
+-       },
+-     ],
+-     "targetId": "SIM-001",
+-     "targetShapeCode": "0x01",
+-     "targetTypeCode": "0x03",
+-     "taskEndTime": "2026-06-04 04:42:55.000",
+-     "taskName": null,
+-     "taskStartTime": "2026-06-04 04:00:00.000",
+-   },
++   "omittedOutputDir": false,
++   "request": {},
+  }
+
+ ❯ src/utils/ballisticSimulation.spec.ts:14:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/utils/ballisticSimulation.spec.ts > T24 原模拟输入合同 > 非法JSON、非有限数、精度丢失、字段类型错误在HTTP前阻止
+AssertionError: expected [Function] to throw an error
+ ❯ src/utils/ballisticSimulation.spec.ts:19:235
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > 原JSON导入、核心编辑保留高级字段、原结果全文、201引用、完整四曲线、快照与失败恢复
+Error: Unable to get [data-simulation-field=targetId] within: <section><input type="file"><textarea></textarea><button data-test="simulation-compute">执行模拟</button></section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/views/BallisticSimulationView.spec.ts:26:19
+     24|     Object.defineProperty(input.element, 'files', { configurable: true…
+     25|     await input.trigger('change'); await flushPromises()
+     26|     await wrapper.get('[data-simulation-field=targetId]').setValue('SI…
+       |                   ^
+     27|     expect(JSON.parse(String(wrapper.get('textarea').element.value))).…
+     28|     await wrapper.get('[data-test=simulation-compute]').trigger('click…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > 本地非法JSON不发送HTTP，忙时防重复
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ src/views/BallisticSimulationView.spec.ts:61:23
+     59|     await wrapper.get('[data-test=simulation-compute]').trigger('click…
+     60|     await wrapper.get('[data-test=simulation-compute]').trigger('click…
+     61|     expect(fetchMock).toHaveBeenCalledTimes(1)
+       |                       ^
+     62|     finish?.(new Response('{"error":"原失败"}', { status: 400 })); await …
+     63|     expect(wrapper.text()).toContain('原失败')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  5 failed | 1 passed (6)
+   Start at  21:06:19
+   Duration  735ms (transform 344ms, setup 0ms, import 513ms, tests 68ms, environment 717ms)

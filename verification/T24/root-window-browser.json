@@ -1,0 +1,62 @@
+{
+  "source": "同一根Chrome真实模拟引用选择→preview200→正式窗口200→原响应下载",
+  "status": 200,
+  "selectedFileId": "95913a17-5628-4133-b802-787851677114",
+  "request": {
+    "startOffsetSec": 0,
+    "stepSizeSec": 10,
+    "numCalculations": 1,
+    "targetSampleStepSec": 1,
+    "trajectoryPointOutput": 1,
+    "orbitModel": "J2_NUMERICAL",
+    "satellites": [
+      {
+        "satelliteId": "MANUAL-1",
+        "name": "手工卫星1",
+        "payloads": [
+          {
+            "payloadId": "MANUAL-1-P1",
+            "payloadName": "载荷1",
+            "payloadType": "SPACE",
+            "minDistanceKm": 0,
+            "maxDistanceKm": 0,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": -1
+          }
+        ],
+        "semiMajorAxisM": 7530612,
+        "eccentricity": 0.00085,
+        "inclinationDeg": 64.8,
+        "raanDeg": 120,
+        "argumentOfPerigeeDeg": 270,
+        "meanAnomalyDeg": 30,
+        "epochUtc": "2026/06/04 04:00:00.000"
+      }
+    ],
+    "ballistics": [
+      {
+        "targetId": "SIM-001",
+        "targetName": "defaultSimTask/SIM-001",
+        "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T24\\storage\\results\\fit-7828234181144885457\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261013_211822_202.csv"
+      }
+    ]
+  },
+  "responseBytes": 992490,
+  "responseSha256": "351d3858cf3342e0a42c235964e1e99afa89f45503331eb682453e403e4b9216",
+  "best": {
+    "offsetSecond": 0,
+    "visibleArcCount": 1,
+    "visiblePointCount": 1703,
+    "visibleDurationSec": 1702
+  },
+  "previewRows": 2576,
+  "consoleErrors": [],
+  "pageErrors": [],
+  "actualSimulationReferenceUnchanged": true,
+  "rawResponseDownloadByteEqual": true
+}

@@ -1,0 +1,43 @@
+{
+  "source": "根代理真实Chrome核心文本输入与服务恢复，无mock",
+  "invalidField": "abc-invalid",
+  "invalidComputeRequests": 0,
+  "originalSuccessCleared": true,
+  "validationMessage": "launchPointX须为有限数或null",
+  "recoveryStatus": 200,
+  "recoveryRequest": {
+    "taskName": "defaultSimTask",
+    "targetId": "SIM-001",
+    "launchTimeUtc": "2026-06-04 04:00:00.000",
+    "impactTimeUtc": "2026-06-04 04:42:55.000",
+    "taskStartTime": "2026-06-04 04:00:00.000",
+    "taskEndTime": "2026-06-04 04:42:55.000",
+    "launchPointX": 2167790.227,
+    "launchPointY": 4775481.109,
+    "launchPointZ": 3618557.253,
+    "launchPointCoordFrame": "J2000",
+    "launchPointUnit": "m",
+    "impactPointX": 3578635.76,
+    "impactPointY": 3522525.227,
+    "impactPointZ": 3919735.591,
+    "impactPointCoordFrame": "J2000",
+    "impactPointUnit": "m",
+    "outputPointDurationSec": 1,
+    "phaseEvents": []
+  },
+  "sourceSha256": {
+    "frontend/src/App.vue": "77ed39471777f8af142bbed3206910a1f25beea885cf3e15dc3ba54590a15e65",
+    "frontend/src/api/ballisticFiles.ts": "032cbd4fc3815b511471f02b1816e9030fbdcd79d1de13e344960e846c034700",
+    "frontend/src/api/ballisticSimulation.spec.ts": "d4f6722ca22c1ecbd7ae0e57107516d281d2434cf28d2a29f1fda51a5b745ec7",
+    "frontend/src/api/ballisticSimulation.ts": "e132cbe48751e64735a99ddf2136c8dd778441a0dfb6ff443d16cac3ae3be2ea",
+    "frontend/src/components/BallisticFitFileResult.vue": "95966b726899a40906e4ce087f6cfa652d2350c9a3306427d611136d89456d32",
+    "frontend/src/components/BallisticWindowControls.spec.ts": "045cb378bb4507bcf53d50d349bc183bb2f1cbbdb7a36aec150e4c664cc0f127",
+    "frontend/src/components/BallisticWindowControls.vue": "9d631dc925b5d667aaf02fd88485d3b8879e63b64696b918d11d2ed0e4b516b6",
+    "frontend/src/utils/ballisticSimulation.spec.ts": "7629de0849dee5705b4b65aebd7b9b660ac423f4e11c7349a62ac0a6ff9897ef",
+    "frontend/src/utils/ballisticSimulation.ts": "25fe79387a36dac6a1db91a6f132b0b28a85a09486e4ede25e2173d4d8c9e642",
+    "frontend/src/views/BallisticPayloadConfigurationView.vue": "0530af7033c3a6224c8ffb33861c56f1e1b3ff7db935ee1903340f9a2ff71b9a",
+    "frontend/src/views/BallisticSimulationView.spec.ts": "eac44d43cdcd5a3c1ba0a4b53194bcff5f9ea2cb6d1eec3785b4c9757403dc53",
+    "frontend/src/views/BallisticSimulationView.vue": "8b3c80c4c7d7274fdef0aed8ef260aef6b15b4f0360b26057ad5bbb81f200baf",
+    "frontend/pnpm-lock.yaml": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8"
+  }
+}

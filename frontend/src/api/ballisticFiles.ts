@@ -24,6 +24,8 @@ export async function registerBallisticResult(csvPath: string, taskName: string,
     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ csvPath, taskName, targetId }),
   })
   await checkBallisticResponse(response, '结果文件登记')
+  // 合同只有201创建/复用登记才授予真实FileReference；异常2xx不能开放窗口来源或辅助下载。
+  if (response.status !== 201) throw new Error(`结果文件登记须返回HTTP 201，实际HTTP ${response.status}，未获得有效引用`)
   return await response.json() as BallisticFileReference
 }
 /** 原生 multipart，浏览器自动写 boundary，不能强行设置 JSON Content-Type。 */

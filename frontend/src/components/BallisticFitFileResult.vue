@@ -10,7 +10,9 @@ import { registerBallisticResult, previewBallisticFile, downloadBallisticFile } 
 import { saveBallisticBlob } from '../api/ballisticHttp'
 import { parseFitCsv } from '../utils/ballisticFit'
 import BallisticFitTrajectory from './BallisticFitTrajectory.vue'
-const props = defineProps<{ file: BallisticFitFile; taskName: string }>()
+const props = withDefaults(defineProps<{ file: BallisticFitFile; taskName: string; resultLabel?: string }>(), { resultLabel: '原拟合' })
+/** 共享文件能力只在真实登记201后告知父级引用，重新登记开始先撤销旧引用以防失效路径被继续选择。 */
+const emit = defineEmits<{ reference: [value: BallisticFileReference | undefined] }>()
 const reference = shallowRef<BallisticFileReference>()
 const preview = shallowRef<BallisticFilePreview>()
 const points = shallowRef<FitCsvPoint[]>([])
@@ -24,8 +26,13 @@ async function register(): Promise<void> {
   if (registering.value) return
   registering.value = true
   registerError.value = ''
+  reference.value = undefined
+  preview.value = undefined
+  points.value = []
+  emit('reference', undefined)
   try {
     reference.value = await registerBallisticResult(props.file.csvPath, props.taskName, props.file.targetId)
+    emit('reference', reference.value)
     await Promise.all([loadPreview(1), loadTrajectory()])
   } catch (failure) { registerError.value = message(failure) }
   finally { registering.value = false }
@@ -73,7 +80,7 @@ onMounted(register)
     <ol v-if="file.warnings.length" aria-label="原服务全部告警"><li v-for="(warning, index) in file.warnings" :key="index">{{ warning }}</li></ol>
     <p v-else>原服务未返回告警。</p>
     <p v-if="registering" role="status">正在登记原CSV并读取文件…</p>
-    <p v-if="registerError" class="ballistic-error" role="alert">原拟合已成功，文件登记失败：{{ registerError }}</p>
+    <p v-if="registerError" class="ballistic-error" role="alert">{{ resultLabel }}已成功，文件登记失败：{{ registerError }}</p>
     <button v-if="!reference" data-test="fit-register" type="button" :disabled="registering" @click="register">重试结果文件登记</button>
     <template v-if="reference">
       <p>已登记 {{ reference.originalName }} · 引用 {{ reference.fileId }} · {{ reference.sizeBytes }} 字节</p>
