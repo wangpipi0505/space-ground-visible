@@ -1,0 +1,6 @@
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.16
+Java version: 1.8.0_472, vendor: Temurin, runtime: C:\Program Files\Eclipse Adoptium\jdk-8.0.472.8-hotspot\jre
+Default locale: zh_CN, platform encoding: GBK
+OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
+Python 3.14.5

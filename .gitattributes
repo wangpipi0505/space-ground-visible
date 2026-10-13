@@ -2,6 +2,7 @@
 * text=auto eol=lf
 *.md whitespace=-blank-at-eol
 test-data/** -text
+verification/**/*.txt -text whitespace=cr-at-eol
 *.jar binary
 *.png binary
 *.xlsx binary

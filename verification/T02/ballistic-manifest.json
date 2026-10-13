@@ -1,0 +1,686 @@
+[
+  {
+    "path": "source/src/main/java/com/tx/alg/AccessDiagnosticExporter.java",
+    "sha256": "d49cdd6778c2353271bc888deac6cbc63d61ab86be902a58e4e09a66d83e3dc8"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/api/OrbitApiApplication.java",
+    "sha256": "9ef33cd50a27f0d5013403098365d366f702302cb0322791f0ba630e9de2e55c"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/api/OrbitVisibilityController.java",
+    "sha256": "6523fb391b0b736c936a36f430c7ef5738a02538fd416ff1c979604c3cc5ecb2"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/api/TargetTrajectoryFitController.java",
+    "sha256": "939ef52f181748a7319b8a032de56706bdc271365ad75596ec2eb19c474a009a"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/api/TargetTrajectorySpringBootApiExample.java",
+    "sha256": "d124e8f1f30a8c2a232e136dfc8a094f7e8fd04a1715785805a4287af09a4d0d"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+    "sha256": "18c6d36515edfdb5fa13387baca0dab502261f8e0e5cb72e3c9c9864e64d8ed0"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/image/ImagePreviewPanel.java",
+    "sha256": "d1cb9f82435bfc7d82db53fafccc53f1ef03f0622489b9434216c251302f9c32"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/image/ImageSimilarityProcessor.java",
+    "sha256": "8704c76697b0ea2048737b539d2e4f600ce916779c2a8f94ae15e23eafc5f694"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/image/TargetResultTableModel.java",
+    "sha256": "45e4c1424db151219f5e8021fa3b9585f17ab9ca740d12c33eebf61ae457a71a"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/Main.java",
+    "sha256": "65e3fbd3a487e97540d928754fb1209821249826db1b25e6830a4023002934d9"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/orbit/Orbit3DPanel.java",
+    "sha256": "f55c76d88184f6fcd6c8452b209428842f99485e288ec2b490d1112ee8a5c322"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/orbit/OrbitVisibilityHttpExample.java",
+    "sha256": "280b8f665970c194d5874605b5610bcb7922be934d21d98c6073422bce890f43"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/OrbitCalculator.java",
+    "sha256": "e49bde8a817ff7b0af70144862a2f8d6226060b7e5c0fcb99c909afd59b1e942"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/OrbitValidationTool.java",
+    "sha256": "5fc3cb3b8d6c23cb4b566049ccfe55f51f0b99b259e38df85b05f7c6929a4834"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/StkValidationExportTool.java",
+    "sha256": "9969020457b466abb1a5e12483b4bf78d2c8b04591f52279b8ba4f753d402c28"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitDemoApp.java",
+    "sha256": "0cccf454223a43cf7c3440cdd79084e2eb9e1dde1455551b8aeeb6218d927a86"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitPanel.java",
+    "sha256": "be57b2e2cb4813b823e97e49b72a9a4f250798c1ad61999e8725654ef1a3d7dd"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+    "sha256": "73e65766a33776c2273ab040b76c1ea16388c7c47595ebd0529a59113737868d"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/trajectory/TargetTrajectoryVisualizationFrame.java",
+    "sha256": "6fb288b0950205954e57bdabb38f4e5c2fd766ea7d884efcd87b75513afdeaeb"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/TrajectoryDesignApp.java",
+    "sha256": "2f943e641c977ccc722ca359a31480b066b967d7b1822a764b25ae36fd8e30a3"
+  },
+  {
+    "path": "source/src/main/java/com/tx/alg/TrajectoryFileResolver.java",
+    "sha256": "e87d7c396c880f78cfa8ce161f2909b73c20ea2301eb2e238463300406a247eb"
+  },
+  {
+    "path": "source/src/main/resources/application.properties",
+    "sha256": "826d35d04162b532940002fd4fe7a49b9a99bb65de898b3fec718e5366f90bba"
+  },
+  {
+    "path": "source/src/main/resources/logback.xml",
+    "sha256": "160140447ed8cb68c08685683e7374b169be12e1afa8331b055dbf6d10d46086"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/AccessDiagnosticExporterTest.java",
+    "sha256": "baa62b83320c6f445810459c648c509cc240b822dd5515cc947519458214f4de"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/api/VisibilityRequestMultiPayloadTest.java",
+    "sha256": "49dfd5ba10839ff91c27dac81b460e008cae2a25587208ea528c5f7703416c9a"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/MainFrameTableEditingTest.java",
+    "sha256": "810008ce4d23349d2d123e85cd064cdc3c80bddabbf8b4adb2ccaf67cd5db4a0"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/OrbitCalculatorMultiPayloadTest.java",
+    "sha256": "68e1cd3c9b2fef74322455123518b3cfa6d982dca844fdc5889e01ad66aee0b0"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest.java",
+    "sha256": "19fb084ab751bc957940ac9f4bafa1ce159b880682917f787f718fd75734958a"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/OrbitCalculatorResultTimeTest.java",
+    "sha256": "f92e182ef09cc652805dce783ffea9daa6e8e91c6e4b3dcfe640cdb732b26f25"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/OrbitCalculatorVisibilityStabilityTest.java",
+    "sha256": "5682bd245965d739ad4021c7617e29ce50cd128621791e3c5a8dfe894689e9f9"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/trajectory/TargetTrajectoryFitterInterpolationTest.java",
+    "sha256": "f6b05d6e684b98f6b47f18dcf1f1439de2d4c4ce810e22e60221dd4640b96ace"
+  },
+  {
+    "path": "source/src/test/java/com/tx/alg/TrajectoryFileResolverTest.java",
+    "sha256": "6f7ce3ff675d1a21b14dd0e4ed086fd631f2db68f3a4bec8e81cfd7ec944ee30"
+  },
+  {
+    "path": "source/pom.xml",
+    "sha256": "cc49f5988f2715751766ee8c38efe50580be3a342d1fe29f6df88e58a90cba14"
+  },
+  {
+    "path": "source/res/res/world_map_day.bmp",
+    "sha256": "a1ee1c4d3197a5c445d758e9274a93781dcd2efecc5bd02982023af16a2cc0b9"
+  },
+  {
+    "path": "source/res/world_map_day.bmp",
+    "sha256": "a1ee1c4d3197a5c445d758e9274a93781dcd2efecc5bd02982023af16a2cc0b9"
+  },
+  {
+    "path": "data/examples/1.png",
+    "sha256": "fecb3f91fc7397193936d6ea8df3b5389505ffaac62cf04808baf47cb518c0db"
+  },
+  {
+    "path": "data/examples/11.png",
+    "sha256": "aa3f520cc7075bbd8921fdf31d347506c79693176f3220a56519ec4ef7f018da"
+  },
+  {
+    "path": "data/examples/12.png",
+    "sha256": "9e616386276eeb76cbbe38e04635db1e2f663cdaaaf6c414c3cebd74c4d0bc34"
+  },
+  {
+    "path": "data/examples/13.png",
+    "sha256": "a46a1d21f4a8dd5dfcdbc22f1e3c01593aac9823938994cd075f1e5182b2b2f2"
+  },
+  {
+    "path": "data/examples/14.png",
+    "sha256": "f7e8327025d06d9d4f791f36c9345b56f3004a138bff0f91e5f41292dd37654b"
+  },
+  {
+    "path": "data/examples/2.png",
+    "sha256": "c419f21b8964959f7c9c9b7b2ff61c952c56a1c03da4fa80269bba54fb32ab38"
+  },
+  {
+    "path": "data/examples/3.png",
+    "sha256": "e124075d7a6c33cf173cc24241322b07e8fb8d380e07fd7357aa507fb7034412"
+  },
+  {
+    "path": "data/examples/4.png",
+    "sha256": "fecb3f91fc7397193936d6ea8df3b5389505ffaac62cf04808baf47cb518c0db"
+  },
+  {
+    "path": "data/examples/earth_space_actual.png",
+    "sha256": "d0221689e4e0943aacb974e3bfa708bd34ad2ff508607688bd6e199981292a4d"
+  },
+  {
+    "path": "data/examples/earth_space_simulated.png",
+    "sha256": "3eed099457fcbc18fe3fc8c9f8ceae908fafca63957c9c24e43e98546deebec9"
+  },
+  {
+    "path": "data/examples/hb03794.jpeg",
+    "sha256": "17af3b4e9cf30dfc6939b96e99b64da2a38392ea1cba4dd75521d1ddfefb0b37"
+  },
+  {
+    "path": "data/examples/hb03810.jpeg",
+    "sha256": "9c5ae8a3e029fcf1d0e73810c15288ac438288d94af59ccd4328f9c8c190c695"
+  },
+  {
+    "path": "data/examples/hb03826.jpeg",
+    "sha256": "495abcfe640b473778532b41ed6b837adde683362cb8a675c418f1c5c1c54646"
+  },
+  {
+    "path": "data/examples/hb03842.jpeg",
+    "sha256": "c0e5953300def58d3b0747a30f6d9c8e3a628f94bc8d1d7798e00c63aaace6c6"
+  },
+  {
+    "path": "data/examples/hb03843.jpeg",
+    "sha256": "c24280b98deb4e7887475b6cf0c32a3b7c461e6f252f60b580792151b3f53906"
+  },
+  {
+    "path": "data/examples/hb03844.jpeg",
+    "sha256": "b3352d5c913ab16781e5fd27811335a3c8adad92e999311ee4db889aca39989c"
+  },
+  {
+    "path": "data/examples/hb03846.jpeg",
+    "sha256": "c9f6b5264ae63fde5b230d4f20929ed96a37231a8fcec0984c9f09eef7f812d7"
+  },
+  {
+    "path": "data/examples/hb03847.jpeg",
+    "sha256": "eecdd94bceadb7ab889d22ead458ad3a932e5838a5e2c5809f4da19038430489"
+  },
+  {
+    "path": "data/examples/hb03859.jpeg",
+    "sha256": "8f1a142126d5bb76e811fcc7654ee54ac4dc874697296cb0e29a23d3f0fdae2b"
+  },
+  {
+    "path": "data/examples/hb03860.jpeg",
+    "sha256": "29fd9c429134639f5b10bc98c4cf19523d64bd86c6ed31c41eff110f6cff381f"
+  },
+  {
+    "path": "data/examples/hb03862.jpeg",
+    "sha256": "042bc6a19dcd228c51596f0de9cfa7ed545384b862969082498ecad88e1e3e2f"
+  },
+  {
+    "path": "data/examples/hb03863.jpeg",
+    "sha256": "2f170fa23b529167d8a275e5c284cc3c56b34b9fd0e20f4d6f5f3faa2631ffbc"
+  },
+  {
+    "path": "data/examples/hb03864.jpeg",
+    "sha256": "eb8bf1db1b0b09d4996aecc62f06e24257db5f1c0195dc94c8841ec90617408a"
+  },
+  {
+    "path": "data/examples/orbit_visibility_multi_payload_default.json",
+    "sha256": "f2f003350fd0f831fac9e6c7b5f7878e5bed05d9fa3bc71e3d2b2208ee7b46c9"
+  },
+  {
+    "path": "data/examples/target_trajectory_fit_package102_default.json",
+    "sha256": "a31d93f2baf67467aaf73b4f6cf46c55fedcf59f2e11bf3860e6efb328effab7"
+  },
+  {
+    "path": "data/examples/target_trajectory_simulate_default.json",
+    "sha256": "fbca1c68adfff9cd12a56f79b72047f448627be5bb501a6f92e47d2b80ae0aca"
+  },
+  {
+    "path": "data/examples/target_trajectory_simulate_lla.json",
+    "sha256": "60d41dcb3f2a38608558e067a7d16bf0e54a580fa7c0ceb97af38cef4ed6518b"
+  },
+  {
+    "path": "data/examples/仿真弹道.csv",
+    "sha256": "13e9651ec58b8729d98b4308a3e41b097046961a911cd527659ee53327c1da78"
+  },
+  {
+    "path": "data/target2.xlsx",
+    "sha256": "b07c354e8bdaebec6016d54455b97ec1bfc0b261de3262149c28ea6d7fc9530a"
+  },
+  {
+    "path": "data/trajectory-0.1s-standard.csv",
+    "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+  },
+  {
+    "path": "data/trajectory_target2.csv",
+    "sha256": "f50a188bb6e93771dd1872b46594a4d71883ee453d7a5dd4348205b3e810af97"
+  },
+  {
+    "path": "docs/IMAGE_COMPARISON_API.md",
+    "sha256": "2139fb4792517491b6422606a6cfcb6d56554ded7fc2fc793d031f74b1357fe7"
+  },
+  {
+    "path": "docs/ORBIT_VISIBILITY_API.md",
+    "sha256": "6f818527fc3f480fdafed62f00a54e32ba5fdb7f4ecfe90c294256810f26441e"
+  },
+  {
+    "path": "docs/STK可见窗口误差诊断与验证说明.md",
+    "sha256": "120c7d949f9b854fab5ac75bd591926bdfc6db60fbc39c37ff0f37953d25ba56"
+  },
+  {
+    "path": "docs/TARGET_TRAJECTORY_FIT_API.md",
+    "sha256": "32e6a54f4c05a4b3d2a6a91c79f945efa49052fce4c7e856df4920635f2beedc"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/formula_images_v13/manifest.json",
+    "sha256": "b2aab049369f1f3114ed4bc1913446044dff2eb7b9792a1bfc0d02863794c718"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/~$拟合算法关键技术说明_V1.0.docx",
+    "sha256": "4c69be83d5b1fd428c9d2f778fd885fc69ad6faea8c560e71c8ebed674918137"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/弹道拟合算法关键技术说明.docx",
+    "sha256": "0e07da8f79b66543a84068479f73108e2d700105bc593cf33c800d7ccfb62f79"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/弹道拟合算法关键技术说明.md",
+    "sha256": "12ee38d194dc4c6dbc5dfd3630bd2f19b5d516bad35dd7ec9be6a2aaa68f6421"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/弹道拟合算法关键技术说明_V1.0.docx",
+    "sha256": "6442bad2024734530431fb9871b29c94cf7836c4fb0479a5c594f7cbc5096a13"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/弹道拟合算法关键技术说明_V1.0_修订稿.docx",
+    "sha256": "90f1c1ee317e1a81b159ba6206ea6935896ea10ef97a923f98c2c3dfbd160561"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/弹道拟合算法关键技术说明_V1.0_修订稿_正文版.docx",
+    "sha256": "d2b74ef8a1498b8977512f26020a48836acb985d170b2708ddd778e6a5634526"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/弹道拟合算法关键技术说明_V1.1.docx",
+    "sha256": "d2b74ef8a1498b8977512f26020a48836acb985d170b2708ddd778e6a5634526"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/弹道拟合算法关键技术说明_V1.2.docx",
+    "sha256": "bab11de0ca434ac67fec67e6291bfba0b8368b94c70d79716f6f231a56e0a050"
+  },
+  {
+    "path": "docs/弹道拟合算法说明/弹道拟合算法流程图.vsdx",
+    "sha256": "ae9b2b24bf0db00a68a9ea8f5da814573c2e1ee6bb5925c60d609b3262862a61"
+  },
+  {
+    "path": "docs/目标轨迹拟合算法.md",
+    "sha256": "d95d76e5596554f8e5ea772a2096f62f44581e7be1293b2a5ea23b2163d1415c"
+  },
+  {
+    "path": "build/alg-toolkit-1.0.0-plain.jar",
+    "sha256": "6dec33be2ec401b5a32b0ed1cb9a7a86568eb57771990225ab80337d5da27501"
+  },
+  {
+    "path": "build/alg-toolkit-1.0.0.jar",
+    "sha256": "4e0cbfabce62e7173d3ee92cba3aaeab6465e9e6ffaa1af8308c9019b6572583"
+  },
+  {
+    "path": "dependencies/runtime-jars/accessors-smart-2.4.11.jar",
+    "sha256": "2ea7ac03b1b7796d9ec59fcfa271b66ff50cd8019b8c1c997f5883bc30f5a492"
+  },
+  {
+    "path": "dependencies/runtime-jars/android-json-0.0.20131108.vaadin1.jar",
+    "sha256": "dfb7bae2f404cfe0b72b4d23944698cb716b7665171812a0a4d0f5926c0fac79"
+  },
+  {
+    "path": "dependencies/runtime-jars/annotations-13.0.jar",
+    "sha256": "ace2a10dc8e2d5fd34925ecac03e4988b2c0f851650c94b8cef49ba1bd111478"
+  },
+  {
+    "path": "dependencies/runtime-jars/apiguardian-api-1.1.2.jar",
+    "sha256": "b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38"
+  },
+  {
+    "path": "dependencies/runtime-jars/asm-9.3.jar",
+    "sha256": "1263369b59e29c943918de11d6d6152e2ec6085ce63e5710516f8c67d368e4bc"
+  },
+  {
+    "path": "dependencies/runtime-jars/assertj-core-3.22.0.jar",
+    "sha256": "419b7594a869147ee9578f5af2297fdd2c03c07c835927dbf4a7b32ad22cb411"
+  },
+  {
+    "path": "dependencies/runtime-jars/bcprov-jdk18on-1.78.jar",
+    "sha256": "1bf721b09758b3f55f2a5c875b6178ec6c41dddad854b0dead4b27a236f1943a"
+  },
+  {
+    "path": "dependencies/runtime-jars/byte-buddy-1.12.23.jar",
+    "sha256": "0433a8e4efcc5e137ceb6e7e1d83c2f1f95057c13b66fb92a901f883cb4df4b4"
+  },
+  {
+    "path": "dependencies/runtime-jars/byte-buddy-agent-1.12.23.jar",
+    "sha256": "5817228bb0ed87129e9e36fb38c8cba9c2a2d5ecccce30b7606440bccf6f79e0"
+  },
+  {
+    "path": "dependencies/runtime-jars/checker-qual-3.41.0.jar",
+    "sha256": "2f9f245bf68e4259d610894f2406dc1f6363dc639302bd566e8272e4f4541172"
+  },
+  {
+    "path": "dependencies/runtime-jars/commons-codec-1.15.jar",
+    "sha256": "b3e9f6d63a790109bf0d056611fbed1cf69055826defeb9894a71369d246ed63"
+  },
+  {
+    "path": "dependencies/runtime-jars/commons-collections4-4.4.jar",
+    "sha256": "1df8b9430b5c8ed143d7815e403e33ef5371b2400aadbe9bda0883762e0846d1"
+  },
+  {
+    "path": "dependencies/runtime-jars/commons-compress-1.25.0.jar",
+    "sha256": "d0ec8014ebbb0749f471803122b21796afddf2e98e194e4374622e5fbaf69f49"
+  },
+  {
+    "path": "dependencies/runtime-jars/commons-io-2.15.0.jar",
+    "sha256": "a328dad730921d197b6a9b195dffa00e41c974c2dac8fe37e84d31706bca7792"
+  },
+  {
+    "path": "dependencies/runtime-jars/commons-math3-3.6.1.jar",
+    "sha256": "1e56d7b058d28b65abd256b8458e3885b674c1d588fa43cd7d1cbb9c7ef2b308"
+  },
+  {
+    "path": "dependencies/runtime-jars/curvesapi-1.08.jar",
+    "sha256": "ad95b08b8bbf9d7d17e5e00814898fa23324f32bc5b62f1a37801e6a56ce0079"
+  },
+  {
+    "path": "dependencies/runtime-jars/error_prone_annotations-2.23.0.jar",
+    "sha256": "ec6f39f068b6ff9ac323c68e28b9299f8c0a80ca512dccb1d4a70f40ac3ec054"
+  },
+  {
+    "path": "dependencies/runtime-jars/failureaccess-1.0.2.jar",
+    "sha256": "8a8f81cf9b359e3f6dfa691a1e776985c061ef2f223c9b2c80753e1b458e8064"
+  },
+  {
+    "path": "dependencies/runtime-jars/guava-33.0.0-jre.jar",
+    "sha256": "f4d85c3e4d411694337cb873abea09b242b664bb013320be6105327c45991537"
+  },
+  {
+    "path": "dependencies/runtime-jars/hamcrest-2.2.jar",
+    "sha256": "5e62846a89f05cd78cd9c1a553f340d002458380c320455dd1f8fc5497a8a1c1"
+  },
+  {
+    "path": "dependencies/runtime-jars/j2objc-annotations-2.8.jar",
+    "sha256": "f02a95fa1a5e95edb3ed859fd0fb7df709d121a35290eff8b74dce2ab7f4d6ed"
+  },
+  {
+    "path": "dependencies/runtime-jars/jackson-annotations-2.13.5.jar",
+    "sha256": "80aea8ed7232db5040ced4b3f982f29da95bb3d802343dbf6fd82ccd98c21c4f"
+  },
+  {
+    "path": "dependencies/runtime-jars/jackson-core-2.13.5.jar",
+    "sha256": "48f36a025311d0464ad8dda4512a20c79e279a9550f63f3179d731d94482474b"
+  },
+  {
+    "path": "dependencies/runtime-jars/jackson-databind-2.13.5.jar",
+    "sha256": "5fedb24b2356491815d18267f65da9a21dd67413345ad7795f221afa25c78984"
+  },
+  {
+    "path": "dependencies/runtime-jars/jackson-datatype-jdk8-2.13.5.jar",
+    "sha256": "e58761751fea8a00dc626aae1c5f1be38c5cfd487aeb333d933a4ab5f5a73c55"
+  },
+  {
+    "path": "dependencies/runtime-jars/jackson-datatype-jsr310-2.13.5.jar",
+    "sha256": "ef15ceddddc58dfbd686b6b7fd0853ed328ff08c628bd4a395734bec20ca857b"
+  },
+  {
+    "path": "dependencies/runtime-jars/jackson-module-parameter-names-2.13.5.jar",
+    "sha256": "e5fcf17369885065ddec9a9cebead8597c55de252dedf10a3c14eeed8affaca4"
+  },
+  {
+    "path": "dependencies/runtime-jars/jakarta.activation-api-1.2.2.jar",
+    "sha256": "a187a939103aef5849a7af84bd7e27be2d120c410af291437375ffe061f4f09d"
+  },
+  {
+    "path": "dependencies/runtime-jars/jakarta.annotation-api-1.3.5.jar",
+    "sha256": "85fb03fc054cdf4efca8efd9b6712bbb418e1ab98241c4539c8585bbc23e1b8a"
+  },
+  {
+    "path": "dependencies/runtime-jars/jakarta.xml.bind-api-2.3.3.jar",
+    "sha256": "c04539f472e9a6dd0c7685ea82d677282269ab8e7baca2e14500e381e0c6cec5"
+  },
+  {
+    "path": "dependencies/runtime-jars/json-path-2.7.0.jar",
+    "sha256": "de82f0e4602eea0187df36779ae8cfc1653b6d920125674af4d365d0bca59508"
+  },
+  {
+    "path": "dependencies/runtime-jars/json-smart-2.4.11.jar",
+    "sha256": "f2ffb40160d85a246b4a4337edcaf812db2811af075f2de9e285f0be998a2ee0"
+  },
+  {
+    "path": "dependencies/runtime-jars/jsonassert-1.5.1.jar",
+    "sha256": "1e9a7c443d0dd579906646d767f3701918a78cb88a93112f528305fc9095d261"
+  },
+  {
+    "path": "dependencies/runtime-jars/jsr305-3.0.2.jar",
+    "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7"
+  },
+  {
+    "path": "dependencies/runtime-jars/jul-to-slf4j-1.7.36.jar",
+    "sha256": "9e641fb142c5f0b0623d6222c09ea87523a41bf6bed48ac79940724010b989de"
+  },
+  {
+    "path": "dependencies/runtime-jars/junit-jupiter-5.8.2.jar",
+    "sha256": "4f5c1cc6432244cd16e36aa0e02b74bce34a81ff95a13d63d50951ec4ce3f4bd"
+  },
+  {
+    "path": "dependencies/runtime-jars/junit-jupiter-api-5.8.2.jar",
+    "sha256": "1808ee87e0f718cd6e25f3b75afc17956ac8a3edc48c7e9bab9f19f9a79e3801"
+  },
+  {
+    "path": "dependencies/runtime-jars/junit-jupiter-engine-5.8.2.jar",
+    "sha256": "753b7726cdd158bb34cedb94c161e2291896f47832a1e9eda53d970020a8184e"
+  },
+  {
+    "path": "dependencies/runtime-jars/junit-jupiter-params-5.8.2.jar",
+    "sha256": "d1c22d6fe5483568c08c8913f34abd2303490c3480ce6c18a2ea31c65e44102a"
+  },
+  {
+    "path": "dependencies/runtime-jars/junit-platform-commons-1.8.2.jar",
+    "sha256": "d2e015fca7130e79af2f4608dc54415e4b10b592d77333decb4b1a274c185050"
+  },
+  {
+    "path": "dependencies/runtime-jars/junit-platform-engine-1.8.2.jar",
+    "sha256": "0b7d000f8c3e8e5f7d6b819649936e7b9938314e87c8f983805218ea57567e59"
+  },
+  {
+    "path": "dependencies/runtime-jars/kotlin-stdlib-1.6.21.jar",
+    "sha256": "739c526672bb337573b28f63afa8306eb088b0c3a0967f56d6c89f4a3012a492"
+  },
+  {
+    "path": "dependencies/runtime-jars/kotlin-stdlib-common-1.6.21.jar",
+    "sha256": "183bec59cd9f3a14957b190e8c879cf1194bd1f106b0a7b6e1cbb8790d242363"
+  },
+  {
+    "path": "dependencies/runtime-jars/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+    "sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99"
+  },
+  {
+    "path": "dependencies/runtime-jars/log4j-api-2.17.2.jar",
+    "sha256": "09351b5a03828f369cdcff76f4ed39e6a6fc20f24f046935d0b28ef5152f8ce4"
+  },
+  {
+    "path": "dependencies/runtime-jars/log4j-to-slf4j-2.17.2.jar",
+    "sha256": "9bcfa5273527b950d79739d11e8f8080cfc881908fa2a946b4e891c0293094de"
+  },
+  {
+    "path": "dependencies/runtime-jars/logback-classic-1.2.12.jar",
+    "sha256": "f65352bf627177e414c956a977a5851e7125e9f3a2e1a7847b2fa78182dc49fe"
+  },
+  {
+    "path": "dependencies/runtime-jars/logback-core-1.2.12.jar",
+    "sha256": "0cba0755fbdc1793f60dc9d1ef22337737899f4f28b485c42bcadacb73664b34"
+  },
+  {
+    "path": "dependencies/runtime-jars/minio-8.5.12.jar",
+    "sha256": "9519ff2fd284ac0fc5c22d1091f21a9c9298c9c7cac85615de1ff10f1710786e"
+  },
+  {
+    "path": "dependencies/runtime-jars/mockito-core-4.5.1.jar",
+    "sha256": "0b66f11abbb39eaffb05989109892a50fd344d633a3b3587726ef1fe5fc8ab78"
+  },
+  {
+    "path": "dependencies/runtime-jars/mockito-junit-jupiter-4.5.1.jar",
+    "sha256": "fdd50df743086667a835c55d50c92226f2adc06319c865f4d0f3cf96813ad22c"
+  },
+  {
+    "path": "dependencies/runtime-jars/objenesis-3.2.jar",
+    "sha256": "03d960bd5aef03c653eb000413ada15eb77cdd2b8e4448886edf5692805e35f3"
+  },
+  {
+    "path": "dependencies/runtime-jars/okhttp-4.9.3.jar",
+    "sha256": "93ecd6cba19d87dccfe566ec848d91aae799e3cf16c00709358ea69bd9227219"
+  },
+  {
+    "path": "dependencies/runtime-jars/okio-2.8.0.jar",
+    "sha256": "4496b06e73982fcdd8a5393f46e5df2ce2fa4465df5895454cac68a32f09bbc8"
+  },
+  {
+    "path": "dependencies/runtime-jars/opentest4j-1.2.0.jar",
+    "sha256": "58812de60898d976fb81ef3b62da05c6604c18fd4a249f5044282479fc286af2"
+  },
+  {
+    "path": "dependencies/runtime-jars/poi-5.2.5.jar",
+    "sha256": "352e1b44a5777af2df3d7dc408cda9f75f932d0e0125fa1a7d336a13c0a663a7"
+  },
+  {
+    "path": "dependencies/runtime-jars/poi-ooxml-5.2.5.jar",
+    "sha256": "c6ad01a10cefa1d2a9c1b552bd4293a3eca29b513353f1ec814041d38da9ec5b"
+  },
+  {
+    "path": "dependencies/runtime-jars/poi-ooxml-lite-5.2.5.jar",
+    "sha256": "6d4ce6736c422c52e47ffbfa08c784e1b8c188efb69583ac001a0ab16022d774"
+  },
+  {
+    "path": "dependencies/runtime-jars/simple-xml-safe-2.7.1.jar",
+    "sha256": "4506e4bb57d41481936f0ac684468ca4b2cc9e002ca8466ee19e23228d455957"
+  },
+  {
+    "path": "dependencies/runtime-jars/slf4j-api-1.7.36.jar",
+    "sha256": "d3ef575e3e4979678dc01bf1dcce51021493b4d11fb7f1be8ad982877c16a1c0"
+  },
+  {
+    "path": "dependencies/runtime-jars/snakeyaml-1.30.jar",
+    "sha256": "f43a4e40a946b8cdfd0321bc1c9a839bc3f119c57e4ca84fb87c367f51c8b2b3"
+  },
+  {
+    "path": "dependencies/runtime-jars/snappy-java-1.1.10.5.jar",
+    "sha256": "0f3f1857ed33116583f480b4df5c0218836c47bfbc9c6221c0d73f356decf37b"
+  },
+  {
+    "path": "dependencies/runtime-jars/SparseBitSet-1.3.jar",
+    "sha256": "f76b85adb0c00721ae267b7cfde4da7f71d3121cc2160c9fc00c0c89f8c53c8a"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-aop-5.3.31.jar",
+    "sha256": "3f0c666f317abaa845fc3a24fba219b1f469716bf309cccd755eecb8fee20430"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-beans-5.3.31.jar",
+    "sha256": "a8d6d99003d0a28049cba4273afbcfc64e1107ee3c33f67935853e9711544aa7"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-2.7.18.jar",
+    "sha256": "530f4e0fdfeb3a0e2b3a369d15cdea38fbdc1696f8b030c35a6ad65c27524950"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-autoconfigure-2.7.18.jar",
+    "sha256": "1c4e0aadcb662b6149b536a2cf288003ffefe81a6cc69846e9f14976529a1b08"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-starter-2.7.18.jar",
+    "sha256": "f67a5d913defa764295b6a0d8d13573624e437eb34e97d88c0e76bf181656071"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-starter-json-2.7.18.jar",
+    "sha256": "084f592d522dfa36790fe08d4d0b9cebe6683638889834ed2f885f3c42fecbf6"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-starter-logging-2.7.18.jar",
+    "sha256": "202c0894dbfdeff7be005597ff98288133a62fe7f5593be4938400482d19dcb7"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-starter-test-2.7.18.jar",
+    "sha256": "0bf31defc40b1224887fa93c4781c01ef142b987c08165baa2fae18701690160"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-starter-tomcat-2.7.18.jar",
+    "sha256": "e4a44478556749137f28001c35d897efff31f39161606589cc355dcbf797c6f0"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-starter-web-2.7.18.jar",
+    "sha256": "a74fab5f826b600e3c3f4cd7028c5c982b0bf1b849673629cbb758ae790a4c08"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-test-2.7.18.jar",
+    "sha256": "9804c3d7d9d8212c0cee80f1c7df50b5e63057c4433ec00bd87cc64cbfcaa4c8"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-boot-test-autoconfigure-2.7.18.jar",
+    "sha256": "ac3e8f68fcce95fe8e7e92bb263fce0989a587fce734e94854f81d9f85ce8a2a"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-context-5.3.31.jar",
+    "sha256": "38def055d1e22b5514b1cb19cef4474e5c1b0d2127c483e7d014bde87c4a4cf3"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-core-5.3.31.jar",
+    "sha256": "7013ed3da15a8d4be797f5c310f9aa1b196b97f2313bc41e60ef3f5627224fe9"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-expression-5.3.31.jar",
+    "sha256": "e027f122b8a4e3030339068220bed02d1c9d397eb5897f1e33ba2f63b22591ac"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-jcl-5.3.31.jar",
+    "sha256": "eee0df6a25a9c56d228ea86272546aa5a0656caf2f14e7b375417b066abbc0db"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-test-5.3.31.jar",
+    "sha256": "dcd43510b9c66fd8a6f29d481cbe949d530d3b831b676a47328c7514b733ae83"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-web-5.3.31.jar",
+    "sha256": "7b7b4db19acc8c0cdb0dea93a3aa4b1b706db4bcc7b77f677a0c56e86d379ac7"
+  },
+  {
+    "path": "dependencies/runtime-jars/spring-webmvc-5.3.31.jar",
+    "sha256": "29c1b96c424dcb637fec2d1e6493b088d977e748a56da7f34e6a7c3c39d18c74"
+  },
+  {
+    "path": "dependencies/runtime-jars/tomcat-embed-core-9.0.83.jar",
+    "sha256": "4ed404d5dea8652846f3c52c094764c2ec018f28a3561f1d27df700f7aa5b376"
+  },
+  {
+    "path": "dependencies/runtime-jars/tomcat-embed-el-9.0.83.jar",
+    "sha256": "a82c4cf8cf9e88d6891cbb4cbcb9f85f788e147c464cbeba15a2c83276f3344c"
+  },
+  {
+    "path": "dependencies/runtime-jars/tomcat-embed-websocket-9.0.83.jar",
+    "sha256": "b78130b05960761992787edf2cb4c0af18d1fe52b35119ad63712af137d7eb3e"
+  },
+  {
+    "path": "dependencies/runtime-jars/xml-apis-1.4.01.jar",
+    "sha256": "a840968176645684bb01aed376e067ab39614885f9eee44abe35a5f20ebe7fad"
+  },
+  {
+    "path": "dependencies/runtime-jars/xmlbeans-5.2.0.jar",
+    "sha256": "5a344f323c049b7024edd39bbd58a38e77eb44218aad2794879e7f4ac3ca1de1"
+  },
+  {
+    "path": "dependencies/runtime-jars/xmlunit-core-2.9.1.jar",
+    "sha256": "7e70f23d4f75e05f0ee79f0f6b9e13b6cf51d34f36c5fc3a6b839429dde1efef"
+  }
+]
