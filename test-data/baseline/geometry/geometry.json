@@ -1,0 +1,4811 @@
+[ {
+  "id" : "same-side",
+  "p" : [ "415ab3f000000000", "0", "0" ],
+  "q" : [ "415e848000000000", "40f86a0000000000", "40e86a0000000000" ],
+  "dot" : "42c977420dc00000",
+  "normP" : "415ab3f000000000",
+  "normQ" : "415e85434d8f0fa0",
+  "difference" : [ "412e848000000000", "40f86a0000000000", "40e86a0000000000" ],
+  "distance" : "412eb52d2e041567",
+  "legacyDot" : "42c977420dc00000",
+  "legacyNormP" : "415ab3f000000000",
+  "legacyDistance" : "412eb52d2e041567",
+  "angleDeg" : "3fe99f2d352cf755",
+  "angleRad" : "3f8c9eabaaeaa76e",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "41336485914058e4", "415a4252e1cf0b4a", "c067accfb787d252" ],
+    "qEcef" : [ "4134a99a194a8d7c", "415e146340a3bc0d", "40e84e97f8d78cc8" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412cc3b663934c8e", "415a75a909ab9eb8", "40d1b4ce4378e388" ],
+    "qEcef" : [ "412dd969358e3300", "415e4a599e9192fb", "40f14441530a726f" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "413033210749c3e1", "415a64d597e10390", "40d1b5c38fd79b97" ],
+    "qEcef" : [ "4131016610730b90", "415e38c849380b48", "40f144879c0a0966" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c1327d105047b58b", "c15a4cc00320eaac", "c067ca1500ea46df" ],
+    "qEcef" : [ "c133a07b905301e6", "c15e1f7a1134f496", "40e84e76bf04e4b6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "exact-discriminant-zero",
+  "p" : [ "c15854a640000000", "415854a640000000", "0" ],
+  "q" : [ "415854a640000000", "415854a640000000", "0" ],
+  "dot" : "0",
+  "normP" : "41613451fb236b57",
+  "normQ" : "41613451fb236b57",
+  "difference" : [ "416854a640000000", "0", "0" ],
+  "distance" : "416854a640000000",
+  "legacyDot" : "0",
+  "legacyNormP" : "41613451fb236b57",
+  "legacyDistance" : "416854a640000000",
+  "angleDeg" : "4056800000000000",
+  "angleRad" : "3ff921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15c5800115ad807", "c1538241e67339e8", "c016572c8cd00000" ],
+    "qEcef" : [ "c1538241e630f7dd", "415c58001100dafb", "c075ebbee7b72000" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c15b629e2840009c", "c154d535cc64fb9c", "c0cfe94306772a00" ],
+    "qEcef" : [ "c154d53bb799efef", "415b629971fa4329", "40d04f9d1655f480" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15bbd4577db574f", "c1545be4d3071e65", "c0cfea9b736dd800" ],
+    "qEcef" : [ "c1545bead34a8636", "415bbd40db2b9fb4", "40d050afe33d6d00" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415c2cc6be871b82", "4153c07b3ef7e3e4", "c01133d5e6580000" ],
+    "qEcef" : [ "4153c07b3eb561ba", "c15c2cc6be2d03e0", "c075f1dd2709a000" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "through-earth",
+  "p" : [ "415ab3f000000000", "0", "0" ],
+  "q" : [ "c15e848000000000", "0", "0" ],
+  "dot" : "c2c977420dc00000",
+  "normP" : "415ab3f000000000",
+  "normQ" : "415e848000000000",
+  "difference" : [ "c16c9c3800000000", "0", "0" ],
+  "distance" : "416c9c3800000000",
+  "legacyDot" : "c2c977420dc00000",
+  "legacyNormP" : "415ab3f000000000",
+  "legacyDistance" : "416c9c3800000000",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "41336485914058e4", "415a4252e1cf0b4a", "c067accfb787d252" ],
+    "qEcef" : [ "c13629bd38498a29", "c15e02a7dd7ee853", "406b0ea43f76a739" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412cc3b663934c8e", "415a75a909ab9eb8", "40d1b4ce4378e388" ],
+    "qEcef" : [ "c1306fd5efc1e29a", "c15e3d5378c4231b", "c0d43c5971aebae4" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "413033210749c3e1", "415a64d597e10390", "40d1b5c38fd79b97" ],
+    "qEcef" : [ "c1328393760b2902", "c15e2a18ad9371ca", "c0d43d71c8f668ae" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c1327d105047b58b", "c15a4cc00320eaac", "c067ca1500ea46df" ],
+    "qEcef" : [ "41352137372d61c6", "415e0e924cb7e7a2", "406b3018010bbeb8" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-through",
+  "p" : [ "0", "0", "415ab3f000000000" ],
+  "q" : [ "0", "0", "c15e848000000000" ],
+  "dot" : "c2c977420dc00000",
+  "normP" : "415ab3f000000000",
+  "normQ" : "415e848000000000",
+  "difference" : [ "0", "0", "c16c9c3800000000" ],
+  "distance" : "416c9c3800000000",
+  "legacyDot" : "c2c977420dc00000",
+  "legacyNormP" : "415ab3f000000000",
+  "legacyDistance" : "416c9c3800000000",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c063bc9234f52d52", "406bb8178b8ec552", "415ab3efffa946ce" ],
+    "qEcef" : [ "40668e5df3613467", "c06fadd1c410dadf", "c15e847fff9ce334" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c0a18701002e2a0f", "c0d1923f99cc542b", "415ab3ea20ff800e" ],
+    "qEcef" : [ "40a4080124c7081a", "40d414daf8e984d3", "c15e84794a48925a" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a3f071832774de", "c0d188ebdfc04340", "415ab3ea205c6ab8" ],
+    "qEcef" : [ "40a6c9a64cbf5d9a", "40d40a322449717f", "c15e8479498e30d0" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4063e4bfb20170f2", "c06ba6758ca16d66", "415ab3efffa918ad" ],
+    "qEcef" : [ "c066bc48cb6f6584", "406f99aae9dd10e6", "c15e847fff9cae7c" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "both-inside",
+  "p" : [ "4059000000000000", "4069000000000000", "4072c00000000000" ],
+  "q" : [ "4069000000000000", "4072c00000000000", "4079000000000000" ],
+  "dot" : "41086a0000000000",
+  "normP" : "407762a6dd997171",
+  "normQ" : "4080d421c0a3ea46",
+  "difference" : [ "4059000000000000", "4059000000000000", "4059000000000000" ],
+  "distance" : "4065a6900584fbe5",
+  "legacyDot" : "41086a0000000000",
+  "legacyNormP" : "407762a6dd997171",
+  "legacyDistance" : "4065a6900584fbe5",
+  "angleDeg" : "401bee13c4e013e7",
+  "angleRad" : "3fbf32b681a74451",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c06650db72c91281", "4060d51a07497075", "4072bfde08a9fe50" ],
+    "qEcef" : [ "c0702b608cca626e", "406f65027cc51232", "4078ffc78275a1e9" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c06719e8fa7bc23f", "405f4fe05e634fdb", "4072c4382f380fb5" ],
+    "qEcef" : [ "c070e7749f977cbc", "406db1718f3c9150", "407908676e79464c" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c066d42159a23347", "40600d0381e96472", "4072c4388289b6b4" ],
+    "qEcef" : [ "c070a5790e75699c", "406e451c2c481eb4", "40790868083bced6" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406675b520f5461b", "c060a3cea54ad0c4", "4072bfde09cae95b" ],
+    "qEcef" : [ "40704dc95ababa12", "c06f1d822ca682da", "4078ffc77d4d2c6a" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "same",
+  "p" : [ "415ab3f000000000", "0", "0" ],
+  "q" : [ "415ab3f000000000", "0", "0" ],
+  "dot" : "42c64859cc080000",
+  "normP" : "415ab3f000000000",
+  "normQ" : "415ab3f000000000",
+  "difference" : [ "0", "0", "0" ],
+  "distance" : "0",
+  "legacyDot" : "42c64859cc080000",
+  "legacyNormP" : "415ab3f000000000",
+  "legacyDistance" : "0",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "41336485914058e4", "415a4252e1cf0b4a", "c067accfb787d252" ],
+    "qEcef" : [ "41336485914058e4", "415a4252e1cf0b4a", "c067accfb787d252" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412cc3b663934c8e", "415a75a909ab9eb8", "40d1b4ce4378e388" ],
+    "qEcef" : [ "412cc3b663934c8e", "415a75a909ab9eb8", "40d1b4ce4378e388" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "413033210749c3e1", "415a64d597e10390", "40d1b5c38fd79b97" ],
+    "qEcef" : [ "413033210749c3e1", "415a64d597e10390", "40d1b5c38fd79b97" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c1327d105047b58b", "c15a4cc00320eaac", "c067ca1500ea46df" ],
+    "qEcef" : [ "c1327d105047b58b", "c15a4cc00320eaac", "c067ca1500ea46df" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "short",
+  "p" : [ "415ab3f000000000", "0", "0" ],
+  "q" : [ "415ab3f000000001", "0", "0" ],
+  "dot" : "42c64859cc080001",
+  "normP" : "415ab3f000000000",
+  "normQ" : "415ab3f000000001",
+  "difference" : [ "3e10000000000000", "0", "0" ],
+  "distance" : "3e10000000000000",
+  "legacyDot" : "42c64859cc080001",
+  "legacyNormP" : "415ab3f000000000",
+  "legacyDistance" : "3e10000000000000",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "41336485914058e4", "415a4252e1cf0b4a", "c067accfb787d252" ],
+    "qEcef" : [ "41336485914058e4", "415a4252e1cf0b4b", "c067accfb787d252" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412cc3b663934c8e", "415a75a909ab9eb8", "40d1b4ce4378e388" ],
+    "qEcef" : [ "412cc3b663934c8f", "415a75a909ab9eb9", "40d1b4ce4378e388" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "413033210749c3e1", "415a64d597e10390", "40d1b5c38fd79b97" ],
+    "qEcef" : [ "413033210749c3e1", "415a64d597e10391", "40d1b5c38fd79b97" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c1327d105047b58b", "c15a4cc00320eaac", "c067ca1500ea46df" ],
+    "qEcef" : [ "c1327d105047b58c", "c15a4cc00320eaad", "c067ca1500ea46e0" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "zero",
+  "p" : [ "0", "8000000000000000", "0" ],
+  "q" : [ "0", "0", "8000000000000000" ],
+  "dot" : "0",
+  "normP" : "0",
+  "normQ" : "0",
+  "difference" : [ "0", "0", "8000000000000000" ],
+  "distance" : "0",
+  "legacyDot" : "0",
+  "legacyNormP" : "0",
+  "legacyDistance" : "0",
+  "angleException" : "零向量不能计算夹角",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "0", "0", "0" ],
+    "qEcef" : [ "0", "0", "0" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "0", "0", "0" ],
+    "qEcef" : [ "0", "0", "0" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "0", "0", "0" ],
+    "qEcef" : [ "0", "0", "0" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "0", "8000000000000000", "0" ],
+    "qEcef" : [ "0", "8000000000000000", "0" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "zero-first",
+  "p" : [ "0", "0", "0" ],
+  "q" : [ "3ff0000000000000", "4000000000000000", "4008000000000000" ],
+  "dot" : "0",
+  "normP" : "0",
+  "normQ" : "400deeea11683f49",
+  "difference" : [ "3ff0000000000000", "4000000000000000", "4008000000000000" ],
+  "distance" : "400deeea11683f49",
+  "legacyDot" : "0",
+  "legacyNormP" : "0",
+  "legacyDistance" : "400deeea11683f49",
+  "angleException" : "零向量不能计算夹角",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "0", "0", "0" ],
+    "qEcef" : [ "bffc90750dce2c2c", "3ff58ba66fba298c", "4007ffd485f84fc2" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "0", "0", "0" ],
+    "qEcef" : [ "bffd91ce0d6b3613", "3ff40a29322b1464", "40080566a2d71e58" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "0", "0", "0" ],
+    "qEcef" : [ "bffd387c9bb0e57d", "3ff48b899c0c05b2", "400805670d7d12d2" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "0", "8000000000000000", "0" ],
+    "qEcef" : [ "3ffcbfa02a2fb5e4", "bff54c8da05fc38a", "4007ffd4876a2075" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tiny",
+  "p" : [ "16687e92154ef7ac", "96687e92154ef7ac", "16687e92154ef7ac" ],
+  "q" : [ "16787e92154ef7ac", "0", "96687e92154ef7ac" ],
+  "dot" : "0",
+  "normP" : "0",
+  "normQ" : "0",
+  "difference" : [ "16687e92154ef7ac", "16687e92154ef7ac", "96787e92154ef7ac" ],
+  "distance" : "0",
+  "legacyDot" : "0",
+  "legacyNormP" : "0",
+  "legacyDistance" : "0",
+  "angleException" : "零向量不能计算夹角",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "166c88b1cbec5650", "1663a411c143259a", "16687e937cda13b8" ],
+    "qEcef" : [ "1651ca36a042cbbe", "1678164106b20de4", "96687ee8f3340f87" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "166b8fcad14693f7", "1664e8fc968be40c", "16688e9cd1dbeb5e" ],
+    "qEcef" : [ "164a6abc1b8665d6", "16784d80cb9fe4f0", "96685e10dbc88272" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "166beac7869fe74b", "16646ee324e8e4c2", "16688e9d7ea58654" ],
+    "qEcef" : [ "164dc16cfb71bd81", "16783e0d52188ecc", "96685e0f192d5562" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "966c5d2db6108165", "9663e2b62f5cd4d7", "16687e932a16da2f" ],
+    "qEcef" : [ "9650f5e67e7c372f", "96781fd1780515d3", "96687ee95e9a1c2c" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "huge",
+  "p" : [ "6974e718d7d7625a", "e974e718d7d7625a", "0" ],
+  "q" : [ "6974e718d7d7625a", "6974e718d7d7625a", "6974e718d7d7625a" ],
+  "dot" : "fff8000000000000",
+  "normP" : "7ff0000000000000",
+  "normQ" : "7ff0000000000000",
+  "difference" : [ "0", "6984e718d7d7625a", "6974e718d7d7625a" ],
+  "distance" : "7ff0000000000000",
+  "legacyDot" : "fff8000000000000",
+  "legacyNormP" : "7ff0000000000000",
+  "legacyDistance" : "7ff0000000000000",
+  "angleDeg" : "fff8000000000000",
+  "angleRad" : "fff8000000000000",
+  "spaceLos" : true,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "697859b46bd2586a", "6970c29e3e0df4eb", "68333166c6fc0000" ],
+    "qEcef" : [ "e970c2bd2406e250", "697859dfd10182ea", "6974e6cd83242d8e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "697786e4e7c88f15", "6971e5d0e05a14a2", "68eb6a4c1577bb80" ],
+    "qEcef" : [ "e971e78d0229bee6", "6977791fad799bf2", "6974f5178f61d298" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "6977d4c68bc33155", "69717d978258c27b", "68eb6b73fbc57b00" ],
+    "qEcef" : [ "e9717f9020a4d673", "6977c708b4858b12", "6974f5187af7a208" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "e978349216622ae2", "e970f8134ed130ae", "682d8ec2de480000" ],
+    "qEcef" : [ "6970f83273b0a34c", "e97834bd5ff63b37", "6974e6cd6e1db842" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "nan",
+  "p" : [ "7ff8000000000000", "0", "0" ],
+  "q" : [ "3ff0000000000000", "4000000000000000", "4008000000000000" ],
+  "dot" : "7ff8000000000000",
+  "normP" : "7ff8000000000000",
+  "normQ" : "400deeea11683f49",
+  "difference" : [ "7ff8000000000000", "4000000000000000", "4008000000000000" ],
+  "distance" : "7ff8000000000000",
+  "legacyDot" : "7ff8000000000000",
+  "legacyNormP" : "7ff8000000000000",
+  "legacyDistance" : "7ff8000000000000",
+  "angleDeg" : "7ff8000000000000",
+  "angleRad" : "7ff8000000000000",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "7ff8000000000000", "7ff8000000000000", "7ff8000000000000" ],
+    "qEcef" : [ "bffc90750dce2c2c", "3ff58ba66fba298c", "4007ffd485f84fc2" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "7ff8000000000000", "7ff8000000000000", "7ff8000000000000" ],
+    "qEcef" : [ "bffd91ce0d6b3613", "3ff40a29322b1464", "40080566a2d71e58" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "7ff8000000000000", "7ff8000000000000", "7ff8000000000000" ],
+    "qEcef" : [ "bffd387c9bb0e57d", "3ff48b899c0c05b2", "400805670d7d12d2" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "7ff8000000000000", "7ff8000000000000", "7ff8000000000000" ],
+    "qEcef" : [ "3ffcbfa02a2fb5e4", "bff54c8da05fc38a", "4007ffd4876a2075" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "infinity",
+  "p" : [ "7ff0000000000000", "0", "0" ],
+  "q" : [ "3ff0000000000000", "4000000000000000", "4008000000000000" ],
+  "dot" : "7ff0000000000000",
+  "normP" : "7ff0000000000000",
+  "normQ" : "400deeea11683f49",
+  "difference" : [ "fff0000000000000", "4000000000000000", "4008000000000000" ],
+  "distance" : "7ff0000000000000",
+  "legacyDot" : "7ff0000000000000",
+  "legacyNormP" : "7ff0000000000000",
+  "legacyDistance" : "7ff0000000000000",
+  "angleDeg" : "fff8000000000000",
+  "angleRad" : "fff8000000000000",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "fff8000000000000", "fff8000000000000", "fff8000000000000" ],
+    "qEcef" : [ "bffc90750dce2c2c", "3ff58ba66fba298c", "4007ffd485f84fc2" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "fff8000000000000", "fff8000000000000", "fff8000000000000" ],
+    "qEcef" : [ "bffd91ce0d6b3613", "3ff40a29322b1464", "40080566a2d71e58" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "fff8000000000000", "fff8000000000000", "fff8000000000000" ],
+    "qEcef" : [ "bffd387c9bb0e57d", "3ff48b899c0c05b2", "400805670d7d12d2" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "fff8000000000000", "fff8000000000000", "fff8000000000000" ],
+    "qEcef" : [ "3ffcbfa02a2fb5e4", "bff54c8da05fc38a", "4007ffd4876a2075" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6378137.0--0.01",
+  "p" : [ "c12e848000000000", "415854a63f5c28f6", "0" ],
+  "q" : [ "412e848000000000", "415854a63f5c28f6", "0" ],
+  "dot" : "42c20b6ef8ae9322",
+  "normP" : "4158a0bd77239963",
+  "normQ" : "4158a0bd77239963",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6ef8ae9322",
+  "legacyNormP" : "4158a0bd77239963",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd298701c",
+  "angleRad" : "3fd3e8105e1b7f58",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1589e6ee4e71654", "410551432f268aac", "c062e34711650000" ],
+    "qEcef" : [ "c1573bd311627db1", "4140566821b1dcd4", "c069a6f021434000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589f6b9ec8ae4a", "c1001f138c7e092c", "c0a2d06b254ed000" ],
+    "qEcef" : [ "c157986e3fcc901f", "413c3971073461f6", "40a5a847be0ea800" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c158a0b4c0a15635", "c0d49511b906f000", "c0a2cfe922e60000" ],
+    "qEcef" : [ "c157787b8940a3a5", "413dd7c466af5609", "40a5aafa6f06d400" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41589faab7b64bc4", "c0fd14dd79cdba68", "c062d0a97debc000" ],
+    "qEcef" : [ "41574d97444375a5", "c13fdfe02454c346", "c0699caf7e2f4000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6378137.0--0.01",
+  "p" : [ "c12e848000000000", "0", "415854a63f5c28f6" ],
+  "q" : [ "412e848000000000", "0", "415854a63f5c28f6" ],
+  "dot" : "42c20b6ef8ae9322",
+  "normP" : "4158a0bd77239963",
+  "normQ" : "4158a0bd77239963",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6ef8ae9322",
+  "legacyNormP" : "4158a0bd77239963",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd298701c",
+  "angleRad" : "3fd3e8105e1b7f58",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3c25eac445", "c12e0113c26ae574", "415854ad02b633ee" ],
+    "qEcef" : [ "4106253e4aa85011", "412e043bf892eb34", "4158549f7b641433" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afb77e79810f", "c12ebd688d2db1b7", "415852195ab3597c" ],
+    "qEcef" : [ "41002ff4610a4434", "412dbd3e645a9480", "41585728710fc52a" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc3f5e897c4a", "c12ea9e9c522132c", "415852193713d818" ],
+    "qEcef" : [ "41023ae78d8cd5ae", "412daa479604d069", "41585728938615b2" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bf4bbea63f", "412e0cff32b3a0ad", "415854ad0b12fa4c" ],
+    "qEcef" : [ "c1051caf229c1d18", "c12e102566bc2e9a", "4158549f7306f9c5" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6378137.0--1.0E-7",
+  "p" : [ "c12e848000000000", "415854a63fffff95", "0" ],
+  "q" : [ "412e848000000000", "415854a63fffff95", "0" ],
+  "dot" : "42c20b6ef9a7b7dd",
+  "normP" : "4158a0bd77c575cf",
+  "normQ" : "4158a0bd77c575cf",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6ef9a7b7dd",
+  "legacyNormP" : "4158a0bd77c575cf",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd2225bcf",
+  "angleRad" : "3fd3e8105d979a03",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1589e6ee58833db", "4105514332de6d6c", "c062e34711fb4000" ],
+    "qEcef" : [ "c1573bd312039b3a", "4140566821ed5b01", "c069a6f021d90000" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589f6b9f6b06f2", "c1001f1389bc154c", "c0a2d06b25453800" ],
+    "qEcef" : [ "c157986e406ee8c8", "413c3971078ca072", "40a5a847be184000" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c158a0b4c14347a0", "c0d49511a02da180", "c0a2cfe922dc6000" ],
+    "qEcef" : [ "c157787b89e29511", "413dd7c46712bb44", "40a5aafa6f107800" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41589faab857a945", "c0fd14dd80e4bdd0", "c062d0a97e818000" ],
+    "qEcef" : [ "41574d9744e4d326", "c13fdfe024c6337e", "c0699caf7ec4c000" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "polar-tangent-6378137.0--1.0E-7",
+  "p" : [ "c12e848000000000", "0", "415854a63fffff95" ],
+  "q" : [ "412e848000000000", "0", "415854a63fffff95" ],
+  "dot" : "42c20b6ef9a7b7dd",
+  "normP" : "4158a0bd77c575cf",
+  "normQ" : "4158a0bd77c575cf",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6ef9a7b7dd",
+  "legacyNormP" : "4158a0bd77c575cf",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd2225bcf",
+  "angleRad" : "3fd3e8105d979a03",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3c25eae27e", "c12e0113c26adad3", "415854ad035a0a8e" ],
+    "qEcef" : [ "4106253e4aa831c7", "412e043bf892f5d5", "4158549f7c07ead1" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afb77e7b2f3d", "c12ebd688d311032", "415852195b572ff7" ],
+    "qEcef" : [ "41002ff4610895f7", "412dbd3e64573605", "4158572871b39ba4" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc3f5e8b65a6", "c12ea9e9c5256fde", "4158521937b7ae92" ],
+    "qEcef" : [ "41023ae78d8aec51", "412daa47960173b7", "415857289429ec2c" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bf4bbec4bd", "412e0cff32b39612", "415854ad0bb6d0ea" ],
+    "qEcef" : [ "c1051caf229bfe9a", "c12e102566bc3934", "4158549f73aad064" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6378137.0-0.0",
+  "p" : [ "c12e848000000000", "415854a640000000", "0" ],
+  "q" : [ "412e848000000000", "415854a640000000", "0" ],
+  "dot" : "42c20b6ef9a7b880",
+  "normP" : "4158a0bd77c57639",
+  "normQ" : "4158a0bd77c57639",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6ef9a7b880",
+  "legacyNormP" : "4158a0bd77c57639",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd2225b8a",
+  "angleRad" : "3fd3e8105d9799b5",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1589e6ee5883444", "4105514332de6fdc", "c062e34711fb4000" ],
+    "qEcef" : [ "c1573bd312039ba2", "4140566821ed5b28", "c069a6f021d90000" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589f6b9f6b075c", "c1001f1389bc1384", "c0a2d06b25453800" ],
+    "qEcef" : [ "c157986e406ee932", "413c3971078ca0ac", "40a5a847be184000" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c158a0b4c143480a", "c0d49511a02d9180", "c0a2cfe922dc6000" ],
+    "qEcef" : [ "c157787b89e2957b", "413dd7c46712bb84", "40a5aafa6f107400" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41589faab857a9ae", "c0fd14dd80e4c270", "c062d0a97e818000" ],
+    "qEcef" : [ "41574d9744e4d38f", "c13fdfe024c633c8", "c0699caf7ec4c000" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "polar-tangent-6378137.0-0.0",
+  "p" : [ "c12e848000000000", "0", "415854a640000000" ],
+  "q" : [ "412e848000000000", "0", "415854a640000000" ],
+  "dot" : "42c20b6ef9a7b880",
+  "normP" : "4158a0bd77c57639",
+  "normQ" : "4158a0bd77c57639",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6ef9a7b880",
+  "legacyNormP" : "4158a0bd77c57639",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd2225b8a",
+  "angleRad" : "3fd3e8105d9799b5",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3c25eae27e", "c12e0113c26adad3", "415854ad035a0af8" ],
+    "qEcef" : [ "4106253e4aa831b8", "412e043bf892f5d6", "4158549f7c07eb3c" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afb77e7b2f3e", "c12ebd688d311034", "415852195b573062" ],
+    "qEcef" : [ "41002ff4610895f5", "412dbd3e64573603", "4158572871b39c0e" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc3f5e8b65a7", "c12ea9e9c5256fe0", "4158521937b7aefd" ],
+    "qEcef" : [ "41023ae78d8aec50", "412daa47960173b5", "415857289429ec97" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bf4bbec4bd", "412e0cff32b39612", "415854ad0bb6d155" ],
+    "qEcef" : [ "c1051caf229bfe9a", "c12e102566bc3934", "4158549f73aad0cf" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6378137.0-1.0E-7",
+  "p" : [ "c12e848000000000", "415854a64000006b", "0" ],
+  "q" : [ "412e848000000000", "415854a64000006b", "0" ],
+  "dot" : "42c20b6ef9a7b923",
+  "normP" : "4158a0bd77c576a3",
+  "normQ" : "4158a0bd77c576a3",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6ef9a7b923",
+  "legacyNormP" : "4158a0bd77c576a3",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd2225b3e",
+  "angleRad" : "3fd3e8105d979960",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1589e6ee58834ad", "4105514332de7244", "c062e34711fb4000" ],
+    "qEcef" : [ "c1573bd312039c0b", "4140566821ed5b4e", "c069a6f021d90000" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589f6b9f6b07c5", "c1001f1389bc11b4", "c0a2d06b25453800" ],
+    "qEcef" : [ "c157986e406ee99c", "413c3971078ca0e6", "40a5a847be184000" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c158a0b4c1434872", "c0d49511a02d8160", "c0a2cfe922dc6000" ],
+    "qEcef" : [ "c157787b89e295e4", "413dd7c46712bbc6", "40a5aafa6f107000" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41589faab857aa18", "c0fd14dd80e4c710", "c062d0a97e814000" ],
+    "qEcef" : [ "41574d9744e4d3f9", "c13fdfe024c63412", "c0699caf7ec4c000" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "polar-tangent-6378137.0-1.0E-7",
+  "p" : [ "c12e848000000000", "0", "415854a64000006b" ],
+  "q" : [ "412e848000000000", "0", "415854a64000006b" ],
+  "dot" : "42c20b6ef9a7b923",
+  "normP" : "4158a0bd77c576a3",
+  "normQ" : "4158a0bd77c576a3",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6ef9a7b923",
+  "legacyNormP" : "4158a0bd77c576a3",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd2225b3e",
+  "angleRad" : "3fd3e8105d979960",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3c25eae27e", "c12e0113c26adad3", "415854ad035a0b63" ],
+    "qEcef" : [ "4106253e4aa831c7", "412e043bf892f5d5", "4158549f7c07eba8" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afb77e7b2f40", "c12ebd688d311036", "415852195b5730cc" ],
+    "qEcef" : [ "41002ff4610895f4", "412dbd3e64573601", "4158572871b39c79" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc3f5e8b65a8", "c12ea9e9c5256fe2", "4158521937b7af68" ],
+    "qEcef" : [ "41023ae78d8aec4f", "412daa47960173b3", "415857289429ed02" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bf4bbec4cd", "412e0cff32b39611", "415854ad0bb6d1c0" ],
+    "qEcef" : [ "c1051caf229bfea9", "c12e102566bc3933", "4158549f73aad13b" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6378137.0-0.01",
+  "p" : [ "c12e848000000000", "415854a640a3d70a", "0" ],
+  "q" : [ "412e848000000000", "415854a640a3d70a", "0" ],
+  "dot" : "42c20b6efaa0ddde",
+  "normP" : "4158a0bd7867530f",
+  "normQ" : "4158a0bd7867530f",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6efaa0ddde",
+  "legacyNormP" : "4158a0bd7867530f",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd1ac46ec",
+  "angleRad" : "3fd3e8105d13b404",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1589e6ee6295236", "410551433696551c", "c062e34712914000" ],
+    "qEcef" : [ "c1573bd312a4b993", "414056682228d97c", "c069a6f0226f4000" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589f6ba00d606b", "c1001f1386fa1ddc", "c0a2d06b253ba800" ],
+    "qEcef" : [ "c157986e41114242", "413c397107e4df60", "40a5a847be21d000" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c158a0b4c1e539dc", "c0d4951187543300", "c0a2cfe922d2c400" ],
+    "qEcef" : [ "c157787b8a84874e", "413dd7c4677620ff", "40a5aafa6f1a0c00" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41589faab8f90797", "c0fd14dd87fbca80", "c062d0a97f170000" ],
+    "qEcef" : [ "41574d9745863179", "c13fdfe02537a447", "c0699caf7f5a4000" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "polar-tangent-6378137.0-0.01",
+  "p" : [ "c12e848000000000", "0", "415854a640a3d70a" ],
+  "q" : [ "412e848000000000", "0", "415854a640a3d70a" ],
+  "dot" : "42c20b6efaa0ddde",
+  "normP" : "4158a0bd7867530f",
+  "normQ" : "4158a0bd7867530f",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c20b6efaa0ddde",
+  "legacyNormP" : "4158a0bd7867530f",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d23bd1ac46ec",
+  "angleRad" : "3fd3e8105d13b404",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3c25eb00d7", "c12e0113c26ad031", "415854ad03fde202" ],
+    "qEcef" : [ "4106253e4aa8137f", "412e043bf8930078", "4158549f7cabc246" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afb77e7cdd7c", "c12ebd688d346eb1", "415852195bfb0747" ],
+    "qEcef" : [ "41002ff46106e7d7", "412dbd3e6453d784", "41585728725772f5" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc3f5e8d4f05", "c12ea9e9c528cc94", "41585219385b85e4" ],
+    "qEcef" : [ "41023ae78d8902f2", "412daa4795fe1701", "4158572894cdc37d" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bf4bbee35c", "412e0cff32b38b77", "415854ad0c5aa85f" ],
+    "qEcef" : [ "c1051caf229be01a", "c12e102566bc43cd", "4158549f744ea7da" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6356752.314245179--0.01",
+  "p" : [ "c12e848000000000", "41583fc41378c0c6", "0" ],
+  "q" : [ "412e848000000000", "41583fc41378c0c6", "0" ],
+  "dot" : "42c1ebbadb6b3b33",
+  "normP" : "41588c1c076bd476",
+  "normQ" : "41588c1c076bd476",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadb6b3b33",
+  "legacyNormP" : "41588c1c076bd476",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557db9c31a",
+  "angleRad" : "3fd3f8ee5c598689",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15889e59391a9c9", "4104d7ee6a5770d4", "c062d029b21e0000" ],
+    "qEcef" : [ "c1572749c00d1126", "41404ed2d564eb38", "c06993d2c1fc4000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1588aba22d26cce", "c100790f52f07b70", "c0a2d1a383c2ec00" ],
+    "qEcef" : [ "c15783bcc3d64ea3", "413c2e318e6613ae", "40a5a70f5f9a8c00" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1588c106d647f5b", "c0d7bfe803d3d340", "c0a2d122e1904c00" ],
+    "qEcef" : [ "c15763d73603cccc", "413dcb190d84227d", "40a5a9c0b05c8000" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41588b193eef8e9b", "c0fc2d8431d89668", "c062bd9882398000" ],
+    "qEcef" : [ "41573905cb7cb87f", "c13fd16a8fd57108", "c069899e827c8000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6356752.314245179--0.01",
+  "p" : [ "c12e848000000000", "0", "41583fc41378c0c6" ],
+  "q" : [ "412e848000000000", "0", "41583fc41378c0c6" ],
+  "dot" : "42c1ebbadb6b3b33",
+  "normP" : "41588c1c076bd476",
+  "normQ" : "41588c1c076bd476",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadb6b3b33",
+  "legacyNormP" : "41588c1c076bd476",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557db9c31a",
+  "angleRad" : "3fd3f8ee5c598689",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e384a0d88bc", "c12e01151d44fa2e", "41583fcad6d30f91" ],
+    "qEcef" : [ "4106254226858b99", "412e043a9db8d67b", "41583fbd4f80efd6" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100af80a9e59634", "c12ebcfa9dabc26a", "41583d37336764a0" ],
+    "qEcef" : [ "4100302b359e2f1f", "412dbdac53dc83cc", "4158424649c3d04e" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc00fe70761d", "c12ea97c0ffb1136", "41583d370fc862c7" ],
+    "qEcef" : [ "41023b25eda5dbea", "412daab54b2bd25d", "415842466c3aa060" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bb68066da9", "412e0d008cb11152", "41583fcadf2fd611" ],
+    "qEcef" : [ "c1051cb3065455ed", "c12e10240cbebdef", "41583fbd4723d58d" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "tangent-6356752.314245179--1.0E-7",
+  "p" : [ "c12e848000000000", "41583fc4141c9765", "0" ],
+  "q" : [ "412e848000000000", "41583fc4141c9765", "0" ],
+  "dot" : "42c1ebbadc638a17",
+  "normP" : "41588c1c080dad8a",
+  "normQ" : "41588c1c080dad8a",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadc638a17",
+  "legacyNormP" : "41588c1c080dad8a",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557d42e807",
+  "angleRad" : "3fd3f8ee5bd4c32b",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15889e59432c752", "4104d7ee6e0f53ac", "c062d029b2b40000" ],
+    "qEcef" : [ "c1572749c0ae2eaf", "41404ed2d5a06965", "c06993d2c2924000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1588aba2374c574", "c100790f502e879c", "c0a2d1a383b95800" ],
+    "qEcef" : [ "c15783bcc478a74b", "413c2e318ebe522a", "40a5a70f5fa42000" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1588c106e0670c6", "c0d7bfe7eafa84a0", "c0a2d122e186b000" ],
+    "qEcef" : [ "c15763d736a5be35", "413dcb190de787b6", "40a5a9c0b0662000" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41588b193f90ec1c", "c0fc2d8438ef99d0", "c062bd9882cf4000" ],
+    "qEcef" : [ "41573905cc1e15ff", "c13fd16a9046e13e", "c069899e83124000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6356752.314245179--1.0E-7",
+  "p" : [ "c12e848000000000", "0", "41583fc4141c9765" ],
+  "q" : [ "412e848000000000", "0", "41583fc4141c9765" ],
+  "dot" : "42c1ebbadc638a17",
+  "normP" : "41588c1c080dad8a",
+  "normQ" : "41588c1c080dad8a",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadc638a17",
+  "legacyNormP" : "41588c1c080dad8a",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557d42e807",
+  "angleRad" : "3fd3f8ee5bd4c32b",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e384a0da706", "c12e01151d44ef8d", "41583fcad776e62f" ],
+    "qEcef" : [ "4106254226856d51", "412e043a9db8e11c", "41583fbd5024c674" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100af80a9e74451", "c12ebcfa9daf20e7", "41583d37340b3b1b" ],
+    "qEcef" : [ "4100302b359c80e2", "412dbdac53d92551", "415842464a67a6c8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc00fe725f89", "c12ea97c0ffe6de7", "41583d37106c3940" ],
+    "qEcef" : [ "41023b25eda3f29e", "412daab54b2875ab", "415842466cde76da" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bb68068c29", "412e0d008cb106b8", "41583fcadfd3acaf" ],
+    "qEcef" : [ "c1051cb30654376d", "c12e10240cbec889", "41583fbd47c7ac2c" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "tangent-6356752.314245179-0.0",
+  "p" : [ "c12e848000000000", "41583fc4141c97d0", "0" ],
+  "q" : [ "412e848000000000", "41583fc4141c97d0", "0" ],
+  "dot" : "42c1ebbadc638ab9",
+  "normP" : "41588c1c080dadf3",
+  "normQ" : "41588c1c080dadf3",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadc638ab9",
+  "legacyNormP" : "41588c1c080dadf3",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557d42e7bb",
+  "angleRad" : "3fd3f8ee5bd4c2d7",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15889e59432c7ba", "4104d7ee6e0f5614", "c062d029b2b40000" ],
+    "qEcef" : [ "c1572749c0ae2f19", "41404ed2d5a0698c", "c06993d2c2920000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1588aba2374c5dd", "c100790f502e85cc", "c0a2d1a383b95800" ],
+    "qEcef" : [ "c15783bcc478a7b4", "413c2e318ebe5264", "40a5a70f5fa42000" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1588c106e067130", "c0d7bfe7eafa7460", "c0a2d122e186b000" ],
+    "qEcef" : [ "c15763d736a5be9f", "413dcb190de787f6", "40a5a9c0b0661c00" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41588b193f90ec85", "c0fc2d8438ef9e60", "c062bd9882cf4000" ],
+    "qEcef" : [ "41573905cc1e1669", "c13fd16a9046e188", "c069899e83124000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6356752.314245179-0.0",
+  "p" : [ "c12e848000000000", "0", "41583fc4141c97d0" ],
+  "q" : [ "412e848000000000", "0", "41583fc4141c97d0" ],
+  "dot" : "42c1ebbadc638ab9",
+  "normP" : "41588c1c080dadf3",
+  "normQ" : "41588c1c080dadf3",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadc638ab9",
+  "legacyNormP" : "41588c1c080dadf3",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557d42e7bb",
+  "angleRad" : "3fd3f8ee5bd4c2d7",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e384a0da706", "c12e01151d44ef8d", "41583fcad776e69a" ],
+    "qEcef" : [ "4106254226856d51", "412e043a9db8e11c", "41583fbd5024c6df" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100af80a9e74463", "c12ebcfa9daf20e8", "41583d37340b3b86" ],
+    "qEcef" : [ "4100302b359c80e1", "412dbdac53d9254f", "415842464a67a732" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc00fe725f8a", "c12ea97c0ffe6de9", "41583d37106c39ab" ],
+    "qEcef" : [ "41023b25eda3f28d", "412daab54b2875aa", "415842466cde7746" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bb68068c19", "412e0d008cb106b9", "41583fcadfd3ad1b" ],
+    "qEcef" : [ "c1051cb30654376d", "c12e10240cbec889", "41583fbd47c7ac97" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "tangent-6356752.314245179-1.0E-7",
+  "p" : [ "c12e848000000000", "41583fc4141c983b", "0" ],
+  "q" : [ "412e848000000000", "41583fc4141c983b", "0" ],
+  "dot" : "42c1ebbadc638b5b",
+  "normP" : "41588c1c080dae5d",
+  "normQ" : "41588c1c080dae5d",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadc638b5b",
+  "legacyNormP" : "41588c1c080dae5d",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557d42e769",
+  "angleRad" : "3fd3f8ee5bd4c27b",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15889e59432c824", "4104d7ee6e0f5884", "c062d029b2b44000" ],
+    "qEcef" : [ "c1572749c0ae2f82", "41404ed2d5a069b3", "c06993d2c2920000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1588aba2374c647", "c100790f502e8400", "c0a2d1a383b95800" ],
+    "qEcef" : [ "c15783bcc478a81f", "413c2e318ebe529c", "40a5a70f5fa42000" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1588c106e06719a", "c0d7bfe7eafa6420", "c0a2d122e186b000" ],
+    "qEcef" : [ "c15763d736a5bf09", "413dcb190de78837", "40a5a9c0b0661c00" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41588b193f90ecee", "c0fc2d8438efa310", "c062bd9882cf4000" ],
+    "qEcef" : [ "41573905cc1e16d3", "c13fd16a9046e1d4", "c069899e83124000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6356752.314245179-1.0E-7",
+  "p" : [ "c12e848000000000", "0", "41583fc4141c983b" ],
+  "q" : [ "412e848000000000", "0", "41583fc4141c983b" ],
+  "dot" : "42c1ebbadc638b5b",
+  "normP" : "41588c1c080dae5d",
+  "normQ" : "41588c1c080dae5d",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadc638b5b",
+  "legacyNormP" : "41588c1c080dae5d",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557d42e769",
+  "angleRad" : "3fd3f8ee5bd4c27b",
+  "spaceLos" : true,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e384a0da6f6", "c12e01151d44ef8e", "41583fcad776e706" ],
+    "qEcef" : [ "4106254226856d41", "412e043a9db8e11c", "41583fbd5024c74a" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100af80a9e74464", "c12ebcfa9daf20ea", "41583d37340b3bf1" ],
+    "qEcef" : [ "4100302b359c80e0", "412dbdac53d9254d", "415842464a67a79d" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc00fe725f8c", "c12ea97c0ffe6dec", "41583d37106c3a16" ],
+    "qEcef" : [ "41023b25eda3f28b", "412daab54b2875a7", "415842466cde77b0" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bb68068c19", "412e0d008cb106b9", "41583fcadfd3ad86" ],
+    "qEcef" : [ "c1051cb30654376d", "c12e10240cbec889", "41583fbd47c7ad02" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "tangent-6356752.314245179-0.01",
+  "p" : [ "c12e848000000000", "41583fc414c06eda", "0" ],
+  "q" : [ "412e848000000000", "41583fc414c06eda", "0" ],
+  "dot" : "42c1ebbadd5bda3e",
+  "normP" : "41588c1c08af8770",
+  "normQ" : "41588c1c08af8770",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadd5bda3e",
+  "legacyNormP" : "41588c1c08af8770",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557ccc0c57",
+  "angleRad" : "3fd3f8ee5b4fff1e",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15889e594d3e5ac", "4104d7ee71c73b50", "c062d029b34a0000" ],
+    "qEcef" : [ "c1572749c14f4d09", "41404ed2d5dbe7df", "c06993d2c3280000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1588aba24171eef", "c100790f4d6c9018", "c0a2d1a383afc000" ],
+    "qEcef" : [ "c15783bcc51b00c6", "413c2e318f169118", "40a5a70f5fadb000" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1588c106ea86304", "c0d7bfe7d2211600", "c0a2d122e17d1000" ],
+    "qEcef" : [ "c15763d73747b073", "413dcb190e4aed70", "40a5a9c0b06fbc00" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41588b1940324a6e", "c0fc2d844006a670", "c062bd9883650000" ],
+    "qEcef" : [ "41573905ccbf7454", "c13fd16a90b8520a", "c069899e83a7c000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6356752.314245179-0.01",
+  "p" : [ "c12e848000000000", "0", "41583fc414c06eda" ],
+  "q" : [ "412e848000000000", "0", "41583fc414c06eda" ],
+  "dot" : "42c1ebbadd5bda3e",
+  "normP" : "41588c1c08af8770",
+  "normQ" : "41588c1c08af8770",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c1ebbadd5bda3e",
+  "legacyNormP" : "41588c1c08af8770",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031e1557ccc0c57",
+  "angleRad" : "3fd3f8ee5b4fff1e",
+  "spaceLos" : true,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e384a0dc53e", "c12e01151d44e4eb", "41583fcad81abda5" ],
+    "qEcef" : [ "4106254226854f07", "412e043a9db8ebbd", "41583fbd50c89de9" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100af80a9e8f281", "c12ebcfa9db27f66", "41583d3734af126b" ],
+    "qEcef" : [ "4100302b359ad2b2", "412dbdac53d5c6d2", "415842464b0b7e19" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc00fe7448c8", "c12ea97c1001ca9e", "41583d3711101092" ],
+    "qEcef" : [ "41023b25eda2093f", "412daab54b2518f4", "415842466d824e2c" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bb6806aaa9", "412e0d008cb0fc1e", "41583fcae0778425" ],
+    "qEcef" : [ "c1051cb3065418dd", "c12e10240cbed324", "41583fbd486b83a0" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6371008.8--0.01",
+  "p" : [ "c12e848000000000", "41584db0328f5c29", "0" ],
+  "q" : [ "412e848000000000", "41584db0328f5c29", "0" ],
+  "dot" : "42c200da950c88a2",
+  "normP" : "415899dcf23c68b6",
+  "normQ" : "415899dcf23c68b6",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da950c88a2",
+  "legacyNormP" : "415899dcf23c68b6",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418f408f50",
+  "angleRad" : "3fd3edac8caf9517",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15897967641d4c3", "410528d1a2d7d42c", "c062dce7f34f8000" ],
+    "qEcef" : [ "c15734faa2bd3c20", "414053e108ecf16d", "c069a091032d4000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589885cc9bffda", "c1003d121c178960", "c0a2d0d344af8000" ],
+    "qEcef" : [ "c15791886d9fe1b2", "413c35b1354131f0", "40a5a7df9eadfc00" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15899d3515bf98c", "c0d5a358e0434be0", "c0a2d051b7adf000" ],
+    "qEcef" : [ "c157719a19fb46fc", "413dd38b4a12649a", "40a5aa91da3ee400" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415898cf914150db", "c0fcc7bfcb6af018", "c062ca4e81070000" ],
+    "qEcef" : [ "415746bc1dce7abd", "c13fdb0e496e96a2", "c0699654814a0000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6371008.8--0.01",
+  "p" : [ "c12e848000000000", "0", "41584db0328f5c29" ],
+  "q" : [ "412e848000000000", "0", "41584db0328f5c29" ],
+  "dot" : "42c200da950c88a2",
+  "normP" : "415899dcf23c68b6",
+  "normQ" : "415899dcf23c68b6",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da950c88a2",
+  "legacyNormP" : "415899dcf23c68b6",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418f408f50",
+  "angleRad" : "3fd3edac8caf9517",
+  "spaceLos" : true,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3adca15c52", "c12e01143608cdf9", "41584db6f5e97dbd" ],
+    "qEcef" : [ "4106253f93f1b804", "412e043b84f502af", "41584da96e975e02" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afa537a255c4", "c12ebd43e80c0360", "41584b234f6e5d64" ],
+    "qEcef" : [ "41003006a7e16f5f", "412dbd63097c42d7", "4158503265cac912" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc2a93dbf103", "c12ea9c53374042b", "41584b232bcf0683" ],
+    "qEcef" : [ "41023afc583a60f3", "412daa6c27b2df68", "415850328841441d" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bdffd6eaad", "412e0cffa607fd3e", "41584db6fe464426" ],
+    "qEcef" : [ "c1051cb06e83d8d8", "c12e1024f367d204", "41584da9663a43a0" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6371008.8--1.0E-7",
+  "p" : [ "c12e848000000000", "41584db0333332c8", "0" ],
+  "q" : [ "412e848000000000", "41584db0333332c8", "0" ],
+  "dot" : "42c200da96056615",
+  "normP" : "415899dcf2de4405",
+  "normQ" : "415899dcf2de4405",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da96056615",
+  "legacyNormP" : "415899dcf2de4405",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418eca38ec",
+  "angleRad" : "3fd3edac8c2b65ee",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c158979676e2f24b", "410528d1a68fb6f4", "c062dce7f3e5c000" ],
+    "qEcef" : [ "c15734faa35e59a9", "414053e109286f9a", "c069a09103c34000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589885cd3e5883", "c1003d121955957c", "c0a2d0d344a5e800" ],
+    "qEcef" : [ "c15791886e423a57", "413c35b13599706c", "40a5a7df9eb79000" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15899d351fdeaf7", "c0d5a358c769fd60", "c0a2d051b7a45400" ],
+    "qEcef" : [ "c157719a1a9d3864", "413dd38b4a75c9d2", "40a5aa91da487800" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415898cf91e2ae5c", "c0fcc7bfd281f380", "c062ca4e819cc000" ],
+    "qEcef" : [ "415746bc1e6fd83e", "c13fdb0e49e006da", "c069965481df8000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6371008.8--1.0E-7",
+  "p" : [ "c12e848000000000", "0", "41584db0333332c8" ],
+  "q" : [ "412e848000000000", "0", "41584db0333332c8" ],
+  "dot" : "42c200da96056615",
+  "normP" : "415899dcf2de4405",
+  "normQ" : "415899dcf2de4405",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da96056615",
+  "legacyNormP" : "415899dcf2de4405",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418eca38ec",
+  "angleRad" : "3fd3edac8c2b65ee",
+  "spaceLos" : true,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3adca17a8c", "c12e01143608c359", "41584db6f68d545c" ],
+    "qEcef" : [ "4106253f93f199aa", "412e043b84f50d51", "41584da96f3b34a0" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afa537a403e2", "c12ebd43e80f61dd", "41584b23501233df" ],
+    "qEcef" : [ "41003006a7dfc151", "412dbd630978e45a", "41585032666e9f8c" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc2a93ddda60", "c12ea9c5337760dc", "41584b232c72dcfe" ],
+    "qEcef" : [ "41023afc583877a6", "412daa6c27af82b7", "4158503288e51a98" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bdffd7092c", "412e0cffa607f2a3", "41584db6feea1ac5" ],
+    "qEcef" : [ "c1051cb06e83ba49", "c12e1024f367dc9f", "41584da966de1a3f" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6371008.8-0.0",
+  "p" : [ "c12e848000000000", "41584db033333333", "0" ],
+  "q" : [ "412e848000000000", "41584db033333333", "0" ],
+  "dot" : "42c200da960566b8",
+  "normP" : "415899dcf2de446f",
+  "normQ" : "415899dcf2de446f",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da960566b8",
+  "legacyNormP" : "415899dcf2de446f",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418eca389b",
+  "angleRad" : "3fd3edac8c2b6593",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c158979676e2f2b3", "410528d1a68fb95c", "c062dce7f3e5c000" ],
+    "qEcef" : [ "c15734faa35e5a12", "414053e109286fc1", "c069a09103c38000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589885cd3e58ed", "c1003d12195593ac", "c0a2d0d344a5e800" ],
+    "qEcef" : [ "c15791886e423ac1", "413c35b1359970a5", "40a5a7df9eb79000" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15899d351fdeb61", "c0d5a358c769ed00", "c0a2d051b7a45400" ],
+    "qEcef" : [ "c157719a1a9d38ce", "413dd38b4a75ca14", "40a5aa91da487800" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415898cf91e2aec6", "c0fcc7bfd281f830", "c062ca4e819c8000" ],
+    "qEcef" : [ "415746bc1e6fd8a8", "c13fdb0e49e00724", "c069965481df8000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6371008.8-0.0",
+  "p" : [ "c12e848000000000", "0", "41584db033333333" ],
+  "q" : [ "412e848000000000", "0", "41584db033333333" ],
+  "dot" : "42c200da960566b8",
+  "normP" : "415899dcf2de446f",
+  "normQ" : "415899dcf2de446f",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da960566b8",
+  "legacyNormP" : "415899dcf2de446f",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418eca389b",
+  "angleRad" : "3fd3edac8c2b6593",
+  "spaceLos" : true,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3adca17a8c", "c12e01143608c359", "41584db6f68d54c7" ],
+    "qEcef" : [ "4106253f93f199aa", "412e043b84f50d51", "41584da96f3b350b" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afa537a403e3", "c12ebd43e80f61df", "41584b235012344a" ],
+    "qEcef" : [ "41003006a7dfc150", "412dbd630978e458", "41585032666e9ff7" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc2a93ddda62", "c12ea9c5337760df", "41584b232c72dd69" ],
+    "qEcef" : [ "41023afc583877a5", "412daa6c27af82b4", "4158503288e51b03" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bdffd7093c", "412e0cffa607f2a3", "41584db6feea1b30" ],
+    "qEcef" : [ "c1051cb06e83ba59", "c12e1024f367dc9e", "41584da966de1aaa" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6371008.8-1.0E-7",
+  "p" : [ "c12e848000000000", "41584db03333339e", "0" ],
+  "q" : [ "412e848000000000", "41584db03333339e", "0" ],
+  "dot" : "42c200da9605675b",
+  "normP" : "415899dcf2de44d9",
+  "normQ" : "415899dcf2de44d9",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da9605675b",
+  "legacyNormP" : "415899dcf2de44d9",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418eca384e",
+  "angleRad" : "3fd3edac8c2b653e",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c158979676e2f31c", "410528d1a68fbbcc", "c062dce7f3e5c000" ],
+    "qEcef" : [ "c15734faa35e5a7c", "414053e109286fe7", "c069a09103c38000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589885cd3e5956", "c1003d12195591e4", "c0a2d0d344a5e800" ],
+    "qEcef" : [ "c15791886e423b2b", "413c35b1359970de", "40a5a7df9eb78c00" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15899d351fdebcb", "c0d5a358c769dce0", "c0a2d051b7a45400" ],
+    "qEcef" : [ "c157719a1a9d3938", "413dd38b4a75ca54", "40a5aa91da487800" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415898cf91e2af2f", "c0fcc7bfd281fcd0", "c062ca4e819c8000" ],
+    "qEcef" : [ "415746bc1e6fd911", "c13fdb0e49e0076e", "c069965481df8000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6371008.8-1.0E-7",
+  "p" : [ "c12e848000000000", "0", "41584db03333339e" ],
+  "q" : [ "412e848000000000", "0", "41584db03333339e" ],
+  "dot" : "42c200da9605675b",
+  "normP" : "415899dcf2de44d9",
+  "normQ" : "415899dcf2de44d9",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da9605675b",
+  "legacyNormP" : "415899dcf2de44d9",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418eca384e",
+  "angleRad" : "3fd3edac8c2b653e",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3adca17a9c", "c12e01143608c359", "41584db6f68d5532" ],
+    "qEcef" : [ "4106253f93f199ba", "412e043b84f50d50", "41584da96f3b3577" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afa537a403f4", "c12ebd43e80f61e0", "41584b23501234b5" ],
+    "qEcef" : [ "41003006a7dfc14f", "412dbd630978e456", "41585032666ea062" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc2a93ddda63", "c12ea9c5337760e1", "41584b232c72ddd4" ],
+    "qEcef" : [ "41023afc58387794", "412daa6c27af82b3", "4158503288e51b6d" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bdffd7093c", "412e0cffa607f2a3", "41584db6feea1b9b" ],
+    "qEcef" : [ "c1051cb06e83ba59", "c12e1024f367dc9e", "41584da966de1b15" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "tangent-6371008.8-0.01",
+  "p" : [ "c12e848000000000", "41584db033d70a3d", "0" ],
+  "q" : [ "412e848000000000", "41584db033d70a3d", "0" ],
+  "dot" : "42c200da96fe44ce",
+  "normP" : "415899dcf3802028",
+  "normQ" : "415899dcf3802028",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da96fe44ce",
+  "legacyNormP" : "415899dcf3802028",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418e53e1f6",
+  "angleRad" : "3fd3edac8ba73622",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1589796778410a5", "410528d1aa479ea4", "c062dce7f47b8000" ],
+    "qEcef" : [ "c15734faa3ff7804", "414053e10963ee15", "c069a09104598000" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1589885cde0b1fd", "c1003d1216939e04", "c0a2d0d3449c5400" ],
+    "qEcef" : [ "c15791886ee493d3", "413c35b135f1af5c", "40a5a7df9ec12400" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15899d3529fdd35", "c0d5a358ae908ec0", "c0a2d051b79ab400" ],
+    "qEcef" : [ "c157719a1b3f2aa4", "413dd38b4ad92f8e", "40a5aa91da521c00" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415898cf92840cb1", "c0fcc7bfd9990050", "c062ca4e82320000" ],
+    "qEcef" : [ "415746bc1f113692", "c13fdb0e4a5177a4", "c069965482758000" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-tangent-6371008.8-0.01",
+  "p" : [ "c12e848000000000", "0", "41584db033d70a3d" ],
+  "q" : [ "412e848000000000", "0", "41584db033d70a3d" ],
+  "dot" : "42c200da96fe44ce",
+  "normP" : "415899dcf3802028",
+  "normQ" : "415899dcf3802028",
+  "difference" : [ "413e848000000000", "0", "0" ],
+  "distance" : "413e848000000000",
+  "legacyDot" : "42c200da96fe44ce",
+  "legacyNormP" : "415899dcf3802028",
+  "legacyDistance" : "413e848000000000",
+  "angleDeg" : "4031d7418e53e1f6",
+  "angleRad" : "3fd3edac8ba73622",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1062e3adca198e5", "c12e01143608b8b7", "41584db6f7312bd1" ],
+    "qEcef" : [ "4106253f93f17b71", "412e043b84f517f0", "41584da96fdf0c15" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c100afa537a5b211", "c12ebd43e812c05c", "41584b2350b60b2f" ],
+    "qEcef" : [ "41003006a7de1322", "412dbd63097585db", "41585032671276dd" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c102cc2a93dfc3d0", "c12ea9c5337abd93", "41584b232d16b44f" ],
+    "qEcef" : [ "41023afc58368e28", "412daa6c27ac2601", "415850328988f1e8" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "410525bdffd727bb", "412e0cffa607e809", "41584db6ff8df23a" ],
+    "qEcef" : [ "c1051cb06e839bca", "c12e1024f367e73a", "41584da96781f1b4" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-out--0.01",
+  "p" : [ "415854a63f5c28f6", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c972bbdd1",
+  "normP" : "415854a63f5c28f6",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e8480051eb850", "0", "0" ],
+  "distance" : "412e8480051eb850",
+  "legacyDot" : "42c5665c972bbdd1",
+  "legacyNormP" : "415854a63f5c28f6",
+  "legacyDistance" : "412e8480051eb850",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c55dcc3ac", "4157ed20fb18ec80", "c065926234f24778" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c1e7c574", "41581be79e8d4674", "40d0221f4c5c20a2" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a917c7995", "41580c92d6776d5d", "40d022fece0d82a0" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ff32030b", "c157f6a0fdf115f8", "c065ad0dcede6515" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "surface-through--0.01",
+  "p" : [ "415854a63f5c28f6", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c972bbdd1",
+  "normP" : "415854a63f5c28f6",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee3fae147b", "0", "0" ],
+  "distance" : "416a3cee3fae147b",
+  "legacyDot" : "c2c5665c972bbdd1",
+  "legacyNormP" : "415854a63f5c28f6",
+  "legacyDistance" : "416a3cee3fae147b",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c55dcc3ac", "4157ed20fb18ec80", "c065926234f24778" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c1e7c574", "41581be79e8d4674", "40d0221f4c5c20a2" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a917c7995", "41580c92d6776d5d", "40d022fece0d82a0" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ff32030b", "c157f6a0fdf115f8", "c065ad0dcede6515" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out--0.01",
+  "p" : [ "0", "0", "41583fc41378c0c6" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b29b39d8d",
+  "normP" : "41583fc41378c0c6",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e8480051eb850" ],
+  "distance" : "412e8480051eb850",
+  "legacyDot" : "42c5442b29b39d8d",
+  "legacyNormP" : "41583fc41378c0c6",
+  "legacyDistance" : "412e8480051eb850",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec470ffa649a", "40692c039ee26f08", "41583fc41329ffb4" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d11d9d0e6", "c0cfe9c939e7d34a", "41583fbebe959a76" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b6219534254", "c0cfd8d899e7db2a", "41583fbebe018193" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c3642f7cdb", "c0691c006d64dd35", "41583fc41329d5cf" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "surface-out--1.0E-5",
+  "p" : [ "415854a63fffd60f", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c97bbb39c",
+  "normP" : "415854a63fffd60f",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e848000014f88", "0", "0" ],
+  "distance" : "412e848000014f88",
+  "legacyDot" : "42c5665c97bbb39c",
+  "legacyNormP" : "415854a63fffd60f",
+  "legacyDistance" : "412e848000014f88",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653a1df", "4157ed20fbb9e134", "c065926235836568" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2981592", "41581be79f2f75d2", "40d0221f4cc8a89b" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92431181", "41580c92d7193598", "40d022fece7a107a" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa35682", "c157f6a0fe924a94", "c065ad0dcf703670" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-through--1.0E-5",
+  "p" : [ "415854a63fffd60f", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c97bbb39c",
+  "normP" : "415854a63fffd60f",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee3fffeb08", "0", "0" ],
+  "distance" : "416a3cee3fffeb08",
+  "legacyDot" : "c2c5665c97bbb39c",
+  "legacyNormP" : "415854a63fffd60f",
+  "legacyDistance" : "416a3cee3fffeb08",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653a1df", "4157ed20fbb9e134", "c065926235836568" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2981592", "41581be79f2f75d2", "40d0221f4cc8a89b" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92431181", "41580c92d7193598", "40d022fece7a107a" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa35682", "c157f6a0fe924a94", "c065ad0dcf703670" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out--1.0E-5",
+  "p" : [ "0", "0", "41583fc4141c6ddf" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b2a432887",
+  "normP" : "41583fc4141c6ddf",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e848000014f88" ],
+  "distance" : "412e848000014f88",
+  "legacyDot" : "42c5442b2a432887",
+  "legacyNormP" : "41583fc4141c6ddf",
+  "legacyDistance" : "412e848000014f88",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec4710738fbd", "40692c039f8c5fd7", "41583fc413cdaccc" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d12b0a9b6", "c0cfe9c93abf3bb6", "41583fbebf39476a" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b6219cd7aa8", "c0cfd8d89abed11d", "41583fbebea52e88" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c364a9bef6", "c0691c006e0e673f", "41583fc413cd82e7" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-out--3.0E-6",
+  "p" : [ "415854a63ffff36b", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c97bbcd6f",
+  "normP" : "415854a63ffff36b",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e8480000064a8", "0", "0" ],
+  "distance" : "412e8480000064a8",
+  "legacyDot" : "42c5665c97bbcd6f",
+  "legacyNormP" : "415854a63ffff36b",
+  "legacyDistance" : "412e8480000064a8",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653b730", "4157ed20fbb9fe13", "c065926235837f70" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2983532", "41581be79f2f92eb", "40d0221f4cc8bc14" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92433520", "41580c92d719529d", "40d022fece7a23f2" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa36ad6", "c157f6a0fe92677e", "c065ad0dcf705098" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-through--3.0E-6",
+  "p" : [ "415854a63ffff36b", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c97bbcd6f",
+  "normP" : "415854a63ffff36b",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee3ffff9b6", "0", "0" ],
+  "distance" : "416a3cee3ffff9b6",
+  "legacyDot" : "c2c5665c97bbcd6f",
+  "legacyNormP" : "415854a63ffff36b",
+  "legacyDistance" : "416a3cee3ffff9b6",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653b730", "4157ed20fbb9fe13", "c065926235837f70" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2983532", "41581be79f2f92eb", "40d0221f4cc8bc14" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92433520", "41580c92d719529d", "40d022fece7a23f2" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa36ad6", "c157f6a0fe92677e", "c065ad0dcf705098" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out--3.0E-6",
+  "p" : [ "0", "0", "41583fc4141c8b3b" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b2a434247",
+  "normP" : "41583fc4141c8b3b",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e8480000064a8" ],
+  "distance" : "412e8480000064a8",
+  "legacyDot" : "42c5442b2a434247",
+  "legacyNormP" : "41583fc4141c8b3b",
+  "legacyDistance" : "412e8480000064a8",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec4710738b04", "40692c039f8c7971", "41583fc413cdca29" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d12b0cd90", "c0cfe9c93abf6264", "41583fbebf3964c6" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b6219cd8f40", "c0cfd8d89abef7bc", "41583fbebea54be4" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c364a97b67", "c0691c006e0e75ef", "41583fc413cda043" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-out--1.0E-7",
+  "p" : [ "415854a63fffff95", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c97bbd822",
+  "normP" : "415854a63fffff95",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e848000000358", "0", "0" ],
+  "distance" : "412e848000000358",
+  "legacyDot" : "42c5665c97bbd822",
+  "legacyNormP" : "415854a63fffff95",
+  "legacyDistance" : "412e848000000358",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653c006", "4157ed20fbba0a08", "c065926235838a38" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c298424c", "41581be79f2f9ef8", "40d0221f4cc8c424" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a924343e3", "41580c92d7195ea3", "40d022fece7a2c04" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa37342", "c157f6a0fe927379", "c065ad0dcf705b6f" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-through--1.0E-7",
+  "p" : [ "415854a63fffff95", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c97bbd822",
+  "normP" : "415854a63fffff95",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee3fffffca", "0", "0" ],
+  "distance" : "416a3cee3fffffca",
+  "legacyDot" : "c2c5665c97bbd822",
+  "legacyNormP" : "415854a63fffff95",
+  "legacyDistance" : "416a3cee3fffffca",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653c006", "4157ed20fbba0a08", "c065926235838a38" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c298424c", "41581be79f2f9ef8", "40d0221f4cc8c424" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a924343e3", "41580c92d7195ea3", "40d022fece7a2c04" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa37342", "c157f6a0fe927379", "c065ad0dcf705b6f" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out--1.0E-7",
+  "p" : [ "0", "0", "41583fc4141c9765" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b2a434cf2",
+  "normP" : "41583fc4141c9765",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e848000000358" ],
+  "distance" : "412e848000000358",
+  "legacyDot" : "42c5442b2a434cf2",
+  "legacyNormP" : "41583fc4141c9765",
+  "legacyDistance" : "412e848000000358",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec471073890f", "40692c039f8c840c", "41583fc413cdd652" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d12b0d7c9", "c0cfe9c93abf7281", "41583fbebf3970f0" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b6219cd9d5e", "c0cfd8d89abf0781", "41583fbebea5580d" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c364a9b890", "c0691c006e0e8bae", "41583fc413cdac6e" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-out-0.0",
+  "p" : [ "415854a640000000", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c97bbd880",
+  "normP" : "415854a640000000",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e848000000000", "0", "0" ],
+  "distance" : "412e848000000000",
+  "legacyDot" : "42c5665c97bbd880",
+  "legacyNormP" : "415854a640000000",
+  "legacyDistance" : "412e848000000000",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653c054", "4157ed20fbba0a71", "c065926235838a98" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c29842c0", "41581be79f2f9f62", "40d0221f4cc8c46d" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92434465", "41580c92d7195f0d", "40d022fece7a2c4a" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa3738c", "c157f6a0fe9273e2", "c065ad0dcf705bcd" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-through-0.0",
+  "p" : [ "415854a640000000", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c97bbd880",
+  "normP" : "415854a640000000",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee40000000", "0", "0" ],
+  "distance" : "416a3cee40000000",
+  "legacyDot" : "c2c5665c97bbd880",
+  "legacyNormP" : "415854a640000000",
+  "legacyDistance" : "416a3cee40000000",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653c054", "4157ed20fbba0a71", "c065926235838a98" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c29842c0", "41581be79f2f9f62", "40d0221f4cc8c46d" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92434465", "41580c92d7195f0d", "40d022fece7a2c4a" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa3738c", "c157f6a0fe9273e2", "c065ad0dcf705bcd" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out-0.0",
+  "p" : [ "0", "0", "41583fc4141c97d0" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b2a434d50",
+  "normP" : "41583fc4141c97d0",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e848000000000" ],
+  "distance" : "412e848000000000",
+  "legacyDot" : "42c5442b2a434d50",
+  "legacyNormP" : "41583fc4141c97d0",
+  "legacyDistance" : "412e848000000000",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec47107388fd", "40692c039f8c846a", "41583fc413cdd6bd" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d12b0d869", "c0cfe9c93abf730d", "41583fbebf39715b" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b6219cd9db7", "c0cfd8d89abf080e", "41583fbebea55878" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c364a9b87f", "c0691c006e0e8c0d", "41583fc413cdacd9" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-out-1.0E-7",
+  "p" : [ "415854a64000006b", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c97bbd8de",
+  "normP" : "415854a64000006b",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e847ffffffca8", "0", "0" ],
+  "distance" : "412e847ffffffca8",
+  "legacyDot" : "42c5665c97bbd8de",
+  "legacyNormP" : "415854a64000006b",
+  "legacyDistance" : "412e847ffffffca8",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653c0a2", "4157ed20fbba0ada", "c065926235838af6" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2984333", "41581be79f2f9fcc", "40d0221f4cc8c4b4" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a924344e7", "41580c92d7195f78", "40d022fece7a2c91" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa373d6", "c157f6a0fe92744c", "c065ad0dcf705c2d" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-through-1.0E-7",
+  "p" : [ "415854a64000006b", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c97bbd8de",
+  "normP" : "415854a64000006b",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee40000036", "0", "0" ],
+  "distance" : "416a3cee40000036",
+  "legacyDot" : "c2c5665c97bbd8de",
+  "legacyNormP" : "415854a64000006b",
+  "legacyDistance" : "416a3cee40000036",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653c0a2", "4157ed20fbba0ada", "c065926235838af6" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2984333", "41581be79f2f9fcc", "40d0221f4cc8c4b4" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a924344e7", "41580c92d7195f78", "40d022fece7a2c91" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa373d6", "c157f6a0fe92744c", "c065ad0dcf705c2d" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out-1.0E-7",
+  "p" : [ "0", "0", "41583fc4141c983b" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b2a434dad",
+  "normP" : "41583fc4141c983b",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e847ffffffca8" ],
+  "distance" : "412e847ffffffca8",
+  "legacyDot" : "42c5442b2a434dad",
+  "legacyNormP" : "41583fc4141c983b",
+  "legacyDistance" : "412e847ffffffca8",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec47107388ec", "40692c039f8c84c7", "41583fc413cdd728" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d12b0e0f4", "c0cfe9c93abf7376", "41583fbebf3971c6" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b6219cd9e11", "c0cfd8d89abf089a", "41583fbebea558e3" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c364a9f778", "c0691c006e0e977e", "41583fc413cdad43" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-out-3.0E-6",
+  "p" : [ "415854a640000c95", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c97bbe391",
+  "normP" : "415854a640000c95",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e847fffff9b58", "0", "0" ],
+  "distance" : "412e847fffff9b58",
+  "legacyDot" : "42c5665c97bbe391",
+  "legacyNormP" : "415854a640000c95",
+  "legacyDistance" : "412e847fffff9b58",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653c977", "4157ed20fbba16d1", "c0659262358395bf" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c298504e", "41581be79f2fabda", "40d0221f4cc8ccc3" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a924353a9", "41580c92d7196b7d", "40d022fece7a34a2" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa37c43", "c157f6a0fe928047", "c065ad0dcf706703" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-through-3.0E-6",
+  "p" : [ "415854a640000c95", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c97bbe391",
+  "normP" : "415854a640000c95",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee4000064a", "0", "0" ],
+  "distance" : "416a3cee4000064a",
+  "legacyDot" : "c2c5665c97bbe391",
+  "legacyNormP" : "415854a640000c95",
+  "legacyDistance" : "416a3cee4000064a",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653c977", "4157ed20fbba16d1", "c0659262358395bf" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c298504e", "41581be79f2fabda", "40d0221f4cc8ccc3" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a924353a9", "41580c92d7196b7d", "40d022fece7a34a2" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa37c43", "c157f6a0fe928047", "c065ad0dcf706703" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out-3.0E-6",
+  "p" : [ "0", "0", "41583fc4141ca465" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b2a435858",
+  "normP" : "41583fc4141ca465",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e847fffff9b58" ],
+  "distance" : "412e847fffff9b58",
+  "legacyDot" : "42c5442b2a435858",
+  "legacyNormP" : "41583fc4141ca465",
+  "legacyDistance" : "412e847fffff9b58",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec471073c5e7", "40692c039f8c9b00", "41583fc413cde352" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d12b0f314", "c0cfe9c93abf836d", "41583fbebf397df1" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b6219cda83c", "c0cfd8d89abf1888", "41583fbebea5650d" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c364a97786", "c0691c006e0e8c05", "41583fc413cdb96f" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-out-1.0E-5",
+  "p" : [ "415854a6400029f1", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c97bbfd64",
+  "normP" : "415854a6400029f1",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e847ffffeb078", "0", "0" ],
+  "distance" : "412e847ffffeb078",
+  "legacyDot" : "42c5665c97bbfd64",
+  "legacyNormP" : "415854a6400029f1",
+  "legacyDistance" : "412e847ffffeb078",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653deca", "4157ed20fbba33b0", "c06592623583afc7" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2986fed", "41581be79f2fc8f0", "40d0221f4cc8e03b" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92437749", "41580c92d7198883", "40d022fece7a481c" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa39097", "c157f6a0fe929d31", "c065ad0dcf70812b" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-through-1.0E-5",
+  "p" : [ "415854a6400029f1", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c97bbfd64",
+  "normP" : "415854a6400029f1",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee400014f8", "0", "0" ],
+  "distance" : "416a3cee400014f8",
+  "legacyDot" : "c2c5665c97bbfd64",
+  "legacyNormP" : "415854a6400029f1",
+  "legacyDistance" : "416a3cee400014f8",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5653deca", "4157ed20fbba33b0", "c06592623583afc7" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2986fed", "41581be79f2fc8f0", "40d0221f4cc8e03b" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92437749", "41580c92d7198883", "40d022fece7a481c" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa39097", "c157f6a0fe929d31", "c065ad0dcf70812b" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out-1.0E-5",
+  "p" : [ "0", "0", "41583fc4141cc1c1" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b2a437218",
+  "normP" : "41583fc4141cc1c1",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e847ffffeb078" ],
+  "distance" : "412e847ffffeb078",
+  "legacyDot" : "42c5442b2a437218",
+  "legacyNormP" : "41583fc4141cc1c1",
+  "legacyDistance" : "412e847ffffeb078",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec471073c12e", "40692c039f8cb49a", "41583fc413ce00ae" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d12b116f3", "c0cfe9c93abfaa1e", "41583fbebf399b4d" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b6219cdbcd3", "c0cfd8d89abf3f25", "41583fbebea5826a" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c364a9b208", "c0691c006e0eb0da", "41583fc413cdd6ca" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-out-0.01",
+  "p" : [ "415854a640a3d70a", "0", "0" ],
+  "q" : [ "415c253640000000", "0", "0" ],
+  "dot" : "42c5665c984bf32f",
+  "normP" : "415854a640a3d70a",
+  "normQ" : "415c253640000000",
+  "difference" : [ "412e847ffae147b0", "0", "0" ],
+  "distance" : "412e847ffae147b0",
+  "legacyDot" : "42c5665c984bf32f",
+  "legacyNormP" : "415854a640a3d70a",
+  "legacyDistance" : "412e847ffae147b0",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c56cabcfb", "4157ed20fc5b2863", "c06592623614cdb7" ],
+    "qEcef" : [ "413470b3fd5cf19a", "415bad75f769e77d", "c068f436bd725f7e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c348c00a", "41581be79fd1f850", "40d0221f4d356835" ],
+    "qEcef" : [ "412e517f3e88bb65", "415be3920e4823c5", "40d2a9aa7afe9bca" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a930a0f34", "41580c92d7bb50bd", "40d022fecee6d5f5" ],
+    "qEcef" : [ "41311327b7e30752", "415bd1d5eccbcd45", "40d2aaad0798f95f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d8970014e40e", "c157f6a0ff33d1cd", "c065ad0dd0025285" ],
+    "qEcef" : [ "c1337cbde6891fc7", "c15bb873482970d9", "c0691310cf91d3a6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "surface-through-0.01",
+  "p" : [ "415854a640a3d70a", "0", "0" ],
+  "q" : [ "c15c253640000000", "0", "0" ],
+  "dot" : "c2c5665c984bf32f",
+  "normP" : "415854a640a3d70a",
+  "normQ" : "415c253640000000",
+  "difference" : [ "c16a3cee4051eb85", "0", "0" ],
+  "distance" : "416a3cee4051eb85",
+  "legacyDot" : "c2c5665c984bf32f",
+  "legacyNormP" : "415854a640a3d70a",
+  "legacyDistance" : "416a3cee4051eb85",
+  "angleDeg" : "4066800000000000",
+  "angleRad" : "400921fb54442d18",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c56cabcfb", "4157ed20fc5b2863", "c06592623614cdb7" ],
+    "qEcef" : [ "c13470b3fd5cf19a", "c15bad75f769e77d", "4068f436bd725f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c348c00a", "41581be79fd1f850", "40d0221f4d356835" ],
+    "qEcef" : [ "c12e517f3e88bb65", "c15be3920e4823c5", "c0d2a9aa7afe9bca" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a930a0f34", "41580c92d7bb50bd", "40d022fecee6d5f5" ],
+    "qEcef" : [ "c1311327b7e30752", "c15bd1d5eccbcd45", "c0d2aaad0798f95f" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d8970014e40e", "c157f6a0ff33d1cd", "c065ad0dd0025285" ],
+    "qEcef" : [ "41337cbde6891fc7", "415bb873482970d9", "40691310cf91d3a6" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "polar-out-0.01",
+  "p" : [ "0", "0", "41583fc414c06eda" ],
+  "q" : [ "0", "0", "415c1054141c97d0" ],
+  "dot" : "42c5442b2ad2fd12",
+  "normP" : "41583fc414c06eda",
+  "normQ" : "415c1054141c97d0",
+  "difference" : [ "0", "0", "412e847ffae147b0" ],
+  "distance" : "412e847ffae147b0",
+  "legacyDot" : "42c5442b2ad2fd12",
+  "legacyNormP" : "41583fc414c06eda",
+  "legacyDistance" : "412e847ffae147b0",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c061ec4710ec6e72", "40692c03a0368e2d", "41583fc41471adc8" ],
+    "qEcef" : [ "c064be12cedfcf02", "406d21bdd80ea596", "415c105413c17324" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c09fd55d1387f7af", "c0cfe9c93b971266", "41583fbebfdd4843" ],
+    "qEcef" : [ "c0a26baeadf1522b", "c0d2777ffc7cea0b", "415c104de88283a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0a21b621a47f528", "c0cfd8d89b963518", "41583fbebf492f5f" ],
+    "qEcef" : [ "c0a4f496e3658674", "c0d26db291e8b245", "415c104de7d71e92" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "406210c36523b51c", "c0691c006eb82fd2", "41583fc4147183e3" ],
+    "qEcef" : [ "4064e84c7e17ad12", "c06d0f35cb4a2f8a", "415c105413c142a9" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "endpoint-5.0E-11",
+  "p" : [ "415854a64000d1b7", "0", "0" ],
+  "q" : [ "4154841640000000", "0", "0" ],
+  "dot" : "42bf32ac01483de8",
+  "normP" : "415854a64000d1b7",
+  "normQ" : "4154841640000000",
+  "difference" : [ "c12e848000068db8", "0", "0" ],
+  "distance" : "412e848000068db8",
+  "legacyDot" : "42bf32ac01483de8",
+  "legacyNormP" : "415854a64000d1b7",
+  "legacyDistance" : "412e848000068db8",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c565458a1", "4157ed20fbbad8ad", "c065926235844487" ],
+    "qEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c29924a8", "41581be79f306f30", "40d0221f4cc94f7c" ],
+    "qEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a924442db", "41580c92d71a2e58", "40d022fece7ab760" ],
+    "qEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa404c0", "c157f6a0fe93426f", "c065ad0dcf7116a3" ],
+    "qEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "reverse-endpoint-5.0E-11",
+  "p" : [ "4154841640000000", "0", "0" ],
+  "q" : [ "415854a64000d1b7", "0", "0" ],
+  "dot" : "42bf32ac01483de8",
+  "normP" : "4154841640000000",
+  "normQ" : "415854a64000d1b7",
+  "difference" : [ "412e848000068db8", "0", "0" ],
+  "distance" : "412e848000068db8",
+  "legacyDot" : "42bf32ac01483de8",
+  "legacyNormP" : "4154841640000000",
+  "legacyDistance" : "412e848000068db8",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "qEcef" : [ "4131ab7c565458a1", "4157ed20fbbad8ad", "c065926235844487" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "qEcef" : [ "412a3589c29924a8", "41581be79f306f30", "40d0221f4cc94f7c" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "qEcef" : [ "412d856a924442db", "41580c92d71a2e58", "40d022fece7ab760" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "qEcef" : [ "c130d896ffa404c0", "c157f6a0fe93426f", "c065ad0dcf7116a3" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "endpoint-1.0E-10",
+  "p" : [ "415854a64001a36e", "0", "0" ],
+  "q" : [ "4154841640000000", "0", "0" ],
+  "dot" : "42bf32ac01494ad0",
+  "normP" : "415854a64001a36e",
+  "normQ" : "4154841640000000",
+  "difference" : [ "c12e8480000d1b70", "0", "0" ],
+  "distance" : "412e8480000d1b70",
+  "legacyDot" : "42bf32ac01494ad0",
+  "legacyNormP" : "415854a64001a36e",
+  "legacyDistance" : "412e8480000d1b70",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5654f0f0", "4157ed20fbbba6e7", "c06592623584fe76" ],
+    "qEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c29a068e", "41581be79f313efd", "40d0221f4cc9da8b" ],
+    "qEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a9245414d", "41580c92d71afda1", "40d022fece7b4278" ],
+    "qEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa495f3", "c157f6a0fe9410fc", "c065ad0dcf71d179" ],
+    "qEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "reverse-endpoint-1.0E-10",
+  "p" : [ "4154841640000000", "0", "0" ],
+  "q" : [ "415854a64001a36e", "0", "0" ],
+  "dot" : "42bf32ac01494ad0",
+  "normP" : "4154841640000000",
+  "normQ" : "415854a64001a36e",
+  "difference" : [ "412e8480000d1b70", "0", "0" ],
+  "distance" : "412e8480000d1b70",
+  "legacyDot" : "42bf32ac01494ad0",
+  "legacyNormP" : "4154841640000000",
+  "legacyDistance" : "412e8480000d1b70",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "qEcef" : [ "4131ab7c5654f0f0", "4157ed20fbbba6e7", "c06592623584fe76" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "qEcef" : [ "412a3589c29a068e", "41581be79f313efd", "40d0221f4cc9da8b" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "qEcef" : [ "412d856a9245414d", "41580c92d71afda1", "40d022fece7b4278" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "qEcef" : [ "c130d896ffa495f3", "c157f6a0fe9410fc", "c065ad0dcf71d179" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "endpoint-2.0E-10",
+  "p" : [ "415854a6400346dc", "0", "0" ],
+  "q" : [ "4154841640000000", "0", "0" ],
+  "dot" : "42bf32ac014b64a0",
+  "normP" : "415854a6400346dc",
+  "normQ" : "4154841640000000",
+  "difference" : [ "c12e8480001a36e0", "0", "0" ],
+  "distance" : "412e8480001a36e0",
+  "legacyDot" : "42bf32ac014b64a0",
+  "legacyNormP" : "415854a6400346dc",
+  "legacyDistance" : "412e8480001a36e0",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5656218a", "4157ed20fbbd435d", "c065926235867255" ],
+    "qEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c29bca5f", "41581be79f32de99", "40d0221f4ccaf0a8" ],
+    "qEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92473e35", "41580c92d71c9c34", "40d022fece7c58a4" ],
+    "qEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa5b85b", "c157f6a0fe95ae15", "c065ad0dcf734723" ],
+    "qEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "reverse-endpoint-2.0E-10",
+  "p" : [ "4154841640000000", "0", "0" ],
+  "q" : [ "415854a6400346dc", "0", "0" ],
+  "dot" : "42bf32ac014b64a0",
+  "normP" : "4154841640000000",
+  "normQ" : "415854a6400346dc",
+  "difference" : [ "412e8480001a36e0", "0", "0" ],
+  "distance" : "412e8480001a36e0",
+  "legacyDot" : "42bf32ac014b64a0",
+  "legacyNormP" : "4154841640000000",
+  "legacyDistance" : "412e8480001a36e0",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "qEcef" : [ "4131ab7c5656218a", "4157ed20fbbd435d", "c065926235867255" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "qEcef" : [ "412a3589c29bca5f", "41581be79f32de99", "40d0221f4ccaf0a8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "qEcef" : [ "412d856a92473e35", "41580c92d71c9c34", "40d022fece7c58a4" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "qEcef" : [ "c130d896ffa5b85b", "c157f6a0fe95ae15", "c065ad0dcf734723" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "endpoint-5.0E-10",
+  "p" : [ "415854a640083127", "0", "0" ],
+  "q" : [ "4154841640000000", "0", "0" ],
+  "dot" : "42bf32ac0151b212",
+  "normP" : "415854a640083127",
+  "normQ" : "4154841640000000",
+  "difference" : [ "c12e848000418938", "0", "0" ],
+  "distance" : "412e848000418938",
+  "legacyDot" : "42bf32ac0151b212",
+  "legacyNormP" : "415854a640083127",
+  "legacyDistance" : "412e848000418938",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c5659b35d", "4157ed20fbc218bd", "c0659262358acdf2" ],
+    "qEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2a115d1", "41581be79f37bd6e", "40d0221f4cce3304" ],
+    "qEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a924d34f0", "41580c92d72177f0", "40d022fece7f9b2d" ],
+    "qEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffa91f93", "c157f6a0fe9a8562", "c065ad0dcf77a823" ],
+    "qEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "reverse-endpoint-5.0E-10",
+  "p" : [ "4154841640000000", "0", "0" ],
+  "q" : [ "415854a640083127", "0", "0" ],
+  "dot" : "42bf32ac0151b212",
+  "normP" : "4154841640000000",
+  "normQ" : "415854a640083127",
+  "difference" : [ "412e848000418938", "0", "0" ],
+  "distance" : "412e848000418938",
+  "legacyDot" : "42bf32ac0151b212",
+  "legacyNormP" : "4154841640000000",
+  "legacyDistance" : "412e848000418938",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "qEcef" : [ "4131ab7c5659b35d", "4157ed20fbc218bd", "c0659262358acdf2" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "qEcef" : [ "412a3589c2a115d1", "41581be79f37bd6e", "40d0221f4cce3304" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "qEcef" : [ "412d856a924d34f0", "41580c92d72177f0", "40d022fece7f9b2d" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "qEcef" : [ "c130d896ffa91f93", "c157f6a0fe9a8562", "c065ad0dcf77a823" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "endpoint-1.0E-9",
+  "p" : [ "415854a64010624e", "0", "0" ],
+  "q" : [ "4154841640000000", "0", "0" ],
+  "dot" : "42bf32ac015c3323",
+  "normP" : "415854a64010624e",
+  "normQ" : "4154841640000000",
+  "difference" : [ "c12e848000831270", "0", "0" ],
+  "distance" : "412e848000831270",
+  "legacyDot" : "42bf32ac015c3323",
+  "legacyNormP" : "415854a64010624e",
+  "legacyDistance" : "412e848000831270",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c565fa665", "4157ed20fbca270a", "c06592623592114d" ],
+    "qEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2a9e8e1", "41581be79f3fdb7a", "40d0221f4cd3a19a" ],
+    "qEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a92572579", "41580c92d72990d2", "40d022fece850a0e" ],
+    "qEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffaecb99", "c157f6a0fea296e1", "c065ad0dcf7ef47a" ],
+    "qEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "reverse-endpoint-1.0E-9",
+  "p" : [ "4154841640000000", "0", "0" ],
+  "q" : [ "415854a64010624e", "0", "0" ],
+  "dot" : "42bf32ac015c3323",
+  "normP" : "4154841640000000",
+  "normQ" : "415854a64010624e",
+  "difference" : [ "412e848000831270", "0", "0" ],
+  "distance" : "412e848000831270",
+  "legacyDot" : "42bf32ac015c3323",
+  "legacyNormP" : "4154841640000000",
+  "legacyDistance" : "412e848000831270",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "qEcef" : [ "4131ab7c565fa665", "4157ed20fbca270a", "c06592623592114d" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "qEcef" : [ "412a3589c2a9e8e1", "41581be79f3fdb7a", "40d0221f4cd3a19a" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "qEcef" : [ "412d856a92572579", "41580c92d72990d2", "40d022fece850a0e" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "qEcef" : [ "c130d896ffaecb99", "c157f6a0fea296e1", "c065ad0dcf7ef47a" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "endpoint-2.0E-9",
+  "p" : [ "415854a64020c49c", "0", "0" ],
+  "q" : [ "4154841640000000", "0", "0" ],
+  "dot" : "42bf32ac01713547",
+  "normP" : "415854a64020c49c",
+  "normQ" : "4154841640000000",
+  "difference" : [ "c12e8480010624e0", "0", "0" ],
+  "distance" : "412e8480010624e0",
+  "legacyDot" : "42bf32ac01713547",
+  "legacyNormP" : "415854a64020c49c",
+  "legacyDistance" : "412e8480010624e0",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131ab7c566b8c75", "4157ed20fbda43a2", "c065926235a09805" ],
+    "qEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "412a3589c2bb8f04", "41581be79f501794", "40d0221f4cde7ec7" ],
+    "qEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412d856a926b0690", "41580c92d739c298", "40d022fece8fe7d4" ],
+    "qEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c130d896ffba23a7", "c157f6a0feb2b9df", "c065ad0dcf8d8d26" ],
+    "qEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "reverse-endpoint-2.0E-9",
+  "p" : [ "4154841640000000", "0", "0" ],
+  "q" : [ "415854a64020c49c", "0", "0" ],
+  "dot" : "42bf32ac01713547",
+  "normP" : "4154841640000000",
+  "normQ" : "415854a64020c49c",
+  "difference" : [ "412e8480010624e0", "0", "0" ],
+  "distance" : "412e8480010624e0",
+  "legacyDot" : "42bf32ac01713547",
+  "legacyNormP" : "4154841640000000",
+  "legacyDistance" : "412e8480010624e0",
+  "angleDeg" : "0",
+  "angleRad" : "0",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "412dcc895e951e1e", "41542ccc000a2d68", "c062308dad94b5b0" ],
+    "qEcef" : [ "4131ab7c566b8c75", "4157ed20fbda43a2", "c065926235a09805" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4126199446a7ca1a", "4154543d30171b00", "40cb35283d25da1f" ],
+    "qEcef" : [ "412a3589c2bb8f04", "41581be79f501794", "40d0221f4cde7ec7" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4128e485b4c07a23", "4154474fc166f0d4", "40cb36a12ab6be6a" ],
+    "qEcef" : [ "412d856a926b0690", "41580c92d739c298", "40d022fece8fe7d4" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c12c68e0317b8ea8", "c15434ceb4fb76ef", "c062470acf4ee3f7" ],
+    "qEcef" : [ "c130d896ffba23a7", "c157f6a0feb2b9df", "c065ad0dcf8d8d26" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-0",
+  "p" : [ "c15406878c9cc7fe", "41542f679e7aa010", "41545e4095426693" ],
+  "q" : [ "c11f7b46e262af7f", "c1624cf8aec0e303", "4126d419aa8b119c" ],
+  "dot" : "c2c40a3e484f5f48",
+  "normP" : "41617cef785e13ba",
+  "normQ" : "416261eeac25d8ca",
+  "difference" : [ "41520ed31e769d06", "c16c64ac7dfe330b", "c15183bd5ff10460" ],
+  "distance" : "416f0dfb97ee20ba",
+  "legacyDot" : "c2c40a3e484f5f48",
+  "legacyNormP" : "41617cef785e13ba",
+  "legacyDistance" : "416f0dfb97ee20ba",
+  "angleDeg" : "405dfa82001ce6e5",
+  "angleRad" : "4000be40f60e1baa",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1577c6921dd762b", "c15006f80569385a", "41545e3f23f96661" ],
+    "qEcef" : [ "4161d15f55cb9ad5", "c1412906f85c4f76", "4126d64d993b1904" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c156b44ec7b151f4", "c1512d6e74bddd52", "4154511a8597a0d8" ],
+    "qEcef" : [ "41620046ca9dfe77", "c13b8aaaf5afe022", "4126c7812ee77814" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c156ff0cd1b38100", "c150c8dba5d145ed", "41545119f7b3bf44" ],
+    "qEcef" : [ "4161f0718136bd7c", "c13e037076042d2c", "4126c77e34758ef0" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415758e5f262921f", "41503a8773846f32", "41545e3f67d352d4" ],
+    "qEcef" : [ "c161daa659927e09", "41408bef76975b54", "4126d64c6052aa5c" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-1",
+  "p" : [ "c15cfdc746facd07", "c1083f250fe40901", "c146abd89720ac29" ],
+  "q" : [ "415c92124f3cb926", "414533e1aa9282ea", "c15dec2c44a1fed8" ],
+  "dot" : "c2bf1240a00db864",
+  "normP" : "415f234c109a635c",
+  "normQ" : "41655ab3f66db04f",
+  "difference" : [ "416cc7eccb1bc316", "4146b7d3fb90c37a", "c152963ff911a8c4" ],
+  "distance" : "416ec5d9febe74ec",
+  "legacyDot" : "c2bf1240a00db864",
+  "legacyNormP" : "415f234c109a635c",
+  "legacyDistance" : "416ec5d9febe74ec",
+  "angleDeg" : "405bfcee78ac95f8",
+  "angleRad" : "3fff434e2a6e0686",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c13212b8f736c976", "c15ca5bcd49dd978", "c146ab6effc43175" ],
+    "qEcef" : [ "c134f2e321eb0fa9", "415e0502b8c27ce0", "c15dec7255dfe875" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c12931b06638e3ae", "c15cccd2d77b149b", "c146d248f98e2198" ],
+    "qEcef" : [ "c13a97b308f3cf4a", "415dd090405e08ec", "c15dd92004c0aa1f" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c12d26c73b3c0bcc", "c15cbddf2961ff49", "c146d24b10d9985a" ],
+    "qEcef" : [ "c13889cfcbb30bc8", "415decb315f6b6e2", "c15dd91ee73bca0d" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4131163e36be3716", "415caf6a4fc70722", "c146ab6e82727bd9" ],
+    "qEcef" : [ "4135fb1617ce7915", "c15df931a6c83a88", "c15dec7287ee7264" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-2",
+  "p" : [ "416070b8584aed2d", "c15027a0647636cd", "414c09fcbb8eb162" ],
+  "q" : [ "4111a52f6a066228", "c1462684f189aa90", "c14388587a04169e" ],
+  "dot" : "429390b53579f49a",
+  "normP" : "41639ce557e2971b",
+  "normQ" : "414d9d5d1084c802",
+  "difference" : [ "c15fc71db9f57438", "41345177aec58614", "c157c92a9ac96400" ],
+  "distance" : "4164023b39c6a069",
+  "legacyDot" : "429390b53579f49a",
+  "legacyNormP" : "41639ce557e2971b",
+  "legacyDistance" : "4164023b39c6a069",
+  "angleDeg" : "40549068ec664d6f",
+  "angleRad" : "3ff6f866f9f6e2e2",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4155db1425f99a80", "415d66cae4cea1f3", "414c09c344ac55e0" ],
+    "qEcef" : [ "41462ee7aea635d5", "c10da6ea85331312", "c1438833d683f939" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "41546e3a5bda43bc", "415e5ea9c0a7c9ac", "414c35551c2ff75c" ],
+    "qEcef" : [ "41464082dd4eadd1", "c0f7e5e904551438", "c14387072fff5f7e" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4154f31e69697dc9", "415e0397c0d08913", "414c3557338014bd" ],
+    "qEcef" : [ "41463c61d5b3ded1", "c102116dbfafd8c6", "c143870749f7aacc" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c1559a225ebd6422", "c15d96a343215b3c", "414c09c28e2af038" ],
+    "qEcef" : [ "c14632c66b38fc29", "410a99234e86f370", "c1438833f5a1bb1c" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-3",
+  "p" : [ "4118850d543c0389", "c12260dee0326785", "415e564cb5dd33c8" ],
+  "q" : [ "415dc18cb5ce5daf", "c162d5e590321da4", "4151605cea160399" ],
+  "dot" : "42c49a576314e11d",
+  "normP" : "415e7668e24c263a",
+  "normQ" : "416986dcfa5cc4bf",
+  "difference" : [ "415c393be08a9d76", "c161afd7a22ef72c", "c149ebdf978e605e" ],
+  "distance" : "41678953072ec2b4",
+  "legacyDot" : "42c49a576314e11d",
+  "legacyNormP" : "415e7668e24c263a",
+  "legacyDistance" : "41678953072ec2b4",
+  "angleDeg" : "40503ab97cdee9e6",
+  "angleRad" : "3ff220df337b2030",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "41244b1a86ae89f8", "4111743bf19ba2a4", "415e564e3269e879" ],
+    "qEcef" : [ "41653939e4d6b6a4", "41566c29a0002846", "4151606d1c472cb4" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4123c8b739f307cc", "4112196e4e2f5d23", "415e5745e2301d67" ],
+    "qEcef" : [ "4164aa2024955736", "41585e2b83188604", "415173cdbd9727a2" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4123efcc9909d2ad", "41116a87708112b4", "415e5745eab2e21d" ],
+    "qEcef" : [ "4164def7bfda6534", "4157a758f6522356", "415173ce7f1a7406" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c12437b39af79d5d", "c111cd7308dba3e4", "415e564e2c53d663" ],
+    "qEcef" : [ "c16520570116365c", "c156c969b87f2df2", "4151606cae58b36c" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-4",
+  "p" : [ "4104f0168e62f209", "4160c02de73d7d34", "c160a2ea33c069b6" ],
+  "q" : [ "414d82088f67794a", "c121171ccc0f8c1e", "c15569e688362d2c" ],
+  "dot" : "42c4549e784df20a",
+  "normP" : "41679c52ed40997a",
+  "normQ" : "415a1788bcd00ad2",
+  "difference" : [ "414c330726814a29", "c161d19fb3fe75f6", "4147b7dbbe954c80" ],
+  "distance" : "41640f26ab67383a",
+  "legacyDot" : "42c4549e784df20a",
+  "legacyNormP" : "41679c52ed40997a",
+  "legacyDistance" : "41640f26ab67383a",
+  "angleDeg" : "404d105d6249c988",
+  "angleRad" : "3ff03b7bce364dc3",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c160699b881c10db", "413ae6475df2b1ba", "c160a30972069289" ],
+    "qEcef" : [ "41331eb5798aa454", "414c3d8d356b4c07", "c15569fcc8487168" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1608c7c284aa150", "4134fac005cab661", "c160a28fb0eb2bb4" ],
+    "qEcef" : [ "413070f97b761fab", "414cc61e0e563c29", "c155601d56081120" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c16080512fe869d0", "413740a6e64ea521", "c160a28f8a33e360" ],
+    "qEcef" : [ "41316da19fc47d3a", "414ca0daa2b5afb0", "c155601cd27dc287" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "416070db2ac25afb", "c139c4ea9aed5fc8", "c160a3095ede3334" ],
+    "qEcef" : [ "c132a229ce086b60", "c14c525522ac82eb", "c15569fceb299c54" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-5",
+  "p" : [ "c13a166a46f23de8", "415424deb8dc0b0f", "4133de544a43ac63" ],
+  "q" : [ "c1354773cb3aa541", "414dcf1539c6dc63", "c1413ac92e9b693a" ],
+  "dot" : "42b2423d467c42a0",
+  "normP" : "4155bf91409ed7b4",
+  "normQ" : "415204ad374acbe0",
+  "difference" : [ "41133bd9eede629c", "c134f5506fe27376", "c14b29f353bd3f6c" ],
+  "distance" : "414d36d468ab900b",
+  "legacyDot" : "42b2423d467c42a0",
+  "legacyNormP" : "4155bf91409ed7b4",
+  "legacyDistance" : "414d36d468ab900b",
+  "angleDeg" : "4044e60bcbf850d9",
+  "angleRad" : "3fe7580f0f9b66f4",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c154fe52e7a20ac9", "c1260c47ca341670", "4133ddef0b7b8f78" ],
+    "qEcef" : [ "c14f3eac4f61c815", "c1243467091f29b7", "c1413aece224ce75" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c154d720afc6441e", "c12e1a447c64bfa8", "4133cd9a38857166" ],
+    "qEcef" : [ "c14ef6ecdde2c9a5", "c129f029cdde764f", "c141419bb88cdb7f" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c154e6e66c67d4df", "c12b3b5a5499e4bb", "4133cd99f2458694" ],
+    "qEcef" : [ "c14f124b2c89315e", "c127ce0bdbafc741", "c141419bdb088a5e" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4154f80e801eb703", "41277dddc21e64aa", "4133ddefa446e6f0" ],
+    "qEcef" : [ "414f334175047aa2", "4125476627b45a33", "c1413aeca7733955" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-6",
+  "p" : [ "c158baf0574a2b7e", "c1529e32be27812b", "c159d229b8176320" ],
+  "q" : [ "411cb56ecd1588e1", "c155882b4e732291", "41629f2af9bfbc0b" ],
+  "dot" : "c2c2e93e868ce491",
+  "normP" : "416427bd8e97d524",
+  "normQ" : "41658751bae93573",
+  "difference" : [ "415a8647441b840c", "c1274fc4825d0b30", "416f883fd5cb6d9b" ],
+  "distance" : "41711e8f22dc4393",
+  "legacyDot" : "c2c2e93e868ce491",
+  "legacyNormP" : "416427bd8e97d524",
+  "legacyDistance" : "41711e8f22dc4393",
+  "angleDeg" : "405b99f2cfafb79a",
+  "angleRad" : "3ffed4bd7e64df6f",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "414ba36123908aa3", "c15bb346e2754e60", "c159d1dbc892fa57" ],
+    "qEcef" : [ "41557fbd30171124", "c121263dce9dc432", "41629f3d1791751a" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "414e40e4360e6e63", "c15af20b98323db1", "c159e2accd0cc5ea" ],
+    "qEcef" : [ "415590c3cf077ef1", "c1137927d91dfc6d", "41629fab0ae36004" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "414d528f93b66e2e", "c15b3399163261df", "c159e2add6dc7fd0" ],
+    "qEcef" : [ "41558a97bb2e1769", "c1196721a079e524", "41629faafbfd1362" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c14c1d19b5dd5e7a", "415b949676d4b9fd", "c159d1dba872621a" ],
+    "qEcef" : [ "c1558441a12d1427", "411f56bd3c72cfcb", "41629f3d08d3c338" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-7",
+  "p" : [ "415b3a3513007074", "4152ae13127eac5a", "4156dd34fab7fed3" ],
+  "q" : [ "c155a58d971945c3", "c121f2a2fb5d6ac7", "414098ea5a0d1a1b" ],
+  "dot" : "c2bb98c9a0edab15",
+  "normP" : "416414d1875e5b48",
+  "normQ" : "41574a8c7057893b",
+  "difference" : [ "c1686fe1550cdb1c", "c154ec6771ea59b3", "c14d217f9b62e38b" ],
+  "distance" : "416b8fd3bc9063d4",
+  "legacyDot" : "c2bb98c9a0edab15",
+  "legacyNormP" : "416414d1875e5b48",
+  "legacyDistance" : "416b8fd3bc9063d4",
+  "angleDeg" : "405d8a9cb3f13a36",
+  "angleRad" : "40007fc268aee73f",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c14ada707d86db35", "415e2ac77a551752", "4156dce2809ca79e" ],
+    "qEcef" : [ "c11b962dd2e866f0", "c155b1a8edd6b14a", "4140993f555fa312" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c14db3b6b496c052", "415d6f92c627137f", "4156ef60b76b2fd0" ],
+    "qEcef" : [ "c1063830860ca098", "c155c5dceb041dda", "41407c29465d4a4b" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c14caf7ba46c23c6", "415dafd193a2c773", "4156ef61d85ee5c6" ],
+    "qEcef" : [ "c11118e7f1620302", "c155c1fbfcaabbc2", "41407c27aece90c5" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "414b5f07f30c2ce7", "c15e0cee466ee656", "4156dce25b156f59" ],
+    "qEcef" : [ "411899a4c4b30faa", "4155b54024d497cf", "4140993faef6636f" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-8",
+  "p" : [ "41356663b0013aac", "41357b9a0fc14bc9", "412f3d821fe5ed98" ],
+  "q" : [ "c15612c539a41a3e", "c15491e5e5673f95", "415c616057a9602f" ],
+  "dot" : "c29d6f67146799cd",
+  "normP" : "41410e0442860b4a",
+  "normQ" : "4164b60aa80b1710",
+  "difference" : [ "c15b6c5e25a468e9", "c159f0cc69579287", "415879b013aca27c" ],
+  "distance" : "41667e9276af3cbc",
+  "legacyDot" : "c29d6f67146799cd",
+  "legacyNormP" : "41410e0442860b4a",
+  "legacyDistance" : "41667e9276af3cbc",
+  "angleDeg" : "405b5e27d561f22d",
+  "angleRad" : "3ffe91f36f7afec6",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1313da23ecf26a6", "4138f1f87daeaa3b", "412f3ce7937d45ee" ],
+    "qEcef" : [ "415038433dc62574", "c15970b2dc9be531", "415c61ad23284584" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c132692134effc0a", "41380eba96fe96cc", "412f5a2cdca715fc" ],
+    "qEcef" : [ "415166bb9dfc1f1a", "c158b7064bd40a1c", "415c5290b400a663" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c131fe8cfe7f6f0d", "41385ed874559b4d", "412f5a2ebfa80e0e" ],
+    "qEcef" : [ "4150f94c986ef44a", "c15902ae268ceb52", "415c528fbd309ac2" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "413174655186b3d2", "c138cbc5f8ed0306", "412f3ce768a2b1ca" ],
+    "qEcef" : [ "c1507020177ebe84", "41594cbe4ecb87fd", "415c61ad3b24770f" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-9",
+  "p" : [ "c1456f79a0344941", "416219f25d5fba24", "415088935773b0a2" ],
+  "q" : [ "415348fca5fa9ef0", "415f05a2ea032791", "c1594ef7165cc4df" ],
+  "dot" : "42bf1f385ff5f3c7",
+  "normP" : "41649bcf1871bd16",
+  "normQ" : "416638279dfb3cec",
+  "difference" : [ "415e00b97614c390", "c134b90742f132dc", "c164ebc536e83ac0" ],
+  "distance" : "4169df9fccaaa87e",
+  "legacyDot" : "42bf1f385ff5f3c7",
+  "legacyNormP" : "41649bcf1871bd16",
+  "legacyDistance" : "4169df9fccaaa87e",
+  "angleDeg" : "40528e662787dbb9",
+  "angleRad" : "3ff4ba3f2507d660",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c162c60dd1e63bd6", "c12fba9d64a7d61e", "41508864129ce8ab" ],
+    "qEcef" : [ "c15b01245fa92da3", "4158989bfdcd5262", "c1594f52126e06b8" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c162a925aa002003", "c13726c1316efd82", "415081b8108d2c84" ],
+    "qEcef" : [ "c15c22778cb5e351", "41575a037b685d6c", "c15941ede1463666" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c162b52d80caa81d", "c13494d9a4beadfe", "415081b7fa062d12" ],
+    "qEcef" : [ "c15bbaa0a0487928", "4157d4f5c6fc6a8b", "c15941ecee1cea3a" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4162c18275f0480b", "413127d97c17ca1f", "4150886455103095" ],
+    "qEcef" : [ "415b370b43f746ec", "c1585cea75ace43c", "c1594f5217e6ab0b" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-10",
+  "p" : [ "c15add9d5fad9495", "c1495e282b5e9217", "4149508cae307f2d" ],
+  "q" : [ "415b8d33023d5b7e", "c128a0f0711e7ccc", "c14befbcf0df0d03" ],
+  "dot" : "c2cb6f8c5245da66",
+  "normP" : "416025893f7e0bf7",
+  "normQ" : "415f0b0c8c2b91f2",
+  "difference" : [ "416b356830f5780a", "414335ec0f16f2e4", "c15aa024cf87c618" ],
+  "distance" : "416eab55eb4fa10e",
+  "legacyDot" : "c2cb6f8c5245da66",
+  "legacyNormP" : "416025893f7e0bf7",
+  "legacyDistance" : "416eab55eb4fa10e",
+  "angleDeg" : "4062e459baaf97b1",
+  "angleRad" : "40051a415fa6a9b0",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "413e615d8e4c03e6", "c15cb8be7db60202", "4149511a652cee76" ],
+    "qEcef" : [ "41400f5a0fd353de", "415a88c560932645", "c14bf01360ccdc8c" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4141e4c9446b6fcd", "c15c5c826e809f9e", "41492cb6cd30ec2d" ],
+    "qEcef" : [ "413b0f37f6fd91d2", "415aec036bf5b1c4", "c14bcb3892c8e88e" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4140ea75ff5bd36e", "c15c82d0ae256ae2", "41492cb4a984e9aa" ],
+    "qEcef" : [ "413ce8267124e4ae", "415acd392235b1c6", "c14bcb36a4e8eff7" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c13f5e0ad43050bd", "415ca7bf9e3b03b5", "4149511abcdf69a8" ],
+    "qEcef" : [ "c13f34b338d08c88", "c15a9a333dfcd5fb", "c14bf013e0e89e0e" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-11",
+  "p" : [ "4111fff4015f682a", "40e9ae1e7ec750e0", "41626c8d16fab386" ],
+  "q" : [ "41118a2896f4cba3", "c15d477b8a820de7", "c142834b04cc7bab" ],
+  "dot" : "c2b59b8f234a5766",
+  "normP" : "41626ed19445f3af",
+  "normQ" : "415eba252968ecee",
+  "difference" : [ "c0bd72da9aa721c0", "c15d7ad7c77f9c89", "c1670d5fd82dd271" ],
+  "distance" : "416b5ca321384742",
+  "legacyDot" : "c2b59b8f234a5766",
+  "legacyNormP" : "41626ed19445f3af",
+  "legacyDistance" : "416b5ca321384742",
+  "angleDeg" : "405af14956181c65",
+  "angleRad" : "3ffe1857ca908ac0",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "40991b5ca1dbd200", "41124d596ba2bb29", "41626c8be864e746" ],
+    "qEcef" : [ "415cfde99f1ccb5e", "c130f3ed17f738e6", "c14282e3b53cd9c6" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c0ce4612f5b86ab8", "4110c0abdbe767bb", "41626ce8b5aee2fa" ],
+    "qEcef" : [ "415d29c4d784c145", "c126a8d8d34d6dc6", "c14282404435321c" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c0c50d502f70a7a0", "4110c41ddefb50f0", "41626ce8ba9f4e09" ],
+    "qEcef" : [ "415d1c33000e0859", "c12aaacdd0bd7848", "c1428240ab14131d" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "408e5b82e7aaf780", "c1124d68d5d014f5", "41626c8be7478ea2" ],
+    "qEcef" : [ "c15d06f84121b717", "412fe8d8f236fda2", "c14282e3ff85cc7a" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-12",
+  "p" : [ "c1341a4a314fe343", "c1381288f2a0c869", "4152b8570092d227" ],
+  "q" : [ "415db5ada75e55d3", "415da9d23aa4d175", "4149d8a72d30c4fc" ],
+  "dot" : "c29579fa184f0bd4",
+  "normP" : "41544bb44737b08f",
+  "normQ" : "4165f6aa792c08ed",
+  "difference" : [ "41615e2019d92752", "4161d73a3ba681c8", "c137300da7e9bea4" ],
+  "distance" : "41691105a39d585a",
+  "legacyDot" : "c29579fa184f0bd4",
+  "legacyNormP" : "41544bb44737b08f",
+  "legacyDistance" : "41691105a39d585a",
+  "angleDeg" : "4057e1e2c3e12067",
+  "angleRad" : "3ffaad46a733c571",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "413405527da92032", "c1382304c0b2dbd8", "4152b86aee0243c6" ],
+    "qEcef" : [ "c157c6cd3beba019", "41614d0dcbf4ff7e", "4149d7d135282405" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "41351f5151467a20", "c1375a78b08a57b6", "4152b4f2871371fb" ],
+    "qEcef" : [ "c159659d69941c06", "4160b3335e596988", "414a0076d5ff5be5" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4134b7bc6f181676", "c137b68ff6741018", "4152b4f24bc66e5f" ],
+    "qEcef" : [ "c158d1a74a75393c", "4160ea74d9fc1888", "414a0079744ac5be" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c1343a47b1b99e5c", "4137f6b47876d1ed", "4152b86af1e2c6d5" ],
+    "qEcef" : [ "415812c3c2718f59", "c16132b6c9e0a3c5", "4149d7d0f947b98d" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-13",
+  "p" : [ "412b570502e26f1e", "415576cb7f3bb46d", "41350778bf69de82" ],
+  "q" : [ "413404ed2c7c8fae", "413129522ada9484", "c13a66f2e202f8c6" ],
+  "dot" : "42929f703f78b5fc",
+  "normP" : "41565c77fde7d6e3",
+  "normQ" : "4142a83b201f47e1",
+  "difference" : [ "411965aaac2d607c", "c1512c76f4850f4c", "c147b735d0b66ba4" ],
+  "distance" : "4154ee1225dad5e6",
+  "legacyDot" : "42929f703f78b5fc",
+  "legacyNormP" : "41565c77fde7d6e3",
+  "legacyDistance" : "4154ee1225dad5e6",
+  "angleDeg" : "405144f6bd3d99d1",
+  "angleRad" : "3ff34a4394e9e74a",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1547ca8b1b225f8", "413d080ce9d5def4", "413506c3567b7ef9" ],
+    "qEcef" : [ "c12a7b57bba8cd51", "4136cd2f7fdf5bbe", "c13a6735cbbfa8c0" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c154cf61f533c684", "41390d4fc9a1360c", "413511251f382143" ],
+    "qEcef" : [ "c12c9a23ca1a214c", "4136372d0ebc701a", "c13a5986bb03ef21" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c154b307cc290104", "413a7ab806f1fd70", "41351126514b586e" ],
+    "qEcef" : [ "c12bd58201aa661a", "41367547f92d16ac", "c13a5985de4e0c25" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41548c7211672012", "c13c5356d9aefe6d", "413506c39e6151d8" ],
+    "qEcef" : [ "412adf8117ba60fa", "c136afd078653b73", "c13a6735e346593d" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-14",
+  "p" : [ "41493a86169be6d4", "4145b36a40114d1e", "c13675ea47b4d89d" ],
+  "q" : [ "416237f064b3bdbd", "41603ffde859ce0c", "c16005dc4c20dfae" ],
+  "dot" : "42cf01a92b1101fb",
+  "normP" : "41518f918d4cba3c",
+  "normQ" : "416d3380530cfef8",
+  "difference" : [ "4157d29dbe198810", "4155a646b0aaf589", "c15a6e3e06548935" ],
+  "distance" : "4164d352711fceee",
+  "legacyDot" : "42cf01a92b1101fb",
+  "legacyNormP" : "41518f918d4cba3c",
+  "legacyDistance" : "4164d352711fceee",
+  "angleDeg" : "402d518ed53ac9cf",
+  "angleRad" : "3fd05fe4f3c63377",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c140c2695735d4ec", "414cbfbb176c97f6", "c136769333c43bdc" ],
+    "qEcef" : [ "c15957f4206be004", "4164dd94adff8752", "c160061a596e438e" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1421a417d293274", "414bf31e1ea9624e", "c136541f189dcf1c" ],
+    "qEcef" : [ "c15b49944284bf2f", "41644823f25786ae", "c15ff34b9c2401b8" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1419e8f04e06537", "414c41bc214cfc47", "c136541ced1218b2" ],
+    "qEcef" : [ "c15a9604a9efa271", "4164836c9334e591", "c15ff34a08244690" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4141018dd18cfc51", "c14c9a8e76e6615d", "c13676936ee38bd2" ],
+    "qEcef" : [ "4159b3999f9b60c4", "c164c17b3871644a", "c160061a6e173b92" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-15",
+  "p" : [ "c15714c43d5f2d2d", "415ae9215bc0c386", "c1576e34b4a3d50b" ],
+  "q" : [ "c159623f2dcc9314", "c1584a1dd59683e0", "c1514f9972349f8f" ],
+  "dot" : "42b51d7b5d406b77",
+  "normP" : "41653f7ce3fddcdb",
+  "normQ" : "416395438c002062",
+  "difference" : [ "c1226bd7836b2f38", "c169999f98aba3b3", "41387a6d09bcd5f0" ],
+  "distance" : "4169ced89b716597",
+  "legacyDot" : "42b51d7b5d406b77",
+  "legacyNormP" : "41653f7ce3fddcdb",
+  "legacyDistance" : "4169ced89b716597",
+  "angleDeg" : "4053927950febe9f",
+  "angleRad" : "3ff5dcc0c84a66b9",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15ea74a7227a241", "c151cff6e1aa799c", "c1576e3d0a1870f7" ],
+    "qEcef" : [ "4153470d32bbb545", "c15d5f584ef9662e", "c1514f3ff83aa568" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c15dc416bee13030", "c1532fe399f7c61d", "c1577d4b406a93ec" ],
+    "qEcef" : [ "4154a7ea47f5115a", "c15c60ee69c81576", "c1516097f14e0a47" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15e1768bcfef46e", "c152ac274cb8aaf9", "c1577d4bdb2706fa" ],
+    "qEcef" : [ "41542a3bb08f7e30", "c15cbac41c6fbef9", "c15160990d47980e" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415e7fc7e9f767cb", "4152134a73e341bf", "c1576e3cb790805e" ],
+    "qEcef" : [ "c153878ad88cfb2c", "415d349efc667c71", "c1514f3fdd65ffa3" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-16",
+  "p" : [ "4142461f040ccd3d", "415eec6ca4f83125", "4143b1d6bac04eba" ],
+  "q" : [ "c1625724cb8b4fb3", "c15efeeff35ca6af", "415170848dbc87b7" ],
+  "dot" : "c2d187ad33f6abea",
+  "normP" : "4160db8dbdbb6dba",
+  "normQ" : "41698bbcb59ab6cc",
+  "difference" : [ "c166e8ac8c8e8302", "c16ef5ae4c2a6bea", "413e5e64c1718168" ],
+  "distance" : "417359aa65867ee1",
+  "legacyDot" : "c2d187ad33f6abea",
+  "legacyNormP" : "4160db8dbdbb6dba",
+  "legacyDistance" : "417359aa65867ee1",
+  "angleDeg" : "4060547bab29f680",
+  "angleRad" : "40023da4f8c6f131",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15cc03b10a5997d", "414d3322fea8f508", "4143b1451b6c0c83" ],
+    "qEcef" : [ "4157d20f61b7a6f0", "c164d95f2399612a", "415170fe5652b122" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c15d6a2e88f5bbb3", "414a627410ef9178", "4143be6406b56cca" ],
+    "qEcef" : [ "4159c4d5969d6f98", "c1644854e9b45b88", "415157f435b3c79d" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15d2f01b8661fcd", "414b645f90c4e255", "4143be65307e18ca" ],
+    "qEcef" : [ "41591152fa517201", "c1648045cae6b80d", "415157f2a2fbb37e" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415ce01ae1ae2ee2", "c14cb4401616f8ac", "4143b1453cbd7174" ],
+    "qEcef" : [ "c1582da5f2455b15", "4164bef304f459fc", "415170fe81f666f4" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-17",
+  "p" : [ "c151148c9b64604e", "c1619ed1acfa3008", "4157815cad942e37" ],
+  "q" : [ "4162a46c0c40e3be", "c15d6b46480eec3a", "41621877123ddf1a" ],
+  "dot" : "42d38a6a4ea8029c",
+  "normP" : "4166d651ae4e7a70",
+  "normQ" : "416ddb055e0314e8",
+  "difference" : [ "416b2eb259f313e5", "413749744795cf58", "41495f22edcf1ffa" ],
+  "distance" : "416c106350f2301f",
+  "legacyDot" : "42d38a6a4ea8029c",
+  "legacyNormP" : "4166d651ae4e7a70",
+  "legacyDistance" : "416c106350f2301f",
+  "angleDeg" : "404f5a5fd3db3d85",
+  "angleRad" : "3ff182c5e914eeb4",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "415f8daf01063670", "c15731a6eb5f808b", "415781bb79db4bd6" ],
+    "qEcef" : [ "4161d96d4aeae098", "415f5320479f0bd2", "41621870f0dccd5e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "41604e643c5da472", "c155baf47d6fc7ee", "415775c23fce7305" ],
+    "qEcef" : [ "4161147826769704", "416071fd458a64e6", "416224b41c35ffbd" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "41601df4770b1ecb", "c15649ab99374bc2", "415775c1580c5a6c" ],
+    "qEcef" : [ "41615c33cc976ce7", "416026312bc0cd55", "416224b4a8054375" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c15fc0747c9ea890", "4156ebf4a71078fe", "415781bb757d1cf8" ],
+    "qEcef" : [ "c161b6c5ab5e18f4", "c15fa16f05f2931a", "41621870b68a1d98" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-18",
+  "p" : [ "c159da47a041b68a", "41492560d3e62b30", "c150e6e6864b02e0" ],
+  "q" : [ "4155a302f25de520", "411e5385ab70f3d4", "c15b1e22bf272ea0" ],
+  "dot" : "c2934c742cf3ecac",
+  "normP" : "4160ac98a1fd2bc4",
+  "normQ" : "41615f2be4109ba7",
+  "difference" : [ "4167bea5494fcdd5", "c1455af01e780cb6", "c1446e7871b85780" ],
+  "distance" : "4168de2445735fe3",
+  "legacyDot" : "c2934c742cf3ecac",
+  "legacyNormP" : "4160ac98a1fd2bc4",
+  "legacyDistance" : "4168de2445735fe3",
+  "angleDeg" : "4057747d9c806773",
+  "angleRad" : "3ffa33149897cb8d",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1510eb5928d3e9c", "c15724095a02a687", "c150e6cfb291aa2f" ],
+    "qEcef" : [ "4120854b77dd82d8", "41559ed4496531bb", "c15b1e4c94f1bb80" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c14fde4ae14de44d", "c157e176a36f1b08", "c150f7efc7db640a" ],
+    "qEcef" : [ "4110b417576605fa", "4155c3bab661f25c", "c15b0fc0681942a9" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15057a5c4c1e305", "c1579a6d8962bae6", "c150f7f09a6f757a" ],
+    "qEcef" : [ "4116b019c809fc66", "4155be50a560e392", "c15b0fbf9cb22be3" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4150db987981737d", "415749603b3d5285", "c150e6cf6af93831" ],
+    "qEcef" : [ "c11e10963bc551d0", "c155a32bb44afb51", "c15b1e4cc22122eb" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-19",
+  "p" : [ "41608a78012f4215", "c13db08286322de6", "41624704f05da253" ],
+  "q" : [ "c149c1b4ebf50890", "c15dfd91bc2d6b4b", "c154331180bab65f" ],
+  "dot" : "c2cd6e9cb246451f",
+  "normP" : "4168edbcb2707792",
+  "normQ" : "41633119f33d0ee6",
+  "difference" : [ "c166fae53c2c8439", "c15691711aa0dfd2", "c16c608db0bafd82" ],
+  "distance" : "41731c01a0428654",
+  "legacyDot" : "c2cd6e9cb246451f",
+  "legacyNormP" : "4168edbcb2707792",
+  "legacyDistance" : "41731c01a0428654",
+  "angleDeg" : "405dded76b5a48ca",
+  "angleRad" : "4000aecd4d388f06",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "414a9be830521e2c", "415f2f7e421618f9", "416246ee66aeb342" ],
+    "qEcef" : [ "415b278236c328c6", "c1521c28f96eed82", "c15432c3c3ce548a" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "414798585fcb0635", "415fafdff482864b", "416251f1cb027a4a" ],
+    "qEcef" : [ "415bfd623e5a353a", "c150bf51d1b7c88a", "c1543bcf3a766b6e" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4148ae601e6f34a5", "415f7abf4829fac0", "416251f25ab2a88b" ],
+    "qEcef" : [ "415bb29db2137c5a", "c15139df33cb43a6", "c1543bcfef827738" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c14a12533068c459", "c15f4c7e5839a7d1", "416246ee3e040568" ],
+    "qEcef" : [ "c15b4f2067680e83", "4151e033091d7ffd", "c15432c3cb27c4ea" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-20",
+  "p" : [ "c1554145a42358b4", "c1337b990afdd40a", "4153bf279f86716b" ],
+  "q" : [ "413115bfadcb6b41", "c1439e78cbf6a716", "c14b335f7dcde796" ],
+  "dot" : "c2b37914ea5fdcf4",
+  "normP" : "415d6b0e14a38fbe",
+  "normQ" : "41514de77d4a6bc1",
+  "difference" : [ "415986b58f963384", "c133c1588cef7a22", "c160ac6baf36b29b" ],
+  "distance" : "41652474352ef38a",
+  "legacyDot" : "c2b37914ea5fdcf4",
+  "legacyNormP" : "415d6b0e14a38fbe",
+  "legacyDistance" : "41652474352ef38a",
+  "angleDeg" : "405fef3154914f69",
+  "angleRad" : "4001d5e391ebcb60",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "410dc4af75ffca44", "c155c91070815268", "4153bf563a6ebc2d" ],
+    "qEcef" : [ "4144d83408d6024b", "412359b7d8fa0f8a", "c14b334ab9178244" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "411f540a6044bdb8", "c155c497471f7855", "4153b102267b0aff" ],
+    "qEcef" : [ "4144996db7637fb9", "41279246671413c4", "c14b2dd41c1ed581" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "411955f9b56eba1e", "c155cc6345beb6af", "4153b101587d0ecb" ],
+    "qEcef" : [ "4144b295a43be278", "412626c0441c3fca", "c14b2dd3f65bf8e2" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c111e1b377270db4", "4155c6cf1d7c0498", "4153bf566340308b" ],
+    "qEcef" : [ "c144cd5a80828046", "c124111e399f19ea", "c14b334ae318c18a" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-21",
+  "p" : [ "4149d95dc61af094", "41558db545fdd154", "c12744e0067b5b1c" ],
+  "q" : [ "c1513aa36bef7d56", "c13a72dfe5d26582", "c148c47ceeaba2ef" ],
+  "dot" : "c2b492c82ce9f496",
+  "normP" : "41594ca51c7504fa",
+  "normQ" : "4156396af16fbcd4",
+  "difference" : [ "c15e27524efcf5a0", "c15c2a6d3f726ab4", "c142f344ed0ccc28" ],
+  "distance" : "41652afddca208c0",
+  "legacyDot" : "c2b492c82ce9f496",
+  "legacyNormP" : "41594ca51c7504fa",
+  "legacyDistance" : "41652afddca208c0",
+  "angleDeg" : "405f7569571acb85",
+  "angleRad" : "400191df9cc74a1a",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c152d943650caa7e", "41509f7651eb7c5c", "c12746d30476e0e0" ],
+    "qEcef" : [ "412afee79caaac7d", "c15224c35a5c679c", "c148c4279ee18ac9" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1539db413abfa32", "414f6ed6e52d5a95", "c126ff0905065a7c" ],
+    "qEcef" : [ "4130f1b1ada5cf0a", "c151ee3bde96812f", "c148db697760ec8c" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15357ca2d8588a3", "41500d28e1c9b9b6", "c126ff03e322dd30" ],
+    "qEcef" : [ "412f6ac644fe3772", "c152003282813abc", "c148db6acf34f0f1" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4152fdaf9e396393", "c15075cd7cb377bd", "c12746d31a8ec768" ],
+    "qEcef" : [ "c12c3e3e3697db49", "41521d295ddd7957", "c148c427630713ee" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-22",
+  "p" : [ "4141dccda62f6ec6", "c1506f331d9de75a", "415890d06197610c" ],
+  "q" : [ "4152fda36c940bf5", "412f6804188b4769", "c11f7fe60683e511" ],
+  "dot" : "428c5d81cbb27c36",
+  "normP" : "415ee042d53c2416",
+  "normQ" : "41537df24f75f474",
+  "difference" : [ "41441e7932f8a924", "41545c33a0af5047", "c15a88cec1ff9f5d" ],
+  "distance" : "4161767d75bcc2a2",
+  "legacyDot" : "428c5d81cbb27c36",
+  "legacyNormP" : "415ee042d53c2416",
+  "legacyDistance" : "4161767d75bcc2a2",
+  "angleDeg" : "405525d4e3f32234",
+  "angleRad" : "3ff79f4ed56b0381",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4151c8408e1bb530", "413732f8db92a359", "415890dea0b82e92" ],
+    "qEcef" : [ "c0fa670b2c6f8038", "4153634a1a63fca4", "c11f8273ce70e499" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "41517abc30120c6e", "413a4b9c8331c888", "415896985499160c" ],
+    "qEcef" : [ "c11551094dbdef42", "415359f7ba8fb6ca", "c11eb5eeceda9e65" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "41519701c0a5ae8e", "413916e14058e2ca", "415896988368d358" ],
+    "qEcef" : [ "c10ffb07be5e2528", "41535f19751e9158", "c11eb5e3626dbf65" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c151bb5069c92686", "c137cf5ee8cf08b4", "415890de79a3b31d" ],
+    "qEcef" : [ "41028973a9bd4afc", "c15362328d47aa84", "c11f82761e0e52be" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-23",
+  "p" : [ "4152e0127c3c1b6b", "c15b7002ac3f6ea7", "4151da4f91ab10d9" ],
+  "q" : [ "415cc809d8b3167e", "c1544b55d9645b6d", "41625f358ba0e24b" ],
+  "dot" : "42db703edc18bc00",
+  "normP" : "4162e4aab7ac1ee2",
+  "normQ" : "4169729a5a428fa9",
+  "difference" : [ "4143cfeeb8edf626", "413c92b34b6c4ce8", "4152e41b8596b3bd" ],
+  "distance" : "41567ebe098ac033",
+  "legacyDot" : "42db703edc18bc00",
+  "legacyNormP" : "4162e4aab7ac1ee2",
+  "legacyDistance" : "41567ebe098ac033",
+  "angleDeg" : "40380f80a656a60e",
+  "angleRad" : "3fdae03af9b6724a",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "415e687a28479177", "414b2942efcdab3a", "4151da605352c8ce" ],
+    "qEcef" : [ "41592e83cd97ede6", "41589e9daa11600b", "41625f2e9a211287" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "415db938786f364b", "414ded06424b2006", "4151e69c6aac8b43" ],
+    "qEcef" : [ "4157f91e6eb47275", "4159b12d6cdcd1ab", "416268a959c50356" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "415df9f37eca0bac", "414ce63f9019dacf", "4151e69cddcbf658" ],
+    "qEcef" : [ "41586949d9bf3e8c", "415946b07c1fa0a5", "416268a9c8229965" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c15e4a4986cf3069", "c14baee9e5e36c84", "4151da6009634f15" ],
+    "qEcef" : [ "c158f8118e340ee6", "c158d5d488d2f4d0", "41625f2e6e8a4b3f" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-24",
+  "p" : [ "c15475034ad479ac", "c1507f5f9d3c42ea", "4161c5d8663eff86" ],
+  "q" : [ "c13300ebd3659ef7", "c14f8ae193a51aff", "4145c47f63797134" ],
+  "dot" : "42c741fbdae62c7f",
+  "normP" : "41661a58cbcf95d0",
+  "normQ" : "4153be0a5ba59808",
+  "difference" : [ "414f6990abf623dc", "41073dda6d36ad50", "c158a9711ac14672" ],
+  "distance" : "415d3f607478a8e0",
+  "legacyDot" : "42c741fbdae62c7f",
+  "legacyNormP" : "41661a58cbcf95d0",
+  "legacyDistance" : "415d3f607478a8e0",
+  "angleDeg" : "403f7bf23d558947",
+  "angleRad" : "3fe19585ef8785d1",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4149044a5e8dc5e2", "c1571c7ab3c3d2ba", "4161c5f9a2e14468" ],
+    "qEcef" : [ "414d4ae9e8015782", "c13e23dba844ed0c", "4145c4c9fa6dcce2" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "414b29a7a145f639", "c156955fd60bf0d7", "4161befcc6fb5d02" ],
+    "qEcef" : [ "414df8067138af60", "c13b6fd4db6d98ae", "4145bdf2b31f222c" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "414a61d6aa53fff2", "c156d04ca24e9354", "4161befc5734d0b5" ],
+    "qEcef" : [ "414dba838d36ed03", "c13c76990cdcb51e", "4145bdf218d1aa21" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c14969d493c6edac", "415700b7c1ce4194", "4161c5f9af84441b" ],
+    "qEcef" : [ "c14d6bd19dfc021c", "413da29344a08eca", "4145c4c9e9d5a54f" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-25",
+  "p" : [ "c0d5324890aa203f", "c12233da12d3f7b6", "414375c47f74ff2d" ],
+  "q" : [ "41130881d80fd333", "4149ab79637e581e", "41563f7aaf38a7e3" ],
+  "dot" : "42a765791c76c87c",
+  "normP" : "4143fc5743c279da",
+  "normQ" : "4159b658d2529e9f",
+  "difference" : [ "41145ba6611a7537", "414e386fe833560c", "41490930defc5099" ],
+  "distance" : "4153a9c02b417edf",
+  "legacyDot" : "42a765791c76c87c",
+  "legacyNormP" : "4143fc5743c279da",
+  "legacyDistance" : "4153a9c02b417edf",
+  "angleDeg" : "40459f0003c3ba98",
+  "angleRad" : "3fe826a7872e022d",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4121c72b02546416", "c0ffa14d9434a62a", "414375cd1ef8f824" ],
+    "qEcef" : [ "c148cfee72114b6b", "412c01aa21273678", "41563f61140a6432" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4121ec3203361af2", "c0fa759d75637b33", "4143759b99cf323c" ],
+    "qEcef" : [ "c1492144a78bbdd9", "4126cc5d975fa385", "41564057b8842b5a" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4121dcf61cd090de", "c0fcebc0d654b84a", "4143759b8e3af2af" ],
+    "qEcef" : [ "c149073b5c5fb773", "412885e2d3216972", "41564057ddf8c346" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c121cfb50438b560", "40fe67d42b84c932", "414375cd19ef9021" ],
+    "qEcef" : [ "4148df1ca9d72df2", "c12b26df8c9c6584", "41563f6120a91852" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-26",
+  "p" : [ "414f34ec268ef9e6", "c163064466a564fc", "c160b70b8e1edabf" ],
+  "q" : [ "41612ba67fc91ca7", "414d8010999d2563", "4160f3d3f4b93055" ],
+  "dot" : "c2d21b55f93e25b4",
+  "normP" : "416a7fb499d48e78",
+  "normQ" : "41693b2323c46ebf",
+  "difference" : [ "4152bcd6ec4abc5b", "416a66488d0cae55", "4170d56fc16c058a" ],
+  "distance" : "4175e61037ee8885",
+  "legacyDot" : "c2d21b55f93e25b4",
+  "legacyNormP" : "416a7fb499d48e78",
+  "legacyDistance" : "4175e61037ee8885",
+  "angleDeg" : "405ceb6223fc2e43",
+  "angleRad" : "400026d44ca1b6c6",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4164200939caa0de", "4140dea0b439c936", "c160b6f68fe354a3" ],
+    "qEcef" : [ "c1408aa648e5d75b", "41623984f9487eaf", "4160f3a801d59ca8" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4163e836ca5ffc9f", "4144d8fd4bb68d0e", "c160b1ff1e05fb28" ],
+    "qEcef" : [ "c14401578f60aba2", "4161f6ac529f11b3", "4160ff40b4de9536" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4163fe663975486f", "414379bfd58748c6", "c160b1fefe1063a0" ],
+    "qEcef" : [ "c142c456bec1a6a8", "41620c00b9afac8f", "4160ff4161bebb4f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c164168f1823b889", "c1418fb76134cba0", "c160b6f6b7904cad" ],
+    "qEcef" : [ "41412b00e7ecf803", "c162303de8161240", "4160f3a7e4f0eced" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-27",
+  "p" : [ "414d30d118ece412", "c1417e6c70127cdb", "413a64a386af72f8" ],
+  "q" : [ "c15f9477be2f0664", "c15e7be40448fdee", "414f559509ce03b1" ],
+  "dot" : "c296b9d09b8345ef",
+  "normP" : "4152400d85f73589",
+  "normQ" : "41674d6ff9e1b09f",
+  "difference" : [ "c16716702552bc36", "c155bcadcc3fbf80", "4142234346764a35" ],
+  "distance" : "4169eaebeb29d7a4",
+  "legacyDot" : "c296b9d09b8345ef",
+  "legacyNormP" : "4152400d85f73589",
+  "legacyDistance" : "4169eaebeb29d7a4",
+  "angleDeg" : "405808a80ad142c9",
+  "angleRad" : "3ffad8954b4808d1",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "414680ad7dcde8cc", "4149879fc29c41e6", "413a647c0ced42bc" ],
+    "qEcef" : [ "41583e492f6a8a82", "c1624b6c8a1f05f9", "414f5674a4389070" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "414542c6c6723eaa", "414a89076abdcae1", "413a8b12870868fc" ],
+    "qEcef" : [ "4159f2f4c6cc5f4e", "c161b7f6ceb52387", "414f2b3ac846b2bd" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4145b6c2688aa203", "414a2a731e864369", "413a8b1454f2305e" ],
+    "qEcef" : [ "41595602094b8dc0", "c161f065fc2d05d5", "414f2b3802cbce83" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c14648408bd72827", "c149b8ee21e5e9a0", "413a647b636c4338" ],
+    "qEcef" : [ "c1588e9eec33a0b7", "4162308f786b4273", "414f5674e6596ce9" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-28",
+  "p" : [ "41599a10a0c76b87", "c15edc6e2c6630b1", "c153d3f8a102fccb" ],
+  "q" : [ "c161bc37fb4a2a36", "4162285c10f1fce7", "c160bad7037d6b43" ],
+  "dot" : "c2d555976db6c410",
+  "normP" : "41665dc6b32a013c",
+  "normQ" : "416e66423a528219",
+  "difference" : [ "c16e89404baddffa", "4170cb4993928aa0", "c14b436acbefb376" ],
+  "distance" : "4176f392a05720b6",
+  "legacyDot" : "c2d555976db6c410",
+  "legacyNormP" : "41665dc6b32a013c",
+  "legacyDistance" : "4176f392a05720b6",
+  "angleDeg" : "405e08a5cc4f69ce",
+  "angleRad" : "4000c626a335f99f",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "41617f98b1f08f74", "4153929365533d25", "c153d3ed87f83393" ],
+    "qEcef" : [ "c1651353d75bf521", "c15c49e1d24a8057", "c160bad8cdcb61a9" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4161044f22ee0645", "41554399ef37f804", "c153c33412056348" ],
+    "qEcef" : [ "c1645fff9e3297de", "c15e2be18c4bbc1e", "c160c673ef70d52f" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "416132757e6fd6dc", "4154ad02a77be4d3", "c153c333676cea36" ],
+    "qEcef" : [ "c164a19f8325b5a0", "c15d7762b0d002b8", "c160c6746bae6ad8" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c16169e1f1b18432", "c153df729d162816", "c153d3ede4b67213" ],
+    "qEcef" : [ "4164f3fc13c03429", "415ca66cece5a811", "c160bad8915e6e04" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-29",
+  "p" : [ "4158f65a38e76a73", "415fca4881ea9b6d", "c13a61ed08a74ef5" ],
+  "q" : [ "c156c0ce42242f7f", "c15a878f2f7606a7", "4153be898f254cc5" ],
+  "dot" : "c2d8164d3cf89a16",
+  "normP" : "41647a1e59c06042",
+  "normQ" : "41641224310f5d0a",
+  "difference" : [ "c167db943d85ccf9", "c16d28ebd8b0510a", "415a5704d14f2082" ],
+  "distance" : "4173f4af58624a36",
+  "legacyDot" : "c2d8164d3cf89a16",
+  "legacyNormP" : "41647a1e59c06042",
+  "legacyDistance" : "4173f4af58624a36",
+  "angleDeg" : "4063f57e10ad05d4",
+  "angleRad" : "40064b5b9b447557",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15abac1940d5274", "415e51acbaa1797a", "c13a6386de5acc92" ],
+    "qEcef" : [ "4155f504f9c75bbc", "c15b30e8f96492db", "4153bee2783ddc77" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c15c23295e597720", "415d084dbfcb83db", "c13a1ec419515f0c" ],
+    "qEcef" : [ "415737c650a9acf8", "c15a2b393c1468b9", "4153af3d46981f33" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15ba251bc4eec0d", "415d830b63a92492", "c13a1ebf775f5946" ],
+    "qEcef" : [ "4156c3b8ce40a5af", "c15a906c45780bb4", "4153af3c3d2db3d8" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415afd42e16102ee", "c15e16887249cfa8", "c13a6387226192fa" ],
+    "qEcef" : [ "c15630aec2d17c3c", "415b004e41d324f9", "4153bee28aa57a06" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-30",
+  "p" : [ "c12165f56ead1a6a", "c15e1bd7c75deb82", "4152add6bc09b94a" ],
+  "q" : [ "4153252e9bbd83b1", "c148e0b0def85c41", "413911d91f52b372" ],
+  "dot" : "42bc1f3856c6b066",
+  "normP" : "4161bfdd1b2aaca2",
+  "normQ" : "4157ad049ff439da",
+  "difference" : [ "415551ed499326fe", "4151ab7f57e1bd62", "c148d2c0e86a18db" ],
+  "distance" : "415e5850a550e04b",
+  "legacyDot" : "42bc1f3856c6b066",
+  "legacyNormP" : "4161bfdd1b2aaca2",
+  "legacyDistance" : "415e5850a550e04b",
+  "angleDeg" : "404cd0de67e41bc7",
+  "angleRad" : "3ff0180550277a62",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "415d368c39f0ea04", "c13e6b180d9e6a16", "4152ae11b51241f8" ],
+    "qEcef" : [ "414f6a7bf96cdd07", "415091a052dbbf06", "413911ac68a8465a" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "415d89263fa99722", "c1390755cf7eeba0", "4152ac2929f2ad94" ],
+    "qEcef" : [ "414dcd8f0ec03e9f", "415147a193f95992", "4139443e2d846992" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "415d6c7e3641cbca", "c13b0e5ee07c7451", "4152ac28d60c951a" ],
+    "qEcef" : [ "414e64890ea98507", "415105645659fbf3", "4139444083839919" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c15d470407b16e99", "413d698320f69e08", "4152ae11961d7024" ],
+    "qEcef" : [ "c14f2139076621f0", "c150b40e62cfcd0d", "413911ab85bb7ee4" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-31",
+  "p" : [ "415df1e1bc565f36", "415e8c2766d53c43", "414b61a78301498c" ],
+  "q" : [ "413bd91ef5e69ed5", "4153dbf6117f4526", "4155fc17c3f1374c" ],
+  "dot" : "42d17074057ce1b1",
+  "normP" : "41667502013f22c0",
+  "normQ" : "415e6eee7565b6af",
+  "difference" : [ "c156fb99fedcb781", "c1456062aaabee3a", "4140968804e1250c" ],
+  "distance" : "415aab481a5377e8",
+  "legacyDot" : "42d17074057ce1b1",
+  "legacyNormP" : "41667502013f22c0",
+  "legacyDistance" : "415aab481a5377e8",
+  "angleDeg" : "4041a153ad75e29f",
+  "angleRad" : "3fe3b16f3b3969fa",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1589a7257c9c021", "41617f3472f7e20a", "414b60cd78ca7d56" ],
+    "qEcef" : [ "c15244008fdb8f2b", "4144e7c21e04e51c", "4155fbe7108c387b" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c15a3dd7cb03a90b", "4160e00379c9a23f", "414b89c9faca4e71" ],
+    "qEcef" : [ "c152bf7af9a28740", "414308467b250d24", "415600d5dd920807" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c159a84f06b8c5e1", "4161191f14d01edc", "414b89cca118bc0e" ],
+    "qEcef" : [ "c15294e35ff76adf", "4143ac93894989cb", "415600d646de26d0" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4158e743b5b0d93f", "c16163f3f6adf8b2", "414b60cd3dfb2cae" ],
+    "qEcef" : [ "41525ad80a50914a", "c14497200c3e1363", "4155fbe718d8cbc6" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-32",
+  "p" : [ "4144db79a3dce805", "c1173798b226d4af", "4144cc3bc08555da" ],
+  "q" : [ "c1615bfe6fe5bed1", "c159bf036d215681", "c161229e61c41b74" ],
+  "dot" : "c2c548adebc143df",
+  "normP" : "414d98e6aed6fca1",
+  "normQ" : "416b9495ec48863e",
+  "difference" : [ "c16692dcd8dcf8d2", "c1584b89e1fee936", "c16655ad51e570ea" ],
+  "distance" : "4170fff246e06067",
+  "legacyDot" : "c2c548adebc143df",
+  "legacyNormP" : "414d98e6aed6fca1",
+  "legacyDistance" : "4170fff246e06067",
+  "angleDeg" : "4062518bf0f0306a",
+  "angleRad" : "400476461d09c404",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "412a8fa8cd948a8d", "4143fc030044cb14", "4144cc1c143daf83" ],
+    "qEcef" : [ "415303f7dcdd50ff", "c163689abbc7d2b0", "c1612268089672d4" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4126b5c40970d12e", "4144391b48d695df", "4144da064709a75b" ],
+    "qEcef" : [ "4154d906f3b125cf", "c162e3f9e2f43f9b", "c1612e356d85e899" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "412818ee5febf400", "41441f59bd793592", "4144da070005e6d5" ],
+    "qEcef" : [ "415431f4a86101ba", "c1631122f6b07b08", "c1612e3627b84cce" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c129df661e91e07f", "c1440a71acfe914c", "4144cc1be31232cc" ],
+    "qEcef" : [ "c1535941d23b44c4", "4163537c8b08e792", "c1612267f1cdbef1" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-33",
+  "p" : [ "414d902b9d526a05", "4148d81f0585d3df", "c15351f05f11b6ca" ],
+  "q" : [ "41520684be4115a6", "4139bf0317654d50", "c14fae9ce4132041" ],
+  "dot" : "42c4639a3d3163e6",
+  "normP" : "415b5073f3f7f396",
+  "normQ" : "4158d8603a6986e2",
+  "difference" : [ "4129f3777cbf051c", "c137f13af3a65a6e", "412bd50f6841354c" ],
+  "distance" : "413e94fc032239b4",
+  "legacyDot" : "42c4639a3d3163e6",
+  "legacyNormP" : "415b5073f3f7f396",
+  "legacyDistance" : "413e94fc032239b4",
+  "angleDeg" : "402feeb09705f90f",
+  "angleRad" : "3fd1d59baaf4b6d2",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c143101e37510c0b", "4150ca684e49f511", "c15352215248f6a0" ],
+    "qEcef" : [ "c12873b923f166ae", "4152e4dca67d330e", "c14faef4619166a3" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1449ff84ab1ad3d", "41505e85e7d9d3ce", "c1534807ba888ac5" ],
+    "qEcef" : [ "c12f90cab3b47f76", "4152c4c6533cb5ef", "c14f969638fe53af" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1440f19e6194888", "41508b4b2eb929e5", "c15348071818f33b" ],
+    "qEcef" : [ "c12cfac2cf928b6a", "4152d56ec440d910", "c14f9694d1ed5f85" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "414359e126c736e2", "c150b542ceaf4592", "c153522163f3a9cc" ],
+    "qEcef" : [ "4129c04f0ef0e8ef", "c152ddf3daf177e0", "c14faef4a15420dc" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-34",
+  "p" : [ "c159844b8c02f059", "4159b5fe35ce7550", "415b56dd09f43d15" ],
+  "q" : [ "c161353a95514e6c", "c161462eefdada18", "c161a459c0bb69ba" ],
+  "dot" : "c2ce75d062030b0a",
+  "normP" : "4166b0fe3804bc0a",
+  "normQ" : "416e187d7e7b75ea",
+  "difference" : [ "c141cc533d3f58fe", "c16e212e0ac214c0", "c16f4fc845b58844" ],
+  "distance" : "4175d7240290fbda",
+  "legacyDot" : "c2ce75d062030b0a",
+  "legacyNormP" : "4166b0fe3804bc0a",
+  "legacyDistance" : "4175d7240290fbda",
+  "angleDeg" : "405bb9f352e3be42",
+  "angleRad" : "3ffef87c9e37b410",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15deac249c8375a", "c1546c7b5a32acac", "415b56db37c18348" ],
+    "qEcef" : [ "415bb9f3ecde181a", "c1640f0bf9f1019c", "c161a41b9dc86f0f" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c15cebdf6e3cce52", "c155e48062f741ae", "415b461ba281c33e" ],
+    "qEcef" : [ "415d9c61c965b8d8", "c16354f06472c465", "c161afdf362be68a" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15d4b21cc57a661", "c15564635ad78b40", "415b461aeda7dfd8" ],
+    "qEcef" : [ "415cf118437d377b", "c163955de973905b", "c161afdff83e5908" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415dbd8142102a90", "4154ae291621b06f", "415b56db8e33abaf" ],
+    "qEcef" : [ "c15c1205b964afbf", "4163f0552a74c867", "c161a41b8c8d8029" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-35",
+  "p" : [ "4113296aea74b986", "40e1bf01d6aa658f", "41405e447c7fa429" ],
+  "q" : [ "c14bd7177576617a", "415818eab5ae6757", "c15b530b96fe857f" ],
+  "dot" : "c2ad9e97ab4e160a",
+  "normP" : "41408b7d2ea6e943",
+  "normQ" : "4163801ebe64c8f8",
+  "difference" : [ "c14e3c44d2c4f8ab", "4157f56cb201128c", "c161c116ea9f2bca" ],
+  "distance" : "4166b66203a1721f",
+  "legacyDot" : "c2ad9e97ab4e160a",
+  "legacyNormP" : "41408b7d2ea6e943",
+  "legacyDistance" : "4166b66203a1721f",
+  "angleDeg" : "406128547ad6c0ff",
+  "angleRad" : "40032a479a76c642",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "40d4b6e998c5465a", "4113400df80568b8", "41405e3fbb0c4598" ],
+    "qEcef" : [ "c15a393a35a6d322", "c142a107803b3af3", "c15b531f04908e63" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "40b5c47a883f0408", "4112f306e18284ec", "41405fd7fe8def6a" ],
+    "qEcef" : [ "c159be5440ae11c3", "c144f4e5f7501c18", "c15b5c1375b2e910" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "40c54eab316bef40", "4112f0cb5075fb89", "41405fd814c064d4" ],
+    "qEcef" : [ "c159eb78fd6ca034", "c144117e285224ac", "c15b5c13c21e3c1c" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c0d2109684105806", "c11342ba114fe2e7", "41405e3fb6201a1b" ],
+    "qEcef" : [ "415a2478753398b4", "41431455d2b4ceda", "c15b531ec974979e" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-36",
+  "p" : [ "c161a9caae4cb9b6", "c14c59952e743f68", "c14f80cdf2964a82" ],
+  "q" : [ "c1416a3a061e8852", "c14247b83e4410b3", "c1558891959c7851" ],
+  "dot" : "42c842ce8fa782f8",
+  "normP" : "416498ebda55f40f",
+  "normQ" : "4158f60415988a44",
+  "difference" : [ "415a9e78598a2f43", "413423b9e0605d6a", "c13720aa71454c40" ],
+  "distance" : "415bb37d9d8fa16b",
+  "legacyDot" : "42c842ce8fa782f8",
+  "legacyNormP" : "416498ebda55f40f",
+  "legacyDistance" : "415bb37d9d8fa16b",
+  "angleDeg" : "40447c99e89ae861",
+  "angleRad" : "3fe6e24699373dcc",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "413e1a7c9f473a56", "c162a81fc8df9bc2", "c14f801cc3de1c0c" ],
+    "qEcef" : [ "413da1839b834d52", "c1447220cfe9e45a", "c155887169434e0e" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4142969f6d9b5bdf", "c1626fb99439b3e0", "c14fafd559f218ae" ],
+    "qEcef" : [ "413f90a9e82ee49e", "c1439b66b61d3cf6", "c1558e6407bc583f" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4141515956c416f2", "c162837aa24ea44f", "c14fafd81dfea590" ],
+    "qEcef" : [ "413ee2e114a4ae7b", "c143e01d8d9e9cf4", "c1558e646a7ad276" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c13f62d5cf0a147f", "41629fa98d02f959", "c14f801c4a9c0a3e" ],
+    "qEcef" : [ "c13dfb44cea2327a", "414451507d19a942", "c1558871610470b0" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-37",
+  "p" : [ "c140c4a493a37e5d", "4151629f9cfd3831", "416111171798d66a" ],
+  "q" : [ "c14f807ab553bc8f", "41274be54d05f462", "416258afd1d8225a" ],
+  "dot" : "42d66c8fb53a7163",
+  "normP" : "41639b3a01654e4f",
+  "normQ" : "416404b30a967f1f",
+  "difference" : [ "c13d77ac43607c64", "c14cf245e6b8f34a", "4124798ba3f4bf00" ],
+  "distance" : "415070ccf2eefac5",
+  "legacyDot" : "42d66c8fb53a7163",
+  "legacyNormP" : "41639b3a01654e4f",
+  "legacyDistance" : "415070ccf2eefac5",
+  "angleDeg" : "4037eacc5bd636ca",
+  "angleRad" : "3fdab73b37b6791a",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c1529e894b0cb1ed", "c13459469ea5911b", "4161110e9ca84315" ],
+    "qEcef" : [ "c136e59a733832b0", "c14deb26bac73bfc", "416258bb1e49f040" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1525de5761e58eb", "c13837ca0a4687d0", "41610e5bfef8af9e" ],
+    "qEcef" : [ "c134129c2ad6c524", "c14e9e89d85dc605", "41625375a6675536" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15277d91ba5bc1a", "c136f38c633af170", "41610e5bea619078" ],
+    "qEcef" : [ "c1351f5f6ab3f1fe", "c14e7137e9a5328b", "4162537560b098ee" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "41529328701e997c", "4134fd1113a22f16", "4161110eb0292a0f" ],
+    "qEcef" : [ "413661a16cd13370", "414e0412d595e451", "416258bb31480d97" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-38",
+  "p" : [ "c161d3fb9a1e1cb6", "41576c7c53304fdc", "c162e25babb58495" ],
+  "q" : [ "c1516b3bdc0d8509", "c148608b51b067ab", "c14777c41b9fa39e" ],
+  "dot" : "42c85612b5152c1f",
+  "normP" : "416c7d2d1397522b",
+  "normQ" : "41584871b2311627",
+  "difference" : [ "41523cbb582eb463", "c161ce60fe0441d9", "415a08d5499b375b" ],
+  "distance" : "4167de1494a3821a",
+  "legacyDot" : "42c85612b5152c1f",
+  "legacyNormP" : "416c7d2d1397522b",
+  "legacyDistance" : "4167de1494a3821a",
+  "angleDeg" : "404bdf94a9da19e4",
+  "angleRad" : "3fef228529691f5c",
+  "spaceLos" : false,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c15d81e0366c15f8", "c15ecfd83d60ce7b", "c162e2517f214f8e" ],
+    "qEcef" : [ "4141a5ba425520bc", "c15357bb531c52d9", "c1477759b4ed9776" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c15bffdd558a5f94", "c1600a42b73672be", "c162ee13ed997f11" ],
+    "qEcef" : [ "414378c25bebf202", "c152df0930bcfee8", "c1478f0639d89448" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c15c8bff3e3e9040", "c15f98120d49f8b1", "c162ee14783afeb4" ],
+    "qEcef" : [ "4142d1e8e886d13d", "c153092b7356ffa7", "c1478f07acb47968" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "415d3dc10bddc894", "415f10865a04838d", "c162e2514a2616a2" ],
+    "qEcef" : [ "c141fabd4c0d2967", "4153441ed77f0978", "c147775985799c3c" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-39",
+  "p" : [ "41567ba30f0b079b", "4153c74fd27ebf91", "c1617f49022a13a9" ],
+  "q" : [ "c13b6113d4bd519c", "c15f0153b48c5c4d", "c16122a6e8680d83" ],
+  "dot" : "42bb027895dc48a4",
+  "normP" : "41670758d6dd52a8",
+  "normQ" : "41675c04a7b54d8b",
+  "difference" : [ "c15d53e8043a5c02", "c1696451c3858def", "4107288670818980" ],
+  "distance" : "416d52fd6a33f9fe",
+  "legacyDot" : "42bb027895dc48a4",
+  "legacyNormP" : "41670758d6dd52a8",
+  "legacyDistance" : "416d52fd6a33f9fe",
+  "angleDeg" : "40539a7f00966669",
+  "angleRad" : "3ff5e5b6c5851de7",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c14ebbee7148bda7", "4159b2fcb966da9a", "c1617f6f0b6b0204" ],
+    "qEcef" : [ "415d3f76ec165dee", "c148b90baa0a0dde", "c1612284758ac494" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c1508f541ce41278", "41590802714273df", "c16177be6f0db04a" ],
+    "qEcef" : [ "415dcfe8e6432152", "c145bd0c92b2eda0", "c161250513c673c4" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1502088d3d6fac9", "41594ff36fb5e8b6", "c16177bdf28559f7" ],
+    "qEcef" : [ "415d9ef193d472c8", "c146c2a2bbcef2de", "c1612505537ce0e6" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "414f2cd045ce58d6", "c15990e8264e4526", "c1617f6f18543744" ],
+    "qEcef" : [ "c15d5a679ff46441", "41483803ae5d5da4", "c1612284806ea6e4" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-40",
+  "p" : [ "c154bed5f2b8b346", "4147ab3153174780", "415f078c1aa2623d" ],
+  "q" : [ "415ed16c7e52ccb4", "416014d784733657", "c15caf82b539fd36" ],
+  "dot" : "c2d1f33a6d1b89f5",
+  "normP" : "41639411dc8cbaf0",
+  "normQ" : "416a7da936d7cf72",
+  "difference" : [ "4169c8213885bffd", "415454165f5ac8ee", "c16ddb8767ee2fba" ],
+  "distance" : "41745e4de900ddb6",
+  "legacyDot" : "c2d1f33a6d1b89f5",
+  "legacyNormP" : "41639411dc8cbaf0",
+  "legacyDistance" : "41745e4de900ddb6",
+  "angleDeg" : "405ee7fa9ab8d197",
+  "angleRad" : "400142e1f4d2c8bc",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c14ecf505643ee7e", "c1524043e357a47d", "415f079b3984cbcc" ],
+    "qEcef" : [ "c15a0845cd8190f4", "4162127c90990679", "c15caff43b323957" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c14d0f51ddc9b641", "c1530aeeb12da249", "415ef9d9dfddfe0c" ],
+    "qEcef" : [ "c15bb6079f6c6b9b", "4161788cc548640b", "c15c9ad0e8c3891a" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c14db5d76749c901", "c152ca4462cdfbc5", "415ef9d93981012a" ],
+    "qEcef" : [ "c15b1b320c87db50", "4161b4df388f7c66", "c15c9acf892c3588" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "414e7ea600ed12f7", "41526202c1b86449", "415f079b750a3950" ],
+    "qEcef" : [ "415a579c8bf4d907", "c161f5a7c68ffb31", "c15caff458990614" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-41",
+  "p" : [ "c15ea4844359774c", "4161c3b4a5be6110", "c15509edafc0eb2d" ],
+  "q" : [ "41444d15f8732ffe", "c1350c4f8279eaac", "4153bc0d863d6373" ],
+  "dot" : "c2cc897c2c368868",
+  "normP" : "4169b5a01ce80279",
+  "normQ" : "4156ceb035682011",
+  "difference" : [ "416465879fc987a6", "c164653e960d9e66", "416462fd9aff2750" ],
+  "distance" : "4171a92985e019d3",
+  "legacyDot" : "c2cc897c2c368868",
+  "legacyNormP" : "4169b5a01ce80279",
+  "legacyDistance" : "4171a92985e019d3",
+  "angleDeg" : "4061a47be9e38dc6",
+  "angleRad" : "4003b4f60a283866",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c164402f8337bc4c", "c157aef37fc7278a", "c15509f863905b90" ],
+    "qEcef" : [ "413c11767ed8a198", "41420de14e075966", "4153bc05282bf3d3" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c163a98fd9811ca8", "c159867fe3dafa20", "c1551df836035f6b" ],
+    "qEcef" : [ "413a4c588676c968", "414298ff00263762", "4153c2ba66a88cc4" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c163e0fd45c1f40b", "c158d8745f959aea", "c1551df904195e20" ],
+    "qEcef" : [ "413aef0e46f8844c", "41425e6a2fbd0ee2", "4153c2bab856e301" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "416425eba03b2856", "415807e7dd8c53d6", "c15509f7f63aec46" ],
+    "qEcef" : [ "c13bc1b18ab03f0c", "c1422c9c80b38b60", "4153bc050bacafe7" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-42",
+  "p" : [ "c158469b7eec1c0d", "c156575eceb8c7a1", "414212cde47b1ec6" ],
+  "q" : [ "413161992df9d4a2", "c15cd8848af23f0a", "c14fd65332acc887" ],
+  "dot" : "42b8b1d1f70ac035",
+  "normP" : "41611a7b0ce069c5",
+  "normQ" : "41609db06a379c3f",
+  "difference" : [ "415c9f01ca6a9136", "c13a0496f0e5dda4", "c158f4908b93f3a6" ],
+  "distance" : "41634350ddccbf6c",
+  "legacyDot" : "42b8b1d1f70ac035",
+  "legacyNormP" : "41611a7b0ce069c5",
+  "legacyDistance" : "41634350ddccbf6c",
+  "angleDeg" : "40516a4948e45869",
+  "angleRad" : "3ff373f41c893d41",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "41518ff09bf52696", "c15beda760456b74", "41421375c7d66b00" ],
+    "qEcef" : [ "415d27d869ea9c6e", "c10ede571c952dc8", "c14fd5f8ff03d85c" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4152ddbdd2299f9c", "c15b160e870f5ed0", "4141f244c0afadb6" ],
+    "qEcef" : [ "415d2c5be5cdc844", "40fd9a06ac374040", "c14fd0f4d5927969" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "415265d0e23ab2d0", "c15b681131cc8ac0", "4141f242a40ccb8c" ],
+    "qEcef" : [ "415d2d4a69eeee9f", "c0c4032df5802280", "c14fd0f4fe9a929c" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c151cd4491b6253b", "415bc6b836425d3a", "41421375fd433640" ],
+    "qEcef" : [ "c15d29b16245e3ac", "4106d7c728923448", "c14fd5f9568460ba" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-43",
+  "p" : [ "41253b0972b2e18c", "4142f651a1256b65", "415874bd8d803c4b" ],
+  "q" : [ "c13df6c5c40273b3", "c15ad4d4aa2a2072", "4144c8cfff4cc3fa" ],
+  "dot" : "c2741e4bee1c2e88",
+  "normP" : "415a5d0a0a82b073",
+  "normQ" : "415dbb945fd157b1",
+  "difference" : [ "c1444a253eadf23c", "c16227febd5e6b12", "c14c20ab1bb3b49c" ],
+  "distance" : "41641ecab5afb7f3",
+  "legacyDot" : "c2741e4bee1c2e88",
+  "legacyNormP" : "415a5d0a0a82b073",
+  "legacyDistance" : "41641ecab5afb7f3",
+  "angleDeg" : "4056de200af1a3d4",
+  "angleRad" : "3ff98b1ede048d55",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c141af39f18dbf3c", "413153d7e4bdb022", "415874a77d52cc1e" ],
+    "qEcef" : [ "4159066f410730d1", "c14879ada87e97d6", "4144c94ccc4b4b33" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c142172a86d6d5cc", "412ebf5683183e79", "4158768c6389339a" ],
+    "qEcef" : [ "415993348e0edd73", "c1461fe9c421343f", "4144be77e850b2df" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c141f4a6525775a9", "412ffca06647facc", "4158768c8f51b140" ],
+    "qEcef" : [ "4159618cd570cc46", "c1470033725d1b16", "4144be76ed0f69d9" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "4141c2225039ef17", "c13105ce12a87415", "415874a782c101e8" ],
+    "qEcef" : [ "c1592124b35b275f", "41480b3e21020be4", "4144c94cad77fe51" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-44",
+  "p" : [ "41106f07100973e6", "c13168ab326b286f", "c153ce6c7e21970b" ],
+  "q" : [ "41611146cbb3fb3b", "414616389d252398", "41591aa50456300b" ],
+  "dot" : "c2bfe39192cf8dcf",
+  "normP" : "41544e0c4a07eff8",
+  "normQ" : "4165e4d552e61a84",
+  "difference" : [ "41608dce9333af9c", "414eca8e365ab7d0", "41667488c13be38b" ],
+  "distance" : "416cf0a5fb666d87",
+  "legacyDot" : "c2bfe39192cf8dcf",
+  "legacyNormP" : "41544e0c4a07eff8",
+  "legacyDistance" : "416cf0a5fb666d87",
+  "angleDeg" : "405f41469b295a89",
+  "angleRad" : "400174c163ccd9f8",
+  "spaceLos" : false,
+  "sphereLos" : false,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "4131de03401b1122", "40ec0f73e8eed45c", "c153ce665886945d" ],
+    "qEcef" : [ "c132a6cce7f85388", "4161c967c022c93f", "41591a54454ebe5a" ],
+    "los" : false
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4131d433c9fad2c4", "40fee3659a7dd646", "c153cdc1eca15362" ],
+    "qEcef" : [ "c1396b15dea07dc9", "41619f8c68babf20", "415931568be0fca0" ],
+    "los" : false
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4131dc0603cc80ba", "40f9fae8eda8d2e0", "c153cdc1ebe5d426" ],
+    "qEcef" : [ "c136fd9d4e0b9b04", "4161acdd2069642c", "41593157dc21f841" ],
+    "los" : false
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c131dbe92e502cc7", "c0f07d030aa014a4", "c153ce665ff0d6a0" ],
+    "qEcef" : [ "4133dfee79b4219f", "c161c41a8dc21c07", "41591a5407932fae" ],
+    "los" : false
+  } ]
+}, {
+  "id" : "seeded-45",
+  "p" : [ "41600c1121ebd024", "c10c2fbaf23c81a1", "c1023ec25be0257c" ],
+  "q" : [ "41527770e864ad6b", "415e9fbe95f8362f", "c1445e56c1056d0c" ],
+  "dot" : "42c1dc06adf1e14c",
+  "normP" : "41600e4301e1dece",
+  "normQ" : "41629766e134177d",
+  "difference" : [ "c14b4162b6e5e5ba", "415f813c6d8a1a3c", "c1433a6a9b476ab4" ],
+  "distance" : "4161d2cca9bd02f1",
+  "legacyDot" : "42c1dc06adf1e14c",
+  "legacyNormP" : "41600e4301e1dece",
+  "legacyDistance" : "4161d2cca9bd02f1",
+  "angleDeg" : "404eb38fb1aad5bf",
+  "angleRad" : "3ff1259b6c477f20",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "413ac5dcc20bfb26", "415f66a2e8213b64", "c10245abe2f274c6" ],
+    "qEcef" : [ "c15ac31376f92c39", "4157b82b59f774df", "c1445f085d597bb1" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "4134c72c5fea703d", "415faf4b9176dc93", "c0ff2be68e0a1b62" ],
+    "qEcef" : [ "c15bdaf59cc4a2ef", "415672b4690c3230", "c14445625f1e1b63" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "4136f43116930c6f", "415f973bfd7dea24", "c0ff2b9d4f3a3e86" ],
+    "qEcef" : [ "c15b771b64583d8d", "4156ec742eb7d6ee", "c14445608a3bbb03" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c139b10c4c70dbae", "c15f75139482769b", "c10245b4cff0bf30" ],
+    "qEcef" : [ "415af70cab500716", "c1577d04b87bc183", "c1445f0865a5f95d" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-46",
+  "p" : [ "415b1aee1bd1ed73", "413a964a5186c064", "c1542c9e11c27fac" ],
+  "q" : [ "4156d35cc18b0052", "c13b131c2f757144", "416028a9f4fc7778" ],
+  "dot" : "c293921842a2de60",
+  "normP" : "416137df7607de3e",
+  "normQ" : "416411fae153fd52",
+  "difference" : [ "c1311e45691bb484", "c14ad4b3407e18d4", "416a3ef8fdddb74e" ],
+  "distance" : "416b2c886e607d6a",
+  "legacyDot" : "c293921842a2de60",
+  "legacyNormP" : "416137df7607de3e",
+  "legacyDistance" : "416b2c886e607d6a",
+  "angleDeg" : "40574fc727d34c9c",
+  "angleRad" : "3ffa0a126b92ff00",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "c119d5899839ef58", "415bdc60c0b58b8b", "c1542cda4caae8fe" ],
+    "qEcef" : [ "4145996bf686b1b1", "415537e7a4da69fb", "4160289bea03e5fc" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "c12770b68630b5ca", "415bce1bca4cc7af", "c1541a941b8c1600" ],
+    "qEcef" : [ "41438a51426c69df", "41559f8a9478fa4f", "41603031660996f4" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "c1239cd1ba76f904", "415bd9f4815411fb", "c1541a93140f2528" ],
+    "qEcef" : [ "414447ea4c8d53fb", "415573b7d458dfed", "41603031c75b9140" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "411daad3f3f5b39c", "c15bd88eef1244ae", "c1542cda80343efe" ],
+    "qEcef" : [ "c1453bc77ec2afee", "c1554f7bf03abe25", "4160289bccfa90c0" ],
+    "los" : true
+  } ]
+}, {
+  "id" : "seeded-47",
+  "p" : [ "4152361de7d3b208", "c160186be79d4eb3", "c161c0fbf4be7d1e" ],
+  "q" : [ "c15da9f8b7c0084c", "c161fd26de4a03e5", "c14c7aa0a3730d9f" ],
+  "dot" : "42d18e2b5b1cf4e8",
+  "normP" : "4169a2aa8e33d8c9",
+  "normQ" : "416860b8a79e9eda",
+  "difference" : [ "c167f00b4fc9dd2a", "c12e4baf6acb5320", "415544a797c3736c" ],
+  "distance" : "416a43044e264f13",
+  "legacyDot" : "42d18e2b5b1cf4e8",
+  "legacyNormP" : "4169a2aa8e33d8c9",
+  "legacyDistance" : "416a43044e264f13",
+  "angleDeg" : "404fa5370af1faa7",
+  "angleRad" : "3ff1ac926f5354e4",
+  "spaceLos" : true,
+  "sphereLos" : true,
+  "frames" : [ {
+    "time" : "0",
+    "pEcef" : [ "41617b44bbe86bd6", "41482047767c134c", "c161c0eea31f44d0" ],
+    "qEcef" : [ "415dfe8d1a24095c", "c161da0c10089b72", "c14c79b3b69bb3c4" ],
+    "los" : true
+  }, {
+    "time" : "41c8ea8d60100000",
+    "pEcef" : [ "41612e3b86a87f12", "414b9abd7929545a", "c161bb0c7503e12b" ],
+    "qEcef" : [ "415fa90f7bb568de", "c16119cc4ef38c0d", "c14ca277ce57cfb4" ],
+    "los" : true
+  }, {
+    "time" : "41c8eb3620000000",
+    "pEcef" : [ "41614bf49d2cbc76", "414a6b3e90099406", "c161bb0c42e0824f" ],
+    "qEcef" : [ "415f115595c0ad52", "c1615ed26f09b30a", "c14ca27a865bc94f" ],
+    "los" : true
+  }, {
+    "time" : "c0e5180000000000",
+    "pEcef" : [ "c1616dd26fbb71fd", "c148ba03f2e81ccf", "c161c0eeca2e67fe" ],
+    "qEcef" : [ "c15e4ce1707c2ea2", "4161b8db53800e81", "c14c79b389ea7863" ],
+    "los" : true
+  } ]
+} ]

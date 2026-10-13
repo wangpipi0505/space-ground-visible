@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "jarSha256": "6113bd59435e97254fa6e49993841f07ee0cc20a345a8c80b910f3d99e8abbcf",
+  "comparisons": [
+    {
+      "name": "space-9",
+      "expected": "test-data/baseline/space",
+      "actual": "verification/runtime/T18/space-actual",
+      "files": [
+        "downlink-request.json",
+        "downlink.json",
+        "payload-profile.json",
+        "satellites.json",
+        "stations.json",
+        "target-query-request.json",
+        "target-query.json",
+        "visibility-request.json",
+        "visibility.json"
+      ],
+      "fileCount": 9,
+      "differences": []
+    },
+    {
+      "name": "ballistic-10",
+      "expected": "test-data/baseline/ballistic",
+      "actual": "verification/runtime/T18/ballistic-actual",
+      "files": [
+        "conditions.json",
+        "fit/result.json",
+        "fit/trajectory-0.csv",
+        "fit/trajectory-1.csv",
+        "retime/result.json",
+        "retime/trajectory-0.csv",
+        "simulate/result.json",
+        "simulate/trajectory-0.csv",
+        "visibility-http-ground/result.json",
+        "visibility-j2_numerical-points0/result.json",
+        "visibility-j2_numerical-points1/result.json",
+        "visibility-j2_secular-points0/result.json",
+        "visibility-j2_secular-points1/result.json",
+        "visibility-two_body-points0/result.json",
+        "visibility-two_body-points1/result.json"
+      ],
+      "fileCount": 15,
+      "differences": []
+    },
+    {
+      "name": "space-complete-21",
+      "expected": "verification/runtime/T18/original-actual",
+      "actual": "verification/runtime/T18/migrated-actual",
+      "files": [
+        "async-status.json",
+        "browser-profile.json",
+        "common-async.json",
+        "common-request.json",
+        "common-sync.json",
+        "downlink-request.json",
+        "downlink.json",
+        "ground-profile-read.json",
+        "ground-profile-save.json",
+        "payload-profile.json",
+        "persisted-request.json",
+        "persisted-result.json",
+        "record-detail.json",
+        "satellites.json",
+        "stations.json",
+        "target-query-request.json",
+        "target-query.json",
+        "visibility-request.json",
+        "visibility.json",
+        "window-validation.json",
+        "wintool-report.txt"
+      ],
+      "fileCount": 21,
+      "differences": []
+    }
+  ],
+  "ordinaryJava": [
+    "PASS Java=1.8.0_472; JDK-only domain classes; Spring/MyBatis/compatibility/POI/MinIO absent; 72 position / 24 native J2 state / 26 fitter state comparisons; exact bits; 6 histories x 12 queries, repeated/unordered/reverse; utcOffsetSec=0, queryOffsetSec is relative query time; absolute Cartesian epoch also checked",
+    "PASS Java=1.8.0_472; Spring/MyBatis/application absent; 3 real bindings from definitions; 24 position + 24 velocity + 3 state comparisons; exact bits"
+  ],
+  "numericComparison": "JSON Decimal exact values/structure/order; CSV and report text exact bytes",
+  "geometryPairs": 130,
+  "geometryRotatedCases": 520,
+  "geometryEncoding": "raw double bits",
+  "limitations": [
+    "未进行内存profiling或性能基准，分配结论只来自源码和javap静态检查",
+    "既有符号链接权限检查跳过1项",
+    "两轮完整package均记录Tomcat Nio2Acceptor退出线程NPE，留T26",
+    "没有前端或生产规模、全部OS/JVM测试，T19/T20未开始"
+  ]
+}

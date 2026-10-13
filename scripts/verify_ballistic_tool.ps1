@@ -1,10 +1,12 @@
-﻿param([string]$JavaHome = $env:JAVA_HOME)
+﻿param([string]$JavaHome = $env:JAVA_HOME,
+    [string]$EvidenceTask = 'T10')
 
+# EvidenceTask 只控制本轮运行证据目录，原T10示例来源不变。
 # T10 普通Java8独立验证：直接编译领域源码，运行classpath不带backend编译类/依赖JAR。
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
-$runtimeDirectory = Join-Path $projectRoot 'verification/runtime/T10/standalone'
-$evidenceDirectory = Join-Path $projectRoot 'verification/T10'
+$runtimeDirectory = Join-Path $projectRoot "verification/runtime/$EvidenceTask/standalone"
+$evidenceDirectory = Join-Path $projectRoot "verification/$EvidenceTask"
 New-Item -ItemType Directory -Force $runtimeDirectory, $evidenceDirectory | Out-Null
 if (!(Test-Path -LiteralPath "$JavaHome/bin/javac.exe")) {
     throw '请通过 -JavaHome 指定 Java8 JDK'
@@ -21,13 +23,13 @@ if ($version -notmatch 'javac 1\.8\.') {
 }
 $domainRoot = Join-Path $projectRoot 'backend/src/main/java/com/runisys/orbit/spacevisibility/domain'
 # 同时独立编译T12纯JDK时间/坐标主体，确保抽取未引入Orekit、Spring或旧兼容核心依赖。
-$sources = @("$domainRoot/geometry/Vector3.java", "$domainRoot/time/LegacyJ2000Time.java",
+$sources = @("$domainRoot/geometry/Vector3.java", "$domainRoot/geometry/GeometryMath.java", "$domainRoot/time/LegacyJ2000Time.java",
     "$domainRoot/geometry/LegacyJ2000Frames.java", "$domainRoot/geometry/TemeEarthFixedFrames.java")
 foreach ($type in @('OrbitTime', 'OrbitDefinition', 'OrbitState', 'OrbitPropagationTool',
         'BallisticOrbitPropagation', 'BallisticCartesianPropagation')) {
     $sources += "$domainRoot/orbit/$type.java"
 }
-$sources += Join-Path $evidenceDirectory 'PlainJavaBallisticExample.java'
+$sources += Join-Path $projectRoot 'verification/T10/PlainJavaBallisticExample.java'
 & "$JavaHome/bin/javac.exe" -encoding UTF-8 -d $runtimeDirectory @sources > (Join-Path $evidenceDirectory 'ballistic-java-compile.log') 2>&1
 if ($LASTEXITCODE -ne 0) {
     throw '弹道独立领域源码编译失败，见ballistic-java-compile.log'

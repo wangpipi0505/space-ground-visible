@@ -1,11 +1,14 @@
 ﻿param([string]$JavaHome = $env:JAVA_HOME,
-    [ValidateSet('T08', 'T09')][string]$ValidationTask = 'T08')
+    [ValidateSet('T08', 'T09')][string]$ValidationTask = 'T08',
+    [string]$EvidenceTask = '')
 
 # T08/T09 可重复的普通 Java8 验证；仅编译纯领域类型和原 provider，不编译应用服务/实体。
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
-$runtimeDirectory = Join-Path $projectRoot "verification/runtime/$ValidationTask/standalone"
-$evidenceDirectory = Join-Path $projectRoot "verification/$ValidationTask"
+# 示例版本与运行证据目录分开，后续事项复跑不会覆盖T08/T09证据。
+if (!$EvidenceTask) { $EvidenceTask = $ValidationTask }
+$runtimeDirectory = Join-Path $projectRoot "verification/runtime/$EvidenceTask/standalone"
+$evidenceDirectory = Join-Path $projectRoot "verification/$EvidenceTask"
 New-Item -ItemType Directory -Force $runtimeDirectory, $evidenceDirectory | Out-Null
 if (!(Test-Path -LiteralPath "$JavaHome/bin/javac.exe")) {
     throw '请通过 -JavaHome 指定 Java8 JDK'
@@ -28,13 +31,13 @@ if ($LASTEXITCODE -ne 0) { throw '独立依赖解析失败，见日志' }
 $dependencies = (Get-Content -Raw -LiteralPath $classpathFile).Trim()
 if ($dependencies -match 'spring|mybatis|junit') { throw '独立类路径混入应用/测试依赖' }
 $sourceRoot = Join-Path $projectRoot 'backend/src/main/java/com/runisys/orbit/spacevisibility/domain'
-$sources = @("$sourceRoot/geometry/Vector3.java")
+$sources = @("$sourceRoot/geometry/Vector3.java", "$sourceRoot/geometry/GeometryMath.java")
 foreach ($type in @('OrbitTime', 'OrbitDefinition', 'OrbitState', 'OrbitPropagationTool',
         'OrbitStateProvider', 'TleOrbitStateProvider', 'KeplerOrbitStateProvider', 'SpaceOrbitStateProvider',
         'OrekitDataInitializer', 'SpaceTimeFrames')) {
     $sources += "$sourceRoot/orbit/$type.java"
 }
-$sources += Join-Path $evidenceDirectory 'PlainJavaOrbitExample.java'
+$sources += Join-Path $projectRoot "verification/$ValidationTask/PlainJavaOrbitExample.java"
 & "$JavaHome/bin/javac.exe" -encoding UTF-8 -cp $dependencies -d $runtimeDirectory @sources `
     *> (Join-Path $evidenceDirectory 'plain-java-compile.log')
 if ($LASTEXITCODE -ne 0) { throw '普通Java独立编译失败，见日志' }

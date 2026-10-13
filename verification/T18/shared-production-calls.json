@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "jarSha256": "6113bd59435e97254fa6e49993841f07ee0cc20a345a8c80b910f3d99e8abbcf",
+  "calls": [
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.geometry.Vector3",
+      "method": "dot(",
+      "calls": "GeometryMath.dot:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.geometry.Vector3",
+      "method": "norm()",
+      "calls": "GeometryMath.norm:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.geometry.Vector3",
+      "method": "angleDeg(",
+      "calls": "GeometryMath.angleRad:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator$Vector3",
+      "method": "dot(",
+      "calls": "GeometryMath.dot:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator$Vector3",
+      "method": "norm()",
+      "calls": "GeometryMath.norm:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometry",
+      "method": "hasLineOfSight(",
+      "calls": "GeometryMath.spaceLineOfSight:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "hasLineOfSight(",
+      "calls": "GeometryMath.ballisticSphereLineOfSight:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "hasLineOfSightWgs84Ellipsoid(",
+      "calls": "GeometryMath.ballisticEllipsoidLineOfSight:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "angleBetween(",
+      "calls": "GeometryMath.angleRad:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "isTargetObservableFromSatellite(",
+      "calls": "Vector3.norm:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+      "method": "evaluate(",
+      "calls": "Vector3.norm:",
+      "verified": true
+    }
+  ],
+  "sharedCoreHasAllocationInstructions": false,
+  "classesEqualPackagedBytes": true,
+  "spacePublicAbi": [
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.geometry.Vector3",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometry",
+      "identical": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "javaVersion": "1.8.0_472",
+  "pairs": 130,
+  "rotatedCases": 520,
+  "encoding": "Double.doubleToRawLongBits hexadecimal",
+  "repeatedIdentical": true,
+  "originalBallisticJarIdentical": true,
+  "sources": [
+    {
+      "file": "verification/T18/OriginalGeometryProbe.java",
+      "sha256": "0c8483ab10a06992c1c5ceab4e7c7de5c7c66942321d2a42ee0dde72110391c4"
+    },
+    {
+      "file": "verification/baseline-copies/ballistic/source/src/main/java/com/tx/alg/OrbitCalculator.java",
+      "sha256": "e49bde8a817ff7b0af70144862a2f8d6226060b7e5c0fcb99c909afd59b1e942"
+    },
+    {
+      "file": "verification/baseline-copies/ballistic/source/target/classes/com/tx/alg/OrbitCalculator.class",
+      "sha256": "4de0232d056473d79cbf2c7c72c1e5c2974471123693e730edbfd17885e2b6fc"
+    },
+    {
+      "file": "verification/baseline-copies/ballistic/build/alg-toolkit-1.0.0-plain.jar",
+      "sha256": "6dec33be2ec401b5a32b0ed1cb9a7a86568eb57771990225ab80337d5da27501"
+    },
+    {
+      "file": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/Vector3.java",
+      "sha256": "7f63d247dcffa682305d2a4fa5ab878fb9eea5bdc8900fd1c750bb2fd37bfb70"
+    },
+    {
+      "file": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/GroundStationGeometry.java",
+      "sha256": "586cfc383558572aeae1254e2b3d43367f302813632c3ef5bbb3005d751a4ff9"
+    },
+    {
+      "file": "verification/runtime/T04/space-java8-validation/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/GroundStationGeometry.class",
+      "sha256": "d214efb6a8612efbd1c426b8d5c8d42118906b0ea99f88cb55b3e82a00321bf9"
+    }
+  ],
+  "files": [
+    {
+      "file": "geometry.json",
+      "sha256": "ae2588a5da0ea8a6a74983dcb3afd443c16285191aa1633075ff34f2ac413277"
+    }
+  ]
+}

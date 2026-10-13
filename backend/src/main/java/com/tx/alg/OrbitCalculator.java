@@ -1,5 +1,7 @@
 package com.tx.alg;
 
+import com.runisys.orbit.spacevisibility.domain.geometry.GeometryMath;
+
 import com.runisys.orbit.spacevisibility.domain.time.LegacyJ2000Time;
 import com.runisys.orbit.spacevisibility.domain.geometry.LegacyJ2000Frames;
 
@@ -428,6 +430,7 @@ public final class OrbitCalculator {
         void onProgress(long completed, long total);
     }
 
+    /** 旧公开向量外壳：保持 public x/y/z 与全部签名，标量数学委托领域工具且不额外分配对象。 */
     public static final class Vector3 {
         public final double x;
         public final double y;
@@ -451,12 +454,14 @@ public final class OrbitCalculator {
             return new Vector3(x * factor, y * factor, z * factor);
         }
 
+        /** 同参考系向量点积，共用标量主体保留原累加顺序；单位为两个输入单位之积。 */
         public double dot(Vector3 other) {
-            return x * other.x + y * other.y + z * other.z;
+            return GeometryMath.dot(x, y, z, other.x, other.y, other.z);
         }
 
+        /** 共用原 sqrt(dot(v,v))，位置/差向量返回米；零向量及下溢仍返回零，不新增校验。 */
         public double norm() {
-            return Math.sqrt(dot(this));
+            return GeometryMath.norm(x, y, z);
         }
     }
 
@@ -3772,57 +3777,23 @@ public final class OrbitCalculator {
         return value < 0.0 ? value + 360.0 : value;
     }
 
-    /**
-     * 地球遮挡判断：线段 satellite→target 上距地心最近的点是否在地球内部。
-     * 若最近点距离 ≤ EARTH_MEAN_RADIUS_M，则视线被地球遮挡。
-     */
+    /** 原单锥球体政策：同系位置单位米，投影端点直接可见、内部相切不可见，不能替换椭球。 */
     private static boolean hasLineOfSight(Vector3 satellite, Vector3 target) {
-        Vector3 segment = target.subtract(satellite);
-        double denom = segment.dot(segment);
-        if (denom == 0.0) {
-            return false;
-        }
-        double u = -satellite.dot(segment) / denom;
-        if (u <= 1e-9 || u >= 1.0 - 1e-9) {
-            return true;
-        }
-        Vector3 closest = satellite.add(segment.scale(u));
-        return closest.norm() > EARTH_MEAN_RADIUS_M;
+        return GeometryMath.ballisticSphereLineOfSight(satellite.x, satellite.y, satellite.z,
+                target.x, target.y, target.z);
     }
 
+    /**
+     * 原弹道椭球适配：绝对旧 J2000 秒先经原岁差/章动/恒星时链转 ECEF，再进入共用求交。
+     * 保留相切可见、无额外内部端点排除、1e-9 根容差，不能套用空间 TEME 的历史政策。
+     */
     private static boolean hasLineOfSightWgs84Ellipsoid(Vector3 satelliteEci,
                                                         Vector3 targetEci,
                                                         double absoluteJ2000Sec) {
         Vector3 satellite = eciToEcefPos(satelliteEci, absoluteJ2000Sec);
         Vector3 target = eciToEcefPos(targetEci, absoluteJ2000Sec);
-        Vector3 segment = target.subtract(satellite);
-        double a = EARTH_EQUATORIAL_RADIUS_M;
-        double b = a * (1.0 - EARTH_FLATTENING);
-        double a2 = a * a;
-        double b2 = b * b;
-
-        double coefficientA = (segment.x * segment.x + segment.y * segment.y) / a2
-                + segment.z * segment.z / b2;
-        if (coefficientA == 0.0) {
-            return false;
-        }
-        double coefficientB = 2.0 * ((satellite.x * segment.x + satellite.y * segment.y) / a2
-                + satellite.z * segment.z / b2);
-        double coefficientC = (satellite.x * satellite.x + satellite.y * satellite.y) / a2
-                + satellite.z * satellite.z / b2
-                - 1.0;
-        double discriminant = coefficientB * coefficientB - 4.0 * coefficientA * coefficientC;
-        if (discriminant <= 0.0) {
-            return true;
-        }
-        double sqrt = Math.sqrt(discriminant);
-        double u1 = (-coefficientB - sqrt) / (2.0 * coefficientA);
-        double u2 = (-coefficientB + sqrt) / (2.0 * coefficientA);
-        return !isInteriorSegmentParameter(u1) && !isInteriorSegmentParameter(u2);
-    }
-
-    private static boolean isInteriorSegmentParameter(double u) {
-        return u > 1e-9 && u < 1.0 - 1e-9;
+        return GeometryMath.ballisticEllipsoidLineOfSight(satellite.x, satellite.y, satellite.z,
+                target.x, target.y, target.z);
     }
 
     private static void validateSearchInputs(long numCalculations,
@@ -3920,13 +3891,13 @@ public final class OrbitCalculator {
         return sorted;
     }
 
+    /** 同系方向夹角（弧度）；零模长乘积继续返回 PI，其余委托共用 clamp/acos，不套用空间异常政策。 */
     private static double angleBetween(Vector3 a, Vector3 b) {
         double denom = a.norm() * b.norm();
         if (denom == 0.0) {
             return Math.PI;
         }
-        double cosine = clamp(a.dot(b) / denom, -1.0, 1.0);
-        return Math.acos(cosine);
+        return GeometryMath.angleRad(a.dot(b), denom);
     }
 
     private static void validateOrbit(OrbitElements elements) {
