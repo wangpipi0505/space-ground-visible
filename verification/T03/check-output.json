@@ -1,0 +1,14 @@
+{
+  "result": "通过",
+  "routes": 30,
+  "fields": 458,
+  "javaPublicEntries": 191,
+  "sourceFiles": 16,
+  "checks": [
+    "源码摘要",
+    "全部Controller路由",
+    "DTO及实体字段原声明",
+    "公开入口原声明",
+    "文档路由与字段覆盖"
+  ]
+}
