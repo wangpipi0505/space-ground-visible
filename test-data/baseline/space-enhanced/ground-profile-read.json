@@ -1,0 +1,34 @@
+{
+  "activePayloadType" : "GROUND",
+  "profiles" : [ {
+    "payloadType" : "SPACE",
+    "legacyGroundProfile" : false,
+    "minDistanceKm" : 0.0,
+    "maxDistanceKm" : 0.0,
+    "azimuthMinDeg" : null,
+    "azimuthMaxDeg" : null,
+    "elevationMinDeg" : null,
+    "elevationMaxDeg" : null,
+    "angleRateDegPerSec" : -1.0,
+    "sunAvoidHalfAngleDeg" : 0.0,
+    "startupAngleRateDegPerSec" : null,
+    "sensorFullConeAngleDeg" : null,
+    "maxDetectRangeKm" : null,
+    "sunExclusionAngleDeg" : null
+  }, {
+    "payloadType" : "GROUND",
+    "legacyGroundProfile" : false,
+    "minDistanceKm" : 0.0,
+    "maxDistanceKm" : 0.0,
+    "azimuthMinDeg" : null,
+    "azimuthMaxDeg" : null,
+    "elevationMinDeg" : null,
+    "elevationMaxDeg" : null,
+    "angleRateDegPerSec" : 0.0,
+    "sunAvoidHalfAngleDeg" : 0.0,
+    "startupAngleRateDegPerSec" : null,
+    "sensorFullConeAngleDeg" : null,
+    "maxDetectRangeKm" : null,
+    "sunExclusionAngleDeg" : null
+  } ]
+}

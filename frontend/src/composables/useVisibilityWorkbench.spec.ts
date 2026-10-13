@@ -53,6 +53,15 @@ describe('useVisibilityWorkbench', () => {
     vi.useRealTimers()
   })
 
+  /** 旧记录接口的无后缀时间也是 UTC；北京浏览器不能再把它解释为本地时间。 */
+  it('按UTC解析无后缀历史时刻，保留Z与显式偏移的原时刻', () => {
+    const workbench = useVisibilityWorkbench()
+    const utc = workbench.formatTime('2026-07-01T10:00:00.000Z')
+    expect(workbench.formatTime('2026-07-01T10:00:00.000')).toBe(utc)
+    expect(workbench.formatTime('2026-07-01T18:00:00.000+08:00')).toBe(utc)
+    expect(utc).toContain('18:00:00.000')
+  })
+
   it('maps the new payload fields into the editable form', async () => {
     const workbench = useVisibilityWorkbench()
 

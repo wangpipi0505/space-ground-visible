@@ -1,0 +1,25 @@
+{
+  "satisfied" : false,
+  "plan" : {
+    "satelliteStationWindows" : [ {
+      "satelliteId" : 1,
+      "stationId" : "T04-STATION",
+      "windows" : [ {
+        "startTime" : "2026-07-01T10:00:00.000Z",
+        "endTime" : "2026-07-01T10:07:21.000Z",
+        "durationSec" : 441.0
+      } ]
+    } ],
+    "coverageWindows" : [ {
+      "startTime" : "2026-07-01T10:00:00.000Z",
+      "endTime" : "2026-07-01T10:07:21.000Z",
+      "durationSec" : 441.0,
+      "links" : [ {
+        "satelliteId" : 1,
+        "stationId" : "T04-STATION"
+      } ]
+    } ],
+    "skippedLinks" : [ ],
+    "totalSkippedLinks" : 0
+  }
+}

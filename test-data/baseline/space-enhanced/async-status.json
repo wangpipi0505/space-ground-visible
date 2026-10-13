@@ -1,0 +1,11 @@
+{
+  "taskId" : "<TASK_ID>",
+  "status" : "SUCCEEDED",
+  "totalPairs" : 2,
+  "completedPairs" : 2,
+  "totalTargets" : 1,
+  "completedTargets" : 1,
+  "errorMessage" : null,
+  "createdAt" : null,
+  "completedAt" : null
+}

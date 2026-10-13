@@ -1,0 +1,14 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+```yaml
+- generic [ref=e1110]:
+  - generic [ref=e1111]: 摘要信息
+  - generic [ref=e1113]:
+    - button "基准目标星（NORAD null）合并观测时长 441.000 秒" [expanded] [active] [ref=e1114] [cursor=pointer]
+    - region "基准目标星（NORAD null）合并观测时长 441.000 秒" [ref=e1313]:
+      - generic [ref=e1315]:
+        - generic [ref=e1316]: "Mission : 0 基准目标星（基准目标星，120.00 kg）"
+        - generic [ref=e1317]: 合并观测时长（基准观测星）：441.000 秒
+```

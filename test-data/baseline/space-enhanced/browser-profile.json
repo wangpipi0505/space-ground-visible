@@ -1,0 +1,19 @@
+{
+  "activePayloadType" : "SPACE",
+  "profiles" : [ {
+    "payloadType" : "SPACE",
+    "legacyGroundProfile" : false,
+    "minDistanceKm" : 100.0,
+    "maxDistanceKm" : 8000.0,
+    "azimuthMinDeg" : null,
+    "azimuthMaxDeg" : null,
+    "elevationMinDeg" : null,
+    "elevationMaxDeg" : null,
+    "angleRateDegPerSec" : -1.0,
+    "sunAvoidHalfAngleDeg" : 0.0,
+    "startupAngleRateDegPerSec" : null,
+    "sensorFullConeAngleDeg" : null,
+    "maxDetectRangeKm" : null,
+    "sunExclusionAngleDeg" : null
+  } ]
+}

@@ -1,0 +1,33 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+```yaml
+- dialog "任务结果记录明细" [ref=e1221]:
+  - generic [ref=e1222]:
+    - heading "任务结果记录明细" [level=2] [ref=e1223]
+    - button "Close this dialog" [ref=e1224] [cursor=pointer]
+  - generic [ref=e1229]:
+    - table [ref=e1232]:
+      - rowgroup [ref=e1233]:
+        - row [ref=e1234]:
+          - cell "任务标识" [ref=e1235]
+          - cell "0f660f86-ff9d-497a-8c99-3190851c810c" [ref=e1236]
+        - row [ref=e1237]:
+          - cell "状态" [ref=e1238]
+          - cell "已完成" [ref=e1239]
+          - cell "进度" [ref=e1242]
+          - cell "1 / 1" [ref=e1243]
+        - row [ref=e1244]:
+          - cell "提交时间" [ref=e1245]
+          - cell "2026/10/13 12:18:50.265（北京时间）" [ref=e1246]
+          - cell "完成时间" [ref=e1247]
+          - cell "2026/10/13 12:18:50.323（北京时间）" [ref=e1248]
+        - row [ref=e1249]:
+          - cell "备注" [ref=e1250]
+          - cell "（无备注）" [ref=e1251]
+    - heading "请求参数" [level=3] [ref=e1252]
+    - generic [ref=e1253]: "{ \"observerSatelliteIds\": [ 1 ], \"targetIds\": [ 2 ], \"belongs\": [], \"minWeight\": null, \"maxWeight\": null, \"epochStartTime\": null, \"epochEndTime\": null, \"minTleEpochCode\": null, \"maxApproximationDays\": 14, \"excludeNameRegex\": null, \"startTime\": \"2026-07-01T10:00:00Z\", \"endTime\": \"2026-07-01T10:07:21Z\", \"coarseStepSec\": 60, \"fineStepSec\": 1, \"illuminationConstraint\": { \"mode\": \"ANY\", \"observerStates\": [], \"targetStates\": [] }, \"observationConstraints\": [], \"winToolReport\": null }"
+    - heading "规划结果" [level=3] [ref=e1254]
+    - generic [ref=e1255]: "{ \"results\": [ { \"targetId\": \"2\", \"targetName\": \"基准目标星\", \"observerSatelliteIds\": [ \"1\" ], \"observerSatelliteNames\": [ \"基准观测星\" ], \"arcs\": [ { \"startTime\": \"2026-07-01T10:00:00.000Z\", \"endTime\": \"2026-07-01T10:07:21.000Z\", \"observerIlluminations\": [ { \"satelliteId\": \"1\", \"satelliteName\": \"基准观测星\", \"state\": \"SUNLIT\", \"stateName\": \"阳照\" } ], \"targetIllumination\": { \"targetId\": \"2\", \"targetName\": \"基准目标星\", \"state\": \"SUNLIT\", \"stateName\": \"阳照\" }, \"illuminationSegments\": [ { \"startTime\": \"2026-07-01T10:00:00.000Z\", \"endTime\": \"2026-07-01T10:07:21.000Z\", \"observerIlluminations\": [ { \"satelliteId\": \"1\", \"satelliteName\": \"基准观测星\", \"state\": \"SUNLIT\", \"stateName\": \"阳照\" } ], \"targetIllumination\": { \"targetId\": \"2\", \"targetName\": \"基准目标星\", \"state\": \"SUNLIT\", \"stateName\": \"阳照\" }, \"durationSec\": 441 } ], \"durationSec\": 441 } ], \"observationType\": \"SINGLE\", \"observationTypeName\": \"单星观测\", \"conciseSummary\": \"任务摘要：A(441.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:07:21.000Z(441.000s)\", \"targetNorad\": \"null\", \"targetWeightKg\": 120 } ], \"skippedPairs\": [], \"totalSkippedPairs\": 0, \"targetFilterBreakdown\": { \"belongsHit\": 1, \"weightHit\": 1, \"epochHit\": 1, \"epochConstraintHit\": 1, \"ephemerisWarningHit\": 0, \"excludeHit\": 1, \"maxApproximationDays\": 14 }, \"ephemerisWarnings\": [] }"
+```

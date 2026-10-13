@@ -19,6 +19,8 @@ def main():
     parser.add_argument('--orekit-data', type=Path, default=ROOT / 'verification/baseline-copies/space/backend/orekit-data')
     parser.add_argument('--output', type=Path, default=ROOT / 'test-data/baseline/space')
     parser.add_argument('--actual', type=Path)
+    parser.add_argument('--runtime', type=Path, default=ROOT / 'verification/runtime/T04/space-runner')
+    parser.add_argument('--evidence', type=Path, default=ROOT / 'verification/T04')
     args = parser.parse_args()
     if args.action == 'compare':
         if args.actual is None:
@@ -26,9 +28,10 @@ def main():
         found = compare(args.output, args.actual)
         print(json.dumps(dict(passed=not found, differences=found), ensure_ascii=False, indent=2))
         return bool(found)
-    runtime = ROOT / 'verification/runtime/T04/space-runner'
-    evidence = ROOT / 'verification/T04'
+    runtime = args.runtime.resolve()
+    evidence = args.evidence.resolve()
     runtime.mkdir(parents=True, exist_ok=True)
+    evidence.mkdir(parents=True, exist_ok=True)
     classes = args.classes.resolve() if args.classes else args.backend.resolve() / 'target/classes'
     dependencies = args.classpath
     if not dependencies:
@@ -38,7 +41,7 @@ def main():
         dependencies = cp_file.read_text().strip()
     classpath = str(classes) + os.pathsep + dependencies
     run([str(JAVA_HOME / 'bin/javac.exe'), '-encoding', 'UTF-8', '-cp', classpath, '-d', str(runtime),
-         str(evidence / 'SpaceBaseline.java')], ROOT, evidence / 'space-runner-compile.log')
+         str(ROOT / 'verification/T04/SpaceBaseline.java')], ROOT, evidence / 'space-runner-compile.log')
     run([str(JAVA_HOME / 'bin/java.exe'), '-Dfile.encoding=UTF-8', '-Djava.awt.headless=true',
          '-Dorekit.data.path=' + str(args.orekit_data.resolve()), '-cp',
          str(runtime) + os.pathsep + classpath, 'SpaceBaseline', str(args.output.resolve())],

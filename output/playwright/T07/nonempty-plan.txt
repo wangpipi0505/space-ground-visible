@@ -1,0 +1,113 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+```yaml
+- generic [ref=e498]:
+  - generic [ref=e500]:
+    - heading "目标观测规划" [level=2] [ref=e501]
+    - generic [ref=e502]:
+      - generic [ref=e743]: 后台任务（显示进度）
+      - button "开始规划" [ref=e503] [cursor=pointer]
+  - generic [ref=e505]:
+    - generic [ref=e877]:
+      - generic [ref=e878]: 观测星：基准观测星
+      - generic [ref=e879]: 计算范围：连续下传覆盖：基准观测星—基准星下站
+    - generic [ref=e880]:
+      - generic [ref=e881]: 2026/07/01 18:00:00.000（北京时间） 至 2026/07/01 18:07:21.000（北京时间）
+      - generic [ref=e882]: 仅在此下传窗口内计算
+    - generic [ref=e883]:
+      - generic [ref=e884]:
+        - generic [ref=e885]: 粗选步长（秒）
+        - generic [ref=e887]:
+          - button "decrease number" [ref=e888] [cursor=pointer]
+          - button "increase number" [ref=e892] [cursor=pointer]
+          - spinbutton "粗选步长（秒）" [ref=e898]: "60.000"
+      - generic [ref=e899]:
+        - generic [ref=e900]: 精选步长（秒）
+        - generic [ref=e902]:
+          - button "decrease number" [ref=e903] [cursor=pointer]
+          - button "increase number" [ref=e907] [cursor=pointer]
+          - spinbutton "精选步长（秒）" [ref=e913]: "1.000"
+      - generic [ref=e914]:
+        - generic [ref=e915]: 光照组合
+        - generic [ref=e918] [cursor=pointer]:
+          - generic:
+            - combobox "光照组合" [ref=e920]
+            - generic [ref=e921]: 不限
+    - generic [ref=e963]:
+      - generic [ref=e964]:
+        - generic [ref=e965]: 任务状态：已完成
+        - generic [ref=e966]: 已完成目标：1 / 1（配对 1 / 1）
+      - progressbar [ref=e969]:
+        - generic [ref=e972]: 100%
+    - generic [ref=e979]:
+      - generic [ref=e980]:
+        - generic [ref=e981]: 观测时段列表
+        - generic [ref=e982]:
+          - generic [ref=e984]:
+            - generic [ref=e985]:
+              - combobox [ref=e987]
+              - generic [ref=e988]: 全部目标
+            - generic [ref=e990] [cursor=pointer]
+          - generic [ref=e994] [cursor=pointer]:
+            - generic:
+              - combobox [ref=e996]
+              - generic [ref=e997]: 全部组合
+          - generic [ref=e1002]: 1 个目标
+        - generic [ref=e1004]:
+          - button "基准目标星 目标 ID：2 1 个观测组合" [expanded] [ref=e1005] [cursor=pointer]:
+            - generic [ref=e1007]:
+              - generic [ref=e1009]:
+                - checkbox
+              - strong [ref=e1011]: 基准目标星
+              - generic [ref=e1012]: 目标 ID：2
+              - generic [ref=e1013]: 1 个观测组合
+          - region "基准目标星 目标 ID：2 1 个观测组合" [ref=e1018]:
+            - generic [ref=e1020]:
+              - generic [ref=e1021]:
+                - generic [ref=e1022]:
+                  - strong [ref=e1023]: 基准观测星
+                  - generic [ref=e1024]: 单星观测
+                - generic [ref=e1026]: 共 441.000 秒，1 条弧段
+              - generic [ref=e1028]:
+                - table [ref=e1030]:
+                  - rowgroup [ref=e1040]:
+                    - row [ref=e1041]:
+                      - columnheader [ref=e1042]
+                      - columnheader "我方卫星" [ref=e1043]
+                      - columnheader "目标" [ref=e1045]
+                      - columnheader "观测类型" [ref=e1047]
+                      - columnheader "观测星光照" [ref=e1049]
+                      - columnheader "目标光照" [ref=e1051]
+                      - columnheader "起止时间" [ref=e1053]
+                      - columnheader "时长" [ref=e1055]
+                - table [ref=e1061]:
+                  - rowgroup [ref=e1071]:
+                    - row "基准观测星 基准目标星 单星观测 基准观测星：阳照 阳照 2026/07/01 18:00:00.000（北京时间） 2026/07/01 18:07:21.000（北京时间） 441.000 秒" [ref=e1072]:
+                      - cell [ref=e1073]
+                      - cell "基准观测星" [ref=e1075]
+                      - cell "基准目标星" [ref=e1077]
+                      - cell "单星观测" [ref=e1079]
+                      - cell "基准观测星：阳照" [ref=e1081]
+                      - cell "阳照" [ref=e1083]
+                      - cell [ref=e1085]:
+                        - generic [ref=e1086]: 2026/07/01 18:00:00.000（北京时间）2026/07/01 18:07:21.000（北京时间）
+                      - cell "441.000 秒" [ref=e1087]
+        - generic [ref=e1089]:
+          - generic [ref=e1090]: Total 1
+          - generic [ref=e1093] [cursor=pointer]:
+            - generic:
+              - combobox [ref=e1095]
+              - generic [ref=e1096]: 10/page
+          - button "Go to previous page" [disabled] [ref=e1101]
+          - list [ref=e1102]:
+            - listitem "page 1" [ref=e1103]: "1"
+          - button "Go to next page" [disabled] [ref=e1104]
+          - generic [ref=e1105]:
+            - generic [ref=e1106]: Go to
+            - spinbutton "Page" [ref=e1109]: "1"
+      - generic [ref=e1110]:
+        - generic [ref=e1111]: 摘要信息
+        - button "基准目标星（NORAD null）合并观测时长 441.000 秒" [ref=e1114] [cursor=pointer]
+```

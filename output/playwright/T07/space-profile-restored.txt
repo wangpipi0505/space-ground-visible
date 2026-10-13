@@ -1,0 +1,81 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+```yaml
+- generic [ref=f1e145]:
+  - generic [ref=f1e147]:
+    - heading "卫星载荷" [level=2] [ref=f1e148]
+    - generic [ref=f1e514]: 长期配置
+  - generic [ref=f1e533]:
+    - button "基准观测星 已配置，活动：对空" [expanded] [ref=f1e534] [cursor=pointer]:
+      - generic [ref=f1e536]:
+        - strong [ref=f1e537]: 基准观测星
+        - generic [ref=f1e538]: 已配置，活动：对空
+    - region "基准观测星 已配置，活动：对空" [ref=f1e543]:
+      - generic [ref=f1e544]:
+        - generic [ref=f1e545]:
+          - generic [ref=f1e546]:
+            - generic [ref=f1e547]: 载荷类型
+            - generic [ref=f1e550] [cursor=pointer]:
+              - generic:
+                - combobox "载荷类型" [active] [ref=f1e552]
+                - generic [ref=f1e553]: 对空载荷
+          - generic [ref=f1e558]:
+            - generic [ref=f1e559]: 距离下限（公里）
+            - generic [ref=f1e561]:
+              - button "decrease number" [ref=f1e562] [cursor=pointer]
+              - button "increase number" [ref=f1e566] [cursor=pointer]
+              - spinbutton "距离下限（公里）" [ref=f1e572]: "200"
+          - generic [ref=f1e573]:
+            - generic [ref=f1e574]: 距离上限（公里）
+            - generic [ref=f1e576]:
+              - button "decrease number" [ref=f1e577] [cursor=pointer]
+              - button "increase number" [ref=f1e581] [cursor=pointer]
+              - spinbutton "距离上限（公里）" [ref=f1e587]: "8000"
+          - generic [ref=f1e588]:
+            - generic [ref=f1e589]: 方位角下限（度，双端留空表示不限）
+            - generic [ref=f1e591]:
+              - button "decrease number" [ref=f1e592] [cursor=pointer]
+              - button "increase number" [ref=f1e596] [cursor=pointer]
+              - spinbutton "方位角下限（度，双端留空表示不限）" [ref=f1e602]
+          - generic [ref=f1e603]:
+            - generic [ref=f1e604]: 方位角上限（度，双端留空表示不限）
+            - generic [ref=f1e606]:
+              - button "decrease number" [ref=f1e607] [cursor=pointer]
+              - button "increase number" [ref=f1e611] [cursor=pointer]
+              - spinbutton "方位角上限（度，双端留空表示不限）" [ref=f1e617]
+          - generic [ref=f1e618]:
+            - generic [ref=f1e619]: 俯仰角下限（度）
+            - generic [ref=f1e621]:
+              - button "decrease number" [ref=f1e622] [cursor=pointer]
+              - button "increase number" [ref=f1e626] [cursor=pointer]
+              - spinbutton "俯仰角下限（度）" [ref=f1e632]
+          - generic [ref=f1e633]:
+            - generic [ref=f1e634]: 俯仰角上限（度）
+            - generic [ref=f1e636]:
+              - button "decrease number" [ref=f1e637] [cursor=pointer]
+              - button "increase number" [ref=f1e641] [cursor=pointer]
+              - spinbutton "俯仰角上限（度）" [ref=f1e647]
+          - generic [ref=f1e648]:
+            - generic [ref=f1e649]: 跟踪角速度（度/秒，0 或 -1 表示不限制）
+            - generic [ref=f1e651]:
+              - button "decrease number" [ref=f1e652]
+              - button "increase number" [ref=f1e656] [cursor=pointer]
+              - spinbutton "跟踪角速度（度/秒，0 或 -1 表示不限制）" [ref=f1e755]: "-1"
+          - generic [ref=f1e663]:
+            - generic [ref=f1e664]: 太阳回避半角（度）
+            - generic [ref=f1e666]:
+              - button "decrease number" [ref=f1e667]
+              - button "increase number" [ref=f1e671] [cursor=pointer]
+              - spinbutton "太阳回避半角（度）" [ref=f1e677]: "0"
+          - generic [ref=f1e678]:
+            - generic [ref=f1e679]: 启动角速度（度/秒，留空或 -1 表示不启用)
+            - generic [ref=f1e681]:
+              - button "decrease number" [ref=f1e682] [cursor=pointer]
+              - button "increase number" [ref=f1e686] [cursor=pointer]
+              - spinbutton "启动角速度（度/秒，留空或 -1 表示不启用)" [ref=f1e692]
+        - generic [ref=f1e693]:
+          - generic [ref=f1e694]: 对空与对地配置独立保存；保存的类型会成为后续规划的活动载荷
+          - button "保存并启用" [ref=f1e695] [cursor=pointer]
+```

@@ -1,0 +1,150 @@
+{
+  "id" : 0,
+  "taskId" : "<TASK_ID>",
+  "taskType" : "VISIBILITY",
+  "status" : "SUCCEEDED",
+  "totalPairs" : 2,
+  "completedPairs" : 2,
+  "errorMessage" : null,
+  "remark" : "T07真实基准备注",
+  "createTime" : null,
+  "completeTime" : null,
+  "requestJson" : {
+    "observerSatelliteIds" : [ 1, 3 ],
+    "targetIds" : [ 2 ],
+    "belongs" : [ ],
+    "minWeight" : null,
+    "maxWeight" : null,
+    "epochStartTime" : null,
+    "epochEndTime" : null,
+    "minTleEpochCode" : null,
+    "maxApproximationDays" : null,
+    "excludeNameRegex" : null,
+    "startTime" : "2026-07-01T10:00:00Z",
+    "endTime" : "2026-07-01T10:10:00Z",
+    "coarseStepSec" : 60.0,
+    "fineStepSec" : 1.0,
+    "illuminationConstraint" : null,
+    "observationConstraints" : [ {
+      "satelliteIds" : [ 1, 3 ],
+      "minDurationSec" : 0.0
+    } ],
+    "winToolReport" : true
+  },
+  "resultJson" : {
+    "results" : [ {
+      "targetId" : "2",
+      "targetName" : "基准目标星",
+      "observerSatelliteIds" : [ "1", "3" ],
+      "observerSatelliteNames" : [ "基准观测星", "基准共同观测星" ],
+      "arcs" : [ {
+        "startTime" : "2026-07-01T10:00:00.000Z",
+        "endTime" : "2026-07-01T10:10:00.000Z",
+        "observerIlluminations" : [ {
+          "satelliteId" : "1",
+          "satelliteName" : "基准观测星",
+          "state" : "SUNLIT",
+          "stateName" : "阳照"
+        }, {
+          "satelliteId" : "3",
+          "satelliteName" : "基准共同观测星",
+          "state" : "SUNLIT",
+          "stateName" : "阳照"
+        } ],
+        "targetIllumination" : {
+          "targetId" : "2",
+          "targetName" : "基准目标星",
+          "state" : "SUNLIT",
+          "stateName" : "阳照"
+        },
+        "illuminationSegments" : [ {
+          "startTime" : "2026-07-01T10:00:00.000Z",
+          "endTime" : "2026-07-01T10:10:00.000Z",
+          "observerIlluminations" : [ {
+            "satelliteId" : "1",
+            "satelliteName" : "基准观测星",
+            "state" : "SUNLIT",
+            "stateName" : "阳照"
+          }, {
+            "satelliteId" : "3",
+            "satelliteName" : "基准共同观测星",
+            "state" : "SUNLIT",
+            "stateName" : "阳照"
+          } ],
+          "targetIllumination" : {
+            "targetId" : "2",
+            "targetName" : "基准目标星",
+            "state" : "SUNLIT",
+            "stateName" : "阳照"
+          },
+          "durationSec" : 600.0
+        } ],
+        "satelliteSegments" : [ {
+          "satelliteId" : "1",
+          "satelliteName" : "基准观测星",
+          "state" : "SUNLIT",
+          "stateName" : "阳照",
+          "startTime" : "2026-07-01T10:00:00.000Z",
+          "endTime" : "2026-07-01T10:10:00.000Z",
+          "durationSec" : 600.0,
+          "statistics" : {
+            "samples" : 81,
+            "minAzimuthDeg" : 1.2652046515483256E-7,
+            "maxAzimuthDeg" : 0.004870173764983141,
+            "minElevationDeg" : -12.023762582973236,
+            "maxElevationDeg" : -11.06749040140292,
+            "maxAngleRateDegPerSec" : 0.0592443216170516,
+            "minDistanceKm" : 3536.825525007657,
+            "maxDistanceKm" : 3720.6957718886742,
+            "azimuthRelativeMinusXMaxDeg" : -179.99512982623503,
+            "elevationZenithMinDeg" : 77.97623741702677,
+            "azimuthRelativeMinusXMinDeg" : -179.99999987347954,
+            "elevationZenithMaxDeg" : 78.93250959859708
+          }
+        }, {
+          "satelliteId" : "3",
+          "satelliteName" : "基准共同观测星",
+          "state" : "SUNLIT",
+          "stateName" : "阳照",
+          "startTime" : "2026-07-01T10:00:00.000Z",
+          "endTime" : "2026-07-01T10:10:00.000Z",
+          "durationSec" : 600.0,
+          "statistics" : {
+            "samples" : 81,
+            "minAzimuthDeg" : 1.2775303892850235E-7,
+            "maxAzimuthDeg" : 0.008661576560738949,
+            "minElevationDeg" : -10.801926180298723,
+            "maxElevationDeg" : -9.819861617428563,
+            "maxAngleRateDegPerSec" : 0.05920717802727098,
+            "minDistanceKm" : 3294.1540029214457,
+            "maxDistanceKm" : 3478.51431806696,
+            "azimuthRelativeMinusXMaxDeg" : -179.99133842343926,
+            "elevationZenithMinDeg" : 79.19807381970128,
+            "azimuthRelativeMinusXMinDeg" : -179.99999987224697,
+            "elevationZenithMaxDeg" : 80.18013838257144
+          }
+        } ],
+        "durationSec" : 600.0
+      } ],
+      "observationType" : "COOPERATIVE",
+      "observationTypeName" : "共同观测",
+      "conciseSummary" : "任务摘要：A(600.000) - B(600.000) - AB(600.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)\nB 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)",
+      "targetNorad" : "null",
+      "targetWeightKg" : 120.0
+    } ],
+    "skippedPairs" : [ ],
+    "totalSkippedPairs" : 0,
+    "targetFilterBreakdown" : {
+      "belongsHit" : 1,
+      "weightHit" : 1,
+      "epochHit" : 1,
+      "epochConstraintHit" : 1,
+      "ephemerisWarningHit" : 0,
+      "excludeHit" : 1,
+      "maxApproximationDays" : 14
+    },
+    "ephemerisWarnings" : [ ],
+    "winToolReport" : "一、目标+各星观测时段列表\n1. 基准目标星\n   组合[AB] 共视窗口:\n     1:2026-07-01T10:00:00~2026-07-01T10:10:00(600s)\n        A: 2026-07-01T10:00:00 ~ 2026-07-01T10:10:00 (600s)\n        B: 2026-07-01T10:00:00 ~ 2026-07-01T10:10:00 (600s)\n二、摘要/详细信息\nMission 1 : 0 基准目标星(基准目标星,120.00kg)\n任务摘要:\nA(600.000) - B(600.000) - AB(600.000)\nA星情况:\n1:2026-07-01T10:00:00~2026-07-01T10:10:00(600s)\nA星距离范围: 3536.83km ~ 3720.70km\nA星方位(相对-X): -180.0000度 ~ -179.9951度\nA星俯仰:77.9762度 ~ 78.9325度\nA星最大相对角速度: 0.0592443度/秒\nB星情况:\n1:2026-07-01T10:00:00~2026-07-01T10:10:00(600s)\nB星距离范围: 3294.15km ~ 3478.51km\nB星方位(相对-X): 359.9913度 ~ 360.0000度\nB星俯仰:79.1981度 ~ 80.1801度\nB星最大相对角速度: 0.0592072度/秒\n"
+  },
+  "skippedPairsJson" : null
+}

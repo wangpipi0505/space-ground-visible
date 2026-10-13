@@ -5,6 +5,8 @@
 test-data/** -text -whitespace
 backend/orekit-data/** -text -whitespace
 verification/**/*.txt -text whitespace=cr-at-eol
+# 浏览器快照和工具响应是原始验证证据，保留字节及工具自带的末尾空行。
+output/playwright/** -text -whitespace
 *.jar binary
 *.png binary
 *.xlsx binary

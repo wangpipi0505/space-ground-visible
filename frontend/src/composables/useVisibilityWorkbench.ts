@@ -128,7 +128,10 @@ function toIsoRange(timeRange: TimeRange): { startTime: string; endTime: string 
  * 这样跨地域用户查看同一规划结果时不会把同一条弧段显示成不同的本地钟点。
  */
 function formatTime(time: string): string {
-  return new Date(time).toLocaleString('zh-CN', {
+  // 旧历史记录 createTime/completeTime 使用无后缀的 UTC LocalDateTime。
+  // 仅为这种完整日期时间补 Z；已有 Z 或显式偏移保持原义，避免浏览器本地时区二次换算。
+  const utcTime = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?$/.test(time) ? `${time}Z` : time
+  return new Date(utcTime).toLocaleString('zh-CN', {
     timeZone: 'Asia/Shanghai', hour12: false, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', fractionalSecondDigits: 3,
   }) + '（北京时间）'
 }

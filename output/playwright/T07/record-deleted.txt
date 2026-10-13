@@ -1,0 +1,45 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - heading "空间目标可见窗口规划" [level=1] [ref=e5]
+    - generic [ref=e6]:
+      - tablist [ref=e10]:
+        - tab "规划工作台" [ref=e12]
+        - tab "任务结果记录" [selected] [ref=e13]
+      - tabpanel "任务结果记录" [ref=e1119]:
+        - generic [ref=e1120]:
+          - generic [ref=e1122]:
+            - heading "任务结果记录" [level=2] [ref=e1123]
+            - generic [ref=e1124]: 后台规划任务的历史结果
+          - generic [ref=e1126]:
+            - generic [ref=e1127]:
+              - generic [ref=e1129] [cursor=pointer]:
+                - generic:
+                  - combobox [ref=e1131]
+                  - generic [ref=e1132]: 全部状态
+              - textbox "按任务标识或备注搜索" [ref=e1139]
+              - button "查询" [ref=e1141] [cursor=pointer]
+              - button "刷新" [ref=e1143] [cursor=pointer]
+            - generic [ref=e1146]:
+              - table [ref=e1148]:
+                - rowgroup [ref=e1158]:
+                  - row [ref=e1159]:
+                    - columnheader "任务标识" [ref=e1160]
+                    - columnheader "状态" [ref=e1162]
+                    - columnheader "进度" [ref=e1164]
+                    - columnheader "提交时间" [ref=e1166]
+                    - columnheader "完成时间" [ref=e1168]
+                    - columnheader "错误信息" [ref=e1170]
+                    - columnheader "备注" [ref=e1172]
+                    - columnheader "操作" [ref=e1174]
+              - generic [ref=e1179]:
+                - table:
+                  - rowgroup
+                - generic [ref=e1306]: 没有符合条件的任务结果记录
+  - alert [ref=e1308]:
+    - paragraph [ref=e1312]: 记录已删除。
+```

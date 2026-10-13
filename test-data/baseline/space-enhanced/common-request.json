@@ -1,0 +1,22 @@
+{
+  "observerSatelliteIds" : [ 1, 3 ],
+  "targetIds" : [ 2 ],
+  "belongs" : [ ],
+  "minWeight" : null,
+  "maxWeight" : null,
+  "epochStartTime" : null,
+  "epochEndTime" : null,
+  "minTleEpochCode" : null,
+  "maxApproximationDays" : null,
+  "excludeNameRegex" : null,
+  "startTime" : "2026-07-01T10:00:00Z",
+  "endTime" : "2026-07-01T10:10:00Z",
+  "coarseStepSec" : 60.0,
+  "fineStepSec" : 1.0,
+  "illuminationConstraint" : null,
+  "observationConstraints" : [ {
+    "satelliteIds" : [ 1, 3 ],
+    "minDurationSec" : 0.0
+  } ],
+  "winToolReport" : true
+}

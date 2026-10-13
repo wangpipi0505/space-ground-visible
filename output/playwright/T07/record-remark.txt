@@ -1,0 +1,59 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+```yaml
+- main [ref=e3]:
+  - heading "空间目标可见窗口规划" [level=1] [ref=e5]
+  - generic [ref=e6]:
+    - tablist [ref=e10]:
+      - tab "规划工作台" [ref=e12]
+      - tab "任务结果记录" [selected] [ref=e13]
+    - tabpanel "任务结果记录" [ref=e1119]:
+      - generic [ref=e1120]:
+        - generic [ref=e1122]:
+          - heading "任务结果记录" [level=2] [ref=e1123]
+          - generic [ref=e1124]: 后台规划任务的历史结果
+        - generic [ref=e1126]:
+          - generic [ref=e1127]:
+            - generic [ref=e1129] [cursor=pointer]:
+              - generic:
+                - combobox [ref=e1131]
+                - generic [ref=e1132]: 全部状态
+            - textbox "按任务标识或备注搜索" [ref=e1139]
+            - button "查询" [ref=e1141] [cursor=pointer]
+            - button "刷新" [ref=e1143] [cursor=pointer]
+          - generic [ref=e1146]:
+            - table [ref=e1148]:
+              - rowgroup [ref=e1158]:
+                - row [ref=e1159]:
+                  - columnheader "任务标识" [ref=e1160]
+                  - columnheader "状态" [ref=e1162]
+                  - columnheader "进度" [ref=e1164]
+                  - columnheader "提交时间" [ref=e1166]
+                  - columnheader "完成时间" [ref=e1168]
+                  - columnheader "错误信息" [ref=e1170]
+                  - columnheader "备注" [ref=e1172]
+                  - columnheader "操作" [ref=e1174]
+            - table [ref=e1180]:
+              - rowgroup [ref=e1190]:
+                - row [ref=e1277]:
+                  - cell "0f660f86-ff9d-497a-8c99-3190851c810c" [ref=e1192]
+                  - cell "已完成" [ref=e1194]
+                  - cell "1 / 1" [ref=e1198]
+                  - cell "2026/10/13 12:18:50.265（北京时间）" [ref=e1200]
+                  - cell "2026/10/13 12:18:50.323（北京时间）" [ref=e1202]
+                  - cell [ref=e1204]
+                  - cell "T07同条件浏览器验收" [ref=e1278]
+                  - cell [ref=e1206]:
+                    - generic [ref=e1207]:
+                      - button "明细" [ref=e1208] [cursor=pointer]
+                      - button "备注" [ref=e1210] [cursor=pointer]
+                      - button "删除" [ref=e1212] [cursor=pointer]
+          - generic [ref=e1214]:
+            - generic [ref=e1215]: Total 1
+            - button "Go to previous page" [disabled] [ref=e1216]
+            - list [ref=e1217]:
+              - listitem "page 1" [ref=e1218]: "1"
+            - button "Go to next page" [disabled] [ref=e1219]
+```

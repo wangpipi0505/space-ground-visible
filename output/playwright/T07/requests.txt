@@ -1,0 +1,21 @@
+### Result
+32. [GET] http://127.0.0.1:15173/api/v1/space/health => [200] OK
+33. [GET] http://127.0.0.1:15173/api/v1/space/satellites/page?pageNumber=1&pageSize=50 => [200] OK
+34. [GET] http://127.0.0.1:15173/api/v1/space/stations => [200] OK
+35. [GET] http://127.0.0.1:15173/api/v1/space/defaults => [200] OK
+36. [GET] http://127.0.0.1:15173/api/v1/space/targets/belong-options => [200] OK
+38. [GET] http://127.0.0.1:15173/api/v1/space/satellites/1/payload-profiles => [200] OK
+39. [PUT] http://127.0.0.1:15173/api/v1/space/satellites/1/payload-profiles => [200] OK
+40. [POST] http://127.0.0.1:15173/api/v1/space/downlink/plan => [200] OK
+41. [POST] http://127.0.0.1:15173/api/v1/space/targets/query => [200] OK
+42. [POST] http://127.0.0.1:15173/api/v1/space/visibility/tasks => [200] OK
+43. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/0f660f86-ff9d-497a-8c99-3190851c810c => [200] OK
+44. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/0f660f86-ff9d-497a-8c99-3190851c810c => [200] OK
+45. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/0f660f86-ff9d-497a-8c99-3190851c810c/result => [200] OK
+46. [GET] http://127.0.0.1:15173/api/v1/space/visibility/task-results?pageNumber=1&pageSize=20 => [200] OK
+47. [GET] http://127.0.0.1:15173/api/v1/space/visibility/task-results/2109861393797545985 => [200] OK
+48. [PUT] http://127.0.0.1:15173/api/v1/space/visibility/task-results/2109861393797545985 => [200] OK
+49. [DELETE] http://127.0.0.1:15173/api/v1/space/visibility/task-results/2109861393797545985 => [200] OK
+50. [GET] http://127.0.0.1:15173/api/v1/space/visibility/task-results?pageNumber=1&pageSize=20 => [200] OK
+
+Note: 32 static requests not shown, run with --static option to see them.
