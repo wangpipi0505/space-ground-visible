@@ -4,6 +4,7 @@ import com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometry;
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
 
 import java.time.Instant;
+import static com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath.*;
 
 public final class PayloadVisibilityEvaluator {
 
@@ -77,8 +78,7 @@ public final class PayloadVisibilityEvaluator {
         IlluminationState targetIllumination = SolarGeometry.illumination(target, sunDirection, sunAngularRadiusDeg);
         Vector3 lineOfSight = target.subtract(observer);
         double rangeM = lineOfSight.norm();
-        double lineOfSightRateDegPerSec = previousLineOfSight == null || previousSampleElapsedSec <= 0.0
-                ? 0.0 : lineOfSight.angleDeg(previousLineOfSight) / previousSampleElapsedSec;
+        double lineOfSightRateDegPerSec = lineOfSightRate(lineOfSight, previousLineOfSight, previousSampleElapsedSec);
         // LVLH 方位/俯仰无条件计算：姿态窗口判定与“距离/方位/俯仰/角速度”统计共用同一套数值，
         // 保证输出统计与判定条件永远出自同一参考系。
         LvlhAngles angles = lvlhAngles(observer, observerVelocity, lineOfSight);
@@ -88,8 +88,7 @@ public final class PayloadVisibilityEvaluator {
             return new VisibilitySample(false, observerIllumination, targetIllumination,
                     lineOfSightRateDegPerSec, rangeM == 0.0 ? null : rangeM, azimuthDeg, elevationDeg);
         }
-        if (rangeM < constraint.getMinDetectRangeM()
-                || (constraint.getMaxDetectRangeM() > 0.0 && rangeM > constraint.getMaxDetectRangeM())) {
+        if (!insideRange(rangeM, constraint)) {
             return new VisibilitySample(false, observerIllumination, targetIllumination,
                     lineOfSightRateDegPerSec, rangeM, azimuthDeg, elevationDeg);
         }
@@ -97,9 +96,8 @@ public final class PayloadVisibilityEvaluator {
         // 当观测星处于本影时，地球已完全遮住太阳盘，视线即使接近地心—太阳方向也不存在
         // 直射风险。若继续用夹角拒绝，会把 WinTool 文档窗口 4 中 A 星整段本影观测错误截断。
         // 半影仍能接收到部分太阳直射，按保守原则继续执行规避；只有 UMBRA 才能豁免。
-        if (constraint.getSunAvoidHalfAngleDeg() > 0.0
-                && observerIllumination != IlluminationState.UMBRA
-                && lineOfSight.angleDeg(sunDirection) < constraint.getSunAvoidHalfAngleDeg()) {
+        if (!outsideSunAvoidance(lineOfSight, sunDirection, constraint,
+                observerIllumination != IlluminationState.UMBRA)) {
             return new VisibilitySample(false, observerIllumination, targetIllumination,
                     lineOfSightRateDegPerSec, rangeM, azimuthDeg, elevationDeg);
         }
@@ -114,69 +112,9 @@ public final class PayloadVisibilityEvaluator {
             return new VisibilitySample(false, observerIllumination, targetIllumination,
                     lineOfSightRateDegPerSec, rangeM, azimuthDeg, elevationDeg);
         }
-        boolean visible = previousLineOfSight == null || previousSampleElapsedSec <= 0.0
-                || lineOfSightRateDegPerSec <= constraint.getAngleRateDegPerSec();
+        boolean visible = insideRate(lineOfSightRateDegPerSec, previousLineOfSight, previousSampleElapsedSec, constraint);
         return new VisibilitySample(visible, observerIllumination, targetIllumination,
                 lineOfSightRateDegPerSec, rangeM, azimuthDeg, elevationDeg);
     }
 
-    /**
-     * 判断目标视线是否落入对空载荷的 LVLH 方位/俯仰窗口。
-     * 参考系：R 为径向单位向量，T 为速度在垂直 R 平面上的投影单位向量，N = R × T；
-     * 俯仰角为视线与当地水平面夹角（正值背向地球），方位角 0 度为沿速度方向。
-     * 姿态窗口未配置（方位、俯仰均为 null）时视为不限制。
-     */
-    private static boolean insideAttitudeWindow(LvlhAngles angles, PayloadConstraint constraint) {
-        if (angles == null) {
-            // 速度退化（沿径向飞行）时无法构造 LVLH 参考系；此时若配置了姿态窗口只能判不可见。
-            return constraint.getAzimuthMinDeg() == null && constraint.getElevationMinDeg() == null;
-        }
-        if (constraint.getElevationMinDeg() != null) {
-            if (angles.elevationDeg < constraint.getElevationMinDeg()
-                    || angles.elevationDeg > constraint.getElevationMaxDeg()) {
-                return false;
-            }
-        }
-        if (constraint.getAzimuthMinDeg() != null) {
-            if (angles.azimuthDeg < constraint.getAzimuthMinDeg()
-                    || angles.azimuthDeg > constraint.getAzimuthMaxDeg()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * 计算视线在观测星 LVLH 坐标系下的方位/俯仰角。
-     * R 为径向单位向量，T 为速度在垂直 R 平面上的投影单位向量，N = R × T；
-     * 俯仰 = asin(视线单位向量·R)，范围 [-90,90]；方位 = atan2(视线·N, 视线·T)，
-     * 归一化到 [0,360)。观测星速度与径向平行（退化构型）时返回 null。
-     */
-    private static LvlhAngles lvlhAngles(Vector3 observer, Vector3 observerVelocity, Vector3 lineOfSight) {
-        Vector3 radial = observer.normalize();
-        Vector3 alongTrackFlat = observerVelocity.subtract(radial.scale(observerVelocity.dot(radial)));
-        if (alongTrackFlat.norm() == 0.0) {
-            return null;
-        }
-        Vector3 alongTrack = alongTrackFlat.normalize();
-        Vector3 normal = radial.cross(alongTrack);
-        Vector3 losUnit = lineOfSight.normalize();
-        double elevationDeg = Math.toDegrees(Math.asin(Math.max(-1.0, Math.min(1.0, losUnit.dot(radial)))));
-        double azimuthDeg = Math.toDegrees(Math.atan2(losUnit.dot(normal), losUnit.dot(alongTrack)));
-        if (azimuthDeg < 0.0) {
-            azimuthDeg += 360.0;
-        }
-        return new LvlhAngles(azimuthDeg, elevationDeg);
-    }
-
-    /** 一个采样时刻的 LVLH 方位/俯仰角（度）。 */
-    private static final class LvlhAngles {
-        private final double azimuthDeg;
-        private final double elevationDeg;
-
-        private LvlhAngles(double azimuthDeg, double elevationDeg) {
-            this.azimuthDeg = azimuthDeg;
-            this.elevationDeg = elevationDeg;
-        }
-    }
 }

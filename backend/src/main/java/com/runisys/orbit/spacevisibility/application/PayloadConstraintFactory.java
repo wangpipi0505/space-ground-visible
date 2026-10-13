@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraint;
 import com.runisys.orbit.spacevisibility.domain.payload.PayloadType;
 import org.springframework.stereotype.Component;
+import com.runisys.orbit.spacevisibility.domain.payload.StandardPayloads;
+import static com.runisys.orbit.spacevisibility.domain.payload.StandardPayloads.*;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -226,19 +228,16 @@ public class PayloadConstraintFactory {
                                              Double angleRateDegPerSec,
                                              Double sunAvoidHalfAngleDeg,
                                              Double startupAngleRateDegPerSec) {
-        double minRange = requireFinite(minDistanceM, "最近探测距离");
-        double maxRange = requireFinite(maxDistanceM, "最远探测距离");
-        double[] azimuth = requireOptionalRange(azimuthMinDeg, azimuthMaxDeg, "方位角范围");
-        double[] elevation = requireOptionalRange(elevationMinDeg, elevationMaxDeg, "俯仰角范围");
-        double rawAngleRate = requireFinite(angleRateDegPerSec, "跟踪角速度");
-        double angleRate = normalizeAngleRate(payloadType, rawAngleRate);
-        double sunAvoidHalfAngle = requireFinite(sunAvoidHalfAngleDeg, "太阳回避半角");
-        Double rawStartupAngleRate = validateConfiguredStartupAngleRate(startupAngleRateDegPerSec);
-        Double startupAngleRate = normalizeStartupAngleRate(rawStartupAngleRate);
-        validateStandardConstraint(payloadType, minRange, maxRange,
-                azimuth == null ? null : azimuth[0], azimuth == null ? null : azimuth[1],
-                elevation == null ? null : elevation[0], elevation == null ? null : elevation[1],
-                angleRate, sunAvoidHalfAngle, startupAngleRate);
+        StandardPayloads.create(payloadType, minDistanceM, maxDistanceM,
+                azimuthMinDeg, azimuthMaxDeg, elevationMinDeg, elevationMaxDeg,
+                angleRateDegPerSec, sunAvoidHalfAngleDeg, startupAngleRateDegPerSec);
+        double minRange = minDistanceM;
+        double maxRange = maxDistanceM;
+        double[] azimuth = azimuthMinDeg == null ? null : new double[]{azimuthMinDeg, azimuthMaxDeg};
+        double[] elevation = elevationMinDeg == null ? null : new double[]{elevationMinDeg, elevationMaxDeg};
+        double rawAngleRate = angleRateDegPerSec;
+        double sunAvoidHalfAngle = sunAvoidHalfAngleDeg;
+        Double rawStartupAngleRate = startupAngleRateDegPerSec;
 
         PayloadDefinition definition = new PayloadDefinition();
         definition.setPayloadType(payloadType.name());
@@ -293,18 +292,6 @@ public class PayloadConstraintFactory {
     }
 
     /**
-     * 校验可选的姿态窗口。两个端点同时留空才表示不限；只填写一个端点会产生歧义，
-     * 因此在接口边界直接拒绝，而不是在几何计算时默默补零。
-     */
-    private double[] requireOptionalRange(Double minimum, Double maximum, String parameterName) {
-        if (minimum == null && maximum == null) {
-            return null;
-        }
-        return new double[]{requireFinite(minimum, parameterName + "下限"),
-                requireFinite(maximum, parameterName + "上限")};
-    }
-
-    /**
      * 将持久化的标准载荷距离范围转换为领域层唯一接受的米。
      *
      * <p>V6 数据迁移会把历史无单位值从公里转换为米并写入 {@code distanceUnit=M}。
@@ -322,81 +309,6 @@ public class PayloadConstraintFactory {
             return distance;
         }
         throw new IllegalArgumentException("标准载荷距离单位仅支持 M 或 KM");
-    }
-
-    /** 统一构造两种标准载荷，避免前后端字段看似相同、后端却走不同校验路径。 */
-    private void validateStandardConstraint(PayloadType payloadType,
-                                            double minRange,
-                                            double maxRange,
-                                            Double azimuthMinDeg,
-                                            Double azimuthMaxDeg,
-                                            Double elevationMinDeg,
-                                            Double elevationMaxDeg,
-                                            double angleRate,
-                                            double sunAvoidHalfAngle,
-                                            Double startupAngleRate) {
-        if (payloadType == PayloadType.GROUND) {
-            PayloadConstraint.ground(minRange, maxRange, azimuthMinDeg, azimuthMaxDeg,
-                    elevationMinDeg, elevationMaxDeg, angleRate, sunAvoidHalfAngle, startupAngleRate);
-            return;
-        }
-        PayloadConstraint.space(minRange, maxRange, azimuthMinDeg, azimuthMaxDeg,
-                elevationMinDeg, elevationMaxDeg, angleRate, sunAvoidHalfAngle, startupAngleRate);
-    }
-
-    /**
-     * 将 WinTool 对空载荷的跟踪角速度标记转换为计算层约束。SPACE 的 0 与 -1
-     * 不是零速率，均代表不限制；GROUND 仍按原始非负数值执行。使用最大有限值而非
-     * 无穷大，确保后续数值运算和 JSON 处理保持有限数。
-     */
-    private double normalizeAngleRate(PayloadType payloadType, Double angleRate) {
-        double configuredAngleRate = valueOrZero(angleRate);
-        if (!Double.isFinite(configuredAngleRate)) {
-            throw new IllegalArgumentException("跟踪角速度必须为有效数值");
-        }
-        if (payloadType == PayloadType.SPACE
-                && (configuredAngleRate == 0.0 || configuredAngleRate == -1.0)) {
-            return Double.MAX_VALUE;
-        }
-        if (configuredAngleRate < 0.0) {
-            throw new IllegalArgumentException("跟踪角速度必须为非负有效数值；仅对空载荷可用 -1 表示不限制");
-        }
-        return configuredAngleRate;
-    }
-
-    /** -1 是交付配置的禁用标记；其他负值和非有限值都必须拒绝。 */
-    private Double normalizeStartupAngleRate(Double startupAngleRate) {
-        if (startupAngleRate == null || startupAngleRate == -1.0) {
-            return null;
-        }
-        if (!Double.isFinite(startupAngleRate) || startupAngleRate < 0.0) {
-            throw new IllegalArgumentException("启动角速度必须为非负有效数值或 -1（禁用）");
-        }
-        return startupAngleRate;
-    }
-
-    /** 校验并保留原始启动角速度标记，供配置界面按文档值回显。 */
-    private Double validateConfiguredStartupAngleRate(Double startupAngleRate) {
-        if (startupAngleRate == null) {
-            return null;
-        }
-        if (!Double.isFinite(startupAngleRate) || startupAngleRate < 0.0 && startupAngleRate != -1.0) {
-            throw new IllegalArgumentException("启动角速度必须为非负有效数值或 -1（禁用）");
-        }
-        return startupAngleRate;
-    }
-
-    /** 校验数值参数必须存在且有限，取值范围由领域载荷约束统一校验。 */
-    private double requireFinite(Double value, String parameterName) {
-        if (value == null || !Double.isFinite(value)) {
-            throw new IllegalArgumentException(parameterName + "必须为有效数值");
-        }
-        return value;
-    }
-
-    /** 对可选数值字段提供标准默认值。 */
-    private double valueOrZero(Double value) {
-        return value == null ? 0.0 : value;
     }
 
     /**

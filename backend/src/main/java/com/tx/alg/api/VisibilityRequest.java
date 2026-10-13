@@ -1,5 +1,12 @@
 package com.tx.alg.api;
 
+import com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraint;
+import com.runisys.orbit.spacevisibility.domain.payload.PayloadType;
+import com.runisys.orbit.spacevisibility.domain.payload.StandardPayloads;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Locale;
+
 import com.tx.alg.OrbitCalculator;
 import java.util.ArrayList;
 import java.util.List;
@@ -233,6 +240,51 @@ public final class VisibilityRequest {
         private double maxDetectRangeKm = 0.0;
         private double sunExclusionAngleDeg = OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG;
 
+        /** 标准最近距离（公里），必填有限且非负。 */
+        private Double minDistanceKm;
+        public Double getMinDistanceKm() { return minDistanceKm; }
+        public void setMinDistanceKm(Double value) { minDistanceKm = value; }
+
+        /** 标准最远距离（公里），必填；0不限，否则须大于最近距离。 */
+        private Double maxDistanceKm;
+        public Double getMaxDistanceKm() { return maxDistanceKm; }
+        public void setMaxDistanceKm(Double value) { maxDistanceKm = value; }
+
+        /** LVLH方位下限（度），与上限同时null表示不限，范围0到360。 */
+        private Double azimuthMinDeg;
+        public Double getAzimuthMinDeg() { return azimuthMinDeg; }
+        public void setAzimuthMinDeg(Double value) { azimuthMinDeg = value; }
+
+        /** LVLH方位上限（度），须严格大于下限。 */
+        private Double azimuthMaxDeg;
+        public Double getAzimuthMaxDeg() { return azimuthMaxDeg; }
+        public void setAzimuthMaxDeg(Double value) { azimuthMaxDeg = value; }
+
+        /** LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。 */
+        private Double elevationMinDeg;
+        public Double getElevationMinDeg() { return elevationMinDeg; }
+        public void setElevationMinDeg(Double value) { elevationMinDeg = value; }
+
+        /** LVLH俯仰上限（度），最大90且严格大于下限。 */
+        private Double elevationMaxDeg;
+        public Double getElevationMaxDeg() { return elevationMaxDeg; }
+        public void setElevationMaxDeg(Double value) { elevationMaxDeg = value; }
+
+        /** 跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。 */
+        private Double angleRateDegPerSec;
+        public Double getAngleRateDegPerSec() { return angleRateDegPerSec; }
+        public void setAngleRateDegPerSec(Double value) { angleRateDegPerSec = value; }
+
+        /** 太阳回避半角（度），必填有限0到180；0关闭。 */
+        private Double sunAvoidHalfAngleDeg;
+        public Double getSunAvoidHalfAngleDeg() { return sunAvoidHalfAngleDeg; }
+        public void setSunAvoidHalfAngleDeg(Double value) { sunAvoidHalfAngleDeg = value; }
+
+        /** 启动角速度元数据（度/秒）；null/-1禁用，0/正值仅回显不参与判定。 */
+        private Double startupAngleRateDegPerSec;
+        public Double getStartupAngleRateDegPerSec() { return startupAngleRateDegPerSec; }
+        public void setStartupAngleRateDegPerSec(Double value) { startupAngleRateDegPerSec = value; }
+
         public String getPayloadId() { return payloadId; }
         public void setPayloadId(String v) { this.payloadId = v; }
 
@@ -256,11 +308,45 @@ public final class VisibilityRequest {
             payload.payloadName = payloadName == null || payloadName.trim().isEmpty()
                     ? payloadIdOrDefault(payload.payloadId, payloadType)
                     : payloadName.trim();
-            payload.sensorConfig = OrbitCalculator.SensorVisibilityConfig.forPayload(
-                    payloadType,
-                    maxDetectRangeKm,
-                    sunExclusionAngleDeg);
+            payload.sensorConfig = isStandard()
+                    ? OrbitCalculator.SensorVisibilityConfig.standard(toStandardConstraint())
+                    : OrbitCalculator.SensorVisibilityConfig.forPayload(payloadType, maxDetectRangeKm, sunExclusionAngleDeg);
             return payload;
+        }
+
+        /** 仅显式SPACE/GROUND进入新协议；旧中文类型与缺省仍走冻结入口。 */
+        public boolean isStandard() {
+            return payloadType != null && ("SPACE".equalsIgnoreCase(payloadType.trim())
+                    || "GROUND".equalsIgnoreCase(payloadType.trim()));
+        }
+
+        /** 公里转米只在适配边界进行；共享严格校验也拒绝乘1000后的溢出。 */
+        public PayloadConstraint toStandardConstraint() {
+            if (!isStandard()) throw new IllegalArgumentException("标准载荷类型仅支持 SPACE 或 GROUND");
+            return StandardPayloads.create(PayloadType.valueOf(payloadType.trim().toUpperCase(Locale.ROOT)),
+                    minDistanceKm == null ? null : minDistanceKm * 1000.0,
+                    maxDistanceKm == null ? null : maxDistanceKm * 1000.0,
+                    azimuthMinDeg, azimuthMaxDeg, elevationMinDeg, elevationMaxDeg,
+                    angleRateDegPerSec, sunAvoidHalfAngleDeg, startupAngleRateDegPerSec);
+        }
+
+        /** 完整标准配置预览；保留0/-1原标记与null，不泄露内部MAX_VALUE或旧圆锥缺省。 */
+        public Map<String, Object> standardConfiguration() {
+            PayloadConstraint constraint = toStandardConstraint();
+            Map<String, Object> result = new LinkedHashMap<String, Object>();
+            result.put("payloadId", payloadId);
+            result.put("payloadName", payloadName);
+            result.put("payloadType", constraint.getPayloadType().name());
+            result.put("minDistanceKm", minDistanceKm);
+            result.put("maxDistanceKm", maxDistanceKm);
+            result.put("azimuthMinDeg", azimuthMinDeg);
+            result.put("azimuthMaxDeg", azimuthMaxDeg);
+            result.put("elevationMinDeg", elevationMinDeg);
+            result.put("elevationMaxDeg", elevationMaxDeg);
+            result.put("angleRateDegPerSec", angleRateDegPerSec);
+            result.put("sunAvoidHalfAngleDeg", sunAvoidHalfAngleDeg);
+            result.put("startupAngleRateDegPerSec", startupAngleRateDegPerSec);
+            return result;
         }
 
         private static String payloadIdOrDefault(String payloadId, String payloadType) {

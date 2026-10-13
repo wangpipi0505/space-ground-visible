@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "jarSha256": "4bf492d0388f0b1ca8f024734cf7bf95e09b0b5fc75711e5bacfa540d2295e00",
+  "readOnlyIndependentComparisons": [
+    {
+      "name": "space-9",
+      "fileCount": 9,
+      "differences": []
+    },
+    {
+      "name": "ballistic-10",
+      "fileCount": 15,
+      "differences": []
+    },
+    {
+      "name": "space-21",
+      "fileCount": 21,
+      "differences": []
+    }
+  ]
+}

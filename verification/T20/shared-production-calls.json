@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "jarSha256": "4bf492d0388f0b1ca8f024734cf7bf95e09b0b5fc75711e5bacfa540d2295e00",
+  "calls": [
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+      "method": "evaluate(",
+      "calls": "PayloadConstraintMath.insideRange:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+      "method": "evaluate(",
+      "calls": "PayloadConstraintMath.lvlhAngles:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+      "method": "evaluate(",
+      "calls": "PayloadConstraintMath.lineOfSightRate:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+      "method": "evaluate(",
+      "calls": "PayloadConstraintMath.insideRate:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+      "method": "evaluate(",
+      "calls": "PayloadConstraintMath.outsideSunAvoidance:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath",
+      "method": "isVisible(",
+      "calls": "insideRange:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath",
+      "method": "isVisible(",
+      "calls": "lvlhAngles:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath",
+      "method": "isVisible(",
+      "calls": "lineOfSightRate:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath",
+      "method": "isVisible(",
+      "calls": "insideRate:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath",
+      "method": "isVisible(",
+      "calls": "outsideSunAvoidance:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.application.PayloadConstraintFactory",
+      "method": "createStandardPayloadJson(",
+      "calls": "StandardPayloads.create:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.application.PayloadConstraintFactory",
+      "method": "parseStandardFormat(",
+      "calls": "StandardPayloads.normalizeAngleRate:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.application.PayloadConstraintFactory",
+      "method": "parseStandardFormat(",
+      "calls": "StandardPayloads.normalizeStartupAngleRate:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.api.VisibilityRequest$PayloadDef",
+      "method": "toStandardConstraint(",
+      "calls": "StandardPayloads.create:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "analyzeLaunchOffsetV2(",
+      "calls": "isStandardTargetObservable:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "analyzeLaunchOffsetV2(",
+      "calls": "OrbitPropagationTool.velocityAt:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "isStandardTargetObservable(",
+      "calls": "PayloadConstraintMath.isVisible:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "isStandardTargetObservable(",
+      "calls": "sunDirectionEci:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "isStandardTargetObservable(",
+      "calls": "hasLineOfSightWgs84Ellipsoid:",
+      "verified": true
+    }
+  ],
+  "classesEqualPackagedBytes": true,
+  "spacePublicAbi": [
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraint",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.payload.PayloadType",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.payload.SolarGeometry",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.payload.VisibilitySample",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.payload.IlluminationState",
+      "identical": true
+    }
+  ],
+  "contextPolicy": "空间DE405/TEME与本影豁免、弹道原解析J2000与原旋转椭球，独立物理上下文调用共用标准数学；未做profiling"
+}

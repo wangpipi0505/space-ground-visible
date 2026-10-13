@@ -1,5 +1,8 @@
 package com.tx.alg;
 
+import com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraint;
+import com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath;
+
 import com.runisys.orbit.spacevisibility.domain.geometry.GeometryMath;
 import com.runisys.orbit.spacevisibility.domain.window.SampledStateRuns;
 import com.runisys.orbit.spacevisibility.domain.window.WindowIntervals;
@@ -248,6 +251,21 @@ public final class OrbitCalculator {
      */
     public static final class SensorVisibilityConfig {
         public PayloadType payloadType = PayloadType.GROUND_SURVEILLANCE;
+        /** 显式标准约束；null保留所有原圆锥路径。不得用旧枚举假装SPACE/GROUND。 */
+        public PayloadConstraint standardConstraint;
+
+        /** 标准不可变约束桥接；仅映射旧摘要真实存在的距离和太阳字段。 */
+        public static SensorVisibilityConfig standard(PayloadConstraint constraint) {
+            if (constraint == null || constraint.isLegacyGroundCone()) {
+                throw new IllegalArgumentException("需要标准载荷约束");
+            }
+            SensorVisibilityConfig config = new SensorVisibilityConfig();
+            config.standardConstraint = constraint;
+            config.maxDetectRangeM = constraint.getMaxDetectRangeM();
+            config.sunExclusionAngleDeg = constraint.getSunAvoidHalfAngleDeg();
+            return config;
+        }
+
         /** 正数生效；NaN、0或负数表示不限制探测距离。 */
         public double maxDetectRangeM = Double.NaN;
         /** 正数生效；默认45度，小于该夹角判为不可见。 */
@@ -301,6 +319,14 @@ public final class OrbitCalculator {
         public static VisibilityConstraintSummary fromConfig(SensorVisibilityConfig sensorConfig) {
             SensorVisibilityConfig config = normalizeSensorConfig(sensorConfig, 140.0);
             VisibilityConstraintSummary summary = new VisibilityConstraintSummary();
+            if (config.standardConstraint != null) {
+                summary.payloadType = config.standardConstraint.getPayloadType().name();
+                summary.maxDetectRangeKm = config.standardConstraint.getMaxDetectRangeM() / 1000.0;
+                summary.sunExclusionAngleDeg = config.standardConstraint.getSunAvoidHalfAngleDeg();
+                // 矩形LVLH不能用圆锥表示：四个锥角维持NaN，旧JSON格式器输出null。
+                return summary;
+            }
+
             PayloadType type = config.payloadType == null ? PayloadType.GROUND_SURVEILLANCE : config.payloadType;
             summary.payloadType = type.displayName();
             summary.maxDetectRangeKm = isPositiveFinite(config.maxDetectRangeM)
@@ -829,7 +855,6 @@ public final class OrbitCalculator {
         public long offsetSecond;
         public final List<SatelliteVisibilityResult> visibleSatellites = new ArrayList<SatelliteVisibilityResult>();
         public final List<TargetVisibilitySummary> targets = new ArrayList<TargetVisibilitySummary>();
-
         public long totalObservableSeconds() {
             return Math.round(totalObservableDurationSec());
         }
@@ -1826,7 +1851,8 @@ public final class OrbitCalculator {
                 allResults,
                 best,
                 j2000ToUtcMillis(sourceReferenceEpochSec),
-                VisibilityConstraintSummary.fromConfig(sensorConfig));
+                hasStandardPayloads(satellites) ? firstVisibilityConstraint(allResults, best)
+                        : VisibilityConstraintSummary.fromConfig(sensorConfig));
     }
 
     public static LaunchSearchResultV2 searchLaunchOffsetsV2(
@@ -2096,7 +2122,8 @@ public final class OrbitCalculator {
                 allResults,
                 best,
                 firstReferenceUtc == null ? "" : firstReferenceUtc,
-                VisibilityConstraintSummary.fromConfig(activeSensorConfig));
+                hasStandardPayloads(satellites) ? firstVisibilityConstraint(allResults, best)
+                        : VisibilityConstraintSummary.fromConfig(activeSensorConfig));
     }
 
     private static void runOffsetSearch(final int targetIndex,
@@ -2358,6 +2385,13 @@ public final class OrbitCalculator {
         List<List<SampledStateRuns<Boolean>>> payloadRuns = new ArrayList<List<SampledStateRuns<Boolean>>>();
         int[][] payloadArcIndexes = new int[satellites.size()][];
         SatelliteVisibilityResult[][] payloadCurrent = new SatelliteVisibilityResult[satellites.size()][];
+        com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool[] standardTools =
+                new com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool[satellites.size()];
+        com.runisys.orbit.spacevisibility.domain.geometry.Vector3[] previousLos =
+                new com.runisys.orbit.spacevisibility.domain.geometry.Vector3[satellites.size()];
+        double[] previousTimes = new double[satellites.size()];
+        boolean standardRequest = hasStandardPayloads(satellites);
+
         for (int i = 0; i < satellites.size(); i++) {
             List<SatellitePayloadConfig> payloads = resolveSatellitePayloads(
                     satellites.get(i), sensorConfig, sensorFovDeg, i + 1);
@@ -2367,6 +2401,21 @@ public final class OrbitCalculator {
             payloadRuns.add(runs);
             payloadArcIndexes[i] = new int[payloads.size()];
             payloadCurrent[i] = new SatelliteVisibilityResult[payloads.size()];
+            for (SatellitePayloadConfig payload : payloads) {
+                if (payload.sensorConfig.standardConstraint != null && standardTools[i] == null) {
+                    OrbitElements e = satellites.get(i);
+                    standardTools[i] = BallisticOrbitPropagation.bind(new OrbitDefinition.Elements(
+                            OrbitDefinition.Model.valueOf(orbitModel.name()), e.semiMajorAxisM, e.eccentricity,
+                            e.inclinationDeg, e.raanDeg, e.argumentOfPerigeeDeg, e.meanAnomalyDeg,
+                            OrbitTime.legacyJ2000(e.epochSec, utcOffsetSec), 0.0));
+                }
+
+            }
+        }
+
+        if (standardRequest) {
+            calc.visibilityConstraint = VisibilityConstraintSummary.fromConfig(payloadsBySatellite.get(0).get(0).sensorConfig);
+            calc.payloadType = calc.visibilityConstraint.payloadType;
         }
 
         for (BallisticPoint point : samples) {
@@ -2377,17 +2426,19 @@ public final class OrbitCalculator {
                 OrbitElements elements = satellites.get(i);
                 Vector3 satellite = satellitePositionProvider.position(i, elements, absoluteTime, orbitModel);
                 List<SatellitePayloadConfig> payloads = payloadsBySatellite.get(i);
+                com.runisys.orbit.spacevisibility.domain.geometry.Vector3 standardVelocity = standardTools[i] == null ? null
+                        : standardTools[i].velocityAt(OrbitTime.legacyJ2000(absoluteTime, utcOffsetSec), OrbitDefinition.Frame.J2000);
+                com.runisys.orbit.spacevisibility.domain.geometry.Vector3 currentLos = standardTools[i] == null ? null
+                        : domainVector(target.subtract(satellite));
                 for (int payloadIndex = 0; payloadIndex < payloads.size(); payloadIndex++) {
                     SatellitePayloadConfig payload = payloads.get(payloadIndex);
                     SensorVisibilityConfig payloadConfig = payload.sensorConfig;
                     SampledStateRuns<Boolean> run = payloadRuns.get(i).get(payloadIndex);
                     boolean wasVisible = run.getState() != null;
-                    boolean visible = isTargetObservableFromSatelliteStable(
-                            satellite,
-                            target,
-                            payloadConfig,
-                            absoluteTime,
-                            wasVisible);
+                    boolean visible = payloadConfig.standardConstraint == null
+                            ? isTargetObservableFromSatelliteStable(satellite, target, payloadConfig, absoluteTime, wasVisible)
+                            : isStandardTargetObservable(satellite, standardVelocity, target, payloadConfig.standardConstraint,
+                                    absoluteTime, previousLos[i], point.tSec - previousTimes[i]);
                     SampledStateRuns.Segment<Boolean> completed = run.accept(
                             visible ? Boolean.TRUE : null, Double.doubleToRawLongBits(point.tSec));
 
@@ -2433,6 +2484,9 @@ public final class OrbitCalculator {
                         payloadCurrent[i][payloadIndex] = null;
                     }
                 }
+                // 每目标/星/偏移拥有独立历史；不可见点也更新，速率用实际相邻采样秒。
+                previousLos[i] = currentLos;
+                previousTimes[i] = point.tSec;
             }
         }
 
@@ -2486,7 +2540,7 @@ public final class OrbitCalculator {
                     + "-PAYLOAD-" + (payloadIndex + 1)
                     : source.payloadId.trim();
             payload.payloadName = isBlank(source.payloadName)
-                    ? payload.sensorConfig.payloadType.displayName()
+                    ? VisibilityConstraintSummary.fromConfig(payload.sensorConfig).payloadType
                     : source.payloadName.trim();
             resolved.add(payload);
         }
@@ -3688,6 +3742,9 @@ public final class OrbitCalculator {
             return false;
         }
         SensorVisibilityConfig config = normalizeSensorConfig(sensorConfig, 140.0);
+        if (config.standardConstraint != null) {
+            throw new IllegalArgumentException("标准载荷需使用含卫星速度与相邻LOS历史的标准判定入口");
+        }
         Vector3 lineOfSight = target.subtract(satellite);
         double range = lineOfSight.norm();
         if (range <= 0.0) {
@@ -3743,12 +3800,42 @@ public final class OrbitCalculator {
         }
     }
 
+    /** 是否显式使用标准载荷；旧纯中文请求保持原空结果及根摘要规则。 */
+    private static boolean hasStandardPayloads(List<OrbitElements> satellites) {
+        for (OrbitElements satellite : satellites) {
+            if (satellite.payloads == null) continue;
+            for (SatellitePayloadConfig payload : satellite.payloads) {
+                if (payload != null && payload.sensorConfig != null && payload.sensorConfig.standardConstraint != null) return true;
+            }
+        }
+        return false;
+    }
+
+    /** 仅做同参考系向量适配，不重算坐标、不转换时标。 */
+    private static com.runisys.orbit.spacevisibility.domain.geometry.Vector3 domainVector(Vector3 vector) {
+        return new com.runisys.orbit.spacevisibility.domain.geometry.Vector3(vector.x, vector.y, vector.z);
+    }
+
+    /**
+     * 标准弹道载荷：原J2000解析太阳、原时刻旋转后的WGS84遮挡，与共用LVLH/距离/速率主体组合。
+     * 弹道始终回避太阳，不借用空间本影豁免。相邻LOS历史由每次独立扫描提供，单位米与秒。
+     */
+    public static boolean isStandardTargetObservable(Vector3 satellite,
+            com.runisys.orbit.spacevisibility.domain.geometry.Vector3 velocity, Vector3 target,
+            PayloadConstraint constraint, double absoluteJ2000Sec,
+            com.runisys.orbit.spacevisibility.domain.geometry.Vector3 previousLos, double elapsedSec) {
+        return PayloadConstraintMath.isVisible(domainVector(satellite), velocity, domainVector(target), constraint,
+                previousLos, elapsedSec, hasLineOfSightWgs84Ellipsoid(satellite, target, absoluteJ2000Sec),
+                domainVector(sunDirectionEci(absoluteJ2000Sec)), true);
+    }
+
     private static SensorVisibilityConfig normalizeSensorConfig(SensorVisibilityConfig sensorConfig,
                                                                 double fallbackSensorFovDeg) {
         SensorVisibilityConfig source = sensorConfig == null
                 ? SensorVisibilityConfig.legacySimpleCone(fallbackSensorFovDeg)
                 : sensorConfig;
         SensorVisibilityConfig normalized = new SensorVisibilityConfig();
+        normalized.standardConstraint = source.standardConstraint;
         normalized.payloadType = source.payloadType == null ? PayloadType.GROUND_SURVEILLANCE : source.payloadType;
         normalized.maxDetectRangeM = isPositiveFinite(source.maxDetectRangeM) ? source.maxDetectRangeM : Double.NaN;
         normalized.sunExclusionAngleDeg = isNonNegativeFinite(source.sunExclusionAngleDeg)
