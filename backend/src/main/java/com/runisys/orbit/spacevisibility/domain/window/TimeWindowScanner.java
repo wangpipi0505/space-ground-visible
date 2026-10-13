@@ -141,28 +141,23 @@ public final class TimeWindowScanner {
         int adaptiveDepth = adaptiveDepth(coarseStepSec, minEventSec);
         SamplingCounter samplingCounter = new SamplingCounter();
         List<StateInterval<T>> intervals = new ArrayList<StateInterval<T>>();
-        long segmentStartNanos = 0L;
         long previousOffsetNanos = 0L;
-        T currentState = samplingCounter.evaluate(stateAt, start);
+        SampledStateRuns<T> runs = new SampledStateRuns<T>(samplingCounter.evaluate(stateAt, start), 0L);
         while (previousOffsetNanos < totalNanos) {
             long currentOffsetNanos = Math.min(totalNanos, previousOffsetNanos + coarseStepNanos);
             T nextState = samplingCounter.evaluate(stateAt, atOffset(start, currentOffsetNanos));
-            if (!Objects.equals(currentState, nextState)) {
-                StateScanResult<T> result = scanChangedRange(start, previousOffsetNanos, currentOffsetNanos,
-                        fineStepNanos, currentState, segmentStartNanos, stateAt, intervals, samplingCounter);
-                currentState = result.getState();
-                segmentStartNanos = result.getSegmentStartNanos();
+            if (!Objects.equals(runs.getState(), nextState)) {
+                scanChangedRange(start, previousOffsetNanos, currentOffsetNanos,
+                        fineStepNanos, runs, stateAt, intervals, samplingCounter);
             } else if (adaptiveDepth > 0 && containsAdaptiveStateChange(start, previousOffsetNanos,
-                    currentOffsetNanos, adaptiveDepth, currentState, stateAt, samplingCounter)) {
+                    currentOffsetNanos, adaptiveDepth, runs.getState(), stateAt, samplingCounter)) {
                 // 内部探针发现变化后，必须细扫完整粗选区间，才能同时收集进入和离开两条边界。
-                StateScanResult<T> result = scanChangedRange(start, previousOffsetNanos, currentOffsetNanos,
-                        fineStepNanos, currentState, segmentStartNanos, stateAt, intervals, samplingCounter);
-                currentState = result.getState();
-                segmentStartNanos = result.getSegmentStartNanos();
+                scanChangedRange(start, previousOffsetNanos, currentOffsetNanos,
+                        fineStepNanos, runs, stateAt, intervals, samplingCounter);
             }
             previousOffsetNanos = currentOffsetNanos;
         }
-        addInterval(intervals, segmentStartNanos, totalNanos, currentState);
+        addInterval(intervals, runs.getStart(), totalNanos, runs.getState());
         if (statisticsConsumer != null) {
             statisticsConsumer.accept(samplingCounter.toStatistics());
         }
@@ -170,29 +165,25 @@ public final class TimeWindowScanner {
     }
 
     /** 在粗选端点状态不同的候选区间内，用精选网格收集所有状态切换。 */
-    private static <T> StateScanResult<T> scanChangedRange(Instant start,
+    private static <T> void scanChangedRange(Instant start,
                                                             long lowerNanos,
                                                             long upperNanos,
                                                             long fineStepNanos,
-                                                            T initialState,
-                                                            long segmentStartNanos,
+                                                            SampledStateRuns<T> runs,
                                                             Function<Instant, T> stateAt,
                                                             List<StateInterval<T>> intervals,
                                                             SamplingCounter samplingCounter) {
         samplingCounter.recordRefinedRange();
-        T currentState = initialState;
-        long currentSegmentStartNanos = segmentStartNanos;
         long offsetNanos = lowerNanos;
         while (offsetNanos < upperNanos) {
             offsetNanos = Math.min(upperNanos, offsetNanos + fineStepNanos);
             T scannedState = samplingCounter.evaluate(stateAt, atOffset(start, offsetNanos));
-            if (!Objects.equals(currentState, scannedState)) {
-                addInterval(intervals, currentSegmentStartNanos, offsetNanos, currentState);
-                currentState = scannedState;
-                currentSegmentStartNanos = offsetNanos;
+            SampledStateRuns.Segment<T> completed = runs.accept(scannedState, offsetNanos);
+            if (completed != null) {
+                // 空间切分取首个新状态点，不能套弹道的最后可见原点边界。
+                addInterval(intervals, completed.getStart(), offsetNanos, completed.getState());
             }
         }
-        return new StateScanResult<T>(currentState, currentSegmentStartNanos);
     }
 
     /** 仅在状态非空且区间具有正长度时保存稳定区间。 */
@@ -293,25 +284,6 @@ public final class TimeWindowScanner {
     /** 将整数纳秒偏移转换为相对秒，供既有 TimeInterval 模型和上层 Instant 转换使用。 */
     private static double secondsFromNanos(long nanos) {
         return nanos / 1_000_000_000.0;
-    }
-
-    /** 保存一个细扫候选区间结束时仍处于的状态及其当前片段起点。 */
-    private static final class StateScanResult<T> {
-        private final T state;
-        private final long segmentStartNanos;
-
-        private StateScanResult(T state, long segmentStartNanos) {
-            this.state = state;
-            this.segmentStartNanos = segmentStartNanos;
-        }
-
-        private T getState() {
-            return state;
-        }
-
-        private long getSegmentStartNanos() {
-            return segmentStartNanos;
-        }
     }
 
     /**

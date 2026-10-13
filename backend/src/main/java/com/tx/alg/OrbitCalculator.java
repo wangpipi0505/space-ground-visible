@@ -1,6 +1,8 @@
 package com.tx.alg;
 
 import com.runisys.orbit.spacevisibility.domain.geometry.GeometryMath;
+import com.runisys.orbit.spacevisibility.domain.window.SampledStateRuns;
+import com.runisys.orbit.spacevisibility.domain.window.WindowIntervals;
 
 import com.runisys.orbit.spacevisibility.domain.time.LegacyJ2000Time;
 import com.runisys.orbit.spacevisibility.domain.geometry.LegacyJ2000Frames;
@@ -502,6 +504,7 @@ public final class OrbitCalculator {
         }
     }
 
+    /** 旧单锥窗口，边界为原样本秒；时长沿用整秒点计数的+1，不等价于V2连续时长。 */
     public static final class VisibilityWindow {
         public final double startRelSec;
         public final double endRelSec;
@@ -511,11 +514,13 @@ public final class OrbitCalculator {
             this.endRelSec = endRelSec;
         }
 
+        /** 单点仍为1秒，负时长归零；保留原加法先后及NaN行为。 */
         public double durationSec() {
             return Math.max(0.0, endRelSec - startRelSec + 1.0);
         }
     }
 
+    /** 旧单卫星窗口，与旧总体窗口同用max(0,end-start+1)历史口径。 */
     public static final class SatelliteVisibilityWindow {
         public final String satelliteName;
         public final double startRelSec;
@@ -527,6 +532,7 @@ public final class OrbitCalculator {
             this.endRelSec = endRelSec;
         }
 
+        /** 原整秒计数语义，不能移除+1来迎合空间区间或V2弧段。 */
         public double durationSec() {
             return Math.max(0.0, endRelSec - startRelSec + 1.0);
         }
@@ -828,13 +834,13 @@ public final class OrbitCalculator {
             return Math.round(totalObservableDurationSec());
         }
 
+        /** 逐原弧段顺序相加；重叠载荷不做并集，非正时长且点数正时回退点数。 */
         public double totalObservableDurationSec() {
-            long total = 0L;
-            double totalSec = 0.0;
-            for (SatelliteVisibilityResult svr : visibleSatellites) {
-                total += arcPointCount(svr);
-                totalSec += arcDurationSec(svr);
-            }
+            // 共用有序累计主体；不同载荷的重叠弧段分别相加，点数fallback仍沿用旧口径。
+            WindowIntervals.Totals totals = WindowIntervals.total(visibleSatellites,
+                    OrbitCalculator::arcDurationSec, OrbitCalculator::arcPointCount);
+            long total = totals.getPointCount();
+            double totalSec = totals.getDurationSec();
             if (totalSec <= 0.0 && total > 0L) {
                 return total;
             }
@@ -1531,6 +1537,10 @@ public final class OrbitCalculator {
                 points.get(points.size() - 1).relativeTimeSec - points.get(0).relativeTimeSec);
     }
 
+    /**
+     * 保存可见点的绝对时间和可选轨迹明细；相对首末时间与点数紧随本方法由共用段记录回填。
+     * 用回填前的visiblePointCount识别首点，保持原绝对秒运算与metadata-only输出语义。
+     */
     private static void recordVisiblePoint(SatelliteVisibilityResult arc,
                                            double longitudeDeg,
                                            double latitudeDeg,
@@ -1540,11 +1550,8 @@ public final class OrbitCalculator {
                                            boolean includeTrajectoryPoints) {
         if (arc.visiblePointCount == 0) {
             arc.startJ2000Sec = absoluteTimeSec;
-            arc.startRelativeTimeSec = relativeTimeSec;
         }
         arc.endJ2000Sec = absoluteTimeSec;
-        arc.endRelativeTimeSec = relativeTimeSec;
-        arc.visiblePointCount++;
         if (includeTrajectoryPoints) {
             arc.trajectoryPoints.add(new VisibleTrajectoryPoint(
                     longitudeDeg, latitudeDeg, heightM, absoluteTimeSec, relativeTimeSec));
@@ -2347,14 +2354,17 @@ public final class OrbitCalculator {
         // 卫星位置按平台传播一次；同一位置供该平台的所有载荷复用。
         List<List<SatellitePayloadConfig>> payloadsBySatellite =
                 new ArrayList<List<SatellitePayloadConfig>>(satellites.size());
-        boolean[][] payloadInArc = new boolean[satellites.size()][];
+        // 标记保存原double秒的rawbits；不装箱，不按索引反查列表或累加时间。
+        List<List<SampledStateRuns<Boolean>>> payloadRuns = new ArrayList<List<SampledStateRuns<Boolean>>>();
         int[][] payloadArcIndexes = new int[satellites.size()][];
         SatelliteVisibilityResult[][] payloadCurrent = new SatelliteVisibilityResult[satellites.size()][];
         for (int i = 0; i < satellites.size(); i++) {
             List<SatellitePayloadConfig> payloads = resolveSatellitePayloads(
                     satellites.get(i), sensorConfig, sensorFovDeg, i + 1);
             payloadsBySatellite.add(payloads);
-            payloadInArc[i] = new boolean[payloads.size()];
+            List<SampledStateRuns<Boolean>> runs = new ArrayList<SampledStateRuns<Boolean>>();
+            for (int p = 0; p < payloads.size(); p++) runs.add(new SampledStateRuns<Boolean>(null, 0L));
+            payloadRuns.add(runs);
             payloadArcIndexes[i] = new int[payloads.size()];
             payloadCurrent[i] = new SatelliteVisibilityResult[payloads.size()];
         }
@@ -2370,15 +2380,18 @@ public final class OrbitCalculator {
                 for (int payloadIndex = 0; payloadIndex < payloads.size(); payloadIndex++) {
                     SatellitePayloadConfig payload = payloads.get(payloadIndex);
                     SensorVisibilityConfig payloadConfig = payload.sensorConfig;
+                    SampledStateRuns<Boolean> run = payloadRuns.get(i).get(payloadIndex);
+                    boolean wasVisible = run.getState() != null;
                     boolean visible = isTargetObservableFromSatelliteStable(
                             satellite,
                             target,
                             payloadConfig,
                             absoluteTime,
-                            payloadInArc[i][payloadIndex]);
+                            wasVisible);
+                    SampledStateRuns.Segment<Boolean> completed = run.accept(
+                            visible ? Boolean.TRUE : null, Double.doubleToRawLongBits(point.tSec));
 
-                    if (visible && !payloadInArc[i][payloadIndex]) {
-                        payloadInArc[i][payloadIndex] = true;
+                    if (visible && !wasVisible) {
                         payloadArcIndexes[i][payloadIndex]++;
                         SatelliteVisibilityResult arc = new SatelliteVisibilityResult();
                         arc.satelliteId = isBlank(elements.satelliteId) ? elements.name : elements.satelliteId;
@@ -2408,10 +2421,14 @@ public final class OrbitCalculator {
                                 absoluteTime,
                                 point.tSec,
                                 includeTrajectoryPoints);
+                        // metadata来自共用段记录，轨迹关闭时仍有原点数及首末double时间。
+                        SatelliteVisibilityResult arc = payloadCurrent[i][payloadIndex];
+                        arc.startRelativeTimeSec = Double.longBitsToDouble(run.getStart());
+                        arc.endRelativeTimeSec = Double.longBitsToDouble(run.getLast());
+                        arc.visiblePointCount = run.getPointCount();
                     }
 
-                    if (!visible && payloadInArc[i][payloadIndex]) {
-                        payloadInArc[i][payloadIndex] = false;
+                    if (completed != null) {
                         calc.visibleSatellites.add(payloadCurrent[i][payloadIndex]);
                         payloadCurrent[i][payloadIndex] = null;
                     }
@@ -2420,9 +2437,9 @@ public final class OrbitCalculator {
         }
 
         for (int i = 0; i < satellites.size(); i++) {
-            for (int payloadIndex = 0; payloadIndex < payloadInArc[i].length; payloadIndex++) {
+            for (int payloadIndex = 0; payloadIndex < payloadRuns.get(i).size(); payloadIndex++) {
                 SatelliteVisibilityResult arc = payloadCurrent[i][payloadIndex];
-                if (payloadInArc[i][payloadIndex] && arc != null && hasVisiblePoints(arc)) {
+                if (payloadRuns.get(i).get(payloadIndex).getState() != null && arc != null && hasVisiblePoints(arc)) {
                     calc.visibleSatellites.add(arc);
                 }
             }
@@ -3153,6 +3170,10 @@ public final class OrbitCalculator {
         return result;
     }
 
+    /**
+     * 旧单锥扫描按原列表逐点判定，共用段记录保留首末可见原点；段结束取末点，不插值。
+     * long标记仅保存double原始位，负零也原样还原；最终尾段仍在循环结束后补入。
+     */
     public static List<VisibilityWindow> visibilityWindows(double launchOffsetSec,
                                                            List<OrbitElements> satellites,
                                                            List<BallisticPoint> oneSecondSamples,
@@ -3166,30 +3187,24 @@ public final class OrbitCalculator {
                                                            double sensorFovDeg,
                                                            GeodeticDatum datum) {
         List<VisibilityWindow> windows = new ArrayList<VisibilityWindow>();
-        boolean inWindow = false;
-        double windowStart = 0.0;
-        double lastVisible = 0.0;
-
+        SampledStateRuns<Boolean> runs = new SampledStateRuns<Boolean>(null, 0L);
         for (BallisticPoint point : oneSecondSamples) {
             boolean visible = isBallisticPointVisible(launchOffsetSec, point, satellites, sensorFovDeg, datum);
-            if (visible && !inWindow) {
-                inWindow = true;
-                windowStart = point.tSec;
-            }
-            if (visible) {
-                lastVisible = point.tSec;
-            }
-            if (!visible && inWindow) {
-                windows.add(new VisibilityWindow(windowStart, lastVisible));
-                inWindow = false;
+            SampledStateRuns.Segment<Boolean> completed = runs.accept(
+                    visible ? Boolean.TRUE : null, Double.doubleToRawLongBits(point.tSec));
+            if (completed != null) {
+                windows.add(new VisibilityWindow(Double.longBitsToDouble(completed.getStart()),
+                        Double.longBitsToDouble(completed.getLast())));
             }
         }
-        if (inWindow) {
-            windows.add(new VisibilityWindow(windowStart, lastVisible));
+        if (runs.getState() != null) {
+            windows.add(new VisibilityWindow(Double.longBitsToDouble(runs.getStart()),
+                    Double.longBitsToDouble(runs.getLast())));
         }
         return windows;
     }
 
+    /** 逐卫星独立记录连续段，卫星外层/原点内层顺序以及每颗卫星的尾段位置保持原样。 */
     public static List<SatelliteVisibilityWindow> satelliteVisibilityWindows(double launchOffsetSec,
                                                                             List<OrbitElements> satellites,
                                                                             List<BallisticPoint> oneSecondSamples,
@@ -3197,25 +3212,21 @@ public final class OrbitCalculator {
                                                                             GeodeticDatum datum) {
         List<SatelliteVisibilityWindow> windows = new ArrayList<SatelliteVisibilityWindow>();
         for (OrbitElements satellite : satellites) {
-            boolean inWindow = false;
-            double windowStart = 0.0;
-            double lastVisible = 0.0;
+            SampledStateRuns<Boolean> runs = new SampledStateRuns<Boolean>(null, 0L);
             for (BallisticPoint point : oneSecondSamples) {
                 boolean visible = isBallisticPointVisibleBySatellite(launchOffsetSec, point, satellite, sensorFovDeg, datum);
-                if (visible && !inWindow) {
-                    inWindow = true;
-                    windowStart = point.tSec;
-                }
-                if (visible) {
-                    lastVisible = point.tSec;
-                }
-                if (!visible && inWindow) {
-                    windows.add(new SatelliteVisibilityWindow(satellite.name, windowStart, lastVisible));
-                    inWindow = false;
+                SampledStateRuns.Segment<Boolean> completed = runs.accept(
+                        visible ? Boolean.TRUE : null, Double.doubleToRawLongBits(point.tSec));
+                if (completed != null) {
+                    windows.add(new SatelliteVisibilityWindow(satellite.name,
+                            Double.longBitsToDouble(completed.getStart()),
+                            Double.longBitsToDouble(completed.getLast())));
                 }
             }
-            if (inWindow) {
-                windows.add(new SatelliteVisibilityWindow(satellite.name, windowStart, lastVisible));
+            if (runs.getState() != null) {
+                windows.add(new SatelliteVisibilityWindow(satellite.name,
+                        Double.longBitsToDouble(runs.getStart()),
+                        Double.longBitsToDouble(runs.getLast())));
             }
         }
         return windows;

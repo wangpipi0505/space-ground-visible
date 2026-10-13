@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "jarSha256": "33af39f9e4a30038ef21e854580a8389926ec6f04fa44f68d1622ab814fcb4e1",
+  "calls": [
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.window.TimeWindowScanner",
+      "method": "scanChangedRange(",
+      "calls": "SampledStateRuns.accept:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculator",
+      "method": "calculate(",
+      "calls": "WindowIntervals.total:",
+      "verified": true
+    },
+    {
+      "owner": "com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculator",
+      "method": "calculate(",
+      "calls": "WindowIntervals.intersect:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "analyzeLaunchOffsetV2(",
+      "calls": "SampledStateRuns.accept:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "visibilityWindows(",
+      "calls": "SampledStateRuns.accept:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator",
+      "method": "satelliteVisibilityWindows(",
+      "calls": "SampledStateRuns.accept:",
+      "verified": true
+    },
+    {
+      "owner": "com.tx.alg.OrbitCalculator$LaunchOffsetCalcResult",
+      "method": "totalObservableDurationSec(",
+      "calls": "WindowIntervals.total:",
+      "verified": true
+    }
+  ],
+  "classesEqualPackagedBytes": true,
+  "spacePublicAbi": [
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.window.TimeInterval",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.window.TimeWindowScanner",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.window.TimeWindowScanner$ScanStatistics",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.window.WindowNormalizer",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculator",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.window.StateInterval",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.window.CombinationWindow",
+      "identical": true
+    },
+    {
+      "type": "com.runisys.orbit.spacevisibility.domain.window.CombinationConstraint",
+      "identical": true
+    }
+  ],
+  "allocationScope": "状态记录每扫描/载荷一个，非空段关闭创建快照，累计创建Totals；无每点时间装箱。未做profiling。"
+}

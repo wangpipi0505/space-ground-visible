@@ -1,0 +1,7 @@
+{
+  "pid": 26272,
+  "commandLine": "\"C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe\" -Dfile.encoding=UTF-8 -Djava.awt.headless=true -jar G:/5-YG/space-ground-visible/verification/runtime/T19/space-target-visible-T19.jar --spring.profiles.active=demo --server.port=18080 --ballistic.files.root=G:/5-YG/space-ground-visible/verification/runtime/T19/storage --spring.datasource.url=jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/T19/demo-db;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1 --logging.file.name=G:/5-YG/space-ground-visible/verification/runtime/T19/backend.log ",
+  "jarSha256": "33af39f9e4a30038ef21e854580a8389926ec6f04fa44f68d1622ab814fcb4e1",
+  "stoppedAt": "2026-10-13T18:28:53.1627918+08:00",
+  "shutdownValidation": "仅停止本项独立进程，不代表無异常退出或资源泄漏验收"
+}

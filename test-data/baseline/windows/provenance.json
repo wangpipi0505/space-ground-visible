@@ -1,0 +1,66 @@
+{
+  "javaVersion": "1.8.0_472",
+  "repeatedIdentical": true,
+  "originalBallisticJarIdentical": true,
+  "scenarios": 66,
+  "sources": [
+    {
+      "file": "backend/src/test/java/com/runisys/orbit/spacevisibility/domain/window/WindowReferenceScenarios.java",
+      "sha256": "c2f84bfc46fc4668c2733e5b9887e30798253772c01139066893e9b9261689a0"
+    },
+    {
+      "file": "verification/T19/OriginalWindowProbe.java",
+      "sha256": "3bb60840e309137db22595bbabbbc247627abb850af8c62b6062438d56439dcf"
+    },
+    {
+      "file": "verification\\baseline-copies\\ballistic\\build\\alg-toolkit-1.0.0-plain.jar",
+      "sha256": "6dec33be2ec401b5a32b0ed1cb9a7a86568eb57771990225ab80337d5da27501"
+    },
+    {
+      "file": "verification/baseline-copies/ballistic/source/src/main/java/com/tx/alg/OrbitCalculator.java",
+      "sha256": "e49bde8a817ff7b0af70144862a2f8d6226060b7e5c0fcb99c909afd59b1e942"
+    },
+    {
+      "file": "verification/baseline-copies/ballistic/source/target/classes/com/tx/alg/OrbitCalculator.class",
+      "sha256": "4de0232d056473d79cbf2c7c72c1e5c2974471123693e730edbfd17885e2b6fc"
+    },
+    {
+      "file": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner.java",
+      "sha256": "d27a57d1344fab3928cf055754dd818987e091a628af91ea2b2e28f608c0dace"
+    },
+    {
+      "file": "verification\\runtime\\T04\\space-java8-validation\\target\\classes/com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner.class",
+      "sha256": "f71e814109bc4a9d16966111326ff6d6d646c7691a32d21eeab565ea2e4f4581"
+    },
+    {
+      "file": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/TimeInterval.java",
+      "sha256": "44101e131ec5d15e6cd6b53c66826c399d315c200dfac4891848c5f02ad0eb35"
+    },
+    {
+      "file": "verification\\runtime\\T04\\space-java8-validation\\target\\classes/com/runisys/orbit/spacevisibility/domain/window/TimeInterval.class",
+      "sha256": "e36256c62210078797cad852cab4f62fdc30f3fd5c3832f21d2899906d5d2dfc"
+    },
+    {
+      "file": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowNormalizer.java",
+      "sha256": "3da1a63de89fed4bfd8aa84f8371a580deb61ccc7f38cc9b8ade72d8e97ed6c0"
+    },
+    {
+      "file": "verification\\runtime\\T04\\space-java8-validation\\target\\classes/com/runisys/orbit/spacevisibility/domain/window/WindowNormalizer.class",
+      "sha256": "3cf8fa50ab4f686ea7793ee2ae1064a4f40049e743dcca8e9e41ce1485f20656"
+    },
+    {
+      "file": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/CombinationWindowCalculator.java",
+      "sha256": "c198690cb49ce68d5269bb99a1976c9a8b322d42e8396f97a06991307bcaa7f2"
+    },
+    {
+      "file": "verification\\runtime\\T04\\space-java8-validation\\target\\classes/com/runisys/orbit/spacevisibility/domain/window/CombinationWindowCalculator.class",
+      "sha256": "cde030e6123937074a1b966b03a5439a6a3065f4ea73a16bd1cc340cb6f79e4c"
+    }
+  ],
+  "files": [
+    {
+      "file": "windows.json",
+      "sha256": "be135c05a8c2274ace3b542697e7cfb71c26b4b429c325586d6ada9cd3a129e1"
+    }
+  ]
+}

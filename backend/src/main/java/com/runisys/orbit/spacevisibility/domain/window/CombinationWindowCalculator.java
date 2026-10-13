@@ -33,7 +33,7 @@ public final class CombinationWindowCalculator {
             }
             intersections = intersections == null
                     ? new ArrayList<TimeInterval>(windows)
-                    : intersect(intersections, windows);
+                    : WindowIntervals.intersect(intersections, windows);
             if (intersections.isEmpty()) {
                 return Collections.emptyList();
             }
@@ -41,10 +41,7 @@ public final class CombinationWindowCalculator {
         // WinTool 的组合约束以同一目标 + 同一卫星组合的交集累计时长验收。中间发生不可见
         // 间隔时，间隔两侧仍是两个独立的输出片段；只有验收时把它们的时长相加，不能把
         // 时间轴上的空档伪造成一条连续弧段。
-        double totalDurationSec = 0.0;
-        for (TimeInterval interval : intersections) {
-            totalDurationSec += interval.durationSec();
-        }
+        double totalDurationSec = WindowIntervals.total(intersections, TimeInterval::durationSec, null).getDurationSec();
         if (totalDurationSec < constraint.getMinDurationSec()) {
             return Collections.emptyList();
         }
@@ -55,16 +52,4 @@ public final class CombinationWindowCalculator {
         return result;
     }
 
-    private static List<TimeInterval> intersect(List<TimeInterval> left, List<TimeInterval> right) {
-        List<TimeInterval> result = new ArrayList<TimeInterval>();
-        for (TimeInterval first : left) {
-            for (TimeInterval second : right) {
-                TimeInterval intersection = first.intersection(second);
-                if (intersection != null) {
-                    result.add(intersection);
-                }
-            }
-        }
-        return result;
-    }
 }
