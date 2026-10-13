@@ -1,0 +1,290 @@
+{
+  "evidence": [
+    {
+      "name": "替换为超过64MiB限额文件",
+      "status": 413,
+      "requestContentType": "multipart/form-data; boundary=----WebKitFormBoundaryIqTnHaNC5ynAmsch",
+      "originalResponse": {
+        "runtimeFile": "verification/runtime/T22/browser-failure-and-remote-http-0-original.json",
+        "sizeBytes": 86,
+        "sha256": "1d0122d6491099b7c495e1418382797f8f0d95143d666544cc0b394273d4f204"
+      },
+      "responseSummary": {
+        "code": "FILE_TOO_LARGE",
+        "error": "文件或 multipart 请求超过配置字节上限"
+      }
+    },
+    {
+      "name": "原CSV结构无效",
+      "status": 201,
+      "requestContentType": "multipart/form-data; boundary=----WebKitFormBoundaryWfesP3HXvHiaoeqM",
+      "originalResponse": {
+        "runtimeFile": "verification/runtime/T22/browser-failure-and-remote-http-1-original.json",
+        "sizeBytes": 247,
+        "sha256": "745c9ac06bb9ac95347bfb71df8e451b93054bc9a318ca06e64c613eabce26b1"
+      },
+      "responseSummary": {
+        "fileId": "b5dd9537-1480-4e8c-a3ea-d78e2f43277a",
+        "originalName": "损坏弹道.csv",
+        "sizeBytes": 13,
+        "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T22\\storage\\uploads\\upload-5820061685421382818.csv"
+      }
+    },
+    {
+      "name": "损坏CSV真实服务计算失败",
+      "request": {
+        "startOffsetSec": 1200,
+        "stepSizeSec": 10,
+        "numCalculations": 1,
+        "targetSampleStepSec": 1,
+        "trajectoryPointOutput": 1,
+        "orbitModel": "J2_NUMERICAL",
+        "satellites": [
+          {
+            "satelliteId": "MANUAL-1",
+            "name": "手工卫星1",
+            "payloads": [
+              {
+                "payloadId": "MANUAL-1-P1",
+                "payloadName": "载荷1",
+                "payloadType": "SPACE",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": -1,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              },
+              {
+                "payloadId": "MANUAL-1-P3",
+                "payloadName": "载荷3",
+                "payloadType": "GROUND",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": 180,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              }
+            ],
+            "semiMajorAxisM": 7530612,
+            "eccentricity": 0.00085,
+            "inclinationDeg": 64.8,
+            "raanDeg": 120,
+            "argumentOfPerigeeDeg": 270,
+            "meanAnomalyDeg": 30,
+            "epochUtc": "2026/07/01 10:00:00.000"
+          },
+          {
+            "satelliteId": "MANUAL-2",
+            "name": "手工卫星2",
+            "payloads": [
+              {
+                "payloadId": "MANUAL-2-P2",
+                "payloadName": "载荷2",
+                "payloadType": "SPACE",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": -1,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              },
+              {
+                "payloadId": "MANUAL-2-P4",
+                "payloadName": "载荷4",
+                "payloadType": "GROUND",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": 180,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              }
+            ],
+            "semiMajorAxisM": 7530612,
+            "eccentricity": 0.00085,
+            "inclinationDeg": 64.8,
+            "raanDeg": 120,
+            "argumentOfPerigeeDeg": 270,
+            "meanAnomalyDeg": 30,
+            "epochUtc": "2026/07/01 10:00:00.000"
+          }
+        ],
+        "ballistics": [
+          {
+            "targetId": "TARGET-1",
+            "targetName": "目标1",
+            "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T22\\storage\\uploads\\upload-5820061685421382818.csv"
+          },
+          {
+            "targetId": "TARGET-2",
+            "targetName": "目标2",
+            "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T22\\storage\\uploads\\upload-8698076553702836676.csv",
+            "baseLaunchUTC": "2026/07/01 07:57:10.000"
+          }
+        ]
+      },
+      "status": 400,
+      "originalResponse": {
+        "runtimeFile": "verification/runtime/T22/browser-failure-and-remote-http-2-original.json",
+        "sizeBytes": 51,
+        "sha256": "1c4f342343f7eb319f7b19dc45b80bfe93e0d1c33600b2bc595351a4387303d6"
+      },
+      "responseSummary": {
+        "error": "弹道文件未解析到有效数据。"
+      }
+    },
+    {
+      "name": "真实HTTP远程地址导入解析",
+      "request": {
+        "startOffsetSec": 1200,
+        "stepSizeSec": 10,
+        "numCalculations": 1,
+        "targetSampleStepSec": 1,
+        "trajectoryPointOutput": 1,
+        "orbitModel": "J2_NUMERICAL",
+        "satellites": [
+          {
+            "satelliteId": "MANUAL-1",
+            "name": "手工卫星1",
+            "payloads": [
+              {
+                "payloadId": "MANUAL-1-P1",
+                "payloadName": "载荷1",
+                "payloadType": "SPACE",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": -1,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              },
+              {
+                "payloadId": "MANUAL-1-P3",
+                "payloadName": "载荷3",
+                "payloadType": "GROUND",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": 180,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              }
+            ],
+            "semiMajorAxisM": 7530612,
+            "eccentricity": 0.00085,
+            "inclinationDeg": 64.8,
+            "raanDeg": 120,
+            "argumentOfPerigeeDeg": 270,
+            "meanAnomalyDeg": 30,
+            "epochUtc": "2026/07/01 10:00:00.000"
+          },
+          {
+            "satelliteId": "MANUAL-2",
+            "name": "手工卫星2",
+            "payloads": [
+              {
+                "payloadId": "MANUAL-2-P2",
+                "payloadName": "载荷2",
+                "payloadType": "SPACE",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": -1,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              },
+              {
+                "payloadId": "MANUAL-2-P4",
+                "payloadName": "载荷4",
+                "payloadType": "GROUND",
+                "minDistanceKm": 0,
+                "maxDistanceKm": 0,
+                "azimuthMinDeg": null,
+                "azimuthMaxDeg": null,
+                "elevationMinDeg": null,
+                "elevationMaxDeg": null,
+                "angleRateDegPerSec": 180,
+                "sunAvoidHalfAngleDeg": 0,
+                "startupAngleRateDegPerSec": -1
+              }
+            ],
+            "semiMajorAxisM": 7530612,
+            "eccentricity": 0.00085,
+            "inclinationDeg": 64.8,
+            "raanDeg": 120,
+            "argumentOfPerigeeDeg": 270,
+            "meanAnomalyDeg": 30,
+            "epochUtc": "2026/07/01 10:00:00.000"
+          }
+        ],
+        "ballistics": [
+          {
+            "targetId": "TARGET-1",
+            "targetName": "目标1",
+            "csvPath": "http://127.0.0.1:19122/trajectory.csv"
+          },
+          {
+            "targetId": "TARGET-2",
+            "targetName": "目标2",
+            "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T22\\storage\\uploads\\upload-8698076553702836676.csv",
+            "baseLaunchUTC": "2026/07/01 07:57:10.000"
+          }
+        ]
+      },
+      "status": 200,
+      "originalResponse": {
+        "runtimeFile": "verification/runtime/T22/browser-failure-and-remote-http-3-original.json",
+        "sizeBytes": 550416,
+        "sha256": "90921a1d7be684945f381663947eadd1f8f218b27c08711f141561cfe274ef52"
+      },
+      "responseSummary": {
+        "best": {
+          "offsetSecond": 1200,
+          "visibleArcCount": 8,
+          "visiblePointCount": 904,
+          "visibleDurationSec": 896.0
+        },
+        "allResults": [
+          {
+            "offsetSecond": 1200,
+            "visibleArcCount": 8,
+            "visiblePointCount": 904,
+            "visibleDurationSec": 896.0
+          }
+        ]
+      }
+    }
+  ],
+  "blockedRequests": 0,
+  "pageErrors": [],
+  "checks": [
+    "超限文件上传413清旧引用",
+    "无引用提交阻止HTTP",
+    "损坏原CSV服务失败清旧结果",
+    "本机路径导入阻止",
+    "真实本地HTTP fixture远程解析200八弧"
+  ]
+}

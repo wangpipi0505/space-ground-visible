@@ -144,3 +144,34 @@
 .ballistic-payload-item + .ballistic-payload-item { border-top: 1px solid var(--el-border-color); margin-top: 20px; padding-top: 20px; }
 .payload-preview pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--el-fill-color-light); padding: 12px; }
 .payload-identity { display: grid; gap: 8px; }
+
+/* T22 原生文件/根数/扫描控件沿现有色彩；容器自适应且长HTTP引用/原表格独立滚动。 */
+@layer ballistic {
+  .ballistic-window-controls { display: grid; gap: 1rem; min-width: 0; container-type: inline-size; }
+  .ballistic-native-form, .ballistic-target fieldset { border: 1px solid #c8d3df; border-radius: 0.4rem; padding: 1rem; min-width: 0; }
+  .ballistic-native-form legend, .ballistic-target legend { font-weight: 600; padding-inline: 0.4rem; }
+  .ballistic-field-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin-block: 0.75rem; }
+  .ballistic-window-controls label { display: grid; gap: 0.4rem; font-size: 0.875rem; color: #20384c; min-width: 0; }
+  .ballistic-window-controls input, .ballistic-window-controls select, .ballistic-window-controls button { font: inherit; border: 1px solid #a7b7c5; border-radius: 0.25rem; padding: 0.55rem 0.7rem; background: #fff; color: #20384c; max-width: 100%; min-width: 0; }
+  .ballistic-window-controls button { cursor: pointer; background: #eef5fa; }
+  .ballistic-window-controls button:hover:enabled { background: #dceaf6; }
+  .ballistic-window-controls :disabled { cursor: default; color: #64788a; background: #f2f4f6; }
+  .ballistic-window-controls :is(input, select, button, summary):focus-visible { outline: 2px solid #126399; outline-offset: 2px; }
+  .ballistic-window-controls p, .ballistic-window-controls pre { overflow-wrap: anywhere; }
+  .ballistic-window-controls pre { white-space: pre-wrap; padding: 0.75rem; background: #f4f7f9; font-size: 0.8rem; }
+  .ballistic-target, .ballistic-result-satellite { margin-block: 1rem; }
+  .ballistic-result-satellite { border: 1px solid #c8d3df; padding: 1rem; border-radius: 0.4rem; }
+  .ballistic-result-payload { border-top: 1px solid #dce5ec; margin-top: 1rem; }
+  .ballistic-error { color: #9b2525; background: #fff1f1; padding: 0.75rem 1.5rem; }
+  .ballistic-table-scroll { overflow: auto; max-height: 25rem; margin-block: 0.75rem; }
+  .ballistic-table-scroll table { border-collapse: collapse; white-space: nowrap; width: 100%; font-size: 0.8rem; }
+  .ballistic-table-scroll th, .ballistic-table-scroll td { text-align: left; padding: 0.5rem; border: 1px solid #dce5ec; }
+  .ballistic-table-scroll th { position: sticky; top: 0; background: #eef5fa; }
+  .ballistic-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-block: 0.75rem; }
+  .ballistic-window-controls summary { cursor: pointer; padding-block: 0.5rem; }
+  .ballistic-trajectory figure { margin: 0.75rem 0; }
+  .ballistic-trajectory svg { display: block; width: 100%; max-width: 60rem; }
+  .ballistic-trajectory { border-top: 2px solid #126399; margin-top: 1rem; }
+}
+@container (max-width: 48rem) { .ballistic-field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container (max-width: 28rem) { .ballistic-field-grid { grid-template-columns: minmax(0, 1fr); } }

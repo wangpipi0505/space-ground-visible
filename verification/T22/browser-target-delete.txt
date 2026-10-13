@@ -1,0 +1,6 @@
+### Result
+{"deleted":"TARGET-3","next":"TARGET-4","retained":["TARGET-1","TARGET-2"]}
+### Ran Playwright code
+```js
+await (async (page) => { const v=page.locator('.ballistic-payload-view'); await v.getByRole('button', {name:'新增弹道目标',exact:true}).click(); const t=v.locator('[data-target-id]').last(); const first=await t.getAttribute('data-target-id'); await t.getByRole('button',{name:'删除目标',exact:true}).click(); await v.getByRole('button',{name:'新增弹道目标',exact:true}).click(); const second=await v.locator('[data-target-id]').last().getAttribute('data-target-id'); if(first===second)throw new Error('目标身份复用'); await v.locator('[data-target-id]').last().getByRole('button',{name:'删除目标',exact:true}).click(); return {deleted:first,next:second,retained:await v.locator('[data-target-id]').evaluateAll(items=>items.map(x=>x.dataset.targetId))} })(page);
+```

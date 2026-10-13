@@ -1,0 +1,7 @@
+sec-ch-ua-platform: "Windows"
+referer: http://127.0.0.1:15122/
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36
+sec-ch-ua: "Google Chrome";v="155", "Chromium";v="155", "Not(A:Brand";v="24"
+content-type: multipart/form-data; boundary=----WebKitFormBoundarybj2N8cx6KgrrBFDi
+sec-ch-ua-mobile: ?0
+accept-language: zh-CN

@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "status": 200,
+  "request": {
+    "startOffsetSec": 1200,
+    "stepSizeSec": 10,
+    "numCalculations": 3,
+    "targetSampleStepSec": 1,
+    "trajectoryPointOutput": 1,
+    "orbitModel": "J2_NUMERICAL",
+    "satellites": [
+      {
+        "satelliteId": "MANUAL-1",
+        "name": "手工卫星1",
+        "payloads": [
+          {
+            "payloadId": "MANUAL-1-P1",
+            "payloadName": "载荷1",
+            "payloadType": "SPACE",
+            "minDistanceKm": 0,
+            "maxDistanceKm": 0,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": -1
+          }
+        ],
+        "semiMajorAxisM": 7530612,
+        "eccentricity": 0.00085,
+        "inclinationDeg": 64.8,
+        "raanDeg": 120,
+        "argumentOfPerigeeDeg": 270,
+        "meanAnomalyDeg": 30,
+        "epochUtc": "2026/07/01 10:00:00.000"
+      }
+    ],
+    "ballistics": [
+      {
+        "targetId": "TARGET-1",
+        "targetName": "目标1",
+        "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T22\\storage\\uploads\\upload-9025414277210622249.csv"
+      }
+    ]
+  },
+  "responseBytes": 183376,
+  "responseSha256": "63b493038cdfd97b82d6e67d5ac5b183606ef92bdb73cd52fa5e5e01e25afddb",
+  "jsonSuggestedFilename": "弹道窗口原始响应.json",
+  "csvSuggestedFilename": "根验收弹道.csv",
+  "bestOffsetSecond": 1220,
+  "visibleArcCount": 1,
+  "visiblePointCount": 180,
+  "visibleDurationSec": 179,
+  "offsetCount": 3,
+  "displayedTrajectoryPoints": 180,
+  "renderedCharts": 2,
+  "browserTimezone": "Asia/Shanghai",
+  "pageErrors": [],
+  "scope": "真实原生上传、单目标单手工星标准SPACE、三偏移非空、实际图表及浏览器下载；不代替双星全流程",
+  "testedSourceSha256": {
+    "frontend/src/api/ballisticFiles.ts": "b65022cc9e7697c9931f89391ae553910c370a6b48c96802594138bf458ad495",
+    "frontend/src/api/ballisticHttp.ts": "55e10b941dd33a15c6b2e42752bef214b96f648651b53f20972448e901a0b2aa",
+    "frontend/src/api/ballisticWindow.ts": "85f88ec38182d70b651178c990c41fd7d21b11e8db19800d157681991b077b44",
+    "frontend/src/api/ballisticWindowTypes.ts": "6b1a94b1632ed162c3f44666b61d7c62ef7d209f524b28533932d7f29a70541e",
+    "frontend/src/utils/ballisticWindow.ts": "66ee10d8c318a39b0c8f5f4d2925c7969449f8c9c46748fc49e55eab2937fd15",
+    "frontend/src/components/BallisticWindowControls.vue": "f72a3c6a0956167c42de455a379f3f1f9e3957cda4fe513c1d0e84af3755b391",
+    "frontend/src/components/BallisticWindowResults.vue": "7b1025adb3e8b9bd14cb9771e402170175c9f8e54b005a0d24e7f37ca962c3f8",
+    "frontend/src/components/BallisticTrajectoryView.vue": "20ea0d34f402c9eeb95c015b6385700545e312e4679cc27a951e6d7e384036bd",
+    "frontend/src/views/BallisticPayloadConfigurationView.vue": "550efc0e26a69535eeb1f2f59e4a9d8ae087af407d0677f1307483fc54dd390c"
+  },
+  "downloadedJsonMatchesHttpBytes": true,
+  "downloadedCsvMatchesOriginalBytes": true,
+  "csvBytes": 1507045,
+  "csvSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+}
