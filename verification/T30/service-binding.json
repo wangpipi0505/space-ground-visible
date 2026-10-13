@@ -1,0 +1,24 @@
+{
+  "pid": 9080,
+  "command": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Duser.timezone=Asia/Shanghai",
+    "-Dt26.control=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T30\\server",
+    "-Dloader.path=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T30\\managed-classes",
+    "-Dloader.main=ManagedServer",
+    "-Dorekit.data.path=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T30\\release\\orekit-data",
+    "-cp",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T30\\release\\backend\\server.jar",
+    "org.springframework.boot.loader.PropertiesLauncher",
+    "--spring.profiles.active=demo",
+    "--server.port=18132",
+    "--spring.datasource.url=jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/T30/server/database/demo;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1",
+    "--ballistic.files.root=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T30\\server\\files",
+    "--logging.file.name=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T30\\server\\backend.log"
+  ],
+  "jarSha256": "7973644cf68729bc60e58716228182171e69b999014105cc21baf383526f764c",
+  "freshDemo": true,
+  "port": 18132
+}

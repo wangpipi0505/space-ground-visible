@@ -1,0 +1,357 @@
+{
+  "checkedAt": "2026-10-13T17:37:20.908152+00:00",
+  "commits": [
+    {
+      "commit": "d96c0484df2bc9f097d63c09d4f82705470ec74a",
+      "title": "chore(前后端): 初始化独立 Web 工程与逐项验收机制 [T01]",
+      "task": "T01",
+      "scope": "前后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "9ab0a20accf961aadc27e51af93a35a08849effa",
+      "title": "test(前后端): 冻结两套原版并核验源码与交付包一致 [T02]",
+      "task": "T02",
+      "scope": "前后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "b084e9576f71c7f4e5722e714b7e8260db98aedd",
+      "title": "docs(前后端): 冻结计算接口与 Web 文件兼容口径 [T03]",
+      "task": "T03",
+      "scope": "前后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "dbeb95f143c858bbbd7ea4375d58e9019bb6385e",
+      "title": "test(前后端): 建立真实业务黄金基准与精度差异检测 [T04]",
+      "task": "T04",
+      "scope": "前后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "8fa4d909cdd218b14362577c3977eee9b082db13",
+      "title": "feat(后端): 迁入空间服务及独立演示环境 [T05]",
+      "task": "T05",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "921131dea966c5f9ce48757bbbcc3767536ce1a5",
+      "title": "feat(前端): 迁入空间规划页面并验证浏览器流程 [T06]",
+      "task": "T06",
+      "scope": "前端",
+      "chineseBody": true
+    },
+    {
+      "commit": "231e5f44075c141d813ef267818fc9f73074e92e",
+      "title": "test(前后端): 完成空间业务对照并修正历史时间显示 [T07]",
+      "task": "T07",
+      "scope": "前后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "9058e58bf240a4cedde947b162759ddfdf58d3e6",
+      "title": "refactor(后端): 定义独立轨道外推入口与原生时标状态 [T08]",
+      "task": "T08",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "067b383d2b1c79ba9190217f2256f6357883dc76",
+      "title": "refactor(后端): 将空间传播接入独立外推工具 [T09]",
+      "task": "T09",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "cbdb387e9812ffde15a305f1b94f878045f123e7",
+      "title": "refactor(后端): 接入弹道原传播与拟合区间外外推 [T10]",
+      "task": "T10",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "6aae5837766f7384c12b60a21301d00c5915949a",
+      "title": "test(后端): 验证外推历史缓存与并发状态隔离 [T11]",
+      "task": "T11",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "338ce76bc339494e0aaa1a363571b7249d6a580b",
+      "title": "refactor(后端): 集中原时间与坐标转换适配 [T12]",
+      "task": "T12",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "00ac1cfd1cb55b171576620dd7151b727b1a6689",
+      "title": "feat(后端): 接入弹道Web文件流转与解析资源管理 [T13]",
+      "task": "T13",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "476baacb1f1a62f96f28ba2742094ada9f3e63f0",
+      "title": "feat(后端): 接入正式弹道可见窗口流式接口 [T14]",
+      "task": "T14",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "58675c812be0a20a39e9db460d3991c8f239e51b",
+      "title": "feat(后端): 接入102包拟合与受管理结果流转 [T15]",
+      "task": "T15",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "0408e41cccee1f8bfd0af7c89d42eb05afc01454",
+      "title": "feat(后端): 接入模拟弹道与受管理结果复用 [T16]",
+      "task": "T16",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "612e5d0c33880f3ecf6be0f6a4d76604a1b3e57f",
+      "title": "feat(后端): 接入弹道重定时与输入租约保护 [T17]",
+      "task": "T17",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "5878bfb3a8d750e2a2525ac585cefa5c06b6d2ef",
+      "title": "refactor(后端): 共用向量距离与地球遮挡数学主体 [T18]",
+      "task": "T18",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "6d362f31083f0cfdbcb8119d7657004b0a164d3d",
+      "title": "refactor(后端): 共用窗口状态段与有序区间累计 [T19]",
+      "task": "T19",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "f4f797d286be7eb9089c913cc0dc8f3133de7d1e",
+      "title": "feat(后端): 统一弹道标准载荷输入与共享约束判定 [T20]",
+      "task": "T20",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "5d586d45036c8d977a3548ff5dcd221d66bd6d68",
+      "title": "feat(前后端): 共用前端载荷编辑与独立配置回显 [T21]",
+      "task": "T21",
+      "scope": "前后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "2ee6620a5984a71e281497135a3e389249584f8a",
+      "title": "feat(前端): 接入弹道窗口计算与真实轨迹文件流转 [T22]",
+      "task": "T22",
+      "scope": "前端",
+      "chineseBody": true
+    },
+    {
+      "commit": "c9e288a264bd4bb6c3477db86c3b3cba5a827a27",
+      "title": "feat(前端): 接入102包拟合与完整轨迹文件展示 [T23]",
+      "task": "T23",
+      "scope": "前端",
+      "chineseBody": true
+    },
+    {
+      "commit": "c0fabbaeb9addf519d9d3a939db2f77f1cbf1373",
+      "title": "feat(前端): 接入模拟弹道页面与窗口结果复用 [T24]",
+      "task": "T24",
+      "scope": "前端",
+      "chineseBody": true
+    },
+    {
+      "commit": "644b297d106a43fbde52596c37fdb44914670801",
+      "title": "feat(前端): 接入重定时页面与多来源轨迹引用 [T25]",
+      "task": "T25",
+      "scope": "前端",
+      "chineseBody": true
+    },
+    {
+      "commit": "752ffeca508a89c4dbbd08f0bbe474ecd585d371",
+      "title": "fix(后端): 修复NIO2关闭竞争并完成稳定性验证 [T26]",
+      "task": "T26",
+      "scope": "后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "d8a4702ac6372f6588d6489c9b4cecf6e40d8426",
+      "title": "fix(前后端): 修复取消终态并完成全量精度和网页回归 [T27]",
+      "task": "T27",
+      "scope": "前后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "a79fdf8857ba6a6facf0755964471a9dad31d7ca",
+      "title": "build(前后端): 完成独立构建部署并修复启动配置优先级 [T28]",
+      "task": "T28",
+      "scope": "前后端",
+      "chineseBody": true
+    },
+    {
+      "commit": "32fd084071d1f6ca07f19b5f9dd0f41346992d38",
+      "title": "docs(前后端): 完善Web交付说明接口示例与中文注释 [T29]",
+      "task": "T29",
+      "scope": "前后端",
+      "chineseBody": true
+    }
+  ],
+  "completedTaskTags": [
+    {
+      "tag": "task/T01",
+      "commit": "d96c0484df2bc9f097d63c09d4f82705470ec74a",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T02",
+      "commit": "9ab0a20accf961aadc27e51af93a35a08849effa",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T03",
+      "commit": "b084e9576f71c7f4e5722e714b7e8260db98aedd",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T04",
+      "commit": "dbeb95f143c858bbbd7ea4375d58e9019bb6385e",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T05",
+      "commit": "8fa4d909cdd218b14362577c3977eee9b082db13",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T06",
+      "commit": "921131dea966c5f9ce48757bbbcc3767536ce1a5",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T07",
+      "commit": "231e5f44075c141d813ef267818fc9f73074e92e",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T08",
+      "commit": "9058e58bf240a4cedde947b162759ddfdf58d3e6",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T09",
+      "commit": "067b383d2b1c79ba9190217f2256f6357883dc76",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T10",
+      "commit": "cbdb387e9812ffde15a305f1b94f878045f123e7",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T11",
+      "commit": "6aae5837766f7384c12b60a21301d00c5915949a",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T12",
+      "commit": "338ce76bc339494e0aaa1a363571b7249d6a580b",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T13",
+      "commit": "00ac1cfd1cb55b171576620dd7151b727b1a6689",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T14",
+      "commit": "476baacb1f1a62f96f28ba2742094ada9f3e63f0",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T15",
+      "commit": "58675c812be0a20a39e9db460d3991c8f239e51b",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T16",
+      "commit": "0408e41cccee1f8bfd0af7c89d42eb05afc01454",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T17",
+      "commit": "612e5d0c33880f3ecf6be0f6a4d76604a1b3e57f",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T18",
+      "commit": "5878bfb3a8d750e2a2525ac585cefa5c06b6d2ef",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T19",
+      "commit": "6d362f31083f0cfdbcb8119d7657004b0a164d3d",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T20",
+      "commit": "f4f797d286be7eb9089c913cc0dc8f3133de7d1e",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T21",
+      "commit": "5d586d45036c8d977a3548ff5dcd221d66bd6d68",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T22",
+      "commit": "2ee6620a5984a71e281497135a3e389249584f8a",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T23",
+      "commit": "c9e288a264bd4bb6c3477db86c3b3cba5a827a27",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T24",
+      "commit": "c0fabbaeb9addf519d9d3a939db2f77f1cbf1373",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T25",
+      "commit": "644b297d106a43fbde52596c37fdb44914670801",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T26",
+      "commit": "752ffeca508a89c4dbbd08f0bbe474ecd585d371",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T27",
+      "commit": "d8a4702ac6372f6588d6489c9b4cecf6e40d8426",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T28",
+      "commit": "a79fdf8857ba6a6facf0755964471a9dad31d7ca",
+      "expectedTaskMatches": true
+    },
+    {
+      "tag": "task/T29",
+      "commit": "32fd084071d1f6ca07f19b5f9dd0f41346992d38",
+      "expectedTaskMatches": true
+    }
+  ],
+  "verdict": "PASS",
+  "excluded": "T30尚在验收，此证据不预称其完成或已推送"
+}

@@ -1,0 +1,10 @@
+{
+  "pid": 9080,
+  "naturalExitCode": 0,
+  "contextCloseReturned": true,
+  "mainReturned": true,
+  "uncaught": 0,
+  "remainingNonDaemon": false,
+  "portRebind": true,
+  "jarUnchanged": true
+}

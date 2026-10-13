@@ -1,0 +1,13 @@
+执行：python verification/T30/final_verification.py inherited
+compile-no-debug exit= 0
+Traceback (most recent call last):
+  File "verification/T30/final_verification.py", line 190, in inherited
+    assert sha(CLEAN / item['path']) == item['sha256'], item['path']
+AssertionError: frontend/src/App.spec.ts
+
+退出码1。此为本项证据字段判读错误，不是产品回归失败。
+根因：verification/T29/compare_frontend.cjs 明确以 TypeScript removeComments
+转译JS或Vue/CSS行尾归一文本计算摘要；frontend-content-compare.json.sha256
+不是源码原字节摘要。核对当前原源码应使用source-after.json.files，308项已全部
+匹配。288个新Java8 -g:none class本轮已全部精确匹配T29；无需再次编译。
+修正仅本项验证脚本绑定方式，不改任何产品源码、历史证据或比较容差。

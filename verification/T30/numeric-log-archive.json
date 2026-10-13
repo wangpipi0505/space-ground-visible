@@ -1,0 +1,90 @@
+{
+  "rawNumericLogCopies": [
+    {
+      "original": "ballistic/fit.log",
+      "committedCopy": "ballistic/fit.txt",
+      "sha256": "a2954be9b588a2eb43fd3b08f45ace57416c4ad993fcbdf9a25fad4b1a537ca0",
+      "bytes": 13387
+    },
+    {
+      "original": "ballistic/retime.log",
+      "committedCopy": "ballistic/retime.txt",
+      "sha256": "45290bcdfbb394ba9fe5b9fbc151311002c28edd826eeb38019474267f3d9f9f",
+      "bytes": 13396
+    },
+    {
+      "original": "ballistic/runner-classpath.log",
+      "committedCopy": "ballistic/runner-classpath.txt",
+      "sha256": "a4a6fdaf3edbfa311af1f74f58ec45f0e0478777e1f7c6e6243747c8c6aa33cb",
+      "bytes": 1066
+    },
+    {
+      "original": "ballistic/runner-compile.log",
+      "committedCopy": "ballistic/runner-compile.txt",
+      "sha256": "151a79d66716b131773bca47624eb692b2049454051a014b7aa86110d62d2672",
+      "bytes": 13217
+    },
+    {
+      "original": "ballistic/simulate.log",
+      "committedCopy": "ballistic/simulate.txt",
+      "sha256": "445735c5d3322542d2c0aeb0895b407d8ca8e6dfc3695eb753162d34648a8215",
+      "bytes": 13402
+    },
+    {
+      "original": "ballistic/visibility-http-ground.log",
+      "committedCopy": "ballistic/visibility-http-ground.txt",
+      "sha256": "976cf947a3793e22912f46f0947c3c029d4ec1543010acaeb85bbd99975fae64",
+      "bytes": 13432
+    },
+    {
+      "original": "ballistic/visibility-j2_numerical-points0.log",
+      "committedCopy": "ballistic/visibility-j2_numerical-points0.txt",
+      "sha256": "5d81b1be61ec1a9ef188e5e99d47d3d60675b7ad3807c358a6bd754d6f427b97",
+      "bytes": 13457
+    },
+    {
+      "original": "ballistic/visibility-j2_numerical-points1.log",
+      "committedCopy": "ballistic/visibility-j2_numerical-points1.txt",
+      "sha256": "f8133a130712ff50f93c573a6e2ac7bb81d3be700cd721c8f3d19f345a66deb0",
+      "bytes": 13457
+    },
+    {
+      "original": "ballistic/visibility-j2_secular-points0.log",
+      "committedCopy": "ballistic/visibility-j2_secular-points0.txt",
+      "sha256": "2d9f7a588821181934171f0df61086c2204fe0384679d6240dc9d619a182b95d",
+      "bytes": 13453
+    },
+    {
+      "original": "ballistic/visibility-j2_secular-points1.log",
+      "committedCopy": "ballistic/visibility-j2_secular-points1.txt",
+      "sha256": "38e8aa86bc3323446d068132c525fdbe93773548c48f9f169b88256b701db23a",
+      "bytes": 13453
+    },
+    {
+      "original": "ballistic/visibility-two_body-points0.log",
+      "committedCopy": "ballistic/visibility-two_body-points0.txt",
+      "sha256": "48e1b944e5aa5007e13d5df8eb3b57418db0fb946d95f811c9cbc1f87e03faf4",
+      "bytes": 13449
+    },
+    {
+      "original": "ballistic/visibility-two_body-points1.log",
+      "committedCopy": "ballistic/visibility-two_body-points1.txt",
+      "sha256": "8ac7aad08bc142e511ffb09045e2fa5cdd76bf3b7e5f8d475674852e01d94b8b",
+      "bytes": 13449
+    },
+    {
+      "original": "space/space-runner-compile.log",
+      "committedCopy": "space/space-runner-compile.txt",
+      "sha256": "ff49285da2ff2eb80840fe8dc2482501e5bcda58353d10c2b7632f9a691e5ddc",
+      "bytes": 10142
+    },
+    {
+      "original": "space/space-runner.log",
+      "committedCopy": "space/space-runner.txt",
+      "sha256": "f205fa4825cda879ccae0a506aee0767ff662641cd854648088584ee40a206ff",
+      "bytes": 13054
+    }
+  ],
+  "verdict": "PASS",
+  "purpose": "保留ignored原LOG及同字节可提交TXT，不改原输出、比较器或数值黄金"
+}

@@ -14,6 +14,12 @@ verification/T21/frontend-tests-final.txt -whitespace
 verification/T28/**/*.txt -text -whitespace
 # T29 同样保留真实编译、HTTP 示例及关闭日志的原字节，仅豁免工具日志的尾空白。
 verification/T29/**/*.txt -text -whitespace
+# T30 最终验收原始终端证据遵循同一规则，不改写工具自带空白和字节。
+verification/T30/**/*.txt -text -whitespace
+# 本轮证据索引记录 JSON 命令元数据的实际字节摘要，提交时也保留原字节。
+verification/T30/**/*.json -text whitespace=cr-at-eol
+# 该报告已进入本轮原字节证据索引，保留其原 CRLF 与 Markdown 有意义的尾空格。
+verification/T30/终审文案修复报告.md -text whitespace=cr-at-eol,-blank-at-eol
 # 浏览器快照和工具响应是原始验证证据，保留字节及工具自带的末尾空行。
 output/playwright/** -text -whitespace
 *.jar binary

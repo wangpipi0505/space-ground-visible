@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "comparisons": [
+    {
+      "name": "ballistic15",
+      "expectedFiles": 15,
+      "actualFiles": 15,
+      "differences": []
+    },
+    {
+      "name": "space9",
+      "expectedFiles": 9,
+      "actualFiles": 9,
+      "differences": []
+    },
+    {
+      "name": "spaceComplete21",
+      "expectedFiles": 21,
+      "actualFiles": 21,
+      "differences": []
+    }
+  ],
+  "comparator": "原JSON Decimal结构/数值/顺序严格相等；CSV/报告逐字节，无新增容差"
+}

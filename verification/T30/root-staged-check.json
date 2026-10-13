@@ -1,0 +1,30 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "exitCode": 0,
+  "stagedOriginalEvidenceHashes": 62,
+  "ignoredLocalEvidence": [
+    "__pycache__/final_verification.cpython-314.pyc",
+    "ballistic/fit.log",
+    "ballistic/retime.log",
+    "ballistic/runner-classpath.log",
+    "ballistic/runner-compile.log",
+    "ballistic/simulate.log",
+    "ballistic/visibility-http-ground.log",
+    "ballistic/visibility-j2_numerical-points0.log",
+    "ballistic/visibility-j2_numerical-points1.log",
+    "ballistic/visibility-j2_secular-points0.log",
+    "ballistic/visibility-j2_secular-points1.log",
+    "ballistic/visibility-two_body-points0.log",
+    "ballistic/visibility-two_body-points1.log",
+    "space/space-runner-compile.log",
+    "space/space-runner.log"
+  ],
+  "outputBytes": 0,
+  "metadataPolicy": "T30已索引JSON与指定原MD保原字节且识别CRLF；证据SHA不改，产品源码格式不豁免",
+  "initialFailure": "证据保字节后Git把CR误判为尾空白，已加cr-at-eol；未改证据内容或校验值"
+}

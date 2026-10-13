@@ -1,0 +1,27 @@
+[
+  {
+    "path": "assets/index-aYRW8iIe.js",
+    "bytes": 1115048,
+    "sha256": "9218b2b532e3e13ea7395b70f10024cb4c1cb69fcb762262a0c01937616da64c"
+  },
+  {
+    "path": "assets/index-BJnLVI0b.css",
+    "bytes": 375092,
+    "sha256": "aecfa0caef5b482189508ef39299bc13816551f54fe129dceaa7d63dea42d735"
+  },
+  {
+    "path": "favicon.svg",
+    "bytes": 9522,
+    "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66"
+  },
+  {
+    "path": "icons.svg",
+    "bytes": 5031,
+    "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a"
+  },
+  {
+    "path": "index.html",
+    "bytes": 603,
+    "sha256": "69b4c58636cdd58d01862ba366656dc216511ee3e38745ab9fcbf4fe84428805"
+  }
+]

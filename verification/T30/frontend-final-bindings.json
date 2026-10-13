@@ -1,0 +1,73 @@
+{
+  "frontendTestFiles": 27,
+  "frontendTests": 112,
+  "typeAndBuildExit": 0,
+  "sourceChanges": [
+    {
+      "path": "docs/前端载荷配置说明.md",
+      "beforeSha256": "95af7dacab43c90b0f94027095155371869f4ee73586da4155c5f6318d2bae14",
+      "finalSha256": "ccbd9310691f294f5b6b649e9b6a96d77f59571073e46207d355b9be3dfbdd2c"
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowControls.vue",
+      "beforeSha256": "c47625540feb2e06494689fe430e143b43246a2af5d0a3a0854525e955c4f178",
+      "finalSha256": "b018b78c16fe7128f50136d94245e2a1099ab73f8eb3b83c0530e812964b41cc"
+    }
+  ],
+  "distFiles": [
+    {
+      "path": "assets/index-aYRW8iIe.js",
+      "bytes": 1115048,
+      "sha256": "9218b2b532e3e13ea7395b70f10024cb4c1cb69fcb762262a0c01937616da64c"
+    },
+    {
+      "path": "assets/index-BJnLVI0b.css",
+      "bytes": 375092,
+      "sha256": "aecfa0caef5b482189508ef39299bc13816551f54fe129dceaa7d63dea42d735"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 9522,
+      "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66"
+    },
+    {
+      "path": "icons.svg",
+      "bytes": 5031,
+      "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a"
+    },
+    {
+      "path": "index.html",
+      "bytes": 603,
+      "sha256": "69b4c58636cdd58d01862ba366656dc216511ee3e38745ab9fcbf4fe84428805"
+    }
+  ],
+  "copiedDistEqualsTestedRoot": true,
+  "lockSha256": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8",
+  "evidence": [
+    {
+      "path": "minio-fix-frontend-test.txt",
+      "sha256": "c21cfc24134642ce6396a453e5b803f3879f23f3a97ec53b6cb102de0c39c53d"
+    },
+    {
+      "path": "minio-fix-frontend-test-command.json",
+      "sha256": "2eb4d0adfb7afca1f7a2c5a3d863450eb759a78787b2a63cd8a305295f011df7"
+    },
+    {
+      "path": "minio-fix-frontend-build.txt",
+      "sha256": "7a8877488568a667ffc481a1da7f410681ee8c48ab38f1ac4c1704198eecb610"
+    },
+    {
+      "path": "minio-fix-frontend-build-command.json",
+      "sha256": "0c06064c5b8c1d4badb90da059695c45857b7e3afa22d244dccec09e1371ae9e"
+    },
+    {
+      "path": "minio-fix-frontend-dist-fingerprint.json",
+      "sha256": "33042ee11a9fda67fe027609af4badde1dc5d755297147a32abd3cd85a7b91eb"
+    },
+    {
+      "path": "终审文案修复报告.md",
+      "sha256": "3977fbd3ee5450a9057e907681c064f8df23dccdaa1197594479a10d1e33a66e"
+    }
+  ],
+  "testBoundary": "采用根本项同源新112/类型构建实际证据，不重复运行"
+}

@@ -1,0 +1,1006 @@
+{
+  "passed": true,
+  "baseUrl": "http://127.0.0.1:18132",
+  "events": [
+    {
+      "name": "space-health",
+      "method": "GET",
+      "path": "/api/v1/space/health",
+      "status": 200,
+      "bytes": 15,
+      "sha256": "647a83cca85203d6d4eb07eea84ef6eb91d5c6482eaff2ac8bb65a342b9f2946",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "orbit-health",
+      "method": "GET",
+      "path": "/api/orbit/health",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "2",
+        "Content-Type": "text/plain;charset=UTF-8",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "trajectory-health",
+      "method": "GET",
+      "path": "/api/trajectory/health",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "2",
+        "Content-Type": "text/plain;charset=UTF-8",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "catalog-satellites",
+      "method": "GET",
+      "path": "/api/v1/space/satellites",
+      "status": 200,
+      "bytes": 815,
+      "sha256": "4c77fc83a9c5416ee18d190dd49a778086d30c78c28ed40c8b99daa2209d2b59",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "catalog-satellites-page",
+      "method": "GET",
+      "path": "/api/v1/space/satellites/page?pageNumber=1&pageSize=10",
+      "status": 200,
+      "bytes": 375,
+      "sha256": "429ac56af016000345bd6b1c53f0417e9ac56902e8752f316df104855e2f7ca5",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "catalog-satellites-options",
+      "method": "GET",
+      "path": "/api/v1/space/satellites/options",
+      "status": 200,
+      "bytes": 121,
+      "sha256": "06e34973008e34cb391db13a3a3c0c42fe8666e0c073a1c018e3999557183cb2",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "catalog-stations",
+      "method": "GET",
+      "path": "/api/v1/space/stations",
+      "status": 200,
+      "bytes": 249,
+      "sha256": "0302e8c04ea89b566834f3b366269f4f9d46b2264b9dbd87025896ae2239b018",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "catalog-defaults",
+      "method": "GET",
+      "path": "/api/v1/space/defaults",
+      "status": 200,
+      "bytes": 125,
+      "sha256": "a808347ff5328fd73b6070f7221369532499319ffcb8bd20c0bdd98c19b3a80e",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "catalog-targets-belong-options",
+      "method": "GET",
+      "path": "/api/v1/space/targets/belong-options",
+      "status": 200,
+      "bytes": 72,
+      "sha256": "faa8ff468f5d8e76407a0a43e3a6463f1d98ed02f5377aeb53c7997544b05731",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "catalog-satellites-1-payload",
+      "method": "GET",
+      "path": "/api/v1/space/satellites/1/payload",
+      "status": 200,
+      "bytes": 311,
+      "sha256": "7f316ec713f422451cda1933e0a5940a520bbb7fc876441aacfb76732c231cae",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "catalog-satellites-1-payload-profiles",
+      "method": "GET",
+      "path": "/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "bytes": 397,
+      "sha256": "c5347bfae159c80dabc84bb5b2eb433ba3acb8856ae162260274b2ad1647c0a3",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "target-query",
+      "method": "POST",
+      "path": "/api/v1/space/targets/query",
+      "status": 200,
+      "bytes": 894,
+      "sha256": "082a21e2e5ac0a89a1df3acd4a430ac4f7e1586f0d2b3fabb6e3cb73df0ac709",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "space-standard-save",
+      "method": "PUT",
+      "path": "/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "bytes": 390,
+      "sha256": "f7edf928de7ca8e88d6bc29f00cbe012010b048abbb17cb002a8f5de80de5c53",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "ground-zero-real-limit",
+      "method": "PUT",
+      "path": "/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "bytes": 739,
+      "sha256": "117bc5a51fee7eaec07c4d230dda197fff1f076325e3742ec9c76e7018c37cc6",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "restore-space-active",
+      "method": "PUT",
+      "path": "/api/v1/space/satellites/1/payload-profiles",
+      "status": 200,
+      "bytes": 738,
+      "sha256": "21a87278adcbd654444ca67865cf4b19cac30aff84b8ffa475873d05c483e07d",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "space-legacy-metres-save",
+      "method": "PUT",
+      "path": "/api/v1/space/satellites/1/payload",
+      "status": 200,
+      "bytes": 293,
+      "sha256": "d3b81766b3a104646d2413985c504554323007e0fea916872c52e5b734ade677",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "stations-for-link",
+      "method": "GET",
+      "path": "/api/v1/space/stations",
+      "status": 200,
+      "bytes": 249,
+      "sha256": "0302e8c04ea89b566834f3b366269f4f9d46b2264b9dbd87025896ae2239b018",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "downlink-plan",
+      "method": "POST",
+      "path": "/api/v1/space/downlink/plan",
+      "status": 200,
+      "bytes": 148,
+      "sha256": "b597f52414e39f079798194938da560aa587ce17de9f043430173ea63bc8292f",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "downlink-validation",
+      "method": "POST",
+      "path": "/api/v1/space/downlink/validate-window",
+      "status": 200,
+      "bytes": 175,
+      "sha256": "e64abb0941e1d09f5ebe967e11d951d6512d26d9c863e56d6f9e0f4dae2e2832",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "sync",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/plan",
+      "status": 200,
+      "bytes": 1394,
+      "sha256": "d5c86534fd7e0527d6052b0f886b51bbb278f0fc44da3adb1a479e25860ea05a",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "async-submit",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/tasks",
+      "status": 200,
+      "bytes": 49,
+      "sha256": "8a94d2c04b8259a940ed82b3a89f931bce8f84b4fa2bcc23b31e8b7c8d11f84a",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "async-poll-0",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/3a7cd3ad-c76d-4c2a-94a9-48c8b031e7aa",
+      "status": 200,
+      "bytes": 218,
+      "sha256": "301ed5d523bbd61d36f341526ed8ba6bbdf7d13b6f6280984f5b8a041629fbd4",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "async-poll-1",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/3a7cd3ad-c76d-4c2a-94a9-48c8b031e7aa",
+      "status": 200,
+      "bytes": 242,
+      "sha256": "ba1e4810bbcf56c8baf1a20dd81e38bbd98b61eeddcee8b048d0fe0bd2b4e114",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "async-result",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/3a7cd3ad-c76d-4c2a-94a9-48c8b031e7aa/result",
+      "status": 200,
+      "bytes": 1394,
+      "sha256": "d5c86534fd7e0527d6052b0f886b51bbb278f0fc44da3adb1a479e25860ea05a",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "cancel-submit",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/tasks",
+      "status": 200,
+      "bytes": 49,
+      "sha256": "6cb1094d63d58f91342545f9e8dbb0a205867d9fd3b687622797423684aa25bf",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "cancel-accepted",
+      "method": "DELETE",
+      "path": "/api/v1/space/visibility/tasks/eefcd5f1-6f4f-49d7-a3ba-db7fcd018148",
+      "status": 200,
+      "bytes": 218,
+      "sha256": "deb6f89981b5facb2a8e4ac3df216f943fb5e89c7136b1bd291e4ac34693eb07",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "cancel-poll-0",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/eefcd5f1-6f4f-49d7-a3ba-db7fcd018148",
+      "status": 200,
+      "bytes": 218,
+      "sha256": "deb6f89981b5facb2a8e4ac3df216f943fb5e89c7136b1bd291e4ac34693eb07",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:43 GMT"
+      }
+    },
+    {
+      "name": "cancel-poll-1",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/eefcd5f1-6f4f-49d7-a3ba-db7fcd018148",
+      "status": 200,
+      "bytes": 242,
+      "sha256": "d313b2d69e423369bb79793e92397d2e75c85deaa049c57cdcb0363cfea7e375",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "cancel-result-409",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/eefcd5f1-6f4f-49d7-a3ba-db7fcd018148/result",
+      "status": 409,
+      "bytes": 68,
+      "sha256": "29b778d792de87c5f4ca3643cf560563fa7c3dad136fb51cd28b4928cba9d689",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "unknown-task-404",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/unknown-example",
+      "status": 404,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "headers": {
+        "Connection": "close",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT",
+        "Content-Length": "0"
+      }
+    },
+    {
+      "name": "cancel-record-30",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results?keyword=eefcd5f1-6f4f-49d7-a3ba-db7fcd018148",
+      "status": 200,
+      "bytes": 322,
+      "sha256": "12dbafe3a26848abfe2cdd1d352de2ef0aace40b01c287343ef2c93eb5506e66",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "record-page-31",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results?keyword=3a7cd3ad-c76d-4c2a-94a9-48c8b031e7aa",
+      "status": 200,
+      "bytes": 322,
+      "sha256": "9a74d7107f286a3d057fdbf798285c1058f30552577ea656f5b1490fb7f2b2e5",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "record-detail",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results/2110062946437373953",
+      "status": 200,
+      "bytes": 2309,
+      "sha256": "86aabc08327705fffe351c4c5cb5bca48a89cc34c458254d505ec0c9dab9ae09",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "record-remark",
+      "method": "PUT",
+      "path": "/api/v1/space/visibility/task-results/2110062946437373953",
+      "status": 200,
+      "bytes": 2323,
+      "sha256": "ff39121f9c1f78a538c594ddf13fefa3a6ef0c47c9f0911223c43f8c24f42483",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "record-selection",
+      "method": "PUT",
+      "path": "/api/v1/space/visibility/task-results/2110062946437373953/selection",
+      "status": 200,
+      "bytes": 3996,
+      "sha256": "310921c849cd9fe155a38cce69e3f8bdc58716eb90603c5eba977a084959be71",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "record-delete",
+      "method": "DELETE",
+      "path": "/api/v1/space/visibility/task-results/2110062946437373953",
+      "status": 200,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "headers": {
+        "Connection": "close",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT",
+        "Content-Length": "0"
+      }
+    },
+    {
+      "name": "deleted-record-404",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results/2110062946437373953",
+      "status": 404,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "headers": {
+        "Connection": "close",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT",
+        "Content-Length": "0"
+      }
+    },
+    {
+      "name": "upload-window",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files",
+      "status": 201,
+      "bytes": 270,
+      "sha256": "9f2b0f42065cb9ce6290f0e20bfae70df8b0fffa5631d2f3abcf9c077c377512",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "upload-window-download",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/65cf9c34-20e1-476e-9129-0c0f8628a215/download",
+      "status": 200,
+      "bytes": 1507045,
+      "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "1507045",
+        "Content-Disposition": "attachment; filename=\"trajectory-0.1s-standard.csv\"; filename*=UTF-8''trajectory-0.1s-standard.csv",
+        "Content-Type": "text/csv",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT",
+        "X-Content-Type-Options": "nosniff"
+      }
+    },
+    {
+      "name": "upload-window-preview",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/65cf9c34-20e1-476e-9129-0c0f8628a215/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1063,
+      "sha256": "5981610195bf1f7c96a1591fdff6a33c56bf5c09b084cff771cda8ddba7652c8",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "window-legacy",
+      "method": "POST",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 6771,
+      "sha256": "2619efb0558b5cf59912c52850c28682639a933b4a62c0e1368ce5af372736c4",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "payload-preview",
+      "method": "POST",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "status": 200,
+      "bytes": 296,
+      "sha256": "ac9424e48c4761fe74cc1287f765762bd4548bb0cbb7c0a1669fb4d102ebfd8f",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "ground-minus-one-400",
+      "method": "POST",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "status": 400,
+      "bytes": 123,
+      "sha256": "42419efbd7c02298356898c5b75a691d2ec1c5b43cc305ca46e9d5b9a14b6e83",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "single-angle-end-400",
+      "method": "POST",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "status": 400,
+      "bytes": 80,
+      "sha256": "b488e289dd5375848f8802cb56a05e50dc14733b48e2465f9e1dace270b853e5",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "window-standard",
+      "method": "POST",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 406245,
+      "sha256": "3663457353cec61fe4e6a319cfcfeda529aad24f3e141cd33ede446bed6ad7a4",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "startup-only-metadata",
+      "method": "POST",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 406245,
+      "sha256": "3663457353cec61fe4e6a319cfcfeda529aad24f3e141cd33ede446bed6ad7a4",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:44 GMT"
+      }
+    },
+    {
+      "name": "fit",
+      "method": "POST",
+      "path": "/api/trajectory/fit/package102",
+      "status": 200,
+      "bytes": 3165,
+      "sha256": "dba439b0857901210b69c1900691043bf5ad871258e6447c82fd26dae17b3015",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "fit-register-0",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 424,
+      "sha256": "e1157030242a66ac2ea7922e676a352e5cb74681ff207c5da03625e066a6a279",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "fit-reregister-0",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 424,
+      "sha256": "e1157030242a66ac2ea7922e676a352e5cb74681ff207c5da03625e066a6a279",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "fit-download-0",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/df0d160e-483f-4b23-adbb-4a8a0433a17d/download",
+      "status": 200,
+      "bytes": 327928,
+      "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "327928",
+        "Content-Disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_013945_645.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_013945_645.csv",
+        "Content-Type": "text/csv",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT",
+        "X-Content-Type-Options": "nosniff"
+      }
+    },
+    {
+      "name": "fit-preview-0",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/df0d160e-483f-4b23-adbb-4a8a0433a17d/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1023,
+      "sha256": "77d4e2109bd8eb4aacf694192e7bf21cd067dcb803abd04c5329921e33aa164f",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "fit-register-1",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 422,
+      "sha256": "1df9ac1af751555fffe6d40e434ebc4b4b00affe91dde29d559c3dded01e42e1",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "fit-reregister-1",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 422,
+      "sha256": "1df9ac1af751555fffe6d40e434ebc4b4b00affe91dde29d559c3dded01e42e1",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "fit-download-1",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/d41362d3-de1e-4319-accd-4fc39afb805d/download",
+      "status": 200,
+      "bytes": 6475,
+      "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "6475",
+        "Content-Disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261014_013945_645.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261014_013945_645.csv",
+        "Content-Type": "text/csv",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT",
+        "X-Content-Type-Options": "nosniff"
+      }
+    },
+    {
+      "name": "fit-preview-1",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/d41362d3-de1e-4319-accd-4fc39afb805d/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1033,
+      "sha256": "7b35b17e1acc4dd72c39572040aeb9d470bd4314e52f60c18a4a241081843f0f",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "simulate",
+      "method": "POST",
+      "path": "/api/trajectory/simulate",
+      "status": 200,
+      "bytes": 626,
+      "sha256": "cde302cf2dbf30b1e83dbd33f798a1fc864dfaa9ff5997b7639a897fc2867e05",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "simulate-register-0",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 424,
+      "sha256": "cc78baf90314ed7813e887d55234c1fd0ec8ce806360d4ee7185b31101f34c16",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "simulate-reregister-0",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 424,
+      "sha256": "cc78baf90314ed7813e887d55234c1fd0ec8ce806360d4ee7185b31101f34c16",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "simulate-download-0",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/5b263772-75c0-4492-87db-ce27869615a0/download",
+      "status": 200,
+      "bytes": 561736,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "561736",
+        "Content-Disposition": "attachment; filename=\"defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_013945_982.csv\"; filename*=UTF-8''defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_013945_982.csv",
+        "Content-Type": "text/csv",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT",
+        "X-Content-Type-Options": "nosniff"
+      }
+    },
+    {
+      "name": "simulate-preview-0",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/5b263772-75c0-4492-87db-ce27869615a0/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1073,
+      "sha256": "aef1029c9159be8c0b566d845a2c1048a339b9ef757139fcfed6839906e6732a",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "simulation-reference-window",
+      "method": "POST",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 992470,
+      "sha256": "04ce63a841b2bb25da70a0fe0d8f7f647986072e781a377505c4966671a7048a",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "retime",
+      "method": "POST",
+      "path": "/api/trajectory/retime",
+      "status": 200,
+      "bytes": 485,
+      "sha256": "d0924db1d121ec9e5265c57e82aec2cfa7e7afd7a0308da92b0466b2521429a5",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "retime-register-0",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 376,
+      "sha256": "0510710e06613de95981a06a60600fd6165da422aee8230d47938f8c961adfac",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "retime-reregister-0",
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 376,
+      "sha256": "0510710e06613de95981a06a60600fd6165da422aee8230d47938f8c961adfac",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "retime-download-0",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/a4d5df24-57e0-4d64-82c8-4f10cbc805fd/download",
+      "status": 200,
+      "bytes": 593970,
+      "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "593970",
+        "Content-Disposition": "attachment; filename=\"T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_013946_183.csv\"; filename*=UTF-8''T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_013946_183.csv",
+        "Content-Type": "text/csv",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT",
+        "X-Content-Type-Options": "nosniff"
+      }
+    },
+    {
+      "name": "retime-preview-0",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/a4d5df24-57e0-4d64-82c8-4f10cbc805fd/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1126,
+      "sha256": "70aa0e2524090f89b6bff197698740913d0f7ea2c768e9ffbdabbaa9c8b57396",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "retime-reference-window",
+      "method": "POST",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 1193294,
+      "sha256": "7d88c53c2c13a78c86c05c767005d015adc0ca24cc3359449fa81b45d1838132",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    },
+    {
+      "name": "unknown-file-404",
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/unknown-example/preview",
+      "status": 404,
+      "bytes": 69,
+      "sha256": "d10122685ee86259b60ab9602723323635aa86f520771b300a898c9963e895e7",
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 17:39:45 GMT"
+      }
+    }
+  ],
+  "csvComparisons": [
+    {
+      "name": "fit",
+      "targetId": "TGT-001",
+      "pointCount": 1633,
+      "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "csvByteExact": true,
+      "previewCellExact": true
+    },
+    {
+      "name": "fit",
+      "targetId": "TGT-002",
+      "pointCount": 31,
+      "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "csvByteExact": true,
+      "previewCellExact": true
+    },
+    {
+      "name": "simulate",
+      "targetId": "SIM-001",
+      "pointCount": 2576,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "csvByteExact": true,
+      "previewCellExact": true
+    },
+    {
+      "name": "retime",
+      "targetId": "RETIMED-TGT",
+      "pointCount": 2576,
+      "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+      "csvByteExact": true,
+      "previewCellExact": true
+    }
+  ],
+  "legacyWindowGoldenExact": true,
+  "syncAsyncExact": true,
+  "cancelledResultStatus": 409,
+  "cancelledRecordStatus": "CANCELLED",
+  "simulationReuseArcs": 1,
+  "retimeReuseArcs": 1,
+  "sourceFixtures": "test-data/reference及baseline；未修改参考数值字节"
+}

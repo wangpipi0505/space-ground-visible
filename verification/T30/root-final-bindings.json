@@ -1,0 +1,22 @@
+{
+  "verdict": "PASS",
+  "sourceBase": "32fd084071d1f6ca07f19b5f9dd0f41346992d38",
+  "currentProductFilesChecked": 308,
+  "productSourceChanges": [
+    "docs/前端载荷配置说明.md",
+    "frontend/src/components/BallisticWindowControls.vue"
+  ],
+  "packageFileHashesChecked": 359,
+  "finalJarSha256": "7973644cf68729bc60e58716228182171e69b999014105cc21baf383526f764c",
+  "finalManifestSha256": "0843ce17e6935c88b1bc94ccab9fdbf8b946f16807196397b2437f7b8193004f",
+  "localEvidenceFilesChecked": 77,
+  "independentReviewSha256": "1dc808c6e0f31637ad05edf258f72e713bf3147ecaf33ad3eaa839b17cc253fe",
+  "backend": {
+    "tests": 347,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "frontendTests": 112,
+  "scope": "当前根工作产品与已实测最终v2一致；远端同步另有实际证明，D事项暂缓"
+}

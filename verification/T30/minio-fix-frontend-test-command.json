@@ -1,0 +1,7 @@
+{
+  "command": "pnpm test",
+  "workingDirectory": "frontend",
+  "exitCode": 0,
+  "outputFile": "verification/T30/minio-fix-frontend-test.txt",
+  "capturedAt": "2026-10-14T01:43:16.8774760+08:00"
+}

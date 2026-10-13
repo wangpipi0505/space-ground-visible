@@ -1,0 +1,10 @@
+{
+  "command": [
+    "mvn.cmd",
+    "-version"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.22002625465393066,
+  "stdoutSha256": "a7128f11742e148e768c1283e8cfc6b0e32797f8bad35ae45fe9ce6901c8b6be"
+}

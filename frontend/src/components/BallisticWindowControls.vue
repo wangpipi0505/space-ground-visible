@@ -172,7 +172,7 @@ function downloadJson(): void {
   <section class="ballistic-window-controls" aria-label="弹道文件与窗口计算">
     <fieldset :disabled="loading" class="ballistic-native-form">
       <legend>1. 弹道目标与源文件</legend>
-      <p>本地文件通过 HTTP 上传；服务器引用与本机路径分离。网络支持 HTTP/HTTPS 直链、minio://host[:port]/bucket/object[?secure=true]（凭据由服务环境提供）。</p>
+      <p>本地文件通过 HTTP 上传；服务器引用与本机路径分离。网络支持 HTTP/HTTPS 直链、minio://host[:port]/bucket/object[?secure=true]（MinIO 按地址中的既有凭据或匿名访问；私有对象可使用预签名 HTTPS 链接）。</p>
       <button type="button" @click="addTarget">新增弹道目标</button>
       <article v-for="target in targets" :key="target.targetId" :data-target-id="target.targetId" class="ballistic-target">
         <fieldset :disabled="target.busy">

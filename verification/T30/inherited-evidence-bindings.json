@@ -1,0 +1,32 @@
+{
+  "sourceFiles": 308,
+  "javaSources": 114,
+  "noDebugClasses": 288,
+  "noDebugMatchesT29": true,
+  "frontendContentFiles": 72,
+  "protectedFiles": 408,
+  "protectedUnchanged": true,
+  "evidence": [
+    {
+      "path": "verification/T29/source-after.json",
+      "sha256": "7ec5ad47a8febfbfda7160f705c4d52b583bd54d6fc2dde03e4326b13e070d89"
+    },
+    {
+      "path": "verification/T29/frontend-content-compare.json",
+      "sha256": "c06a14a0ec6cfab0a765734ea36650221758632f3020e50d4499ff10d9ef0d1f"
+    },
+    {
+      "path": "verification/T29/legacy-abi-compare.json",
+      "sha256": "f706ebc1a4a280990438738f1dfd35c492ca624ffd2ba0e095d52f3324140a84"
+    },
+    {
+      "path": "verification/T27/验证报告.md",
+      "sha256": "b6bed9bf4ec7dbdbb95c48e8bcfe016cd3713384528497d7c6dbd906dbfd98dd"
+    },
+    {
+      "path": "verification/T28/验证报告.md",
+      "sha256": "b5531d5f32067f359ef905de4bc81a33acb64c14609770179826315011884387"
+    }
+  ],
+  "boundary": "新完整build/package/15+9+21/HTTP属于T30；T27/T28浏览器/压力/正式启动脚本矩阵仅继承，不声称重跑"
+}
