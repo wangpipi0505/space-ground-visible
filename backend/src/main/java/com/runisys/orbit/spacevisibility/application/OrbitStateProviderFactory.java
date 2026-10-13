@@ -1,8 +1,7 @@
 package com.runisys.orbit.spacevisibility.application;
 
-import com.runisys.orbit.spacevisibility.domain.orbit.KeplerOrbitStateProvider;
 import com.runisys.orbit.spacevisibility.domain.orbit.OrbitStateProvider;
-import com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProvider;
+import com.runisys.orbit.spacevisibility.domain.orbit.SpaceOrbitStateProvider;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.SatelliteEntity;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.TargetEntity;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,11 +9,18 @@ import org.springframework.stereotype.Component;
 
 import java.time.ZoneOffset;
 
+/**
+ * 把空间持久化实体转换为普通领域参数并接入公共轨道传播工具。
+ * BigDecimal 的原 doubleValue 顺序及 LocalDateTime 按 UTC 转 Instant 保留在应用层；
+ * 返回值仍为旧 OrbitStateProvider，窗口扫描和应用调用签名无需改变。
+ */
 @Component
 public class OrbitStateProviderFactory {
 
+    /** 原应用 RK4 配置步长，秒；默认10秒，合法性继续由原传播器校验。 */
     private final double keplerRk4StepSec;
 
+    /** 接收原应用配置，不提前校验，以保留 TLE 路径不受六根数步长影响的旧行为。 */
     public OrbitStateProviderFactory(@Value("${space.visibility.orbit.kepler-rk4-step-sec:10}") double keplerRk4StepSec) {
         this.keplerRk4StepSec = keplerRk4StepSec;
     }
@@ -69,14 +75,14 @@ public class OrbitStateProviderFactory {
                                       java.math.BigDecimal meanAnomaly,
                                       java.time.LocalDateTime epochTime) {
         if ("TLE_SGP4".equalsIgnoreCase(modelType)) {
-            return new TleOrbitStateProvider(firstOrbit, secondOrbit);
+            return SpaceOrbitStateProvider.fromTle(firstOrbit, secondOrbit);
         }
         if (!"KEPLER_6".equalsIgnoreCase(modelType) || semiMajorAxis == null || eccentricity == null
                 || inclination == null || raan == null || argumentOfPerigee == null || meanAnomaly == null
                 || epochTime == null) {
             throw new IllegalArgumentException("轨道模型或轨道参数无效");
         }
-        return new KeplerOrbitStateProvider(
+        return SpaceOrbitStateProvider.fromElements(
                 semiMajorAxis.doubleValue(), eccentricity.doubleValue(), inclination.doubleValue(),
                 raan.doubleValue(), argumentOfPerigee.doubleValue(), meanAnomaly.doubleValue(),
                 epochTime.toInstant(ZoneOffset.UTC), keplerRk4StepSec);

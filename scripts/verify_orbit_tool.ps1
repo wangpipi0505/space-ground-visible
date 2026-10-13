@@ -1,10 +1,11 @@
-param([string]$JavaHome = $env:JAVA_HOME)
+param([string]$JavaHome = $env:JAVA_HOME,
+    [ValidateSet('T08', 'T09')][string]$ValidationTask = 'T08')
 
-# T08 可重复的普通 Java8 验证；仅编译纯领域类型和原 provider，不编译应用服务/实体。
+# T08/T09 可重复的普通 Java8 验证；仅编译纯领域类型和原 provider，不编译应用服务/实体。
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
-$runtimeDirectory = Join-Path $projectRoot 'verification/runtime/T08/standalone'
-$evidenceDirectory = Join-Path $projectRoot 'verification/T08'
+$runtimeDirectory = Join-Path $projectRoot "verification/runtime/$ValidationTask/standalone"
+$evidenceDirectory = Join-Path $projectRoot "verification/$ValidationTask"
 New-Item -ItemType Directory -Force $runtimeDirectory, $evidenceDirectory | Out-Null
 if (!(Test-Path -LiteralPath "$JavaHome/bin/javac.exe")) {
     throw '请通过 -JavaHome 指定 Java8 JDK'
@@ -26,7 +27,8 @@ if ($dependencies -match 'spring|mybatis|junit') { throw '独立类路径混入�
 $sourceRoot = Join-Path $projectRoot 'backend/src/main/java/com/runisys/orbit/spacevisibility/domain'
 $sources = @("$sourceRoot/geometry/Vector3.java")
 foreach ($type in @('OrbitTime', 'OrbitDefinition', 'OrbitState', 'OrbitPropagationTool',
-        'OrbitStateProvider', 'TleOrbitStateProvider', 'KeplerOrbitStateProvider', 'OrekitDataInitializer')) {
+        'OrbitStateProvider', 'TleOrbitStateProvider', 'KeplerOrbitStateProvider', 'SpaceOrbitStateProvider',
+        'OrekitDataInitializer')) {
     $sources += "$sourceRoot/orbit/$type.java"
 }
 $sources += Join-Path $evidenceDirectory 'PlainJavaOrbitExample.java'
