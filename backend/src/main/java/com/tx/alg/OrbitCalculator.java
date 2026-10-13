@@ -1,5 +1,8 @@
 package com.tx.alg;
 
+import com.runisys.orbit.spacevisibility.domain.time.LegacyJ2000Time;
+import com.runisys.orbit.spacevisibility.domain.geometry.LegacyJ2000Frames;
+
 import com.runisys.orbit.spacevisibility.domain.orbit.BallisticOrbitPropagation;
 import com.runisys.orbit.spacevisibility.domain.orbit.OrbitDefinition;
 import com.runisys.orbit.spacevisibility.domain.orbit.OrbitTime;
@@ -81,9 +84,6 @@ public final class OrbitCalculator {
 
     private static final double EARTH_FLATTENING = 1.0 / 298.257223563;
     private static final double EARTH_E2 = EARTH_FLATTENING * (2.0 - EARTH_FLATTENING);
-    private static final double ARCSEC_TO_RAD = Math.PI / (180.0 * 3600.0);
-    private static final double TAI_MINUS_UTC_SECONDS = 37.0;
-    private static final double TT_MINUS_UTC_SECONDS = TAI_MINUS_UTC_SECONDS + 32.184;
     /** 稳定可见弧段至少需要两个采样点，避免单点抖动形成伪窗口。 */
     private static final int MIN_STABLE_VISIBLE_POINT_COUNT = 2;
     /** 稳定可见弧段最小时长，单位秒；保持很小的默认值，避免改变正常短窗口。 */
@@ -460,7 +460,6 @@ public final class OrbitCalculator {
         }
     }
 
-
     /** 模拟专用动力学仍使用原内部状态容器；卫星传播状态已归纯领域工具。 */
     private static final class StateVector {
         private final Vector3 position;
@@ -476,32 +475,6 @@ public final class OrbitCalculator {
                         new com.runisys.orbit.spacevisibility.domain.geometry.Vector3(state.velocity.x, state.velocity.y, state.velocity.z)), stepSec);
         return new StateVector(new Vector3(result.position.getX(), result.position.getY(), result.position.getZ()),
                 new Vector3(result.velocity.getX(), result.velocity.getY(), result.velocity.getZ()));
-    }
-
-    private static final class EarthOrientation {
-        final double zeta;
-        final double theta;
-        final double z;
-        final double eps0;
-        final double dPsi;
-        final double dEps;
-        final double gast;
-
-        EarthOrientation(double zeta,
-                         double theta,
-                         double z,
-                         double eps0,
-                         double dPsi,
-                         double dEps,
-                         double gast) {
-            this.zeta = zeta;
-            this.theta = theta;
-            this.z = z;
-            this.eps0 = eps0;
-            this.dPsi = dPsi;
-            this.dEps = dEps;
-            this.gast = gast;
-        }
     }
 
     public static final class TimedPosition {
@@ -3360,25 +3333,7 @@ public final class OrbitCalculator {
      * J2000历元 = 2000-01-01 12:00:00 UTC。
      */
     public static double utcToJ2000Sec(String utcTime) {
-        // Parse format: "2026/07/01 07:57:00" or "2026-07-01 07:57:00"
-        String normalized = utcTime.replace('/', '-');
-        String[] dateTime = normalized.split(" ");
-        if (dateTime.length < 2) {
-            return 0.0;
-        }
-        String[] dateParts = dateTime[0].split("-");
-        String[] timeParts = dateTime[1].split(":");
-        if (dateParts.length < 3 || timeParts.length < 3) {
-            return 0.0;
-        }
-        int year = Integer.parseInt(dateParts[0]);
-        int month = Integer.parseInt(dateParts[1]);
-        int day = Integer.parseInt(dateParts[2]);
-        int hour = Integer.parseInt(timeParts[0]);
-        int minute = Integer.parseInt(timeParts[1]);
-        double second = Double.parseDouble(timeParts[2]);
-
-        return utcPartsToJ2000Sec(year, month, day, hour, minute, second, true);
+        return LegacyJ2000Time.utcToJ2000Sec(utcTime, utcOffsetSec);
     }
 
     private static double utcPartsToJ2000Sec(int year,
@@ -3388,31 +3343,7 @@ public final class OrbitCalculator {
                                              int minute,
                                              double second,
                                              boolean applyConfiguredOffset) {
-        long days = daysFrom2000(year, month, day);
-        double dayFraction = (hour * 3600.0 + minute * 60.0 + second) / 86400.0;
-        double value = (days - 0.5 + dayFraction) * 86400.0;
-        return applyConfiguredOffset ? value + utcOffsetSec : value;
-    }
-
-    private static long daysFrom2000(int year, int month, int day) {
-        // 从2000-01-01累计到目标年月日的日数，保持原日历计数。
-        long total = 0;
-        for (int y = 2000; y < year; y++) {
-            total += isLeapYear(y) ? 366 : 365;
-        }
-        int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        if (isLeapYear(year)) {
-            monthDays[1] = 29;
-        }
-        for (int m = 1; m < month; m++) {
-            total += monthDays[m - 1];
-        }
-        total += day - 1;
-        return total;
-    }
-
-    private static boolean isLeapYear(int year) {
-        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+        return LegacyJ2000Time.utcPartsToJ2000Sec(year, month, day, hour, minute, second, applyConfiguredOffset, utcOffsetSec);
     }
 
     /**
@@ -3420,44 +3351,12 @@ public final class OrbitCalculator {
      * 为兼容旧数据，会反向补偿 utcOffsetSec；新版UTC数据该值保持0。
      */
     public static String j2000ToUtc(double j2000Sec) {
-        String millis = j2000ToUtcMillis(j2000Sec);
-        return millis.substring(0, 19);
+        return LegacyJ2000Time.j2000ToUtc(j2000Sec, utcOffsetSec);
     }
 
+    /** 兼容原毫秒UTC格式，显式传递旧公开偏移字段到纯领域转换主体。 */
     public static String j2000ToUtcMillis(double j2000Sec) {
-        // 反向消除可选旧偏移；正常UTC流程的utcOffsetSec保持0。
-        double adjustedSec = j2000Sec - utcOffsetSec;
-        double totalDays = adjustedSec / 86400.0 + 0.5; // J2000 starts at noon
-        long wholeDays = (long) Math.floor(totalDays);
-        double dayFraction = totalDays - wholeDays;
-        int hour = (int) (dayFraction * 24);
-        int minute = (int) ((dayFraction * 24 - hour) * 60);
-        double secondValue = ((dayFraction * 24 - hour) * 60 - minute) * 60;
-        int second = (int) Math.floor(secondValue);
-        int millis = (int) Math.round((secondValue - second) * 1000.0);
-        if (millis >= 1000) { millis -= 1000; second++; }
-        if (second >= 60) { second -= 60; minute++; }
-        if (minute >= 60) { minute -= 60; hour++; }
-        if (hour >= 24) { hour -= 24; wholeDays++; }
-
-        int year = 2000;
-        long remaining = wholeDays;
-        while (true) {
-            int daysInYear = isLeapYear(year) ? 366 : 365;
-            if (remaining < daysInYear) break;
-            remaining -= daysInYear;
-            year++;
-        }
-        int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        if (isLeapYear(year)) monthDays[1] = 29;
-        int month = 1;
-        for (int m = 0; m < 12; m++) {
-            if (remaining < monthDays[m]) break;
-            remaining -= monthDays[m];
-            month++;
-        }
-        int day = (int) remaining + 1;
-        return String.format(Locale.US, "%04d/%02d/%02d %02d:%02d:%02d.%03d", year, month, day, hour, minute, second, millis);
+        return LegacyJ2000Time.j2000ToUtcMillis(j2000Sec, utcOffsetSec);
     }
 
     public static BallisticPoint sampleBallisticAtAbsoluteTime(List<BallisticPoint> ballisticPoints,
@@ -3486,28 +3385,15 @@ public final class OrbitCalculator {
      * 独立重算，即惯性系(J2000)本身不随时间变化，变化的是 J2000→当日真赤道真春分点的转换关系。
      */
     public static Vector3 eciToEcefPos(Vector3 rEci, double tSec) {
-        EarthOrientation orientation = earthOrientation(tSec);
-        Vector3 v = precessJ2000ToDate(rEci, orientation);
-        v = nutateMeanToTrue(v, orientation);
-        return rotZ(-orientation.gast, v);
+        return fromDomainVector(LegacyJ2000Frames.eciToEcefPos(toDomainVector(rEci), tSec));
     }
 
     /**
      * J2000(ECI)→ECEF 速度转换。tSec 同 eciToEcefPos，为 J2000 起算绝对秒。
-     * 在位置转换链基础上含 Ω×r 修正（真旋转系速度）；内部重复调用 earthOrientation
-     * （每点2遍岁差章动，属可优化的冗余计算）。
+     * 委托领域主体并保留 Ω×r 修正（真旋转系速度）及原重复计算顺序。
      */
     public static Vector3 eciToEcefVel(Vector3 vEci, Vector3 rEci, double tSec) {
-        Vector3 rEcef = eciToEcefPos(rEci, tSec);
-        EarthOrientation orientation = earthOrientation(tSec);
-        Vector3 v = precessJ2000ToDate(vEci, orientation);
-        v = nutateMeanToTrue(v, orientation);
-        v = rotZ(-orientation.gast, v);
-        return new Vector3(
-                v.x + EARTH_ROTATION_RATE_RAD_S * rEcef.y,
-                v.y - EARTH_ROTATION_RATE_RAD_S * rEcef.x,
-                v.z
-        );
+        return fromDomainVector(LegacyJ2000Frames.eciToEcefVel(toDomainVector(vEci), toDomainVector(rEci), tSec));
     }
 
     /**
@@ -3520,26 +3406,27 @@ public final class OrbitCalculator {
      * 跨工具对比时勿混用。
      */
     public static Vector3 eciToStkFixedVelocity(Vector3 vEci, double tSec) {
-        EarthOrientation orientation = earthOrientation(tSec);
-        Vector3 v = precessJ2000ToDate(vEci, orientation);
-        v = nutateMeanToTrue(v, orientation);
-        return rotZ(-orientation.gast, v);
+        return fromDomainVector(LegacyJ2000Frames.eciToStkFixedVelocity(toDomainVector(vEci), tSec));
     }
 
+    /** 原ECEF位置（米）转J2000位置（米）；tSec为原UTC日历J2000绝对秒。 */
     public static Vector3 ecefToEciPos(Vector3 rEcef, double tSec) {
-        return ecefToEci(rEcef.x, rEcef.y, rEcef.z, tSec);
+        return fromDomainVector(LegacyJ2000Frames.ecefToEciPos(toDomainVector(rEcef), tSec));
     }
 
+    /** 原真地固导数（米/秒）转J2000速度；先加Ω×r，不接受STK Fixed惯性分量。 */
     public static Vector3 ecefToEciVel(Vector3 vEcef, Vector3 rEcef, double tSec) {
-        Vector3 rotatingVelocity = new Vector3(
-                vEcef.x - EARTH_ROTATION_RATE_RAD_S * rEcef.y,
-                vEcef.y + EARTH_ROTATION_RATE_RAD_S * rEcef.x,
-                vEcef.z
-        );
-        EarthOrientation orientation = earthOrientation(tSec);
-        Vector3 v = rotZ(orientation.gast, rotatingVelocity);
-        v = nutateTrueToMean(v, orientation);
-        return precessDateToJ2000(v, orientation);
+        return fromDomainVector(LegacyJ2000Frames.ecefToEciVel(toDomainVector(vEcef), toDomainVector(rEcef), tSec));
+    }
+
+    /** 旧公开向量在兼容边界拷贝到领域类型，不执行任何数值转换。 */
+    private static com.runisys.orbit.spacevisibility.domain.geometry.Vector3 toDomainVector(Vector3 value) {
+        return new com.runisys.orbit.spacevisibility.domain.geometry.Vector3(value.x, value.y, value.z);
+    }
+
+    /** 领域坐标结果按原double分量返回旧公开类型，保持公有签名兼容。 */
+    private static Vector3 fromDomainVector(com.runisys.orbit.spacevisibility.domain.geometry.Vector3 value) {
+        return new Vector3(value.getX(), value.getY(), value.getZ());
     }
 
     public static double[] ecefToGeodetic(Vector3 rEcef) {
@@ -3661,114 +3548,7 @@ public final class OrbitCalculator {
     }
 
     private static Vector3 ecefToEci(double xEcef, double yEcef, double zEcef, double tSec) {
-        EarthOrientation orientation = earthOrientation(tSec);
-        Vector3 v = rotZ(orientation.gast, new Vector3(xEcef, yEcef, zEcef));
-        v = nutateTrueToMean(v, orientation);
-        return precessDateToJ2000(v, orientation);
-    }
-
-    private static Vector3 precessJ2000ToDate(Vector3 v, EarthOrientation orientation) {
-        return rotZ(orientation.z, rotY(orientation.theta, rotZ(orientation.zeta, v)));
-    }
-
-    private static Vector3 precessDateToJ2000(Vector3 v, EarthOrientation orientation) {
-        return rotZ(-orientation.zeta, rotY(-orientation.theta, rotZ(-orientation.z, v)));
-    }
-
-    private static Vector3 nutateMeanToTrue(Vector3 v, EarthOrientation orientation) {
-        return rotX(
-                -(orientation.eps0 + orientation.dEps),
-                rotZ(orientation.dPsi, rotX(orientation.eps0, v))
-        );
-    }
-
-    private static Vector3 nutateTrueToMean(Vector3 v, EarthOrientation orientation) {
-        return rotX(
-                -orientation.eps0,
-                rotZ(-orientation.dPsi, rotX(orientation.eps0 + orientation.dEps, v))
-        );
-    }
-
-    /**
-     * 由 J2000 绝对秒计算地球定向参数：
-     * jdUtc→jdTt（TT-UTC=37+32.184s 硬编码，闰秒变更需手工更新 TAI_MINUS_UTC_SECONDS）
-     * → IAU1976 岁差角(zeta/theta/z) → 简化 IAU1980 章动(dPsi/dEps，仅保留主项)
-     * → GAST=GMST+赤道均差。
-     * 每个采样点独立调用，是"J2000 惯性系固定、转换关系随时间变化"的实现核心。
-     */
-    private static EarthOrientation earthOrientation(double j2000Sec) {
-        double jdUtc = 2451545.0 + j2000Sec / 86400.0;
-        double jdTt = jdUtc + TT_MINUS_UTC_SECONDS / 86400.0;
-        double tTt = (jdTt - 2451545.0) / 36525.0;
-
-        double zeta = arcsec(2306.2181 * tTt
-                + 0.30188 * tTt * tTt
-                + 0.017998 * tTt * tTt * tTt);
-        double theta = arcsec(2004.3109 * tTt
-                - 0.42665 * tTt * tTt
-                - 0.041833 * tTt * tTt * tTt);
-        double z = arcsec(2306.2181 * tTt
-                + 1.09468 * tTt * tTt
-                + 0.018203 * tTt * tTt * tTt);
-
-        double eps0 = arcsec(84381.448
-                - 46.8150 * tTt
-                - 0.00059 * tTt * tTt
-                + 0.001813 * tTt * tTt * tTt);
-        double omega = Math.toRadians(125.04452
-                - 1934.136261 * tTt
-                + 0.0020708 * tTt * tTt
-                + tTt * tTt * tTt / 450000.0);
-        double meanSunLon = Math.toRadians(280.4665 + 36000.7698 * tTt);
-        double meanMoonLon = Math.toRadians(218.3165 + 481267.8813 * tTt);
-        double dPsi = arcsec(-17.20 * Math.sin(omega)
-                - 1.32 * Math.sin(2.0 * meanSunLon)
-                - 0.23 * Math.sin(2.0 * meanMoonLon)
-                + 0.21 * Math.sin(2.0 * omega));
-        double dEps = arcsec(9.20 * Math.cos(omega)
-                + 0.57 * Math.cos(2.0 * meanSunLon)
-                + 0.10 * Math.cos(2.0 * meanMoonLon)
-                - 0.09 * Math.cos(2.0 * omega));
-
-        double gast = gmstIauSeconds(jdUtc) + dPsi * Math.cos(eps0 + dEps);
-        return new EarthOrientation(zeta, theta, z, eps0, dPsi, dEps, gast);
-    }
-
-    // 形参名虽为 jdUt1，实际调用处(earthOrientation)传入的是 jdUtc，即忽略 DUT1
-    // （|UT1-UTC|≤0.9s，对应赤道位置误差最大约400m量级），当前精度需求下可接受，但调用者需知晓该近似。
-    private static double gmstIauSeconds(double jdUt1) {
-        double t = (jdUt1 - 2451545.0) / 36525.0;
-        double seconds = 67310.54841
-                + (876600.0 * 3600.0 + 8640184.812866) * t
-                + 0.093104 * t * t
-                - 6.2e-6 * t * t * t;
-        seconds = seconds % 86400.0;
-        if (seconds < 0.0) {
-            seconds += 86400.0;
-        }
-        return seconds * Math.PI / 43200.0;
-    }
-
-    private static Vector3 rotX(double angle, Vector3 v) {
-        double c = Math.cos(angle);
-        double s = Math.sin(angle);
-        return new Vector3(v.x, c * v.y + s * v.z, -s * v.y + c * v.z);
-    }
-
-    private static Vector3 rotY(double angle, Vector3 v) {
-        double c = Math.cos(angle);
-        double s = Math.sin(angle);
-        return new Vector3(c * v.x - s * v.z, v.y, s * v.x + c * v.z);
-    }
-
-    private static Vector3 rotZ(double angle, Vector3 v) {
-        double c = Math.cos(angle);
-        double s = Math.sin(angle);
-        return new Vector3(c * v.x - s * v.y, s * v.x + c * v.y, v.z);
-    }
-
-    private static double arcsec(double value) {
-        return value * ARCSEC_TO_RAD;
+        return ecefToEciPos(new Vector3(xEcef, yEcef, zEcef), tSec);
     }
 
     // 第二套简化 GMST 实现，当前全工程无调用（死代码），且与主链 earthOrientation 的 GAST 口径不一致，

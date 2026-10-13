@@ -31,7 +31,7 @@ $sourceRoot = Join-Path $projectRoot 'backend/src/main/java/com/runisys/orbit/sp
 $sources = @("$sourceRoot/geometry/Vector3.java")
 foreach ($type in @('OrbitTime', 'OrbitDefinition', 'OrbitState', 'OrbitPropagationTool',
         'OrbitStateProvider', 'TleOrbitStateProvider', 'KeplerOrbitStateProvider', 'SpaceOrbitStateProvider',
-        'OrekitDataInitializer')) {
+        'OrekitDataInitializer', 'SpaceTimeFrames')) {
     $sources += "$sourceRoot/orbit/$type.java"
 }
 $sources += Join-Path $evidenceDirectory 'PlainJavaOrbitExample.java'

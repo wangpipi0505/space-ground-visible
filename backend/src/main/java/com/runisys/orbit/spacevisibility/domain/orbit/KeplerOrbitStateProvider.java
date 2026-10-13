@@ -77,7 +77,7 @@ public final class KeplerOrbitStateProvider implements OrbitStateProvider {
                 epoch, integrationStepSec);
         OrekitDataInitializer.initialize();
         this.utc = TimeScalesFactory.getUTC();
-        AbsoluteDate initialDate = new AbsoluteDate(epoch, utc);
+        AbsoluteDate initialDate = SpaceTimeFrames.utcToAbsoluteDate(epoch, utc);
         this.initialOrbit = new KeplerianOrbit(semiMajorAxisM, eccentricity,
                 Math.toRadians(inclinationDeg), Math.toRadians(argumentOfPerigeeDeg), Math.toRadians(raanDeg),
                 Math.toRadians(meanAnomalyDeg), PositionAngleType.MEAN, INERTIAL_FRAME, initialDate,
@@ -103,10 +103,9 @@ public final class KeplerOrbitStateProvider implements OrbitStateProvider {
         if (instant == null) {
             throw new IllegalArgumentException("外推时刻不能为空");
         }
-        AbsoluteDate date = new AbsoluteDate(instant, utc);
+        AbsoluteDate date = SpaceTimeFrames.utcToAbsoluteDate(instant, utc);
         PVCoordinates coordinates = propagation.get().propagateTo(date).getPVCoordinates();
-        PVCoordinates temeCoordinates = INERTIAL_FRAME.getTransformTo(OUTPUT_FRAME, date)
-                .transformPVCoordinates(coordinates);
+        PVCoordinates temeCoordinates = SpaceTimeFrames.eme2000ToTeme(coordinates, date, INERTIAL_FRAME, OUTPUT_FRAME);
         return new Vector3(temeCoordinates.getPosition().getX(), temeCoordinates.getPosition().getY(),
                 temeCoordinates.getPosition().getZ());
     }

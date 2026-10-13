@@ -20,7 +20,9 @@ if ($version -notmatch 'javac 1\.8\.') {
     throw '本验证必须实际使用Java8编译器'
 }
 $domainRoot = Join-Path $projectRoot 'backend/src/main/java/com/runisys/orbit/spacevisibility/domain'
-$sources = @("$domainRoot/geometry/Vector3.java")
+# 同时独立编译T12纯JDK时间/坐标主体，确保抽取未引入Orekit、Spring或旧兼容核心依赖。
+$sources = @("$domainRoot/geometry/Vector3.java", "$domainRoot/time/LegacyJ2000Time.java",
+    "$domainRoot/geometry/LegacyJ2000Frames.java", "$domainRoot/geometry/TemeEarthFixedFrames.java")
 foreach ($type in @('OrbitTime', 'OrbitDefinition', 'OrbitState', 'OrbitPropagationTool',
         'BallisticOrbitPropagation', 'BallisticCartesianPropagation')) {
     $sources += "$domainRoot/orbit/$type.java"

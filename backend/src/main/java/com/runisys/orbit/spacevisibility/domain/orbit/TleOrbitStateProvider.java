@@ -58,7 +58,7 @@ public final class TleOrbitStateProvider implements OrbitStateProvider {
     @Override
     /** 将 UTC 时刻传播到 TEME 坐标位置（米）。 */
     public Vector3 positionAt(Instant instant) {
-        AbsoluteDate date = new AbsoluteDate(instant, utc);
+        AbsoluteDate date = SpaceTimeFrames.utcToAbsoluteDate(instant, utc);
         PVCoordinates coordinates = propagator.get().getPVCoordinates(date);
         return new Vector3(
                 coordinates.getPosition().getX(),

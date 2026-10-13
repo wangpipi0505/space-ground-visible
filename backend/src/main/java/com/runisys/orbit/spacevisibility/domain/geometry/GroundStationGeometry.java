@@ -41,14 +41,9 @@ public final class GroundStationGeometry {
                 (radius * (1.0 - EARTH_E2) + station.getHeightM()) * sinLatitude);
     }
 
+    /** 兼容旧ECI命名；输入实际为同一UTC时刻的TEME位置（米），委托原GMST主体。 */
     public static Vector3 eciToEcef(Vector3 eci, Instant instant) {
-        double theta = greenwichMeanSiderealAngleRad(instant);
-        double cos = Math.cos(theta);
-        double sin = Math.sin(theta);
-        return new Vector3(
-                cos * eci.getX() + sin * eci.getY(),
-                -sin * eci.getX() + cos * eci.getY(),
-                eci.getZ());
+        return TemeEarthFixedFrames.temeToEcef(eci, instant);
     }
 
     /**
@@ -64,13 +59,7 @@ public final class GroundStationGeometry {
      * @return 同一物理位置在 TEME 惯性系中的坐标，单位米
      */
     public static Vector3 ecefToEci(Vector3 ecef, Instant instant) {
-        double theta = greenwichMeanSiderealAngleRad(instant);
-        double cos = Math.cos(theta);
-        double sin = Math.sin(theta);
-        return new Vector3(
-                cos * ecef.getX() - sin * ecef.getY(),
-                sin * ecef.getX() + cos * ecef.getY(),
-                ecef.getZ());
+        return TemeEarthFixedFrames.ecefToTeme(ecef, instant);
     }
 
     /**
@@ -140,13 +129,4 @@ public final class GroundStationGeometry {
                 < 1.0 - ELLIPSOID_SURFACE_TOLERANCE;
     }
 
-    private static double greenwichMeanSiderealAngleRad(Instant instant) {
-        double julianDate = 2_440_587.5 + instant.getEpochSecond() / 86_400.0
-                + instant.getNano() / 86_400_000_000_000.0;
-        double centuries = (julianDate - 2_451_545.0) / 36_525.0;
-        double degrees = 280.46061837 + 360.98564736629 * (julianDate - 2_451_545.0)
-                + 0.000387933 * centuries * centuries
-                - centuries * centuries * centuries / 38_710_000.0;
-        return Math.toRadians(((degrees % 360.0) + 360.0) % 360.0);
-    }
 }

@@ -1,0 +1,325 @@
+[ {
+  "input" : "2000/01/01 12:00:00",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 12:00:00.000",
+  "utcSeconds" : "2000/01/01 12:00:00",
+  "roundTripSeconds" : "0x0.0p0"
+}, {
+  "input" : "2000/01/01 00:00:00.000",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "-0x1.518p15",
+  "utcMillis" : "2000/01/01 00:00:00.000",
+  "utcSeconds" : "2000/01/01 00:00:00",
+  "roundTripSeconds" : "-0x1.518p15"
+}, {
+  "input" : "2024-02-29 23:59:59.999",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x1.6b9971fffdf3bp29",
+  "utcMillis" : "2024/02/29 23:59:59.999",
+  "utcSeconds" : "2024/02/29 23:59:59",
+  "roundTripSeconds" : "0x1.6b9971fffdf3bp29"
+}, {
+  "input" : "2024/03/01 00:00:00.000",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x1.6b9972p29",
+  "utcMillis" : "2024/03/01 00:00:00.000",
+  "utcSeconds" : "2024/03/01 00:00:00",
+  "roundTripSeconds" : "0x1.6b9972p29"
+}, {
+  "input" : "2026/07/01 10:00:00.125",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x1.8eb7c701p29",
+  "utcMillis" : "2026/07/01 10:00:00.125",
+  "utcSeconds" : "2026/07/01 10:00:00",
+  "roundTripSeconds" : "0x1.8eb7c701p29"
+}, {
+  "input" : "2026-07-01 23:59:59.999",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x1.8ebdedfffdf3bp29",
+  "utcMillis" : "2026/07/01 23:59:59.999",
+  "utcSeconds" : "2026/07/01 23:59:59",
+  "roundTripSeconds" : "0x1.8ebdedfffdf3bp29"
+}, {
+  "input" : "2026/07/02 00:00:00.001",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x1.8ebdee00020c5p29",
+  "utcMillis" : "2026/07/02 00:00:00.001",
+  "utcSeconds" : "2026/07/02 00:00:00",
+  "roundTripSeconds" : "0x1.8ebdee00020c5p29"
+}, {
+  "input" : "2026-12-31 23:59:59.999",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x1.964801fffdf3bp29",
+  "utcMillis" : "2026/12/31 23:59:59.999",
+  "utcSeconds" : "2026/12/31 23:59:59",
+  "roundTripSeconds" : "0x1.964801fffdf3bp29"
+}, {
+  "input" : "2027-01-01 00:00:00.000",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x1.964802p29",
+  "utcMillis" : "2027/01/01 00:00:00.000",
+  "utcSeconds" : "2027/01/01 00:00:00",
+  "roundTripSeconds" : "0x1.964802p29"
+}, {
+  "input" : "1999/12/31 23:59:59.999",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x1.e08abfffbe76dp24",
+  "utcMillis" : "2000/12/30 23:59:59.999",
+  "utcSeconds" : "2000/12/30 23:59:59",
+  "roundTripSeconds" : "0x1.e08abfffbe76dp24"
+}, {
+  "input" : "2026-07-01T10:00:00Z",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 12:00:00.000",
+  "utcSeconds" : "2000/01/01 12:00:00",
+  "roundTripSeconds" : "0x0.0p0"
+}, {
+  "input" : "invalid",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 12:00:00.000",
+  "utcSeconds" : "2000/01/01 12:00:00",
+  "roundTripSeconds" : "0x0.0p0"
+}, {
+  "input" : "2026/07 10:00:00",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 12:00:00.000",
+  "utcSeconds" : "2000/01/01 12:00:00",
+  "roundTripSeconds" : "0x0.0p0"
+}, {
+  "input" : "2026/07/01 10:00",
+  "utcOffsetSec" : "0x0.0p0",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 12:00:00.000",
+  "utcSeconds" : "2000/01/01 12:00:00",
+  "roundTripSeconds" : "0x0.0p0"
+}, {
+  "input" : "2026/07/01 aa:00:00",
+  "utcOffsetSec" : "0x0.0p0",
+  "exception" : "java.lang.NumberFormatException",
+  "exceptionMessage" : "For input string: \"aa\""
+}, {
+  "input" : null,
+  "utcOffsetSec" : "0x0.0p0",
+  "exception" : "java.lang.NullPointerException",
+  "exceptionMessage" : null
+}, {
+  "input" : "2000/01/01 12:00:00",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.c2p14",
+  "utcMillis" : "2000/01/01 12:00:00.000",
+  "utcSeconds" : "2000/01/01 12:00:00",
+  "roundTripSeconds" : "0x1.c2p14"
+}, {
+  "input" : "2000/01/01 00:00:00.000",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "-0x1.c2p13",
+  "utcMillis" : "2000/01/01 00:00:00.000",
+  "utcSeconds" : "2000/01/01 00:00:00",
+  "roundTripSeconds" : "-0x1.c2p13"
+}, {
+  "input" : "2024-02-29 23:59:59.999",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.6b9cf5fffdf3bp29",
+  "utcMillis" : "2024/02/29 23:59:59.999",
+  "utcSeconds" : "2024/02/29 23:59:59",
+  "roundTripSeconds" : "0x1.6b9cf5fffdf3bp29"
+}, {
+  "input" : "2024/03/01 00:00:00.000",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.6b9cf6p29",
+  "utcMillis" : "2024/03/01 00:00:00.000",
+  "utcSeconds" : "2024/03/01 00:00:00",
+  "roundTripSeconds" : "0x1.6b9cf6p29"
+}, {
+  "input" : "2026/07/01 10:00:00.125",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.8ebb4b01p29",
+  "utcMillis" : "2026/07/01 10:00:00.125",
+  "utcSeconds" : "2026/07/01 10:00:00",
+  "roundTripSeconds" : "0x1.8ebb4b01p29"
+}, {
+  "input" : "2026-07-01 23:59:59.999",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.8ec171fffdf3bp29",
+  "utcMillis" : "2026/07/01 23:59:59.999",
+  "utcSeconds" : "2026/07/01 23:59:59",
+  "roundTripSeconds" : "0x1.8ec171fffdf3bp29"
+}, {
+  "input" : "2026/07/02 00:00:00.001",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.8ec17200020c5p29",
+  "utcMillis" : "2026/07/02 00:00:00.001",
+  "utcSeconds" : "2026/07/02 00:00:00",
+  "roundTripSeconds" : "0x1.8ec17200020c5p29"
+}, {
+  "input" : "2026-12-31 23:59:59.999",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.964b85fffdf3bp29",
+  "utcMillis" : "2026/12/31 23:59:59.999",
+  "utcSeconds" : "2026/12/31 23:59:59",
+  "roundTripSeconds" : "0x1.964b85fffdf3bp29"
+}, {
+  "input" : "2027-01-01 00:00:00.000",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.964b86p29",
+  "utcMillis" : "2027/01/01 00:00:00.000",
+  "utcSeconds" : "2027/01/01 00:00:00",
+  "roundTripSeconds" : "0x1.964b86p29"
+}, {
+  "input" : "1999/12/31 23:59:59.999",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x1.e0fb3fffbe76dp24",
+  "utcMillis" : "2000/12/30 23:59:59.999",
+  "utcSeconds" : "2000/12/30 23:59:59",
+  "roundTripSeconds" : "0x1.e0fb3fffbe76dp24"
+}, {
+  "input" : "2026-07-01T10:00:00Z",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 04:00:00.000",
+  "utcSeconds" : "2000/01/01 04:00:00",
+  "roundTripSeconds" : "-0x1.0p-38"
+}, {
+  "input" : "invalid",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 04:00:00.000",
+  "utcSeconds" : "2000/01/01 04:00:00",
+  "roundTripSeconds" : "-0x1.0p-38"
+}, {
+  "input" : "2026/07 10:00:00",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 04:00:00.000",
+  "utcSeconds" : "2000/01/01 04:00:00",
+  "roundTripSeconds" : "-0x1.0p-38"
+}, {
+  "input" : "2026/07/01 10:00",
+  "utcOffsetSec" : "0x1.c2p14",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 04:00:00.000",
+  "utcSeconds" : "2000/01/01 04:00:00",
+  "roundTripSeconds" : "-0x1.0p-38"
+}, {
+  "input" : "2026/07/01 aa:00:00",
+  "utcOffsetSec" : "0x1.c2p14",
+  "exception" : "java.lang.NumberFormatException",
+  "exceptionMessage" : "For input string: \"aa\""
+}, {
+  "input" : null,
+  "utcOffsetSec" : "0x1.c2p14",
+  "exception" : "java.lang.NullPointerException",
+  "exceptionMessage" : null
+}, {
+  "input" : "2000/01/01 12:00:00",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "-0x1.c2p14",
+  "utcMillis" : "2000/01/01 12:00:00.000",
+  "utcSeconds" : "2000/01/01 12:00:00",
+  "roundTripSeconds" : "-0x1.c2p14"
+}, {
+  "input" : "2000/01/01 00:00:00.000",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "-0x1.194p16",
+  "utcMillis" : "2000/01/01 00:00:00.000",
+  "utcSeconds" : "2000/01/01 00:00:00",
+  "roundTripSeconds" : "-0x1.194p16"
+}, {
+  "input" : "2024-02-29 23:59:59.999",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x1.6b95edfffdf3bp29",
+  "utcMillis" : "2024/02/29 23:59:59.999",
+  "utcSeconds" : "2024/02/29 23:59:59",
+  "roundTripSeconds" : "0x1.6b95edfffdf3bp29"
+}, {
+  "input" : "2024/03/01 00:00:00.000",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x1.6b95eep29",
+  "utcMillis" : "2024/03/01 00:00:00.000",
+  "utcSeconds" : "2024/03/01 00:00:00",
+  "roundTripSeconds" : "0x1.6b95eep29"
+}, {
+  "input" : "2026/07/01 10:00:00.125",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x1.8eb44301p29",
+  "utcMillis" : "2026/07/01 10:00:00.125",
+  "utcSeconds" : "2026/07/01 10:00:00",
+  "roundTripSeconds" : "0x1.8eb44301p29"
+}, {
+  "input" : "2026-07-01 23:59:59.999",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x1.8eba69fffdf3bp29",
+  "utcMillis" : "2026/07/01 23:59:59.999",
+  "utcSeconds" : "2026/07/01 23:59:59",
+  "roundTripSeconds" : "0x1.8eba69fffdf3bp29"
+}, {
+  "input" : "2026/07/02 00:00:00.001",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x1.8eba6a00020c5p29",
+  "utcMillis" : "2026/07/02 00:00:00.001",
+  "utcSeconds" : "2026/07/02 00:00:00",
+  "roundTripSeconds" : "0x1.8eba6a00020c5p29"
+}, {
+  "input" : "2026-12-31 23:59:59.999",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x1.96447dfffdf3bp29",
+  "utcMillis" : "2026/12/31 23:59:59.999",
+  "utcSeconds" : "2026/12/31 23:59:59",
+  "roundTripSeconds" : "0x1.96447dfffdf3bp29"
+}, {
+  "input" : "2027-01-01 00:00:00.000",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x1.96447ep29",
+  "utcMillis" : "2027/01/01 00:00:00.000",
+  "utcSeconds" : "2027/01/01 00:00:00",
+  "roundTripSeconds" : "0x1.96447ep29"
+}, {
+  "input" : "1999/12/31 23:59:59.999",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x1.e01a3fffbe76dp24",
+  "utcMillis" : "2000/12/30 23:59:59.999",
+  "utcSeconds" : "2000/12/30 23:59:59",
+  "roundTripSeconds" : "0x1.e01a3fffbe76dp24"
+}, {
+  "input" : "2026-07-01T10:00:00Z",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 20:00:00.000",
+  "utcSeconds" : "2000/01/01 20:00:00",
+  "roundTripSeconds" : "0x1.0p-38"
+}, {
+  "input" : "invalid",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 20:00:00.000",
+  "utcSeconds" : "2000/01/01 20:00:00",
+  "roundTripSeconds" : "0x1.0p-38"
+}, {
+  "input" : "2026/07 10:00:00",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 20:00:00.000",
+  "utcSeconds" : "2000/01/01 20:00:00",
+  "roundTripSeconds" : "0x1.0p-38"
+}, {
+  "input" : "2026/07/01 10:00",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "seconds" : "0x0.0p0",
+  "utcMillis" : "2000/01/01 20:00:00.000",
+  "utcSeconds" : "2000/01/01 20:00:00",
+  "roundTripSeconds" : "0x1.0p-38"
+}, {
+  "input" : "2026/07/01 aa:00:00",
+  "utcOffsetSec" : "-0x1.c2p14",
+  "exception" : "java.lang.NumberFormatException",
+  "exceptionMessage" : "For input string: \"aa\""
+}, {
+  "input" : null,
+  "utcOffsetSec" : "-0x1.c2p14",
+  "exception" : "java.lang.NullPointerException",
+  "exceptionMessage" : null
+} ]

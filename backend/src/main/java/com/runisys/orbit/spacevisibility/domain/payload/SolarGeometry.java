@@ -2,6 +2,7 @@ package com.runisys.orbit.spacevisibility.domain.payload;
 
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
 import com.runisys.orbit.spacevisibility.domain.orbit.OrekitDataInitializer;
+import com.runisys.orbit.spacevisibility.domain.orbit.SpaceTimeFrames;
 import org.orekit.bodies.CelestialBody;
 import org.orekit.bodies.CelestialBodyFactory;
 import org.orekit.bodies.JPLEphemeridesLoader;
@@ -84,7 +85,7 @@ public final class SolarGeometry {
             return cached;
         }
         ensureDe405Handles();
-        AbsoluteDate date = new AbsoluteDate(instant, TimeScalesFactory.getUTC());
+        AbsoluteDate date = SpaceTimeFrames.utcToAbsoluteDate(instant, TimeScalesFactory.getUTC());
         PVCoordinates sunPv = de405Sun.getPVCoordinates(date, temeFrame);
         Vector3 direction = new Vector3(sunPv.getPosition().getX(), sunPv.getPosition().getY(),
                 sunPv.getPosition().getZ()).normalize();

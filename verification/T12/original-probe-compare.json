@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "legacy-time.json",
+      "records": 48,
+      "sha256": "fc03d5ef62dadb7a3922def126f797e2f2f1ebf2bd01d1fe999a342f8a46ca2c",
+      "repeatIdentical": true,
+      "ballisticSourceJarIdentical": true
+    },
+    {
+      "file": "legacy-j2000-ecef.json",
+      "records": 18,
+      "sha256": "8ff486c609245f138a722b1dbdb26b2e4ff5c983f8d0e193fccd2c23494491c5",
+      "repeatIdentical": true,
+      "ballisticSourceJarIdentical": true
+    },
+    {
+      "file": "teme-ecef.json",
+      "records": 18,
+      "sha256": "0887bd14192f2629b77d776dad63cc650863904843e651450099f5e49cc7bec1",
+      "repeatIdentical": true,
+      "ballisticSourceJarIdentical": true
+    },
+    {
+      "file": "eme2000-teme.json",
+      "records": 18,
+      "sha256": "33821b4b60e5688af0bd7e110a2f05563565ee4da155417a0147c739eae8a5dc",
+      "repeatIdentical": true,
+      "ballisticSourceJarIdentical": true
+    }
+  ]
+}

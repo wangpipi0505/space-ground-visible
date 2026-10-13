@@ -1,0 +1,67 @@
+{
+  "javaVersion": "1.8.0_472",
+  "source": "T02 冻结原源码的 T04 Java8 编译类；另以原弹道交付JAR替换其类路径复核",
+  "orekitData": "T05 按全部原字节迁入并校验的 backend/orekit-data，T12未修改",
+  "doubleEncoding": "Double.toHexString；使用 Double.parseDouble 恢复原始数值位",
+  "sources": [
+    {
+      "file": "verification/baseline-copies/ballistic/source/src/main/java/com/tx/alg/OrbitCalculator.java",
+      "sha256": "e49bde8a817ff7b0af70144862a2f8d6226060b7e5c0fcb99c909afd59b1e942"
+    },
+    {
+      "file": "verification/baseline-copies/ballistic/source/target/classes/com/tx/alg/OrbitCalculator.class",
+      "sha256": "4de0232d056473d79cbf2c7c72c1e5c2974471123693e730edbfd17885e2b6fc"
+    },
+    {
+      "file": "verification/baseline-copies/ballistic/build/alg-toolkit-1.0.0-plain.jar",
+      "sha256": "6dec33be2ec401b5a32b0ed1cb9a7a86568eb57771990225ab80337d5da27501"
+    },
+    {
+      "file": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/GroundStationGeometry.java",
+      "sha256": "586cfc383558572aeae1254e2b3d43367f302813632c3ef5bbb3005d751a4ff9"
+    },
+    {
+      "file": "verification/runtime/T04/space-java8-validation/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/GroundStationGeometry.class",
+      "sha256": "d214efb6a8612efbd1c426b8d5c8d42118906b0ea99f88cb55b3e82a00321bf9"
+    },
+    {
+      "file": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/KeplerOrbitStateProvider.java",
+      "sha256": "4dcd7ef4f04d335dd400244cf38a070a30a100a94d2f916da5e4eb9372da3196"
+    },
+    {
+      "file": "verification/T12/OriginalTimeFrameProbe.java",
+      "sha256": "79bc20b7518c2bab687d86bde6519e3015e8a74eeb27a7e85c20978e14169fc3"
+    }
+  ],
+  "files": [
+    {
+      "file": "legacy-time.json",
+      "records": 48,
+      "sha256": "fc03d5ef62dadb7a3922def126f797e2f2f1ebf2bd01d1fe999a342f8a46ca2c",
+      "repeatIdentical": true,
+      "ballisticSourceJarIdentical": true
+    },
+    {
+      "file": "legacy-j2000-ecef.json",
+      "records": 18,
+      "sha256": "8ff486c609245f138a722b1dbdb26b2e4ff5c983f8d0e193fccd2c23494491c5",
+      "repeatIdentical": true,
+      "ballisticSourceJarIdentical": true
+    },
+    {
+      "file": "teme-ecef.json",
+      "records": 18,
+      "sha256": "0887bd14192f2629b77d776dad63cc650863904843e651450099f5e49cc7bec1",
+      "repeatIdentical": true,
+      "ballisticSourceJarIdentical": true
+    },
+    {
+      "file": "eme2000-teme.json",
+      "records": 18,
+      "sha256": "33821b4b60e5688af0bd7e110a2f05563565ee4da155417a0147c739eae8a5dc",
+      "repeatIdentical": true,
+      "ballisticSourceJarIdentical": true
+    }
+  ],
+  "passed": true
+}

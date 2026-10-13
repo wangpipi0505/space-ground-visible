@@ -1,0 +1,145 @@
+[ {
+  "case" : 0,
+  "instant" : "2000-01-01T12:00:00Z",
+  "positionEme2000" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "velocityEme2000" : [ "-0x1.f4p9", "0x1.c2p12", "0x1.f4p8" ],
+  "positionTeme" : [ "0x1.ab3ebf996309cp22", "0x1.24f6f215724f4p20", "-0x1.2513b11606ea6p19" ],
+  "velocityTeme" : [ "-0x1.f3fe45cb6307cp9", "0x1.c200395bc67f7p12", "0x1.f3d346b8b3285p8" ],
+  "utcDurationFromJ2000Tt" : "0x1.00bc6a7ef9db2p6"
+}, {
+  "case" : 0,
+  "instant" : "2024-02-29T23:59:59.999999999Z",
+  "positionEme2000" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "velocityEme2000" : [ "-0x1.f4p9", "0x1.c2p12", "0x1.f4p8" ],
+  "positionTeme" : [ "0x1.aaedb74631628p22", "0x1.2e34d6cbbd3bcp20", "-0x1.1cf31c81f43bap19" ],
+  "velocityTeme" : [ "-0x1.0403b90b11d99p10", "0x1.c1a774b5c844dp12", "0x1.f1ef0bfec5d69p8" ],
+  "utcDurationFromJ2000Tt" : "0x1.6b99742978d5p29"
+}, {
+  "case" : 0,
+  "instant" : "2026-07-01T10:00:00.125Z",
+  "positionEme2000" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "velocityEme2000" : [ "-0x1.f4p9", "0x1.c2p12", "0x1.f4p8" ],
+  "positionTeme" : [ "0x1.aae5e55dd892p22", "0x1.2f18ba4b878fcp20", "-0x1.1c186b0c7c118p19" ],
+  "velocityTeme" : [ "-0x1.04fc0f2f7db65p10", "0x1.c19ed12ec775ep12", "0x1.f19d56b73b1fbp8" ],
+  "utcDurationFromJ2000Tt" : "0x1.8eb7c92a78d5p29"
+}, {
+  "case" : 0,
+  "instant" : "2026-07-02T00:00:00.000000007Z",
+  "positionEme2000" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "velocityEme2000" : [ "-0x1.f4p9", "0x1.c2p12", "0x1.f4p8" ],
+  "positionTeme" : [ "0x1.aae5e42f02518p22", "0x1.2f18e36985fep20", "-0x1.1c182d583c7e2p19" ],
+  "velocityTeme" : [ "-0x1.04fc3b5c1ba9ep10", "0x1.c19ecf67d530fp12", "0x1.f19d7f21dcfcep8" ],
+  "utcDurationFromJ2000Tt" : "0x1.8ebdf02978d5p29"
+}, {
+  "case" : 0,
+  "instant" : "2026-12-31T23:59:59.999999999Z",
+  "positionEme2000" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "velocityEme2000" : [ "-0x1.f4p9", "0x1.c2p12", "0x1.f4p8" ],
+  "positionTeme" : [ "0x1.aae432783c826p22", "0x1.2f49bef9f93b6p20", "-0x1.1bea864285cd8p19" ],
+  "velocityTeme" : [ "-0x1.0531819008fa7p10", "0x1.c19cf72752be5p12", "0x1.f188f2cbae6a4p8" ],
+  "utcDurationFromJ2000Tt" : "0x1.9648042978d5p29"
+}, {
+  "case" : 0,
+  "instant" : "2027-01-01T00:00:00Z",
+  "positionEme2000" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "velocityEme2000" : [ "-0x1.f4p9", "0x1.c2p12", "0x1.f4p8" ],
+  "positionTeme" : [ "0x1.aae432783c826p22", "0x1.2f49bef9f93b6p20", "-0x1.1bea864285cd8p19" ],
+  "velocityTeme" : [ "-0x1.0531819008fa7p10", "0x1.c19cf72752be5p12", "0x1.f188f2cbae6a4p8" ],
+  "utcDurationFromJ2000Tt" : "0x1.9648042978d5p29"
+}, {
+  "case" : 1,
+  "instant" : "2000-01-01T12:00:00Z",
+  "positionEme2000" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "velocityEme2000" : [ "0x0.0p0", "0x0.0p0", "0x0.0p0" ],
+  "positionTeme" : [ "0x1.854a63fda55c8p22", "-0x1.120163eaebfcep-4", "-0x1.567e1736dd615p7" ],
+  "velocityTeme" : [ "0x1.00aede0331111p-35", "-0x1.7708ff133d635p-31", "0x1.23c197b8e8ad7p-20" ],
+  "utcDurationFromJ2000Tt" : "0x1.00bc6a7ef9db2p6"
+}, {
+  "case" : 1,
+  "instant" : "2024-02-29T23:59:59.999999999Z",
+  "positionEme2000" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "velocityEme2000" : [ "0x0.0p0", "0x0.0p0", "0x0.0p0" ],
+  "positionTeme" : [ "0x1.8548a9bac4138p22", "0x1.0d407e819b6dbp15", "0x1.d247738ba0942p13" ],
+  "velocityTeme" : [ "0x1.32799ba537c75p-26", "0x1.ed3eb35debe0bp-26", "-0x1.0217c9208d3e4p-17" ],
+  "utcDurationFromJ2000Tt" : "0x1.6b99742978d5p29"
+}, {
+  "case" : 1,
+  "instant" : "2026-07-01T10:00:00.125Z",
+  "positionEme2000" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "velocityEme2000" : [ "0x0.0p0", "0x0.0p0", "0x0.0p0" ],
+  "positionTeme" : [ "0x1.85484e7ab9182p22", "0x1.2742d35f65279p15", "0x1.0233cbb6e16e6p14" ],
+  "velocityTeme" : [ "-0x1.368d0eadd6886p-25", "-0x1.3de342381a7d7p-25", "0x1.d70befcf814bdp-17" ],
+  "utcDurationFromJ2000Tt" : "0x1.8eb7c92a78d5p29"
+}, {
+  "case" : 1,
+  "instant" : "2026-07-02T00:00:00.000000007Z",
+  "positionEme2000" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "velocityEme2000" : [ "0x0.0p0", "0x0.0p0", "0x0.0p0" ],
+  "positionTeme" : [ "0x1.85484e689a722p22", "0x1.274760be34952p15", "0x1.023a4a7906b3cp14" ],
+  "velocityTeme" : [ "-0x1.e72764f43119fp-26", "-0x1.6e03df06164f3p-25", "0x1.727749fea9059p-17" ],
+  "utcDurationFromJ2000Tt" : "0x1.8ebdf02978d5p29"
+}, {
+  "case" : 1,
+  "instant" : "2026-12-31T23:59:59.999999999Z",
+  "positionEme2000" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "velocityEme2000" : [ "0x0.0p0", "0x0.0p0", "0x0.0p0" ],
+  "positionTeme" : [ "0x1.854839c76ec2ep22", "0x1.2cdce2b394f6p15", "0x1.077db6e861a9cp14" ],
+  "velocityTeme" : [ "0x1.41caffe31b50bp-28", "0x1.42237725f9d22p-25", "-0x1.f2681ef8983e5p-20" ],
+  "utcDurationFromJ2000Tt" : "0x1.9648042978d5p29"
+}, {
+  "case" : 1,
+  "instant" : "2027-01-01T00:00:00Z",
+  "positionEme2000" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "velocityEme2000" : [ "0x0.0p0", "0x0.0p0", "0x0.0p0" ],
+  "positionTeme" : [ "0x1.854839c76ec2ep22", "0x1.2cdce2b394f6p15", "0x1.077db6e861a9cp14" ],
+  "velocityTeme" : [ "0x1.41caffe31b441p-28", "0x1.42237725f9d33p-25", "-0x1.f2681ef8982bcp-20" ],
+  "utcDurationFromJ2000Tt" : "0x1.9648042978d5p29"
+}, {
+  "case" : 2,
+  "instant" : "2000-01-01T12:00:00Z",
+  "positionEme2000" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "velocityEme2000" : [ "0x1.d4cp12", "-0x1.4p3", "0x1.2cp7" ],
+  "positionTeme" : [ "0x1.77e2a1c37c755p7", "0x1.87e75d41e915p7", "0x1.ab3efffa9ba28p22" ],
+  "velocityTeme" : [ "0x1.d4c0107ac97b2p12", "-0x1.3fde2e324e003p3", "0x1.2b990b160e1fap7" ],
+  "utcDurationFromJ2000Tt" : "0x1.00bc6a7ef9db2p6"
+}, {
+  "case" : 2,
+  "instant" : "2024-02-29T23:59:59.999999999Z",
+  "positionEme2000" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "velocityEme2000" : [ "0x1.d4cp12", "-0x1.4p3", "0x1.2cp7" ],
+  "positionTeme" : [ "-0x1.ffb03a01e7cf7p13", "-0x1.63666a89d2171p8", "0x1.ab3eb35c7d98ep22" ],
+  "velocityTeme" : [ "0x1.d4b92ba6733ap12", "0x1.e84ce61e4c851p4", "0x1.4f16d74e00fdbp7" ],
+  "utcDurationFromJ2000Tt" : "0x1.6b99742978d5p29"
+}, {
+  "case" : 2,
+  "instant" : "2026-07-01T10:00:00.125Z",
+  "positionEme2000" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "velocityEme2000" : [ "0x1.d4cp12", "-0x1.4p3", "0x1.2cp7" ],
+  "positionTeme" : [ "-0x1.1b5a6c69ebc7p14", "-0x1.34d8e01368406p8", "0x1.ab3ea202ef702p22" ],
+  "velocityTeme" : [ "0x1.d4b838874dc1ap12", "0x1.1379e15307b0bp5", "0x1.52dc8d0220487p7" ],
+  "utcDurationFromJ2000Tt" : "0x1.8eb7c92a78d5p29"
+}, {
+  "case" : 2,
+  "instant" : "2026-07-02T00:00:00.000000007Z",
+  "positionEme2000" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "velocityEme2000" : [ "0x1.d4cp12", "-0x1.4p3", "0x1.2cp7" ],
+  "positionTeme" : [ "-0x1.1b6187fc4f5cdp14", "-0x1.35b6e2a71eb03p8", "0x1.ab3ea1fe2e936p22" ],
+  "velocityTeme" : [ "0x1.d4b83850c4de6p12", "0x1.137f51901f856p5", "0x1.52dd871b1aa93p7" ],
+  "utcDurationFromJ2000Tt" : "0x1.8ebdf02978d5p29"
+}, {
+  "case" : 2,
+  "instant" : "2026-12-31T23:59:59.999999999Z",
+  "positionEme2000" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "velocityEme2000" : [ "0x1.d4cp12", "-0x1.4p3", "0x1.2cp7" ],
+  "positionTeme" : [ "-0x1.2128cdbfbd793p14", "-0x1.1f6056d54a0c8p8", "0x1.ab3e9e1ffd116p22" ],
+  "velocityTeme" : [ "0x1.d4b803a9a413dp12", "0x1.1a39aba30e76p5", "0x1.53a857ccb4f6bp7" ],
+  "utcDurationFromJ2000Tt" : "0x1.9648042978d5p29"
+}, {
+  "case" : 2,
+  "instant" : "2027-01-01T00:00:00Z",
+  "positionEme2000" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "velocityEme2000" : [ "0x1.d4cp12", "-0x1.4p3", "0x1.2cp7" ],
+  "positionTeme" : [ "-0x1.2128cdbfbd793p14", "-0x1.1f6056d54a0c8p8", "0x1.ab3e9e1ffd116p22" ],
+  "velocityTeme" : [ "0x1.d4b803a9a413dp12", "0x1.1a39aba30e76p5", "0x1.53a857ccb4f6bp7" ],
+  "utcDurationFromJ2000Tt" : "0x1.9648042978d5p29"
+} ]

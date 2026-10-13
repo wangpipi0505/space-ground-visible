@@ -1,0 +1,109 @@
+[ {
+  "case" : 0,
+  "instant" : "2000-01-01T12:00:00Z",
+  "positionTeme" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "positionEcef" : [ "0x1.62eda6b1ec75p16", "0x1.b1716c7489789p22", "-0x1.24f8p19" ],
+  "reversePositionTeme" : [ "0x1.ab3fp22", "0x1.24f7fffffffffp20", "-0x1.24f8p19" ]
+}, {
+  "case" : 0,
+  "instant" : "2024-02-29T23:59:59.999999999Z",
+  "positionTeme" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "positionEcef" : [ "-0x1.75be2bf233c32p22", "-0x1.b72e416d1b8aep21", "-0x1.24f8p19" ],
+  "reversePositionTeme" : [ "0x1.ab3efffffffffp22", "0x1.24f8p20", "-0x1.24f8p19" ]
+}, {
+  "case" : 0,
+  "instant" : "2026-07-01T10:00:00.125Z",
+  "positionTeme" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "positionEcef" : [ "0x1.b4cb45a3f298ep21", "-0x1.767101b45d693p22", "-0x1.24f8p19" ],
+  "reversePositionTeme" : [ "0x1.ab3fp22", "0x1.24f8000000002p20", "-0x1.24f8p19" ]
+}, {
+  "case" : 0,
+  "instant" : "2026-07-02T00:00:00.000000007Z",
+  "positionTeme" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "positionEcef" : [ "0x1.36f40fc1a108p15", "0x1.b178c3529217bp22", "-0x1.24f8p19" ],
+  "reversePositionTeme" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ]
+}, {
+  "case" : 0,
+  "instant" : "2026-12-31T23:59:59.999999999Z",
+  "positionTeme" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "positionEcef" : [ "-0x1.504d9495089dp16", "-0x1.b1725a1328633p22", "-0x1.24f8p19" ],
+  "reversePositionTeme" : [ "0x1.ab3efffffffffp22", "0x1.24f8p20", "-0x1.24f8p19" ]
+}, {
+  "case" : 0,
+  "instant" : "2027-01-01T00:00:00Z",
+  "positionTeme" : [ "0x1.ab3fp22", "0x1.24f8p20", "-0x1.24f8p19" ],
+  "positionEcef" : [ "-0x1.504d9495089dp16", "-0x1.b1725a1328633p22", "-0x1.24f8p19" ],
+  "reversePositionTeme" : [ "0x1.ab3efffffffffp22", "0x1.24f8p20", "-0x1.24f8p19" ]
+}, {
+  "case" : 1,
+  "instant" : "2000-01-01T12:00:00Z",
+  "positionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "positionEcef" : [ "0x1.1ab7c57152b48p20", "0x1.7ed20fbd802e3p22", "0x0.0p0" ],
+  "reversePositionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ]
+}, {
+  "case" : 1,
+  "instant" : "2024-02-29T23:59:59.999999999Z",
+  "positionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "positionEcef" : [ "-0x1.6c239a3efab1p22", "-0x1.135137d778c59p21", "0x0.0p0" ],
+  "reversePositionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ]
+}, {
+  "case" : 1,
+  "instant" : "2026-07-01T10:00:00.125Z",
+  "positionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "positionEcef" : [ "0x1.10fe222015de6p21", "-0x1.6c938b00b8ff3p22", "0x0.0p0" ],
+  "reversePositionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ]
+}, {
+  "case" : 1,
+  "instant" : "2026-07-02T00:00:00.000000007Z",
+  "positionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "positionEcef" : [ "0x1.0fb3832f7ec83p20", "0x1.7f519df6329acp22", "0x0.0p0" ],
+  "reversePositionTeme" : [ "0x1.854a64p22", "-0x1.0p-32", "0x0.0p0" ]
+}, {
+  "case" : 1,
+  "instant" : "2026-12-31T23:59:59.999999999Z",
+  "positionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "positionEcef" : [ "-0x1.19b08e5a85438p20", "-0x1.7ede3018d3563p22", "0x0.0p0" ],
+  "reversePositionTeme" : [ "0x1.854a63fffffffp22", "0x0.0p0", "0x0.0p0" ]
+}, {
+  "case" : 1,
+  "instant" : "2027-01-01T00:00:00Z",
+  "positionTeme" : [ "0x1.854a64p22", "0x0.0p0", "0x0.0p0" ],
+  "positionEcef" : [ "-0x1.19b08e5a85438p20", "-0x1.7ede3018d3563p22", "0x0.0p0" ],
+  "reversePositionTeme" : [ "0x1.854a63fffffffp22", "0x0.0p0", "0x0.0p0" ]
+}, {
+  "case" : 2,
+  "instant" : "2000-01-01T12:00:00Z",
+  "positionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "positionEcef" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "reversePositionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ]
+}, {
+  "case" : 2,
+  "instant" : "2024-02-29T23:59:59.999999999Z",
+  "positionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "positionEcef" : [ "0x0.0p0", "-0x0.0p0", "0x1.ab3fp22" ],
+  "reversePositionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ]
+}, {
+  "case" : 2,
+  "instant" : "2026-07-01T10:00:00.125Z",
+  "positionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "positionEcef" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "reversePositionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ]
+}, {
+  "case" : 2,
+  "instant" : "2026-07-02T00:00:00.000000007Z",
+  "positionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "positionEcef" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "reversePositionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ]
+}, {
+  "case" : 2,
+  "instant" : "2026-12-31T23:59:59.999999999Z",
+  "positionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "positionEcef" : [ "0x0.0p0", "-0x0.0p0", "0x1.ab3fp22" ],
+  "reversePositionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ]
+}, {
+  "case" : 2,
+  "instant" : "2027-01-01T00:00:00Z",
+  "positionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ],
+  "positionEcef" : [ "0x0.0p0", "-0x0.0p0", "0x1.ab3fp22" ],
+  "reversePositionTeme" : [ "0x0.0p0", "0x0.0p0", "0x1.ab3fp22" ]
+} ]
