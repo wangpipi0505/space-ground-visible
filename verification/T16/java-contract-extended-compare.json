@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "publicTypes": 50,
+  "declarationLinesIncludingDescriptors": 1174,
+  "scope": [
+    "com.tx.alg.OrbitCalculator",
+    "com.tx.alg.TrajectoryFileResolver",
+    "com.tx.alg.trajectory.TargetTrajectoryFitter",
+    "com.tx.alg.api.VisibilityRequest",
+    "com.tx.alg.api.OrbitVisibilityController",
+    "com.tx.alg.api.TargetTrajectoryFitController"
+  ],
+  "differences": []
+}

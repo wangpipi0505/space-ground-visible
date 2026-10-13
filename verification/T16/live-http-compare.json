@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "targetCount": 1,
+  "files": [
+    {
+      "targetId": "SIM-001",
+      "pointCount": 2576,
+      "bytes": 561736,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "sameIdOnReregister": true,
+      "csvByteExact": true,
+      "previewCellExact": true
+    }
+  ],
+  "requestStatuses": [
+    {
+      "path": "/api/trajectory/health",
+      "status": 200,
+      "bytes": 2
+    },
+    {
+      "path": "/api/trajectory/simulate",
+      "status": 200,
+      "bytes": 620
+    },
+    {
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 418
+    },
+    {
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 418
+    },
+    {
+      "path": "/api/v1/ballistic/files/b75dbde5-57b7-4211-b32c-f377a7be6022/download",
+      "status": 200,
+      "bytes": 561736
+    },
+    {
+      "path": "/api/v1/ballistic/files/b75dbde5-57b7-4211-b32c-f377a7be6022/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1073
+    }
+  ],
+  "managedRegistrationAccepted": true,
+  "responseComparison": "仅files[].csvPath映射原夹具文件名，其它字段严格相等"
+}

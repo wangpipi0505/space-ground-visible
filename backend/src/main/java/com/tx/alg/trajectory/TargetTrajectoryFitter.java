@@ -928,8 +928,8 @@ public final class TargetTrajectoryFitter {
         return generateTrajectory(samples, stepSec, basePolicy, requestedStart, requestedEnd);
     }
 
-    /** 按原端点约束模拟并输出CSV；只替换所共用的二体传播计算主体，模拟专用动力学及输出命名保持。 */
-    public static FitRunResult simulateToCsv(SimulationRequest request) throws IOException {
+    /** 原模拟目录创建前校验的唯一主体，供旧 Java 与 Web 工作区共同使用，返回原归一化输出间隔（秒）。 */
+    public static double validateSimulationRequest(SimulationRequest request) {
         if (request == null) {
             throw new IllegalArgumentException("系统模拟请求不能为空。");
         }
@@ -937,6 +937,12 @@ public final class TargetTrajectoryFitter {
         if (request.launchTimeUtc == null || request.launchTimeUtc.trim().isEmpty()) {
             throw new IllegalArgumentException("launchTimeUtc不能为空。");
         }
+        return outputStepSec;
+    }
+
+    /** 按原端点约束模拟并输出CSV；只替换所共用的二体传播计算主体，模拟专用动力学及输出命名保持。 */
+    public static FitRunResult simulateToCsv(SimulationRequest request) throws IOException {
+        double outputStepSec = validateSimulationRequest(request);
 
         Path outputDir = Paths.get(blankToDefault(request.outputDir, "."));
         Files.createDirectories(outputDir);

@@ -21,21 +21,30 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/** 独立 JVM 在系统临时工作目录启动真实服务，验证显式点目录又不把测试输出写进源码。 */
+/** 独立 JVM 在系统临时工作目录启动真实服务，验证拟合/模拟显式点目录又不把测试输出写进源码。 */
 class BallisticFitWorkingDirectoryTest {
     @TempDir
     Path root;
 
     @Test
     void 显式点空串和null保留原工作目录语义且不进入管理目录() throws Exception {
+        verifyWorkingDirectory("target_trajectory_fit_package102_default.json", "/api/trajectory/fit/package102");
+    }
+
+    @Test
+    void 模拟显式点空串和null保持原工作目录及外部登记拒绝() throws Exception {
+        verifyWorkingDirectory("target_trajectory_simulate_default.json", "/api/trajectory/simulate");
+    }
+
+    private void verifyWorkingDirectory(String fixture, String endpoint) throws Exception {
         String classpath = System.getProperty("surefire.test.class.path", System.getProperty("java.class.path"));
         String[] entries = classpath.split(java.util.regex.Pattern.quote(File.pathSeparator));
         for (int i = 0; i < entries.length; i++) entries[i] = Paths.get(entries[i]).toAbsolutePath().toString();
         Path log = root.resolve("working-directory-http.log");
         Process process = new ProcessBuilder(Paths.get(System.getProperty("java.home"), "bin", "java").toString(),
                 "-Djava.awt.headless=true", "-Dfile.encoding=UTF-8", "-cp", String.join(File.pathSeparator, entries),
-                getClass().getName(), Paths.get("../test-data/reference/ballistic/target_trajectory_fit_package102_default.json")
-                        .toRealPath().toString())
+                getClass().getName(), Paths.get("../test-data/reference/ballistic/" + fixture)
+                        .toRealPath().toString(), endpoint)
                 .directory(root.toFile()).redirectErrorStream(true).redirectOutput(log.toFile()).start();
         boolean finished = process.waitFor(60, TimeUnit.SECONDS);
         if (!finished) process.destroyForcibly();
@@ -58,7 +67,7 @@ class BallisticFitWorkingDirectoryTest {
                 ObjectNode request = (ObjectNode) mapper.readTree(Files.readAllBytes(Paths.get(args[0])));
                 if (directory == null) request.putNull("outputDir");
                 else request.put("outputDir", directory);
-                ResponseEntity<JsonNode> response = http.postForEntity(base + "/api/trajectory/fit/package102", request, JsonNode.class);
+                ResponseEntity<JsonNode> response = http.postForEntity(base + args[1], request, JsonNode.class);
                 assertEquals(200, response.getStatusCodeValue());
                 for (JsonNode file : response.getBody().path("files")) {
                     Path csv = Paths.get(file.path("csvPath").asText());
