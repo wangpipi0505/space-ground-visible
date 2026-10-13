@@ -1,0 +1,114 @@
+[
+  {
+    "request": {
+      "payloadName": "独立审查",
+      "elevationMaxDeg": null,
+      "azimuthMinDeg": null,
+      "sunAvoidHalfAngleDeg": 0,
+      "elevationMinDeg": null,
+      "maxDistanceKm": 0,
+      "azimuthMaxDeg": null,
+      "minDistanceKm": 0,
+      "startupAngleRateDegPerSec": -1,
+      "payloadId": "T21-review-S",
+      "payloadType": "SPACE",
+      "angleRateDegPerSec": -1
+    },
+    "status": 200,
+    "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+    "response": {
+      "payloadId": "T21-review-S",
+      "payloadName": "独立审查",
+      "payloadType": "SPACE",
+      "minDistanceKm": 0.0,
+      "maxDistanceKm": 0.0,
+      "azimuthMinDeg": null,
+      "azimuthMaxDeg": null,
+      "elevationMinDeg": null,
+      "elevationMaxDeg": null,
+      "angleRateDegPerSec": -1.0,
+      "sunAvoidHalfAngleDeg": 0.0,
+      "startupAngleRateDegPerSec": -1.0
+    },
+    "case": "Vite proxy SPACE sentinel"
+  },
+  {
+    "request": {
+      "payloadName": "独立审查",
+      "elevationMaxDeg": null,
+      "azimuthMinDeg": null,
+      "sunAvoidHalfAngleDeg": 0,
+      "elevationMinDeg": null,
+      "maxDistanceKm": 0,
+      "azimuthMaxDeg": null,
+      "minDistanceKm": 0,
+      "startupAngleRateDegPerSec": -1,
+      "payloadId": "T21-review-S",
+      "payloadType": "SPACE",
+      "angleRateDegPerSec": -1
+    },
+    "status": 200,
+    "url": "http://127.0.0.1:18121/api/v1/ballistic/payloads/preview",
+    "response": {
+      "payloadId": "T21-review-S",
+      "payloadName": "独立审查",
+      "payloadType": "SPACE",
+      "minDistanceKm": 0.0,
+      "maxDistanceKm": 0.0,
+      "azimuthMinDeg": null,
+      "azimuthMaxDeg": null,
+      "elevationMinDeg": null,
+      "elevationMaxDeg": null,
+      "angleRateDegPerSec": -1.0,
+      "sunAvoidHalfAngleDeg": 0.0,
+      "startupAngleRateDegPerSec": -1.0
+    },
+    "case": "backend SPACE sentinel"
+  },
+  {
+    "request": {
+      "maxDistanceKm": 1E+308,
+      "elevationMaxDeg": null,
+      "azimuthMaxDeg": null,
+      "payloadType": "SPACE",
+      "payloadId": "T21-review-S",
+      "elevationMinDeg": null,
+      "angleRateDegPerSec": -1,
+      "startupAngleRateDegPerSec": -1,
+      "azimuthMinDeg": null,
+      "minDistanceKm": 0,
+      "sunAvoidHalfAngleDeg": 0,
+      "payloadName": "独立审查"
+    },
+    "status": 400,
+    "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+    "response": {
+      "code": "INVALID_ARGUMENT",
+      "error": "最远探测距离必须为有效数值"
+    },
+    "case": "overflow rejection"
+  },
+  {
+    "request": {
+      "maxDistanceKm": 0,
+      "elevationMaxDeg": null,
+      "azimuthMaxDeg": null,
+      "payloadType": "GROUND",
+      "payloadId": "T21-review-S",
+      "elevationMinDeg": null,
+      "angleRateDegPerSec": -1,
+      "startupAngleRateDegPerSec": -1,
+      "azimuthMinDeg": null,
+      "minDistanceKm": 0,
+      "sunAvoidHalfAngleDeg": 0,
+      "payloadName": "独立审查"
+    },
+    "status": 400,
+    "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+    "response": {
+      "code": "INVALID_ARGUMENT",
+      "error": "跟踪角速度必须为非负有效数值；仅对空载荷可用 -1 表示不限制"
+    },
+    "case": "GROUND minus one rejection"
+  }
+]

@@ -1,0 +1,218 @@
+{
+  "browser": "Chrome headless",
+  "timezone": "Asia/Shanghai",
+  "identities": [
+    "1-P1",
+    "1-P3",
+    "21-P2",
+    "21-P4"
+  ],
+  "afterDeleteIds": [
+    "1-P1",
+    "1-P5",
+    "21-P2",
+    "21-P4"
+  ],
+  "checks": [
+    "双星各两载荷真实编辑",
+    "SPACE/GROUND完整预览与原值",
+    "清空双null",
+    "中文非法阻止HTTP",
+    "多载荷增删与身份隔离",
+    "导航保留两业务状态",
+    "后端真实400"
+  ],
+  "evidence": [
+    {
+      "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+      "method": "POST",
+      "request": {
+        "payloadId": "1-P1",
+        "payloadName": "星甲对空独立配置",
+        "payloadType": "SPACE",
+        "minDistanceKm": 111,
+        "maxDistanceKm": 0,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": null,
+        "elevationMaxDeg": null,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": -1
+      },
+      "status": 200,
+      "response": {
+        "payloadId": "1-P1",
+        "payloadName": "星甲对空独立配置",
+        "payloadType": "SPACE",
+        "minDistanceKm": 111,
+        "maxDistanceKm": 0,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": null,
+        "elevationMaxDeg": null,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": -1
+      }
+    },
+    {
+      "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+      "method": "POST",
+      "request": {
+        "payloadId": "1-P3",
+        "payloadName": "星甲对地独立配置",
+        "payloadType": "GROUND",
+        "minDistanceKm": 333,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": 90,
+        "azimuthMaxDeg": 270,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 90,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": -1
+      },
+      "status": 200,
+      "response": {
+        "payloadId": "1-P3",
+        "payloadName": "星甲对地独立配置",
+        "payloadType": "GROUND",
+        "minDistanceKm": 333,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": 90,
+        "azimuthMaxDeg": 270,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 90,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": -1
+      }
+    },
+    {
+      "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+      "method": "POST",
+      "request": {
+        "payloadId": "21-P2",
+        "payloadName": "星乙对空独立配置",
+        "payloadType": "SPACE",
+        "minDistanceKm": 222,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": 90,
+        "azimuthMaxDeg": 270,
+        "elevationMinDeg": -4,
+        "elevationMaxDeg": 60,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": 0.07
+      },
+      "status": 200,
+      "response": {
+        "payloadId": "21-P2",
+        "payloadName": "星乙对空独立配置",
+        "payloadType": "SPACE",
+        "minDistanceKm": 222,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": 90,
+        "azimuthMaxDeg": 270,
+        "elevationMinDeg": -4,
+        "elevationMaxDeg": 60,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": 0.07
+      }
+    },
+    {
+      "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+      "method": "POST",
+      "request": {
+        "payloadId": "21-P4",
+        "payloadName": "星乙对地独立配置",
+        "payloadType": "GROUND",
+        "minDistanceKm": 444,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": 90,
+        "azimuthMaxDeg": 270,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 60,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": 0.07
+      },
+      "status": 200,
+      "response": {
+        "payloadId": "21-P4",
+        "payloadName": "星乙对地独立配置",
+        "payloadType": "GROUND",
+        "minDistanceKm": 444,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": 90,
+        "azimuthMaxDeg": 270,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 60,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": 0.07
+      }
+    },
+    {
+      "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+      "method": "POST",
+      "request": {
+        "payloadId": "1-P3",
+        "payloadName": "星甲对地独立配置",
+        "payloadType": "GROUND",
+        "minDistanceKm": 333,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 90,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": -1
+      },
+      "status": 200,
+      "response": {
+        "payloadId": "1-P3",
+        "payloadName": "星甲对地独立配置",
+        "payloadType": "GROUND",
+        "minDistanceKm": 333,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 90,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": -1
+      }
+    },
+    {
+      "source": "真实独立HTTP负例；表单非法已阻止HTTP",
+      "url": "http://127.0.0.1:15121/api/v1/ballistic/payloads/preview",
+      "method": "POST",
+      "request": {
+        "payloadId": "1-P3",
+        "payloadName": "星甲对地独立配置",
+        "payloadType": "GROUND",
+        "minDistanceKm": 333,
+        "maxDistanceKm": 4000,
+        "azimuthMinDeg": 90,
+        "azimuthMaxDeg": 270,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 90,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 90,
+        "startupAngleRateDegPerSec": -1
+      },
+      "status": 400,
+      "response": {
+        "code": "INVALID_ARGUMENT",
+        "error": "跟踪角速度必须为非负有效数值；仅对空载荷可用 -1 表示不限制"
+      }
+    }
+  ],
+  "pagePreviewRequests": 5,
+  "consoleErrors": []
+}

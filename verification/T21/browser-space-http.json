@@ -1,0 +1,108 @@
+{
+  "browser": "Chrome headless",
+  "timezone": "Asia/Shanghai",
+  "checks": [
+    "SPACE/GROUND真实保存",
+    "两类独立配置不覆盖",
+    "切回SPACE原值",
+    "切回GROUND零上限与-91",
+    "姿态清空双null",
+    "非法单null与GROUND-1禁用且不发送HTTP"
+  ],
+  "evidence": [
+    {
+      "url": "http://127.0.0.1:15121/api/v1/space/satellites/1/payload-profiles",
+      "method": "PUT",
+      "request": {
+        "payloadType": "SPACE",
+        "minDistanceKm": 123,
+        "maxDistanceKm": 0,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": null,
+        "elevationMaxDeg": null,
+        "angleRateDegPerSec": -1,
+        "sunAvoidHalfAngleDeg": 0,
+        "startupAngleRateDegPerSec": -1
+      },
+      "status": 200,
+      "response": {
+        "activePayloadType": "SPACE",
+        "profiles": [
+          {
+            "payloadType": "SPACE",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 123,
+            "maxDistanceKm": 0,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": -1,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://127.0.0.1:15121/api/v1/space/satellites/1/payload-profiles",
+      "method": "PUT",
+      "request": {
+        "payloadType": "GROUND",
+        "minDistanceKm": 321,
+        "maxDistanceKm": 3500,
+        "azimuthMinDeg": null,
+        "azimuthMaxDeg": null,
+        "elevationMinDeg": -91,
+        "elevationMaxDeg": 90,
+        "angleRateDegPerSec": 0,
+        "sunAvoidHalfAngleDeg": 180,
+        "startupAngleRateDegPerSec": -1
+      },
+      "status": 200,
+      "response": {
+        "activePayloadType": "GROUND",
+        "profiles": [
+          {
+            "payloadType": "SPACE",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 123,
+            "maxDistanceKm": 0,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": -1,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          },
+          {
+            "payloadType": "GROUND",
+            "legacyGroundProfile": false,
+            "minDistanceKm": 321,
+            "maxDistanceKm": 3500,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": -91,
+            "elevationMaxDeg": 90,
+            "angleRateDegPerSec": 0,
+            "sunAvoidHalfAngleDeg": 180,
+            "startupAngleRateDegPerSec": -1,
+            "sensorFullConeAngleDeg": null,
+            "maxDetectRangeKm": null,
+            "sunExclusionAngleDeg": null
+          }
+        ]
+      }
+    }
+  ],
+  "putRequestCount": 2,
+  "consoleErrors": []
+}

@@ -1,0 +1,6 @@
+### Result
+{"nativeDisabled":false,"rate":"0"}
+### Ran Playwright code
+```js
+await (async page => {await page.getByRole("tab", {name:"规划工作台", exact:true}).click(); await page.locator("[data-test=save-payload-1]").scrollIntoViewIfNeeded(); await page.locator(".payload-panel").screenshot({path:"G:/5-YG/space-ground-visible/output/playwright/T21/space-ground-bottom.png"}); return {nativeDisabled:await page.locator(".payload-panel [data-field=minDistanceKm] input").isDisabled(),rate:await page.locator(".payload-panel [data-field=angleRateDegPerSec] input").inputValue()};})(page);
+```

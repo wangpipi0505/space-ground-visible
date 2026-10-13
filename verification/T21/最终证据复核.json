@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "scope": "独立读取最终证据、字段比对与SHA，不重新执行完整测试或改产品",
+  "sourcesSha256Matches": {
+    "frontend/src/App.vue": true,
+    "frontend/src/components/StandardPayloadEditor.vue": true,
+    "frontend/src/components/SatellitePayloadPanel.vue": true,
+    "frontend/src/composables/useVisibilityWorkbench.ts": true,
+    "frontend/src/views/BallisticPayloadConfigurationView.vue": true,
+    "frontend/src/utils/standardPayload.ts": true,
+    "frontend/src/api/ballisticPayloads.ts": true
+  },
+  "spacePut200Count": 2,
+  "spaceOtherProfileUnchanged": true,
+  "ballisticPreview200Count": 5,
+  "ballisticNegative400Count": 1,
+  "allPreview12FieldsExact": true,
+  "identityIsolationAndNavigation": true,
+  "rootIndependentReadMatchesAuthorSavedProfiles": true,
+  "finalLogCopiesMatch": true,
+  "lockAndFrozenBackendSha256Match": true
+}

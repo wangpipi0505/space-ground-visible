@@ -9,7 +9,7 @@ vi.mock('../api/client', () => ({
   deleteApi: vi.fn().mockResolvedValue({}),
 }))
 
-import { deleteApi, getApi, postApi } from '../api/client'
+import { deleteApi, getApi, postApi, putApi } from '../api/client'
 import { useVisibilityWorkbench } from './useVisibilityWorkbench'
 
 /** 已按新载荷参数完成配置的卫星载荷响应。 */
@@ -82,6 +82,49 @@ describe('useVisibilityWorkbench', () => {
     })
   })
 
+  /** 单边清空姿态与非法数值必须在 HTTP 前拦截，不能交给 JSON.stringify 变成 null。 */
+  it('阻止非法载荷保存并保护已保存配置', async () => {
+    const workbench = useVisibilityWorkbench()
+    workbench.toggleTaskSatellite({ id: 1, name: '观测卫星一号', modelType: 'TLE_SGP4' }, true)
+    await vi.advanceTimersByTimeAsync(0)
+    const original = JSON.stringify(workbench.satellitePayloadConfigurations.value[1])
+    workbench.satellitePayloadForms[1]!.azimuthMinDeg = undefined
+    await workbench.saveSatellitePayload(1)
+    expect(putApi).not.toHaveBeenCalled()
+    expect(JSON.stringify(workbench.satellitePayloadConfigurations.value[1])).toBe(original)
+    workbench.satellitePayloadForms[1]!.azimuthMinDeg = 90
+    workbench.satellitePayloadForms[1]!.minDistanceKm = Infinity
+    await workbench.saveSatellitePayload(1)
+    expect(putApi).not.toHaveBeenCalled()
+  })
+
+  /** 模拟持久化服务按类型更新；两次真实保存的请求必须只有十个标准字段。 */
+  it('两类独立保存后切换回显原零负一与姿态空值', async () => {
+    const workbench = useVisibilityWorkbench()
+    workbench.toggleTaskSatellite({ id: 1, name: '观测卫星一号', modelType: 'TLE_SGP4' }, true)
+    await vi.advanceTimersByTimeAsync(0)
+    const profiles = [...configuredPayload.profiles]
+    vi.mocked(putApi).mockImplementation((_path, payload) => {
+      const saved = payload as PayloadProfilesResponse['profiles'][number]
+      const index = profiles.findIndex((profile) => profile.payloadType === saved.payloadType)
+      if (index < 0) profiles.push({ ...saved })
+      else profiles[index] = { ...saved }
+      return Promise.resolve({ activePayloadType: saved.payloadType, profiles: [...profiles] }) as never
+    })
+    Object.assign(workbench.satellitePayloadForms[1]!, {
+      angleRateDegPerSec: -1, startupAngleRateDegPerSec: -1, azimuthMinDeg: null, azimuthMaxDeg: null,
+    })
+    await workbench.saveSatellitePayload(1)
+    workbench.selectSatellitePayloadType(1, 'GROUND')
+    Object.assign(workbench.satellitePayloadForms[1]!, { angleRateDegPerSec: 0, minDistanceKm: 800 })
+    await workbench.saveSatellitePayload(1)
+    workbench.selectSatellitePayloadType(1, 'SPACE')
+    expect(workbench.satellitePayloadForms[1]).toMatchObject({ angleRateDegPerSec: -1, startupAngleRateDegPerSec: -1, azimuthMinDeg: null, azimuthMaxDeg: null, minDistanceKm: 1000 })
+    workbench.selectSatellitePayloadType(1, 'GROUND')
+    expect(workbench.satellitePayloadForms[1]).toMatchObject({ angleRateDegPerSec: 0, minDistanceKm: 800, elevationMinDeg: -91 })
+    expect(Object.keys(vi.mocked(putApi).mock.calls[0]![1] as object)).toHaveLength(10)
+  })
+
   it('maps the document ground profile into the same editable fields without persisting its legacy marker', async () => {
     const groundPayload: PayloadProfilesResponse = {
       activePayloadType: 'GROUND',
@@ -112,6 +155,25 @@ describe('useVisibilityWorkbench', () => {
       angleRateDegPerSec: 1,
       sunAvoidHalfAngleDeg: 45,
       startupAngleRateDegPerSec: 1,
+    })
+  })
+
+  /** 仅读历史米字段且保留缺省姿态响应；标准保存明确成对 null，不混发米/公里或只读标记。 */
+  it('旧米profile读取换算且保存只发送标准公里字段', async () => {
+    vi.mocked(getApi).mockResolvedValue({ activePayloadType: 'SPACE', profiles: [{
+      payloadType: 'SPACE', minDistanceM: 100000, maxDistanceM: 8000000,
+      angleRateDegPerSec: 0, sunAvoidHalfAngleDeg: 0,
+    }] } as never)
+    const workbench = useVisibilityWorkbench()
+    workbench.toggleTaskSatellite({ id: 1, name: '旧星', modelType: 'KEPLER_6' }, true)
+    await vi.advanceTimersByTimeAsync(0)
+    expect(workbench.satellitePayloadForms[1]).toMatchObject({ minDistanceKm: 100, maxDistanceKm: 8000, minDistanceM: 100000, maxDistanceM: 8000000 })
+    vi.mocked(putApi).mockResolvedValue({ activePayloadType: 'SPACE', profiles: configuredPayload.profiles } as never)
+    await workbench.saveSatellitePayload(1)
+    expect(putApi).toHaveBeenCalledWith('/satellites/1/payload-profiles', {
+      payloadType: 'SPACE', minDistanceKm: 100, maxDistanceKm: 8000,
+      azimuthMinDeg: null, azimuthMaxDeg: null, elevationMinDeg: null, elevationMaxDeg: null,
+      angleRateDegPerSec: 0, sunAvoidHalfAngleDeg: 0, startupAngleRateDegPerSec: null,
     })
   })
 

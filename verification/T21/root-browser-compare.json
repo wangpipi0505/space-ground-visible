@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "browserTimezone": "Asia/Shanghai",
+  "status": 200,
+  "request": {
+    "payloadId": "1-P3",
+    "payloadName": "载荷3",
+    "payloadType": "SPACE",
+    "minDistanceKm": 1000,
+    "maxDistanceKm": 4000,
+    "azimuthMinDeg": null,
+    "azimuthMaxDeg": null,
+    "elevationMinDeg": -4,
+    "elevationMaxDeg": 60,
+    "angleRateDegPerSec": -1,
+    "sunAvoidHalfAngleDeg": 90,
+    "startupAngleRateDegPerSec": -1
+  },
+  "response": {
+    "payloadId": "1-P3",
+    "payloadName": "载荷3",
+    "payloadType": "SPACE",
+    "minDistanceKm": 1000,
+    "maxDistanceKm": 4000,
+    "azimuthMinDeg": null,
+    "azimuthMaxDeg": null,
+    "elevationMinDeg": -4,
+    "elevationMaxDeg": 60,
+    "angleRateDegPerSec": -1,
+    "sunAvoidHalfAngleDeg": 90,
+    "startupAngleRateDegPerSec": -1
+  },
+  "requestCount": 1,
+  "singleEndedNullBlocked": true,
+  "deletedIdentity": "1-P3",
+  "unaffectedSecondIdentity": "21-P2",
+  "spaceSelectionPreserved": true,
+  "ballisticDraftPreserved": true,
+  "pageErrors": [],
+  "scope": "真实Chrome UI编辑、HTTP预览、双星删除隔离与导航，未保存空间profile",
+  "testedSourcesSha256": {
+    "frontend/src/App.vue": "bf568c5538eb2380f5ddc21f76fd3a36aa8525d22d9f8af852edce2899f6d3c7",
+    "frontend/src/components/StandardPayloadEditor.vue": "0a7f77360b47f1bcc51368536b183d8a98a557520151c7d0fecb6e6f6a5ce0c6",
+    "frontend/src/components/SatellitePayloadPanel.vue": "94705bbbcfc38718a1b987925a0b005e5d000d0540496b3b33173275592a9033",
+    "frontend/src/composables/useVisibilityWorkbench.ts": "b2f7f146f665d720de6024de9f469cd82ea3dbd5c7c7609a1e0947b11b2118fa",
+    "frontend/src/views/BallisticPayloadConfigurationView.vue": "8da7db6c29ae43ea48e22b01d1d373580ff450fa85504fb732fde2afb335ec31",
+    "frontend/src/utils/standardPayload.ts": "a84701a299278843e4ba0b8f01ef8a1f38c6bb10784706e354ea1e26b45cb19a",
+    "frontend/src/api/ballisticPayloads.ts": "f97b40ab722ca800bf9272693ae51759794518c3c07e64731e62dded74f9b5a7"
+  },
+  "independentReadAfterBrowserSave": {
+    "status": 200,
+    "profiles": {
+      "activePayloadType": "GROUND",
+      "profiles": [
+        {
+          "payloadType": "SPACE",
+          "legacyGroundProfile": false,
+          "minDistanceKm": 123.0,
+          "maxDistanceKm": 0.0,
+          "azimuthMinDeg": null,
+          "azimuthMaxDeg": null,
+          "elevationMinDeg": null,
+          "elevationMaxDeg": null,
+          "angleRateDegPerSec": -1.0,
+          "sunAvoidHalfAngleDeg": 0.0,
+          "startupAngleRateDegPerSec": -1.0,
+          "sensorFullConeAngleDeg": null,
+          "maxDetectRangeKm": null,
+          "sunExclusionAngleDeg": null
+        },
+        {
+          "payloadType": "GROUND",
+          "legacyGroundProfile": false,
+          "minDistanceKm": 321.0,
+          "maxDistanceKm": 3500.0,
+          "azimuthMinDeg": null,
+          "azimuthMaxDeg": null,
+          "elevationMinDeg": -91.0,
+          "elevationMaxDeg": 90.0,
+          "angleRateDegPerSec": 0.0,
+          "sunAvoidHalfAngleDeg": 180.0,
+          "startupAngleRateDegPerSec": -1.0,
+          "sensorFullConeAngleDeg": null,
+          "maxDetectRangeKm": null,
+          "sunExclusionAngleDeg": null
+        }
+      ]
+    }
+  }
+}

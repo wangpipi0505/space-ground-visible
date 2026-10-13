@@ -1,0 +1,37 @@
+### Result
+36. [GET] http://127.0.0.1:15121/api/v1/space/health => [200] OK
+37. [GET] http://127.0.0.1:15121/api/v1/space/satellites/page?pageNumber=1&pageSize=50 => [200] OK
+38. [GET] http://127.0.0.1:15121/api/v1/space/stations => [200] OK
+39. [GET] http://127.0.0.1:15121/api/v1/space/defaults => [200] OK
+40. [GET] http://127.0.0.1:15121/api/v1/space/targets/belong-options => [200] OK
+77. [GET] http://127.0.0.1:15121/api/v1/space/health => [200] OK
+78. [GET] http://127.0.0.1:15121/api/v1/space/satellites/page?pageNumber=1&pageSize=50 => [200] OK
+79. [GET] http://127.0.0.1:15121/api/v1/space/stations => [200] OK
+80. [GET] http://127.0.0.1:15121/api/v1/space/defaults => [200] OK
+81. [GET] http://127.0.0.1:15121/api/v1/space/targets/belong-options => [200] OK
+83. [GET] http://127.0.0.1:15121/api/v1/space/satellites/1/payload-profiles => [200] OK
+85. [PUT] http://127.0.0.1:15121/api/v1/space/satellites/1/payload-profiles => [200] OK
+86. [PUT] http://127.0.0.1:15121/api/v1/space/satellites/1/payload-profiles => [200] OK
+122. [GET] http://127.0.0.1:15121/api/v1/space/health => [200] OK
+123. [GET] http://127.0.0.1:15121/api/v1/space/satellites/page?pageNumber=1&pageSize=50 => [200] OK
+124. [GET] http://127.0.0.1:15121/api/v1/space/stations => [200] OK
+125. [GET] http://127.0.0.1:15121/api/v1/space/defaults => [200] OK
+126. [GET] http://127.0.0.1:15121/api/v1/space/targets/belong-options => [200] OK
+128. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+129. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+130. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+131. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+132. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+168. [GET] http://127.0.0.1:15121/api/v1/space/health => [200] OK
+169. [GET] http://127.0.0.1:15121/api/v1/space/satellites/page?pageNumber=1&pageSize=50 => [200] OK
+170. [GET] http://127.0.0.1:15121/api/v1/space/stations => [200] OK
+171. [GET] http://127.0.0.1:15121/api/v1/space/defaults => [200] OK
+172. [GET] http://127.0.0.1:15121/api/v1/space/targets/belong-options => [200] OK
+174. [GET] http://127.0.0.1:15121/api/v1/space/satellites/1/payload-profiles => [200] OK
+175. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+176. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+177. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+178. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+179. [POST] http://127.0.0.1:15121/api/v1/ballistic/payloads/preview => [200] OK
+
+Note: 145 static requests not shown, run with --static option to see them.

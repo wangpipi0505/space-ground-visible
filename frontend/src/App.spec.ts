@@ -47,6 +47,27 @@ describe('App', () => {
     expect(wrapper.findComponent({ name: 'RawResponsePanel' }).exists()).toBe(false)
   })
 
+  /** 顶层生产导航复用共用编辑器，离开弹道页不卸载草稿，空间工作台仍保持挂载。 */
+  it('导航弹道配置后返回仍保留独立草稿与空间工作台', async () => {
+    vi.mocked(getApi).mockImplementation((path) => Promise.resolve(path.includes('/satellites/page')
+      ? { total: 1, pageNumber: 1, pageSize: 50, records: [{ id: 1, name: '星甲', modelType: 'TLE_SGP4' }] }
+      : []) as never)
+    const wrapper = mount(App, { global: { plugins: [ElementPlus] } })
+    await flushPromises()
+    expect(wrapper.findComponent({ name: 'BallisticPayloadConfigurationView' }).exists()).toBe(false)
+    await wrapper.get('#tab-ballistic-payloads').trigger('click')
+    await flushPromises()
+    const page = wrapper.findComponent({ name: 'BallisticPayloadConfigurationView' })
+    page.findComponent({ name: 'ElSelect' }).vm.$emit('update:modelValue', [1])
+    await flushPromises()
+    const identity = page.find('[data-payload-id]').attributes('data-payload-id')
+    await wrapper.get('#tab-workbench').trigger('click')
+    await wrapper.get('#tab-ballistic-payloads').trigger('click')
+    await flushPromises()
+    expect(wrapper.findComponent({ name: 'BallisticPayloadConfigurationView' }).find('[data-payload-id]').attributes('data-payload-id')).toBe(identity)
+    expect(wrapper.find('[data-test="satellite-station-selection"]').exists()).toBe(true)
+  })
+
   it('loads only the first satellite catalog page and sends target pagination parameters', async () => {
     const getApiMock = vi.mocked(getApi)
     const postApiMock = vi.mocked(postApi)

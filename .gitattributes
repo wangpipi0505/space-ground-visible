@@ -5,6 +5,10 @@
 test-data/** -text -whitespace
 backend/orekit-data/** -text -whitespace
 verification/**/*.txt -text whitespace=cr-at-eol
+# 本轮前端原始终端输出保留工具自带空白，保证与已核验的运行日志逐字节相同。
+verification/T21/browser-console.txt -whitespace
+verification/T21/frontend-build-final.txt -whitespace
+verification/T21/frontend-tests-final.txt -whitespace
 # 浏览器快照和工具响应是原始验证证据，保留字节及工具自带的末尾空行。
 output/playwright/** -text -whitespace
 *.jar binary

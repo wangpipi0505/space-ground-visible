@@ -1,6 +1,7 @@
 import { computed, reactive, ref, shallowRef, watch } from 'vue'
 import { ElMessage } from 'element-plus'
 import { ApiRequestError, getApi, postApi, putApi } from '../api/client'
+import { createDefaultPayload, standardPayloadFields, validateStandardPayload } from '../utils/standardPayload'
 import {
   cancelVisibilityTask,
   createVisibilityTask,
@@ -84,20 +85,7 @@ function createDefaultSettings(): PlanningDefaults {
 
 /** 提供新载荷参数的典型默认值，供尚未配置过载荷的卫星直接微调。 */
 function createDefaultPayloadForm(payloadType: PayloadType = 'SPACE'): PayloadProfileConfiguration {
-  return {
-    payloadType,
-    // 载荷界面统一使用公里，服务端接口边界再转换为米。对地不预设方位角窗口，
-    // 其俯仰下限 -91 度允许覆盖严格天底方向。
-    minDistanceKm: 1000,
-    maxDistanceKm: 4000,
-    azimuthMinDeg: payloadType === 'SPACE' ? 90 : undefined,
-    azimuthMaxDeg: payloadType === 'SPACE' ? 270 : undefined,
-    elevationMinDeg: payloadType === 'SPACE' ? -4 : -91,
-    elevationMaxDeg: payloadType === 'SPACE' ? 60 : 0,
-    angleRateDegPerSec: payloadType === 'SPACE' ? 0.3 : 1,
-    sunAvoidHalfAngleDeg: payloadType === 'SPACE' ? 90 : 45,
-    startupAngleRateDegPerSec: payloadType === 'SPACE' ? 0.07 : null,
-  }
+  return createDefaultPayload(payloadType)
 }
 
 /**
@@ -115,7 +103,11 @@ function profileFormFor(configuration: PayloadProfilesResponse | undefined,
   // legacyGroundProfile 是服务端回显状态而不是可保存参数，必须在编辑模型中移除，
   // 否则点击保存时会把只读兼容标记随请求一并发送。
   const { legacyGroundProfile: _legacyGroundProfile, ...editableProfile } = savedProfile
-  return { ...editableProfile, payloadType, startupAngleRateDegPerSec: savedProfile.startupAngleRateDegPerSec ?? null }
+  const result = { ...editableProfile, payloadType, startupAngleRateDegPerSec: savedProfile.startupAngleRateDegPerSec ?? null }
+  // 老集成响应仍可能仅提供米；只在公里字段缺失时换算，不删响应兼容字段，不映射旧锥角。
+  if (result.minDistanceKm === undefined && savedProfile.minDistanceM !== undefined) result.minDistanceKm = savedProfile.minDistanceM / 1000
+  if (result.maxDistanceKm === undefined && savedProfile.maxDistanceM !== undefined) result.maxDistanceKm = savedProfile.maxDistanceM / 1000
+  return result
 }
 
 /** 将时间选择器返回的本地日期范围转换为接口使用的 UTC 时刻。 */
@@ -399,9 +391,17 @@ export function useVisibilityWorkbench() {
    */
   async function saveSatellitePayload(satelliteId: number): Promise<void> {
     const form = satellitePayloadForms[satelliteId]
+    if (!form) return
+    const errors = validateStandardPayload(form)
+    if (errors.length) {
+      ElMessage.error(errors.join('；'))
+      return
+    }
+    // 白名单保留所有标准原值，既不发旧米/锥角字段，也不把 sentinel 回写为内部计算极大值。
+    const request = standardPayloadFields(form)
     savingSatellitePayloadId.value = satelliteId
     try {
-      const configuration = await putApi<PayloadProfilesResponse>(`/satellites/${satelliteId}/payload-profiles`, form)
+      const configuration = await putApi<PayloadProfilesResponse>(`/satellites/${satelliteId}/payload-profiles`, request)
       satellitePayloadConfigurations.value = { ...satellitePayloadConfigurations.value, [satelliteId]: configuration }
       satellitePayloadForms[satelliteId] = profileFormFor(configuration, form.payloadType)
       ElMessage.success(`${form.payloadType === 'SPACE' ? '对空' : '对地'}载荷已保存并设为活动载荷。`)

@@ -1,3 +1,5 @@
+import type { StandardPayloadConfiguration } from '../utils/standardPayload'
+
 export interface Satellite {
   id: number
   name: string
@@ -72,19 +74,12 @@ export type PayloadType = 'SPACE' | 'GROUND'
  * 对空或对地的一份独立长期配置。两类载荷的距离、姿态和角速度字段完全一致，
  * 距离均按公里填写；旧锥角字段仅用于读取历史对地记录。
  */
-export interface PayloadProfileConfiguration {
-  payloadType: PayloadType
+export interface PayloadProfileConfiguration extends StandardPayloadConfiguration {
   /** true 时表示服务端读取到历史锥角记录，界面需提示用户按统一字段重新保存。 */
   legacyGroundProfile?: boolean
-  minDistanceKm?: number
-  maxDistanceKm?: number
-  azimuthMinDeg?: number
-  azimuthMaxDeg?: number
-  elevationMinDeg?: number
-  elevationMaxDeg?: number
-  angleRateDegPerSec?: number
-  sunAvoidHalfAngleDeg?: number
-  startupAngleRateDegPerSec?: number | null
+  /** 仅读取旧集成方的米字段；编辑时换算公里，标准保存不混发米/公里。 */
+  minDistanceM?: number
+  maxDistanceM?: number
   sensorFullConeAngleDeg?: number
   maxDetectRangeKm?: number
   sunExclusionAngleDeg?: number

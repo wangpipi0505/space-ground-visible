@@ -137,3 +137,10 @@
   .planning-form .time-range-item { grid-column: auto; }
   .task-filter-row, .custom-window-editor, .observation-editor { align-items: stretch; flex-direction: column; }
 }
+/* 共用载荷说明与错误沿用现有表单风格；弹道多载荷分区不改空间三栏布局。 */
+.payload-explanation { color: var(--el-text-color-secondary); font-size: 12px; line-height: 1.6; }
+.payload-validation-errors { margin: 4px 0; padding-left: 20px; }
+.ballistic-payload-view { display: grid; gap: 16px; }
+.ballistic-payload-item + .ballistic-payload-item { border-top: 1px solid var(--el-border-color); margin-top: 20px; padding-top: 20px; }
+.payload-preview pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--el-fill-color-light); padding: 12px; }
+.payload-identity { display: grid; gap: 8px; }

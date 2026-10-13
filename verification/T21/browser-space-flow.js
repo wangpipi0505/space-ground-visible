@@ -1,0 +1,66 @@
+/** Playwright CLI 真实 Chrome 页面流程；只操作 DOM 与真实 HTTP，未设置路由或 mock。 */
+async (page) => {
+  const assert = (condition, message) => { if (!condition) throw new Error(message) }
+  const errors = []
+  const requests = []
+  page.on('pageerror', error => errors.push(error.message))
+  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()) })
+  page.on('request', request => { if (request.method() === 'PUT') requests.push(request.url()) })
+  const panel = page.locator('.payload-panel')
+  const field = name => panel.locator(`[data-field="${name}"] input`)
+  const fill = async (name, value) => { await field(name).fill(value); await field(name).press('Tab') }
+  const evidence = []
+  const save = async () => {
+    const responsePromise = page.waitForResponse(response => response.request().method() === 'PUT' && response.url().endsWith('/satellites/1/payload-profiles'))
+    await panel.getByRole('button', { name: '保存并启用' }).click()
+    const response = await responsePromise
+    const body = await response.json()
+    evidence.push({ url: response.url(), method: 'PUT', request: response.request().postDataJSON(), status: response.status(), response: body })
+    assert(response.status() === 200, '空间真实保存失败')
+    await page.waitForFunction(() => !document.querySelector('[data-test="save-payload-1"]')?.classList.contains('is-loading'))
+    return body
+  }
+  const selectType = async name => {
+    await panel.locator('[data-field="payloadType"] .el-select').click()
+    await page.getByRole('option', { name, exact: true }).click()
+  }
+  await fill('minDistanceKm', '123')
+  await fill('maxDistanceKm', '0')
+  await fill('angleRateDegPerSec', '-1')
+  await fill('startupAngleRateDegPerSec', '-1')
+  await fill('sunAvoidHalfAngleDeg', '0')
+  await fill('azimuthMinDeg', '')
+  assert(await panel.getByRole('button', { name: '保存并启用' }).isDisabled(), '姿态单端空未禁用保存')
+  assert((await panel.innerText()).includes('方位角上下限必须同时填写或同时留空'), '缺中文姿态错误')
+  await fill('azimuthMaxDeg', '')
+  await fill('elevationMinDeg', '')
+  await fill('elevationMaxDeg', '')
+  const space = await save()
+  assert(space.profiles.find(profile => profile.payloadType === 'SPACE').angleRateDegPerSec === -1, 'SPACE负一未原值回显')
+  await selectType('对地载荷')
+  await fill('minDistanceKm', '321')
+  await fill('maxDistanceKm', '3500')
+  await fill('angleRateDegPerSec', '-1')
+  const countBeforeInvalid = requests.length
+  assert(await panel.getByRole('button', { name: '保存并启用' }).isDisabled(), 'GROUND负一未阻止请求')
+  assert((await panel.innerText()).includes('不能使用 -1'), '缺GROUND零负一中文说明')
+  await fill('angleRateDegPerSec', '0')
+  await fill('elevationMinDeg', '-91')
+  await fill('elevationMaxDeg', '90')
+  await fill('sunAvoidHalfAngleDeg', '180')
+  await fill('startupAngleRateDegPerSec', '-1')
+  assert(requests.length === countBeforeInvalid, '非法编辑产生HTTP')
+  const ground = await save()
+  assert(ground.profiles.length === 2, 'GROUND保存覆盖SPACE')
+  const savedSpace = ground.profiles.find(profile => profile.payloadType === 'SPACE')
+  assert(savedSpace.minDistanceKm === 123 && savedSpace.angleRateDegPerSec === -1 && savedSpace.azimuthMinDeg === null && savedSpace.elevationMaxDeg === null, '另一类SPACE配置被覆盖')
+  await selectType('对空载荷')
+  assert(await field('minDistanceKm').inputValue() === '123' && await field('angleRateDegPerSec').inputValue() === '-1' && await field('startupAngleRateDegPerSec').inputValue() === '-1', '切换SPACE未读取已保存原值')
+  assert(await field('azimuthMinDeg').inputValue() === '' && await field('elevationMaxDeg').inputValue() === '', '双null回显非空')
+  await panel.screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/T21/space-saved-space.png' })
+  await selectType('对地载荷')
+  assert(await field('minDistanceKm').inputValue() === '321' && await field('angleRateDegPerSec').inputValue() === '0' && await field('elevationMinDeg').inputValue() === '-91', 'GROUND独立回显失败')
+  await panel.screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/T21/space-saved-ground.png' })
+  assert(errors.length === 0, 'Chrome出现真实控制台错误')
+  return { browser: 'Chrome headless', timezone: await page.evaluate(() => Intl.DateTimeFormat().resolvedOptions().timeZone), checks: ['SPACE/GROUND真实保存', '两类独立配置不覆盖', '切回SPACE原值', '切回GROUND零上限与-91', '姿态清空双null', '非法单null与GROUND-1禁用且不发送HTTP'], evidence, putRequestCount: requests.length, consoleErrors: errors }
+}

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 /** 按卫星编辑长期载荷；加载与保存状态来自父级，对空与对地字段按原接口回显。 */
 import { ref, watch } from 'vue'
+import StandardPayloadEditor from './StandardPayloadEditor.vue'
+import { validateStandardPayload } from '../utils/standardPayload'
 import type { PayloadProfileConfiguration, PayloadProfilesResponse, PayloadType, Satellite } from '../api/types'
 
 defineOptions({ name: 'SatellitePayloadPanel' })
@@ -80,23 +82,13 @@ function isLegacyGroundProfile(satelliteId: number): boolean {
           :closable="false"
           show-icon
         />
-        <el-form label-position="top" class="payload-form">
-          <el-form-item label="载荷类型">
-            <el-select :model-value="forms[satellite.id].payloadType" @update:model-value="emit('selectType', satellite.id, $event as PayloadType)">
-              <el-option label="对空载荷" value="SPACE" /><el-option label="对地载荷" value="GROUND" />
-            </el-select>
-          </el-form-item>
-          <el-form-item label="距离下限（公里）"><el-input-number v-model="forms[satellite.id].minDistanceKm" :min="0" controls-position="right" /></el-form-item>
-          <el-form-item label="距离上限（公里）"><el-input-number v-model="forms[satellite.id].maxDistanceKm" :min="0" controls-position="right" /></el-form-item>
-          <el-form-item label="方位角下限（度，双端留空表示不限）"><el-input-number v-model="forms[satellite.id].azimuthMinDeg" :min="0" :max="360" controls-position="right" /></el-form-item>
-          <el-form-item label="方位角上限（度，双端留空表示不限）"><el-input-number v-model="forms[satellite.id].azimuthMaxDeg" :min="0" :max="360" controls-position="right" /></el-form-item>
-          <el-form-item label="俯仰角下限（度）"><el-input-number v-model="forms[satellite.id].elevationMinDeg" :min="forms[satellite.id].payloadType === 'GROUND' ? -91 : -90" :max="90" controls-position="right" /></el-form-item>
-          <el-form-item label="俯仰角上限（度）"><el-input-number v-model="forms[satellite.id].elevationMaxDeg" :min="forms[satellite.id].payloadType === 'GROUND' ? -91 : -90" :max="90" controls-position="right" /></el-form-item>
-          <el-form-item :label="forms[satellite.id].payloadType === 'SPACE' ? '跟踪角速度（度/秒，0 或 -1 表示不限制）' : '跟踪角速度（度/秒）'"><el-input-number v-model="forms[satellite.id].angleRateDegPerSec" :min="forms[satellite.id].payloadType === 'SPACE' ? -1 : 0" :step="0.01" controls-position="right" /></el-form-item>
-          <el-form-item label="太阳回避半角（度）"><el-input-number v-model="forms[satellite.id].sunAvoidHalfAngleDeg" :min="0" :max="180" controls-position="right" /></el-form-item>
-          <el-form-item label="启动角速度（度/秒，留空或 -1 表示不启用)"><el-input-number v-model="forms[satellite.id].startupAngleRateDegPerSec" :min="-1" :step="0.01" controls-position="right" /></el-form-item>
-        </el-form>
-        <div class="payload-action"><span>对空与对地配置独立保存；保存的类型会成为后续规划的活动载荷</span><el-button :data-test="`save-payload-${satellite.id}`" type="primary" size="small" :loading="savingSatelliteId === satellite.id" :disabled="isLoading(satellite.id)" @click="emit('save', satellite.id)">保存并启用</el-button></div>
+        <StandardPayloadEditor
+          :model-value="forms[satellite.id]"
+          :disabled="isLoading(satellite.id) || savingSatelliteId === satellite.id"
+          @update:model-value="forms[satellite.id] = $event"
+          @select-type="emit('selectType', satellite.id, $event)"
+        />
+        <div class="payload-action"><span>对空与对地配置独立保存；保存的类型会成为后续规划的活动载荷</span><el-button :data-test="`save-payload-${satellite.id}`" type="primary" size="small" :loading="savingSatelliteId === satellite.id" :disabled="isLoading(satellite.id) || validateStandardPayload(forms[satellite.id]).length > 0" @click="emit('save', satellite.id)">保存并启用</el-button></div>
       </el-collapse-item>
     </el-collapse>
   </el-card>
