@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "requestStatuses": [
+    {
+      "path": "/api/orbit/health",
+      "status": 200,
+      "bytes": 2
+    },
+    {
+      "path": "/api/v1/ballistic/files",
+      "status": 201,
+      "bytes": 255
+    },
+    {
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "bytes": 6723
+    }
+  ],
+  "mappedInputPathFields": 8,
+  "bestOffsetSecond": 1200,
+  "allOffsetsCompared": 3,
+  "fixture": "visibility-http-ground",
+  "visibleArcCount": 0,
+  "inputSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+  "note": "此原HTTP对地夹具为空窗口；非空窗口另由本项原版同请求测试验证。"
+}

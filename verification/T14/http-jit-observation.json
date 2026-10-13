@@ -1,0 +1,27 @@
+{
+  "sourceLog": "red-empty-path.log",
+  "mode": "default JVM, real HTTP first versus repeated compatibility Java call",
+  "differenceCount": 3,
+  "maxAbsoluteDeltaM": "2E-9",
+  "differences": [
+    {
+      "path": "/allResults/1/visibleSatellites/0/payloadResults/0/targets/0/visibleArcs/0/trajectoryPoints/1/heightM",
+      "expected": "710201.732429664",
+      "actual": "710201.732429663",
+      "delta": "-1E-9"
+    },
+    {
+      "path": "/allResults/1/visibleSatellites/0/payloadResults/0/targets/0/visibleArcs/0/trajectoryPoints/2/heightM",
+      "expected": "707905.60678252",
+      "actual": "707905.606782522",
+      "delta": "2E-9"
+    },
+    {
+      "path": "/allResults/1/visibleSatellites/0/payloadResults/0/targets/0/visibleArcs/0/trajectoryPoints/9/heightM",
+      "expected": "691302.124894588",
+      "actual": "691302.124894586",
+      "delta": "-2E-9"
+    }
+  ],
+  "handling": "原算法及九位小数格式未修改；真实HTTP点明细另用-Xint严格对照；T13已用原解析器重复调用独立复现JIT冷热高度末位差。"
+}

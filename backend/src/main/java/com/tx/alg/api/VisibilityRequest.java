@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 轨道可见性搜索请求 DTO。
  *
- * <p>所有字段均为可选，未提供时使用默认值。卫星列表为空时使用内置6星LEO星座。</p>
+ * <p>所有字段均为可选，未提供时使用默认值。卫星列表为空时使用内置2星LEO星座。</p>
  */
 public final class VisibilityRequest {
 
@@ -54,7 +54,7 @@ public final class VisibilityRequest {
     /** 轨道模型：TWO_BODY / J2_SECULAR / J2_NUMERICAL，默认 J2_NUMERICAL */
     private String orbitModel = "J2_NUMERICAL";
 
-    /** 卫星列表，为空时使用内置6星LEO星座 */
+    /** 卫星列表，为空时使用内置2星LEO星座 */
     private List<SatelliteDef> satellites = new ArrayList<>();
 
     // ========== getter/setter ==========
@@ -272,7 +272,8 @@ public final class VisibilityRequest {
 
     // ========== 转换方法 ==========
 
-    List<OrbitCalculator.OrbitElements> toSatellites() {
+    /** 按原列表顺序转换卫星与载荷，保持身份默认值和 epochUtc 优先逻辑。 */
+    public List<OrbitCalculator.OrbitElements> toSatellites() {
         List<OrbitCalculator.OrbitElements> list = new ArrayList<>();
         for (int i = 0; i < satellites.size(); i++) {
             list.add(satellites.get(i).toOrbitElements(i));
@@ -280,7 +281,8 @@ public final class VisibilityRequest {
         return list;
     }
 
-    List<OrbitCalculator.BallisticTargetInput> toBallisticInputs() {
+    /** 按原优先级解析发射时间别名，保留输入路径及目标首次出现顺序。 */
+    public List<OrbitCalculator.BallisticTargetInput> toBallisticInputs() {
         List<OrbitCalculator.BallisticTargetInput> list = new ArrayList<>();
         for (int i = 0; i < ballistics.size(); i++) {
             list.add(ballistics.get(i).toInput(i));
@@ -288,14 +290,16 @@ public final class VisibilityRequest {
         return list;
     }
 
-    OrbitCalculator.OrbitModel toOrbitModel() {
+    /** 保持模型缺省与空字符串回退规则，不统一三种原传播模型。 */
+    public OrbitCalculator.OrbitModel toOrbitModel() {
         if (orbitModel == null || orbitModel.trim().isEmpty()) {
             return OrbitCalculator.OrbitModel.TWO_BODY;
         }
         return OrbitCalculator.OrbitModel.fromDisplayName(orbitModel.trim());
     }
 
-    OrbitCalculator.SensorVisibilityConfig toSensorVisibilityConfig() {
+    /** 转换原载荷物理口径：距离为公里、角度为度，限制规则由原算法处理。 */
+    public OrbitCalculator.SensorVisibilityConfig toSensorVisibilityConfig() {
         return OrbitCalculator.SensorVisibilityConfig.forPayload(
                 payloadType,
                 maxDetectRangeKm,

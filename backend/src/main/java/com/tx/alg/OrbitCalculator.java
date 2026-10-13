@@ -1898,6 +1898,39 @@ public final class OrbitCalculator {
             int trajectoryPointOutput,
             SensorVisibilityConfig sensorConfig,
             ProgressCallback progressCallback) throws IOException {
+        return searchLaunchOffsetsV2(targets, startOffsetSec, stepSizeSec, numCalculations, satellites,
+                sensorFovDeg, orbitModel, targetSampleStepSec, trajectoryPointOutput, sensorConfig,
+                progressCallback, OrbitCalculator::parseBallisticCsvWithReference);
+    }
+
+    /**
+     * 每个目标的源加载边界：返回完整内存轨迹和该文件独立参考历元；实现须在返回前释放文件资源。
+     * 原 Java 入口使用原解析器，Web 应用可提供租约解析器；本接口不依赖 Spring 或 HTTP。
+     */
+    @FunctionalInterface
+    public interface BallisticCsvLoader {
+        /** @param sourceLocation 原逻辑源标识，不能用临时路径覆盖输出中的 csvPath。 */
+        ParsedBallisticCsv load(String sourceLocation) throws IOException;
+    }
+
+    /**
+     * 在同一 V2 算法主体内替换文件加载策略；校验、加载、采样、偏移并行回填和严格最优比较保持原顺序。
+     * 原目标标识传入 PreparedBallisticTarget，解析返回值只提供数值和独立源历元。
+     * @param loader 源数据完整加载器，返回后算法不再读取源文件
+     */
+    public static LaunchSearchResultV2 searchLaunchOffsetsV2(
+            List<BallisticTargetInput> targets,
+            long startOffsetSec,
+            long stepSizeSec,
+            long numCalculations,
+            List<OrbitElements> satellites,
+            double sensorFovDeg,
+            OrbitModel orbitModel,
+            double targetSampleStepSec,
+            int trajectoryPointOutput,
+            SensorVisibilityConfig sensorConfig,
+            ProgressCallback progressCallback,
+            BallisticCsvLoader loader) throws IOException {
         validateMultiTargetInputs(targets);
         validateSearchInputsV2(stepSizeSec, numCalculations, satellites, java.util.Collections.<BallisticPoint>singletonList(new BallisticPoint()), sensorFovDeg);
         OrbitModel activeModel = orbitModel == null ? OrbitModel.TWO_BODY : orbitModel;
@@ -1909,7 +1942,7 @@ public final class OrbitCalculator {
         String firstReferenceUtc = null;
         for (int targetIndex = 0; targetIndex < targets.size(); targetIndex++) {
             BallisticTargetInput input = normalizedTargetInput(targets.get(targetIndex), targetIndex);
-            ParsedBallisticCsv parsed = parseBallisticCsvWithReference(input.csvPath);
+            ParsedBallisticCsv parsed = loader.load(input.csvPath);
             List<BallisticPoint> points = parsed.points;
             double sourceReference = parsed.referenceEpochSec;
             String baseLaunchUtc = isBlank(input.baseLaunchUtc)
