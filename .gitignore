@@ -1,0 +1,21 @@
+# 构建产物、运行文件及冻结原版不进入产品源码
+**/target/
+**/node_modules/
+**/dist/
+**/__pycache__/
+backend/storage/
+backend/logs/
+backend/maven-repository/
+backend/src/main/resources/static/
+verification/baseline-copies/
+verification/runtime/
+verification/**/*.log
+verification/**/*.json.actual
+backend/orekit-data/
+.idea/
+.vscode/
+*.iml
+.env
+.env.*
+application-local.yml
+*.zip

@@ -1,0 +1,7 @@
+# 统一源码行尾，保留验证数据的原始字节与 Markdown 有意义的换行空格
+* text=auto eol=lf
+*.md whitespace=-blank-at-eol
+test-data/** -text
+*.jar binary
+*.png binary
+*.xlsx binary
