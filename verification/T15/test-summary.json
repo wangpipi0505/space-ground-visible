@@ -1,0 +1,83 @@
+[
+  {
+    "evidence": "red-http.log",
+    "tests": 2,
+    "passed": 0,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0,
+    "buildSuccess": false
+  },
+  {
+    "evidence": "green-http.log",
+    "tests": 2,
+    "passed": 2,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "buildSuccess": true
+  },
+  {
+    "evidence": "red-lifecycle.log",
+    "tests": 11,
+    "passed": 8,
+    "failures": 3,
+    "errors": 0,
+    "skipped": 0,
+    "buildSuccess": false
+  },
+  {
+    "evidence": "green-lifecycle.log",
+    "tests": 11,
+    "passed": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "buildSuccess": true
+  },
+  {
+    "evidence": "red-reuse-ownership.log",
+    "tests": 8,
+    "passed": 7,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0,
+    "buildSuccess": false
+  },
+  {
+    "evidence": "web-default-mode.log",
+    "tests": 14,
+    "passed": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "buildSuccess": true
+  },
+  {
+    "evidence": "backend-package.log",
+    "tests": 283,
+    "passed": 282,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "buildSuccess": true
+  },
+  {
+    "evidence": "full-frozen-mode.log",
+    "tests": 283,
+    "passed": 282,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "buildSuccess": true
+  },
+  {
+    "evidence": "http-points-interpreted.log",
+    "tests": 1,
+    "passed": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "buildSuccess": true
+  }
+]

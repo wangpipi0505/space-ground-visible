@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "targetCount": 2,
+  "files": [
+    {
+      "targetId": "TGT-001",
+      "pointCount": 1633,
+      "bytes": 327928,
+      "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "sameIdOnReregister": true,
+      "csvByteExact": true,
+      "previewCellExact": true
+    },
+    {
+      "targetId": "TGT-002",
+      "pointCount": 31,
+      "bytes": 6475,
+      "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "sameIdOnReregister": true,
+      "csvByteExact": true,
+      "previewCellExact": true
+    }
+  ],
+  "requestStatuses": [
+    {
+      "path": "/api/trajectory/health",
+      "status": 200,
+      "bytes": 2
+    },
+    {
+      "path": "/api/trajectory/fit/package102",
+      "status": 200,
+      "bytes": 3153
+    },
+    {
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 418
+    },
+    {
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 418
+    },
+    {
+      "path": "/api/v1/ballistic/files/908945d1-f5fb-4ba8-ae99-54d7a7ac0e33/download",
+      "status": 200,
+      "bytes": 327928
+    },
+    {
+      "path": "/api/v1/ballistic/files/908945d1-f5fb-4ba8-ae99-54d7a7ac0e33/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1023
+    },
+    {
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 416
+    },
+    {
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 416
+    },
+    {
+      "path": "/api/v1/ballistic/files/f1ae9c52-ddea-49a0-bea8-dd3916f4efcc/download",
+      "status": 200,
+      "bytes": 6475
+    },
+    {
+      "path": "/api/v1/ballistic/files/f1ae9c52-ddea-49a0-bea8-dd3916f4efcc/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1033
+    }
+  ],
+  "defaultManagedOutput": true,
+  "responseComparison": "仅files[].csvPath映射原夹具文件名，其它字段严格相等"
+}

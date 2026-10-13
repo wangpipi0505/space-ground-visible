@@ -35,6 +35,8 @@ public class BallisticFileStorage {
     private final Map<String, Record> records = new HashMap<String, Record>();
     private final Map<String, Integer> active = new HashMap<String, Integer>();
     private final java.util.Set<Path> activeWorkspaces = new java.util.HashSet<Path>();
+    /** 结果写入期间仅保护目录下已登记结果；每个调用独立计数，显式相同目录的并发请求也不会提前解锁。 */
+    private final java.util.Set<ResultWorkspace> activeResults = new java.util.HashSet<ResultWorkspace>();
 
     public BallisticFileStorage(BallisticFileConfiguration config, ObjectMapper mapper) throws IOException {
         this.config = config;
@@ -175,13 +177,70 @@ public class BallisticFileStorage {
         return new TemporaryWorkspace(directory);
     }
 
+    /**
+     * 为缺省 Web 输出分配独占目录；显式旧目录不由本服务创建或拥有，空值按原拟合器回退为当前目录。
+     * 通过最近存在祖先的真实路径解析 Windows 短名/Junction，保证写入期间 TTL 识别的是相同目录。
+     */
+    public synchronized ResultWorkspace resultWorkspace(String outputDir, boolean specified) throws IOException {
+        Path directory;
+        if (!specified) {
+            directory = Files.createTempDirectory(config.results, "fit-");
+            try {
+                // 零字节所有权标记只由独占目录分配产生；重启后仍可区分本服务遗留与同名前缀的显式目录。
+                Files.createFile(resultOwnershipPath(directory));
+            } catch (IOException ex) {
+                deleteResultWorkspace(directory);
+                throw ex;
+            }
+        } else {
+            String location = outputDir == null || outputDir.trim().isEmpty() ? "." : outputDir.trim();
+            directory = Paths.get(location).toAbsolutePath().normalize();
+            Path ancestor = directory;
+            while (!Files.exists(ancestor, LinkOption.NOFOLLOW_LINKS) && ancestor.getParent() != null) {
+                ancestor = ancestor.getParent();
+            }
+            directory = ancestor.toRealPath().resolve(ancestor.relativize(directory));
+            relinquishResultOwnership(directory);
+        }
+        ResultWorkspace workspace = new ResultWorkspace(directory, !specified);
+        activeResults.add(workspace);
+        return workspace;
+    }
+
+    /**
+     * 调用者显式复用某个独占目录或其子目录后，该目录可能含调用者新增文件，永久取消整目录回收资格。
+     * 已登记结果仍按单文件租约/TTL 处理；同时取消尚活动拥有者的失败回滚，避免并发显式使用被误删。
+     */
+    private void relinquishResultOwnership(Path directory) throws IOException {
+        if (directory.startsWith(config.results) && !directory.equals(config.results)) {
+            Path ownedRoot = config.results.resolve(config.results.relativize(directory).getName(0));
+            Files.deleteIfExists(resultOwnershipPath(ownedRoot));
+            for (ResultWorkspace workspace : activeResults) {
+                if (workspace.directory.equals(ownedRoot)) {
+                    workspace.owned = false;
+                }
+            }
+        }
+    }
+
+    private boolean resultIsActive(Path path) {
+        for (ResultWorkspace workspace : activeResults) {
+            if (path.startsWith(workspace.directory)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /** 周期清理已过期且无活动引用的文件，删除实体成功后再注销 ID；异常留待下轮重试。 */
     @Scheduled(fixedDelayString = "${ballistic.files.cleanup-interval-millis:60000}")
     public synchronized void cleanupExpired() {
         long cutoff = System.currentTimeMillis() - config.ttlMillis;
         for (Record record : new java.util.ArrayList<Record>(records.values())) {
             String id = record.reference.fileId;
-            if (record.lastAccessMillis > cutoff || active.containsKey(id)) {
+            if (record.lastAccessMillis > cutoff || active.containsKey(id)
+                    // 显式祖先输出目录可包含 uploads，但未读取的上传只能由自身租约/最后使用时间保留。
+                    || (!record.upload && resultIsActive(Paths.get(record.reference.serverPath)))) {
                 continue;
             }
             try {
@@ -207,6 +266,44 @@ public class BallisticFileStorage {
             LOGGER.warn("临时解析目录清理失败：{}", ex.getMessage());
         }
         cleanupUnregisteredUploads(cutoff);
+        cleanupResultWorkspaces(cutoff);
+    }
+
+    /** 仅凭元数据所有权标记回收独占目录；前缀不是所有权凭证，显式目录即使叫 fit-* 也不会被扫描。 */
+    private void cleanupResultWorkspaces(long cutoff) {
+        try (DirectoryStream<Path> markers = Files.newDirectoryStream(config.metadata, "fit-*.workspace")) {
+            for (Path marker : markers) {
+                checked(config.metadata, marker);
+                String name = marker.getFileName().toString();
+                Path directory = config.results.resolve(name.substring(0, name.length() - ".workspace".length()));
+                boolean retained = resultIsActive(directory);
+                for (Record record : records.values()) {
+                    retained |= Paths.get(record.reference.serverPath).startsWith(directory);
+                }
+                if (!retained) {
+                    if (!Files.exists(directory, LinkOption.NOFOLLOW_LINKS)) {
+                        Files.delete(marker);
+                    } else if (Files.getLastModifiedTime(directory, LinkOption.NOFOLLOW_LINKS).toMillis() <= cutoff) {
+                        deleteResultWorkspace(directory);
+                        Files.delete(marker);
+                    }
+                }
+            }
+        } catch (IOException | RuntimeException ex) {
+            LOGGER.warn("结果工作目录清理失败：{}", ex.getMessage());
+        }
+    }
+
+    private Path resultOwnershipPath(Path directory) {
+        return config.metadata.resolve(directory.getFileName().toString() + ".workspace");
+    }
+
+    /** 同临时下载目录使用逐层真实路径核验，不沿 NTFS Junction 或符号链接递归删除。 */
+    private void deleteResultWorkspace(Path directory) throws IOException {
+        if (!directory.toAbsolutePath().normalize().getParent().equals(config.results)) {
+            throw new IOException("结果工作目录不在配置根内");
+        }
+        deleteWorkspaceEntry(directory);
     }
 
     /** 上传中途进程退出可能遗留未登记实体；只清理本服务生成且没有登记路径的旧 upload 文件。 */
@@ -411,6 +508,71 @@ public class BallisticFileStorage {
                     activeWorkspaces.remove(directory);
                     closed = true;
                     deleteWorkspace(directory);
+                }
+            }
+        }
+    }
+
+    /**
+     * 计算结果作用域：complete 之前退出仅回滚本次独占目录；显式目录及其中调用者文件始终由调用者拥有。
+     * 登记和 TTL 保护同在存储锁内，计算本身不持锁；关闭仅刷新目录下结果，上传继续由实际输入/下载租约管理。
+     */
+    public final class ResultWorkspace implements AutoCloseable {
+        public final Path directory;
+        private boolean owned;
+        private boolean completed;
+        private boolean closed;
+
+        private ResultWorkspace(Path directory, boolean owned) {
+            this.directory = directory;
+            this.owned = owned;
+        }
+
+        /** 管理范围内自动登记；显式外部结果保持原计算能力，但不能通过文件辅助接口下载。 */
+        public void register(String csvPath, String taskName, String targetId) throws IOException {
+            synchronized (BallisticFileStorage.this) {
+                Path real = Paths.get(csvPath).toRealPath();
+                if (real.startsWith(config.results)) {
+                    registerResult(csvPath, taskName, targetId);
+                } else if (owned) {
+                    throw new IllegalArgumentException("本次结果真实位置越出管理目录");
+                }
+            }
+        }
+
+        /** 只在全部文件登记成功后提交作用域，原 CSV 与路径没有复制或更名。 */
+        public void complete() {
+            synchronized (BallisticFileStorage.this) {
+                completed = true;
+            }
+        }
+
+        @Override
+        public void close() throws IOException {
+            synchronized (BallisticFileStorage.this) {
+                if (closed) {
+                    return;
+                }
+                try {
+                    if (owned && !completed) {
+                        deleteResultWorkspace(directory);
+                        for (Record record : new java.util.ArrayList<Record>(records.values())) {
+                            if (Paths.get(record.reference.serverPath).startsWith(directory)) {
+                                Files.deleteIfExists(metadataPath(record.reference.fileId));
+                                records.remove(record.reference.fileId);
+                            }
+                        }
+                        Files.deleteIfExists(resultOwnershipPath(directory));
+                    } else {
+                        for (Record record : records.values()) {
+                            if (!record.upload && Paths.get(record.reference.serverPath).startsWith(directory)) {
+                                touch(record);
+                            }
+                        }
+                    }
+                } finally {
+                    closed = true;
+                    activeResults.remove(this);
                 }
             }
         }

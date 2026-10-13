@@ -458,14 +458,23 @@ public final class TargetTrajectoryFitter {
         double heightM;
     }
 
-    /** 按目标分组解析102观测，估计物理起落边界、保持原点硬约束，再输出原CSV格式；任务区间和单位校验按原次序执行。 */
-    public static FitRunResult fitPackage102ToCsv(FitRequest request) throws IOException {
+    /**
+     * 原拟合入口在创建目录前执行的三项校验，单独供 Web 编排在分配结果作用域前复用。
+     * 校验次序、原错误文本及 normalizeStep 阈值保持原样，不在应用层复制数值规则。
+     */
+    public static void validateFitRequest(FitRequest request) {
         if (request == null) {
             throw new IllegalArgumentException("拟合请求不能为空。");
         }
         if (request.package102 == null || request.package102.isEmpty()) {
             throw new IllegalArgumentException("package102数据不能为空。");
         }
+        normalizeStep(request.interpolationStepSec);
+    }
+
+    /** 按目标分组解析102观测，估计物理起落边界、保持原点硬约束，再输出原CSV格式；任务区间和单位校验按原次序执行。 */
+    public static FitRunResult fitPackage102ToCsv(FitRequest request) throws IOException {
+        validateFitRequest(request);
         double stepSec = normalizeStep(request.interpolationStepSec);
         String taskName = blankToDefault(request.taskName, "task");
         Path outputDir = Paths.get(blankToDefault(request.outputDir, "."));
