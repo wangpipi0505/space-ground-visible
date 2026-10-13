@@ -32,10 +32,10 @@ def run(command, cwd, log):
         raise RuntimeError('执行失败，详见 ' + str(log))
 
 
-def capture(backend, output):
+def capture(backend, output, runtime=None, evidence=None):
     """复制原真实样例并冻结显式案例条件，执行三模型、点输出开关以及拟合/模拟/重定时。"""
-    evidence = ROOT / 'verification/T04'
-    runtime = ROOT / 'verification/runtime/T04'
+    evidence = evidence or ROOT / 'verification/T04'
+    runtime = runtime or ROOT / 'verification/runtime/T04'
     reference = ROOT / 'test-data/reference/ballistic'
     for directory in (evidence, runtime, reference, output):
         directory.mkdir(parents=True, exist_ok=True)
@@ -51,7 +51,7 @@ def capture(backend, output):
         evidence / 'runner-classpath.log')
     classpath = str(backend / 'target/classes') + os.pathsep + cp_file.read_text().strip()
     run([str(JAVA_HOME / 'bin/javac.exe'), '-encoding', 'UTF-8', '-cp', classpath,
-         '-d', str(runtime), str(evidence / 'BallisticBaseline.java')], ROOT, evidence / 'runner-compile.log')
+         '-d', str(runtime), str(ROOT / 'verification/T04/BallisticBaseline.java')], ROOT, evidence / 'runner-compile.log')
     cases = []
     base = json.loads((reference / 'orbit_visibility_multi_payload_default.json').read_text(encoding='utf-8-sig'))
     # 保留真实轨迹全部原始点和 1s 可见性采样，仅缩小偏移个数，避免巨大 JSON。
@@ -94,6 +94,10 @@ def capture(backend, output):
             file.write_text(text, encoding='utf-8')
         manifest.append(dict(name=name, operation=operation, request=request))
         print(name + ' 已生成', flush=True)
+    # retime的真实输入已按本次runtime执行；条件快照保留T04原逻辑路径，避免环境差异冒充业务差异。
+    for case in manifest:
+        if case['operation'] == 'retime':
+            case['request']['trajectoryCsvPath'] = str(ROOT / 'verification/runtime/T04/retime-source.csv')
     encoded = json.dumps(manifest, ensure_ascii=False, indent=2)
     encoded = encoded.replace(str(ROOT).replace('\\', '\\\\'), '<WORKSPACE>')
     (output / 'conditions.json').write_text(encoded, encoding='utf-8')
@@ -166,9 +170,13 @@ def main():
     parser.add_argument('--backend', type=Path, default=ROOT / 'verification/baseline-copies/ballistic/source')
     parser.add_argument('--output', type=Path, default=ROOT / 'test-data/baseline/ballistic')
     parser.add_argument('--actual', type=Path)
+    parser.add_argument('--runtime', type=Path, help='本次运行的临时请求与编译目录；默认仍为T04')
+    parser.add_argument('--evidence', type=Path, help='本次命令日志目录；默认仍为T04')
     args = parser.parse_args()
     if args.action == 'capture':
-        capture(args.backend.resolve(), args.output.resolve())
+        capture(args.backend.resolve(), args.output.resolve(),
+                args.runtime.resolve() if args.runtime else None,
+                args.evidence.resolve() if args.evidence else None)
     elif args.action == 'compare':
         if args.actual is None:
             parser.error('compare 需要 --actual')

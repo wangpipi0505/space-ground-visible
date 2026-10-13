@@ -1,4 +1,4 @@
-param([string]$JavaHome = $env:JAVA_HOME,
+﻿param([string]$JavaHome = $env:JAVA_HOME,
     [ValidateSet('T08', 'T09')][string]$ValidationTask = 'T08')
 
 # T08/T09 可重复的普通 Java8 验证；仅编译纯领域类型和原 provider，不编译应用服务/实体。
@@ -12,9 +12,12 @@ if (!(Test-Path -LiteralPath "$JavaHome/bin/javac.exe")) {
 }
 $env:JAVA_HOME = $JavaHome
 $env:MAVEN_OPTS = '-Dfile.encoding=UTF-8'
-$version = & "$JavaHome/bin/javac.exe" -version 2>&1
-if ("$version" -notmatch 'javac 1\.8\.') { throw "需要Java8，实际：$version" }
-$version | Set-Content -Encoding UTF8 (Join-Path $evidenceDirectory 'plain-java-version.log')
+# javac 的成功版本信息走stderr；隐藏子进程写日志，避免PS5以NativeCommandError中止。
+$versionLog = Join-Path $evidenceDirectory 'plain-java-version.log'
+$versionProcess = Start-Process -FilePath "$JavaHome/bin/javac.exe" -ArgumentList '-version' -WindowStyle Hidden -RedirectStandardError $versionLog -Wait -PassThru
+if ($versionProcess.ExitCode -ne 0) { throw '读取Java编译器版本失败' }
+$version = Get-Content -LiteralPath $versionLog -Raw
+if ($version -notmatch 'javac 1\.8\.') { throw "需要Java8，实际：$version" }
 
 # 仅解析 Orekit/Hipparchus、原初始化器使用的 SLF4J 及日志实现；无 Spring/MyBatis/JUnit。
 $classpathFile = Join-Path $runtimeDirectory 'classpath.txt'

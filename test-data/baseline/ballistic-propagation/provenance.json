@@ -1,0 +1,49 @@
+{
+  "javaVersion": "1.8.0_472",
+  "utcOffsetSec": 0.0,
+  "source": "T02 冻结副本，T04 Java8 编译类；采集不引用迁入后端",
+  "sourceFiles": [
+    {
+      "file": "src/main/java/com/tx/alg/OrbitCalculator.java",
+      "sha256": "e49bde8a817ff7b0af70144862a2f8d6226060b7e5c0fcb99c909afd59b1e942"
+    },
+    {
+      "file": "src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "sha256": "73e65766a33776c2273ab040b76c1ea16388c7c47595ebd0529a59113737868d"
+    },
+    {
+      "file": "target/classes/com/tx/alg/OrbitCalculator.class",
+      "sha256": "4de0232d056473d79cbf2c7c72c1e5c2974471123693e730edbfd17885e2b6fc"
+    },
+    {
+      "file": "target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter.class",
+      "sha256": "922d9deab68bec39119c21c381acbc40b585d6dae0d02e0787ba9839b2b8fe63"
+    }
+  ],
+  "probeSha256": "6e926d72463671f2f8fca8b833b2e856124b9fde22436ab5c293edefd421c428",
+  "deliveryJarSha256": "6dec33be2ec401b5a32b0ed1cb9a7a86568eb57771990225ab80337d5da27501",
+  "files": [
+    {
+      "file": "satellite-position.csv",
+      "records": 72,
+      "sha256": "1a71f7abef965c72e643c0be3938ca944b424ced9dbfc244121102bdbc81c0f8",
+      "repeatIdentical": true,
+      "sourceJarIdentical": true
+    },
+    {
+      "file": "satellite-j2-state.csv",
+      "records": 24,
+      "sha256": "9d525098723a643236bd95a7e47cc6681beb92bed5eb84c4a245943d1ce39201",
+      "repeatIdentical": true,
+      "sourceJarIdentical": true
+    },
+    {
+      "file": "fitter-state.csv",
+      "records": 26,
+      "sha256": "547c0058cd885d09edb064182b0b633a7fb02ae65b9f0842d0b5f46d1ef2e867",
+      "repeatIdentical": true,
+      "sourceJarIdentical": true
+    }
+  ],
+  "passed": true
+}

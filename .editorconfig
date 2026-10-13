@@ -13,3 +13,7 @@ indent_size = 4
 
 [*.md]
 trim_trailing_whitespace = false
+
+# Windows PowerShell 5.1 读取中文脚本需要 UTF-8 BOM，PowerShell 7 同样兼容。
+[*.ps1]
+charset = utf-8-bom

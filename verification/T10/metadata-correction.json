@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "stateRowsUnchanged": {
+    "satellite-position.csv": true,
+    "satellite-j2-state.csv": true
+  }
+}

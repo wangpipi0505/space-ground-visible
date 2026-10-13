@@ -17,6 +17,10 @@ public final class OrbitPropagationTool {
         Vector3 positionAt(OrbitTime time);
         /** 原生速度查询，单位米/秒；空间适配直接委托原 velocityAt，保留差分顺序。 */
         Vector3 velocityAt(OrbitTime time);
+        /** 默认按原位置、速度顺序查询；原生积分同时得到PV的适配器可覆盖以避免重复积分。 */
+        default OrbitState stateAt(OrbitTime time, OrbitDefinition.Frame frame) {
+            return new OrbitState(time, frame, positionAt(time), velocityAt(time));
+        }
     }
 
     private final OrbitDefinition definition;
@@ -50,12 +54,12 @@ public final class OrbitPropagationTool {
     }
 
     /**
-     * 显式查询完整状态，依次调用位置、速度各一次；调用方需要两者时才使用本方法。
+     * 显式查询完整状态；默认依次调用位置、速度各一次，原生PV模型可一次积分。
      * 旧空间速度内部的位置 ±1秒查询保持原有次序，不替换为传播器解析速度。
      */
     public OrbitState stateAt(OrbitTime time, OrbitDefinition.Frame outputFrame) {
         validateQuery(time, outputFrame);
-        return new OrbitState(time, outputFrame, propagation.positionAt(time), propagation.velocityAt(time));
+        return propagation.stateAt(time, outputFrame);
     }
 
     private void validateQuery(OrbitTime time, OrbitDefinition.Frame outputFrame) {

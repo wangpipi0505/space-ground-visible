@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "satellite-position.csv",
+      "records": 72,
+      "sha256": "1a71f7abef965c72e643c0be3938ca944b424ced9dbfc244121102bdbc81c0f8",
+      "repeatIdentical": true,
+      "sourceJarIdentical": true
+    },
+    {
+      "file": "satellite-j2-state.csv",
+      "records": 24,
+      "sha256": "9d525098723a643236bd95a7e47cc6681beb92bed5eb84c4a245943d1ce39201",
+      "repeatIdentical": true,
+      "sourceJarIdentical": true
+    },
+    {
+      "file": "fitter-state.csv",
+      "records": 26,
+      "sha256": "547c0058cd885d09edb064182b0b633a7fb02ae65b9f0842d0b5f46d1ef2e867",
+      "repeatIdentical": true,
+      "sourceJarIdentical": true
+    }
+  ]
+}
