@@ -7,6 +7,11 @@ spring:
   flyway:
     enabled: true
 
+# 所有 Spring 测试均使用系统临时目录，禁止新文件清理任务触碰默认部署 storage。
+ballistic:
+  files:
+    root: ${java.io.tmpdir}/space-ballistic-tests-${random.uuid}
+
 space:
   visibility:
     downlink:

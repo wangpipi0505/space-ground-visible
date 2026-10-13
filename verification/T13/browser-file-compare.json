@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "kind": "upload",
+      "originalName": "弹道样例-含中文.csv",
+      "bytes": 1507045,
+      "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "totalRows": 8560,
+      "firstPageExact": true
+    },
+    {
+      "kind": "result",
+      "originalName": "T13-模拟结果.csv",
+      "bytes": 561736,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "totalRows": 2576,
+      "firstPageExact": true
+    }
+  ],
+  "secondPageChecked": true,
+  "backendJarSha256": "8b6a2242e533bb98ef40b9930f35fea4af249592a1c2776da2fd7c5b7dd78d7c",
+  "buildJarSha256": "8b6a2242e533bb98ef40b9930f35fea4af249592a1c2776da2fd7c5b7dd78d7c"
+}

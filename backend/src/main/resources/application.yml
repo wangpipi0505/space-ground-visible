@@ -82,3 +82,18 @@ space:
       max-pair-tasks: ${SPACE_VISIBILITY_MAX_PAIR_TASKS:10000}
     planning-task:
       ttl-hours: ${SPACE_VISIBILITY_PLANNING_TASK_TTL_HOURS:2}
+
+# 弹道文件辅助存储；部署时推荐使用源码目录外的绝对路径。各子目录为空则放在 root 下。
+# 单文件限额同时控制 Servlet 上传、实际流复制和辅助下载；请勿另设冲突的 spring.servlet.multipart 限额。
+# multipart 请求总上限自动为 max-bytes + 65536，额外空间仅供边界及请求头，文件本身仍受 max-bytes 限制。
+ballistic:
+  files:
+    root: ${BALLISTIC_STORAGE_ROOT:storage}
+    uploads: ${BALLISTIC_UPLOADS_DIR:}
+    results: ${BALLISTIC_RESULTS_DIR:}
+    temp: ${BALLISTIC_TEMP_DIR:}
+    metadata: ${BALLISTIC_METADATA_DIR:}
+    max-bytes: ${BALLISTIC_MAX_FILE_BYTES:67108864}
+    ttl-millis: ${BALLISTIC_FILE_TTL_MILLIS:86400000}
+    cleanup-interval-millis: ${BALLISTIC_CLEANUP_INTERVAL_MILLIS:60000}
+    preview-max-rows: ${BALLISTIC_PREVIEW_MAX_ROWS:500}

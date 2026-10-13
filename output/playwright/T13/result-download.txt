@@ -1,0 +1,20 @@
+### Result
+{"suggestedFilename":"T13-模拟结果.csv","destination":"G:/5-YG/space-ground-visible/verification/runtime/T13/browser-download/result.csv","reference":{"fileId":"298cb80b-4e4a-4f37-8127-366252dfb569","originalName":"T13-模拟结果.csv","sizeBytes":561736,"contentType":"text/csv","serverPath":"G:\\5-YG\\space-ground-visible\\verification\\runtime\\T13\\storage\\results\\T13-模拟结果.csv"},"preview":{"fileId":"298cb80b-4e4a-4f37-8127-366252dfb569","header":["YYYY","MM","dd","HH","mm","ss.SSS","ECEF_X","ECEF_Y","ECEF_Z","energy","dt","ECI_X","ECI_Y","ECI_Z","ECI_VX","ECI_VY","ECI_VZ","ECEF_Vx","ECEF_Vy","ECEF_Vz","isOriginal"],"rows":[["2026","06","04","04","00","00.000","-2081346.445","4809477.549","3624281.110","-39317491.304189620","0.000","2167790.227","4775481.109","3618557.253","3372.162561547","4247.925823352","4130.938874777","-881.695368087","5344.723043145","4139.753494994","0"],["2026","06","04","04","00","01.000","-2081875.433","4814970.394","3628418.073","-39317491.304189650","1000.000","2171160.720","4779725.358","3622685.406","3368.824874262","4240.575591217","4125.368632923","-878.103383621","5337.383711152","4134.174440366","0"],["2026","06","04","04","00","02.000","-2082400.419","4820455.951","3632549.463","-39317491.304189675","1000.000","2174527.879","4783962.266","3626807.994","3365.492470965","4233.241869768","4119.809505122","-874.521137297","5330.058882653","4128.606513880","0"],["2026","06","04","04","00","03.000","-2082921.442","4825934.222","3636675.290","-39317491.304189720","1000.000","2177891.707","4788191.848","3630925.029","3362.165330660","4225.924582310","4114.261441987","-870.948614498","5322.748487476","4123.049666092","0"],["2026","06","04","04","00","04.000","-2083438.498","4831405.229","3640795.566","-39317491.304189740","1000.000","2181252.211","4792414.120","3635036.521","3358.843432466","4218.623652649","4108.724394444","-867.385754023","5315.452463572","4117.503847872","0"]],"totalRows":2576,"page":1,"limit":5,"metadata":{}}}
+### Ran Playwright code
+```js
+await (async page => {
+  const [download] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('link', { name: '下载登记结果' }).click()
+  ])
+  const destination = 'G:/5-YG/space-ground-visible/verification/runtime/T13/browser-download/result.csv'
+  await download.saveAs(destination)
+  return { suggestedFilename: download.suggestedFilename(), destination,
+    reference: await page.evaluate(() => window.lastReference),
+    preview: await page.evaluate(() => window.lastPreview) }
+}
+)(page);
+```
+### Events
+- Downloading file T13-模拟结果.csv ...
+- Downloaded file T13-模拟结果.csv to ".playwright-cli\T13-模拟结果.csv"

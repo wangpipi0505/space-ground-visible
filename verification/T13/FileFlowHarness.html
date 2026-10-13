@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>T13 文件辅助接口验收页</title>
+<link rel="icon" href="data:,">
+<style>
+  body { font: 16px system-ui; margin: 32px; color: #1f2937; }
+  label, button, a { margin-right: 16px; }
+  input[type=text] { width: 720px; }
+  table { border-collapse: collapse; font-size: 13px; margin-top: 16px; }
+  th, td { border: 1px solid #ccc; padding: 6px; white-space: nowrap; }
+  section { margin: 24px 0; }
+  pre { white-space: pre-wrap; }
+</style>
+<h1>T13 文件辅助接口验收页</h1>
+<p>用于核验真实上传、分页预览和下载。正式弹道业务页面在后续事项实现。</p>
+<section>
+  <label>轨迹文件 <input id="file" type="file" accept=".csv,.xls,.xlsx,.xlsm"></label>
+  <button id="upload">上传并预览</button>
+  <a id="download" hidden>下载上传文件</a>
+</section>
+<section>
+  <label>验收结果路径 <input id="resultPath" type="text"></label>
+  <button id="register">登记已有结果并预览</button>
+  <a id="resultDownload" hidden>下载登记结果</a>
+</section>
+<pre id="status" role="status">等待上传</pre>
+<button id="next" disabled>下一页</button>
+<pre id="metadata"></pre>
+<div style="overflow:auto"><table id="preview"></table></div>
+<script>
+  // 此页只保存接口返回的服务端引用；不把浏览器本机文件路径发送给计算服务。
+  const base = '/api/v1/ballistic/files'
+  let currentId = '', currentPage = 1
+  const el = id => document.getElementById(id)
+  async function request(url, options) {
+    const response = await fetch(url, options)
+    const value = await response.json()
+    if (!response.ok) throw new Error(response.status + ': ' + value.error)
+    return value
+  }
+  async function showPreview(id, page) {
+    const value = await request(base + '/' + encodeURIComponent(id) + '/preview?page=' + page + '&limit=5')
+    currentId = id; currentPage = value.page
+    // 文件名、表头和单元格均作为文本插入，文件内容不会成为 HTML 或脚本。
+    const table = el('preview'); table.replaceChildren()
+    for (const [index, row] of [value.header, ...value.rows].entries()) {
+      const tr = document.createElement('tr')
+      for (const cell of row) {
+        const node = document.createElement(index === 0 ? 'th' : 'td')
+        node.textContent = cell; tr.append(node)
+      }
+      table.append(tr)
+    }
+    el('metadata').textContent = JSON.stringify({ page: value.page, limit: value.limit,
+      totalRows: value.totalRows, metadata: value.metadata }, null, 2)
+    el('next').disabled = value.page * value.limit >= value.totalRows
+    window.lastPreview = value
+  }
+  async function showReference(value, linkId) {
+    const link = el(linkId)
+    link.href = base + '/' + encodeURIComponent(value.fileId) + '/download'
+    link.hidden = false
+    el('status').textContent = value.originalName + ' · ' + value.sizeBytes + ' 字节 · ' + value.fileId
+    window.lastReference = value
+    await showPreview(value.fileId, 1)
+  }
+  // FormData 由浏览器设置 multipart 边界；不手动添加 JSON Content-Type。
+  el('upload').onclick = async () => {
+    try {
+      const file = el('file').files[0]
+      if (!file) throw new Error('请选择文件')
+      const form = new FormData(); form.append('file', file); form.append('purpose', 'trajectory')
+      await showReference(await request(base, { method: 'POST', body: form }), 'download')
+    } catch (error) { el('status').textContent = error.message }
+  }
+  // 验收路径由测试环境准备，登记接口仍须在服务端校验结果根边界。
+  el('register').onclick = async () => {
+    try {
+      await showReference(await request(base + '/register-result', { method: 'POST',
+        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+          csvPath: el('resultPath').value, taskName: 'T13-browser', targetId: 'baseline-simulation'
+        }) }), 'resultDownload')
+    } catch (error) { el('status').textContent = error.message }
+  }
+  el('next').onclick = async () => {
+    try { await showPreview(currentId, currentPage + 1) }
+    catch (error) { el('status').textContent = error.message }
+  }
+</script>
+</html>

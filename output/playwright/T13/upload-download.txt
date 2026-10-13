@@ -1,0 +1,20 @@
+### Result
+{"suggestedFilename":"弹道样例-含中文.csv","destination":"G:/5-YG/space-ground-visible/verification/runtime/T13/browser-download/upload.csv","reference":{"fileId":"8f30c919-86c9-4e78-9a12-93a0c626b477","originalName":"弹道样例-含中文.csv","sizeBytes":1507045,"contentType":"text/csv","serverPath":"G:\\5-YG\\space-ground-visible\\verification\\runtime\\T13\\storage\\uploads\\upload-4848619600060251263.csv"},"preview":{"fileId":"8f30c919-86c9-4e78-9a12-93a0c626b477","header":["YYYY","MM","dd","HH","mm","ss.SSS","ECEF_X(m)","ECEF_Y(m)","ECEF_Z(m)","energy","dt(ms)","ECI_X(m)","ECI_Y(m)","ECI_Z(m)","ECI_Vx(m/s)","ECI_Vy(m/s)","ECI_Vz(m/s)","ECEF_Vx(m/s)","ECEF_Vy(m/s)","ECEF_Vz(m/s)"],"rows":[["2026","07","01","07","57","00.000","-1832845.456","4636330.230","3967380.757","0","0","-4301581.621","2502635.615","3978467.175","1443.381682","1559.351439","574.644986","2436.089309","463.729635","578.427477"],["2026","07","01","07","57","00.100","-1832601.847","4636376.602","3967438.600","0","100","-4301437.288","2502791.545","3978524.640","1443.364909","1559.369072","574.637628","2436.092878","463.720791","578.420077"],["2026","07","01","07","57","00.200","-1832358.238","4636422.974","3967496.441","0","100","-4301292.948","2502947.489","3978582.103","1443.344876","1559.388684","574.633585","2436.095109","463.715531","578.415982"],["2026","07","01","07","57","00.300","-1832114.628","4636469.346","3967554.283","0","100","-4301148.619","2503103.423","3978639.567","1443.304728","1559.420012","574.648275","2436.088778","463.731957","578.430569"],["2026","07","01","07","57","00.400","-1831871.020","4636515.720","3967612.127","0","100","-4301004.287","2503259.374","3978697.033","1443.248807","1559.460531","574.677669","2436.075735","463.765401","578.459819"]],"totalRows":8560,"page":1,"limit":5,"metadata":{"timeScale":"UTC","positionUnit":"m","velocityUnit":"m/s","frames":"ECI,ECEF","dtUnit":"ms"}}}
+### Ran Playwright code
+```js
+await (async page => {
+  const [download] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('link', { name: '下载上传文件' }).click()
+  ])
+  const destination = 'G:/5-YG/space-ground-visible/verification/runtime/T13/browser-download/upload.csv'
+  await download.saveAs(destination)
+  return { suggestedFilename: download.suggestedFilename(), destination,
+    reference: await page.evaluate(() => window.lastReference),
+    preview: await page.evaluate(() => window.lastPreview) }
+}
+)(page);
+```
+### Events
+- Downloading file 弹道样例-含中文.csv ...
+- Downloaded file 弹道样例-含中文.csv to ".playwright-cli\弹道样例-含中文.csv"

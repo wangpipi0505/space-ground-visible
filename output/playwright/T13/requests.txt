@@ -1,0 +1,15 @@
+### Result
+32. [GET] http://127.0.0.1:15173/api/v1/space/health => [200] OK
+33. [GET] http://127.0.0.1:15173/api/v1/space/satellites/page?pageNumber=1&pageSize=50 => [200] OK
+34. [GET] http://127.0.0.1:15173/api/v1/space/stations => [200] OK
+35. [GET] http://127.0.0.1:15173/api/v1/space/defaults => [200] OK
+36. [GET] http://127.0.0.1:15173/api/v1/space/targets/belong-options => [200] OK
+38. [POST] http://127.0.0.1:15173/api/v1/ballistic/files => [201] Created
+39. [GET] http://127.0.0.1:15173/api/v1/ballistic/files/8f30c919-86c9-4e78-9a12-93a0c626b477/preview?page=1&limit=5 => [200] OK
+40. [GET] http://127.0.0.1:15173/api/v1/ballistic/files/8f30c919-86c9-4e78-9a12-93a0c626b477/download => [200] OK
+41. [GET] http://127.0.0.1:15173/api/v1/ballistic/files/8f30c919-86c9-4e78-9a12-93a0c626b477/preview?page=2&limit=5 => [200] OK
+42. [POST] http://127.0.0.1:15173/api/v1/ballistic/files/register-result => [201] Created
+43. [GET] http://127.0.0.1:15173/api/v1/ballistic/files/298cb80b-4e4a-4f37-8127-366252dfb569/preview?page=1&limit=5 => [200] OK
+44. [GET] http://127.0.0.1:15173/api/v1/ballistic/files/298cb80b-4e4a-4f37-8127-366252dfb569/download => [200] OK
+
+Note: 32 static requests not shown, run with --static option to see them.

@@ -1,0 +1,8 @@
+vary: Origin
+Sec-Fetch-Dest
+connection: close
+content-disposition: attachment; filename="T13-____.csv"; filename*=UTF-8''T13-%E6%A8%A1%E6%8B%9F%E7%BB%93%E6%9E%9C.csv
+content-length: 561736
+content-type: text/csv
+date: Tue, 13 Oct 2026 07:11:00 GMT
+x-content-type-options: nosniff

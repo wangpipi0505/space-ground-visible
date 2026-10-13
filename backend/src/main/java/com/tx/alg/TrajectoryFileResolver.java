@@ -5,13 +5,13 @@ import io.minio.MinioClient;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.Locale;
 
 /**
@@ -55,12 +55,50 @@ public final class TrajectoryFileResolver {
             return Paths.get(trimmed);
         }
         if (trimmed.toLowerCase(Locale.ROOT).startsWith("minio://")) {
-            return downloadFromMinio(parseMinioLocation(trimmed));
+            return downloadFromMinio(parseMinioLocation(trimmed), null, Long.MAX_VALUE);
         }
-        return downloadFromHttp(trimmed);
+        return downloadFromHttp(trimmed, null, Long.MAX_VALUE);
     }
 
-    private static Path downloadFromHttp(String httpUrl) throws IOException {
+    /**
+     * Web 专用资源作用域：远程文件只写指定临时目录，实际复制字节超过 maxBytes 即失败并删除。
+     * 本地路径仍原样返回且不删除；调用方必须关闭返回值。旧单参数入口保留系统临时目录与
+     * deleteOnExit 语义，因此普通 Java 调用和已有公开签名不变。
+     */
+    public static ResolvedFile resolveScoped(String location, Path tempDirectory, long maxBytes) throws IOException {
+        if (location == null || location.trim().isEmpty() || tempDirectory == null || maxBytes <= 0) {
+            throw new IllegalArgumentException("文件位置、临时目录和有效字节上限不能为空");
+        }
+        String trimmed = location.trim();
+        if (!isRemoteLocation(trimmed)) {
+            return new ResolvedFile(Paths.get(trimmed), false);
+        }
+        Path directory = tempDirectory.toRealPath();
+        Path downloaded = trimmed.toLowerCase(Locale.ROOT).startsWith("minio://")
+                ? downloadFromMinio(parseMinioLocation(trimmed), directory, maxBytes)
+                : downloadFromHttp(trimmed, directory, maxBytes);
+        return new ResolvedFile(downloaded, true);
+    }
+
+    /** 可关闭的实际读取路径。业务输出仍应使用用户原 location，不得用临时路径覆盖逻辑来源。 */
+    public static final class ResolvedFile implements AutoCloseable {
+        public final Path path;
+        private final boolean temporary;
+
+        private ResolvedFile(Path path, boolean temporary) {
+            this.path = path;
+            this.temporary = temporary;
+        }
+
+        @Override
+        public void close() throws IOException {
+            if (temporary) {
+                Files.deleteIfExists(path);
+            }
+        }
+    }
+
+    private static Path downloadFromHttp(String httpUrl, Path directory, long maxBytes) throws IOException {
         URL current = new URL(httpUrl);
         for (int redirect = 0; ; redirect++) {
             HttpURLConnection connection = (HttpURLConnection) current.openConnection();
@@ -84,19 +122,15 @@ public final class TrajectoryFileResolver {
                 connection.disconnect();
                 throw new IOException("下载弹道文件失败：HTTP " + status + "（" + httpUrl + "）。");
             }
-            Path tempFile = createTempTrajectoryFile(suffixFromPath(current.getPath()));
-            InputStream in = connection.getInputStream();
-            try {
-                Files.copy(in, tempFile, StandardCopyOption.REPLACE_EXISTING);
+            try (InputStream in = connection.getInputStream()) {
+                return copyDownloaded(in, suffixFromPath(current.getPath()), directory, maxBytes);
             } finally {
-                in.close();
                 connection.disconnect();
             }
-            return tempFile;
         }
     }
 
-    private static Path downloadFromMinio(MinioLocation minioLocation) throws IOException {
+    private static Path downloadFromMinio(MinioLocation minioLocation, Path directory, long maxBytes) throws IOException {
         MinioClient.Builder builder = MinioClient.builder()
                 .endpoint(minioLocation.host, minioLocation.port, minioLocation.secure);
         if (minioLocation.accessKey != null) {
@@ -112,13 +146,36 @@ public final class TrajectoryFileResolver {
         } catch (Exception ex) {
             throw new IOException("从 MinIO 拉取弹道文件失败：" + ex.getMessage(), ex);
         }
-        Path tempFile = createTempTrajectoryFile(suffixFromPath(minioLocation.object));
-        try {
-            Files.copy(in, tempFile, StandardCopyOption.REPLACE_EXISTING);
-        } finally {
-            in.close();
+        try (InputStream input = in) {
+            return copyDownloaded(input, suffixFromPath(minioLocation.object), directory, maxBytes);
         }
-        return tempFile;
+    }
+
+    /** 网络成功但中途断流/超过上限时也删除已创建实体，避免失败请求积累磁盘碎片。 */
+    private static Path copyDownloaded(InputStream input, String suffix, Path directory, long maxBytes) throws IOException {
+        Path tempFile = directory == null ? createTempTrajectoryFile(suffix)
+                : Files.createTempFile(directory, "alg-trajectory-", suffix);
+        boolean complete = false;
+        try {
+            long size = 0;
+            try (OutputStream output = Files.newOutputStream(tempFile)) {
+                byte[] buffer = new byte[8192];
+                int count;
+                while ((count = input.read(buffer)) != -1) {
+                    size += count;
+                    if (size > maxBytes) {
+                        throw new IOException("远程弹道文件超过配置字节上限");
+                    }
+                    output.write(buffer, 0, count);
+                }
+            }
+            complete = true;
+            return tempFile;
+        } finally {
+            if (!complete) {
+                Files.deleteIfExists(tempFile);
+            }
+        }
     }
 
     /**
