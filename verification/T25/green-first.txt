@@ -1,0 +1,11 @@
+> frontend@0.0.0 test
+> vitest run src/api/ballisticRetime.spec.ts src/utils/ballisticRetime.spec.ts src/views/BallisticRetimeView.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+
+ Test Files  3 passed (3)
+      Tests  8 passed (8)
+   Start at  21:42:13
+   Duration  728ms (transform 462ms, setup 0ms, import 634ms, tests 130ms, environment 669ms)

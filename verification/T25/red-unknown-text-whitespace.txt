@@ -1,0 +1,32 @@
+> frontend@0.0.0 test
+> vitest run src/utils/ballisticRetime.spec.ts -t 未知文本
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/utils/ballisticRetime.spec.ts (3 tests | 1 failed | 2 skipped) 19ms
+     × 未知文本/列重排/缺dt/负标记保留，跨日非整秒UTC及原点表按列名显示 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/utils/ballisticRetime.spec.ts > T25 重定时完整CSV命名列 > 未知文本/列重排/缺dt/负标记保留，跨日非整秒UTC及原点表按列名显示
+AssertionError: expected ' 保留原文本' to be ' 保留原文本 ' // Object.is equality
+
+Expected: " 保留原文本 "
+Received: " 保留原文本"
+
+ ❯ src/utils/ballisticRetime.spec.ts:35:66
+     33|     expect(wrapper.text()).toContain('dt 为累计')
+     34|     const spacedCsv = [header.join(',') + ',tail', ...rows.map(row => …
+     35|     expect(parseFitCsv(spacedCsv, 'retime').at(-1)?.fields.tail).toBe(…
+       |                                                                  ^
+     36|   })
+     37|   it('缺isOriginal不造原点，必要ECI缺失/重复列明确独立不能绘图', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  22:02:15
+   Duration  472ms (transform 74ms, setup 0ms, import 130ms, tests 19ms, environment 214ms)

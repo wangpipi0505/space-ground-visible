@@ -1,6 +1,5 @@
 import type { BallisticFitHttpResult } from './ballisticFit'
 import { ballisticComputeBaseUrl, checkBallisticResponse } from './ballisticHttp'
-import type { BallisticFileReference } from './ballisticFiles'
 
 /** 原PhaseEvent全部11字段；字符串/null保持原值，数值为原Java double SI口径。当前模型只返回预留告警。 */
 export interface SimulationPhaseEvent {
@@ -30,7 +29,7 @@ export interface BallisticSimulationRequest {
   boostDurationSec?: number | null; boostAccelerationMs2?: number | null; dragCdAreaOverMass?: number | null
 }
 /** App维护的真正已登记结果选择：原目标身份与201引用；不携带假上传或由csvPath拼出的fileId。 */
-export interface GeneratedBallisticResult { targetId: string; targetName: string; reference: BallisticFileReference }
+export type { GeneratedBallisticResult } from './ballisticFiles'
 
 /** 原路由与原响应字节保留；不新增model字段/包装，不改后端错误中文。 */
 export async function simulateBallisticTrajectory(request: BallisticSimulationRequest): Promise<BallisticFitHttpResult> {

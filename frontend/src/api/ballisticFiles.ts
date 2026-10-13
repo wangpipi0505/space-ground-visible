@@ -8,6 +8,8 @@ export interface BallisticFileReference {
   contentType: string
   serverPath: string
 }
+/** App按来源维护的当前会话实际201结果引用；刷新不持久化，不扫描服务目录。 */
+export interface GeneratedBallisticResult { targetId: string; targetName: string; reference: BallisticFileReference }
 /** 原表头/单元格文本，metadata 只转呈服务已识别的单位，不猜测未知坐标。 */
 export interface BallisticFilePreview {
   fileId: string
@@ -35,6 +37,7 @@ export async function uploadBallisticFile(file: File): Promise<BallisticFileRefe
   body.append('purpose', 'visibility')
   const response = await fetch(`${ballisticAuxBaseUrl}/files`, { method: 'POST', body })
   await checkBallisticResponse(response, '弹道上传')
+  if (response.status !== 201) throw new Error(`弹道上传须返回HTTP 201，实际HTTP ${response.status}，未获得有效引用`)
   return await response.json() as BallisticFileReference
 }
 /** 从1开始分页，固定50行不超过服务500上限；不改变原文件或计算采样。 */

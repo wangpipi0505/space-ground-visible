@@ -7,10 +7,13 @@ import { computed, ref, shallowRef } from 'vue'
 import { fitBallisticPackage102 } from '../api/ballisticFit'
 import type { BallisticFitHttpResult } from '../api/ballisticFit'
 import type { BallisticFitRequest } from '../api/ballisticFitTypes'
+import type { BallisticFileReference, GeneratedBallisticResult } from '../api/ballisticFiles'
 import { saveBallisticBlob } from '../api/ballisticHttp'
 import { parseFitInput } from '../utils/ballisticFit'
 import BallisticFitFileResult from '../components/BallisticFitFileResult.vue'
 
+const emit = defineEmits<{ references: [value: GeneratedBallisticResult[]] }>()
+const references = shallowRef<Record<number, GeneratedBallisticResult>>({})
 const inputText = ref('{\n  "taskName": "task",\n  "taskStartTime": "",\n  "taskEndTime": "",\n  "interpolationStepSec": 1,\n  "package102": []\n}')
 const inputName = ref('')
 const loadingInput = ref(false)
@@ -48,6 +51,7 @@ async function chooseJson(event: Event): Promise<void> {
 /** 提交JSON经过边界校验且独立于编辑文本；开始新尝试立即清旧成功，响应只绑定本次快照。 */
 async function calculate(): Promise<void> {
   if (computing.value || loadingInput.value) return
+  references.value = {}; emit('references', [])
   result.value = undefined
   submitted.value = undefined
   error.value = ''
@@ -62,6 +66,15 @@ async function calculate(): Promise<void> {
     runIdentity.value = runSequence
   } catch (failure) { error.value = message(failure) }
   finally { computing.value = false }
+}
+/** 共享文件真实201事件逐文件更新；清自身拟合候选不影响App其它来源。 */
+function updateReference(index: number, reference: BallisticFileReference | undefined): void {
+  const file = result.value?.response.files[index]
+  if (!file) return
+  const next = { ...references.value }
+  if (reference) next[index] = { targetId: file.targetId, targetName: `拟合/${result.value?.response.taskName}/${file.targetId}`, reference }
+  else delete next[index]
+  references.value = next; emit('references', Object.values(next))
 }
 /** 输入快照仅适配outputDir；计算结果JSON下载保持原HTTP字节，不与图表数据混合。 */
 function exportInput(): void {
@@ -97,7 +110,7 @@ function exportResult(): void {
       <div class="ballistic-actions"><button type="button" @click="exportInput">下载实际提交 JSON</button><button type="button" @click="exportResult">下载原拟合响应 JSON</button></div>
       <details><summary>不可变实际提交快照（outputDir 省略）</summary><pre data-test="fit-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
       <details><summary>本次全部原102包（原字符串/别名/单位保留）</summary><pre>{{ JSON.stringify(submitted.package102, null, 2) }}</pre></details>
-      <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}/${file.targetId}`" :file="file" :task-name="result.response.taskName" />
+      <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}/${file.targetId}`" :file="file" :task-name="result.response.taskName" @reference="updateReference(index, $event)" />
     </section>
   </section>
 </template>

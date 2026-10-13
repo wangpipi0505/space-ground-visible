@@ -1,0 +1,67 @@
+{
+  "source": "根独立Chrome原生重排列样本→跨日retime200→完整图/源点/原字节下载",
+  "uploaded": {
+    "status": 201,
+    "reference": {
+      "fileId": "8f49145c-4892-4f14-8934-036ecc13d6bc",
+      "originalName": "retime-irregular-reordered-source.csv",
+      "sizeBytes": 848,
+      "contentType": "text/csv",
+      "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\uploads\\upload-6514218410102571385.csv"
+    }
+  },
+  "status": 200,
+  "request": {
+    "taskName": "T25-boundary",
+    "targetId": "BOUNDARY-TGT",
+    "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\uploads\\upload-6514218410102571385.csv",
+    "launchTimeUtc": "2026-07-02 23:59:59.375"
+  },
+  "result": {
+    "taskName": "T25-boundary",
+    "targetCount": 1,
+    "files": [
+      {
+        "targetId": "BOUNDARY-TGT",
+        "model": "RETIMED_TRAJECTORY",
+        "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\results\\fit-2360747876375970299\\T25-boundary_2026-07-02_23_59_59.375_BOUNDARY-TGT_20261013_215423_559.csv",
+        "pointCount": 3,
+        "warnings": [
+          "弹道文件重定时保持ECEF位置和速度不变；按新的绝对时刻重算ECI位置和速度，并更新时间列、dt列和timeIntervalMs列。"
+        ]
+      }
+    ]
+  },
+  "graphPoints": [
+    3,
+    3,
+    3,
+    3
+  ],
+  "markers": 4,
+  "originalRows": 1,
+  "captions": [
+    "ECI XY投影 · 横轴 4349198.029…4359195.093 X m · 纵轴 2937627.909…2941612.654 Y m",
+    "ECI X / 相对UTC时间 · 横轴 0…2.875 相对UTC s · 纵轴 4349198.029…4359195.093 X m",
+    "ECI Y / 相对UTC时间 · 横轴 0…2.875 相对UTC s · 纵轴 2937627.909…2941612.654 Y m",
+    "ECI Z / 相对UTC时间 · 横轴 0…2.875 相对UTC s · 纵轴 3612936.432…3621178.788 Z m"
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "frozenOriginalCsvByteEqual": true,
+  "frozenResponseOnlyPathEqual": true,
+  "sourceUploadByteEqual": true,
+  "ecefUnknownMarkerTextPreserved": true,
+  "csv": {
+    "bytes": 852,
+    "rows": 3,
+    "sha256": "4a6f061cee285770e5c93e55194a9adbd36b648f519a6f70b2cfcad9256e918c",
+    "intervalMs": [
+      "0.000",
+      "1250.000",
+      "1625.000"
+    ],
+    "secondUtc": "2026-07-03 00:00:00.625",
+    "dtColumnAbsent": true
+  }
+}

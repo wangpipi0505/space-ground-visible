@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "name": "default-upload",
+      "fileId": "edceaa9b-4bb8-4cb3-a25a-ebeeaf80cc5d",
+      "expectedBytes": 561736,
+      "expectedSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "status": 200,
+      "bytes": 561736,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4"
+    }
+  ],
+  "allOriginalUploadHttpByteEqual": true
+}

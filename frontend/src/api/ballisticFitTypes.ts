@@ -62,14 +62,16 @@ export interface BallisticFitResult {
   targetCount: number
   files: BallisticFitFile[]
 }
-/** CSV导出精度的实际点；dt为相邻步长毫秒，relativeTimeSec由分列UTC相对首行计算；original严格来自isOriginal。 */
+/** CSV导出精度的实际点；dt拟合/模拟为相邻步长毫秒、重定时为累计毫秒且缺列时null，relativeTimeSec由分列UTC相对首行计算；original严格来自isOriginal。 */
 export interface FitCsvPoint {
   utc: string
-  dtMs: number
+  dtMs: number | null
   relativeTimeSec: number
   eciX: number
   eciY: number
   eciZ: number
   original: boolean
   cells: string[]
+  /** 命名列对应原单元格；支持重定时列重排/未知列/缺dt，不修改下载原字节。 */
+  fields: Record<string, string>
 }

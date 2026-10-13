@@ -1,0 +1,35 @@
+> frontend@0.0.0 test
+> vitest run src/views/BallisticRetimeView.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticRetimeView.spec.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts [ src/views/BallisticRetimeView.spec.ts ]
+Error: Failed to resolve import "./BallisticRetimeView.vue" from "src/views/BallisticRetimeView.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: G:/5-YG/space-ground-visible/frontend/src/views/BallisticRetimeView.spec.ts:5:32
+  3  |  import { flushPromises, mount } from "@vue/test-utils";
+  4  |  import { afterEach, describe, expect, it, vi } from "vitest";
+  5  |  import BallisticRetimeView from "./BallisticRetimeView.vue";
+     |                                   ^
+  6  |  /** 完整页面输入与生命周期；原后端才验证UTC和CSV，组件测试HTTP mock仅隔离网络。 */
+  7  |  describe("T25 重定时页面真实引用", () => {
+ ❯ TransformPluginContext._formatLog node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:31066:39
+ ❯ TransformPluginContext.error node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:31063:14
+ ❯ normalizeUrl node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:28008:18
+ ❯ node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:28076:30
+ ❯ TransformPluginContext.transform node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:28044:4
+ ❯ EnvironmentPluginContainer.transform node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:30851:14
+ ❯ loadAndTransform node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:20619:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  21:39:53
+   Duration  374ms (transform 0ms, setup 0ms, import 0ms, tests 0ms, environment 221ms)

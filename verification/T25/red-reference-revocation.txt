@@ -1,0 +1,47 @@
+> frontend@0.0.0 test
+> vitest run src/views/BallisticRetimeView.spec.ts -t 辅助404
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticRetimeView.spec.ts (6 tests | 1 failed | 5 skipped) 51ms
+     × 辅助404注销仅撤本次候选仍保留计算成功与错误，原文件恢复可重新201登记 50ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 辅助404注销仅撤本次候选仍保留计算成功与错误，原文件恢复可重新201登记
+AssertionError: expected [ { targetId: 'RETIMED-TGT', …(2) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "reference": {
++       "contentType": "text/csv",
++       "fileId": "输出1",
++       "originalName": "源.csv",
++       "serverPath": "server/output.csv",
++       "sizeBytes": 561736,
++     },
++     "targetId": "RETIMED-TGT",
++     "targetName": "重定时/T04-retime/RETIMED-TGT",
++   },
++ ]
+
+ ❯ src/views/BallisticRetimeView.spec.ts:32:56
+     30|     expect(wrapper.emitted('references')?.at(-1)?.[0]).toHaveLength(1)
+     31|     missing = true; await wrapper.get('[data-test=fit-download]').trig…
+     32|     expect(wrapper.emitted('references')?.at(-1)?.[0]).toEqual([])
+       |                                                        ^
+     33|     expect(wrapper.find('[data-test=retime-success]').exists()).toBe(t…
+     34|     missing = false; await wrapper.get('[data-test=fit-reregister]').t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  21:55:19
+   Duration  696ms (transform 249ms, setup 0ms, import 320ms, tests 51ms, environment 214ms)

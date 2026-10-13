@@ -1,0 +1,11 @@
+> frontend@0.0.0 test
+> vitest run src/views/BallisticRetimeView.spec.ts src/views/BallisticFitView.spec.ts src/views/BallisticSimulationView.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+
+ Test Files  3 passed (3)
+      Tests  13 passed (13)
+   Start at  21:55:21
+   Duration  835ms (transform 732ms, setup 0ms, import 1.05s, tests 267ms, environment 653ms)

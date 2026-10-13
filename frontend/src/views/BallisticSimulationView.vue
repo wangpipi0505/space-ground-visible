@@ -2,9 +2,9 @@
 /** 正式模拟页：完整原JSON为唯一草稿；核心编辑不覆盖高级事件/别名。快照与真实201引用分离，由App供窗口显式选择。 */
 import { computed, ref, shallowRef } from 'vue'
 import { simulateBallisticTrajectory } from '../api/ballisticSimulation'
-import type { BallisticSimulationRequest, GeneratedBallisticResult } from '../api/ballisticSimulation'
+import type { BallisticSimulationRequest } from '../api/ballisticSimulation'
 import type { BallisticFitHttpResult } from '../api/ballisticFit'
-import type { BallisticFileReference } from '../api/ballisticFiles'
+import type { BallisticFileReference, GeneratedBallisticResult } from '../api/ballisticFiles'
 import { saveBallisticBlob } from '../api/ballisticHttp'
 import { parseSimulationInput } from '../utils/ballisticSimulation'
 import BallisticFitFileResult from '../components/BallisticFitFileResult.vue'
@@ -76,7 +76,7 @@ function updateReference(index: number, reference: BallisticFileReference | unde
   const file = result.value?.response.files[index]
   if (!file) return
   const next = { ...references.value }
-  if (reference) next[index] = { targetId: file.targetId, targetName: `${result.value?.response.taskName}/${file.targetId}`, reference }
+  if (reference) next[index] = { targetId: file.targetId, targetName: `模拟/${result.value?.response.taskName}/${file.targetId}`, reference }
   else delete next[index]
   references.value = next; emit('references', Object.values(next))
 }

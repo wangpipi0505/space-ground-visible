@@ -4,7 +4,7 @@
  * busy 只表示真实计算请求进行中，父级据此冻结编辑；无伪进度、无未实现取消。
  */
 import { computed, reactive, ref, shallowRef, watch } from 'vue'
-import type { GeneratedBallisticResult } from '../api/ballisticSimulation'
+import type { GeneratedBallisticResult } from '../api/ballisticFiles'
 import type { BallisticSatelliteDraft, BallisticWindowRequest } from '../api/ballisticWindowTypes'
 import { uploadBallisticFile, previewBallisticFile, downloadBallisticFile } from '../api/ballisticFiles'
 import type { BallisticFilePreview, BallisticFileReference } from '../api/ballisticFiles'
@@ -180,11 +180,11 @@ function downloadJson(): void {
           <div class="ballistic-field-grid">
             <label>目标名称<input v-model="target.targetName" type="text" /></label>
             <label>基准发射 UTC（留空沿文件历元）<input v-model="target.baseLaunchUTC" placeholder="2026/07/01 07:57:10.000" type="text" /></label>
-            <label>文件来源<select v-model="target.mode" data-test="window-source" @change="clearSource(target)"><option value="file">本地上传</option><option value="remote">网络地址导入</option><option value="generated">服务已生成模拟结果</option></select></label>
+            <label>文件来源<select v-model="target.mode" data-test="window-source" @change="clearSource(target)"><option value="file">本地上传</option><option value="remote">网络地址导入</option><option value="generated">服务已生成结果</option></select></label>
           </div>
           <label v-if="target.mode === 'file'">选择弹道 CSV / Excel（.csv/.xlsx/.xls/.xlsm）<input type="file" accept=".csv,.xlsx,.xls,.xlsm" @change="chooseFile(target, $event)" /></label>
           <div v-else-if="target.mode === 'remote'" class="ballistic-field-grid"><label>网络地址<input v-model="target.remoteDraft" type="text" placeholder="https://host/path/trajectory.csv" @input="clearSource(target)" /></label><button type="button" @click="importRemote(target)">导入网络地址</button></div>
-          <label v-else>选择真实登记结果<select :value="target.generatedId || ''" data-test="generated-result-select" @change="selectGenerated(target, $event)"><option value="">请选择已成功登记的模拟结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · {{ item.targetId }} · {{ item.reference.originalName }}</option></select></label>
+          <label v-else>选择真实登记结果<select :value="target.generatedId || ''" data-test="generated-result-select" @change="selectGenerated(target, $event)"><option value="">请选择已成功登记的模拟/拟合/重定时结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · {{ item.targetId }} · {{ item.reference.originalName }}</option></select></label>
           <p v-if="target.mode === 'generated'">仅真实登记201引用可选；选择后目标UTC沿CSV历元，卫星历元需自行明确填写同日时间。</p>
           <p v-if="target.file">{{ target.mode === 'generated' ? '已选择服务生成结果' : '已上传' }}：{{ target.file.originalName }} · {{ target.file.sizeBytes }} 字节 · 引用 {{ target.file.fileId }}</p>
           <p v-if="target.remoteReference">已导入：{{ target.remoteReference }}（待计算时由服务下载并解析）</p>

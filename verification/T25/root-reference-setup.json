@@ -1,0 +1,29 @@
+{
+  "purpose": "重定时页面验收前原对照工具两个实际操作验证",
+  "compileExit": 0,
+  "simulateDefaultBackwardCompatible": true,
+  "proof": [
+    {
+      "operation": "simulate",
+      "status": 200,
+      "bytes": 561736,
+      "rows": 2576,
+      "columns": 21,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "goldenCsvByteEqual": true,
+      "goldenJsonOnlyPathEqual": true,
+      "originalClassOriginAsserted": true
+    },
+    {
+      "operation": "retime",
+      "status": 200,
+      "bytes": 593970,
+      "rows": 2576,
+      "columns": 22,
+      "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+      "goldenCsvByteEqual": true,
+      "goldenJsonOnlyPathEqual": true,
+      "originalClassOriginAsserted": true
+    }
+  ]
+}

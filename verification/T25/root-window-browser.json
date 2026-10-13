@@ -1,0 +1,85 @@
+{
+  "source": "同一根Chrome真实重定时引用选择→preview200→正式窗口200→原响应下载",
+  "status": 200,
+  "selectedFileId": "11fb53ee-429e-4ce0-9c46-8b3975ae29a6",
+  "request": {
+    "startOffsetSec": 0,
+    "stepSizeSec": 10,
+    "numCalculations": 1,
+    "targetSampleStepSec": 1,
+    "trajectoryPointOutput": 1,
+    "orbitModel": "J2_NUMERICAL",
+    "satellites": [
+      {
+        "satelliteId": "MANUAL-1",
+        "name": "手工卫星1",
+        "payloads": [
+          {
+            "payloadId": "MANUAL-1-P1",
+            "payloadName": "载荷1",
+            "payloadType": "SPACE",
+            "minDistanceKm": 0,
+            "maxDistanceKm": 0,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": -1
+          }
+        ],
+        "semiMajorAxisM": 7530612,
+        "eccentricity": 0.00085,
+        "inclinationDeg": 64.8,
+        "raanDeg": 120,
+        "argumentOfPerigeeDeg": 270,
+        "meanAnomalyDeg": 30,
+        "epochUtc": "2026/07/02 07:57:00.000"
+      }
+    ],
+    "ballistics": [
+      {
+        "targetId": "RETIMED-TGT",
+        "targetName": "重定时/T04-retime/RETIMED-TGT",
+        "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\results\\fit-8048953043875448339\\T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_220143_046.csv"
+      }
+    ]
+  },
+  "responseBytes": 1193338,
+  "responseSha256": "715a0a7a77347e92c3f30d8d31c65bb1962b1baa5769a184b6532e64e47ce040",
+  "best": {
+    "offsetSecond": 0,
+    "visibleArcCount": 1,
+    "visiblePointCount": 2051,
+    "visibleDurationSec": 2050
+  },
+  "previewRows": 2576,
+  "consoleErrors": [],
+  "pageErrors": [],
+  "actualRetimeReferenceUnchanged": true,
+  "rawResponseDownloadByteEqual": true,
+  "sourceSha256": {
+    "frontend/src/App.spec.ts": "f4dfa912876446f33be8203ad4e07265dd5921002dfac9224fc54ee1734ae015",
+    "frontend/src/App.vue": "26409cca125172e5213a0dc21e3e8355f3887c33db19e2132177736ead2477f1",
+    "frontend/src/api/ballisticFiles.ts": "1060156d6643a04913d0735d2770b668955886bbfe43d0c8d587e5e5d6f69a47",
+    "frontend/src/api/ballisticFitTypes.ts": "cfaa6b0ed61b2734a63a81ecaf5676fdc4ff35f29fd54cc9305786e134b6c867",
+    "frontend/src/api/ballisticRetime.spec.ts": "c8b03df40bc12505f5e385c6e089f364ea976c49360c33e4157a73b928114da9",
+    "frontend/src/api/ballisticRetime.ts": "3c8a4be35cd4a5af3d3547dfaf61180930e3528b670d83044a125cb7a5ef539e",
+    "frontend/src/api/ballisticSimulation.ts": "d070615e51b267aa571d2101940f352d808b57c09a1632fc00cbc0b12570e8c2",
+    "frontend/src/components/BallisticFitFileResult.vue": "2d4186cb5748b9536ed3d282414b5d67dabe4720b7df640e884f5d3231064ea0",
+    "frontend/src/components/BallisticFitTrajectory.vue": "507b6b742526faa058faeb98ec68f4ebbcdacef4b8e4b577bc54455a3de6bfed",
+    "frontend/src/components/BallisticWindowControls.vue": "55b47ec011b2a3c91bfcaf4e8d13cfb340ba4d7d8bf8ef2cd6c633ab602df371",
+    "frontend/src/utils/ballisticFit.ts": "901f496d6ab9010036c7d4da3302cc39773311415e466ae139bb18f724be77fe",
+    "frontend/src/utils/ballisticRetime.spec.ts": "49f289d5bc8706e5b8f3f0de702b015561fc70fe6fc5613bab9b515e2a277a10",
+    "frontend/src/views/BallisticFitView.vue": "9d6d091d1cb96b639cee5aad6e84e54df7b9bf2dcac74fac9229ab6f85074080",
+    "frontend/src/views/BallisticPayloadConfigurationView.vue": "de2ac08f04904d5152c5f2fee9bf267a39218bf805d0c3282647b3a8f3200cdb",
+    "frontend/src/views/BallisticRetimeView.spec.ts": "f96bd08f3e5d77fcd386e20b202a618f35a27e2cd50eeb797e9746dacaab7d13",
+    "frontend/src/views/BallisticRetimeView.vue": "f3143fcf83efe3147506f3969d200d54ea20e986b5aab6bb6185414115d76c59",
+    "frontend/src/views/BallisticSimulationView.vue": "2053fbe2bfcacaaf4f6eacc0879c9309cbbae6fd3f30326dca63886325025d84",
+    "frontend/pnpm-lock.yaml": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8",
+    "verification/T24/FrozenSimulationReference.java": "a9e714685d2d8b70ca2d47609916bbe54d92eeac1318082674f9a770d1856cbc"
+  },
+  "sinceRetimeMainSourceChange": [],
+  "sourceChangePurpose": "根最终重定时主流与窗口19个源/锁摘要全部一致；未知文本尾空格修复已包含于最终107项候选"
+}

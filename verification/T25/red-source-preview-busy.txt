@@ -1,0 +1,40 @@
+> frontend@0.0.0 test
+> vitest run src/views/BallisticRetimeView.spec.ts -t 旧慢预览
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticRetimeView.spec.ts (5 tests | 1 failed | 4 skipped) 25ms
+     × 旧慢预览在来源切换或候选撤销后撤销busy，且旧finally不能清新来源busy 24ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 旧慢预览在来源切换或候选撤销后撤销busy，且旧finally不能清新来源busy
+AssertionError: expected '弹道重定时 · RETIMED_TRAJECTORY原CSV轨迹在ECEF…' not to contain '正在读取来源预览'
+
+- Expected
++ Received
+
+- 正在读取来源预览
++ 弹道重定时 · RETIMED_TRAJECTORY原CSV轨迹在ECEF地固系保持不变，新发射UTC改变后由原服务重新计算J2000 ECI位置和速度。UTC按原字符串提交，不加减北京时间。dt为累计相对首行毫秒，timeIntervalMs为相邻间隔毫秒。本接口仅支持原CSV：YYYY/MM/dd/HH/mm/ss.SSS 与 ECEF_X/Y/Z、ECEF_Vx/Vy/Vz、ECI_X/Y/Z、ECI_VX/VY/VZ 命名列。原20列 ECEF_X(m) 格式不能用于重定时。HTTP/MinIO/Excel输入能力仅属于窗口计算。Web 始终省略 outputDir，输出使用服务管理目录。已有结果为当前会话真实登记的模拟/拟合/重定时文件，刷新不持久化；不扫描服务目录。1. 选择原CSV服务引用来源原生上传CSV服务已生成结果选择原CSV正在读取来源预览…2. 原重定时参数任务名称（原默认 retimeTrajectory） 原 null目标ID（原默认 RETIMED-TGT） 原 null新发射 UTC（原字面，不转换本地时区）实际提交预览（四原字段，outputDir省略）{
++   "taskName": "retimeTrajectory",
++   "targetId": "RETIMED-TGT",
++   "trajectoryCsvPath": "",
++   "launchTimeUtc": ""
++ }执行原弹道重定时
+
+ ❯ src/views/BallisticRetimeView.spec.ts:31:32
+     29|     expect(wrapper.text()).toContain('正在读取来源预览')
+     30|     await wrapper.get('[data-test=retime-source-mode]').setValue('uplo…
+     31|     expect(wrapper.text()).not.toContain('正在读取来源预览')
+       |                                ^
+     32|     await wrapper.get('[data-test=retime-source-mode]').setValue('gene…
+     33|     await wrapper.get('[data-test=retime-result-select]').setValue('源1…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 skipped (5)
+   Start at  21:52:41
+   Duration  672ms (transform 250ms, setup 0ms, import 318ms, tests 25ms, environment 218ms)

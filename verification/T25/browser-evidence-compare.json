@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "differences": [],
+  "default": {
+    "rows": 2576,
+    "columns": 22,
+    "csvSHA256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+    "csvBytes": 593970,
+    "goldenResponseOnlyCsvPathMappedEqual": true,
+    "responseDownloadRawByteEqual": true,
+    "submittedDownloadEqual": true,
+    "uploadSourceByteEqual": true,
+    "allSixEcefTextPreserved": true,
+    "allSixEciRecomputed": true
+  },
+  "window": {
+    "finalVisibleWindow": {
+      "startTime": "2026/07/02 08:05:29.000",
+      "endTime": "2026/07/02 08:39:39.000",
+      "startJ2000Sec": 836251528.9999999,
+      "endJ2000Sec": 836253578.9999999,
+      "durationSeconds": 2050.0
+    },
+    "visibleArcCount": 1,
+    "visiblePointCount": 2051,
+    "visibleDurationSec": 2050.0,
+    "exactRegisteredSource": true
+  },
+  "boundaryEcefUnknownMarkersPreserved": true,
+  "frozenComparisons": [
+    {
+      "name": "default",
+      "status": 200,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true,
+      "csvByteEqual": true,
+      "csvBytes": 593970,
+      "csvSHA256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+      "pointCount": 2576
+    },
+    {
+      "name": "existing-simulation",
+      "status": 200,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true,
+      "csvByteEqual": true,
+      "csvBytes": 593970,
+      "csvSHA256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+      "pointCount": 2576
+    },
+    {
+      "name": "retime-again",
+      "status": 200,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true,
+      "csvByteEqual": true,
+      "csvBytes": 593970,
+      "csvSHA256": "6426b91703bc9363457d5b300d2b5b4f15b9423e1cc3a58632eda546b994d428",
+      "pointCount": 2576
+    },
+    {
+      "name": "boundary",
+      "status": 200,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true,
+      "csvByteEqual": true,
+      "csvBytes": 852,
+      "csvSHA256": "4a6f061cee285770e5c93e55194a9adbd36b648f519a6f70b2cfcad9256e918c",
+      "pointCount": 3
+    },
+    {
+      "name": "invalid-utc",
+      "status": 400,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true
+    },
+    {
+      "name": "invalid-header",
+      "status": 400,
+      "allResponseFieldsEqualAfterCsvPathMapping": true,
+      "originalClassOriginAsserted": true
+    }
+  ]
+}

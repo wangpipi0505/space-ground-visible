@@ -1,0 +1,20 @@
+{
+  "frontendTests": {
+    "files": 27,
+    "tests": 107,
+    "failed": 0,
+    "skipped": 0,
+    "durationSec": 79.56
+  },
+  "typeAndViteBuildPassed": true,
+  "lockSha256": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8",
+  "sourceSha256": {
+    "frontend/src/App.vue": "26409cca125172e5213a0dc21e3e8355f3887c33db19e2132177736ead2477f1",
+    "frontend/src/api/ballisticRetime.ts": "3c8a4be35cd4a5af3d3547dfaf61180930e3528b670d83044a125cb7a5ef539e",
+    "frontend/src/views/BallisticRetimeView.vue": "f3143fcf83efe3147506f3969d200d54ea20e986b5aab6bb6185414115d76c59",
+    "frontend/src/components/BallisticFitFileResult.vue": "2d4186cb5748b9536ed3d282414b5d67dabe4720b7df640e884f5d3231064ea0",
+    "frontend/src/components/BallisticFitTrajectory.vue": "507b6b742526faa058faeb98ec68f4ebbcdacef4b8e4b577bc54455a3de6bfed",
+    "frontend/src/utils/ballisticFit.ts": "901f496d6ab9010036c7d4da3302cc39773311415e466ae139bb18f724be77fe"
+  },
+  "backendSourceChangedByImplementer": false
+}

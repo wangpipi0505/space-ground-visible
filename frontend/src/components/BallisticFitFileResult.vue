@@ -8,6 +8,7 @@ import type { BallisticFitFile, FitCsvPoint } from '../api/ballisticFitTypes'
 import type { BallisticFilePreview, BallisticFileReference } from '../api/ballisticFiles'
 import { registerBallisticResult, previewBallisticFile, downloadBallisticFile } from '../api/ballisticFiles'
 import { saveBallisticBlob } from '../api/ballisticHttp'
+import { ApiRequestError } from '../api/client'
 import { parseFitCsv } from '../utils/ballisticFit'
 import BallisticFitTrajectory from './BallisticFitTrajectory.vue'
 const props = withDefaults(defineProps<{ file: BallisticFitFile; taskName: string; resultLabel?: string }>(), { resultLabel: '原拟合' })
@@ -20,6 +21,12 @@ const registering = ref(false), previewing = ref(false), trajectoryLoading = ref
 const registerError = ref(''), previewError = ref(''), trajectoryError = ref(''), downloadError = ref('')
 const requestedPage = ref(1)
 function message(failure: unknown): string { return failure instanceof Error ? failure.message : '文件辅助请求失败，请检查服务连接' }
+/** 404表示服务引用已失效/注销；撤销父级候选，但保留本页原计算成功及独立错误供恢复登记。
+ * 普通400格式或500读取错误不证明引用注销，不能因此删另一来源的可用结果。
+ */
+function revokeMissingReference(failure: unknown): void {
+  if (failure instanceof ApiRequestError && failure.status === 404) emit('reference', undefined)
+}
 
 /** 登记只在真实201后开放操作；原服务在文件缺失时注销ID，文件恢复后允许重新登记获得实际新引用。 */
 async function register(): Promise<void> {
@@ -44,10 +51,10 @@ async function loadPreview(page: number): Promise<void> {
   previewing.value = true
   previewError.value = ''
   try { preview.value = await previewBallisticFile(reference.value.fileId, page) }
-  catch (failure) { previewError.value = message(failure) }
+  catch (failure) { previewError.value = message(failure); revokeMissingReference(failure) }
   finally { previewing.value = false }
 }
-/** 完整CSV通过真实HTTP Blob获取，仅严格识别原21列；页预览不能冒充完整轨迹。 */
+/** 完整CSV通过真实HTTP Blob获取，拟合/模拟严格21列，重定时按必要命名列解析；页预览不能冒充完整轨迹。 */
 async function loadTrajectory(): Promise<void> {
   if (!reference.value || trajectoryLoading.value) return
   trajectoryLoading.value = true
@@ -55,10 +62,10 @@ async function loadTrajectory(): Promise<void> {
   points.value = []
   try {
     const download = await downloadBallisticFile(reference.value.fileId)
-    const parsed = parseFitCsv(await download.blob.text())
+    const parsed = parseFitCsv(await download.blob.text(), props.file.model === 'RETIMED_TRAJECTORY' ? 'retime' : 'fit')
     if (parsed.length !== props.file.pointCount) throw new Error(`完整CSV行数${parsed.length}与原结果点数${props.file.pointCount}不一致，暂停轨迹展示`)
     points.value = parsed
-  } catch (failure) { trajectoryError.value = message(failure) }
+  } catch (failure) { trajectoryError.value = message(failure); revokeMissingReference(failure) }
   finally { trajectoryLoading.value = false }
 }
 /** 每次下载取当前服务原字节，失败不保存错误JSON；不使用图形数据重导CSV。 */
@@ -67,7 +74,7 @@ async function download(): Promise<void> {
   downloading.value = true
   downloadError.value = ''
   try { const data = await downloadBallisticFile(reference.value.fileId); saveBallisticBlob(data.blob, data.filename) }
-  catch (failure) { downloadError.value = message(failure) }
+  catch (failure) { downloadError.value = message(failure); revokeMissingReference(failure) }
   finally { downloading.value = false }
 }
 onMounted(register)
@@ -99,7 +106,7 @@ onMounted(register)
       <p v-if="trajectoryLoading" role="status">正在通过 HTTP 读取完整CSV轨迹…</p>
       <p v-if="trajectoryError" role="alert" class="ballistic-error">完整轨迹读取失败：{{ trajectoryError }}</p>
       <button v-if="trajectoryError" type="button" :disabled="trajectoryLoading" @click="loadTrajectory">重试完整CSV轨迹</button>
-      <BallisticFitTrajectory v-if="points.length" :points="points" :identity="file.targetId" />
+      <BallisticFitTrajectory v-if="points.length" :points="points" :identity="file.targetId" :retimed="file.model === 'RETIMED_TRAJECTORY'" />
     </template>
   </article>
 </template>

@@ -1,0 +1,42 @@
+{
+  "source": "前三行取自冻结原模拟黄金；仅合成明确边界的UTC/标记/列布局，非新实测物理数据",
+  "sourcePath": "test-data/reference/ballistic/T25/retime-irregular-reordered-source.csv",
+  "sourceSha256": "ab1cf598862b211224e9666b5a4907db4f3de141940fdf04eb9e7971922ebfd6",
+  "cases": [
+    "三个样本相对UTC0/1.250/2.875秒",
+    "重排列名",
+    "缺dt",
+    "已有timeIntervalMs",
+    "未知中文文本列",
+    "isOriginal 1/-1/0",
+    "新UTC23:59:59.375跨日"
+  ],
+  "frozenStatus": 200,
+  "frozenOriginalOriginAsserted": true,
+  "response": {
+    "taskName": "T25-boundary",
+    "targetCount": 1,
+    "files": [
+      {
+        "targetId": "BOUNDARY-TGT",
+        "model": "RETIMED_TRAJECTORY",
+        "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\root-reference\\boundary-output\\T25-boundary_2026-07-02_23_59_59.375_BOUNDARY-TGT_20261013_213845_875.csv",
+        "pointCount": 3,
+        "warnings": [
+          "弹道文件重定时保持ECEF位置和速度不变；按新的绝对时刻重算ECI位置和速度，并更新时间列、dt列和timeIntervalMs列。"
+        ]
+      }
+    ]
+  },
+  "outputBytes": 852,
+  "outputSha256": "4a6f061cee285770e5c93e55194a9adbd36b648f519a6f70b2cfcad9256e918c",
+  "outputIntervalMs": [
+    "0.000",
+    "1250.000",
+    "1625.000"
+  ],
+  "ecefUnknownMarkersPreserved": true,
+  "secondUtc": "2026-07-03 00:00:00.625",
+  "notBrowserVerifiedYet": false,
+  "browserEvidence": "verification/T25/root-boundary-browser.json"
+}

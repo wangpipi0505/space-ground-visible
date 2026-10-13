@@ -1,0 +1,91 @@
+{
+  "timezone": "Asia/Shanghai",
+  "boundary": {
+    "name": "boundary",
+    "status": 200,
+    "request": {
+      "taskName": "T25-boundary",
+      "targetId": "BOUNDARY-TGT",
+      "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\uploads\\upload-3733252677179517731.csv",
+      "launchTimeUtc": "2026-07-02 23:59:59.375"
+    },
+    "raw": "{\"taskName\":\"T25-boundary\",\"targetCount\":1,\"files\":[{\"targetId\":\"BOUNDARY-TGT\",\"model\":\"RETIMED_TRAJECTORY\",\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T25\\\\storage\\\\results\\\\fit-4892611129847998974\\\\T25-boundary_2026-07-02_23_59_59.375_BOUNDARY-TGT_20261013_215135_918.csv\",\"pointCount\":3,\"warnings\":[\"弹道文件重定时保持ECEF位置和速度不变；按新的绝对时刻重算ECI位置和速度，并更新时间列、dt列和timeIntervalMs列。\"]}]}",
+    "originalTable": "2026-07-02 23:59:59.375\t\t4349198.029\t2937627.909\t3612936.432\t4884.850996396\t2174.589731329\t4127.044542921\t1",
+    "inputReference": {
+      "fileId": "2ba474b7-6540-4b03-ae22-da24348518af",
+      "originalName": "retime-irregular-reordered-source.csv",
+      "sizeBytes": 848,
+      "contentType": "text/csv",
+      "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\uploads\\upload-3733252677179517731.csv"
+    },
+    "header": [
+      "ECEF_Vx",
+      "ECEF_Vy",
+      "ECEF_Vz",
+      "ECEF_X",
+      "ECEF_Y",
+      "ECEF_Z",
+      "ECI_VX",
+      "ECI_VY",
+      "ECI_VZ",
+      "ECI_X",
+      "ECI_Y",
+      "ECI_Z",
+      "HH",
+      "MM",
+      "YYYY",
+      "dd",
+      "energy",
+      "isOriginal",
+      "mm",
+      "ss.SSS",
+      "timeIntervalMs",
+      "来源说明"
+    ],
+    "pathCounts": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "originalMarkerCount": 4
+  },
+  "negatives": [
+    {
+      "name": "invalid-utc",
+      "status": 400,
+      "request": {
+        "taskName": "T25-boundary",
+        "targetId": "BOUNDARY-TGT",
+        "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\uploads\\upload-3733252677179517731.csv",
+        "launchTimeUtc": "非法UTC"
+      },
+      "raw": "{\"error\":\"NumberFormatException: For input string: \\\"非法U C\\\"\"}"
+    },
+    {
+      "name": "invalid-header",
+      "status": 400,
+      "request": {
+        "taskName": "T25-boundary",
+        "targetId": "BOUNDARY-TGT",
+        "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\uploads\\upload-2773252851769751888.csv",
+        "launchTimeUtc": "2026-07-02 23:59:59.375"
+      },
+      "raw": "{\"error\":\"IllegalArgumentException: 弹道CSV缺少必要列：ECEF_X\"}",
+      "inputReference": {
+        "fileId": "463e1421-bbcc-4889-aeca-dc763f732188",
+        "originalName": "trajectory-0.1s-standard.csv",
+        "sizeBytes": 1507045,
+        "contentType": "text/csv",
+        "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\uploads\\upload-2773252851769751888.csv"
+      }
+    }
+  ],
+  "recoveryStatus": 200,
+  "successConsoleErrors": [],
+  "negativeConsoleErrors": [
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+  ],
+  "pageErrors": []
+}

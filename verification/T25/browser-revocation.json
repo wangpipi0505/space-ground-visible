@@ -1,0 +1,40 @@
+{
+  "prepare": {
+    "request": {
+      "taskName": "T25-revocation",
+      "targetId": "REVOCATION-TGT",
+      "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\uploads\\upload-3317215991338309737.csv",
+      "launchTimeUtc": "2026-07-02 23:59:59.375"
+    },
+    "raw": "{\"taskName\":\"T25-revocation\",\"targetCount\":1,\"files\":[{\"targetId\":\"REVOCATION-TGT\",\"model\":\"RETIMED_TRAJECTORY\",\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T25\\\\storage\\\\results\\\\fit-9102363591282534948\\\\T25-revocation_2026-07-02_23_59_59.375_REVOCATION-TGT_20261013_215826_172.csv\",\"pointCount\":3,\"warnings\":[\"弹道文件重定时保持ECEF位置和速度不变；按新的绝对时刻重算ECI位置和速度，并更新时间列、dt列和timeIntervalMs列。\"]}]}",
+    "reference": {
+      "fileId": "ed32d867-5e99-489f-b2b8-004394afe02a",
+      "originalName": "T25-revocation_2026-07-02_23_59_59.375_REVOCATION-TGT_20261013_215826_172.csv",
+      "sizeBytes": 852,
+      "contentType": "text/csv",
+      "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\results\\fit-9102363591282534948\\T25-revocation_2026-07-02_23_59_59.375_REVOCATION-TGT_20261013_215826_172.csv"
+    }
+  },
+  "check": {
+    "status": 404,
+    "raw": "{\"code\":\"FILE_NOT_FOUND\",\"error\":\"文件引用不存在或已清理\"}",
+    "originalCalculationStillVisible": true,
+    "revokedCandidateRemoved": true,
+    "options": [
+      "请选择真实登记的模拟/拟合/重定时结果"
+    ]
+  },
+  "recover": {
+    "status": 201,
+    "reference": {
+      "fileId": "bee0b850-1f44-4ee4-9c2f-9149a9148e0b",
+      "originalName": "T25-revocation_2026-07-02_23_59_59.375_REVOCATION-TGT_20261013_215826_172.csv",
+      "sizeBytes": 852,
+      "contentType": "text/csv",
+      "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T25\\storage\\results\\fit-9102363591282534948\\T25-revocation_2026-07-02_23_59_59.375_REVOCATION-TGT_20261013_215826_172.csv"
+    },
+    "candidateRestored": true,
+    "completeRows": 3,
+    "noRecalculation": true
+  }
+}

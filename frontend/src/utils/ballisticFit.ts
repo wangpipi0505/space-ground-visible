@@ -48,19 +48,29 @@ export function parseFitInput(text: string): { request: BallisticFitRequest; omi
 export const fitCsvHeader = 'YYYY,MM,dd,HH,mm,ss.SSS,ECEF_X,ECEF_Y,ECEF_Z,energy,dt,ECI_X,ECI_Y,ECI_Z,ECI_VX,ECI_VY,ECI_VZ,ECEF_Vx,ECEF_Vy,ECEF_Vz,isOriginal'.split(',')
 
 /** 仅解析已知无引号数值CSV；不重采样/插值，不经Date改变UTC，不修改下载Blob。 */
-export function parseFitCsv(text: string): FitCsvPoint[] {
-  const lines = text.trim().split(/\r?\n/)
-  if (lines.shift() !== fitCsvHeader.join(',')) throw new Error('未知CSV表头：无法按原21列ECI/ECEF单位展示轨迹')
+export function parseFitCsv(text: string, mode: 'fit' | 'retime' = 'fit'): FitCsvPoint[] {
+  // 原重定时逐单元格保留未知文本，不能trim整个CSV抹掉末行末列空格；只移除导出末尾空行。
+  const lines = (mode === 'fit' ? text.trim() : text).split(/\r?\n/)
+  while (lines.at(-1) === '') lines.pop()
+  const rawHeader = (lines.shift() || '')
+  const header = rawHeader.split(',').map(name => mode === 'retime' ? name.trim() : name)
+  if (mode === 'fit' && rawHeader !== fitCsvHeader.join(',')) throw new Error('未知CSV表头：无法按原21列ECI/ECEF单位展示轨迹')
+  // 重定时原算法允许未知文本列、列重排和缺dt/isOriginal；仅图形必要UTC/ECI列要求明确数值。
+  // ECEF不作客户端坐标转换，原文本和额外列全部保留，非法图形不能阻止服务原文件下载。
+  const required = ['YYYY', 'MM', 'dd', 'HH', 'mm', 'ss.SSS', 'ECI_X', 'ECI_Y', 'ECI_Z', 'ECI_VX', 'ECI_VY', 'ECI_VZ']
+  if (new Set(header).size !== header.length || required.some(name => !header.includes(name))) throw new Error('未知或重复CSV命名列：无法安全展示原UTC/ECI轨迹')
   if (!lines.length) throw new Error('原CSV没有轨迹行')
   let originUtcMillis = 0
   return lines.map((line, index) => {
     const cells = line.split(',')
-    if (cells.length !== 21 || cells.some((cell) => !/^-?\d+(?:\.\d+)?$/.test(cell) || !Number.isFinite(Number(cell))) || !['0', '1'].includes(cells[20] || '')) throw new Error(`原CSV第${index + 2}行格式或数值无效`)
+    const fields = Object.fromEntries(header.map((name, cell) => [name, cells[cell] || '']))
+    const numeric = mode === 'fit' ? cells : required.map(name => fields[name] || '')
+    if (cells.length !== header.length || numeric.some((cell) => !/^-?\d+(?:\.\d+)?$/.test(cell) || !Number.isFinite(Number(cell))) || mode === 'fit' && !['0', '1'].includes(fields.isOriginal || '')) throw new Error(`原CSV第${index + 2}行格式或数值无效`)
     // Date.UTC只用于原分列UTC之间的差，明确UTC且不解析本地日期文本；显示和下载仍保持原字符串。
-    // dt列是相邻导出步长，不是输出起点累计时间，不能直接作为时间曲线横轴。
-    const utcMillis = Date.UTC(Number(cells[0]), Number(cells[1]) - 1, Number(cells[2]), Number(cells[3]), Number(cells[4])) + Number(cells[5]) * 1000
+    // 拟合/模拟dt是相邻毫秒，重定时dt是累计毫秒且可缺省；横轴统一使用实际UTC差。
+    const utcMillis = Date.UTC(Number(fields.YYYY), Number(fields.MM) - 1, Number(fields.dd), Number(fields.HH), Number(fields.mm)) + Number(fields['ss.SSS']) * 1000
     if (!Number.isFinite(utcMillis)) throw new Error(`原CSV第${index + 2}行UTC范围无效`)
     if (index === 0) originUtcMillis = utcMillis
-    return { utc: `${cells[0]}-${cells[1]}-${cells[2]} ${cells[3]}:${cells[4]}:${cells[5]}`, dtMs: Number(cells[10]), relativeTimeSec: (utcMillis - originUtcMillis) / 1000, eciX: Number(cells[11]), eciY: Number(cells[12]), eciZ: Number(cells[13]), original: cells[20] === '1', cells }
+    return { utc: `${fields.YYYY}-${fields.MM}-${fields.dd} ${fields.HH}:${fields.mm}:${fields['ss.SSS']}`, dtMs: fields.dt === undefined ? null : Number(fields.dt), relativeTimeSec: (utcMillis - originUtcMillis) / 1000, eciX: Number(fields.ECI_X), eciY: Number(fields.ECI_Y), eciZ: Number(fields.ECI_Z), original: fields.isOriginal === '1', cells, fields }
   })
 }
