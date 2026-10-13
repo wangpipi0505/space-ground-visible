@@ -1,0 +1,595 @@
+{
+  "passed": true,
+  "requests": [
+    {
+      "name": "upload",
+      "status": 201,
+      "bytes": 265,
+      "seconds": 0.2521445001475513
+    },
+    {
+      "name": "retime-upload",
+      "status": 201,
+      "bytes": 263,
+      "seconds": 0.03051260020583868
+    },
+    {
+      "name": "serial-TWO_BODY-day1",
+      "status": 200,
+      "bytes": 1789038,
+      "seconds": 0.6605262001976371
+    },
+    {
+      "name": "serial-TWO_BODY-day2",
+      "status": 200,
+      "bytes": 1265547,
+      "seconds": 0.3052977998740971
+    },
+    {
+      "name": "serial-J2_SECULAR-day1",
+      "status": 200,
+      "bytes": 1974263,
+      "seconds": 0.30503639997914433
+    },
+    {
+      "name": "serial-J2_SECULAR-day2",
+      "status": 200,
+      "bytes": 1535904,
+      "seconds": 0.2513150000013411
+    },
+    {
+      "name": "serial-J2_NUMERICAL-day1",
+      "status": 200,
+      "bytes": 2385823,
+      "seconds": 0.44188040029257536
+    },
+    {
+      "name": "serial-J2_NUMERICAL-day2",
+      "status": 200,
+      "bytes": 1902749,
+      "seconds": 0.41373160015791655
+    },
+    {
+      "name": "parallel-TWO_BODY-day2",
+      "status": 200,
+      "bytes": 1265547,
+      "seconds": 0.4934908002614975
+    },
+    {
+      "name": "parallel-J2_SECULAR-day1",
+      "status": 200,
+      "bytes": 1974263,
+      "seconds": 0.5349379000253975
+    },
+    {
+      "name": "parallel-J2_SECULAR-day2",
+      "status": 200,
+      "bytes": 1535904,
+      "seconds": 0.5754430000670254
+    },
+    {
+      "name": "parallel-J2_NUMERICAL-day2",
+      "status": 200,
+      "bytes": 1902749,
+      "seconds": 0.6037563001736999
+    },
+    {
+      "name": "parallel-TWO_BODY-day1",
+      "status": 200,
+      "bytes": 1789038,
+      "seconds": 0.6840826999396086
+    },
+    {
+      "name": "parallel-J2_NUMERICAL-day1",
+      "status": 200,
+      "bytes": 2385823,
+      "seconds": 0.7293500998057425
+    },
+    {
+      "name": "reuse-J2_SECULAR-day1-14",
+      "status": 200,
+      "bytes": 1974263,
+      "seconds": 0.31184229999780655
+    },
+    {
+      "name": "reuse-TWO_BODY-day1-15",
+      "status": 200,
+      "bytes": 1789038,
+      "seconds": 0.28566600009799004
+    },
+    {
+      "name": "reuse-J2_SECULAR-day1-16",
+      "status": 200,
+      "bytes": 1974263,
+      "seconds": 0.28082360001280904
+    },
+    {
+      "name": "serial-fit-day1",
+      "status": 200,
+      "bytes": 3183,
+      "seconds": 0.2678474001586437
+    },
+    {
+      "name": "serial-fit-day1-register0",
+      "status": 201,
+      "bytes": 433,
+      "seconds": 0.031148900277912617
+    },
+    {
+      "name": "serial-fit-day1-download0",
+      "status": 200,
+      "bytes": 327928,
+      "seconds": 0.04565800027921796
+    },
+    {
+      "name": "serial-fit-day1-register1",
+      "status": 201,
+      "bytes": 431,
+      "seconds": 0.030044199898838997
+    },
+    {
+      "name": "serial-fit-day1-download1",
+      "status": 200,
+      "bytes": 6475,
+      "seconds": 0.008922799956053495
+    },
+    {
+      "name": "serial-fit-day2",
+      "status": 200,
+      "bytes": 3183,
+      "seconds": 0.18900129990652204
+    },
+    {
+      "name": "serial-fit-day2-register0",
+      "status": 201,
+      "bytes": 433,
+      "seconds": 0.0097035001963377
+    },
+    {
+      "name": "serial-fit-day2-download0",
+      "status": 200,
+      "bytes": 327935,
+      "seconds": 0.0400522998534143
+    },
+    {
+      "name": "serial-fit-day2-register1",
+      "status": 201,
+      "bytes": 431,
+      "seconds": 0.010045499540865421
+    },
+    {
+      "name": "serial-fit-day2-download1",
+      "status": 200,
+      "bytes": 6475,
+      "seconds": 0.009162599686533213
+    },
+    {
+      "name": "serial-simulate-day1",
+      "status": 200,
+      "bytes": 635,
+      "seconds": 0.09360669972375035
+    },
+    {
+      "name": "serial-simulate-day1-register0",
+      "status": 201,
+      "bytes": 433,
+      "seconds": 0.0075795999728143215
+    },
+    {
+      "name": "serial-simulate-day1-download0",
+      "status": 200,
+      "bytes": 561736,
+      "seconds": 0.0181598998606205
+    },
+    {
+      "name": "serial-simulate-day2",
+      "status": 200,
+      "bytes": 634,
+      "seconds": 0.05719550000503659
+    },
+    {
+      "name": "serial-simulate-day2-register0",
+      "status": 201,
+      "bytes": 432,
+      "seconds": 0.009055300150066614
+    },
+    {
+      "name": "serial-simulate-day2-download0",
+      "status": 200,
+      "bytes": 561530,
+      "seconds": 0.026955300010740757
+    },
+    {
+      "name": "serial-retime-day1",
+      "status": 200,
+      "bytes": 494,
+      "seconds": 0.14492820017039776
+    },
+    {
+      "name": "serial-retime-day1-register0",
+      "status": 201,
+      "bytes": 385,
+      "seconds": 0.02341299969702959
+    },
+    {
+      "name": "serial-retime-day1-download0",
+      "status": 200,
+      "bytes": 593981,
+      "seconds": 0.045210300013422966
+    },
+    {
+      "name": "serial-retime-day2",
+      "status": 200,
+      "bytes": 493,
+      "seconds": 0.08015110017731786
+    },
+    {
+      "name": "serial-retime-day2-register0",
+      "status": 201,
+      "bytes": 384,
+      "seconds": 0.00791129982098937
+    },
+    {
+      "name": "serial-retime-day2-download0",
+      "status": 200,
+      "bytes": 593970,
+      "seconds": 0.01656080037355423
+    },
+    {
+      "name": "parallel-simulate-day2",
+      "status": 200,
+      "bytes": 635,
+      "seconds": 0.11562710022553802
+    },
+    {
+      "name": "parallel-simulate-day1",
+      "status": 200,
+      "bytes": 635,
+      "seconds": 0.11557669984176755
+    },
+    {
+      "name": "parallel-retime-day2",
+      "status": 200,
+      "bytes": 494,
+      "seconds": 0.141765299718827
+    },
+    {
+      "name": "parallel-retime-day1",
+      "status": 200,
+      "bytes": 494,
+      "seconds": 0.1419064998626709
+    },
+    {
+      "name": "parallel-simulate-day2-register0",
+      "status": 201,
+      "bytes": 433,
+      "seconds": 0.033469799906015396
+    },
+    {
+      "name": "parallel-simulate-day1-register0",
+      "status": 201,
+      "bytes": 433,
+      "seconds": 0.0358322998508811
+    },
+    {
+      "name": "parallel-retime-day2-register0",
+      "status": 201,
+      "bytes": 385,
+      "seconds": 0.015877599827945232
+    },
+    {
+      "name": "parallel-retime-day1-register0",
+      "status": 201,
+      "bytes": 385,
+      "seconds": 0.016746600158512592
+    },
+    {
+      "name": "parallel-simulate-day2-download0",
+      "status": 200,
+      "bytes": 561530,
+      "seconds": 0.02668020036071539
+    },
+    {
+      "name": "parallel-simulate-day1-download0",
+      "status": 200,
+      "bytes": 561736,
+      "seconds": 0.03183949971571565
+    },
+    {
+      "name": "parallel-retime-day2-download0",
+      "status": 200,
+      "bytes": 593970,
+      "seconds": 0.043350699823349714
+    },
+    {
+      "name": "parallel-retime-day1-download0",
+      "status": 200,
+      "bytes": 593981,
+      "seconds": 0.04297569999471307
+    },
+    {
+      "name": "parallel-fit-day2",
+      "status": 200,
+      "bytes": 3183,
+      "seconds": 0.26233769999817014
+    },
+    {
+      "name": "parallel-fit-day1",
+      "status": 200,
+      "bytes": 3181,
+      "seconds": 0.2665909002535045
+    },
+    {
+      "name": "parallel-fit-day1-register0",
+      "status": 201,
+      "bytes": 432,
+      "seconds": 0.02813720004633069
+    },
+    {
+      "name": "parallel-fit-day2-register0",
+      "status": 201,
+      "bytes": 433,
+      "seconds": 0.03403689991682768
+    },
+    {
+      "name": "parallel-fit-day2-download0",
+      "status": 200,
+      "bytes": 327935,
+      "seconds": 0.017537300009280443
+    },
+    {
+      "name": "parallel-fit-day2-register1",
+      "status": 201,
+      "bytes": 431,
+      "seconds": 0.01009450014680624
+    },
+    {
+      "name": "parallel-fit-day1-download0",
+      "status": 200,
+      "bytes": 327928,
+      "seconds": 0.04738269979134202
+    },
+    {
+      "name": "parallel-fit-day1-register1",
+      "status": 201,
+      "bytes": 430,
+      "seconds": 0.011949299834668636
+    },
+    {
+      "name": "parallel-fit-day2-download1",
+      "status": 200,
+      "bytes": 6475,
+      "seconds": 0.03726879972964525
+    },
+    {
+      "name": "parallel-fit-day1-download1",
+      "status": 200,
+      "bytes": 6475,
+      "seconds": 0.013351299799978733
+    },
+    {
+      "name": "broken-upload",
+      "status": 201,
+      "bytes": 261,
+      "seconds": 0.010134399868547916
+    },
+    {
+      "name": "owned-partial-write-failure",
+      "status": 400,
+      "bytes": 73,
+      "seconds": 0.031043299939483404
+    },
+    {
+      "name": "repeat-register-1",
+      "status": 201,
+      "bytes": 433,
+      "seconds": 0.007725200150161982
+    },
+    {
+      "name": "repeat-register-0",
+      "status": 201,
+      "bytes": 433,
+      "seconds": 0.009369999635964632
+    },
+    {
+      "name": "explicit-output-file-failure",
+      "status": 500,
+      "bytes": 163,
+      "seconds": 0.010264700278639793
+    },
+    {
+      "name": "same-source-download",
+      "status": 200,
+      "bytes": 1507045,
+      "seconds": 0.023584100417792797
+    },
+    {
+      "name": "same-source-preview",
+      "status": 200,
+      "bytes": 11169,
+      "seconds": 0.05855889990925789
+    },
+    {
+      "name": "bad-window",
+      "status": 400,
+      "bytes": 30,
+      "seconds": 0.010142399929463863
+    },
+    {
+      "name": "missing-file",
+      "status": 404,
+      "bytes": 69,
+      "seconds": 0.007482099812477827
+    },
+    {
+      "name": "source-after-failure",
+      "status": 200,
+      "bytes": 1507045,
+      "seconds": 0.021741499658674
+    },
+    {
+      "name": "output-after-failure-0",
+      "status": 200,
+      "bytes": 327928,
+      "seconds": 0.01502919988706708
+    },
+    {
+      "name": "output-after-failure-1",
+      "status": 200,
+      "bytes": 6475,
+      "seconds": 0.010198299773037434
+    },
+    {
+      "name": "output-after-failure-2",
+      "status": 200,
+      "bytes": 327935,
+      "seconds": 0.022304299753159285
+    },
+    {
+      "name": "output-after-failure-3",
+      "status": 200,
+      "bytes": 6475,
+      "seconds": 0.007106500212103128
+    },
+    {
+      "name": "output-after-failure-4",
+      "status": 200,
+      "bytes": 561736,
+      "seconds": 0.012488599866628647
+    },
+    {
+      "name": "output-after-failure-5",
+      "status": 200,
+      "bytes": 561530,
+      "seconds": 0.011638300027698278
+    },
+    {
+      "name": "output-after-failure-6",
+      "status": 200,
+      "bytes": 593981,
+      "seconds": 0.011943799909204245
+    },
+    {
+      "name": "output-after-failure-7",
+      "status": 200,
+      "bytes": 593970,
+      "seconds": 0.032400999683886766
+    },
+    {
+      "name": "output-after-failure-8",
+      "status": 200,
+      "bytes": 561530,
+      "seconds": 0.03014599997550249
+    },
+    {
+      "name": "output-after-failure-9",
+      "status": 200,
+      "bytes": 561736,
+      "seconds": 0.03138690022751689
+    },
+    {
+      "name": "output-after-failure-10",
+      "status": 200,
+      "bytes": 593970,
+      "seconds": 0.030460999812930822
+    },
+    {
+      "name": "output-after-failure-11",
+      "status": 200,
+      "bytes": 593981,
+      "seconds": 0.030292199924588203
+    },
+    {
+      "name": "output-after-failure-12",
+      "status": 200,
+      "bytes": 327935,
+      "seconds": 0.009965599980205297
+    },
+    {
+      "name": "output-after-failure-13",
+      "status": 200,
+      "bytes": 6475,
+      "seconds": 0.00965239992365241
+    },
+    {
+      "name": "output-after-failure-14",
+      "status": 200,
+      "bytes": 327928,
+      "seconds": 0.03466690005734563
+    },
+    {
+      "name": "output-after-failure-15",
+      "status": 200,
+      "bytes": 6475,
+      "seconds": 0.008449399843811989
+    },
+    {
+      "name": "window-after-rst",
+      "status": 200,
+      "bytes": 1789038,
+      "seconds": 0.2977271997369826
+    },
+    {
+      "name": "download-after-rst",
+      "status": 200,
+      "bytes": 1507045,
+      "seconds": 0.02351200021803379
+    }
+  ],
+  "windowCases": 6,
+  "parallelism": 6,
+  "allDecimalResponsesEqual": true,
+  "outputFilesUnique": 16,
+  "allCsvBytesEqual": true,
+  "bestArcCount": 12,
+  "bestPointCount": 1980,
+  "disconnects": [
+    {
+      "path": "/api/orbit/visibility/search",
+      "receivedBeforeReset": 8192
+    },
+    {
+      "path": "/api/v1/ballistic/files/c6c68c0c-1414-4971-b89a-3785005d86b3/download",
+      "receivedBeforeReset": 8192
+    }
+  ],
+  "sourceSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+  "ownedPartialWriteRollback": true,
+  "concurrentRegistrationIdempotent": true,
+  "fileCounts": {
+    "uploads": 3,
+    "results": 16,
+    "metadata": 31,
+    "temp": 0
+  },
+  "directoryCounts": {
+    "uploads": 0,
+    "results": 12,
+    "metadata": 0,
+    "temp": 1
+  },
+  "metadataJsonCount": 19,
+  "workspaceMarkerCount": 12,
+  "pid": 4876,
+  "service": "http://127.0.0.1:18127",
+  "jarSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+  "metrics": {
+    "kind": "Windows process working set/private bytes/handles, 100ms sampling; no forced GC",
+    "samples": 66,
+    "before": {
+      "time": 1791902886.640736,
+      "workingSetBytes": 369848320,
+      "privateBytes": 1127079936,
+      "handleCount": 657
+    },
+    "after": {
+      "time": 1791902893.8084605,
+      "workingSetBytes": 1660895232,
+      "privateBytes": 2599825408,
+      "handleCount": 866
+    },
+    "maxWorkingSetBytes": 1660895232,
+    "maxPrivateBytes": 2599825408,
+    "maxHandleCount": 932
+  }
+}

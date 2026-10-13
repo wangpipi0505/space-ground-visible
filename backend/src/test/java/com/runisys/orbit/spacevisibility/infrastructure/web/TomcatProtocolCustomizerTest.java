@@ -21,7 +21,7 @@ class TomcatProtocolCustomizerTest {
 
         customizer.customize(factory);
 
-        assertThat(factory.protocol).isEqualTo(NIO2_PROTOCOL);
+        assertThat(factory.protocol).isEqualTo(ClosingSafeNio2Protocol.class.getName());
     }
 
     @Test

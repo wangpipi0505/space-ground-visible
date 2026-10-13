@@ -1,0 +1,11 @@
+{
+  "earlierSha256": "d5a3e025d22f004e3b7bc3f03ce4f6e42cbf2d5fffa419e3dfd38edb93d57f98",
+  "finalSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+  "checkedClasses": 287,
+  "changedClasses": [
+    "BOOT-INF/classes/com/runisys/orbit/spacevisibility/infrastructure/web/ClosingSafeNio2Protocol$ClosingSafeEndpoint$ClosingSafeAcceptor.class",
+    "BOOT-INF/classes/com/runisys/orbit/spacevisibility/infrastructure/web/ClosingSafeNio2Protocol$ClosingSafeEndpoint.class",
+    "BOOT-INF/classes/com/runisys/orbit/spacevisibility/infrastructure/web/ClosingSafeNio2Protocol.class"
+  ],
+  "numericalClassesUnchanged": true
+}

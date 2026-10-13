@@ -1,0 +1,229 @@
+{
+  "candidateJarSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+  "cancelledTask": "6e8f4e43-0ece-450d-921c-405be939f36e",
+  "statusBeforeCancel": "RUNNING",
+  "cancelResponseStatus": "RUNNING",
+  "cancelledTerminal": {
+    "taskId": "6e8f4e43-0ece-450d-921c-405be939f36e",
+    "status": "CANCELLED",
+    "totalPairs": 0,
+    "completedPairs": 0,
+    "totalTargets": 0,
+    "completedTargets": 0,
+    "errorMessage": null,
+    "createdAt": "2026-10-13T14:46:58.182Z",
+    "completedAt": "2026-10-13T14:46:58.732Z"
+  },
+  "failedTask": "8aa5298e-ecd4-4268-b704-3468d0840511",
+  "failedTerminal": {
+    "taskId": "8aa5298e-ecd4-4268-b704-3468d0840511",
+    "status": "FAILED",
+    "totalPairs": 0,
+    "completedPairs": 0,
+    "totalTargets": 0,
+    "completedTargets": 0,
+    "errorMessage": "规划时间段或步长无效",
+    "createdAt": "2026-10-13T14:46:58.833Z",
+    "completedAt": "2026-10-13T14:46:58.833Z"
+  },
+  "recoveredTask": "11a8ac9a-d6b7-49c9-a932-acabd85f68eb",
+  "recoveredTerminal": {
+    "taskId": "11a8ac9a-d6b7-49c9-a932-acabd85f68eb",
+    "status": "SUCCEEDED",
+    "totalPairs": 1,
+    "completedPairs": 1,
+    "totalTargets": 1,
+    "completedTargets": 1,
+    "errorMessage": null,
+    "createdAt": "2026-10-13T14:46:58.875Z",
+    "completedAt": "2026-10-13T14:46:59.026Z"
+  },
+  "syncAsyncJsonExact": true,
+  "persistedTerminals": {
+    "cancelled": "CANCELLED",
+    "failed": "FAILED",
+    "recovered": "SUCCEEDED"
+  },
+  "events": [
+    {
+      "label": "long-submit",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/tasks",
+      "status": 200,
+      "bytes": 49,
+      "elapsedSec": 0.3038135999813676,
+      "sha256": "a2c580a4698b1a685b7f5c4c70fa6352ee7e13ecd9112c5af7ff9deb5b5909b2"
+    },
+    {
+      "label": "before-cancel",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/6e8f4e43-0ece-450d-921c-405be939f36e",
+      "status": 200,
+      "bytes": 218,
+      "elapsedSec": 0.018176200333982706,
+      "sha256": "3af32cd55692a63a492bedc48c9aa850c02ecca1327b8f77f7ebe61275c637ad"
+    },
+    {
+      "label": "cancel",
+      "method": "DELETE",
+      "path": "/api/v1/space/visibility/tasks/6e8f4e43-0ece-450d-921c-405be939f36e",
+      "status": 200,
+      "bytes": 218,
+      "elapsedSec": 0.008244500029832125,
+      "sha256": "3af32cd55692a63a492bedc48c9aa850c02ecca1327b8f77f7ebe61275c637ad"
+    },
+    {
+      "label": "cancel-poll-0",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/6e8f4e43-0ece-450d-921c-405be939f36e",
+      "status": 200,
+      "bytes": 218,
+      "elapsedSec": 0.0072511001490056515,
+      "sha256": "3af32cd55692a63a492bedc48c9aa850c02ecca1327b8f77f7ebe61275c637ad"
+    },
+    {
+      "label": "cancel-poll-1",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/6e8f4e43-0ece-450d-921c-405be939f36e",
+      "status": 200,
+      "bytes": 218,
+      "elapsedSec": 0.007928199600428343,
+      "sha256": "3af32cd55692a63a492bedc48c9aa850c02ecca1327b8f77f7ebe61275c637ad"
+    },
+    {
+      "label": "cancel-poll-2",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/6e8f4e43-0ece-450d-921c-405be939f36e",
+      "status": 200,
+      "bytes": 242,
+      "elapsedSec": 0.006320500280708075,
+      "sha256": "5ba0289ead10fc71448de98de31d57f112df868870a552dec85706e521d44722"
+    },
+    {
+      "label": "cancelled-result",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/6e8f4e43-0ece-450d-921c-405be939f36e/result",
+      "status": 409,
+      "bytes": 68,
+      "elapsedSec": 0.008361599873751402,
+      "sha256": "29b778d792de87c5f4ca3643cf560563fa7c3dad136fb51cd28b4928cba9d689"
+    },
+    {
+      "label": "invalid-utc-original-500",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/tasks",
+      "status": 500,
+      "bytes": 105,
+      "elapsedSec": 0.03900919994339347,
+      "sha256": "ed30681bed56e2f768f0c17ea6fe24a010cabbb65dfb58c8423832e5193a686a"
+    },
+    {
+      "label": "invalid-range-sync-400",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/plan",
+      "status": 400,
+      "bytes": 68,
+      "elapsedSec": 0.0071541001088917255,
+      "sha256": "6873accc8989b955465a06647e470addee7b0193a8629b48a0ea87011beaa1bc"
+    },
+    {
+      "label": "invalid-range-async-accepted",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/tasks",
+      "status": 200,
+      "bytes": 49,
+      "elapsedSec": 0.029635200276970863,
+      "sha256": "46b4f8983fdde003cf85cd823a05c49ebfdbb668b8dea885be3285c2b28e7ecd"
+    },
+    {
+      "label": "failed-poll-0",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/8aa5298e-ecd4-4268-b704-3468d0840511",
+      "status": 200,
+      "bytes": 267,
+      "elapsedSec": 0.006483699660748243,
+      "sha256": "82244e8a1b4a36a51d32b2dec45b304540084c951bb2238a38fa248babcac00a"
+    },
+    {
+      "label": "failed-result",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/8aa5298e-ecd4-4268-b704-3468d0840511/result",
+      "status": 409,
+      "bytes": 65,
+      "elapsedSec": 0.007276799995452166,
+      "sha256": "d9d8e8e1230e127ee5c3d55af1475a204421992d03ba20c5e015bfc90bfecdb7"
+    },
+    {
+      "label": "recovered-submit",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/tasks",
+      "status": 200,
+      "bytes": 49,
+      "elapsedSec": 0.027799199800938368,
+      "sha256": "4a942e2d814538717ace11d08ad511e8321e9c31f60e4259f7615a2f2f4a1819"
+    },
+    {
+      "label": "recovered-poll-0",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/11a8ac9a-d6b7-49c9-a932-acabd85f68eb",
+      "status": 200,
+      "bytes": 218,
+      "elapsedSec": 0.006155899725854397,
+      "sha256": "4c6adbb15694127c6dbd4d0ba139c02924c10dcee0179caf8032ffcdb54bc88d"
+    },
+    {
+      "label": "recovered-poll-1",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/11a8ac9a-d6b7-49c9-a932-acabd85f68eb",
+      "status": 200,
+      "bytes": 242,
+      "elapsedSec": 0.022513499949127436,
+      "sha256": "a024d844ee0932fdefecbe67cc887163a722220827153b90abab250996c9149c"
+    },
+    {
+      "label": "async-result",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/11a8ac9a-d6b7-49c9-a932-acabd85f68eb/result",
+      "status": 200,
+      "bytes": 233,
+      "elapsedSec": 0.006627200171351433,
+      "sha256": "0dd766ae9aaffdeae7942316514c34c313f7cc9e5c4f1f6fac7050bd2ba29b45"
+    },
+    {
+      "label": "sync-result",
+      "method": "POST",
+      "path": "/api/v1/space/visibility/plan",
+      "status": 200,
+      "bytes": 233,
+      "elapsedSec": 0.03440289990976453,
+      "sha256": "0dd766ae9aaffdeae7942316514c34c313f7cc9e5c4f1f6fac7050bd2ba29b45"
+    },
+    {
+      "label": "cancelled-records",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results?keyword=6e8f4e43-0ece-450d-921c-405be939f36e",
+      "status": 200,
+      "bytes": 322,
+      "elapsedSec": 0.19736680015921593,
+      "sha256": "43bcbf5192977f00ecca2d70f8abb4bddcaca0dc6c018f682a286400c2896fb7"
+    },
+    {
+      "label": "failed-records",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results?keyword=8aa5298e-ecd4-4268-b704-3468d0840511",
+      "status": 200,
+      "bytes": 347,
+      "elapsedSec": 0.011317600030452013,
+      "sha256": "7f24432127a30a5fccb36ce0e23ae1d1783bb8fb7e2a7afffedef678e6800a59"
+    },
+    {
+      "label": "recovered-records",
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results?keyword=11a8ac9a-d6b7-49c9-a932-acabd85f68eb",
+      "status": 200,
+      "bytes": 322,
+      "elapsedSec": 0.010301000438630581,
+      "sha256": "e7c163d7705e55fd9240a74da9c84bf0db2c94c07dbaf4ea12203e8f10f9bc07"
+    }
+  ]
+}

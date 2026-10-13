@@ -26,7 +26,10 @@ public final class TomcatProtocolCustomizer
     @Override
     public void customize(TomcatServletWebServerFactory factory) {
         if (StringUtils.hasText(protocol)) {
-            factory.setProtocol(protocol.trim());
+            String selected = protocol.trim();
+            // 保留原 NIO2 参数入口及网络模型，仅注入关闭引用寿命适配；其他协议按原值交给工厂。
+            factory.setProtocol("org.apache.coyote.http11.Http11Nio2Protocol".equals(selected)
+                    ? ClosingSafeNio2Protocol.class.getName() : selected);
         }
     }
 }

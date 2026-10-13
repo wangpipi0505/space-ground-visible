@@ -1,0 +1,34 @@
+[
+  {
+    "name": "verified-nio",
+    "pid": 58888,
+    "port": 18126,
+    "exitCode": 0,
+    "secondsToNaturalExit": 0.7906708996742964,
+    "jarSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+    "actualContextClose": true,
+    "mainReturned": true,
+    "portRebound": true,
+    "nonDaemonRemaining": false,
+    "shutdownNpe": false,
+    "shutdownAsyncCloseLogged": false,
+    "stderrBytes": 0,
+    "shutdownLog": "T26_CONTEXT_CLOSE_BEGIN\n2026-10-13 22:49:47.067  INFO 58888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-13 22:49:47.068  INFO 58888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'\n2026-10-13 22:49:47.075  INFO 58888 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...\n2026-10-13 22:49:47.079  INFO 58888 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.\nT26_CONTEXT_CLOSE_END uncaught=0\nT26_MAIN_RETURN\n"
+  },
+  {
+    "name": "verified-nio2",
+    "pid": 4876,
+    "port": 18127,
+    "exitCode": 0,
+    "secondsToNaturalExit": 0.4382659001275897,
+    "jarSha256": "311fc2a9019de875a899f3e8089deca06f18a157f110a1fa4453cefb74626c4b",
+    "actualContextClose": true,
+    "mainReturned": true,
+    "portRebound": true,
+    "nonDaemonRemaining": false,
+    "shutdownNpe": false,
+    "shutdownAsyncCloseLogged": true,
+    "stderrBytes": 0,
+    "shutdownLog": "T26_CONTEXT_CLOSE_BEGIN\n2026-10-13 22:49:47.541  INFO 4876 --- [           main] o.a.coyote.http11.Http11Nio2Protocol     : Pausing ProtocolHandler [\"http-nio2-18127\"]\n2026-10-13 22:49:47.543  INFO 4876 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-13 22:49:47.543 ERROR 4876 --- [o2-18127-exec-7] org.apache.tomcat.util.net.Nio2Endpoint  : Socket accept failed\n\njava.nio.channels.AsynchronousCloseException: null\n\tat sun.nio.ch.WindowsAsynchronousServerSocketChannelImpl$AcceptTask.failed(WindowsAsynchronousServerSocketChannelImpl.java:284) ~[na:1.8.0_472]\n\tat sun.nio.ch.Iocp$EventHandlerTask.run(Iocp.java:399) ~[na:1.8.0_472]\n\tat java.lang.Thread.run(Thread.java:750) [na:1.8.0_472]\n\n2026-10-13 22:49:47.544  INFO 4876 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'\n2026-10-13 22:49:47.546  INFO 4876 --- [           main] o.a.coyote.http11.Http11Nio2Protocol     : Stopping ProtocolHandler [\"http-nio2-18127\"]\n2026-10-13 22:49:47.548  INFO 4876 --- [           main] o.a.coyote.http11.Http11Nio2Protocol     : Destroying ProtocolHandler [\"http-nio2-18127\"]\n2026-10-13 22:49:47.550  INFO 4876 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...\n2026-10-13 22:49:47.553  INFO 4876 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.\nT26_CONTEXT_CLOSE_END uncaught=0\nT26_MAIN_RETURN\n"
+  }
+]

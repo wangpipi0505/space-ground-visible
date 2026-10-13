@@ -1,0 +1,252 @@
+{
+  "request": {
+    "startOffsetSec": 1200,
+    "stepSizeSec": 10,
+    "numCalculations": 31,
+    "targetSampleStepSec": 1,
+    "trajectoryPointOutput": 1,
+    "orbitModel": "J2_NUMERICAL",
+    "satellites": [
+      {
+        "satelliteId": "MANUAL-1",
+        "name": "手工卫星1",
+        "payloads": [
+          {
+            "payloadId": "MANUAL-1-P1",
+            "payloadName": "载荷1",
+            "payloadType": "SPACE",
+            "minDistanceKm": 0,
+            "maxDistanceKm": 0,
+            "azimuthMinDeg": null,
+            "azimuthMaxDeg": null,
+            "elevationMinDeg": null,
+            "elevationMaxDeg": null,
+            "angleRateDegPerSec": -1,
+            "sunAvoidHalfAngleDeg": 0,
+            "startupAngleRateDegPerSec": -1
+          }
+        ],
+        "semiMajorAxisM": 7530612,
+        "eccentricity": 0.00085,
+        "inclinationDeg": 64.8,
+        "raanDeg": 120,
+        "argumentOfPerigeeDeg": 270,
+        "meanAnomalyDeg": 30,
+        "epochUtc": "2026/07/01 10:00:00.000"
+      }
+    ],
+    "ballistics": [
+      {
+        "targetId": "TARGET-1",
+        "targetName": "目标1",
+        "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T26\\root-nio\\storage\\uploads\\upload-7218866275630384527.csv"
+      }
+    ]
+  },
+  "offsets": [
+    {
+      "offsetSecond": 1200,
+      "arcs": 1,
+      "points": 86,
+      "visiblePointCount": 86
+    },
+    {
+      "offsetSecond": 1210,
+      "arcs": 1,
+      "points": 140,
+      "visiblePointCount": 140
+    },
+    {
+      "offsetSecond": 1220,
+      "arcs": 1,
+      "points": 180,
+      "visiblePointCount": 180
+    },
+    {
+      "offsetSecond": 1230,
+      "arcs": 1,
+      "points": 214,
+      "visiblePointCount": 214
+    },
+    {
+      "offsetSecond": 1240,
+      "arcs": 1,
+      "points": 244,
+      "visiblePointCount": 244
+    },
+    {
+      "offsetSecond": 1250,
+      "arcs": 1,
+      "points": 271,
+      "visiblePointCount": 271
+    },
+    {
+      "offsetSecond": 1260,
+      "arcs": 1,
+      "points": 299,
+      "visiblePointCount": 299
+    },
+    {
+      "offsetSecond": 1270,
+      "arcs": 1,
+      "points": 324,
+      "visiblePointCount": 324
+    },
+    {
+      "offsetSecond": 1280,
+      "arcs": 1,
+      "points": 351,
+      "visiblePointCount": 351
+    },
+    {
+      "offsetSecond": 1290,
+      "arcs": 2,
+      "points": 387,
+      "visiblePointCount": 387
+    },
+    {
+      "offsetSecond": 1300,
+      "arcs": 1,
+      "points": 441,
+      "visiblePointCount": 441
+    },
+    {
+      "offsetSecond": 1310,
+      "arcs": 1,
+      "points": 448,
+      "visiblePointCount": 448
+    },
+    {
+      "offsetSecond": 1320,
+      "arcs": 1,
+      "points": 456,
+      "visiblePointCount": 456
+    },
+    {
+      "offsetSecond": 1330,
+      "arcs": 1,
+      "points": 463,
+      "visiblePointCount": 463
+    },
+    {
+      "offsetSecond": 1340,
+      "arcs": 1,
+      "points": 469,
+      "visiblePointCount": 469
+    },
+    {
+      "offsetSecond": 1350,
+      "arcs": 1,
+      "points": 476,
+      "visiblePointCount": 476
+    },
+    {
+      "offsetSecond": 1360,
+      "arcs": 1,
+      "points": 482,
+      "visiblePointCount": 482
+    },
+    {
+      "offsetSecond": 1370,
+      "arcs": 1,
+      "points": 488,
+      "visiblePointCount": 488
+    },
+    {
+      "offsetSecond": 1380,
+      "arcs": 1,
+      "points": 494,
+      "visiblePointCount": 494
+    },
+    {
+      "offsetSecond": 1390,
+      "arcs": 1,
+      "points": 500,
+      "visiblePointCount": 500
+    },
+    {
+      "offsetSecond": 1400,
+      "arcs": 1,
+      "points": 506,
+      "visiblePointCount": 506
+    },
+    {
+      "offsetSecond": 1410,
+      "arcs": 1,
+      "points": 511,
+      "visiblePointCount": 511
+    },
+    {
+      "offsetSecond": 1420,
+      "arcs": 1,
+      "points": 517,
+      "visiblePointCount": 517
+    },
+    {
+      "offsetSecond": 1430,
+      "arcs": 1,
+      "points": 522,
+      "visiblePointCount": 522
+    },
+    {
+      "offsetSecond": 1440,
+      "arcs": 1,
+      "points": 527,
+      "visiblePointCount": 527
+    },
+    {
+      "offsetSecond": 1450,
+      "arcs": 1,
+      "points": 532,
+      "visiblePointCount": 532
+    },
+    {
+      "offsetSecond": 1460,
+      "arcs": 1,
+      "points": 537,
+      "visiblePointCount": 537
+    },
+    {
+      "offsetSecond": 1470,
+      "arcs": 1,
+      "points": 542,
+      "visiblePointCount": 542
+    },
+    {
+      "offsetSecond": 1480,
+      "arcs": 1,
+      "points": 547,
+      "visiblePointCount": 547
+    },
+    {
+      "offsetSecond": 1490,
+      "arcs": 1,
+      "points": 552,
+      "visiblePointCount": 552
+    },
+    {
+      "offsetSecond": 1500,
+      "arcs": 1,
+      "points": 556,
+      "visiblePointCount": 556
+    }
+  ],
+  "best": {
+    "offsetSecond": 1500,
+    "arcs": 1,
+    "durationSec": 554.900000215
+  },
+  "busy": {
+    "text": "正在计算真实窗口…",
+    "disabled": true,
+    "allNativeFieldsetsDisabled": false,
+    "manualSatelliteDisabled": true,
+    "activeHttpResponses": 0
+  },
+  "ready": {
+    "disabled": false,
+    "text": "执行弹道窗口计算"
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}
