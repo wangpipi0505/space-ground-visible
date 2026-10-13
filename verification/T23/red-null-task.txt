@@ -1,0 +1,25 @@
+
+> frontend@0.0.0 test
+> vitest run src/utils/ballisticFit.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/utils/ballisticFit.spec.ts (13 tests | 1 failed) 13ms
+     × taskName:null按原DTO同值提交，原缺省任务名由后端回退 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > taskName:null按原DTO同值提交，原缺省任务名由后端回退
+Error: taskName须为字符串
+ ❯ parseFitInput src/utils/ballisticFit.ts:34:81
+
+ ❯ src/utils/ballisticFit.spec.ts:29:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  20:48:13
+   Duration  391ms (transform 26ms, setup 0ms, import 37ms, tests 13ms, environment 229ms)

@@ -1,0 +1,285 @@
+{
+  "browser": "Chrome",
+  "timezone": "Asia/Shanghai",
+  "source": "原生filechooser读取冻结JSON；实际POST并逐目标登记/分页/全CSV读取/原字节下载",
+  "status": 200,
+  "targetEvidence": [
+    {
+      "targetId": "TGT-001",
+      "model": "BALLISTIC_MIDCOURSE_TWO_BODY",
+      "pointCount": 1633,
+      "graphPathCounts": [
+        1633,
+        1633,
+        1633,
+        1633
+      ],
+      "originalPoints": 4,
+      "markers": 16,
+      "warnings": [
+        "已根据package102状态通过二体反向地面交点推算发射时间。推算发射时间=2026-07-01 07:52:18.000, 第一个package102时间=2026-07-01 07:57:00.000, 反推秒数=282.000",
+        "已根据package102状态通过二体正向地面交点推算落点时间。推算落点时间=2026-07-01 08:05:54.000, 最后一个package102时间=2026-07-01 07:57:03.000, 正推秒数=531.000",
+        "taskStartTime是任务/文件时间，不是物理发射时间。任务开始时间=2026-07-01 07:56:55.000, 推算发射时间=2026-07-01 07:52:18.000",
+        "taskEndTime是任务/文件时间，不是物理落点时间。任务结束时间=2026-07-01 07:57:10.000, 推算落点时间=2026-07-01 08:05:54.000",
+        "launch_time_code和发射点位置仅作为参考使用。推算发射时间=2026-07-01 07:52:18.000, 参考发射时间=2026-07-01 07:56:55.000, 时间差秒=-277.000, 位置偏差米=618718.118, 坐标系=J2000, 单位=0.1m",
+        "impact_time_code和落点位置仅作为参考使用。推算落点时间=2026-07-01 08:05:54.000, 参考落点时间=2026-07-01 07:57:10.000, 时间差秒=524.000, 位置偏差米=634931.133, 坐标系=J2000, 单位=0.1m",
+        "输出时间范围超出package102轨迹点覆盖区间，区间外已使用端点状态进行二体RK4外推。",
+        "Package102拟合在原始点之间使用受端点约束的Hermite平滑插值，区间外使用二体RK4动力学外推；命中package102原始时刻时保留源样本，以保证严格通过原始点。"
+      ],
+      "downloadName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv"
+    },
+    {
+      "targetId": "TGT-002",
+      "model": "ORBITAL_TWO_BODY",
+      "pointCount": 31,
+      "graphPathCounts": [
+        31,
+        31,
+        31,
+        31
+      ],
+      "originalPoints": 4,
+      "markers": 16,
+      "warnings": [
+        "在搜索范围内未能推算发射地面交点，使用launch_time_code作为兜底参考。发射时间=2026-07-01 07:56:55.000",
+        "在搜索范围内未能推算落地交点，使用秒级精度impact_time_code作为兜底参考。落点时间=2026-07-01 07:57:10.000",
+        "launch_time_code和发射点位置仅作为参考使用。推算发射时间=2026-07-01 07:56:55.000, 参考发射时间=2026-07-01 07:56:55.000, 时间差秒=0.000, 位置偏差米=163.169, 坐标系=J2000, 单位=0.1m",
+        "impact_time_code和落点位置仅作为参考使用。推算落点时间=2026-07-01 07:57:10.000, 参考落点时间=2026-07-01 07:57:10.000, 时间差秒=0.000, 位置偏差米=288.768, 坐标系=J2000, 单位=0.1m",
+        "输出时间范围超出package102轨迹点覆盖区间，区间外已使用端点状态进行二体RK4外推。",
+        "Package102拟合在原始点之间使用受端点约束的Hermite平滑插值，区间外使用二体RK4动力学外推；命中package102原始时刻时保留源样本，以保证严格通过原始点。"
+      ],
+      "downloadName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv"
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "inputOnlyOutputDirOmitted": true,
+  "inputExportOriginalValuesEqual": true,
+  "rawResponseDownloadIdenticalBytes": true,
+  "rawResponseBytes": 3153,
+  "rawResponseSha256": "4e69d72e1037e04b529ac18c8f7e5f193dca016256d07539e0049c175ed6f9a3",
+  "resultOnlyManagedCsvPathDifference": true,
+  "pathMapping": [
+    {
+      "targetId": "TGT-001",
+      "actual": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T23\\storage\\results\\fit-2285016982332983941\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv",
+      "golden": "trajectory-0.csv",
+      "reason": "本次Web管理目录唯一运行路径"
+    },
+    {
+      "targetId": "TGT-002",
+      "actual": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T23\\storage\\results\\fit-2285016982332983941\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv",
+      "golden": "trajectory-1.csv",
+      "reason": "本次Web管理目录唯一运行路径"
+    }
+  ],
+  "csv": [
+    {
+      "targetId": "TGT-001",
+      "bytes": 327928,
+      "rows": 1633,
+      "originalCount": 4,
+      "downloadSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "goldenSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "identicalBytes": true,
+      "originalUtc": [
+        "2026-07-01 07:57:00.000",
+        "2026-07-01 07:57:01.000",
+        "2026-07-01 07:57:02.000",
+        "2026-07-01 07:57:03.000"
+      ]
+    },
+    {
+      "targetId": "TGT-002",
+      "bytes": 6475,
+      "rows": 31,
+      "originalCount": 4,
+      "downloadSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "goldenSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "identicalBytes": true,
+      "originalUtc": [
+        "2026-07-01 07:57:00.000",
+        "2026-07-01 07:57:01.000",
+        "2026-07-01 07:57:02.000",
+        "2026-07-01 07:57:03.000"
+      ]
+    }
+  ],
+  "http": [
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/register-result",
+      "method": "POST",
+      "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T23\\\\storage\\\\results\\\\fit-2285016982332983941\\\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv\",\"taskName\":\"defaultFitTask\",\"targetId\":\"TGT-002\"}",
+      "status": 201,
+      "type": "application/json",
+      "responseBytes": 416,
+      "responseSha256": "2e2dce3f32d429905eea9887dfa0149e13c87349b53b9883fb996929d1b8a074",
+      "reference": {
+        "fileId": "03f70711-64d8-47ad-bc90-8064f4dce5c2",
+        "originalName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv",
+        "sizeBytes": 6475,
+        "contentType": "text/csv",
+        "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T23\\storage\\results\\fit-2285016982332983941\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/register-result",
+      "method": "POST",
+      "request": "{\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\T23\\\\storage\\\\results\\\\fit-2285016982332983941\\\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv\",\"taskName\":\"defaultFitTask\",\"targetId\":\"TGT-001\"}",
+      "status": 201,
+      "type": "application/json",
+      "responseBytes": 418,
+      "responseSha256": "827395c42e1c02c2e24391fc63c363a9924dd7b88e16c7ad32ea2dfa4c31ca8f",
+      "reference": {
+        "fileId": "c56dfeeb-614a-4e50-be5d-0302d57de01a",
+        "originalName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv",
+        "sizeBytes": 327928,
+        "contentType": "text/csv",
+        "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T23\\storage\\results\\fit-2285016982332983941\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/03f70711-64d8-47ad-bc90-8064f4dce5c2/download",
+      "method": "GET",
+      "request": null,
+      "status": 200,
+      "type": "text/csv",
+      "disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv"
+    },
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/03f70711-64d8-47ad-bc90-8064f4dce5c2/preview?page=1&limit=50",
+      "method": "GET",
+      "request": null,
+      "status": 200,
+      "type": "application/json",
+      "responseBytes": 7967,
+      "responseSha256": "14bec36e575d8fed89954d8736d6a92b5cef7f5fe6431b5656a5423182443bac",
+      "page": 1,
+      "limit": 50,
+      "totalRows": 31,
+      "header": [
+        "YYYY",
+        "MM",
+        "dd",
+        "HH",
+        "mm",
+        "ss.SSS",
+        "ECEF_X",
+        "ECEF_Y",
+        "ECEF_Z",
+        "energy",
+        "dt",
+        "ECI_X",
+        "ECI_Y",
+        "ECI_Z",
+        "ECI_VX",
+        "ECI_VY",
+        "ECI_VZ",
+        "ECEF_Vx",
+        "ECEF_Vy",
+        "ECEF_Vz",
+        "isOriginal"
+      ],
+      "metadata": {},
+      "returnedRows": 31
+    },
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/c56dfeeb-614a-4e50-be5d-0302d57de01a/download",
+      "method": "GET",
+      "request": null,
+      "status": 200,
+      "type": "text/csv",
+      "disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv"
+    },
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/c56dfeeb-614a-4e50-be5d-0302d57de01a/preview?page=1&limit=50",
+      "method": "GET",
+      "request": null,
+      "status": 200,
+      "type": "application/json",
+      "responseBytes": 12539,
+      "responseSha256": "5a27af1d08ed56d277292267555aaa041ddbbac70306fa7d7f90d8f2f4cbfc4b",
+      "page": 1,
+      "limit": 50,
+      "totalRows": 1633,
+      "header": [
+        "YYYY",
+        "MM",
+        "dd",
+        "HH",
+        "mm",
+        "ss.SSS",
+        "ECEF_X",
+        "ECEF_Y",
+        "ECEF_Z",
+        "energy",
+        "dt",
+        "ECI_X",
+        "ECI_Y",
+        "ECI_Z",
+        "ECI_VX",
+        "ECI_VY",
+        "ECI_VZ",
+        "ECEF_Vx",
+        "ECEF_Vy",
+        "ECEF_Vz",
+        "isOriginal"
+      ],
+      "metadata": {},
+      "returnedRows": 50
+    },
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/c56dfeeb-614a-4e50-be5d-0302d57de01a/preview?page=2&limit=50",
+      "method": "GET",
+      "request": null,
+      "status": 200,
+      "type": "application/json",
+      "responseBytes": 12541,
+      "responseSha256": "cf0b4a4ef543c3b613fda882325eec6c52fc620b4d90ae56224aa2838fea553a",
+      "page": 2,
+      "limit": 50,
+      "totalRows": 1633,
+      "header": [
+        "YYYY",
+        "MM",
+        "dd",
+        "HH",
+        "mm",
+        "ss.SSS",
+        "ECEF_X",
+        "ECEF_Y",
+        "ECEF_Z",
+        "energy",
+        "dt",
+        "ECI_X",
+        "ECI_Y",
+        "ECI_Z",
+        "ECI_VX",
+        "ECI_VY",
+        "ECI_VZ",
+        "ECEF_Vx",
+        "ECEF_Vy",
+        "ECEF_Vz",
+        "isOriginal"
+      ],
+      "metadata": {},
+      "returnedRows": 50
+    },
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/c56dfeeb-614a-4e50-be5d-0302d57de01a/download",
+      "method": "GET",
+      "request": null,
+      "status": 200,
+      "type": "text/csv",
+      "disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv"
+    },
+    {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/03f70711-64d8-47ad-bc90-8064f4dce5c2/download",
+      "method": "GET",
+      "request": null,
+      "status": 200,
+      "type": "text/csv",
+      "disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261013_205326_382.csv"
+    }
+  ]
+}

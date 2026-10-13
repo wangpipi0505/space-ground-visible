@@ -2,6 +2,8 @@ import { ApiRequestError } from './client'
 
 /** 辅助根保留 T21 含完整 /api/v1/ballistic 的既有含义，不拼在空间根后。 */
 export const ballisticAuxBaseUrl = (import.meta.env.VITE_BALLISTIC_API_BASE_URL?.trim() || '/api/v1/ballistic').replace(/\/$/, '')
+/** 原计算根含/api；窗口与拟合共享部署根，空间根与文件辅助根保持独立。 */
+export const ballisticComputeBaseUrl = (import.meta.env.VITE_BALLISTIC_COMPUTE_BASE_URL?.trim() || '/api').replace(/\/$/, '')
 
 /** 成功二进制不消费；失败读取文本/中文 JSON 后抛出，防止错误 JSON 当作 CSV 保存。 */
 export async function checkBallisticResponse(response: Response, action: string): Promise<void> {

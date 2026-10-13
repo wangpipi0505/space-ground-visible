@@ -1,0 +1,44 @@
+
+> frontend@0.0.0 test
+> vitest run src/views/BallisticFitView.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticFitView.spec.ts (2 tests | 2 failed) 14ms
+     × 原生JSON导入只省略outputDir，双目标登记隔离、重试不重算、全点曲线原点、分页与失败恢复 12ms
+     × 非法JSON与危险数字无HTTP，计算忙时避免重复提交 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 原生JSON导入只省略outputDir，双目标登记隔离、重试不重算、全点曲线原点、分页与失败恢复
+Error: Unable to get input[type=file] within: <section>T23 待实现</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/views/BallisticFitView.spec.ts:32:27
+     30|     const state = setup()
+     31|     const wrapper = mount(BallisticFitView)
+     32|     const input = wrapper.get('input[type=file]')
+       |                           ^
+     33|     Object.defineProperty(input.element, 'files', { configurable: true…
+     34|     await input.trigger('change'); await flushPromises()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 非法JSON与危险数字无HTTP，计算忙时避免重复提交
+Error: Unable to get textarea within: <section>T23 待实现</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/views/BallisticFitView.spec.ts:75:21
+     73|     const wrapper = mount(BallisticFitView)
+     74|     for (const bad of ['{', '{"package102":[{"tack3d_time_code":202607…
+     75|       await wrapper.get('textarea').setValue(bad)
+       |                     ^
+     76|       await wrapper.get('[data-test=fit-compute]').trigger('click')
+     77|       expect(state.requests).not.toHaveBeenCalled()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  20:36:51
+   Duration  463ms (transform 41ms, setup 0ms, import 114ms, tests 14ms, environment 218ms)

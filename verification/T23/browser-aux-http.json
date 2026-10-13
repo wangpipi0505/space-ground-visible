@@ -1,0 +1,42 @@
+{
+  "failure": {
+    "source": "精确本次管理CSV临时移走，真实HTTP404，未mock",
+    "preview": {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/c56dfeeb-614a-4e50-be5d-0302d57de01a/preview?page=3&limit=50",
+      "status": 404,
+      "rawText": "{\"code\":\"FILE_NOT_FOUND\",\"error\":\"文件引用不存在或已清理\"}"
+    },
+    "download": {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/c56dfeeb-614a-4e50-be5d-0302d57de01a/download",
+      "status": 404,
+      "rawText": "{\"code\":\"FILE_NOT_FOUND\",\"error\":\"文件引用不存在或已清理\"}"
+    },
+    "browserDownloads": 0,
+    "originalComputeStillSuccessful": true,
+    "otherTargetUnaffected": true
+  },
+  "recovery": {
+    "source": "精确恢复同CSV后只重新登记并读取，原旧ID已注销",
+    "registration": {
+      "status": 201,
+      "reference": {
+        "fileId": "2ef970a6-acea-493d-9e4a-83f0560ac74b",
+        "originalName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv",
+        "sizeBytes": 327928,
+        "contentType": "text/csv",
+        "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T23\\storage\\results\\fit-2285016982332983941\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv"
+      }
+    },
+    "preview": {
+      "url": "http://127.0.0.1:15123/api/v1/ballistic/files/2ef970a6-acea-493d-9e4a-83f0560ac74b/preview?page=1&limit=50",
+      "status": 200,
+      "page": 1
+    },
+    "downloadName": "defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261013_205326_382.csv",
+    "computeCalls": 0,
+    "errorsCleared": true
+  },
+  "recoveredCsvIdenticalGoldenBytes": true,
+  "recoveredCsvBytes": 327928,
+  "recoveredCsvSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2"
+}

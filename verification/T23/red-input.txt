@@ -1,0 +1,86 @@
+
+> frontend@0.0.0 test
+> vitest run src/utils/ballisticFit.spec.ts src/api/ballisticFit.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/utils/ballisticFit.spec.ts (12 tests | 3 failed) 6ms
+     × 包字符串、UTC、全部别名保持同值，仅显式省略旧输出目录 2ms
+     × 一条记录允许进入原服务，不在浏览器擅自限制为三点 0ms
+     × 完整解析1633/31行原21列CSV，原点各4个，ECI米/dt毫秒且不混入ECEF 1ms
+ ❯ src/api/ballisticFit.spec.ts (2 tests | 2 failed) 8ms
+     × 原字段原值发送，原响应字节保留，201登记返回独立引用 4ms
+     × 原400错误中文转呈 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/api/ballisticFit.spec.ts > T23 原拟合与登记HTTP > 原字段原值发送，原响应字节保留，201登记返回独立引用
+Error: T23 待实现
+ ❯ fitBallisticPackage102 src/api/ballisticFit.ts:4:116
+      2| /** 原HTTP字节与typed响应并存，下载不重新序列化。 */
+      3| export interface BallisticFitHttpResult { response: BallisticFitResult…
+      4| export async function fitBallisticPackage102(_value: BallisticFitReque…
+       |                                                                                                                    ^
+      5|
+ ❯ src/api/ballisticFit.spec.ts:13:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/api/ballisticFit.spec.ts > T23 原拟合与登记HTTP > 原400错误中文转呈
+AssertionError: expected [Function] to throw error including '无有效观测点' but got 'T23 待实现'
+
+Expected: "无有效观测点"
+Received: "T23 待实现"
+
+ ❯ src/api/ballisticFit.spec.ts:24:63
+     22|   it('原400错误中文转呈', async () => {
+     23|     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('{"e…
+     24|     await expect(fitBallisticPackage102({ package102: [{}] })).rejects…
+       |                                                               ^
+     25|     await expect(registerBallisticResult('x', 'task', 'a')).rejects.to…
+     26|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 包字符串、UTC、全部别名保持同值，仅显式省略旧输出目录
+Error: T23 待实现
+ ❯ parseFitInput src/utils/ballisticFit.ts:2:115
+      1| import type { BallisticFitRequest, FitCsvPoint } from '../api/ballisti…
+      2| export function parseFitInput(_text: string): { request: BallisticFitR…
+       |                                                                                                                   ^
+      3| export function parseFitCsv(_text: string): FitCsvPoint[] { throw new …
+      4|
+ ❯ src/utils/ballisticFit.spec.ts:9:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 一条记录允许进入原服务，不在浏览器擅自限制为三点
+Error: T23 待实现
+ ❯ parseFitInput src/utils/ballisticFit.ts:2:115
+      1| import type { BallisticFitRequest, FitCsvPoint } from '../api/ballisti…
+      2| export function parseFitInput(_text: string): { request: BallisticFitR…
+       |                                                                                                                   ^
+      3| export function parseFitCsv(_text: string): FitCsvPoint[] { throw new …
+      4|
+ ❯ src/utils/ballisticFit.spec.ts:20:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 完整解析1633/31行原21列CSV，原点各4个，ECI米/dt毫秒且不混入ECEF
+Error: T23 待实现
+ ❯ parseFitCsv src/utils/ballisticFit.ts:3:67
+      1| import type { BallisticFitRequest, FitCsvPoint } from '../api/ballisti…
+      2| export function parseFitInput(_text: string): { request: BallisticFitR…
+      3| export function parseFitCsv(_text: string): FitCsvPoint[] { throw new …
+       |                                                                   ^
+      4|
+ ❯ src/utils/ballisticFit.spec.ts:28:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  5 failed | 9 passed (14)
+   Start at  20:34:41
+   Duration  394ms (transform 62ms, setup 0ms, import 87ms, tests 13ms, environment 431ms)

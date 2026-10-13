@@ -2,6 +2,7 @@
 /** 空间规划入口：连接卫星、载荷、站星链路、目录与后台任务状态，并切换历史结果视图。 */
 import { computed, onMounted, ref } from 'vue'
 import BallisticPayloadConfigurationView from './views/BallisticPayloadConfigurationView.vue'
+import BallisticFitView from './views/BallisticFitView.vue'
 import DownlinkPlanningStep from './components/DownlinkPlanningStep.vue'
 import ObservationConstraintPanel from './components/ObservationConstraintPanel.vue'
 import SatelliteStationLinkPanel from './components/SatelliteStationLinkPanel.vue'
@@ -73,7 +74,7 @@ const {
 } = useVisibilityWorkbench()
 
 /** 原工作台始终由 tabs 保留挂载；弹道草稿首次打开后同样保留，不重置任务、目录选择或草稿。 */
-const activeView = ref<'workbench' | 'records' | 'ballistic-payloads'>('workbench')
+const activeView = ref<'workbench' | 'records' | 'ballistic-payloads' | 'ballistic-fit'>('workbench')
 /** 当前目录页加已选任务星，分页后仍可选到空间既有任务星；弹道拥有独立选择/草稿。 */
 const payloadSatelliteOptions = computed(() => [...new Map([...satellites.value, ...selectedTaskSatellites.value].map((satellite) => [satellite.id, satellite])).values()])
 
@@ -219,6 +220,9 @@ onMounted(() => {
       </el-tab-pane>
       <el-tab-pane label="弹道载荷配置" name="ballistic-payloads" lazy>
         <BallisticPayloadConfigurationView :satellites="payloadSatelliteOptions" />
+      </el-tab-pane>
+      <el-tab-pane label="102包轨迹拟合" name="ballistic-fit" lazy>
+        <BallisticFitView />
       </el-tab-pane>
     </el-tabs>
   </main>

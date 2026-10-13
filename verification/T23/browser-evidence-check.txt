@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "csv": [
+    {
+      "targetId": "TGT-001",
+      "bytes": 327928,
+      "rows": 1633,
+      "originalCount": 4,
+      "downloadSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "goldenSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "identicalBytes": true,
+      "originalUtc": [
+        "2026-07-01 07:57:00.000",
+        "2026-07-01 07:57:01.000",
+        "2026-07-01 07:57:02.000",
+        "2026-07-01 07:57:03.000"
+      ]
+    },
+    {
+      "targetId": "TGT-002",
+      "bytes": 6475,
+      "rows": 31,
+      "originalCount": 4,
+      "downloadSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "goldenSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "identicalBytes": true,
+      "originalUtc": [
+        "2026-07-01 07:57:00.000",
+        "2026-07-01 07:57:01.000",
+        "2026-07-01 07:57:02.000",
+        "2026-07-01 07:57:03.000"
+      ]
+    }
+  ],
+  "onlyOutputDirOmitted": true,
+  "onlyManagedCsvPathDifference": true
+}

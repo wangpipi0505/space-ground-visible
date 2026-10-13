@@ -1,0 +1,36 @@
+
+> frontend@0.0.0 test
+> vitest run src/utils/ballisticFit.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/utils/ballisticFit.spec.ts (12 tests | 1 failed) 11ms
+     × 完整解析1633/31行原21列CSV，原点各4个，ECI米/dt毫秒且不混入ECEF 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 完整解析1633/31行原21列CSV，原点各4个，ECI米/dt毫秒且不混入ECEF
+AssertionError: expected undefined to be 1 // Object.is equality
+
+- Expected:
+1
+
++ Received:
+undefined
+
+ ❯ src/utils/ballisticFit.spec.ts:36:42
+     34|       expect(points[1]?.dtMs).toBe(500)
+     35|       expect(points[2]?.dtMs).toBe(500)
+     36|       expect(points[2]?.relativeTimeSec).toBe(1)
+       |                                          ^
+     37|       expect(points[0]?.eciX).toBe(Number(text.split('\n')[1]!.split('…
+     38|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  20:44:07
+   Duration  411ms (transform 30ms, setup 0ms, import 43ms, tests 11ms, environment 230ms)

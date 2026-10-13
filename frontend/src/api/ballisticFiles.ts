@@ -18,6 +18,14 @@ export interface BallisticFilePreview {
   limit: number
   metadata: Record<string, string>
 }
+/** 只登记实际计算响应的服务csvPath；重复登记保持服务ID，不修改原FitRunResult。 */
+export async function registerBallisticResult(csvPath: string, taskName: string, targetId: string): Promise<BallisticFileReference> {
+  const response = await fetch(`${ballisticAuxBaseUrl}/files/register-result`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ csvPath, taskName, targetId }),
+  })
+  await checkBallisticResponse(response, '结果文件登记')
+  return await response.json() as BallisticFileReference
+}
 /** 原生 multipart，浏览器自动写 boundary，不能强行设置 JSON Content-Type。 */
 export async function uploadBallisticFile(file: File): Promise<BallisticFileReference> {
   const body = new FormData()

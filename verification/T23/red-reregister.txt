@@ -1,0 +1,171 @@
+
+> frontend@0.0.0 test
+> vitest run src/views/BallisticFitView.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticFitView.spec.ts (3 tests | 1 failed) 52ms
+     × 缺文件后原服务注销旧引用，恢复只重新登记并用新ID读文件 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 缺文件后原服务注销旧引用，恢复只重新登记并用新ID读文件
+Error: Unable to get [data-test=fit-reregister] within: <article class="ballistic-result-target" data-fit-target="甲">
+  <h3>目标 甲 · ORBITAL_TWO_BODY · 原结果 31 点</h3>
+  <p>原结果服务文件：server/甲.csv</p>
+  <p>原服务未返回告警。</p>
+  <!--v-if-->
+  <!--v-if-->
+  <!--v-if-->
+  <p>已登记 原.csv · 引用 f1 · 字节</p><button type="button" data-test="fit-download">HTTP 下载原CSV</button>
+  <!--v-if-->
+  <!--v-if-->
+  <p class="ballistic-error" role="alert">预览失败：文件引用不存在或已清理；已显示内容仍为此前成功页。</p><button type="button" data-test="fit-preview-retry">重试文件预览</button>
+  <details open="">
+    <summary>服务原文本预览 · 共 100 行 · 第 1 页</summary><pre>{}</pre>
+    <div class="ballistic-table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>原表头</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>原值</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ballistic-actions"><button type="button" disabled="">预览上一页</button><button type="button" data-test="fit-preview-next">预览下一页</button></div>
+  </details>
+  <!--v-if-->
+  <!--v-if-->
+  <!--v-if-->
+  <section data-test="fit-trajectory" class="ballistic-trajectory">
+    <h4>目标 甲 · 完整CSV 31 行 · 4 个 isOriginal=1 原约束点</h4>
+    <p>ECI位置为米，速度为m/s，dt为相邻步长毫秒；曲线横轴为原分列UTC相对首行的秒数，UTC显示保持原文本。图形仅显示原导出位置3位小数、速度9位小数精度，不重拟合、不再坐标转换。红点为原始约束标记。</p>
+    <p>完整输出 UTC：2026-07-01 07:56:55.000 → 2026-07-01 07:57:10.000</p>
+    <figure>
+      <figcaption>ECI XY投影 · 横轴 6799711.238…6800000 X m · 纵轴 -28000.093…85998.134 Y m</figcaption><svg viewBox="0 0 760 280" role="img" aria-label="甲 ECI XY投影">
+        <path d="M45,20V240H715" fill="none" stroke="#8094a5"></path>
+        <path d="M336.4071449851408,240 L396.7684459865505,232.66657384066156 L452.1272882168614,225.33313224248653 L502.488312174462,217.99967713532948 L547.8491976090777,210.66621430875412 L588.2076242725944,203.33274183290584 L623.5659124131263,195.99926356749393 L653.9263822809478,188.66578337222734 L679.2843933755096,181.33230124710624 L699.6422659492473,173.99882105183966 L715,166.66534664613687 L715,159.3318992583981 L715,151.99845187065935 L715,144.66500448292058 L715,137.33155709518184 L715,129.99810970744306 L715,122.66466231970432 L699.6422659492473,115.33126703803912 L679.2843933755096,107.99789298477423 L653.9263822809478,100.66454401961884 L623.5682326612401,93.3312220724275 L588.2122647709829,85.99792907305479 L547.8538381096271,78.66466888120989 L502.4975931733999,71.33144149689275 L452.138889466074,63.99825077981258 L396.7823674860378,56.665098659823904 L336.42570698301654,49.3319889966359 L271.06890795917127,41.99892179024856 L200.71197041234092,34.665898970516466 L125.35721459280032,27.33292439714875 L45,20" fill="none" stroke="#126399" stroke-width="2"></path>
+        <circle data-test="fit-original-marker" cx="715" cy="166.66534664613687" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="715" cy="151.99845187065935" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="715" cy="137.33155709518184" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="715" cy="122.66466231970432" r="4" fill="#bd3131"></circle><text x="45" y="265">X m / Y m</text>
+      </svg>
+    </figure>
+    <figure>
+      <figcaption>ECI X / 相对UTC时间 · 横轴 0…15 相对UTC s · 纵轴 6799711.238…6800000 X m</figcaption><svg viewBox="0 0 760 280" role="img" aria-label="甲 ECI X / 相对UTC时间">
+        <path d="M45,20V240H715" fill="none" stroke="#8094a5"></path>
+        <path d="M45,144.3140717959239 L67.33333333333333,124.49394310889386 L89.66666666666666,106.31641282431417 L112,89.7799571964453 L134.33333333333331,74.88533809851182 L156.66666666666666,61.63331740302869 L179,50.023133237480934 L201.33333333333334,40.05402372864402 L223.66666666666666,31.727512622967005 L246,25.042838046515815 L268.3333333333333,20 L290.66666666666663,20 L313,20 L335.33333333333337,20 L357.6666666666667,20 L380,20 L402.3333333333333,20 L424.66666666666663,25.042838046515815 L447,31.727512622967005 L469.3333333333333,40.05402372864402 L491.66666666666663,50.02237136496595 L514,61.63179365728919 L536.3333333333333,74.88381435206277 L558.6666666666667,89.77690970425675 L581,106.31260345890107 L603.3333333333334,124.48937187025625 L625.6666666666667,144.30797681154678 L648,165.76841828206315 L670.3333333333334,188.87069628251493 L692.6666666666666,213.6140489396775 L715,240" fill="none" stroke="#126399" stroke-width="2"></path>
+        <circle data-test="fit-original-marker" cx="268.3333333333333" cy="20" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="313" cy="20" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="357.6666666666667" cy="20" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="402.3333333333333" cy="20" r="4" fill="#bd3131"></circle><text x="45" y="265">相对UTC s / X m</text>
+      </svg>
+    </figure>
+    <figure>
+      <figcaption>ECI Y / 相对UTC时间 · 横轴 0…15 相对UTC s · 纵轴 -28000.093…85998.134 Y m</figcaption><svg viewBox="0 0 760 280" role="img" aria-label="甲 ECI Y / 相对UTC时间">
+        <path d="M45,20V240H715" fill="none" stroke="#8094a5"></path>
+        <path d="M45,240 L67.33333333333333,232.66657384066156 L89.66666666666666,225.33313224248653 L112,217.99967713532948 L134.33333333333331,210.66621430875412 L156.66666666666666,203.33274183290584 L179,195.99926356749393 L201.33333333333334,188.66578337222734 L223.66666666666666,181.33230124710624 L246,173.99882105183966 L268.3333333333333,166.66534664613687 L290.66666666666663,159.3318992583981 L313,151.99845187065935 L335.33333333333337,144.66500448292058 L357.6666666666667,137.33155709518184 L380,129.99810970744306 L402.3333333333333,122.66466231970432 L424.66666666666663,115.33126703803912 L447,107.99789298477423 L469.3333333333333,100.66454401961884 L491.66666666666663,93.3312220724275 L514,85.99792907305479 L536.3333333333333,78.66466888120989 L558.6666666666667,71.33144149689275 L581,63.99825077981258 L603.3333333333334,56.665098659823904 L625.6666666666667,49.3319889966359 L648,41.99892179024856 L670.3333333333334,34.665898970516466 L692.6666666666666,27.33292439714875 L715,20" fill="none" stroke="#126399" stroke-width="2"></path>
+        <circle data-test="fit-original-marker" cx="268.3333333333333" cy="166.66534664613687" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="313" cy="151.99845187065935" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="357.6666666666667" cy="137.33155709518184" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="402.3333333333333" cy="122.66466231970432" r="4" fill="#bd3131"></circle><text x="45" y="265">相对UTC s / Y m</text>
+      </svg>
+    </figure>
+    <figure>
+      <figcaption>ECI Z / 相对UTC时间 · 横轴 0…15 相对UTC s · 纵轴 4949.88…5099.786 Z m</figcaption><svg viewBox="0 0 760 280" role="img" aria-label="甲 ECI Z / 相对UTC时间">
+        <path d="M45,20V240H715" fill="none" stroke="#8094a5"></path>
+        <path d="M45,240 L67.33333333333333,232.63418408869524 L89.66666666666666,225.26983576374488 L112,217.90842261150337 L134.33333333333331,210.54994463196934 L156.66666666666666,203.19293423878972 L179,195.83885901831894 L201.33333333333334,188.48625138420124 L223.66666666666666,181.13657892279235 L246,173.789841634091 L268.3333333333333,166.44457193174404 L290.66666666666663,159.1066401611678 L313,151.76870839059157 L335.33333333333337,144.43077662001534 L357.6666666666667,137.0928448494391 L380,129.7549130788629 L402.3333333333333,122.41698130828665 L424.66666666666663,115.08638746948115 L447,107.75726121703008 L469.3333333333333,100.43107013728648 L491.66666666666663,93.10781423025173 L514,85.78602590957004 L536.3333333333333,78.4671727615972 L558.6666666666667,71.15125478633318 L581,63.83680439742224 L603.3333333333334,56.525289181220124 L625.6666666666667,49.21524155137243 L648,41.90812909423222 L670.3333333333334,34.60248422344643 L692.6666666666666,27.299774525369468 L715,20" fill="none" stroke="#126399" stroke-width="2"></path>
+        <circle data-test="fit-original-marker" cx="268.3333333333333" cy="166.44457193174404" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="313" cy="151.76870839059157" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="357.6666666666667" cy="137.0928448494391" r="4" fill="#bd3131"></circle>
+        <circle data-test="fit-original-marker" cx="402.3333333333333" cy="122.41698130828665" r="4" fill="#bd3131"></circle><text x="45" y="265">相对UTC s / Z m</text>
+      </svg>
+    </figure>
+    <h4>原始约束点（完整CSV中 isOriginal=1）</h4>
+    <div class="ballistic-table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>UTC</th>
+            <th>dt ms</th>
+            <th>ECI_X m</th>
+            <th>ECI_Y m</th>
+            <th>ECI_Z m</th>
+            <th>ECI_VX m/s</th>
+            <th>ECI_VY m/s</th>
+            <th>ECI_VZ m/s</th>
+            <th>isOriginal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-07-01 07:57:00.000</td>
+            <td>500.000</td>
+            <td>6800000.000</td>
+            <td>10000.000</td>
+            <td>5000.000</td>
+            <td>0.000000000</td>
+            <td>7600.000000000</td>
+            <td>10.000000000</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2026-07-01 07:57:01.000</td>
+            <td>500.000</td>
+            <td>6800000.000</td>
+            <td>17600.000</td>
+            <td>5010.000</td>
+            <td>0.000000000</td>
+            <td>7600.000000000</td>
+            <td>10.000000000</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2026-07-01 07:57:02.000</td>
+            <td>500.000</td>
+            <td>6800000.000</td>
+            <td>25200.000</td>
+            <td>5020.000</td>
+            <td>0.000000000</td>
+            <td>7600.000000000</td>
+            <td>10.000000000</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2026-07-01 07:57:03.000</td>
+            <td>500.000</td>
+            <td>6800000.000</td>
+            <td>32800.000</td>
+            <td>5030.000</td>
+            <td>0.000000000</td>
+            <td>7600.000000000</td>
+            <td>10.000000000</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</article>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/views/BallisticFitView.spec.ts:108:19
+    106|     expired = true
+    107|     await wrapper.get('[data-test=fit-preview-next]').trigger('click')…
+    108|     await wrapper.get('[data-test=fit-reregister]').trigger('click'); …
+       |                   ^
+    109|     expect(registrations).toBe(2)
+    110|     expect(wrapper.text()).toContain('引用 f2')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  20:49:49
+   Duration  734ms (transform 245ms, setup 0ms, import 313ms, tests 52ms, environment 244ms)
