@@ -1,0 +1,18 @@
+{
+  "health": {
+    "status": 200,
+    "content": "{\"status\":\"UP\"}"
+  },
+  "satellites/1/payload-profiles": {
+    "status": 200,
+    "content": "{\"activePayloadType\":\"SPACE\",\"profiles\":[{\"payloadType\":\"SPACE\",\"legacyGroundProfile\":false,\"minDistanceKm\":100.0,\"maxDistanceKm\":8000.0,\"azimuthMinDeg\":10.0,\"azimuthMaxDeg\":350.0,\"elevationMinDeg\":-80.0,\"elevationMaxDeg\":80.0,\"angleRateDegPerSec\":0.5,\"sunAvoidHalfAngleDeg\":15.0,\"startupAngleRateDegPerSec\":null,\"sensorFullConeAngleDeg\":null,\"maxDetectRangeKm\":null,\"sunExclusionAngleDeg\":null}]}"
+  },
+  "satellites": {
+    "status": 200,
+    "content": "[{\"id\":1,\"type\":null,\"libraryModelId\":null,\"name\":\"演示观测星（非生产资料）\",\"scid\":null,\"objectId\":null,\"objectName\":null,\"noradCatId\":null,\"country\":null,\"period\":null,\"catalogInclination\":null,\"apogee\":null,\"perigee\":null,\"rcsSize\":null,\"rcsValue\":null,\"launchDate\":null,\"catalogComment\":null,\"weight\":null,\"modelType\":\"KEPLER_6\",\"epochTime\":\"2026-07-01T10:00:00\",\"semiMajorAxis\":7078137.000000,\"eccentricity\":0E-12,\"inclination\":50.000000,\"meanAnomaly\":0.000000,\"raan\":30.000000,\"argumentOfPerigee\":0.000000,\"payloadJson\":\"{\\\"payloadType\\\":\\\"SPACE\\\",\\\"distance\\\":[100000,8000000],\\\"distanceUnit\\\":\\\"M\\\",\\\"azimuth\\\":[10,350],\\\"elevation\\\":[-80,80],\\\"angleRate\\\":0.5,\\\"sunAvoidHalfAngle\\\":15}\",\"firstOrbit\":null,\"secondOrbit\":null,\"createdBy\":null,\"updateBy\":null,\"createTime\":null,\"updateTime\":null}]"
+  },
+  "stations": {
+    "status": 200,
+    "content": "[{\"id\":\"DEMO-STATION\",\"name\":\"演示站（非生产资料）\",\"longitude\":100.000000,\"latitude\":30.000000,\"height\":0.00,\"minElevation\":0.00,\"maxElevation\":90.00,\"createBy\":null,\"createOrgId\":null,\"createTime\":null,\"updateBy\":null,\"updateTime\":null}]"
+  }
+}

@@ -1,0 +1,16 @@
+# 独立演示环境：不连接原生产库，数据库文件只写入可配置的运行数据目录。
+# 默认使用无密码的本地 H2；生产配置不会加载本文件或演示初始化器。
+spring:
+  datasource:
+    url: jdbc:h2:file:${DEMO_DB_PATH:./storage/demo-db};MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ${DEMO_DB_PASSWORD:}
+    driver-class-name: org.h2.Driver
+  main:
+    headless: true
+
+space:
+  visibility:
+    datasource:
+      # H2 的 MySQL 兼容模式沿用原分页方言，不扩展生产数据库枚举。
+      db-type: mysql

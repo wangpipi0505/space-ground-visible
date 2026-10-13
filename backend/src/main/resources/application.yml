@@ -1,0 +1,84 @@
+spring:
+  application:
+    name: space-target-visible
+  datasource:
+    url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:space_ground_visible}?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # ===== 达梦数据库适配预留（集成方环境）=====
+    # 切换达梦时，将以上 datasource 替换为下列配置，并把下方 space.visibility.datasource.db-type 设为 dm，
+    # 同时关闭 Flyway（达梦侧用 db/dameng/schema.sql 手工建表，见部署文档）：
+    #   url: jdbc:dm://${DB_HOST:127.0.0.1}:${DB_PORT:5236}/${DB_NAME:SPACE_TARGET_VISIBLE}?characterEncoding=utf8
+    #   username: ${DB_USER:SPACE_TARGET_VISIBLE}
+    #   password: ${DB_PASSWORD:}
+    #   driver-class-name: dm.jdbc.driver.DmDriver
+    # 并在 pom.xml 中启用达梦 JDBC 驱动依赖（已预留注释块）。
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    encoding: UTF-8
+  jackson:
+    time-zone: UTC
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+
+server:
+  port: ${SERVER_PORT:8080}
+
+# Spring Boot 已集成 SLF4J + Logback；同时保留控制台输出并写入可轮转文件。
+# LOG_FILE 可由部署环境覆盖，避免把运行日志与交付目录以外的路径耦合。
+logging:
+  level:
+    root: INFO
+    com.runisys.orbit.spacevisibility: INFO
+  file:
+    name: ${LOG_FILE:logs/space-target-visible.log}
+  logback:
+    rollingpolicy:
+      max-file-size: 20MB
+      max-history: 14
+      total-size-cap: 1GB
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: assign_id
+
+space:
+  visibility:
+    datasource:
+      # 数据库类型标识：mysql（默认）或 dm（达梦，集成方环境），驱动分页方言选择
+      db-type: ${SPACE_VISIBILITY_DB_TYPE:mysql}
+    downlink:
+      default-pre-guard-sec: 300
+      default-post-guard-sec: 0
+      default-allowed-gap-sec: 0
+      # 站点自身和一次任务均未指定仰角时，采用对比基线的可用仰角范围。
+      default-station-min-elevation-deg: 10
+      default-station-max-elevation-deg: 90
+    orbit:
+      kepler-rk4-step-sec: ${SPACE_VISIBILITY_KEPLER_RK4_STEP_SEC:10}
+      # 任务时间前后单份当前星历的建议近似传播时长。超过该范围仍会尝试计算，但会在结果中
+      # 以中文风险提示标注，避免因缺少历史星历而把全部目标直接筛掉。
+      max-approximation-days: ${SPACE_VISIBILITY_ORBIT_MAX_APPROXIMATION_DAYS:14}
+    target-filter:
+      # 历元约束的默认值；前端可随每次任务覆盖此 YYDDD 值。
+      default-min-tle-epoch-code: ${SPACE_VISIBILITY_TARGET_FILTER_DEFAULT_MIN_TLE_EPOCH_CODE:23340}
+    illumination:
+      # WinTool 确认口径固定为 JPL DE405 + WGS84 椭球圆柱影：不计折射、无半影。
+      # 星历文件由 backend/orekit-data/DE-405-ephemerides/unxp2000.405 交付并在启动时校验，
+      # 不提供 DE440、解析太阳公式或太阳视半径的配置回退，避免误用不同口径。
+    scan:
+      # 小于此时长的短弧允许不检出；需小于等于各请求的粗选步长且不小于精选步长。
+      downlink-min-event-sec: ${SPACE_VISIBILITY_DOWNLINK_MIN_EVENT_SEC:30}
+      visibility-min-event-sec: ${SPACE_VISIBILITY_VISIBILITY_MIN_EVENT_SEC:10}
+    calculation:
+      worker-threads: ${SPACE_VISIBILITY_WORKERS:4}
+      work-queue-capacity: ${SPACE_VISIBILITY_WORK_QUEUE_CAPACITY:16}
+      pair-batch-size: ${SPACE_VISIBILITY_PAIR_BATCH_SIZE:32}
+      observer-orbit-cache-size: ${SPACE_VISIBILITY_OBSERVER_ORBIT_CACHE_SIZE:10000}
+      max-pair-tasks: ${SPACE_VISIBILITY_MAX_PAIR_TASKS:10000}
+    planning-task:
+      ttl-hours: ${SPACE_VISIBILITY_PLANNING_TASK_TTL_HOURS:2}

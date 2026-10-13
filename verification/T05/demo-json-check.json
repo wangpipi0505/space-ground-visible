@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "payloadJsonType": "object after one parse",
+  "profile": {
+    "payloadType": "SPACE",
+    "legacyGroundProfile": false,
+    "minDistanceKm": 100.0,
+    "maxDistanceKm": 8000.0,
+    "azimuthMinDeg": 10.0,
+    "azimuthMaxDeg": 350.0,
+    "elevationMinDeg": -80.0,
+    "elevationMaxDeg": 80.0,
+    "angleRateDegPerSec": 0.5,
+    "sunAvoidHalfAngleDeg": 15.0,
+    "startupAngleRateDegPerSec": null,
+    "sensorFullConeAngleDeg": null,
+    "maxDetectRangeKm": null,
+    "sunExclusionAngleDeg": null
+  }
+}

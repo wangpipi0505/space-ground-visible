@@ -5,13 +5,14 @@
 **/__pycache__/
 backend/storage/
 backend/logs/
+/logs/
 backend/maven-repository/
 backend/src/main/resources/static/
 verification/baseline-copies/
 verification/runtime/
 verification/**/*.log
 verification/**/*.json.actual
-backend/orekit-data/
+backend/orekit-data/.git/
 .idea/
 .vscode/
 *.iml

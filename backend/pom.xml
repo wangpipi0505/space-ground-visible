@@ -69,7 +69,8 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>test</scope>
+            <!-- demo 使用独立 H2 文件库；生产仍按配置使用 MySQL/达梦。 -->
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 

@@ -3,6 +3,7 @@
 *.md whitespace=-blank-at-eol
 # 原参考数据与数值基准保留字节，不参与源码行尾和空白修整
 test-data/** -text -whitespace
+backend/orekit-data/** -text -whitespace
 verification/**/*.txt -text whitespace=cr-at-eol
 *.jar binary
 *.png binary
