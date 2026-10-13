@@ -20,3 +20,4 @@ backend/orekit-data/.git/
 .env.*
 application-local.yml
 *.zip
+/.playwright-cli/

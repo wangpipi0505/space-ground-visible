@@ -1,0 +1,13 @@
+### Result
+32. [GET] http://127.0.0.1:15173/api/v1/space/health => [200] OK
+33. [GET] http://127.0.0.1:15173/api/v1/space/satellites/page?pageNumber=1&pageSize=50 => [200] OK
+34. [GET] http://127.0.0.1:15173/api/v1/space/stations => [200] OK
+35. [GET] http://127.0.0.1:15173/api/v1/space/defaults => [200] OK
+36. [GET] http://127.0.0.1:15173/api/v1/space/targets/belong-options => [200] OK
+38. [GET] http://127.0.0.1:15173/api/v1/space/satellites/1/payload-profiles => [200] OK
+39. [POST] http://127.0.0.1:15173/api/v1/space/targets/query => [200] OK
+40. [POST] http://127.0.0.1:15173/api/v1/space/downlink/validate-window => [400] Bad Request
+41. [POST] http://127.0.0.1:15173/api/v1/space/downlink/validate-window => [200] OK
+42. [GET] http://127.0.0.1:15173/api/v1/space/visibility/task-results?pageNumber=1&pageSize=20 => [200] OK
+
+Note: 32 static requests not shown, run with --static option to see them.

@@ -1,0 +1,486 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+- Console: 0 errors, 1 warnings
+### Snapshot
+```yaml
+- generic [active] [ref=f2e1]:
+  - main [ref=f2e3]:
+    - heading "空间目标可见窗口规划" [level=1] [ref=f2e5]
+    - generic [ref=f2e6]:
+      - tablist [ref=f2e10]:
+        - tab "规划工作台" [selected] [ref=f2e12]
+        - tab "任务结果记录" [ref=f2e13]
+      - tabpanel "规划工作台" [ref=f2e15]:
+        - generic [ref=f2e16]:
+          - region "卫星与地面站选择" [ref=f2e17]:
+            - generic [ref=f2e18]:
+              - generic [ref=f2e19]: "1"
+              - generic [ref=f2e20]:
+                - heading "选择卫星与地面站" [level=2] [ref=f2e21]
+                - paragraph [ref=f2e22]: 勾选任务卫星并维护对空载荷，再勾选地面站并确认仰角约束。
+            - generic [ref=f2e23]:
+              - generic [ref=f2e25]:
+                - heading "任务卫星" [level=2] [ref=f2e26]
+                - generic [ref=f2e492]: 1 颗
+              - generic [ref=f2e27]:
+                - generic [ref=f2e28]:
+                  - textbox "输入卫星名称、OBJECT_ID、NORAD_CAT_ID 或 SCID" [ref=f2e31]
+                  - button "筛选卫星" [ref=f2e33] [cursor=pointer]
+                - generic [ref=f2e36]:
+                  - table [ref=f2e38]:
+                    - rowgroup [ref=f2e52]:
+                      - row [ref=f2e53]:
+                        - columnheader "任务选择" [ref=f2e54]
+                        - columnheader "ID" [ref=f2e56]
+                        - columnheader "卫星名称" [ref=f2e58]
+                        - columnheader "OBJECT_ID" [ref=f2e60]
+                        - columnheader "NORAD_CAT_ID" [ref=f2e62]
+                        - columnheader "SCID" [ref=f2e64]
+                        - columnheader "COUNTRY" [ref=f2e66]
+                        - columnheader "WEIGHT(kg)" [ref=f2e68]
+                        - columnheader "RCS_SIZE" [ref=f2e70]
+                        - columnheader "LAUNCH" [ref=f2e72]
+                        - columnheader "COMMENT" [ref=f2e74]
+                        - columnheader "轨道模型" [ref=f2e76]
+                  - table [ref=f2e82]:
+                    - rowgroup [ref=f2e96]:
+                      - row "1 演示观测星（非生产资料） KEPLER_6" [ref=f2e97]:
+                        - cell [ref=f2e98]:
+                          - generic [ref=f2e101] [cursor=pointer]:
+                            - checkbox [checked]
+                        - cell "1" [ref=f2e103]
+                        - cell "演示观测星（非生产资料）" [ref=f2e105]
+                        - cell [ref=f2e107]
+                        - cell [ref=f2e108]
+                        - cell [ref=f2e109]
+                        - cell [ref=f2e110]
+                        - cell [ref=f2e111]
+                        - cell [ref=f2e112]
+                        - cell [ref=f2e113]
+                        - cell [ref=f2e114]
+                        - cell "KEPLER_6" [ref=f2e115]
+                - generic [ref=f2e117]:
+                  - generic [ref=f2e118]: Total 1
+                  - button "Go to previous page" [disabled] [ref=f2e119]
+                  - list [ref=f2e120]:
+                    - listitem "page 1" [ref=f2e121]: "1"
+                  - button "Go to next page" [disabled] [ref=f2e122]
+                - generic [ref=f2e123]:
+                  - strong [ref=f2e124]: 已选任务卫星：1 颗
+                  - generic [ref=f2e767]:
+                    - generic [ref=f2e768]: 演示观测星（非生产资料）
+                    - button "Close this tag" [ref=f2e769]:
+                      - generic [ref=f2e770] [cursor=pointer]
+            - generic [ref=f2e125]:
+              - generic [ref=f2e127]:
+                - heading "卫星载荷" [level=2] [ref=f2e128]
+                - generic [ref=f2e502]: 长期配置
+              - generic [ref=f2e774]:
+                - button "演示观测星（非生产资料） 已配置，活动：对空" [expanded] [ref=f2e775] [cursor=pointer]:
+                  - generic [ref=f2e777]:
+                    - strong [ref=f2e778]: 演示观测星（非生产资料）
+                    - generic [ref=f2e779]: 已配置，活动：对空
+                - region "演示观测星（非生产资料） 已配置，活动：对空" [ref=f2e784]:
+                  - generic [ref=f2e785]:
+                    - generic [ref=f2e786]:
+                      - generic [ref=f2e787]:
+                        - generic [ref=f2e788]: 载荷类型
+                        - generic [ref=f2e791] [cursor=pointer]:
+                          - generic:
+                            - combobox "载荷类型" [ref=f2e793]
+                            - generic [ref=f2e794]: 对空载荷
+                      - generic [ref=f2e799]:
+                        - generic [ref=f2e800]: 距离下限（公里）
+                        - generic [ref=f2e802]:
+                          - button "decrease number" [ref=f2e803]
+                          - button "increase number" [ref=f2e807] [cursor=pointer]
+                          - spinbutton "距离下限（公里）" [ref=f2e813]: "0"
+                      - generic [ref=f2e814]:
+                        - generic [ref=f2e815]: 距离上限（公里）
+                        - generic [ref=f2e817]:
+                          - button "decrease number" [ref=f2e818] [cursor=pointer]
+                          - button "increase number" [ref=f2e822] [cursor=pointer]
+                          - spinbutton "距离上限（公里）" [ref=f2e828]: "100000"
+                      - generic [ref=f2e829]:
+                        - generic [ref=f2e830]: 方位角下限（度，双端留空表示不限）
+                        - generic [ref=f2e832]:
+                          - button "decrease number" [ref=f2e833] [cursor=pointer]
+                          - button "increase number" [ref=f2e837] [cursor=pointer]
+                          - spinbutton "方位角下限（度，双端留空表示不限）" [ref=f2e843]
+                      - generic [ref=f2e844]:
+                        - generic [ref=f2e845]: 方位角上限（度，双端留空表示不限）
+                        - generic [ref=f2e847]:
+                          - button "decrease number" [ref=f2e848] [cursor=pointer]
+                          - button "increase number" [ref=f2e852] [cursor=pointer]
+                          - spinbutton "方位角上限（度，双端留空表示不限）" [ref=f2e858]
+                      - generic [ref=f2e859]:
+                        - generic [ref=f2e860]: 俯仰角下限（度）
+                        - generic [ref=f2e862]:
+                          - button "decrease number" [ref=f2e863]
+                          - button "increase number" [ref=f2e867] [cursor=pointer]
+                          - spinbutton "俯仰角下限（度）" [ref=f2e873]: "-90"
+                      - generic [ref=f2e874]:
+                        - generic [ref=f2e875]: 俯仰角上限（度）
+                        - generic [ref=f2e877]:
+                          - button "decrease number" [ref=f2e878] [cursor=pointer]
+                          - button "increase number" [ref=f2e882]
+                          - spinbutton "俯仰角上限（度）" [ref=f2e888]: "90"
+                      - generic [ref=f2e889]:
+                        - generic [ref=f2e890]: 跟踪角速度（度/秒，0 或 -1 表示不限制）
+                        - generic [ref=f2e892]:
+                          - button "decrease number" [ref=f2e893] [cursor=pointer]
+                          - button "increase number" [ref=f2e897] [cursor=pointer]
+                          - spinbutton "跟踪角速度（度/秒，0 或 -1 表示不限制）" [ref=f2e903]: "0"
+                      - generic [ref=f2e904]:
+                        - generic [ref=f2e905]: 太阳回避半角（度）
+                        - generic [ref=f2e907]:
+                          - button "decrease number" [ref=f2e908]
+                          - button "increase number" [ref=f2e912] [cursor=pointer]
+                          - spinbutton "太阳回避半角（度）" [ref=f2e918]: "0"
+                      - generic [ref=f2e919]:
+                        - generic [ref=f2e920]: 启动角速度（度/秒，留空或 -1 表示不启用)
+                        - generic [ref=f2e922]:
+                          - button "decrease number" [ref=f2e923] [cursor=pointer]
+                          - button "increase number" [ref=f2e927] [cursor=pointer]
+                          - spinbutton "启动角速度（度/秒，留空或 -1 表示不启用)" [ref=f2e933]
+                    - generic [ref=f2e934]:
+                      - generic [ref=f2e935]: 对空与对地配置独立保存；保存的类型会成为后续规划的活动载荷
+                      - button "保存并启用" [ref=f2e936] [cursor=pointer]
+            - generic [ref=f2e750]:
+              - generic [ref=f2e752]:
+                - heading "地面站" [level=2] [ref=f2e753]
+                - generic [ref=f2e754]: 1 个站点
+              - generic [ref=f2e756]:
+                - group "checkbox-group" [ref=f2e757]:
+                  - generic [ref=f2e758]:
+                    - checkbox "演示站（非生产资料）（DEMO-STATION）" [checked] [ref=f2e759]
+                    - generic [ref=f2e760] [cursor=pointer]: 演示站（非生产资料）（DEMO-STATION）
+                - generic [ref=f2e1025]:
+                  - generic [ref=f2e1026]:
+                    - strong [ref=f2e1027]: 演示站（非生产资料）
+                    - generic [ref=f2e1028]: 100，30，0
+                  - generic [ref=f2e1029]:
+                    - generic [ref=f2e1030]:
+                      - generic [ref=f2e1031]: 最小仰角（度）
+                      - generic [ref=f2e1033]:
+                        - button "decrease number" [ref=f2e1034]
+                        - button "increase number" [ref=f2e1038] [cursor=pointer]
+                        - spinbutton "最小仰角（度）" [ref=f2e1044]: "0"
+                    - generic [ref=f2e1045]:
+                      - generic [ref=f2e1046]: 最大仰角（度）
+                      - generic [ref=f2e1048]:
+                        - button "decrease number" [ref=f2e1049] [cursor=pointer]
+                        - button "increase number" [ref=f2e1053] [cursor=pointer]
+                        - spinbutton "最大仰角（度）" [ref=f2e1059]: "90"
+          - region "下传窗口规划" [ref=f2e159]:
+            - generic [ref=f2e160]:
+              - generic [ref=f2e161]: "2"
+              - generic [ref=f2e162]:
+                - heading "站星链路与下传窗口" [level=2] [ref=f2e163]
+                - paragraph [ref=f2e164]: 互选卫星—地面站链路并计算下传弧段，再选择或校验一个观测计算窗口。
+            - generic [ref=f2e165]:
+              - generic [ref=f2e167]:
+                - heading "站星互选" [level=2] [ref=f2e168]
+                - generic [ref=f2e671]: 1 条链路
+              - table "卫星地面站下传互选矩阵" [ref=f2e1060]:
+                - row [ref=f2e1061]:
+                  - columnheader "地面站" [ref=f2e1062]
+                  - columnheader "演示观测星（非生产资料）" [ref=f2e1063]
+                - row [ref=f2e1064]:
+                  - rowheader "演示站（非生产资料） DEMO-STATION" [ref=f2e1065]:
+                    - strong [ref=f2e1066]: 演示站（非生产资料）
+                    - generic [ref=f2e1067]: DEMO-STATION
+                  - cell [ref=f2e1068]:
+                    - generic "演示观测星（非生产资料） 对 演示站（非生产资料） 下传" [ref=f2e1069] [cursor=pointer]:
+                      - generic [ref=f2e1070]:
+                        - checkbox "演示观测星（非生产资料） 对 演示站（非生产资料） 下传" [checked]
+            - generic [ref=f2e190]:
+              - generic [ref=f2e192]:
+                - heading "下传弧段规划" [level=2] [ref=f2e193]
+                - button "计算下传窗口" [ref=f2e194] [cursor=pointer]
+              - generic [ref=f2e197]:
+                - generic [ref=f2e198]:
+                  - generic [ref=f2e199]: 规划时间段
+                  - generic [ref=f2e201]:
+                    - combobox "规划时间段" [ref=f2e207]: 2026-07-01 10:00:00
+                    - generic [ref=f2e208]: 至
+                    - combobox "结束" [ref=f2e209]: 2026-07-01 16:00:00
+                - generic [ref=f2e210]:
+                  - generic [ref=f2e211]: 粗选步长（秒）
+                  - generic [ref=f2e213]:
+                    - button "decrease number" [ref=f2e214] [cursor=pointer]
+                    - button "increase number" [ref=f2e218] [cursor=pointer]
+                    - spinbutton "粗选步长（秒）" [ref=f2e224]: "60"
+                - generic [ref=f2e225]:
+                  - generic [ref=f2e226]: 精选步长（秒）
+                  - generic [ref=f2e228]:
+                    - button "decrease number" [ref=f2e229] [cursor=pointer]
+                    - button "increase number" [ref=f2e233] [cursor=pointer]
+                    - spinbutton "精选步长（秒）" [ref=f2e239]: "1"
+                - generic [ref=f2e240]:
+                  - generic [ref=f2e241]: 卫星光照
+                  - generic [ref=f2e244] [cursor=pointer]:
+                    - generic:
+                      - combobox "卫星光照" [ref=f2e246]
+                      - generic [ref=f2e247]: 不限
+                - generic [ref=f2e252]:
+                  - generic [ref=f2e253]: 前保护（秒）
+                  - generic [ref=f2e255]:
+                    - button "decrease number" [ref=f2e256] [cursor=pointer]
+                    - button "increase number" [ref=f2e260] [cursor=pointer]
+                    - spinbutton "前保护（秒）" [ref=f2e266]: "300"
+                - generic [ref=f2e267]:
+                  - generic [ref=f2e268]: 后保护（秒）
+                  - generic [ref=f2e270]:
+                    - button "decrease number" [ref=f2e271]
+                    - button "increase number" [ref=f2e275] [cursor=pointer]
+                    - spinbutton "后保护（秒）" [ref=f2e281]: "0"
+                - generic [ref=f2e282]:
+                  - generic [ref=f2e283]: 允许断链（秒）
+                  - generic [ref=f2e285]:
+                    - button "decrease number" [ref=f2e286]
+                    - button "increase number" [ref=f2e290] [cursor=pointer]
+                    - spinbutton "允许断链（秒）" [ref=f2e296]: "0"
+            - generic [ref=f2e297]:
+              - generic [ref=f2e299]:
+                - heading "下传窗口" [level=2] [ref=f2e300]
+                - generic [ref=f2e1197]: 已选择
+              - generic [ref=f2e301]:
+                - generic [ref=f2e1199]:
+                  - generic [ref=f2e1200]: 观测计算范围：连续下传覆盖：演示观测星（非生产资料）—演示站（非生产资料）
+                  - generic [ref=f2e1201]: 2026/07/01 11:37:52.000（北京时间） 至 2026/07/01 11:47:10.000（北京时间）
+                - generic [ref=f2e303]:
+                  - table [ref=f2e305]:
+                    - rowgroup [ref=f2e312]:
+                      - row [ref=f2e313]:
+                        - columnheader "连续覆盖链路" [ref=f2e314]
+                        - columnheader "链路数" [ref=f2e316]
+                        - columnheader "起止时间" [ref=f2e318]
+                        - columnheader "时长" [ref=f2e320]
+                        - columnheader "使用" [ref=f2e322]
+                  - table [ref=f2e1072]:
+                    - rowgroup [ref=f2e1079]:
+                      - row [ref=f2e1505]:
+                        - cell "演示观测星（非生产资料）—演示站（非生产资料）" [ref=f2e1081]
+                        - cell "1" [ref=f2e1083]
+                        - cell [ref=f2e1506]:
+                          - generic [ref=f2e1086]: 2026/07/01 18:35:25.000（北京时间）2026/07/01 18:44:53.000（北京时间）
+                        - cell "568.000 秒" [ref=f2e1507]
+                        - cell [ref=f2e1089]:
+                          - button "选择" [ref=f2e1091] [cursor=pointer]
+                      - row [ref=f2e1508]:
+                        - cell "演示观测星（非生产资料）—演示站（非生产资料）" [ref=f2e1094]
+                        - cell "1" [ref=f2e1096]
+                        - cell [ref=f2e1509]:
+                          - generic [ref=f2e1099]: 2026/07/01 20:19:20.000（北京时间）2026/07/01 20:25:47.000（北京时间）
+                        - cell "387.000 秒" [ref=f2e1510]
+                        - cell [ref=f2e1102]:
+                          - button "选择" [ref=f2e1104] [cursor=pointer]
+                - generic [ref=f2e1120]:
+                  - table [ref=f2e1122]:
+                    - rowgroup [ref=f2e1129]:
+                      - row [ref=f2e1130]:
+                        - columnheader "卫星" [ref=f2e1131]
+                        - columnheader "地面站" [ref=f2e1133]
+                        - columnheader "起止时间" [ref=f2e1135]
+                        - columnheader "时长" [ref=f2e1137]
+                        - columnheader "使用" [ref=f2e1139]
+                  - table [ref=f2e1145]:
+                    - rowgroup [ref=f2e1152]:
+                      - row [ref=f2e1511]:
+                        - cell "演示观测星（非生产资料）" [ref=f2e1154]
+                        - cell "演示站（非生产资料）" [ref=f2e1156]
+                        - cell [ref=f2e1512]:
+                          - generic [ref=f2e1159]: 2026/07/01 18:35:25.000（北京时间）2026/07/01 18:44:53.000（北京时间）
+                        - cell "568.000 秒" [ref=f2e1513]
+                        - cell [ref=f2e1162]:
+                          - button "选择" [ref=f2e1164] [cursor=pointer]
+                      - row [ref=f2e1514]:
+                        - cell "演示观测星（非生产资料）" [ref=f2e1167]
+                        - cell "演示站（非生产资料）" [ref=f2e1169]
+                        - cell [ref=f2e1515]:
+                          - generic [ref=f2e1172]: 2026/07/01 20:19:20.000（北京时间）2026/07/01 20:25:47.000（北京时间）
+                        - cell "387.000 秒" [ref=f2e1516]
+                        - cell [ref=f2e1175]:
+                          - button "选择" [ref=f2e1177] [cursor=pointer]
+                - generic [ref=f2e330]:
+                  - generic [ref=f2e331]:
+                    - combobox "开始" [ref=f2e337]: 2026-07-01 18:00:00
+                    - generic [ref=f2e338]: 至
+                    - combobox "结束" [ref=f2e339]: 2026-07-02 00:00:00
+                  - button "校验自选" [ref=f2e340] [cursor=pointer]
+          - region "目标全量观测规划" [ref=f2e342]:
+            - generic [ref=f2e343]:
+              - generic [ref=f2e344]: "3"
+              - generic [ref=f2e345]:
+                - heading "目标筛选与观测规划" [level=2] [ref=f2e346]
+                - paragraph [ref=f2e347]: 设置目标筛选条件与观测约束，在已选下传窗口内提交后台任务并查看实时进度。
+            - generic [ref=f2e348]:
+              - heading "目标筛选" [level=2] [ref=f2e351]
+              - generic [ref=f2e352]:
+                - generic [ref=f2e353]:
+                  - generic [ref=f2e354]:
+                    - generic [ref=f2e355]: 国籍（数据字典）
+                    - generic [ref=f2e358]:
+                      - generic:
+                        - combobox "国籍（数据字典）" [ref=f2e360]
+                        - generic [ref=f2e361]: 从目标库实际 BELONG_ 值中选择
+                      - generic [ref=f2e363] [cursor=pointer]
+                  - generic [ref=f2e366]:
+                    - generic [ref=f2e367]: 历元约束（YYDDD）
+                    - generic [ref=f2e368]:
+                      - textbox "历元约束（YYDDD）" [ref=f2e371]:
+                        - /placeholder: 例如：23340
+                        - text: "23340"
+                      - generic [ref=f2e372]: 严格保留历元晚于该值的目录目标；23340 表示 2023 年第 340 天。
+                  - generic [ref=f2e373]:
+                    - generic [ref=f2e374]: 建议近似传播时长（天）
+                    - generic [ref=f2e375]:
+                      - generic [ref=f2e376]:
+                        - button "decrease number" [ref=f2e377] [cursor=pointer]
+                        - button "increase number" [ref=f2e381] [cursor=pointer]
+                        - spinbutton "建议近似传播时长（天）" [ref=f2e387]: "14"
+                      - generic [ref=f2e388]: 超出建议时长的目标仍会尝试计算，并在任务结果中标注星历时效风险。
+                  - generic [ref=f2e389]:
+                    - generic [ref=f2e390]: 最小质量（kg）
+                    - generic [ref=f2e392]:
+                      - button "decrease number" [ref=f2e393] [cursor=pointer]
+                      - button "increase number" [ref=f2e397] [cursor=pointer]
+                      - spinbutton "最小质量（kg）" [ref=f2e403]
+                  - group "排除名称" [ref=f2e404]:
+                    - generic [ref=f2e406]:
+                      - generic [ref=f2e408] [cursor=pointer]:
+                        - generic:
+                          - combobox [ref=f2e410]
+                          - generic [ref=f2e411]: 文本包含
+                      - textbox "输入需排除的名称片段" [ref=f2e418]
+                - generic [ref=f2e420]:
+                  - button "按当前条件加载目标" [ref=f2e421] [cursor=pointer]
+                  - generic [ref=f2e423]: 国籍选项和数量由目标库 BELONG_ 实时返回；最小质量表示仅计算质量大于该值的目标。
+                - paragraph [ref=f2e986]: 筛选命中（按条件顺序叠加）：国籍后 1，质量后 1，历元约束后 1，名称排除后 1；。
+                - generic [ref=f2e425]:
+                  - table [ref=f2e427]:
+                    - rowgroup [ref=f2e439]:
+                      - row [ref=f2e440]:
+                        - columnheader "ID" [ref=f2e441]
+                        - columnheader "目标名称" [ref=f2e443]
+                        - columnheader "OBJECT_ID" [ref=f2e445]
+                        - columnheader "NORAD_CAT_ID" [ref=f2e447]
+                        - columnheader "国籍" [ref=f2e449]
+                        - columnheader "WEIGHT(kg)" [ref=f2e451]
+                        - columnheader "RCS_SIZE" [ref=f2e453]
+                        - columnheader "LAUNCH" [ref=f2e455]
+                        - columnheader "COMMENT" [ref=f2e457]
+                        - columnheader "轨道模型" [ref=f2e459]
+                  - table [ref=f2e987]:
+                    - rowgroup [ref=f2e999]:
+                      - row [ref=f2e1000]:
+                        - cell "2" [ref=f2e1001]
+                        - cell "演示目标星（非生产资料）" [ref=f2e1003]
+                        - cell [ref=f2e1005]
+                        - cell [ref=f2e1006]
+                        - cell "US" [ref=f2e1007]
+                        - cell "120" [ref=f2e1009]
+                        - cell [ref=f2e1011]
+                        - cell "2020-01-01" [ref=f2e1012]
+                        - cell [ref=f2e1014]
+                        - cell "KEPLER_6" [ref=f2e1015]
+                - generic [ref=f2e1017]:
+                  - generic [ref=f2e1018]: Total 1
+                  - button "Go to previous page" [disabled] [ref=f2e1019]
+                  - list [ref=f2e1020]:
+                    - listitem "page 1" [ref=f2e1021]: "1"
+                  - button "Go to next page" [disabled] [ref=f2e1022]
+            - generic [ref=f2e467]:
+              - generic [ref=f2e469]:
+                - heading "目标观测组合" [level=2] [ref=f2e470]
+                - generic [ref=f2e673]: 同一目标
+              - generic [ref=f2e471]:
+                - generic [ref=f2e938]:
+                  - generic [ref=f2e939]: "1"
+                  - generic [ref=f2e940]:
+                    - text: 选择需要
+                    - strong [ref=f2e941]: 同时观测同一目标
+                    - text: 的我方卫星
+                - generic [ref=f2e942]:
+                  - group "checkbox-group" [ref=f2e943]:
+                    - generic [ref=f2e944]:
+                      - checkbox "演示观测星（非生产资料）" [ref=f2e945]
+                      - generic [ref=f2e946] [cursor=pointer]: 演示观测星（非生产资料）
+                  - generic [ref=f2e947]:
+                    - generic [ref=f2e948]: "2"
+                    - generic [ref=f2e949]: 共同可见时长（秒）
+                    - generic [ref=f2e950]:
+                      - button "decrease number" [ref=f2e951] [cursor=pointer]
+                      - button "increase number" [ref=f2e955] [cursor=pointer]
+                      - spinbutton [ref=f2e961]: "400"
+                  - button "添加组合约束" [ref=f2e962] [cursor=pointer]
+                - generic [ref=f2e965]:
+                  - table [ref=f2e967]:
+                    - rowgroup [ref=f2e972]:
+                      - row [ref=f2e973]:
+                        - columnheader "卫星组合" [ref=f2e974]
+                        - columnheader "共同可见时长（秒）" [ref=f2e976]
+                        - columnheader "操作" [ref=f2e978]
+                  - generic [ref=f2e983]:
+                    - table:
+                      - rowgroup
+                    - generic [ref=f2e984]: 未设置组合时，默认分别输出每颗已选卫星的观测结果
+            - generic [ref=f2e478]:
+              - generic [ref=f2e480]:
+                - heading "目标观测规划" [level=2] [ref=f2e481]
+                - generic [ref=f2e482]:
+                  - generic [ref=f2e723]: 后台任务（显示进度）
+                  - button "开始规划" [ref=f2e483] [cursor=pointer]
+              - generic [ref=f2e485]:
+                - generic [ref=f2e1202]:
+                  - generic [ref=f2e1203]: 观测星：演示观测星（非生产资料）
+                  - generic [ref=f2e1204]: 计算范围：连续下传覆盖：演示观测星（非生产资料）—演示站（非生产资料）
+                - generic [ref=f2e1205]:
+                  - generic [ref=f2e1206]: 2026/07/01 11:37:52.000（北京时间） 至 2026/07/01 11:47:10.000（北京时间）
+                  - generic [ref=f2e1207]: 仅在此下传窗口内计算
+                - generic [ref=f2e1208]:
+                  - generic [ref=f2e1209]:
+                    - generic [ref=f2e1210]: 粗选步长（秒）
+                    - generic [ref=f2e1212]:
+                      - button "decrease number" [ref=f2e1213] [cursor=pointer]
+                      - button "increase number" [ref=f2e1217] [cursor=pointer]
+                      - spinbutton "粗选步长（秒）" [ref=f2e1223]: "60.000"
+                  - generic [ref=f2e1224]:
+                    - generic [ref=f2e1225]: 精选步长（秒）
+                    - generic [ref=f2e1227]:
+                      - button "decrease number" [ref=f2e1228]
+                      - button "increase number" [ref=f2e1232] [cursor=pointer]
+                      - spinbutton "精选步长（秒）" [ref=f2e1238]: "0.001"
+                  - generic [ref=f2e1239]:
+                    - generic [ref=f2e1240]: 光照组合
+                    - generic [ref=f2e1243] [cursor=pointer]:
+                      - generic:
+                        - combobox "光照组合" [ref=f2e1245]
+                        - generic [ref=f2e1246]: 不限
+                - generic [ref=f2e1522]:
+                  - generic [ref=f2e1523]:
+                    - generic [ref=f2e1524]: 任务状态：已完成
+                    - generic [ref=f2e1525]: 已完成目标：1 / 1（配对 1 / 1）
+                  - progressbar [ref=f2e1528]:
+                    - generic [ref=f2e1531]: 100%
+                - generic [ref=f2e1267]:
+                  - generic [ref=f2e1268]:
+                    - generic [ref=f2e1269]: 观测时段列表
+                    - generic [ref=f2e1270]:
+                      - generic [ref=f2e1272]:
+                        - generic [ref=f2e1273]:
+                          - combobox [ref=f2e1275]
+                          - generic [ref=f2e1276]: 全部目标
+                        - generic [ref=f2e1278] [cursor=pointer]
+                      - generic [ref=f2e1282] [cursor=pointer]:
+                        - generic:
+                          - combobox [ref=f2e1284]
+                          - generic [ref=f2e1285]: 全部组合
+                      - generic [ref=f2e1290]: 0 个目标
+                    - paragraph [ref=f2e1310]: 当前条件下没有满足约束的可见弧段
+                  - generic [ref=f2e1311]: 摘要信息
+  - alert [ref=f2e1538]:
+    - paragraph [ref=f2e1542]: 目标观测规划完成。
+```

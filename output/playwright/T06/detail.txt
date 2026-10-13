@@ -1,0 +1,100 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+- Console: 0 errors, 1 warnings
+### Snapshot
+```yaml
+- main [ref=f2e3]:
+  - heading "空间目标可见窗口规划" [level=1] [ref=f2e5]
+  - generic [ref=f2e6]:
+    - tablist [ref=f2e10]:
+      - tab "规划工作台" [ref=f2e12]
+      - tab "任务结果记录" [selected] [ref=f2e13]
+    - tabpanel "任务结果记录" [ref=f2e1345]:
+      - generic [ref=f2e1346]:
+        - generic [ref=f2e1348]:
+          - heading "任务结果记录" [level=2] [ref=f2e1349]
+          - generic [ref=f2e1350]: 后台规划任务的历史结果
+        - generic [ref=f2e1352]:
+          - generic [ref=f2e1353]:
+            - generic [ref=f2e1355] [cursor=pointer]:
+              - generic:
+                - combobox [ref=f2e1357]
+                - generic [ref=f2e1358]: 全部状态
+            - textbox "按任务标识或备注搜索" [ref=f2e1365]
+            - button "查询" [ref=f2e1367] [cursor=pointer]
+            - button "刷新" [ref=f2e1369] [cursor=pointer]
+          - generic [ref=f2e1372]:
+            - table [ref=f2e1374]:
+              - rowgroup [ref=f2e1384]:
+                - row [ref=f2e1385]:
+                  - columnheader "任务标识" [ref=f2e1386]
+                  - columnheader "状态" [ref=f2e1388]
+                  - columnheader "进度" [ref=f2e1390]
+                  - columnheader "提交时间" [ref=f2e1392]
+                  - columnheader "完成时间" [ref=f2e1394]
+                  - columnheader "错误信息" [ref=f2e1396]
+                  - columnheader "备注" [ref=f2e1398]
+                  - columnheader "操作" [ref=f2e1400]
+            - table [ref=f2e1406]:
+              - rowgroup [ref=f2e1416]:
+                - row [ref=f2e1417]:
+                  - cell "261e6fb1-3dba-4175-9efa-8144fd291e88" [ref=f2e1418]
+                  - cell "已完成" [ref=f2e1420]
+                  - cell "1 / 1" [ref=f2e1424]
+                  - cell "2026/10/13 03:53:36.983（北京时间）" [ref=f2e1426]
+                  - cell "2026/10/13 03:53:37.054（北京时间）" [ref=f2e1428]
+                  - cell [ref=f2e1430]
+                  - cell [ref=f2e1431]
+                  - cell [ref=f2e1432]:
+                    - generic [ref=f2e1433]:
+                      - button "明细" [ref=f2e1434] [cursor=pointer]
+                      - button "备注" [ref=f2e1436] [cursor=pointer]
+                      - button "删除" [ref=f2e1438] [cursor=pointer]
+                - row [ref=f2e1440]:
+                  - cell "41059891-ceae-4c80-9d5b-d570b3399fdc" [ref=f2e1441]
+                  - cell "已完成" [ref=f2e1443]
+                  - cell "1 / 1" [ref=f2e1447]
+                  - cell "2026/10/13 03:53:03.934（北京时间）" [ref=f2e1449]
+                  - cell "2026/10/13 03:53:04.018（北京时间）" [ref=f2e1451]
+                  - cell [ref=f2e1453]
+                  - cell [ref=f2e1454]
+                  - cell [ref=f2e1455]:
+                    - generic [ref=f2e1456]:
+                      - button "明细" [ref=f2e1457] [cursor=pointer]
+                      - button "备注" [ref=f2e1459] [cursor=pointer]
+                      - button "删除" [ref=f2e1461] [cursor=pointer]
+          - generic [ref=f2e1463]:
+            - generic [ref=f2e1464]: Total 2
+            - button "Go to previous page" [disabled] [ref=f2e1465]
+            - list [ref=f2e1466]:
+              - listitem "page 1" [ref=f2e1467]: "1"
+            - button "Go to next page" [disabled] [ref=f2e1468]
+          - dialog "任务结果记录明细" [ref=f2e1470]:
+            - generic [ref=f2e1471]:
+              - heading "任务结果记录明细" [level=2] [ref=f2e1472]
+              - button "Close this dialog" [ref=f2e1473] [cursor=pointer]
+            - generic [ref=f2e1478]:
+              - table [ref=f2e1481]:
+                - rowgroup [ref=f2e1482]:
+                  - row [ref=f2e1483]:
+                    - cell "任务标识" [ref=f2e1484]
+                    - cell "261e6fb1-3dba-4175-9efa-8144fd291e88" [ref=f2e1485]
+                  - row [ref=f2e1486]:
+                    - cell "状态" [ref=f2e1487]
+                    - cell "已完成" [ref=f2e1488]
+                    - cell "进度" [ref=f2e1491]
+                    - cell "1 / 1" [ref=f2e1492]
+                  - row [ref=f2e1493]:
+                    - cell "提交时间" [ref=f2e1494]
+                    - cell "2026/10/13 03:53:36.983（北京时间）" [ref=f2e1495]
+                    - cell "完成时间" [ref=f2e1496]
+                    - cell "2026/10/13 03:53:37.054（北京时间）" [ref=f2e1497]
+                  - row [ref=f2e1498]:
+                    - cell "备注" [ref=f2e1499]
+                    - cell "（无备注）" [ref=f2e1500]
+              - heading "请求参数" [level=3] [ref=f2e1501]
+              - generic [ref=f2e1502]: "{ \"observerSatelliteIds\": [ 1 ], \"targetIds\": [ 2 ], \"belongs\": [], \"minWeight\": null, \"maxWeight\": null, \"epochStartTime\": null, \"epochEndTime\": null, \"minTleEpochCode\": null, \"maxApproximationDays\": 14, \"excludeNameRegex\": null, \"startTime\": \"2026-07-01T03:37:52Z\", \"endTime\": \"2026-07-01T03:47:10Z\", \"coarseStepSec\": 60, \"fineStepSec\": 0.001, \"illuminationConstraint\": { \"mode\": \"ANY\", \"observerStates\": [], \"targetStates\": [] }, \"observationConstraints\": [], \"winToolReport\": null }"
+              - heading "规划结果" [level=3] [ref=f2e1503]
+              - generic [ref=f2e1504]: "{ \"results\": [], \"skippedPairs\": [], \"totalSkippedPairs\": 0, \"targetFilterBreakdown\": { \"belongsHit\": 1, \"weightHit\": 1, \"epochHit\": 1, \"epochConstraintHit\": 1, \"ephemerisWarningHit\": 0, \"excludeHit\": 1, \"maxApproximationDays\": 14 }, \"ephemerisWarnings\": [] }"
+```

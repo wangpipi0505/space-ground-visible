@@ -1,0 +1,29 @@
+### Result
+32. [GET] http://127.0.0.1:15173/api/v1/space/health => [200] OK
+33. [GET] http://127.0.0.1:15173/api/v1/space/satellites/page?pageNumber=1&pageSize=50 => [200] OK
+34. [GET] http://127.0.0.1:15173/api/v1/space/stations => [200] OK
+35. [GET] http://127.0.0.1:15173/api/v1/space/defaults => [200] OK
+36. [GET] http://127.0.0.1:15173/api/v1/space/targets/belong-options => [200] OK
+38. [GET] http://127.0.0.1:15173/api/v1/space/satellites/1/payload-profiles => [200] OK
+39. [PUT] http://127.0.0.1:15173/api/v1/space/satellites/1/payload-profiles => [200] OK
+41. [GET] http://127.0.0.1:15173/api/v1/space/satellites/1/payload-profiles => [200] OK
+42. [POST] http://127.0.0.1:15173/api/v1/space/targets/query => [200] OK
+43. [POST] http://127.0.0.1:15173/api/v1/space/downlink/plan => [200] OK
+44. [POST] http://127.0.0.1:15173/api/v1/space/visibility/tasks => [200] OK
+45. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/41059891-ceae-4c80-9d5b-d570b3399fdc => [200] OK
+46. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/41059891-ceae-4c80-9d5b-d570b3399fdc => [200] OK
+47. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/41059891-ceae-4c80-9d5b-d570b3399fdc/result => [200] OK
+48. [PUT] http://127.0.0.1:15173/api/v1/space/satellites/1/payload-profiles => [200] OK
+49. [POST] http://127.0.0.1:15173/api/v1/space/visibility/tasks => [200] OK
+50. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/261e6fb1-3dba-4175-9efa-8144fd291e88 => [200] OK
+51. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/261e6fb1-3dba-4175-9efa-8144fd291e88 => [200] OK
+52. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/261e6fb1-3dba-4175-9efa-8144fd291e88/result => [200] OK
+53. [GET] http://127.0.0.1:15173/api/v1/space/visibility/task-results?pageNumber=1&pageSize=20 => [200] OK
+54. [GET] http://127.0.0.1:15173/api/v1/space/visibility/task-results/2109855046595080193 => [200] OK
+55. [POST] http://127.0.0.1:15173/api/v1/space/downlink/validate-window => [200] OK
+56. [POST] http://127.0.0.1:15173/api/v1/space/visibility/tasks => [200] OK
+57. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/5359b1ae-cb23-4b6f-b518-36078fe93036 => [200] OK
+58. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/5359b1ae-cb23-4b6f-b518-36078fe93036 => [200] OK
+59. [GET] http://127.0.0.1:15173/api/v1/space/visibility/tasks/5359b1ae-cb23-4b6f-b518-36078fe93036/result => [200] OK
+
+Note: 33 static requests not shown, run with --static option to see them.

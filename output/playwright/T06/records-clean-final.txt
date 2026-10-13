@@ -1,0 +1,85 @@
+### Page
+- Page URL: http://127.0.0.1:15173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+```yaml
+- main [ref=f5e3]:
+  - heading "空间目标可见窗口规划" [level=1] [ref=f5e5]
+  - generic [ref=f5e6]:
+    - tablist [ref=f5e10]:
+      - tab "规划工作台" [ref=f5e12]
+      - tab "任务结果记录" [active] [selected] [ref=f5e13] [cursor=pointer]
+    - tabpanel "任务结果记录" [ref=f5e504]:
+      - generic [ref=f5e505]:
+        - generic [ref=f5e507]:
+          - heading "任务结果记录" [level=2] [ref=f5e508]
+          - generic [ref=f5e509]: 后台规划任务的历史结果
+        - generic [ref=f5e511]:
+          - generic [ref=f5e512]:
+            - generic [ref=f5e514] [cursor=pointer]:
+              - generic:
+                - combobox [ref=f5e516]
+                - generic [ref=f5e517]: 全部状态
+            - textbox "按任务标识或备注搜索" [ref=f5e524]
+            - button "查询" [ref=f5e526] [cursor=pointer]
+            - button "刷新" [ref=f5e528] [cursor=pointer]
+          - generic [ref=f5e531]:
+            - table [ref=f5e533]:
+              - rowgroup [ref=f5e543]:
+                - row [ref=f5e544]:
+                  - columnheader "任务标识" [ref=f5e545]
+                  - columnheader "状态" [ref=f5e547]
+                  - columnheader "进度" [ref=f5e549]
+                  - columnheader "提交时间" [ref=f5e551]
+                  - columnheader "完成时间" [ref=f5e553]
+                  - columnheader "错误信息" [ref=f5e555]
+                  - columnheader "备注" [ref=f5e557]
+                  - columnheader "操作" [ref=f5e559]
+            - table [ref=f5e565]:
+              - rowgroup [ref=f5e575]:
+                - row [ref=f5e576]:
+                  - cell "5359b1ae-cb23-4b6f-b518-36078fe93036" [ref=f5e577]
+                  - cell "已完成" [ref=f5e579]
+                  - cell "1 / 1" [ref=f5e583]
+                  - cell "2026/10/13 03:54:41.536（北京时间）" [ref=f5e585]
+                  - cell "2026/10/13 03:54:41.599（北京时间）" [ref=f5e587]
+                  - cell [ref=f5e589]
+                  - cell [ref=f5e590]
+                  - cell [ref=f5e591]:
+                    - generic [ref=f5e592]:
+                      - button "明细" [ref=f5e593] [cursor=pointer]
+                      - button "备注" [ref=f5e595] [cursor=pointer]
+                      - button "删除" [ref=f5e597] [cursor=pointer]
+                - row [ref=f5e599]:
+                  - cell "261e6fb1-3dba-4175-9efa-8144fd291e88" [ref=f5e600]
+                  - cell "已完成" [ref=f5e602]
+                  - cell "1 / 1" [ref=f5e606]
+                  - cell "2026/10/13 03:53:36.983（北京时间）" [ref=f5e608]
+                  - cell "2026/10/13 03:53:37.054（北京时间）" [ref=f5e610]
+                  - cell [ref=f5e612]
+                  - cell [ref=f5e613]
+                  - cell [ref=f5e614]:
+                    - generic [ref=f5e615]:
+                      - button "明细" [ref=f5e616] [cursor=pointer]
+                      - button "备注" [ref=f5e618] [cursor=pointer]
+                      - button "删除" [ref=f5e620] [cursor=pointer]
+                - row [ref=f5e622]:
+                  - cell "41059891-ceae-4c80-9d5b-d570b3399fdc" [ref=f5e623]
+                  - cell "已完成" [ref=f5e625]
+                  - cell "1 / 1" [ref=f5e629]
+                  - cell "2026/10/13 03:53:03.934（北京时间）" [ref=f5e631]
+                  - cell "2026/10/13 03:53:04.018（北京时间）" [ref=f5e633]
+                  - cell [ref=f5e635]
+                  - cell [ref=f5e636]
+                  - cell [ref=f5e637]:
+                    - generic [ref=f5e638]:
+                      - button "明细" [ref=f5e639] [cursor=pointer]
+                      - button "备注" [ref=f5e641] [cursor=pointer]
+                      - button "删除" [ref=f5e643] [cursor=pointer]
+          - generic [ref=f5e645]:
+            - generic [ref=f5e646]: Total 3
+            - button "Go to previous page" [disabled] [ref=f5e647]
+            - list [ref=f5e648]:
+              - listitem "page 1" [ref=f5e649]: "1"
+            - button "Go to next page" [disabled] [ref=f5e650]
+```
