@@ -970,8 +970,8 @@ public final class TargetTrajectoryFitter {
         return result;
     }
 
-    /** 读取原20列CSV，保持每行ECEF位置/速度和相对时间，平移UTC发射历元并重算ECI列；严格保留原列识别及失败文本。 */
-    public static FitRunResult retimeTrajectoryToCsv(RetimeTrajectoryRequest request) throws IOException {
+    /** 重定时唯一前置校验：请求、源路径、发射时刻、源路径解析及存在性按原顺序执行，Web 分配工作区前复用。 */
+    public static Path validateRetimeRequest(RetimeTrajectoryRequest request) {
         if (request == null) {
             throw new IllegalArgumentException("弹道文件重定时请求不能为空。");
         }
@@ -986,8 +986,20 @@ public final class TargetTrajectoryFitter {
         if (!Files.exists(sourceCsv)) {
             throw new IllegalArgumentException("弹道CSV文件不存在：" + sourceCsv);
         }
+        return sourceCsv;
+    }
+
+    /** 原目录解析和创建步骤；Web 在取得输入租约前复用，避免管理文件限额异常抢占原输出路径错误。 */
+    public static Path prepareRetimeOutputDirectory(RetimeTrajectoryRequest request) throws IOException {
         Path outputDir = Paths.get(blankToDefault(request.outputDir, "."));
         Files.createDirectories(outputDir);
+        return outputDir;
+    }
+
+    /** 保留原表头、未知列及行序，按首行相对秒平移 UTC；ECEF 文本保持、ECI 依原 J2000 口径重算，原 dt/间隔规则不变。 */
+    public static FitRunResult retimeTrajectoryToCsv(RetimeTrajectoryRequest request) throws IOException {
+        Path sourceCsv = validateRetimeRequest(request);
+        Path outputDir = prepareRetimeOutputDirectory(request);
 
         List<String> lines = Files.readAllLines(sourceCsv, StandardCharsets.UTF_8);
         if (lines.isEmpty()) {

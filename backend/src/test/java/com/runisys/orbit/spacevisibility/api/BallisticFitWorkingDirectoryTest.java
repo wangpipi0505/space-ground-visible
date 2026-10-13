@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/** 独立 JVM 在系统临时工作目录启动真实服务，验证拟合/模拟显式点目录又不把测试输出写进源码。 */
+/** 独立 JVM 在系统临时工作目录启动真实服务，验证三种轨迹接口显式点目录，又不把测试输出写进源码。 */
 class BallisticFitWorkingDirectoryTest {
     @TempDir
     Path root;
@@ -34,6 +34,11 @@ class BallisticFitWorkingDirectoryTest {
     @Test
     void 模拟显式点空串和null保持原工作目录及外部登记拒绝() throws Exception {
         verifyWorkingDirectory("target_trajectory_simulate_default.json", "/api/trajectory/simulate");
+    }
+
+    @Test
+    void 重定时显式点空串和null保持原工作目录及外部登记拒绝() throws Exception {
+        verifyWorkingDirectory("../../baseline/ballistic/simulate/trajectory-0.csv", "/api/trajectory/retime");
     }
 
     private void verifyWorkingDirectory(String fixture, String endpoint) throws Exception {
@@ -64,7 +69,9 @@ class BallisticFitWorkingDirectoryTest {
             ObjectMapper mapper = context.getBean(ObjectMapper.class);
             TestRestTemplate http = new TestRestTemplate();
             for (String directory : new String[]{".", " ", null}) {
-                ObjectNode request = (ObjectNode) mapper.readTree(Files.readAllBytes(Paths.get(args[0])));
+                ObjectNode request = args[1].endsWith("/retime")
+                        ? mapper.createObjectNode().put("trajectoryCsvPath", args[0]).put("launchTimeUtc", "2026-07-02 07:57:00.000")
+                        : (ObjectNode) mapper.readTree(Files.readAllBytes(Paths.get(args[0])));
                 if (directory == null) request.putNull("outputDir");
                 else request.put("outputDir", directory);
                 ResponseEntity<JsonNode> response = http.postForEntity(base + args[1], request, JsonNode.class);

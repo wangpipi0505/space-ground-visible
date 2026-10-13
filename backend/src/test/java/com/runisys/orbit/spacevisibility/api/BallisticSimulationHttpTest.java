@@ -61,12 +61,12 @@ class BallisticSimulationHttpTest {
     }
 
     @Test
-    void 正式模拟注册而健康唯一及重定时仍未注册() {
+    void 正式模拟注册而健康唯一及重定时按T17注册() {
         assertEquals("OK", http.getForObject("/api/trajectory/health", String.class));
         ResponseEntity<JsonNode> invalid = http.postForEntity("/api/trajectory/simulate", mapper.createObjectNode(), JsonNode.class);
         assertEquals(400, invalid.getStatusCodeValue());
         assertEquals("IllegalArgumentException: launchTimeUtc不能为空。", invalid.getBody().path("error").asText());
-        assertEquals(404, http.postForEntity("/api/trajectory/retime", mapper.createObjectNode(), String.class).getStatusCodeValue());
+        assertEquals(400, http.postForEntity("/api/trajectory/retime", mapper.createObjectNode(), String.class).getStatusCodeValue());
     }
 
     @Test

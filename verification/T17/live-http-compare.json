@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "targetCount": 1,
+  "files": [
+    {
+      "targetId": "RETIMED-TGT",
+      "pointCount": 2576,
+      "bytes": 593970,
+      "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+      "sameIdOnReregister": true,
+      "automaticRegistrationBeforeAuxiliaryCall": true,
+      "csvByteExact": true,
+      "previewCellExact": true,
+      "managedResultPath": true
+    }
+  ],
+  "requestStatuses": [
+    {
+      "path": "/api/trajectory/health",
+      "status": 200,
+      "bytes": 2
+    },
+    {
+      "path": "/api/v1/ballistic/files",
+      "status": 201,
+      "bytes": 253
+    },
+    {
+      "path": "/api/v1/ballistic/files/ca6ac317-b9ee-4a29-965d-ebc4cc2a96c8/download",
+      "status": 200,
+      "bytes": 561736
+    },
+    {
+      "path": "/api/trajectory/retime",
+      "status": 200,
+      "bytes": 479
+    },
+    {
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 370
+    },
+    {
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "bytes": 370
+    },
+    {
+      "path": "/api/v1/ballistic/files/757fa57b-9799-4f74-bd4e-7ebc82c489e6/download",
+      "status": 200,
+      "bytes": 593970
+    },
+    {
+      "path": "/api/v1/ballistic/files/757fa57b-9799-4f74-bd4e-7ebc82c489e6/preview?page=1&limit=3",
+      "status": 200,
+      "bytes": 1126
+    }
+  ],
+  "uploadedSourceByteExact": true,
+  "responseComparison": "仅files[].csvPath映射原夹具文件名，其它字段严格相等"
+}

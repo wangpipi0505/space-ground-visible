@@ -1,0 +1,41 @@
+{
+  "red": {
+    "tests": 2,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0
+  },
+  "green": {
+    "tests": 27,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "package": {
+    "tests": 311,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "finalJarSha256": "1f9d2d690df17d8871130fa10fb06f4c25ad296355983747444b0c3a318e66a3",
+  "regressionClass": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticRetimeServiceTest",
+  "regressionTests": [
+    "输入租约关闭一次失败返回原500并回滚自身缺省结果",
+    "输入租约关闭一次失败保留显式目录调用者文件和原输出"
+  ],
+  "scenarios": [
+    "缺省目录+上传输入",
+    "缺省目录+已登记结果输入",
+    "显式目录+上传输入",
+    "显式目录+已登记结果输入"
+  ],
+  "fault": "真实黄金计算及登记成功后，仅指定输入 ID 的 Lease.close metadata 写入一次 IOException；其它 IO 正常",
+  "assertions": "每场景注入1次、原500/error；缺省自身目录/磁盘及内存登记回滚，显式原黄金输出/keep.csv保留；输入和另一结果可继续 acquire/完整读取，另一结果 metadata 字节未变，无 pending/所有权标记残留",
+  "priorEvidenceJarSha256": "2d1e1f20f96b843ef67bf8183fcc8db03c643747ad027f1876b88aa1152569b0",
+  "retainedPriorChecks": [
+    "9 空间 capture/compare",
+    "10 弹道 capture/compare",
+    "50 原类型/1174 声明 ABI"
+  ],
+  "retainedReason": "本次只变更 BallisticRetimeService complete 顺序；原数值主体、坐标时间转换及公开类型无变更。以上采集和 ABI 证据仍指向此前包；最终包由本次 package 中数值与 HTTP 黄金测试验证。"
+}

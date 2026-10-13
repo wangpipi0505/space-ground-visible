@@ -44,11 +44,11 @@ class BallisticFitHttpTest {
     }
 
     @Test
-    void 正式健康入口可用且重定时尚未注册() {
+    void 正式健康入口可用且重定时按T17注册() {
         ResponseEntity<String> health = http.getForEntity("/api/trajectory/health", String.class);
         assertEquals(200, health.getStatusCodeValue());
         assertEquals("OK", health.getBody());
-        assertEquals(404, http.postForEntity("/api/trajectory/retime", mapper.createObjectNode(), String.class)
+        assertEquals(400, http.postForEntity("/api/trajectory/retime", mapper.createObjectNode(), String.class)
                 .getStatusCodeValue());
     }
 

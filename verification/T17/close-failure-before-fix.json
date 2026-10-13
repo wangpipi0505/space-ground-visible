@@ -1,0 +1,12 @@
+{
+  "root" : "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T17\\close-failure-6249801455419568821",
+  "injectedOnce" : 1,
+  "status" : 500,
+  "body" : {
+    "error" : "IOException: 注入输入租约关闭metadata持久化失败"
+  },
+  "remainingCsv" : [ "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T17\\close-failure-6249801455419568821\\results\\fit-7353831418161137707\\T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261013_172658_555.csv" ],
+  "remainingResultIds" : [ "bdc8bd95-93cf-4adf-8fdd-c6d5335dca85" ],
+  "remainingBytes" : 593970,
+  "goldenByteExact" : true
+}

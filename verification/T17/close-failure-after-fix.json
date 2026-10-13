@@ -1,0 +1,13 @@
+{
+  "root": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T17\\close-failure-8553876321739527647",
+  "injectedOnce": 1,
+  "status": 500,
+  "body": {
+    "error": "IOException: 注入输入租约关闭metadata持久化失败"
+  },
+  "remainingCsv": [],
+  "remainingResultIds": [],
+  "remainingBytes": 0,
+  "goldenByteExact": false,
+  "goldenComparisonMeaning": "回滚后不存在输出CSV，原探针goldenByteExact=false表示没有遗留文件可比较，不表示数值不一致；写出前完整黄金比较由关闭故障回归覆盖。"
+}
