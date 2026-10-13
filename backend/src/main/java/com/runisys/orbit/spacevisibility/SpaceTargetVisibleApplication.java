@@ -10,6 +10,10 @@ import org.springframework.context.annotation.Bean;
 
 import com.runisys.orbit.spacevisibility.infrastructure.web.TomcatProtocolCustomizer;
 
+/**
+ * 统一 Spring Boot 启动入口；扫描空间及正式弹道Web分层，数据库与外置Orekit数据按配置初始化。
+ * 生产计算经HTTP服务执行，弹道原兼容类不注册第二套Controller或桌面窗口。
+ */
 @SpringBootApplication
 @MapperScan("com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper")
 public class SpaceTargetVisibleApplication {

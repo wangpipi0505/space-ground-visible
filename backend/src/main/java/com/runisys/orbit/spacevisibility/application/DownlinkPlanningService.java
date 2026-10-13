@@ -17,6 +17,10 @@ import java.util.concurrent.Executor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 编排有限批次的站星并行下传计算，使用领域DownlinkPlanner及原光照/保护规则。
+ * 结果按卫星和站点标识整理；单链路异常单独记录，不把失败链路当作正常空窗口。
+ */
 public final class DownlinkPlanningService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DownlinkPlanningService.class);

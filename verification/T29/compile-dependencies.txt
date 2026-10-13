@@ -1,0 +1,15 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.3.0:build-classpath (default-cli) @ space-target-visible ---
+[INFO] Wrote classpath file 'G:\5-YG\space-ground-visible\verification\runtime\T29\compile-classpath.txt'.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.150 s
+[INFO] Finished at: 2026-10-14T00:44:06+08:00
+[INFO] ------------------------------------------------------------------------

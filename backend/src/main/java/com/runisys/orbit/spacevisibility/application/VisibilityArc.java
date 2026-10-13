@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 某一光照状态下的可见弧段数据：时间为UTC Instant，时长单位秒。
+ * 该对象描述单段，组合与累计时长由规划器处理，不把不连续弧段自动并为连续窗口。
+ */
 public final class VisibilityArc {
 
     private final Instant startTime;

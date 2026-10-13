@@ -111,8 +111,9 @@ public final class VisibilityRequest {
     // ========== 内部类 ==========
 
     /**
-     * 单颗卫星六根数定义。
-     * epochUtc 为历元时刻的UTC字符串，优先级高于 epochSec。
+     * 单目标文件定义：csvPath为服务端上传路径或原远程地址，不是浏览器本机路径。
+     * 发射UTC别名依次取非空baseLaunchUTC、baseLaunchUtc、baselaunchUTC；均缺省时使用文件参考历元。
+     * targetId/targetName为字符串身份和名称，不按名称合并不同目标。
      */
     public static final class BallisticDef {
         private String csvPath;
@@ -155,8 +156,9 @@ public final class VisibilityRequest {
     }
 
     /**
-     * 单颗卫星六根数定义。
-     * epochUtc 为历元时刻的UTC字符串，优先级高于 epochSec。
+     * 单颗卫星六根数定义：半长轴米，偏心率无量纲，倾角/RAAN/近地点幅角/平近点角为度。
+     * epochUtc按字面UTC解析；为空使用原2026/07/01 10:00:00，无epochSec请求字段。
+     * 显式单星平近点角缺省0；空列表默认SAT-A/SAT-B星座与此单星默认不同。
      */
     public static final class SatelliteDef {
         private String satelliteId;

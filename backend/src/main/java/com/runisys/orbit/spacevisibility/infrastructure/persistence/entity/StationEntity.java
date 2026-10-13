@@ -8,6 +8,10 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * ZG_STATION站点实体；经纬度/仰角为度，高度为米，ID为字符串。
+ * 一次任务临时站点约束独立于这里的持久化基础参数。
+ */
 @TableName("ZG_STATION")
 public class StationEntity {
 

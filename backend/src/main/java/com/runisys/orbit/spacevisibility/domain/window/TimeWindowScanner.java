@@ -8,6 +8,10 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+/**
+ * 基于UTC Instant的原空间粗精选状态扫描；相对秒内部保留纳秒转换，递归探测受深度上限约束。
+ * 退出边界与最后可见精选点的差别由scan/scanStates既有政策保留，不新增连续事件根求解。
+ */
 public final class TimeWindowScanner {
 
     /** 防止错误配置把一个粗选区间膨胀为不可控数量的递归采样点。 */

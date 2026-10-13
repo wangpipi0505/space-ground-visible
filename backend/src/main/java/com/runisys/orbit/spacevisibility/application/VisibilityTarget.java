@@ -2,6 +2,9 @@ package com.runisys.orbit.spacevisibility.application;
 
 import com.runisys.orbit.spacevisibility.domain.orbit.OrbitStateProvider;
 
+/**
+ * 目标的字符串身份及原轨道provider定义，由应用层创建，单位与坐标遵守provider合同。
+ */
 public final class VisibilityTarget {
 
     private final String targetId;

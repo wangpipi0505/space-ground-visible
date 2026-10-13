@@ -23,6 +23,11 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * 原空间六根数传播器：EME2000中心引力加J2、固定步长RK4，TEME输出位置米。
+ * 步长默认由配置取10秒；ThreadLocal积分历史、60秒锚点和8192上限保持。
+ * 原速度由位置前后1秒差分取得，不能为抽取工具换成解析PV或跨线程共享积分历史。
+ */
 public final class KeplerOrbitStateProvider implements OrbitStateProvider {
 
     private static final double DEFAULT_INTEGRATION_STEP_SEC = 10.0;

@@ -1,0 +1,25 @@
+{
+  "frozenSpaceRouteCount": 24,
+  "frozenPayloadProfileRoutes": [
+    {
+      "system": "space",
+      "method": "GET",
+      "path": "/api/v1/space/satellites/{satelliteId}/payload-profiles",
+      "source": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 120,
+      "signature": "SpaceApiModels.PayloadProfilesResponse satellitePayloadProfiles(@PathVariable Long satelliteId)",
+      "annotation": "\"/satellites/{satelliteId}/payload-profiles\""
+    },
+    {
+      "system": "space",
+      "method": "PUT",
+      "path": "/api/v1/space/satellites/{satelliteId}/payload-profiles",
+      "source": "verification/baseline-copies/space/backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 129,
+      "signature": "SpaceApiModels.PayloadProfilesResponse saveSatellitePayloadProfile( @PathVariable Long satelliteId, @RequestBody SpaceApiModels.PayloadProfileRequest request)",
+      "annotation": "\"/satellites/{satelliteId}/payload-profiles\""
+    }
+  ],
+  "originalControllerSha256": "c0e7b4ea7a66118cfae730d263dab3bc57f3f69455192967c447ba4babc5a486",
+  "conclusion": "冻结原版已有GET/PUT profiles，不能误写22既有+2本轮追加"
+}

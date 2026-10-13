@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 共同观测卫星集合及相对扫描起点的秒制区间；复制集合，保留窗口计算器产生的顺序。
+ */
 public final class CombinationWindow {
 
     private final List<String> satelliteIds;

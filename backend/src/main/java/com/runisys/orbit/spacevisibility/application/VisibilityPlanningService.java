@@ -24,6 +24,10 @@ import java.util.function.Supplier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 以有限批次并行计算观测星—目标组合，再执行原共同观测窗口与最小时长约束。
+ * 进度及取消在既有批次边界协作，输入顺序/输出整理规则保持；失败组合有独立跳过原因。
+ */
 public final class VisibilityPlanningService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(VisibilityPlanningService.class);

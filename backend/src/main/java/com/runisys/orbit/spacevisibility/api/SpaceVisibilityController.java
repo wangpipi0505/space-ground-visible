@@ -20,6 +20,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 空间目录、载荷持久化、下传与同步观测的HTTP边界，直接返回既有DTO。
+ * 请求使用UTC Instant，卫星/目标ID绑定Long；算法和筛选由应用服务执行，不在此改变模型。
+ */
 @RestController
 @RequestMapping("/api/v1/space")
 public class SpaceVisibilityController {

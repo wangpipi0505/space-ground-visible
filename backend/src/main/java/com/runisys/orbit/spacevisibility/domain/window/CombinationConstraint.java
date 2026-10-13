@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 
+/**
+ * 共同观测卫星集合与最小持续时长（秒），复制有序ID且拒绝重复/空身份，访问器仅读取。
+ */
 public final class CombinationConstraint {
 
     private final List<String> satelliteIds;

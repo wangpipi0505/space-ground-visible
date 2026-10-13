@@ -1,6 +1,7 @@
 const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim()
 const apiBaseUrl = (configuredBaseUrl || '/api/v1/space').replace(/\/$/, '')
 
+/** 空间HTTP失败的真实状态与中文业务说明；调用方据status区分409未就绪、404未知和服务异常。 */
 export class ApiRequestError extends Error {
   public readonly status: number
 

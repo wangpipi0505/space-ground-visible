@@ -33,6 +33,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * 空间任务应用入口，组合目录筛选、轨道provider、临时约束与同步/异步规划。
+ * 只在应用层转换持久化实体及UTC时间；公共外推工具不读取数据库，结果沿用原DTO与报告口径。
+ */
 @Service
 public class PlanningFacadeService {
 

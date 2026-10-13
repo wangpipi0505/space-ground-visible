@@ -9,6 +9,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * ZG_XZ_MANAGE观测卫星实体，目录与原轨道/载荷字段保持数据库映射。
+ * 六根数A为米、角元素为度，EPOCH_TIME由应用层解释为UTC；目录字段不代替根数。
+ */
 @TableName("ZG_XZ_MANAGE")
 public class SatelliteEntity {
 

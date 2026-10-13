@@ -85,7 +85,7 @@ public class PlanningTaskController {
      * 取消任务。排队中的任务直接终结，执行中的任务在批次边界退出。
      *
      * @param taskId 任务标识
-     * @return 取消后的任务状态；任务不存在时返回 404
+     * @return 当前真实状态；200/RUNNING仅表示已受理取消，需继续轮询至CANCELLED；已成功任务保留结果，未知任务404
      */
     @DeleteMapping("/{taskId}")
     public ResponseEntity<SpaceApiModels.PlanningTaskStatusResponse> cancelTask(@PathVariable String taskId) {

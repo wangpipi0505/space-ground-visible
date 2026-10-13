@@ -6,6 +6,10 @@ import com.runisys.orbit.spacevisibility.domain.orbit.OrbitStateProvider;
 
 import java.time.Instant;
 
+/**
+ * 一次卫星—站点下传扫描的不可变参数；UTC区间、步长/保护/断链值均以秒计，仰角以度计。
+ * 轨道provider与站点坐标已由应用层解析，构造器保持旧有效性检查，各访问器仅读取原值。
+ */
 public final class DownlinkPair {
 
     private final Long satelliteId;

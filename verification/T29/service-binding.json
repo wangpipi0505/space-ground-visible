@@ -1,0 +1,25 @@
+{
+  "pid": 58400,
+  "arguments": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Duser.timezone=Asia/Shanghai",
+    "-Dt26.control=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T29\\server",
+    "-Dloader.path=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T29\\managed-classes",
+    "-Dloader.main=ManagedServer",
+    "-Dorekit.data.path=G:\\5-YG\\space-ground-visible\\backend\\orekit-data",
+    "-cp",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T29\\clean-source\\backend\\target\\space-target-visible-1.0.0-SNAPSHOT.jar",
+    "org.springframework.boot.loader.PropertiesLauncher",
+    "--spring.profiles.active=demo",
+    "--server.port=18131",
+    "--spring.datasource.url=jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/T29/server/demo;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1",
+    "--ballistic.files.root=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T29\\server\\files",
+    "--logging.file.name=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T29\\server\\backend.log"
+  ],
+  "jarSha256": "2a85e06820ef41132d58906118d76d27d8dc137e57371db49e56846c803f07d6",
+  "sourceClasses": "clean-source/backend/target/classes",
+  "port": 18131,
+  "independentDemoFixture": true
+}

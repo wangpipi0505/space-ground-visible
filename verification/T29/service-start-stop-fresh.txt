@@ -1,0 +1,135 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-14 01:01:34.216  INFO 61436 --- [           main] ManagedServer                            : Starting ManagedServer using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 61436 (G:\5-YG\space-ground-visible\verification\runtime\T29\managed-classes started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\T29\server-fresh)
+2026-10-14 01:01:34.218  INFO 61436 --- [           main] ManagedServer                            : The following 1 profile is active: "demo"
+2026-10-14 01:01:35.142  INFO 61436 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 18131 (http)
+2026-10-14 01:01:35.149  INFO 61436 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-14 01:01:35.149  INFO 61436 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-14 01:01:35.194  INFO 61436 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-14 01:01:35.194  INFO 61436 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 945 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-10-14 01:01:35.757  INFO 61436 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-14 01:01:35.873  INFO 61436 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-14 01:01:35.893  INFO 61436 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-14 01:01:35.893  INFO 61436 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/T29/server-fresh/demo (H2 1.4)
+2026-10-14 01:01:35.937  INFO 61436 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.015s)
+2026-10-14 01:01:35.944  INFO 61436 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-14 01:01:35.968  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-14 01:01:35.971  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - create space visibility tables"
+2026-10-14 01:01:35.988  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - ReplaceNameUniqueKeys"
+2026-10-14 01:01:36.007  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - AddSpaceTrackCatalogFields"
+2026-10-14 01:01:36.055  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "4 - AddSatelliteWeight"
+2026-10-14 01:01:36.060  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - create visibility task result"
+2026-10-14 01:01:36.064  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "6 - normalize space payload distance unit"
+2026-10-14 01:01:36.070  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "7 - add skipped pairs to visibility task result"
+2026-10-14 01:01:36.078  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "8 - align wintool space payload rate markers"
+2026-10-14 01:01:36.086  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "9 - add selection json to visibility task result"
+2026-10-14 01:01:36.094  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "10 - align station max elevation with wintool"
+2026-10-14 01:01:36.099  INFO 61436 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 10 migrations to schema "public", now at version v10 (execution time 00:00.136s)
+2026-10-14 01:01:36.605  INFO 61436 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 18131 (http) with context path ''
+2026-10-14 01:01:36.611  INFO 61436 --- [           main] ManagedServer                            : Started ManagedServer in 2.677 seconds (JVM running for 2.949)
+T26_READY pid=61436@WIN-REJ8TF34DM4 headless=true source=jar:file:/G:/5-YG/space-ground-visible/verification/runtime/T29/clean-source/backend/target/space-target-visible-1.0.0-SNAPSHOT.jar!/BOOT-INF/classes!/
+2026-10-14 01:01:37.411  INFO 61436 --- [io-18131-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-14 01:01:37.411  INFO 61436 --- [io-18131-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-14 01:01:37.411  INFO 61436 --- [io-18131-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-14 01:01:37.710  INFO 61436 --- [io-18131-exec-3] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=1，最小质量=100.0，最大质量=150.0，历元约束=null，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-14 01:01:37.824  INFO 61436 --- [io-18131-exec-6] c.r.o.s.d.orbit.OrekitDataInitializer    : 已挂载 Orekit 数据目录：G:\5-YG\space-ground-visible\backend\orekit-data
+2026-10-14 01:01:37.837  INFO 61436 --- [io-18131-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=1，地面站数=1，站星关系数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 01:01:37.891  INFO 61436 --- [io-18131-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=1，跳过链路数=0，跳过分类={}，扫描次数=1，采样次数=21，递归探针=10，精选区间=0，耗时=53ms
+2026-10-14 01:01:37.893  INFO 61436 --- [io-18131-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=1，原始窗口数=0，连续覆盖窗口数=0，跳过链路数=0，耗时=117ms
+2026-10-14 01:01:37.902  INFO 61436 --- [io-18131-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=1，地面站数=1，站星关系数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 01:01:37.907  INFO 61436 --- [io-18131-exec-7] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=1，跳过链路数=0，跳过分类={}，扫描次数=1，采样次数=21，递归探针=10，精选区间=0，耗时=4ms
+2026-10-14 01:01:37.907  INFO 61436 --- [io-18131-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=1，原始窗口数=0，连续覆盖窗口数=0，跳过链路数=0，耗时=6ms
+2026-10-14 01:01:37.907  INFO 61436 --- [io-18131-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传时段校验完成：时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，覆盖满足=false
+2026-10-14 01:01:37.920  INFO 61436 --- [io-18131-exec-8] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 01:01:38.024  INFO 61436 --- [ce-visibility-3] c.r.o.s.d.orbit.OrekitDataInitializer    : 已确认 WinTool 太阳星历：JPL DE405，文件=G:\5-YG\space-ground-visible\backend\orekit-data\DE-405-ephemerides\unxp2000.405，大小=4666512字节，SHA-256前缀=83EB7159D065
+2026-10-14 01:01:38.090  INFO 61436 --- [io-18131-exec-8] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=1，跳过组合数=0，跳过分类={}，扫描次数=1，采样次数=81，递归探针=70，精选区间=0，耗时=170ms
+2026-10-14 01:01:38.096  INFO 61436 --- [io-18131-exec-8] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=1，输出观测结果数=1，跳过组合数=0，耗时=181ms
+2026-10-14 01:01:38.142  INFO 61436 --- [io-18131-exec-9] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=776d36b3-6f67-4145-9c33-d4ff675f594e
+2026-10-14 01:01:38.148  INFO 61436 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 01:01:38.171  INFO 61436 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=1，跳过组合数=0，跳过分类={}，扫描次数=1，采样次数=81，递归探针=70，精选区间=0，耗时=22ms
+2026-10-14 01:01:38.172  INFO 61436 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=1，输出观测结果数=1，跳过组合数=0，耗时=29ms
+2026-10-14 01:01:38.172  INFO 61436 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=776d36b3-6f67-4145-9c33-d4ff675f594e
+2026-10-14 01:01:38.382  INFO 61436 --- [o-18131-exec-10] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=679ec529-e266-480d-a606-c5c353b9cdf1
+2026-10-14 01:01:38.429  INFO 61436 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-03T10:00:00Z，粗选步长=1.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 01:01:38.430  INFO 61436 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已取消：taskId=679ec529-e266-480d-a606-c5c353b9cdf1
+2026-10-14 01:01:38.958  WARN 61436 --- [io-18131-exec-7] o.s.w.c.request.async.WebAsyncManager    : 
+!!!
+An Executor is required to handle java.util.concurrent.Callable return values.
+Please, configure a TaskExecutor in the MVC config under "async support".
+The SimpleAsyncTaskExecutor currently in use is not suitable under load.
+-------------------------------
+Request URI: '/api/orbit/visibility/search'
+!!!
+T26_CONTEXT_CLOSE_BEGIN
+2026-10-14 01:02:58.447  INFO 61436 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-10-14 01:02:58.447  INFO 61436 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-10-14 01:02:58.448  WARN 61436 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 01:02:58.449  WARN 61436 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 01:02:58.449  WARN 61436 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 01:02:58.449  WARN 61436 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [System Clock] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 01:02:58.449  WARN 61436 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-planning-task-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 01:02:58.450  WARN 61436 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 01:02:58.452  INFO 61436 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-14 01:02:58.452  INFO 61436 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+T26_CONTEXT_CLOSE_END uncaught=0
+T26_MAIN_RETURN

@@ -12,6 +12,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Spring注入的空间计算线程池及规划服务配置；worker/queue/batch/maxPairTasks分别限定资源。
+ * 原容量与拒绝策略保持，服务关闭由容器管理；该执行器不等同于MVC流式响应执行器。
+ */
 @Configuration
 public class VisibilityExecutorConfiguration {
 

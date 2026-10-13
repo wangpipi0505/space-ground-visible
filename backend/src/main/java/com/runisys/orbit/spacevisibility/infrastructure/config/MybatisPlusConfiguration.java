@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * MyBatis-Plus分页拦截配置；根据既有mysql/dm标识选择方言，演示H2使用MySQL兼容模式。
+ */
 @Configuration
 public class MybatisPlusConfiguration {
 

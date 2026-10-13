@@ -2,6 +2,10 @@ package com.runisys.orbit.spacevisibility.domain.geometry;
 
 import java.time.Instant;
 
+/**
+ * WGS84站点几何及空间视线遮挡入口，位置单位米，仰角单位度。
+ * 共用几何主体保留空间椭球及其相切/端点政策，不改用弹道历史球体口径。
+ */
 public final class GroundStationGeometry {
 
     private static final double EARTH_EQUATORIAL_RADIUS_M = 6_378_137.0;
@@ -11,6 +15,10 @@ public final class GroundStationGeometry {
     private GroundStationGeometry() {
     }
 
+    /**
+     * WGS84站点到卫星的ECEF差向量投影到当地东/北/天顶轴，atan2(up,水平模)返回仰角度。
+     * 输入位置米且必须同一时刻；这里不施加站点仰角范围或光照约束。
+     */
     public static double elevationDegFromEcef(GroundStationCoordinate station, Vector3 satelliteEcef) {
         Vector3 stationEcef = toEcef(station);
         Vector3 delta = satelliteEcef.subtract(stationEcef);
@@ -26,6 +34,7 @@ public final class GroundStationGeometry {
         return Math.toDegrees(Math.atan2(up, Math.sqrt(east * east + north * north)));
     }
 
+    /** 经纬度先由度转弧度，按WGS84卯酉圈曲率半径与站点椭球高（米）生成ECEF位置米。 */
     public static Vector3 toEcef(GroundStationCoordinate station) {
         double latitude = Math.toRadians(station.getLatitudeDeg());
         double longitude = Math.toRadians(station.getLongitudeDeg());

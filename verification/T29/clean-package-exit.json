@@ -1,0 +1,1 @@
+{"command": ["mvn.cmd", "-B", "-DskipTests", "package"], "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T29\\clean-source\\backend", "exitCode": 0}

@@ -14,6 +14,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 空间HTTP请求/响应模型及JavaBean访问器集合；JSON名称与旧合同一致，不因注释整理改字段。
+ * Instant为UTC，窗口序列化保留三位毫秒；记录LocalDateTime保留无Z格式。
+ * 业务数值的范围/特殊标记见请求字段；简单get/set不额外校验，统一由应用及领域边界执行。
+ */
 public final class SpaceApiModels {
 
     private SpaceApiModels() {
@@ -26,18 +31,27 @@ public final class SpaceApiModels {
      * 仅用于兼容已有集成方。服务端会拒绝同一请求同时携带两种单位，避免二次换算。</p>
      */
     public static class SpacePayloadConfigurationRequest {
+        /** 最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 */
         private Double minDistanceKm;
+        /** 最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 */
         private Double maxDistanceKm;
         /** @deprecated 请改用 {@link #minDistanceKm}，该字段始终按米解释。 */
         private Double minDistanceM;
         /** @deprecated 请改用 {@link #maxDistanceKm}，该字段始终按米解释。 */
         private Double maxDistanceM;
+        /** LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 */
         private Double azimuthMinDeg;
+        /** LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 */
         private Double azimuthMaxDeg;
+        /** LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 */
         private Double elevationMinDeg;
+        /** LVLH俯仰上限，度；必须成对且下限<上限≤90。 */
         private Double elevationMaxDeg;
+        /** 跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。 */
         private Double angleRateDegPerSec;
+        /** 太阳回避半角，度；必填有限0..180，0关闭。 */
         private Double sunAvoidHalfAngleDeg;
+        /** 启动角速度，度/秒；null/-1禁用，其余非负有限，当前仅保存元数据。 */
         private Double startupAngleRateDegPerSec;
 
         public Double getMinDistanceKm() { return minDistanceKm; }
@@ -167,14 +181,23 @@ public final class SpaceApiModels {
      */
     public static class PayloadProfileRequest {
         private String payloadType;
+        /** 最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 */
         private Double minDistanceKm;
+        /** 最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 */
         private Double maxDistanceKm;
+        /** LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 */
         private Double azimuthMinDeg;
+        /** LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 */
         private Double azimuthMaxDeg;
+        /** LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 */
         private Double elevationMinDeg;
+        /** LVLH俯仰上限，度；必须成对且下限<上限≤90。 */
         private Double elevationMaxDeg;
+        /** 跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。 */
         private Double angleRateDegPerSec;
+        /** 太阳回避半角，度；必填有限0..180，0关闭。 */
         private Double sunAvoidHalfAngleDeg;
+        /** 启动角速度，度/秒；null/-1禁用，其余非负有限，当前仅保存元数据。 */
         private Double startupAngleRateDegPerSec;
         private Double sensorFullConeAngleDeg;
         private Double maxDetectRangeKm;

@@ -5,6 +5,10 @@ import com.runisys.orbit.spacevisibility.api.SpaceApiModels;
 import java.time.Instant;
 import java.util.List;
 
+/**
+ * 已计算下传窗口的完整时段覆盖判定；优先使用coverageWindows，无汇总时按原规则合并。
+ * 只在某一覆盖窗口含整个请求UTC区间时满足，不把含断链的总包络当连续覆盖。
+ */
 public final class DownlinkWindowValidator {
 
     private DownlinkWindowValidator() {

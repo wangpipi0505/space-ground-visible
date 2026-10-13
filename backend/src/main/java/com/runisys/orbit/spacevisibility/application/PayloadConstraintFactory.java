@@ -13,6 +13,10 @@ import static com.runisys.orbit.spacevisibility.domain.payload.StandardPayloads.
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * 持久化载荷JSON与有效领域约束的转换工厂，维护SPACE/GROUND独立profile及活动类型。
+ * 新保存入口严格校验标准字段；旧JSON缺字段/圆锥兼容由原读取分支处理，不能伪映射为LVLH窗口。
+ */
 @Component
 public class PayloadConstraintFactory {
 

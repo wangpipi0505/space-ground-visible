@@ -20,6 +20,10 @@ import java.util.function.Consumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 纯领域站星下传判定及稳定窗口处理，保留原地球遮挡、站点仰角、光照、断链与保护顺序。
+ * 坐标转换由既有TEME/地固几何链完成，时间为UTC Instant，步长及窗口长度以秒计。
+ */
 public final class DownlinkPlanner {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DownlinkPlanner.class);

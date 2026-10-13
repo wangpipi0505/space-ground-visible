@@ -1,0 +1,366 @@
+{
+  "passed": true,
+  "typescriptVersion": "6.0.3",
+  "files": [
+    {
+      "path": "frontend/src/App.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "ffa589efc3259888ab435930d5e6101aee1bb574df06e894e8261c10d2ac917e"
+    },
+    {
+      "path": "frontend/src/App.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "96a6a735a003484db3ea9bfbf5d5a9a966de0a4eda522a63720266ddbee58324"
+    },
+    {
+      "path": "frontend/src/api/ballisticFiles.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "270debdb979fde63e510f467336d493cb17d6fbd47a13dcda079cc5f5cb2e411"
+    },
+    {
+      "path": "frontend/src/api/ballisticFit.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "1d94b17a28f0ceee7bcd8f93a4355bd7833af9fc6eab307c5dd6555186ca59d6"
+    },
+    {
+      "path": "frontend/src/api/ballisticFit.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "015ecf12d0d09df4a878e7e31ce78718a684ff11752903e1e67a3c2431c56dff"
+    },
+    {
+      "path": "frontend/src/api/ballisticFitTypes.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "path": "frontend/src/api/ballisticHttp.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "1a36044e944b3faf7138d13faaee6f0aec88b51ae9999d9248ecdcdd18525eb7"
+    },
+    {
+      "path": "frontend/src/api/ballisticPayloads.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "a1a2edb6a7d7c0ef8add6bcbfdb97a7a223de04a336c71cab6fdc3fb166d0384"
+    },
+    {
+      "path": "frontend/src/api/ballisticPayloads.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "3772752ad0957d4074faced142a16c0d9f4b6a20144b1ae566410f4d9bad3eca"
+    },
+    {
+      "path": "frontend/src/api/ballisticRetime.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "0a9830559a139b6e74e51972627cdc9d6998f1e947ebcf6bb62de0d651fc9b56"
+    },
+    {
+      "path": "frontend/src/api/ballisticRetime.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "65c039170768fa9f133917e60f5b50c6fc433a8e3aa2103e32d29dee2cc289c4"
+    },
+    {
+      "path": "frontend/src/api/ballisticSimulation.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "f39ec37e5d744925bc29e2489912d868e9953a54051cd31675c65e4822fcc4d9"
+    },
+    {
+      "path": "frontend/src/api/ballisticSimulation.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "9248beaf5a4e1f417ce88131c0c073f5ff554173e6ed708660031911b0b59727"
+    },
+    {
+      "path": "frontend/src/api/ballisticWindow.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "49fdada4332c2519045818089c03f43e4339a5514bb08c12d2d4a57b70cb5a10"
+    },
+    {
+      "path": "frontend/src/api/ballisticWindow.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "385bc22847e0895c0a14d74be211a8c33626a5ba8dc0ab1bf82c465c8b1f5e4f"
+    },
+    {
+      "path": "frontend/src/api/ballisticWindowTypes.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "path": "frontend/src/api/client.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "d6a0724cd248e34e13b2adf18de75697c2cefc8528628319bc5f242d5c891601"
+    },
+    {
+      "path": "frontend/src/api/types.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "path": "frontend/src/api/visibilityTaskResults.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "2784a3ef76715e54c1e232f71325274ec4f83a8b06f89607f09d7f4a526802db"
+    },
+    {
+      "path": "frontend/src/api/visibilityTasks.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "99a737854abe88da56866eb3e20dd56eb656a41f4fe4593bfe864753832cf4d6"
+    },
+    {
+      "path": "frontend/src/components/BallisticFitFileResult.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "fa22b8f1ca4a0bfd1a6f463b36481597c5416effb29a01d11f63a19036f3e9c1"
+    },
+    {
+      "path": "frontend/src/components/BallisticFitTrajectory.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "d1009a9968c335e062a42861e888c7955ec78822358d7d8611b6e3dfc12757d3"
+    },
+    {
+      "path": "frontend/src/components/BallisticTrajectoryView.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "20ea0d34f402c9eeb95c015b6385700545e312e4679cc27a951e6d7e384036bd"
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowControls.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "cd8bc14c8825f3c6c0443042feedf8f1c6a156de9c7d3cea3677fe9a86437df9"
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowControls.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "c47625540feb2e06494689fe430e143b43246a2af5d0a3a0854525e955c4f178"
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowResults.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "37155172f6cca12b9665a55feaa5cf73f47a5436f61acd946b9329be6a26eb88"
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowResults.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "7b1025adb3e8b9bd14cb9771e402170175c9f8e54b005a0d24e7f37ca962c3f8"
+    },
+    {
+      "path": "frontend/src/components/DownlinkPlanningStep.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "ad6bc8e43ed2750e33bccb41aefc35cc1583f42927e5e4e55dc7cd0a846a89bf"
+    },
+    {
+      "path": "frontend/src/components/ObservationConstraintPanel.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "abc2733a172405a1e7e2f2fba48179b3f58750ccbde2e433a5bfa01da03cd99e"
+    },
+    {
+      "path": "frontend/src/components/ObservationConstraintPanel.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "79751b322f24739398545eb1bca743734b74e2937ec227482dff9f93b41d2e42"
+    },
+    {
+      "path": "frontend/src/components/SatellitePayloadPanel.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "b8a5ba587dfe56c3c955c1e13d46643d96a19d706727504811602f44e96c9725"
+    },
+    {
+      "path": "frontend/src/components/SatellitePayloadPanel.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "87ac21817c18ad5ce97dc9cd35b76ae4d5903ba22dd095c2cf92355886164432"
+    },
+    {
+      "path": "frontend/src/components/SatelliteStationLinkPanel.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "9989d3a113e74ea11e73d38c685ce9bde344de05a1430a09ded93ac519d9e29a"
+    },
+    {
+      "path": "frontend/src/components/StandardPayloadEditor.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "0fe9e7cd0e8decd586ec1159565fa74e9fc388d8e7e02bfce97f452fbd676658"
+    },
+    {
+      "path": "frontend/src/components/StandardPayloadEditor.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "0a7f77360b47f1bcc51368536b183d8a98a557520151c7d0fecb6e6f6a5ce0c6"
+    },
+    {
+      "path": "frontend/src/components/StationConstraintStep.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "9812ec17fc6fcecf40aee65fc6fe6a356de99323004e41c3854519bfbc3775b1"
+    },
+    {
+      "path": "frontend/src/components/TargetSelectionStep.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "e15ae49aebe9575e81ebe3ed2021831b2d67b2ba2558c685eba526cdeede2bba"
+    },
+    {
+      "path": "frontend/src/components/TargetSelectionStep.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "263a16081453344b4e0a9e0913bb288bce3ab961170b1a3f114a0cbc72dfa416"
+    },
+    {
+      "path": "frontend/src/components/TaskResultDetailDrawer.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "06f1e85d4330ef4d32e5265275174af5e922b2d7119b92a5a687ee048af0f6b6"
+    },
+    {
+      "path": "frontend/src/components/TaskResultDetailDrawer.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "246d735231ea00a446d622fd1a201a94fc3051f32552b629c0b8ac3d48251559"
+    },
+    {
+      "path": "frontend/src/components/TaskResultRecordsPanel.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "648564dbc0c850b523046c03eb891ce1ed92186e423414305f7d0933fe39dd36"
+    },
+    {
+      "path": "frontend/src/components/TaskResultRecordsPanel.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "643c42a5d2af818fa58ecc5b6350a99f32e607ac9fdb402bc9451f54ef3f74da"
+    },
+    {
+      "path": "frontend/src/components/TaskSatelliteSelectionStep.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "7ca9eb0a3e901960e6b8fed7264fdacf6dbbcd387b33fd5b2d1c24ad2588b319"
+    },
+    {
+      "path": "frontend/src/components/TaskSatelliteSelectionStep.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "e61f39a72558e4df15dec39380a6866a2b1ac2b1928533809392ae05016346da"
+    },
+    {
+      "path": "frontend/src/components/VisibilityPlanningStep.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "c48c20b6c9df39653cb5550c20e5b10f4ea5487deb7d61fc535d6093ed0ebcf7"
+    },
+    {
+      "path": "frontend/src/components/VisibilityPlanningStep.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "c00cfa92ec248c1f27a04fcebc827d8e17ec46e5dc00bb1a0353ea4b60e757cc"
+    },
+    {
+      "path": "frontend/src/components/WindowSelectionPanel.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "c12b29461405963e17d24a7e3e388c16bc21665e986e953c7ad4e0602210cd3c"
+    },
+    {
+      "path": "frontend/src/components/WindowSelectionPanel.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "325f6772d5d9180482df56d7bbd0458550ea41f32deabbf627f31fd5471a485b"
+    },
+    {
+      "path": "frontend/src/composables/useSelectionConfirm.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "09fc44afff433fc48553389f9ccfe188e208bd565787e86a1bf3b0f4521ed129"
+    },
+    {
+      "path": "frontend/src/composables/useVisibilityTaskRecords.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "ea63b97bbf524ef952d5263a3f214036e41a484bcdbcd541c44f70d6e44edc07"
+    },
+    {
+      "path": "frontend/src/composables/useVisibilityWorkbench.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "e422dbe1367d5fdd63081a7e2aa57399ab776e0ca429f01700a1dc151a4246de"
+    },
+    {
+      "path": "frontend/src/composables/useVisibilityWorkbench.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "bd8defca503fd8fdd46b3bc45a1520d272dc3b4635e70512d3588d325c9c5c89"
+    },
+    {
+      "path": "frontend/src/main.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "8d23a3da9c9e2141d65dab267f7293a42ca5a9c1720915e4adfa4f22a5098fd6"
+    },
+    {
+      "path": "frontend/src/style.css",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "e2fc2311bb78e7cf0c89a0cc8b4a3929bf78de0cfc59664c2b3c0b4c149ef149"
+    },
+    {
+      "path": "frontend/src/utils/ballisticFit.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "3ddfe86068b094f40b90ed7c83ed6260c9c3e147813afb8dceaea4108fada107"
+    },
+    {
+      "path": "frontend/src/utils/ballisticFit.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "4b343ccb7e49382510766d62ace5de595fdbf200fc6cfdbe12578ba9da4f9e85"
+    },
+    {
+      "path": "frontend/src/utils/ballisticRetime.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "5b59070b303c83944a22394ec43940571a298eba69c24aa5009ac83672aae13b"
+    },
+    {
+      "path": "frontend/src/utils/ballisticSimulation.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "8185497c3924448997ac39d6518ba18a3c473fbaac8963cb6def7646c9ec7e6a"
+    },
+    {
+      "path": "frontend/src/utils/ballisticSimulation.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "bbbbae446e2eba9536d209492b0cae9791114d2afd9ed851f088c87eda42c4c0"
+    },
+    {
+      "path": "frontend/src/utils/ballisticWindow.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "2fd9810de2d2049a6698cf56aa57998c2498d92887a675c5e2aa88373af87c6e"
+    },
+    {
+      "path": "frontend/src/utils/standardPayload.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "50ff21b8b6c6ab0577b8c27f07a64cf5d8058f0080e87fde9bc29796600b143b"
+    },
+    {
+      "path": "frontend/src/utils/standardPayload.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "4dd05d3577137282f5d53d4e1e86dedcc6b68fa3684080b269f18de496b3b337"
+    },
+    {
+      "path": "frontend/src/utils/winToolSummary.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "cad66caa6fc5c9a5d9b600c2a7d3813d4f4b7ed61ccdee45cc2a198a006451c4"
+    },
+    {
+      "path": "frontend/src/utils/winToolSummary.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "7b6b4978a0cfaa8e7ec710672961120d8d01d3f7ef4b73e7e063dd3ff54dd1cb"
+    },
+    {
+      "path": "frontend/src/views/BallisticFitView.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "e0335243ba43cda9e966393abad99ffce026f04bac63f96400a1f326604d3dc2"
+    },
+    {
+      "path": "frontend/src/views/BallisticFitView.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "1431589d06e405efe4c5ccaa890c87f5914777cb5133dbe006f2fbf3e6b434af"
+    },
+    {
+      "path": "frontend/src/views/BallisticPayloadConfigurationView.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "d2cf88b64f46da0817a408d7c6754d63d5d1c523d683192b46ea91a909f92814"
+    },
+    {
+      "path": "frontend/src/views/BallisticPayloadConfigurationView.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "7a675d6eb0d9485806a218cbedc281f5ea87a7dc000274adf8a2f357f09bc39e"
+    },
+    {
+      "path": "frontend/src/views/BallisticRetimeView.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "24cec93e884e166edbf4dc72c81dc1e87bf2fa6aa8f0e699f5ea4ac931d05780"
+    },
+    {
+      "path": "frontend/src/views/BallisticRetimeView.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "a065f9e4d11172492c6494f2cadac212656f9d2022d8e72a0f4edbe93de6268c"
+    },
+    {
+      "path": "frontend/src/views/BallisticSimulationView.spec.ts",
+      "mode": "锁定TypeScript转译后执行JS逐字相同",
+      "sha256": "97686d2a07df2da584d65a0c305a8cb4a8f028d0b03545cc9808352d018484a0"
+    },
+    {
+      "path": "frontend/src/views/BallisticSimulationView.vue",
+      "mode": "Vue/CSS仅规范行尾和尾空白后逐字相同",
+      "sha256": "3e0a01b52373d27180f5ecf11d1b734c3919fc927bf3bfb1b91199484b0dcf00"
+    }
+  ]
+}

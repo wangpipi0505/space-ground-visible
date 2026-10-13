@@ -15,6 +15,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Flyway V2迁移：删除卫星/目标名称单列唯一约束，按实际元数据补充SCID单列唯一索引。
+ * H2与MySQL删除约束语法分别处理；只处理固定表名，不从用户输入拼接SQL。
+ */
 public class V2__ReplaceNameUniqueKeys extends BaseJavaMigration {
 
     @Override

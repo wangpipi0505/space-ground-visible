@@ -1,0 +1,45 @@
+space-health 200 15
+orbit-health 200 2
+trajectory-health 200 2
+catalog-satellites 200 1896
+catalog-satellites-page 200 662
+catalog-satellites-options 200 205
+catalog-stations 200 480
+catalog-defaults 200 125
+catalog-targets-belong-options 200 72
+catalog-satellites-1-payload 200 309
+catalog-satellites-1-payload-profiles 200 395
+target-query 200 873
+space-standard-save 200 390
+space-legacy-metres-save 200 293
+stations-for-link 200 480
+downlink-plan 200 148
+downlink-validation 200 175
+sync 200 1268
+async-submit 200 49
+async-poll-0 200 218
+async-poll-1 200 242
+async-result 200 1268
+cancel-submit 200 49
+cancel-accepted 200 218
+cancel-poll-0 200 242
+cancel-result-409 409 68
+unknown-task-404 404 0
+record-page-27 200 322
+record-detail 200 2183
+record-remark 200 2197
+record-selection 200 3744
+record-delete 200 0
+deleted-record-404 404 0
+upload-window 201 270
+upload-window-download 200 1507045
+upload-window-preview 200 1063
+window-legacy 200 6771
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\docs\examples\http_flow.py", line 227, in <module>
+    main()
+    ~~~~^^
+  File "G:\5-YG\space-ground-visible\docs\examples\http_flow.py", line 190, in main
+    assert normalize_path(normalized) == normalize_path(golden)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -9,6 +9,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * ZG_XZ_MANAGE_TARGET目标目录及原轨道实体；筛选和根数/两行数解释由应用服务负责。
+ * 原字段名称/类型及Jackson标注保持；不假定任意导入目录数据的未知物理单位。
+ */
 @TableName("ZG_XZ_MANAGE_TARGET")
 public class TargetEntity {
 

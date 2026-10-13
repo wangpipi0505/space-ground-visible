@@ -19,6 +19,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Orekit默认数据上下文的一次性同步初始化及DE405交付文件校验。
+ * 外置目录优先系统属性/环境变量；启动后不随请求重新装载星历，不自动用DE440或解析太阳替代。
+ */
 public final class OrekitDataInitializer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrekitDataInitializer.class);

@@ -1,5 +1,6 @@
 import type { StandardPayloadConfiguration } from '../utils/standardPayload'
 
+/** 空间观测星目录显示字段；不含弹道手工根数，身份类型沿用旧API。未知目录量纲不在客户端猜测。 */
 export interface Satellite {
   id: number
   name: string
@@ -99,6 +100,7 @@ export interface PageResponse<T> {
   records: T[]
 }
 
+/** 持久化站点基础信息：字符串ID，经纬度/仰角为度，高度米；每次任务临时约束另行提交。 */
 export interface Station {
   id: string
   name: string
@@ -109,6 +111,7 @@ export interface Station {
   maxElevation?: number
 }
 
+/** 空间目标目录显示字段与旧API一致；空可选值保持缺失，不把目录摘要当作真实弹道根数。 */
 export interface Target {
   id: number
   name: string
@@ -131,6 +134,7 @@ export interface Target {
   weight?: number
 }
 
+/** 服务提供的默认前后保护/允许断链秒数，表单可覆盖；轨道时效与历元筛选另有明确单位。 */
 export interface PlanningDefaults {
   preGuardSec: number
   postGuardSec: number
@@ -141,12 +145,14 @@ export interface PlanningDefaults {
   targetMinTleEpochCode?: string
 }
 
+/** UTC窗口端点与持续秒数；ISO字符串由服务直接返回，界面显示转换不改变用于再次提交的时刻。 */
 export interface WindowResponse {
   startTime: string
   endTime: string
   durationSec: number
 }
 
+/** 每次下传任务的临时仰角范围（度）；缺失值由服务按站点/默认配置补齐，不改长期站点。 */
 export interface StationConstraintRequest {
   stationId: string
   minElevationDeg?: number
@@ -165,6 +171,7 @@ export interface ObservationConstraintRequest {
   minDurationSec: number
 }
 
+/** UTC Instant字符串、秒制扫描/保护/断链参数及显式站星互选关系；不由GROUND载荷替代下传规则。 */
 export interface DownlinkPlanRequest {
   startTime: string
   endTime: string
@@ -179,6 +186,7 @@ export interface DownlinkPlanRequest {
   links: SatelliteStationLinkRequest[]
 }
 
+/** 原独立站星弧段与连续覆盖并集；已失败链路另列，不能把失败计作正常无窗。 */
 export interface DownlinkPlanResponse {
   satelliteStationWindows: Array<{
     satelliteId: number
@@ -204,6 +212,7 @@ export interface DownlinkPlanResponse {
   totalSkippedLinks?: number
 }
 
+/** 指定完整UTC时段是否被下传覆盖；返回实际plan用于核对，布尔值不表示观测可见。 */
 export interface WindowValidationResponse {
   satisfied: boolean
   plan: DownlinkPlanResponse
@@ -328,6 +337,7 @@ export interface IlluminationConstraintRequest {
   targetStates: Array<'SUNLIT' | 'PENUMBRA' | 'UMBRA'>
 }
 
+/** 同步与异步空间观测共用请求；浏览器日期控件先toISOString，目标ID空数组按服务筛选全量。 */
 export interface VisibilityPlanRequest {
   observerSatelliteIds: number[]
   /** 由“目标筛选”接口返回的完整命中 ID；规划端据此直接读取，不再二次筛选。 */
@@ -349,6 +359,7 @@ export interface VisibilityPlanRequest {
   observationConstraints: ObservationConstraintRequest[]
 }
 
+/** 原观测目标/组合窗口结果；ID与时长由服务产生，前端不重采样或把包络替代累计/共视时长。 */
 export interface VisibilityPlanResponse {
   results: Array<{
     targetId: string
@@ -393,6 +404,7 @@ export interface VisibilityPlanResponse {
   targetFilterBreakdown?: TargetFilterBreakdown
 }
 
+/** 目录分页只影响展示；targetIds是全筛选集合，不能只用当前页目标代替实际全量规划。 */
 export interface TargetQueryResponse {
   total: number
   pageNumber: number

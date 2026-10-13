@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 单条站星链路的UTC扫描窗口结果；ID保持原类型，窗口列表复制并只读，避免调用者改写汇总。
+ */
 public final class DownlinkPairResult {
 
     private final Long satelliteId;

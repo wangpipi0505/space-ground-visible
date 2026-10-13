@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 单观测星—目标的扫描结果及统计，保留弧段顺序和各光照状态，供组合交集与报告使用。
+ */
 public final class VisibilityPairResult {
 
     private final String observerSatelliteId;

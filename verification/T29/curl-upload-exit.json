@@ -1,0 +1,1 @@
+{"command": ["curl.exe", "--fail-with-body", "-F", "file=@test-data/reference/ballistic/trajectory-0.1s-standard.csv", "http://127.0.0.1:18131/api/v1/ballistic/files"], "cwd": "G:\\5-YG\\space-ground-visible", "exitCode": 0}

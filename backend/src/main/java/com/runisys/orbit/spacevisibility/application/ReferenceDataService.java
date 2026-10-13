@@ -24,6 +24,10 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 import java.util.stream.Collectors;
 
+/**
+ * 空间卫星、站点及目标目录访问与筛选服务；按原排序/分页及参数范围返回数据。
+ * 载荷更新仅写指定卫星配置；目录字段不是弹道手工根数，浏览器不能据此臆造轨道。
+ */
 @Service
 public class ReferenceDataService {
 

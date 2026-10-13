@@ -11,6 +11,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * 既有空间HTTP异常转换边界：业务IllegalArgumentException返回400，其他异常返回500及requestId。
+ * 原消息绑定异常也可能走500；不以弹道文件辅助接口错误协议覆盖此兼容行为。
+ */
 @RestControllerAdvice
 public class ApiExceptionHandler {
 

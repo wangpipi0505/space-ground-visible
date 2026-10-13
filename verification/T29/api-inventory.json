@@ -1,0 +1,2984 @@
+{
+  "routeCount": 35,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/orbit/health",
+      "declaration": "继承原health方法",
+      "inheritedBy": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.java",
+      "source": "backend/src/main/java/com/tx/alg/api/OrbitVisibilityController.java",
+      "line": 40
+    },
+    {
+      "method": "POST",
+      "path": "/api/orbit/visibility/search",
+      "declaration": "ResponseEntity<StreamingResponseBody> search(@RequestBody VisibilityRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.java",
+      "line": 36
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/fit/package102",
+      "declaration": "ResponseEntity<?> fitPackage102(@RequestBody JsonNode body) throws java.io.IOException",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.java",
+      "line": 39
+    },
+    {
+      "method": "GET",
+      "path": "/api/trajectory/health",
+      "declaration": "ResponseEntity<String> health()",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.java",
+      "line": 33
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/retime",
+      "declaration": "ResponseEntity<?> retime(@RequestBody JsonNode body) throws java.io.IOException",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java",
+      "line": 28
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/simulate",
+      "declaration": "ResponseEntity<?> simulate(@RequestBody JsonNode body) throws java.io.IOException",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java",
+      "line": 28
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/files",
+      "declaration": "BallisticFileModels.FileReference upload(@RequestParam(\"file\") MultipartFile file, @RequestParam(required = false) String purpose) throws IOException",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+      "line": 35
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "declaration": "BallisticFileModels.FileReference register(@RequestBody BallisticFileModels.RegisterResultRequest request) throws IOException",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+      "line": 45
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/{fileId}/download",
+      "declaration": "void download(@PathVariable String fileId, HttpServletResponse response) throws IOException",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+      "line": 63
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/{fileId}/preview",
+      "declaration": "BallisticFileModels.Preview preview(@PathVariable String fileId, @RequestParam(defaultValue = \"1\") int page, @RequestParam(defaultValue = \"50\") int limit) throws IOException",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+      "line": 53
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "declaration": "Map<String, Object> preview(@RequestBody VisibilityRequest.PayloadDef payload)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticPayloadController.java",
+      "line": 19
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/defaults",
+      "declaration": "Map<String, Object> defaults()",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 159
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/space/downlink/plan",
+      "declaration": "SpaceApiModels.DownlinkPlanResponse planDownlink(@RequestBody SpaceApiModels.DownlinkPlanRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 190
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/space/downlink/validate-window",
+      "declaration": "SpaceApiModels.WindowValidationResponse validateWindow(@RequestBody SpaceApiModels.DownlinkPlanRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/health",
+      "declaration": "Map<String, String> health()",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 50
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/satellites",
+      "declaration": "List<SatelliteEntity> satellites()",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 62
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/satellites/options",
+      "declaration": "List<SpaceApiModels.SatelliteOptionResponse> satelliteOptions()",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 87
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/satellites/page",
+      "declaration": "SpaceApiModels.PageResponse<SpaceApiModels.SatelliteSummaryResponse> satellitePage( @RequestParam(defaultValue = \"1\") long pageNumber, @RequestParam(defaultValue = \"50\") long pageSize, @RequestParam(required = false) String keyword)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 74
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/satellites/{satelliteId}/payload",
+      "declaration": "SpaceApiModels.SpacePayloadConfigurationResponse satellitePayload(@PathVariable Long satelliteId)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 98
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/space/satellites/{satelliteId}/payload",
+      "declaration": "SpaceApiModels.SpacePayloadConfigurationResponse saveSatellitePayload( @PathVariable Long satelliteId, @RequestBody SpaceApiModels.SpacePayloadConfigurationRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 110
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/satellites/{satelliteId}/payload-profiles",
+      "declaration": "SpaceApiModels.PayloadProfilesResponse satellitePayloadProfiles(@PathVariable Long satelliteId)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 124
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/space/satellites/{satelliteId}/payload-profiles",
+      "declaration": "SpaceApiModels.PayloadProfilesResponse saveSatellitePayloadProfile( @PathVariable Long satelliteId, @RequestBody SpaceApiModels.PayloadProfileRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 133
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/stations",
+      "declaration": "List<StationEntity> stations()",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 149
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/targets/belong-options",
+      "declaration": "List<SpaceApiModels.BelongOptionResponse> belongOptions()",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 179
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/space/targets/query",
+      "declaration": "SpaceApiModels.TargetQueryResponse queryTargets(@RequestBody SpaceApiModels.TargetQueryRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 170
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/space/visibility/plan",
+      "declaration": "SpaceApiModels.VisibilityPlanResponse planVisibility(@RequestBody SpaceApiModels.VisibilityPlanRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "line": 212
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results",
+      "declaration": "SpaceApiModels.PageResponse<SpaceApiModels.VisibilityTaskResultSummaryResponse> page( @RequestParam(defaultValue = \"1\") long pageNumber, @RequestParam(defaultValue = \"20\") long pageSize, @RequestParam(required = false) String status, @RequestParam(required = false) String keyword)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.java",
+      "line": 37
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/space/visibility/task-results/{id}",
+      "declaration": "ResponseEntity<Void> delete(@PathVariable Long id)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.java",
+      "line": 106
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/visibility/task-results/{id}",
+      "declaration": "ResponseEntity<SpaceApiModels.VisibilityTaskResultDetailResponse> detail(@PathVariable Long id)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.java",
+      "line": 52
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/space/visibility/task-results/{id}",
+      "declaration": "ResponseEntity<SpaceApiModels.VisibilityTaskResultDetailResponse> updateRemark( @PathVariable Long id, @RequestBody SpaceApiModels.VisibilityTaskResultRemarkRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.java",
+      "line": 68
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/space/visibility/task-results/{id}/selection",
+      "declaration": "ResponseEntity<SpaceApiModels.VisibilityTaskResultSelectionResponse> updateSelection( @PathVariable Long id, @RequestBody SpaceApiModels.VisibilityTaskResultSelectionRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.java",
+      "line": 88
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/space/visibility/tasks",
+      "declaration": "Map<String, String> submitTask(@RequestBody SpaceApiModels.VisibilityPlanRequest request)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/PlanningTaskController.java",
+      "line": 43
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/space/visibility/tasks/{taskId}",
+      "declaration": "ResponseEntity<SpaceApiModels.PlanningTaskStatusResponse> cancelTask(@PathVariable String taskId)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/PlanningTaskController.java",
+      "line": 90
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/{taskId}",
+      "declaration": "ResponseEntity<SpaceApiModels.PlanningTaskStatusResponse> taskStatus(@PathVariable String taskId)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/PlanningTaskController.java",
+      "line": 55
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/space/visibility/tasks/{taskId}/result",
+      "declaration": "ResponseEntity<?> taskResult(@PathVariable String taskId)",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/PlanningTaskController.java",
+      "line": 70
+    }
+  ],
+  "dtoDeclarations": [
+    {
+      "owner": "FileReference",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 15,
+      "declaration": "public String fileId;"
+    },
+    {
+      "owner": "FileReference",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 17,
+      "declaration": "public String originalName;"
+    },
+    {
+      "owner": "FileReference",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 19,
+      "declaration": "public long sizeBytes;"
+    },
+    {
+      "owner": "FileReference",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 21,
+      "declaration": "public String contentType;"
+    },
+    {
+      "owner": "FileReference",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 23,
+      "declaration": "public String serverPath;"
+    },
+    {
+      "owner": "RegisterResultRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 28,
+      "declaration": "public String csvPath;"
+    },
+    {
+      "owner": "RegisterResultRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 29,
+      "declaration": "public String taskName;"
+    },
+    {
+      "owner": "RegisterResultRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 30,
+      "declaration": "public String targetId;"
+    },
+    {
+      "owner": "Preview",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 35,
+      "declaration": "public String fileId;"
+    },
+    {
+      "owner": "Preview",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 36,
+      "declaration": "public List<String> header;"
+    },
+    {
+      "owner": "Preview",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 37,
+      "declaration": "public List<List<String>> rows;"
+    },
+    {
+      "owner": "Preview",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 38,
+      "declaration": "public long totalRows;"
+    },
+    {
+      "owner": "Preview",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 40,
+      "declaration": "public int page;"
+    },
+    {
+      "owner": "Preview",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 41,
+      "declaration": "public int limit;"
+    },
+    {
+      "owner": "Preview",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "line": 43,
+      "declaration": "public Map<String, String> metadata;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 35,
+      "declaration": "private Double minDistanceKm;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 37,
+      "declaration": "private Double maxDistanceKm;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 39,
+      "declaration": "private Double minDistanceM;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 41,
+      "declaration": "private Double maxDistanceM;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 43,
+      "declaration": "private Double azimuthMinDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 45,
+      "declaration": "private Double azimuthMaxDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 47,
+      "declaration": "private Double elevationMinDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 49,
+      "declaration": "private Double elevationMaxDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 51,
+      "declaration": "private Double angleRateDegPerSec;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 53,
+      "declaration": "private Double sunAvoidHalfAngleDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 55,
+      "declaration": "private Double startupAngleRateDegPerSec;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 83,
+      "declaration": "private final boolean configured;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 84,
+      "declaration": "private final String payloadType;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 85,
+      "declaration": "private final Double minDistanceKm;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 86,
+      "declaration": "private final Double maxDistanceKm;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 87,
+      "declaration": "private final Double minDistanceM;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 88,
+      "declaration": "private final Double maxDistanceM;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 89,
+      "declaration": "private final Double azimuthMinDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 90,
+      "declaration": "private final Double azimuthMaxDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 91,
+      "declaration": "private final Double elevationMinDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 92,
+      "declaration": "private final Double elevationMaxDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 93,
+      "declaration": "private final Double angleRateDegPerSec;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 94,
+      "declaration": "private final Double sunAvoidHalfAngleDeg;"
+    },
+    {
+      "owner": "SpacePayloadConfigurationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 95,
+      "declaration": "private final Double startupAngleRateDegPerSec;"
+    },
+    {
+      "owner": "PayloadProfilesResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 166,
+      "declaration": "private final String activePayloadType;"
+    },
+    {
+      "owner": "PayloadProfilesResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 167,
+      "declaration": "private final List<PayloadProfileResponse> profiles;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 183,
+      "declaration": "private String payloadType;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 185,
+      "declaration": "private Double minDistanceKm;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 187,
+      "declaration": "private Double maxDistanceKm;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 189,
+      "declaration": "private Double azimuthMinDeg;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 191,
+      "declaration": "private Double azimuthMaxDeg;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 193,
+      "declaration": "private Double elevationMinDeg;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 195,
+      "declaration": "private Double elevationMaxDeg;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 197,
+      "declaration": "private Double angleRateDegPerSec;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 199,
+      "declaration": "private Double sunAvoidHalfAngleDeg;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 201,
+      "declaration": "private Double startupAngleRateDegPerSec;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 202,
+      "declaration": "private Double sensorFullConeAngleDeg;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 203,
+      "declaration": "private Double maxDetectRangeKm;"
+    },
+    {
+      "owner": "PayloadProfileRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 204,
+      "declaration": "private Double sunExclusionAngleDeg;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 236,
+      "declaration": "private final String payloadType;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 238,
+      "declaration": "private final boolean legacyGroundProfile;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 239,
+      "declaration": "private final Double minDistanceKm;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 240,
+      "declaration": "private final Double maxDistanceKm;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 241,
+      "declaration": "private final Double azimuthMinDeg;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 242,
+      "declaration": "private final Double azimuthMaxDeg;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 243,
+      "declaration": "private final Double elevationMinDeg;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 244,
+      "declaration": "private final Double elevationMaxDeg;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 245,
+      "declaration": "private final Double angleRateDegPerSec;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 246,
+      "declaration": "private final Double sunAvoidHalfAngleDeg;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 247,
+      "declaration": "private final Double startupAngleRateDegPerSec;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 248,
+      "declaration": "private final Double sensorFullConeAngleDeg;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 249,
+      "declaration": "private final Double maxDetectRangeKm;"
+    },
+    {
+      "owner": "PayloadProfileResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 250,
+      "declaration": "private final Double sunExclusionAngleDeg;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 293,
+      "declaration": "private final String taskId;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 294,
+      "declaration": "private final String status;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 295,
+      "declaration": "private final long totalPairs;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 296,
+      "declaration": "private final long completedPairs;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 297,
+      "declaration": "private final long totalTargets;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 298,
+      "declaration": "private final long completedTargets;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 299,
+      "declaration": "private final String errorMessage;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 300,
+      "declaration": "private final Instant createdAt;"
+    },
+    {
+      "owner": "PlanningTaskStatusResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 301,
+      "declaration": "private final Instant completedAt;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 348,
+      "declaration": "private final String id;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 349,
+      "declaration": "private final String taskId;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 350,
+      "declaration": "private final String taskType;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 351,
+      "declaration": "private final String status;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 352,
+      "declaration": "private final Long totalPairs;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 353,
+      "declaration": "private final Long completedPairs;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 354,
+      "declaration": "private final String errorMessage;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 355,
+      "declaration": "private final String remark;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 356,
+      "declaration": "private final LocalDateTime createTime;"
+    },
+    {
+      "owner": "VisibilityTaskResultSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 357,
+      "declaration": "private final LocalDateTime completeTime;"
+    },
+    {
+      "owner": "VisibilityTaskResultDetailResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 393,
+      "declaration": "private final String requestJson;"
+    },
+    {
+      "owner": "VisibilityTaskResultDetailResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 394,
+      "declaration": "private final String resultJson;"
+    },
+    {
+      "owner": "VisibilityTaskResultDetailResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 395,
+      "declaration": "private final String skippedPairsJson;"
+    },
+    {
+      "owner": "VisibilityTaskResultDetailResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 397,
+      "declaration": "private final String selectionJson;"
+    },
+    {
+      "owner": "VisibilityTaskResultRemarkRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 423,
+      "declaration": "private String remark;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 432,
+      "declaration": "private com.fasterxml.jackson.databind.JsonNode planningWindow;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 434,
+      "declaration": "private com.fasterxml.jackson.databind.JsonNode mergedTimeRange;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 436,
+      "declaration": "private com.fasterxml.jackson.databind.JsonNode selections;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 438,
+      "declaration": "private String remark;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 452,
+      "declaration": "private final String recordId;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 453,
+      "declaration": "private final boolean received;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 454,
+      "declaration": "private final int selectionCount;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 455,
+      "declaration": "private final int mergedSegments;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 456,
+      "declaration": "private final String message;"
+    },
+    {
+      "owner": "VisibilityTaskResultSelectionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 458,
+      "declaration": "private final VisibilityTaskResultDetailResponse detail;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 480,
+      "declaration": "private List<Long> targetIds = new ArrayList<Long>();"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 481,
+      "declaration": "private List<String> belongs = new ArrayList<String>();"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 482,
+      "declaration": "private BigDecimal minWeight;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 483,
+      "declaration": "private BigDecimal maxWeight;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 484,
+      "declaration": "private Instant epochStartTime;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 485,
+      "declaration": "private Instant epochEndTime;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 487,
+      "declaration": "private String minTleEpochCode;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 489,
+      "declaration": "private Long maxApproximationDays;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 494,
+      "declaration": "private Instant planningStartTime;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 496,
+      "declaration": "private Instant planningEndTime;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 497,
+      "declaration": "private String excludeNameRegex;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 498,
+      "declaration": "private long pageNumber = 1L;"
+    },
+    {
+      "owner": "TargetQueryRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 499,
+      "declaration": "private long pageSize = 50L;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 530,
+      "declaration": "private Instant startTime;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 531,
+      "declaration": "private Instant endTime;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 532,
+      "declaration": "private double coarseStepSec = 60.0;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 533,
+      "declaration": "private double fineStepSec = 1.0;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 534,
+      "declaration": "private List<Long> satelliteIds = new ArrayList<Long>();"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 535,
+      "declaration": "private Double preGuardSec;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 536,
+      "declaration": "private Double postGuardSec;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 537,
+      "declaration": "private Double allowedGapSec;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 538,
+      "declaration": "private String satelliteIllumination;"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 539,
+      "declaration": "private List<StationConstraintRequest> stations = new ArrayList<StationConstraintRequest>();"
+    },
+    {
+      "owner": "DownlinkPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 540,
+      "declaration": "private List<SatelliteStationLinkRequest> links = new ArrayList<SatelliteStationLinkRequest>();"
+    },
+    {
+      "owner": "StationConstraintRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 567,
+      "declaration": "private String stationId;"
+    },
+    {
+      "owner": "StationConstraintRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 568,
+      "declaration": "private Double minElevationDeg;"
+    },
+    {
+      "owner": "StationConstraintRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 569,
+      "declaration": "private Double maxElevationDeg;"
+    },
+    {
+      "owner": "SatelliteStationLinkRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 581,
+      "declaration": "private Long satelliteId;"
+    },
+    {
+      "owner": "SatelliteStationLinkRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 582,
+      "declaration": "private String stationId;"
+    },
+    {
+      "owner": "DownlinkPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 591,
+      "declaration": "private final List<SatelliteStationWindowResponse> satelliteStationWindows = new ArrayList<SatelliteStationWindowResponse>();"
+    },
+    {
+      "owner": "DownlinkPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 592,
+      "declaration": "private final List<CoverageWindowResponse> coverageWindows = new ArrayList<CoverageWindowResponse>();"
+    },
+    {
+      "owner": "DownlinkPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 593,
+      "declaration": "private final List<SkippedLinkResponse> skippedLinks = new ArrayList<SkippedLinkResponse>();"
+    },
+    {
+      "owner": "DownlinkPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 594,
+      "declaration": "private long totalSkippedLinks;"
+    },
+    {
+      "owner": "SkippedLinkResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 611,
+      "declaration": "private final Long satelliteId;"
+    },
+    {
+      "owner": "SkippedLinkResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 612,
+      "declaration": "private final String satelliteName;"
+    },
+    {
+      "owner": "SkippedLinkResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 613,
+      "declaration": "private final String stationId;"
+    },
+    {
+      "owner": "SkippedLinkResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 614,
+      "declaration": "private final String stationName;"
+    },
+    {
+      "owner": "SkippedLinkResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 615,
+      "declaration": "private final String stage;"
+    },
+    {
+      "owner": "SkippedLinkResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 616,
+      "declaration": "private final String reason;"
+    },
+    {
+      "owner": "SatelliteStationWindowResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 641,
+      "declaration": "private final Long satelliteId;"
+    },
+    {
+      "owner": "SatelliteStationWindowResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 642,
+      "declaration": "private final String stationId;"
+    },
+    {
+      "owner": "SatelliteStationWindowResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 643,
+      "declaration": "private final List<WindowResponse> windows;"
+    },
+    {
+      "owner": "WindowResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 657,
+      "declaration": "private final Instant startTime;"
+    },
+    {
+      "owner": "WindowResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 658,
+      "declaration": "private final Instant endTime;"
+    },
+    {
+      "owner": "WindowResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 659,
+      "declaration": "private final double durationSec;"
+    },
+    {
+      "owner": "CoverageWindowResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 680,
+      "declaration": "private final List<SatelliteStationLinkResponse> links;"
+    },
+    {
+      "owner": "SatelliteStationLinkResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 696,
+      "declaration": "private final Long satelliteId;"
+    },
+    {
+      "owner": "SatelliteStationLinkResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 697,
+      "declaration": "private final String stationId;"
+    },
+    {
+      "owner": "WindowValidationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 709,
+      "declaration": "private final boolean satisfied;"
+    },
+    {
+      "owner": "WindowValidationResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 710,
+      "declaration": "private final DownlinkPlanResponse plan;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 722,
+      "declaration": "private List<Long> observerSatelliteIds = new ArrayList<Long>();"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 723,
+      "declaration": "private List<Long> targetIds = new ArrayList<Long>();"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 724,
+      "declaration": "private List<String> belongs = new ArrayList<String>();"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 725,
+      "declaration": "private BigDecimal minWeight;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 726,
+      "declaration": "private BigDecimal maxWeight;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 727,
+      "declaration": "private Instant epochStartTime;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 728,
+      "declaration": "private Instant epochEndTime;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 730,
+      "declaration": "private String minTleEpochCode;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 732,
+      "declaration": "private Long maxApproximationDays;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 733,
+      "declaration": "private String excludeNameRegex;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 734,
+      "declaration": "private Instant startTime;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 735,
+      "declaration": "private Instant endTime;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 736,
+      "declaration": "private double coarseStepSec = 60.0;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 737,
+      "declaration": "private double fineStepSec = 1.0;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 738,
+      "declaration": "private IlluminationConstraintRequest illuminationConstraint;"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 739,
+      "declaration": "private List<ObservationConstraintRequest> observationConstraints = new ArrayList<ObservationConstraintRequest>();"
+    },
+    {
+      "owner": "VisibilityPlanRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 741,
+      "declaration": "private Boolean winToolReport;"
+    },
+    {
+      "owner": "IlluminationConstraintRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 793,
+      "declaration": "private String mode = \"ANY\";"
+    },
+    {
+      "owner": "IlluminationConstraintRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 794,
+      "declaration": "private List<String> observerStates = new ArrayList<String>();"
+    },
+    {
+      "owner": "IlluminationConstraintRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 795,
+      "declaration": "private List<String> targetStates = new ArrayList<String>();"
+    },
+    {
+      "owner": "ObservationConstraintRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 817,
+      "declaration": "private List<Long> satelliteIds = new ArrayList<Long>();"
+    },
+    {
+      "owner": "ObservationConstraintRequest",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 818,
+      "declaration": "private double minDurationSec;"
+    },
+    {
+      "owner": "VisibilityPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 827,
+      "declaration": "private final List<VisibilityObservationResult> results;"
+    },
+    {
+      "owner": "VisibilityPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 828,
+      "declaration": "private final List<SkippedPairResponse> skippedPairs;"
+    },
+    {
+      "owner": "VisibilityPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 829,
+      "declaration": "private final long totalSkippedPairs;"
+    },
+    {
+      "owner": "VisibilityPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 835,
+      "declaration": "private final List<SkippedPairResponse> allSkippedPairs;"
+    },
+    {
+      "owner": "VisibilityPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 837,
+      "declaration": "private final TargetFilterBreakdownResponse targetFilterBreakdown;"
+    },
+    {
+      "owner": "VisibilityPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 839,
+      "declaration": "private final List<EphemerisWarningResponse> ephemerisWarnings;"
+    },
+    {
+      "owner": "VisibilityPlanResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 841,
+      "declaration": "private String winToolReport;"
+    },
+    {
+      "owner": "EphemerisWarningResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 934,
+      "declaration": "private final String targetId;"
+    },
+    {
+      "owner": "EphemerisWarningResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 935,
+      "declaration": "private final String targetName;"
+    },
+    {
+      "owner": "EphemerisWarningResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 936,
+      "declaration": "private final String reason;"
+    },
+    {
+      "owner": "SkippedPairResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 951,
+      "declaration": "private final String observerSatelliteId;"
+    },
+    {
+      "owner": "SkippedPairResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 952,
+      "declaration": "private final String observerSatelliteName;"
+    },
+    {
+      "owner": "SkippedPairResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 953,
+      "declaration": "private final String targetId;"
+    },
+    {
+      "owner": "SkippedPairResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 954,
+      "declaration": "private final String targetName;"
+    },
+    {
+      "owner": "SkippedPairResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 955,
+      "declaration": "private final String stage;"
+    },
+    {
+      "owner": "SkippedPairResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 956,
+      "declaration": "private final String reason;"
+    },
+    {
+      "owner": "TargetQueryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 981,
+      "declaration": "private final long total;"
+    },
+    {
+      "owner": "TargetQueryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 982,
+      "declaration": "private final long pageNumber;"
+    },
+    {
+      "owner": "TargetQueryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 983,
+      "declaration": "private final long pageSize;"
+    },
+    {
+      "owner": "TargetQueryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 984,
+      "declaration": "private final List<TargetEntity> targets;"
+    },
+    {
+      "owner": "TargetQueryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 989,
+      "declaration": "private final List<Long> targetIds;"
+    },
+    {
+      "owner": "TargetQueryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 990,
+      "declaration": "private final TargetFilterBreakdownResponse filterBreakdown;"
+    },
+    {
+      "owner": "TargetFilterBreakdownResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1041,
+      "declaration": "private final long belongsHit;"
+    },
+    {
+      "owner": "TargetFilterBreakdownResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1042,
+      "declaration": "private final long weightHit;"
+    },
+    {
+      "owner": "TargetFilterBreakdownResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1043,
+      "declaration": "private final long epochHit;"
+    },
+    {
+      "owner": "TargetFilterBreakdownResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1044,
+      "declaration": "private final long epochConstraintHit;"
+    },
+    {
+      "owner": "TargetFilterBreakdownResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1045,
+      "declaration": "private final long ephemerisWarningHit;"
+    },
+    {
+      "owner": "TargetFilterBreakdownResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1046,
+      "declaration": "private final long excludeHit;"
+    },
+    {
+      "owner": "TargetFilterBreakdownResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1047,
+      "declaration": "private final long maxApproximationDays;"
+    },
+    {
+      "owner": "BelongOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1085,
+      "declaration": "private final String code;"
+    },
+    {
+      "owner": "BelongOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1086,
+      "declaration": "private final long count;"
+    },
+    {
+      "owner": "BelongOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1087,
+      "declaration": "private final String description;"
+    },
+    {
+      "owner": "PageResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1106,
+      "declaration": "private final long total;"
+    },
+    {
+      "owner": "PageResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1107,
+      "declaration": "private final long pageNumber;"
+    },
+    {
+      "owner": "PageResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1108,
+      "declaration": "private final long pageSize;"
+    },
+    {
+      "owner": "PageResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1109,
+      "declaration": "private final List<T> records;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1128,
+      "declaration": "private final Long id;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1129,
+      "declaration": "private final String name;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1130,
+      "declaration": "private final String modelType;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1131,
+      "declaration": "private final String type;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1132,
+      "declaration": "private final Long scid;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1133,
+      "declaration": "private final String objectId;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1134,
+      "declaration": "private final String objectName;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1135,
+      "declaration": "private final Long noradCatId;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1136,
+      "declaration": "private final String country;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1137,
+      "declaration": "private final BigDecimal period;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1138,
+      "declaration": "private final BigDecimal catalogInclination;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1139,
+      "declaration": "private final BigDecimal apogee;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1140,
+      "declaration": "private final BigDecimal perigee;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1141,
+      "declaration": "private final String rcsSize;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1142,
+      "declaration": "private final BigDecimal rcsValue;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1143,
+      "declaration": "private final java.time.LocalDate launchDate;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1144,
+      "declaration": "private final String catalogComment;"
+    },
+    {
+      "owner": "SatelliteSummaryResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1145,
+      "declaration": "private final BigDecimal weight;"
+    },
+    {
+      "owner": "SatelliteOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1192,
+      "declaration": "private final Long id;"
+    },
+    {
+      "owner": "SatelliteOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1193,
+      "declaration": "private final String name;"
+    },
+    {
+      "owner": "SatelliteOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1194,
+      "declaration": "private final String modelType;"
+    },
+    {
+      "owner": "SatelliteOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1195,
+      "declaration": "private final String type;"
+    },
+    {
+      "owner": "SatelliteOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1196,
+      "declaration": "private final Long scid;"
+    },
+    {
+      "owner": "SatelliteOptionResponse",
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "line": 1197,
+      "declaration": "private final Long noradCatId;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 22,
+      "declaration": "private String ballisticCsvPath = \"trajectory-0.1s-standard.csv\";"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 25,
+      "declaration": "private String baseLaunchUtc;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 28,
+      "declaration": "private List<BallisticDef> ballistics = new ArrayList<>();"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 31,
+      "declaration": "private long startOffsetSec = -500L;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 34,
+      "declaration": "private long stepSizeSec = 10L;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 37,
+      "declaration": "private long numCalculations = 101L;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 40,
+      "declaration": "private double sensorFovDeg = 140.0;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 47,
+      "declaration": "private String payloadType = \"对地监视\";"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 50,
+      "declaration": "private double maxDetectRangeKm = 0.0;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 53,
+      "declaration": "private double sunExclusionAngleDeg = OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 56,
+      "declaration": "private double targetSampleStepSec = 1.0;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 59,
+      "declaration": "private int trajectoryPointOutput = 1;"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 62,
+      "declaration": "private String orbitModel = \"J2_NUMERICAL\";"
+    },
+    {
+      "owner": "VisibilityRequest",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 65,
+      "declaration": "private List<SatelliteDef> satellites = new ArrayList<>();"
+    },
+    {
+      "owner": "BallisticDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 119,
+      "declaration": "private String csvPath;"
+    },
+    {
+      "owner": "BallisticDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 120,
+      "declaration": "private String baseLaunchUTC;"
+    },
+    {
+      "owner": "BallisticDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 121,
+      "declaration": "private String baseLaunchUtc;"
+    },
+    {
+      "owner": "BallisticDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 122,
+      "declaration": "private String baselaunchUTC;"
+    },
+    {
+      "owner": "BallisticDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 123,
+      "declaration": "private String targetId;"
+    },
+    {
+      "owner": "BallisticDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 124,
+      "declaration": "private String targetName;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 164,
+      "declaration": "private String satelliteId;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 165,
+      "declaration": "private String name;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 166,
+      "declaration": "private double semiMajorAxisM = 7530612.0;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 167,
+      "declaration": "private double eccentricity = 0.00085;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 168,
+      "declaration": "private double inclinationDeg = 64.8;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 169,
+      "declaration": "private double raanDeg = 120.0;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 170,
+      "declaration": "private double argumentOfPerigeeDeg = 270.0;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 171,
+      "declaration": "private double meanAnomalyDeg;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 172,
+      "declaration": "private String epochUtc;"
+    },
+    {
+      "owner": "SatelliteDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 174,
+      "declaration": "private List<PayloadDef> payloads = new ArrayList<PayloadDef>();"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 239,
+      "declaration": "private String payloadId;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 240,
+      "declaration": "private String payloadName;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 241,
+      "declaration": "private String payloadType = \"对地监视\";"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 242,
+      "declaration": "private double maxDetectRangeKm = 0.0;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 243,
+      "declaration": "private double sunExclusionAngleDeg = OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 246,
+      "declaration": "private Double minDistanceKm;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 251,
+      "declaration": "private Double maxDistanceKm;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 256,
+      "declaration": "private Double azimuthMinDeg;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 261,
+      "declaration": "private Double azimuthMaxDeg;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 266,
+      "declaration": "private Double elevationMinDeg;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 271,
+      "declaration": "private Double elevationMaxDeg;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 276,
+      "declaration": "private Double angleRateDegPerSec;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 281,
+      "declaration": "private Double sunAvoidHalfAngleDeg;"
+    },
+    {
+      "owner": "PayloadDef",
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "line": 286,
+      "declaration": "private Double startupAngleRateDegPerSec;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 32,
+      "declaration": "public static final double PACKAGE102_POSITION_UNIT_M = 0.1;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 33,
+      "declaration": "public static final double PACKAGE102_VELOCITY_UNIT_M_S = 0.0001;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 34,
+      "declaration": "public static final double PACKAGE102_ACCELERATION_UNIT_M_S2 = 0.01;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 35,
+      "declaration": "public static final double IMPACT_SOFT_CONSTRAINT_WEIGHT = 0.15;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 37,
+      "declaration": "private static final double MIN_STEP_SEC = 1e-3;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 38,
+      "declaration": "private static final double TIME_UNIQUE_EPS_SEC = 1e-5;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 39,
+      "declaration": "private static final double TWO_BODY_MAX_STEP_SEC = 1.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 40,
+      "declaration": "private static final double DEFAULT_EVENT_SEARCH_SEC = 6.0 * 3600.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 41,
+      "declaration": "private static final double MAX_EVENT_SEARCH_SEC = 24.0 * 3600.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 42,
+      "declaration": "private static final double EVENT_SEARCH_MARGIN_SEC = 600.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 43,
+      "declaration": "private static final double EVENT_TIME_TOLERANCE_SEC = 1e-3;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 44,
+      "declaration": "private static final double EVENT_SURFACE_HEIGHT_TOLERANCE_M = 0.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 45,
+      "declaration": "private static final double EVENT_SECOND_SNAP_TOLERANCE_SEC = 0.5;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 46,
+      "declaration": "private static final double EVENT_REFERENCE_SNAP_TOLERANCE_SEC = 2.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 47,
+      "declaration": "private static final int ENDPOINT_VELOCITY_FIT_MAX_SAMPLES = 32;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 48,
+      "declaration": "private static final double ENDPOINT_VELOCITY_FIT_MAX_SPAN_SEC = 120.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 49,
+      "declaration": "private static final int ENDPOINT_VELOCITY_FIT_ITERATIONS = 4;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 50,
+      "declaration": "private static final double ENDPOINT_VELOCITY_FIT_PERTURB_M_S = 0.05;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 51,
+      "declaration": "private static final double ENDPOINT_VELOCITY_FIT_MAX_CORRECTION_M_S = 20.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 52,
+      "declaration": "private static final double TARGET_ORBIT_VELOCITY_RESCALE = 1000.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 53,
+      "declaration": "private static final double TARGET_ORBIT_ACCELERATION_RESCALE = 10.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 54,
+      "declaration": "private static final double TARGET_ORBIT_MIN_UNIT_RATIO = 100.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 55,
+      "declaration": "private static final double TARGET_ORBIT_MAX_UNIT_RATIO = 10000.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 56,
+      "declaration": "private static final double SIMULATION_MIN_TOF_SEC = 60.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 57,
+      "declaration": "private static final double SIMULATION_MAX_TOF_SEC = 7200.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 58,
+      "declaration": "private static final double SIMULATION_APOGEE_RANGE_FACTOR = 1.9;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 59,
+      "declaration": "private static final double SIMULATION_MIN_APOGEE_M = 120000.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 60,
+      "declaration": "private static final double SIMULATION_MAX_APOGEE_M = 4000000.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 61,
+      "declaration": "private static final double SIMULATION_RANGE_SPEED_M_S = 2200.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 62,
+      "declaration": "private static final double SIMULATION_MIN_ENDPOINT_RADIUS_FACTOR = 0.75;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 63,
+      "declaration": "private static final double SIMULATION_MAX_ENDPOINT_RADIUS_FACTOR = 20.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 64,
+      "declaration": "private static final double SIMULATION_LAMBERT_TOLERANCE_M = 0.05;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 65,
+      "declaration": "private static final int SIMULATION_LAMBERT_MAX_ITERATIONS = 12;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 66,
+      "declaration": "private static final double SIMULATION_LAMBERT_PERTURB_M_S = 0.01;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 67,
+      "declaration": "private static final double MAX_DIRECTION_ANGLE_DEG = 90.0;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 68,
+      "declaration": "private static final double TURN_DOT_EPS = -1e-10;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 69,
+      "declaration": "private static final double EARTH_MU = OrbitCalculator.EARTH_GRAVITATIONAL_PARAMETER;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 70,
+      "declaration": "private static final double EARTH_J2 = OrbitCalculator.EARTH_J2;"
+    },
+    {
+      "owner": "TargetTrajectoryFitter",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 71,
+      "declaration": "private static final double EARTH_RADIUS = OrbitCalculator.EARTH_EQUATORIAL_RADIUS_M;"
+    },
+    {
+      "owner": "FitRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 131,
+      "declaration": "public String taskName = \"task\";"
+    },
+    {
+      "owner": "FitRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 132,
+      "declaration": "public List<Package102Record> package102 = new ArrayList<Package102Record>();"
+    },
+    {
+      "owner": "FitRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 133,
+      "declaration": "public String taskStartTime;"
+    },
+    {
+      "owner": "FitRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 134,
+      "declaration": "public String taskEndTime;"
+    },
+    {
+      "owner": "FitRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 135,
+      "declaration": "public double interpolationStepSec = 1.0;"
+    },
+    {
+      "owner": "FitRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 136,
+      "declaration": "public String outputDir = \".\";"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 141,
+      "declaration": "public CoordinateInfo coordinateInfo;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 142,
+      "declaration": "public CoordinateInfo coordinate;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 143,
+      "declaration": "public CoordinateInfo coords;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 144,
+      "declaration": "public TargetInfo targetInfo;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 145,
+      "declaration": "public TargetInfo target;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 147,
+      "declaration": "public String tack3d_time_code;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 148,
+      "declaration": "public String track3d_time_code;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 149,
+      "declaration": "public String tack3d_tgt_pos_x;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 150,
+      "declaration": "public String tack3d_tgt_pos_y;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 151,
+      "declaration": "public String tack3d_tgt_pos_z;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 152,
+      "declaration": "public String tack3d_tgt_vel_x;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 153,
+      "declaration": "public String tack3d_tgt_vel_y;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 154,
+      "declaration": "public String tack3d_tgt_vel_z;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 155,
+      "declaration": "public String tack3d_tgt_acc_x;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 156,
+      "declaration": "public String tack3d_tgt_acc_y;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 157,
+      "declaration": "public String tack3d_tgt_acc_z;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 158,
+      "declaration": "public String prop_tgt_type_8;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 159,
+      "declaration": "public String prop_tgt_shape_8;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 160,
+      "declaration": "public String prop_tgt_flight_phase_8;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 161,
+      "declaration": "public String prob_tgt_critical_incident;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 162,
+      "declaration": "public String prob_tgt_critical_incident_time_code;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 163,
+      "declaration": "public String track_tgt_id;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 164,
+      "declaration": "public String launch_time_code;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 165,
+      "declaration": "public String launch_coord_frame;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 166,
+      "declaration": "public String launch_pos_x;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 167,
+      "declaration": "public String launch_pos_y;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 168,
+      "declaration": "public String launch_pos_z;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 169,
+      "declaration": "public String launch_pos_unit;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 170,
+      "declaration": "public String impact_time_code;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 171,
+      "declaration": "public String impact_coord_frame;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 172,
+      "declaration": "public String impact_pos_x;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 173,
+      "declaration": "public String impact_pos_y;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 174,
+      "declaration": "public String impact_pos_z;"
+    },
+    {
+      "owner": "Package102Record",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 175,
+      "declaration": "public String impact_pos_unit;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 212,
+      "declaration": "public String tack3d_time_code;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 213,
+      "declaration": "public String track3d_time_code;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 214,
+      "declaration": "public String tack3d_tgt_pos_x;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 215,
+      "declaration": "public String tack3d_tgt_pos_y;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 216,
+      "declaration": "public String tack3d_tgt_pos_z;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 217,
+      "declaration": "public String tack3d_tgt_vel_x;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 218,
+      "declaration": "public String tack3d_tgt_vel_y;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 219,
+      "declaration": "public String tack3d_tgt_vel_z;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 220,
+      "declaration": "public String tack3d_tgt_acc_x;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 221,
+      "declaration": "public String tack3d_tgt_acc_y;"
+    },
+    {
+      "owner": "CoordinateInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 222,
+      "declaration": "public String tack3d_tgt_acc_z;"
+    },
+    {
+      "owner": "TargetInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 227,
+      "declaration": "public String prop_tgt_type_8;"
+    },
+    {
+      "owner": "TargetInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 228,
+      "declaration": "public String prop_tgt_shape_8;"
+    },
+    {
+      "owner": "TargetInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 229,
+      "declaration": "public String prop_tgt_flight_phase_8;"
+    },
+    {
+      "owner": "TargetInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 230,
+      "declaration": "public String prob_tgt_critical_incident;"
+    },
+    {
+      "owner": "TargetInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 231,
+      "declaration": "public String prob_tgt_critical_incident_time_code;"
+    },
+    {
+      "owner": "TargetInfo",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 232,
+      "declaration": "public String track_tgt_id;"
+    },
+    {
+      "owner": "TrajectorySample",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 237,
+      "declaration": "public String targetId;"
+    },
+    {
+      "owner": "TrajectorySample",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 238,
+      "declaration": "public double absoluteTimeSec;"
+    },
+    {
+      "owner": "TrajectorySample",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 239,
+      "declaration": "public OrbitCalculator.Vector3 positionEciM;"
+    },
+    {
+      "owner": "TrajectorySample",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 240,
+      "declaration": "public OrbitCalculator.Vector3 velocityEciMs;"
+    },
+    {
+      "owner": "TrajectorySample",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 241,
+      "declaration": "public OrbitCalculator.Vector3 accelerationEciMs2;"
+    },
+    {
+      "owner": "TrajectorySample",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 242,
+      "declaration": "public TargetInfo targetInfo;"
+    },
+    {
+      "owner": "TrajectorySample",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 243,
+      "declaration": "public int sourceIndex;"
+    },
+    {
+      "owner": "TrajectorySample",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 244,
+      "declaration": "public boolean originalConstraint = true;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 249,
+      "declaration": "public double absoluteTimeSec;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 250,
+      "declaration": "public double relativeTimeSec;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 251,
+      "declaration": "public OrbitCalculator.Vector3 positionEciM;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 252,
+      "declaration": "public OrbitCalculator.Vector3 velocityEciMs;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 253,
+      "declaration": "public OrbitCalculator.Vector3 accelerationEciMs2;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 254,
+      "declaration": "public OrbitCalculator.Vector3 positionEcefM;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 255,
+      "declaration": "public OrbitCalculator.Vector3 velocityEcefMs;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 256,
+      "declaration": "public double energy;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 257,
+      "declaration": "public double dtMs;"
+    },
+    {
+      "owner": "FittedPoint",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 258,
+      "declaration": "public boolean original;"
+    },
+    {
+      "owner": "FittedTrajectory",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 263,
+      "declaration": "public String targetId;"
+    },
+    {
+      "owner": "FittedTrajectory",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 264,
+      "declaration": "public TrajectoryModel model;"
+    },
+    {
+      "owner": "FittedTrajectory",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 265,
+      "declaration": "public List<FittedPoint> points = new ArrayList<FittedPoint>();"
+    },
+    {
+      "owner": "FittedTrajectory",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 266,
+      "declaration": "public List<String> warnings = new ArrayList<String>();"
+    },
+    {
+      "owner": "FileResult",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 271,
+      "declaration": "public String targetId;"
+    },
+    {
+      "owner": "FileResult",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 272,
+      "declaration": "public String model;"
+    },
+    {
+      "owner": "FileResult",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 273,
+      "declaration": "public String csvPath;"
+    },
+    {
+      "owner": "FileResult",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 274,
+      "declaration": "public int pointCount;"
+    },
+    {
+      "owner": "FileResult",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 275,
+      "declaration": "public List<String> warnings = new ArrayList<String>();"
+    },
+    {
+      "owner": "FitRunResult",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 280,
+      "declaration": "public String taskName;"
+    },
+    {
+      "owner": "FitRunResult",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 281,
+      "declaration": "public int targetCount;"
+    },
+    {
+      "owner": "FitRunResult",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 282,
+      "declaration": "public List<FileResult> files = new ArrayList<FileResult>();"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 287,
+      "declaration": "public String taskName = \"simulation\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 288,
+      "declaration": "public String targetId = \"SIM-TGT\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 289,
+      "declaration": "public String taskStartTime;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 290,
+      "declaration": "public String taskEndTime;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 291,
+      "declaration": "public String launchTimeUtc;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 292,
+      "declaration": "public String impactTimeUtc;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 293,
+      "declaration": "public String impactTime;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 294,
+      "declaration": "public double launchPointX = 2167790.227;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 295,
+      "declaration": "public double launchPointY = 4775481.109;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 296,
+      "declaration": "public double launchPointZ = 3618557.253;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 297,
+      "declaration": "public String launchPointCoordFrame = \"J2000\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 298,
+      "declaration": "public String launchPointUnit = \"m\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 299,
+      "declaration": "public double impactPointX = 3578635.760;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 300,
+      "declaration": "public double impactPointY = 3522525.227;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 301,
+      "declaration": "public double impactPointZ = 3919735.591;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 302,
+      "declaration": "public String impactPointCoordFrame = \"J2000\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 303,
+      "declaration": "public String impactPointUnit = \"m\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 304,
+      "declaration": "public double outputPointDurationSec = 1.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 305,
+      "declaration": "public List<PhaseEvent> phaseEvents = new ArrayList<PhaseEvent>();"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 311,
+      "declaration": "public String targetTypeCode = \"0x01\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 312,
+      "declaration": "public String targetShapeCode = \"0x02\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 313,
+      "declaration": "public String flightPhaseCode = \"0x01\";"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 314,
+      "declaration": "public double launchLatDeg;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 315,
+      "declaration": "public double launchLonDeg;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 316,
+      "declaration": "public double launchHeightM;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 317,
+      "declaration": "public double initialSpeedMs = 1500.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 318,
+      "declaration": "public double azimuthDeg = 90.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 319,
+      "declaration": "public double elevationDeg = 45.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 320,
+      "declaration": "public double durationSec = 600.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 321,
+      "declaration": "public double integrationStepSec = 0.1;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 322,
+      "declaration": "public double outputStepSec = 1.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 323,
+      "declaration": "public double boostDurationSec = 80.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 324,
+      "declaration": "public double boostAccelerationMs2 = 18.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 325,
+      "declaration": "public double dragCdAreaOverMass = 0.0;"
+    },
+    {
+      "owner": "SimulationRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 326,
+      "declaration": "public String outputDir = \".\";"
+    },
+    {
+      "owner": "RetimeTrajectoryRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 331,
+      "declaration": "public String taskName = \"retimeTrajectory\";"
+    },
+    {
+      "owner": "RetimeTrajectoryRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 332,
+      "declaration": "public String targetId = \"RETIMED-TGT\";"
+    },
+    {
+      "owner": "RetimeTrajectoryRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 333,
+      "declaration": "public String trajectoryCsvPath;"
+    },
+    {
+      "owner": "RetimeTrajectoryRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 334,
+      "declaration": "public String launchTimeUtc;"
+    },
+    {
+      "owner": "RetimeTrajectoryRequest",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 335,
+      "declaration": "public String outputDir = \".\";"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 340,
+      "declaration": "public String phaseType;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 341,
+      "declaration": "public String eventType;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 342,
+      "declaration": "public String startTime;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 343,
+      "declaration": "public String endTime;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 344,
+      "declaration": "public String eventTime;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 345,
+      "declaration": "public String dynamics;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 346,
+      "declaration": "public String directionMode;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 347,
+      "declaration": "public double accelerationMs2;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 348,
+      "declaration": "public double deltaVms;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 349,
+      "declaration": "public double liftDragRatio;"
+    },
+    {
+      "owner": "PhaseEvent",
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "line": 350,
+      "declaration": "public double dragCdAreaOverMass;"
+    }
+  ],
+  "scan": "扫描范围内正式RestController及窗口继承health；拟合health由正式类声明，旧兼容类不是第二套活动端点，字段声明含原默认表达式"
+}

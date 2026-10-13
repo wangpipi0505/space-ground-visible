@@ -6,6 +6,10 @@ import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
 import java.time.Instant;
 import static com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath.*;
 
+/**
+ * 空间载荷几何/光照联合采样器；复用距离、LVLH角及视线角速度数学，保留DE405太阳。
+ * 前一视线来自精选采样，观察星本影按原规则豁免太阳回避；该上下文不同于弹道解析太阳。
+ */
 public final class PayloadVisibilityEvaluator {
 
     private PayloadVisibilityEvaluator() {

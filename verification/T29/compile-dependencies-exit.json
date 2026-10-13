@@ -1,0 +1,1 @@
+{"command": ["mvn.cmd", "-B", "-f", "G:\\5-YG\\space-ground-visible\\backend\\pom.xml", "dependency:build-classpath", "-DincludeScope=compile", "-Dmdep.outputFile=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T29\\compile-classpath.txt"], "exitCode": 0}

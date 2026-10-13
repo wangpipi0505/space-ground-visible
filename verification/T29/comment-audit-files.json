@@ -1,0 +1,1121 @@
+{
+  "files": [
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ApiCorsConfiguration.java",
+      "kind": "Java主源码",
+      "sha256": "ae7d44cb037bd7aed06bbe3d404a139d3fc6e17dd53c7f476653242bdd15792c",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ApiExceptionHandler.java",
+      "kind": "Java主源码",
+      "sha256": "76eefa7d2c8bd931ddf13c3d1ac418b445783200007bfcf817279ddb4c800c5c",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+      "kind": "Java主源码",
+      "sha256": "c2cc858ca3ee7c4635d5c2a2f6bf35a0330bfcb09bf908d2467c373e8c1e8362",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileExceptionHandler.java",
+      "kind": "Java主源码",
+      "sha256": "5904d2ddfe3281c7bf6be46ab9ee71ee148066eb347a08483244a4065d3ded7b",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "kind": "Java主源码",
+      "sha256": "a9b789229680e5f59705ca91820ff41de969c38157de58bb1a949e5b0571d1dc",
+      "chineseCommentBlocks": 11
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.java",
+      "kind": "Java主源码",
+      "sha256": "62de008a72db544880f8adbc1381ab6355f71b0e9f2ceabcbee62141c43b0316",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticMultipartExceptionResolver.java",
+      "kind": "Java主源码",
+      "sha256": "833bcc89d207fbc0708c2260b2ce97c2bb4e69435ad066dc23e41dc2e2fbe2a8",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticPayloadController.java",
+      "kind": "Java主源码",
+      "sha256": "49acd51941137e956f72ce4bd21d58ef5044854e29333f4c37c010dbf8ac00ef",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java",
+      "kind": "Java主源码",
+      "sha256": "059e8684dce4ce96b1e513f39695d3d3dff2f2f0d3f63b51f9e7f336caa9a17a",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java",
+      "kind": "Java主源码",
+      "sha256": "2f676e6478d167e1e08ab096dfd6e9d2fb9022a2c999c00d40bc07bdf4bb90de",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.java",
+      "kind": "Java主源码",
+      "sha256": "1ffb8bd19992696b6b16b191d5b63eadae371891773e5d4dc3c5ed74beb40211",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/PlanningTaskController.java",
+      "kind": "Java主源码",
+      "sha256": "75092b1582792ce92fb41297296961621aca4bb7b3c0c34607c849c2a968775e",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "kind": "Java主源码",
+      "sha256": "30e7392a95cb5ccdd6ad9fecba7a727549d3add4219ca635a92e62daf77f6a79",
+      "chineseCommentBlocks": 101
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "kind": "Java主源码",
+      "sha256": "599bbf338ae8a469702dee2750eec48f1f0482f9116a2d960bc089cad5a5a234",
+      "chineseCommentBlocks": 22
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.java",
+      "kind": "Java主源码",
+      "sha256": "87bc344871f63ab630a7cef03d51097619285a12b842f2e36f3e6803b5e108bd",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticFileService.java",
+      "kind": "Java主源码",
+      "sha256": "f0ab80b0026e6118ffb6c0bf9778631572f5709d26e51d37d144782a29a6e512",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticFitService.java",
+      "kind": "Java主源码",
+      "sha256": "372fe97e0018c106c07266b5be75e9bd3bb5aa9f36fe92ba69fbdfa7859fb0a5",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticRetimeService.java",
+      "kind": "Java主源码",
+      "sha256": "c7919ee99033a3a6b8ad500604e1b903a03b5341eb15be544eff9c6768702b83",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticSimulationService.java",
+      "kind": "Java主源码",
+      "sha256": "fb483b03506c544e7757677e8121aacb0b31fd5466c6be5b332460b5f002c448",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService.java",
+      "kind": "Java主源码",
+      "sha256": "43d7896d05fc8c3d495de9c09be7e9b3148dcd66cc0ba052120aa103ace6256b",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityService.java",
+      "kind": "Java主源码",
+      "sha256": "d649e65b9affdf2119a17e1a2127217441396a505f14e7d5b48a9c43e2a4e406",
+      "chineseCommentBlocks": 10
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkCoverageWindowMerger.java",
+      "kind": "Java主源码",
+      "sha256": "62cf73dd96687d5c35ee09ee7aa31ca331f4c0c6a53b9bce2520292d841af7d8",
+      "chineseCommentBlocks": 5
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkPair.java",
+      "kind": "Java主源码",
+      "sha256": "5c24499373f78ba135b527bf4ce0d95ac4f00cb4978a067dc7a8b6dcc83e1418",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkPairResult.java",
+      "kind": "Java主源码",
+      "sha256": "c04390fd894f0b76ae0a4c1100c0a521c9cdd3f0138b4fef2d53b9407d658a70",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkPlanningOutcome.java",
+      "kind": "Java主源码",
+      "sha256": "68af1b9ea64873c462adc15aa20767b02fc4ea35e8cffa025cd5fad2be212e88",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkPlanningService.java",
+      "kind": "Java主源码",
+      "sha256": "12f6cfe20aeb9c0c7672adf69ef240010355ae08f7d5b4b3139b547983f8ed0a",
+      "chineseCommentBlocks": 13
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkSkippedLink.java",
+      "kind": "Java主源码",
+      "sha256": "dda9789ae1985d70e276c0511baac05d41965f59db870ebd189d0c7bdf3dc64c",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkWindowValidator.java",
+      "kind": "Java主源码",
+      "sha256": "bd9451eb242dbcec4a2dc2c28dc5bd190cb1f512251da0327c35cccef38b3c8d",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ObservationSampleEvaluator.java",
+      "kind": "Java主源码",
+      "sha256": "fb755dc291f6baccc72c16006966acb46c9d1a011dea8cd95bd5a36a47c83f28",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/OrbitPositionCache.java",
+      "kind": "Java主源码",
+      "sha256": "b42b71f62b5958912af5c3eb2983a83e7f0e3dfbbe0e8ddf5c385bd36ca3d9b1",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/OrbitStateProviderFactory.java",
+      "kind": "Java主源码",
+      "sha256": "fb309b341550997f90ae3adb98a08b6681a1a17066c06d472b108bb16a2fc90f",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PayloadConstraintFactory.java",
+      "kind": "Java主源码",
+      "sha256": "790669965aba531ae9c7cab16dbe84d5ef65bdc98f5a33ad6ea49f9882cc35bf",
+      "chineseCommentBlocks": 23
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningFacadeService.java",
+      "kind": "Java主源码",
+      "sha256": "9b392a705fb18449b24c6b79f52cf6eff732069efe2b6664a7bbe23bf5a06360",
+      "chineseCommentBlocks": 67
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningFailureReasonFormatter.java",
+      "kind": "Java主源码",
+      "sha256": "57cf0eb6fdb93dfa9fd570ea42f8455a216e78cb1bd40c5028336de190c7a625",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningTask.java",
+      "kind": "Java主源码",
+      "sha256": "a4e284fab84f91f63acd78459ac0620d6840ebf89faef6c0461ad0c6eb3ca078",
+      "chineseCommentBlocks": 11
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningTaskService.java",
+      "kind": "Java主源码",
+      "sha256": "6cd44d2d797d3cc228ee831410c0ebed9b755ce5a9c0979bf3e4437e3b0b6d85",
+      "chineseCommentBlocks": 12
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ReferenceDataService.java",
+      "kind": "Java主源码",
+      "sha256": "974a2771b4140f50c50bf74ccc70a588078917a861605b72d043ff56669c90cd",
+      "chineseCommentBlocks": 29
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java",
+      "kind": "Java主源码",
+      "sha256": "8832d1c2626b36d2a3d1504b59ed8a2d39ad6fce9ba1c87a69d9cdfc98fbe98a",
+      "chineseCommentBlocks": 30
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityConstraintPlanner.java",
+      "kind": "Java主源码",
+      "sha256": "bc7470792f210837092f888bd7462bbf8fa88746949519b53a6dbec17ac6c11f",
+      "chineseCommentBlocks": 18
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityExecutorConfiguration.java",
+      "kind": "Java主源码",
+      "sha256": "c282233295c9955093c2130a5bc0cde4f9dfb43c26a1e08bf0e74c7f5c229384",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityObservationResult.java",
+      "kind": "Java主源码",
+      "sha256": "9a6bfebf8bd3c73509788cd4b81b38c741f280f69aabd3f9298448f9770c59c5",
+      "chineseCommentBlocks": 13
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityObserver.java",
+      "kind": "Java主源码",
+      "sha256": "0ec4e3a6d76a642b3b8602f74ef3eb2de0abcbc0e200028094b50f63c1102d86",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPairResult.java",
+      "kind": "Java主源码",
+      "sha256": "0bacbb6f74bb5983138363b027441ee10f2051e8bd1219537d1ec27f109b28be",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPairStatistics.java",
+      "kind": "Java主源码",
+      "sha256": "d16e7d9c571c6d0f4e912c10ff664f999adc6a5fc6c5ac45ed615d04a751ec22",
+      "chineseCommentBlocks": 15
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPlanningOutcome.java",
+      "kind": "Java主源码",
+      "sha256": "fb81c5008d374a9c1c140b9ca4a939427fdc798f9c7e2e4cbf6d537f7917ed9c",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPlanningService.java",
+      "kind": "Java主源码",
+      "sha256": "a1a6c4b46647eea63d20145ce4b547b0676ea828b2259fcee829059a8520859f",
+      "chineseCommentBlocks": 21
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilitySkippedPair.java",
+      "kind": "Java主源码",
+      "sha256": "587676eb19b8389053becfe8f0b09d1cbeda2f32de4e35ce8cfd4020499f793d",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityTarget.java",
+      "kind": "Java主源码",
+      "sha256": "cf7e7cfb2319a4b75d12278385678b706d9693633b2f7a262daebdf32ea5e2c3",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityTaskResultService.java",
+      "kind": "Java主源码",
+      "sha256": "41dd5fc1ee75a470881e90f302fae7f92a2814698c1ffe287b8923c38e9b253d",
+      "chineseCommentBlocks": 16
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/WinToolReportFormatter.java",
+      "kind": "Java主源码",
+      "sha256": "2d1e8ec6ce6ef486e0f658dbfd6ebedcfcf6aee2739ceb8521515861b07de7f3",
+      "chineseCommentBlocks": 18
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/downlink/DownlinkPlanner.java",
+      "kind": "Java主源码",
+      "sha256": "6a2292670957cbd8e125d93cae47664fd17a16152852b664909582ac7df86900",
+      "chineseCommentBlocks": 20
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/downlink/IlluminationRequirement.java",
+      "kind": "Java主源码",
+      "sha256": "ef69d3651cea110dfb12c3ed52f4e6496fc38c64e98027fde94fbeada46718b2",
+      "chineseCommentBlocks": 5
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/GeometryMath.java",
+      "kind": "Java主源码",
+      "sha256": "475e091aea6aa79bd122474b375ca3755fcfdb68bec05eb940fb19c151a55a0f",
+      "chineseCommentBlocks": 11
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/GroundStationCoordinate.java",
+      "kind": "Java主源码",
+      "sha256": "3385f86d5853a23b217d15f80a510b0e2135b9e7d4550b0640a55d0acbfeedc1",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/GroundStationGeometry.java",
+      "kind": "Java主源码",
+      "sha256": "3cc02477aac42d10a9120baebbefe4e14a876a629d5ffd561e5cda9f392225f9",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/LegacyJ2000Frames.java",
+      "kind": "Java主源码",
+      "sha256": "d01a9c10ac770ff0070d71a1c1f46738b5ec78c3d3a78cfa047c014e25c6c9c5",
+      "chineseCommentBlocks": 20
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/TemeEarthFixedFrames.java",
+      "kind": "Java主源码",
+      "sha256": "b32fbf239a46565a8ac0f8a41d39a747397d96c5e514244851b2c4948710e734",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/geometry/Vector3.java",
+      "kind": "Java主源码",
+      "sha256": "c62013eef8a29b34e64d78cdb2cd3f3be657702d8e3e454f25e9c33a1f8565dc",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java",
+      "kind": "Java主源码",
+      "sha256": "802f3cf690482e277e2f6df9e90f8bbb2bf11c36ec3d420f55d35ec45fee87a9",
+      "chineseCommentBlocks": 17
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.java",
+      "kind": "Java主源码",
+      "sha256": "40ba3cdfeec2425cf1497c5df9c4495469cd391b76f28e0e15ef1df8e54ecfe4",
+      "chineseCommentBlocks": 23
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/KeplerOrbitStateProvider.java",
+      "kind": "Java主源码",
+      "sha256": "8aaba9325aea567a1377a80b0b74fa8de34fefc680c660631a63b10485cc7a51",
+      "chineseCommentBlocks": 10
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition.java",
+      "kind": "Java主源码",
+      "sha256": "1babd4e78dbf3801a7f37b38d72f0446ad83ff1e6803eb6d921d6466652d9f48",
+      "chineseCommentBlocks": 32
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java",
+      "kind": "Java主源码",
+      "sha256": "395ae8900952ac6d5a9ab93a393b896562bc3a355125b17c0821bb53d6e1ff85",
+      "chineseCommentBlocks": 10
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitState.java",
+      "kind": "Java主源码",
+      "sha256": "6bb44c6c824eee826e9bd9d24ee415024eda07e71b36247e022ca03aa79a1ca6",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitStateProvider.java",
+      "kind": "Java主源码",
+      "sha256": "9604dbdc254d99099749c1fff59e43d5724c938a6c93a8d6320a55013f4b7ba8",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitTime.java",
+      "kind": "Java主源码",
+      "sha256": "67782ca1f60117b61a170eef511da482de17926eac18cb57d654350cdf8e1f8f",
+      "chineseCommentBlocks": 8
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrekitDataInitializer.java",
+      "kind": "Java主源码",
+      "sha256": "38cdeb77c78d782ed1ad14212c3a81979cd15e43da59fabe8bf143c9f6e24f5b",
+      "chineseCommentBlocks": 13
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/SpaceOrbitStateProvider.java",
+      "kind": "Java主源码",
+      "sha256": "46b98b5fece3df87431d5012a13931edf56f16fdbf4cc7c4595ed9b37cc9bda6",
+      "chineseCommentBlocks": 9
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/SpaceTimeFrames.java",
+      "kind": "Java主源码",
+      "sha256": "52fe5325c50c493b6aebb2841e27d3d35c601a9e790a2296533801aaf1438cc7",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/TleOrbitStateProvider.java",
+      "kind": "Java主源码",
+      "sha256": "954b7e8b91133d5a880d832e684c6d379d492e75db082c1366e39de050399377",
+      "chineseCommentBlocks": 7
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/IlluminationConstraint.java",
+      "kind": "Java主源码",
+      "sha256": "344db40a26c4503080d1bd5abe40265f31835e18454f04e1e5b4b4e62499f6c4",
+      "chineseCommentBlocks": 5
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/IlluminationState.java",
+      "kind": "Java主源码",
+      "sha256": "17e63be2ed2ea355390835045f2a9dedb834ef3f02715ac41105eea2f0b193c7",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraint.java",
+      "kind": "Java主源码",
+      "sha256": "078530029705ed6b144ba97803f1485bf30486c7b41e7a814a9c8ad5f637c7a1",
+      "chineseCommentBlocks": 8
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraintMath.java",
+      "kind": "Java主源码",
+      "sha256": "dce798fc16eb0265aca0a43bb774d8154b82769470b401a03d95a3eead8de010",
+      "chineseCommentBlocks": 10
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/PayloadType.java",
+      "kind": "Java主源码",
+      "sha256": "65e1204cfc00a5450aec1099d8785b57c7629c816d359480aaf61d79b66be4de",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/PayloadVisibilityEvaluator.java",
+      "kind": "Java主源码",
+      "sha256": "01fe4b1cf98e545a3823308dd34b28b8e60d9401bda40e7217a33b50b3c7f3ed",
+      "chineseCommentBlocks": 12
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/SolarGeometry.java",
+      "kind": "Java主源码",
+      "sha256": "96db39345e677c8e7bdbd92c43b6a044d68f041180f6708f033150cee0a9c67e",
+      "chineseCommentBlocks": 17
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/StandardPayloads.java",
+      "kind": "Java主源码",
+      "sha256": "2fcee3df270ffb6ca335b7c3dd4421274798f601fd142e8e4b235ab5253280c2",
+      "chineseCommentBlocks": 9
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/payload/VisibilitySample.java",
+      "kind": "Java主源码",
+      "sha256": "ae709db0be0cbbbd5b89e2cd0b8c938ada7b999975eeb71da8ab177a4ab72cac",
+      "chineseCommentBlocks": 12
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/time/LegacyJ2000Time.java",
+      "kind": "Java主源码",
+      "sha256": "fdacb204e744006b846402f2f9d5e9ceac0de547d2c8341637f75ba63017f489",
+      "chineseCommentBlocks": 11
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/CombinationConstraint.java",
+      "kind": "Java主源码",
+      "sha256": "e714d4e8443166434a0674634ed4cdd500e212433805d0f829d4b42ffb25622b",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/CombinationWindow.java",
+      "kind": "Java主源码",
+      "sha256": "e36e3463ce1784a02ae38f5c816f244b3254db06b01f5f3d1e21fb117e6412c6",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/CombinationWindowCalculator.java",
+      "kind": "Java主源码",
+      "sha256": "cde173e9fac017d7b3110e05e32a89b8e35fb2a18cd7be7b38ec49dca179b698",
+      "chineseCommentBlocks": 5
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/SampledStateRuns.java",
+      "kind": "Java主源码",
+      "sha256": "37de464ddc0e425c3ca4ba293fb009bf79a3b211ba20264ca2db682957d13c14",
+      "chineseCommentBlocks": 13
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/ScanStatisticsAccumulator.java",
+      "kind": "Java主源码",
+      "sha256": "8751da9245cf729a1b987958670f3dc8f449d9da4be7fa89b48ac5a00396a970",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/StateInterval.java",
+      "kind": "Java主源码",
+      "sha256": "92e2d64c360fb4db36647784768c99bbabbea7e9c08fb17476fdc505e0767b4a",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/TimeInterval.java",
+      "kind": "Java主源码",
+      "sha256": "44101e131ec5d15e6cd6b53c66826c399d315c200dfac4891848c5f02ad0eb35",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner.java",
+      "kind": "Java主源码",
+      "sha256": "39200245a0ee00738736d3696cc2b4e6cf399e807d1423f1af81dcbdbe5e4f90",
+      "chineseCommentBlocks": 32
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java",
+      "kind": "Java主源码",
+      "sha256": "a1913749e69293cde7ed1723c104d4c0e96550d00badde1498dbe340c9ac8710",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowNormalizer.java",
+      "kind": "Java主源码",
+      "sha256": "3da1a63de89fed4bfd8aa84f8371a580deb61ccc7f38cc9b8ade72d8e97ed6c0",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/config/MybatisPlusConfiguration.java",
+      "kind": "Java主源码",
+      "sha256": "6d89342193670722eadb355770bf0e4999ad2eb5738d1c9424cc0b61909d26b1",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileConfiguration.java",
+      "kind": "Java主源码",
+      "sha256": "f003df14c57fcdfc9cacad3460ba376ac87eac0e992026e6d984456b626563ad",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage.java",
+      "kind": "Java主源码",
+      "sha256": "f744c9fff13ef59a0e7642d12d80c20b11e678e0b2412df43137385866a67195",
+      "chineseCommentBlocks": 28
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/files/ManagedFileException.java",
+      "kind": "Java主源码",
+      "sha256": "ac89a9a897393b592f360a49bc119ed1d4283353d002f3edbf1a8738d6e4c426",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/DemoDataInitializer.java",
+      "kind": "Java主源码",
+      "sha256": "afe5010565a5638fed255c1079076a318e17d9f4ecc23c39f27807bfb0b005fd",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/SatelliteEntity.java",
+      "kind": "Java主源码",
+      "sha256": "9df3bdc882397a8eaff48e5ced23dbb1e7a936ff56566695f064b10c5a98494d",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/StationEntity.java",
+      "kind": "Java主源码",
+      "sha256": "174239d33dd8c74a391d5c1eb0abb0b66e44d0fdc961990b7627726955600edc",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/TargetEntity.java",
+      "kind": "Java主源码",
+      "sha256": "bf97f446d50318d905e594208ec026aaaca766920befdbee54e41cb3ef52eb24",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/VisibilityTaskResultEntity.java",
+      "kind": "Java主源码",
+      "sha256": "e9a3980908f483439bab74870fc85a0207905d3a49b9006197f64cc4a9da4587",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/SatelliteMapper.java",
+      "kind": "Java主源码",
+      "sha256": "4ddf9a57e29b7c52442f4a297bbc2794cdce47ddcb44e1ffce5e0dbffda2f05b",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/StationMapper.java",
+      "kind": "Java主源码",
+      "sha256": "3e4dc19d3dc25e76813e344340f598b476e07238af8596d1a31fd9231fb2d5b4",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/TargetMapper.java",
+      "kind": "Java主源码",
+      "sha256": "ce4e8300b3d327ff70b7609ec428b11ecdfa3ac391901524dd88b31ef67db8a0",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/VisibilityTaskResultMapper.java",
+      "kind": "Java主源码",
+      "sha256": "789fe3b5a427730cc6250727078c713f4e3348c0d8254da8cb32c534196e9c99",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/web/ClosingSafeNio2Protocol.java",
+      "kind": "Java主源码",
+      "sha256": "2c985cf051eb449f99a64546d7866d9d0cbf1a0101ab3f4cd1b5dfa14366e501",
+      "chineseCommentBlocks": 12
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/web/TomcatProtocolCustomizer.java",
+      "kind": "Java主源码",
+      "sha256": "711331a0d814a7eb5a5fc0a35e133420a7d3147556907802cf4851f5c3be92c2",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/SpaceTargetVisibleApplication.java",
+      "kind": "Java主源码",
+      "sha256": "e80a2eb8f64fc5480d4ecabd8626dca06eafa2c9c31e8881ddeda90cc861a5b2",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/api/OrbitVisibilityController.java",
+      "kind": "Java主源码",
+      "sha256": "52bee9c19721e97e88f653b61d955e1c6b510d8f1a4853f4d1d305224b046940",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/api/TargetTrajectoryFitController.java",
+      "kind": "Java主源码",
+      "sha256": "222c291e5c29d8fd2fc4bf44374f399d64503fc953f8782a7094a9fc8e51065e",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "kind": "Java主源码",
+      "sha256": "619de18b0e4aec091a6c2a2cbaa2c44f7abf02585430601a3020b8336b67d73f",
+      "chineseCommentBlocks": 37
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/OrbitCalculator.java",
+      "kind": "Java主源码",
+      "sha256": "93417703f28aef52e8aa70795bce9253a6e8e8bd782352aeaa55320af61531ea",
+      "chineseCommentBlocks": 120
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "kind": "Java主源码",
+      "sha256": "0004bca34ccea05ad072d72f962f85d5cbf721578f9501e6819e1bb51cc47d38",
+      "chineseCommentBlocks": 45
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/TrajectoryFileResolver.java",
+      "kind": "Java主源码",
+      "sha256": "de08ea49204fba52aafa881fcdf06ade5926667c2fc758df587a2193bb10931d",
+      "chineseCommentBlocks": 11
+    },
+    {
+      "path": "backend/src/main/java/db/migration/V2__ReplaceNameUniqueKeys.java",
+      "kind": "Java主源码",
+      "sha256": "f2786fb78497fae8dc6d84aa6cd2ee44f93f946c0d9ebe9d0f08e9532fd93d1b",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "backend/src/main/java/db/migration/V6__normalize_space_payload_distance_unit.java",
+      "kind": "Java主源码",
+      "sha256": "bebea5f357a994e7fa53c89a909649e42f314f1bbbd677691ecb2d8efad9422a",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "frontend/src/api/ballisticFiles.ts",
+      "kind": "前端源码",
+      "sha256": "1060156d6643a04913d0735d2770b668955886bbfe43d0c8d587e5e5d6f69a47",
+      "chineseCommentBlocks": 8
+    },
+    {
+      "path": "frontend/src/api/ballisticFit.spec.ts",
+      "kind": "前端测试",
+      "sha256": "192fe6000b151ca6f9be92e3b5b0015c655d78887eb7fed47f6a80ae3dee3929",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/api/ballisticFit.ts",
+      "kind": "前端源码",
+      "sha256": "aec1ebe3912d570f412e45a9e6fa9a29de9f070faa297c3a6a26ddc368e12ae5",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/api/ballisticFitTypes.ts",
+      "kind": "前端源码",
+      "sha256": "34f8093162de0fa86eb7a51f209d36b23707586f1828bcc8da8ff588a0b76e19",
+      "chineseCommentBlocks": 7
+    },
+    {
+      "path": "frontend/src/api/ballisticHttp.ts",
+      "kind": "前端源码",
+      "sha256": "603c8b18a0840691d53347ece3c07840ccef6d893a169aa10f0394a65ab4696f",
+      "chineseCommentBlocks": 5
+    },
+    {
+      "path": "frontend/src/api/ballisticPayloads.spec.ts",
+      "kind": "前端测试",
+      "sha256": "0021c326b8dbaf77ac1058bd7e39dfa61ed89d1bf7933f1a8c75b283c01f2b7e",
+      "chineseCommentBlocks": 0
+    },
+    {
+      "path": "frontend/src/api/ballisticPayloads.ts",
+      "kind": "前端源码",
+      "sha256": "f96b8a5888433beb7abcd6dc939b8aed8a18da0015592cae70641436f48f6bbf",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "frontend/src/api/ballisticRetime.spec.ts",
+      "kind": "前端测试",
+      "sha256": "c8b03df40bc12505f5e385c6e089f364ea976c49360c33e4157a73b928114da9",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/api/ballisticRetime.ts",
+      "kind": "前端源码",
+      "sha256": "3c8a4be35cd4a5af3d3547dfaf61180930e3528b670d83044a125cb7a5ef539e",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/api/ballisticSimulation.spec.ts",
+      "kind": "前端测试",
+      "sha256": "d4f6722ca22c1ecbd7ae0e57107516d281d2434cf28d2a29f1fda51a5b745ec7",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/api/ballisticSimulation.ts",
+      "kind": "前端源码",
+      "sha256": "d070615e51b267aa571d2101940f352d808b57c09a1632fc00cbc0b12570e8c2",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "frontend/src/api/ballisticWindow.spec.ts",
+      "kind": "前端测试",
+      "sha256": "4efc49671649297e11f2756fe47d2350b76e29c1736a6d781bec25f432b5a141",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/api/ballisticWindow.ts",
+      "kind": "前端源码",
+      "sha256": "98b118f9a4525b4854d69565485cb236d9850b2e70c273c894e1c6eaf9dac407",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "frontend/src/api/ballisticWindowTypes.ts",
+      "kind": "前端源码",
+      "sha256": "6b1a94b1632ed162c3f44666b61d7c62ef7d209f524b28533932d7f29a70541e",
+      "chineseCommentBlocks": 7
+    },
+    {
+      "path": "frontend/src/api/client.ts",
+      "kind": "前端源码",
+      "sha256": "97c1a003af34b03256fdc8bc52179ba94258f1c7c2152af13cbe13abba20a2f3",
+      "chineseCommentBlocks": 8
+    },
+    {
+      "path": "frontend/src/api/types.ts",
+      "kind": "前端源码",
+      "sha256": "c8353bc7a2dfe9900ae23b4c5f60ac9bf935c89f6d8f4a6700161548c75dcde5",
+      "chineseCommentBlocks": 72
+    },
+    {
+      "path": "frontend/src/api/visibilityTaskResults.ts",
+      "kind": "前端源码",
+      "sha256": "c305bb2e3d6518667c4a272138b4494d34ccf0bcc6c09cf1c59e0e92f357fcd0",
+      "chineseCommentBlocks": 5
+    },
+    {
+      "path": "frontend/src/api/visibilityTasks.ts",
+      "kind": "前端源码",
+      "sha256": "5b7af4ec4ef721be02a2646001d8fb63a1357cf61c3aa2a1d4ef5bce8bb830d1",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "frontend/src/App.spec.ts",
+      "kind": "前端测试",
+      "sha256": "c1eb596eda9f57a08578cf2c0aef5e4962dc411b876087fe6485e91d9a42b56f",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/App.vue",
+      "kind": "前端源码",
+      "sha256": "96a6a735a003484db3ea9bfbf5d5a9a966de0a4eda522a63720266ddbee58324",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "frontend/src/components/BallisticFitFileResult.vue",
+      "kind": "前端源码",
+      "sha256": "fa22b8f1ca4a0bfd1a6f463b36481597c5416effb29a01d11f63a19036f3e9c1",
+      "chineseCommentBlocks": 7
+    },
+    {
+      "path": "frontend/src/components/BallisticFitTrajectory.vue",
+      "kind": "前端源码",
+      "sha256": "d1009a9968c335e062a42861e888c7955ec78822358d7d8611b6e3dfc12757d3",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/components/BallisticTrajectoryView.vue",
+      "kind": "前端源码",
+      "sha256": "20ea0d34f402c9eeb95c015b6385700545e312e4679cc27a951e6d7e384036bd",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowControls.spec.ts",
+      "kind": "前端测试",
+      "sha256": "045cb378bb4507bcf53d50d349bc183bb2f1cbbdb7a36aec150e4c664cc0f127",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowControls.vue",
+      "kind": "前端源码",
+      "sha256": "c47625540feb2e06494689fe430e143b43246a2af5d0a3a0854525e955c4f178",
+      "chineseCommentBlocks": 17
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowResults.spec.ts",
+      "kind": "前端测试",
+      "sha256": "9c5b0ae5c61ba0ef168d991b6dac6733faecad521d04e23d472a9a3e48d2e368",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowResults.vue",
+      "kind": "前端源码",
+      "sha256": "7b1025adb3e8b9bd14cb9771e402170175c9f8e54b005a0d24e7f37ca962c3f8",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/components/DownlinkPlanningStep.vue",
+      "kind": "前端源码",
+      "sha256": "ad6bc8e43ed2750e33bccb41aefc35cc1583f42927e5e4e55dc7cd0a846a89bf",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/components/ObservationConstraintPanel.spec.ts",
+      "kind": "前端测试",
+      "sha256": "1a5926cf72f4348390a1aa257912eff5037db742d7c1fe8713b74dfd80f8a6ec",
+      "chineseCommentBlocks": 0
+    },
+    {
+      "path": "frontend/src/components/ObservationConstraintPanel.vue",
+      "kind": "前端源码",
+      "sha256": "79751b322f24739398545eb1bca743734b74e2937ec227482dff9f93b41d2e42",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/components/SatellitePayloadPanel.spec.ts",
+      "kind": "前端测试",
+      "sha256": "3bf17938c5378a4980e33eda3233bbb31da6459a3ce46cc2b9ef1792e5cecfb4",
+      "chineseCommentBlocks": 0
+    },
+    {
+      "path": "frontend/src/components/SatellitePayloadPanel.vue",
+      "kind": "前端源码",
+      "sha256": "87ac21817c18ad5ce97dc9cd35b76ae4d5903ba22dd095c2cf92355886164432",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "frontend/src/components/SatelliteStationLinkPanel.vue",
+      "kind": "前端源码",
+      "sha256": "9989d3a113e74ea11e73d38c685ce9bde344de05a1430a09ded93ac519d9e29a",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "frontend/src/components/StandardPayloadEditor.spec.ts",
+      "kind": "前端测试",
+      "sha256": "830aaf1583bbeca585ee46d1249c31475ef139a51b13ebc961d7fd64fd73cd80",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/components/StandardPayloadEditor.vue",
+      "kind": "前端源码",
+      "sha256": "0a7f77360b47f1bcc51368536b183d8a98a557520151c7d0fecb6e6f6a5ce0c6",
+      "chineseCommentBlocks": 5
+    },
+    {
+      "path": "frontend/src/components/StationConstraintStep.vue",
+      "kind": "前端源码",
+      "sha256": "9812ec17fc6fcecf40aee65fc6fe6a356de99323004e41c3854519bfbc3775b1",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/components/TargetSelectionStep.spec.ts",
+      "kind": "前端测试",
+      "sha256": "e720d439d197031c1a3c143bcce93630b2cc1cc8317e7dfffe4348a307e181ac",
+      "chineseCommentBlocks": 0
+    },
+    {
+      "path": "frontend/src/components/TargetSelectionStep.vue",
+      "kind": "前端源码",
+      "sha256": "263a16081453344b4e0a9e0913bb288bce3ab961170b1a3f114a0cbc72dfa416",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/components/TaskResultDetailDrawer.spec.ts",
+      "kind": "前端测试",
+      "sha256": "e45df52d68fea612f8ecab11b1020cab45ef69d85b987b1ca23570c5b2c49790",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/components/TaskResultDetailDrawer.vue",
+      "kind": "前端源码",
+      "sha256": "246d735231ea00a446d622fd1a201a94fc3051f32552b629c0b8ac3d48251559",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "frontend/src/components/TaskResultRecordsPanel.spec.ts",
+      "kind": "前端测试",
+      "sha256": "abadd7cba392d84f9f485a199cb934b955c9fc8004f0e1703009fe3fe9d9f244",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/components/TaskResultRecordsPanel.vue",
+      "kind": "前端源码",
+      "sha256": "643c42a5d2af818fa58ecc5b6350a99f32e607ac9fdb402bc9451f54ef3f74da",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "frontend/src/components/TaskSatelliteSelectionStep.spec.ts",
+      "kind": "前端测试",
+      "sha256": "a3ebb2cedaadf8c8e175e48079232227ca0a5475fcbe6fe19c691eaed1d18192",
+      "chineseCommentBlocks": 0
+    },
+    {
+      "path": "frontend/src/components/TaskSatelliteSelectionStep.vue",
+      "kind": "前端源码",
+      "sha256": "e61f39a72558e4df15dec39380a6866a2b1ac2b1928533809392ae05016346da",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "frontend/src/components/VisibilityPlanningStep.spec.ts",
+      "kind": "前端测试",
+      "sha256": "edebb115f9479b27f2c253c3503141648c2fabb85e2f9b1067fd62c0c0ba8bc7",
+      "chineseCommentBlocks": 3
+    },
+    {
+      "path": "frontend/src/components/VisibilityPlanningStep.vue",
+      "kind": "前端源码",
+      "sha256": "c00cfa92ec248c1f27a04fcebc827d8e17ec46e5dc00bb1a0353ea4b60e757cc",
+      "chineseCommentBlocks": 29
+    },
+    {
+      "path": "frontend/src/components/WindowSelectionPanel.spec.ts",
+      "kind": "前端测试",
+      "sha256": "7f3544a660c5448db7d8c88ac3e5005d9e1aa1e3e1f9b9b0d25126eb6d32b2a7",
+      "chineseCommentBlocks": 0
+    },
+    {
+      "path": "frontend/src/components/WindowSelectionPanel.vue",
+      "kind": "前端源码",
+      "sha256": "325f6772d5d9180482df56d7bbd0458550ea41f32deabbf627f31fd5471a485b",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/composables/useSelectionConfirm.ts",
+      "kind": "前端源码",
+      "sha256": "9a088ad4d78923144bb0abf777e7ed85112c00c425afd6d27067da22aafaca7b",
+      "chineseCommentBlocks": 8
+    },
+    {
+      "path": "frontend/src/composables/useVisibilityTaskRecords.ts",
+      "kind": "前端源码",
+      "sha256": "19db437fbff518ed85859f72e22f243d4a5eb7566d19e3b3823a099ec70170be",
+      "chineseCommentBlocks": 10
+    },
+    {
+      "path": "frontend/src/composables/useVisibilityWorkbench.spec.ts",
+      "kind": "前端测试",
+      "sha256": "1df518ef91affd2966afc8dc00710627527751a19d3113eb066a178a4dd35717",
+      "chineseCommentBlocks": 11
+    },
+    {
+      "path": "frontend/src/composables/useVisibilityWorkbench.ts",
+      "kind": "前端源码",
+      "sha256": "4b756653e2c709317060ddf9120330b9b73b8e97ec09e68436dc93eedd91bce9",
+      "chineseCommentBlocks": 77
+    },
+    {
+      "path": "frontend/src/main.ts",
+      "kind": "前端源码",
+      "sha256": "d9c2470b0803727a1843ab63496b41f32630063fa4c1e6b63a8dd9cb38d2e813",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/style.css",
+      "kind": "前端源码",
+      "sha256": "e2fc2311bb78e7cf0c89a0cc8b4a3929bf78de0cfc59664c2b3c0b4c149ef149",
+      "chineseCommentBlocks": 2
+    },
+    {
+      "path": "frontend/src/utils/ballisticFit.spec.ts",
+      "kind": "前端测试",
+      "sha256": "424b1e8039b3fc5d0b9142688302be76cddb4d76bfe9293a948059e246969ef3",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/utils/ballisticFit.ts",
+      "kind": "前端源码",
+      "sha256": "5b1108e7de120e01ac727d3f8c1ebc04cafd5ffd1c0044e014f8346dfcc691e6",
+      "chineseCommentBlocks": 11
+    },
+    {
+      "path": "frontend/src/utils/ballisticRetime.spec.ts",
+      "kind": "前端测试",
+      "sha256": "49f289d5bc8706e5b8f3f0de702b015561fc70fe6fc5613bab9b515e2a277a10",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/utils/ballisticSimulation.spec.ts",
+      "kind": "前端测试",
+      "sha256": "7629de0849dee5705b4b65aebd7b9b660ac423f4e11c7349a62ac0a6ff9897ef",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/utils/ballisticSimulation.ts",
+      "kind": "前端源码",
+      "sha256": "25fe79387a36dac6a1db91a6f132b0b28a85a09486e4ede25e2173d4d8c9e642",
+      "chineseCommentBlocks": 4
+    },
+    {
+      "path": "frontend/src/utils/ballisticWindow.ts",
+      "kind": "前端源码",
+      "sha256": "66ee10d8c318a39b0c8f5f4d2925c7969449f8c9c46748fc49e55eab2937fd15",
+      "chineseCommentBlocks": 5
+    },
+    {
+      "path": "frontend/src/utils/standardPayload.spec.ts",
+      "kind": "前端测试",
+      "sha256": "258c6b35a88c7827b96c4882ae4f3cec26ead2949d5f201f1715496d7eb0b07f",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/utils/standardPayload.ts",
+      "kind": "前端源码",
+      "sha256": "a84701a299278843e4ba0b8f01ef8a1f38c6bb10784706e354ea1e26b45cb19a",
+      "chineseCommentBlocks": 12
+    },
+    {
+      "path": "frontend/src/utils/winToolSummary.spec.ts",
+      "kind": "前端测试",
+      "sha256": "8a44e64dcfaa14bb061da62f215af317888a1fe013d98310018467688462e017",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "frontend/src/utils/winToolSummary.ts",
+      "kind": "前端源码",
+      "sha256": "f7434e27e64dfbdecc972d5141cee251ac796f385738e921cc20846d64d5ceeb",
+      "chineseCommentBlocks": 8
+    },
+    {
+      "path": "frontend/src/views/BallisticFitView.spec.ts",
+      "kind": "前端测试",
+      "sha256": "4bc3ad62028f2c54a46736cc64d0ba3774ff7b7a7d816f615e64c3380511bd18",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/views/BallisticFitView.vue",
+      "kind": "前端源码",
+      "sha256": "1431589d06e405efe4c5ccaa890c87f5914777cb5133dbe006f2fbf3e6b434af",
+      "chineseCommentBlocks": 6
+    },
+    {
+      "path": "frontend/src/views/BallisticPayloadConfigurationView.spec.ts",
+      "kind": "前端测试",
+      "sha256": "205a9669f5aee7db59d7bfe954b026595579374ec795789c8519ace11b1bd72f",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/views/BallisticPayloadConfigurationView.vue",
+      "kind": "前端源码",
+      "sha256": "7a675d6eb0d9485806a218cbedc281f5ea87a7dc000274adf8a2f357f09bc39e",
+      "chineseCommentBlocks": 14
+    },
+    {
+      "path": "frontend/src/views/BallisticRetimeView.spec.ts",
+      "kind": "前端测试",
+      "sha256": "68787f1faec374cba002ae00006500ef0903f9d5b859629e5d71d93c14b4904d",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/views/BallisticRetimeView.vue",
+      "kind": "前端源码",
+      "sha256": "a065f9e4d11172492c6494f2cadac212656f9d2022d8e72a0f4edbe93de6268c",
+      "chineseCommentBlocks": 7
+    },
+    {
+      "path": "frontend/src/views/BallisticSimulationView.spec.ts",
+      "kind": "前端测试",
+      "sha256": "eac44d43cdcd5a3c1ba0a4b53194bcff5f9ea2cb6d1eec3785b4c9757403dc53",
+      "chineseCommentBlocks": 1
+    },
+    {
+      "path": "frontend/src/views/BallisticSimulationView.vue",
+      "kind": "前端源码",
+      "sha256": "3e0a01b52373d27180f5ecf11d1b734c3919fc927bf3bfb1b91199484b0dcf00",
+      "chineseCommentBlocks": 6
+    }
+  ],
+  "scope": "全部Java主源码及前端ts/vue/css，测试标明；统计仅导航，中文充分性与例外见验证报告"
+}
