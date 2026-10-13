@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "responses": [
+    {
+      "label": "后端API包没有Vue页或测试夹具",
+      "method": "GET",
+      "url": "http://127.0.0.1:18130/index.html",
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Disposition": "inline;filename=f.txt",
+        "Content-Type": "application/json",
+        "Date": "Tue, 13 Oct 2026 16:22:19 GMT",
+        "Vary": "Origin"
+      },
+      "bytes": 94,
+      "sha256": "cc79661ca6303229aec905bb2c5d06c9ebe0aac57a8f23978be6a21a14d55313"
+    },
+    {
+      "label": "正式静态生产页",
+      "method": "GET",
+      "url": "http://127.0.0.1:15130/index.html",
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Tue, 13 Oct 2026 16:22:19 GMT"
+      },
+      "bytes": 603,
+      "sha256": "41a30696a42eb3e943925bb8e0f3f223bba9ac43ff6dc3e2599c4128a38d9b8e"
+    },
+    {
+      "label": "确切跨域预检",
+      "method": "OPTIONS",
+      "url": "http://127.0.0.1:18130/api/v1/space/targets/query",
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Origin": "http://127.0.0.1:15130",
+        "Access-Control-Expose-Headers": "Content-Disposition",
+        "Access-Control-Max-Age": "1800",
+        "Allow": "GET, HEAD, POST, PUT, DELETE, OPTIONS, PATCH",
+        "Date": "Tue, 13 Oct 2026 16:22:19 GMT",
+        "Vary": "Origin",
+        "Content-Length": "0"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "确切跨域预检",
+      "method": "OPTIONS",
+      "url": "http://127.0.0.1:18130/api/v1/space/targets/query",
+      "status": 403,
+      "headers": {
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Date": "Tue, 13 Oct 2026 16:22:19 GMT",
+        "Vary": "Origin"
+      },
+      "bytes": 20,
+      "sha256": "492899553d985cc0122cc53bb3502fea1f837b37763efd5920fda903c3553ad8"
+    }
+  ],
+  "nginxAvailable": false,
+  "nginxConfigTestExecuted": false,
+  "actualGateway": "static-validation-gateway.cjs",
+  "covered": "正式静态字节/同源API代理由真实浏览器验收；跨域确切来源与拒绝来源"
+}

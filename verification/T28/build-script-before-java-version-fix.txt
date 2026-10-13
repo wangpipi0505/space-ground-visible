@@ -1,0 +1,7 @@
+java.exe : openjdk version "1.8.0_472"
+At G:\5-YG\space-ground-visible\verification\runtime\T28\script-build-source\deploy\build.ps1:9 char:17
++     $version = (& "$env:JAVA_HOME/bin/java.exe" -version 2>&1 | Out-S ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (openjdk version "1.8.0_472":String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

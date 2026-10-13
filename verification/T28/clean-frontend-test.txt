@@ -1,0 +1,10 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/verification/runtime/T28/clean-source/frontend
+
+
+ Test Files  27 passed (27)
+      Tests  112 passed (112)
+   Start at  00:09:37
+   Duration  58.20s (transform 10.33s, setup 0ms, import 139.06s, tests 47.18s, environment 136.54s)
+
+$ vitest run "--run"

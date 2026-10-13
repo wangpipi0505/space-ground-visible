@@ -1,0 +1,7 @@
+交付目标已存在，请选择新的目录，不能覆盖活运行包
+At G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\deploy\package.ps1:6 char:44
++ ... -Path -LiteralPath $packageRoot) { throw '交付目标已存在，请选择新的目录，不能覆盖活运行包' }
++                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (交付目标已存在，请选择新的目录，不能覆盖活运行包:String) [], RuntimeException
+    + FullyQualifiedErrorId : 交付目标已存在，请选择新的目录，不能覆盖活运行包
+ 

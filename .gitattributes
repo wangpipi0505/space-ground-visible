@@ -9,6 +9,9 @@ verification/**/*.txt -text whitespace=cr-at-eol
 verification/T21/browser-console.txt -whitespace
 verification/T21/frontend-build-final.txt -whitespace
 verification/T21/frontend-tests-final.txt -whitespace
+# T28 保留真实构建、反例及关闭终端原字节；这些工具日志不是待格式化的源码。
+# 数值日志TXT与原LOG校验绑定，不能仅为消除工具自带行尾空格而改写验收原输出。
+verification/T28/**/*.txt -text -whitespace
 # 浏览器快照和工具响应是原始验证证据，保留字节及工具自带的末尾空行。
 output/playwright/** -text -whitespace
 *.jar binary

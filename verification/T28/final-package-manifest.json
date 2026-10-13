@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "package": "G:/5-YG/space-ground-visible/verification/runtime/T28/deployment-package-v4",
+  "manifestSha256": "a5e27d3054a4ed11350cea386ce2d96f7b42da2b4e1698ba6201f54fb47ca3fe",
+  "manifestEntries": 359,
+  "allManifestHashesVerified": true,
+  "deploymentFiles": [
+    {
+      "source": "start-backend.ps1",
+      "package": "start-backend.ps1",
+      "bytesEqual": true,
+      "sha256": "620fc8ee8151c32507ef858941a73630d95b1bece652151478d0d04d66d70d7d"
+    },
+    {
+      "source": "application-deploy.yml",
+      "package": "config/application-deploy.yml",
+      "bytesEqual": true,
+      "sha256": "118202dd3d6a028ff51026cc8dceda33e109a2e963bed3030df7c98d8042e922"
+    },
+    {
+      "source": "部署说明.md",
+      "package": "部署说明.md",
+      "bytesEqual": true,
+      "sha256": "e0be4ef23d023e4bc3ea4b48833dd22fd9714f255cf2607ed10d7ce7348a40a6"
+    },
+    {
+      "source": "nginx.conf",
+      "package": "nginx.conf",
+      "bytesEqual": true,
+      "sha256": "fe415b81231c714a6ddd4b21eb0392d218a9b620b12664902e0fc5026d243220"
+    }
+  ]
+}

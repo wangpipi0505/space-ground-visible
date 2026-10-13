@@ -1,0 +1,17 @@
+At G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\deploy\package.ps1:13 char:92
++ ... place('\','/'); sha256 = (Get-FileHash -LiteralPath $_.FullName -Algo ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The string is missing the terminator: '.
+At G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\deploy\package.ps1:13 char:87
++ ... 1).Replace('\','/'); sha256 = (Get-FileHash -LiteralPath $_.FullName  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token '\','/'); sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash }
+} | ConvertTo-Json -Depth 3 | Set-Content -LiteralPath "$packageRoot/manifest.json" -Encoding UTF8
+' in expression or statement.
+At G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\deploy\package.ps1:5 char:42
++ if (Test-Path -LiteralPath $packageRoot) { throw '浜や粯鐩爣宸插瓨鍦紝璇烽€夋嫨鏂扮 ...
++                                          ~
+Missing closing '}' in statement block or type definition.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+ 

@@ -1,0 +1,156 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 113 source files to G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\backend\target\classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/T28/clean-source/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/T28/clean-source/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 82 source files to G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\backend\target\test-classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/T28/clean-source/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\backend\src\test\java\com\runisys\orbit\spacevisibility\infrastructure\web\Nio2ShutdownRaceTest.java使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/T28/clean-source/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ space-target-visible ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest
+00:07:48.644 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+00:07:48.649 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+00:07:48.667 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+00:07:48.673 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest], using SpringBootContextLoader
+00:07:48.675 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest]: class path resource [com/runisys/orbit/spacevisibility/api/SpaceVisibilityControllerIntegrationTest-context.xml] does not exist
+00:07:48.675 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest]: class path resource [com/runisys/orbit/spacevisibility/api/SpaceVisibilityControllerIntegrationTestContext.groovy] does not exist
+00:07:48.675 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+00:07:48.675 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest]: SpaceVisibilityControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:07:48.703 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest]
+00:07:48.762 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\backend\target\classes\com\runisys\orbit\spacevisibility\SpaceTargetVisibleApplication.class]
+00:07:48.763 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication for test class com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest
+00:07:48.809 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest]: using defaults.
+00:07:48.810 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+00:07:48.819 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7283d3eb, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@638ef7ed, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4bff7da0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3f1d2e23, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@536dbea0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c81abf, org.springframework.test.context.transaction.TransactionalTestExecutionListener@776a6d9b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@21d03963, org.springframework.test.context.event.EventPublishingTestExecutionListener@1f760b47, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@18ece7f4, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3cce57c7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1cf56a1c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@33f676f6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4c5ae43b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@264f218]
+00:07:48.820 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@7905a0b8 testClass = SpaceVisibilityControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35a3d49f testClass = SpaceVisibilityControllerIntegrationTest, locations = '{}', classes = '{class com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@389b0789 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@26794848, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@367ffa75, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@544fa968, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@77f1baf5, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@63475ace, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@57fffcd7], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-14 00:07:49.016  INFO 63072 --- [           main] SpaceVisibilityControllerIntegrationTest : Starting SpaceVisibilityControllerIntegrationTest using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 63072 (started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\backend)
+2026-10-14 00:07:49.016  INFO 63072 --- [           main] SpaceVisibilityControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-10-14 00:07:49.839  INFO 63072 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-14 00:07:49.957  INFO 63072 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-14 00:07:49.973  INFO 63072 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-14 00:07:49.973  INFO 63072 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:space_target_visible (H2 1.4)
+2026-10-14 00:07:50.019  INFO 63072 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.019s)
+2026-10-14 00:07:50.026  INFO 63072 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-14 00:07:50.051  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-14 00:07:50.054  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - create space visibility tables"
+2026-10-14 00:07:50.075  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - ReplaceNameUniqueKeys"
+2026-10-14 00:07:50.096  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - AddSpaceTrackCatalogFields"
+2026-10-14 00:07:50.142  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "4 - AddSatelliteWeight"
+2026-10-14 00:07:50.147  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - create visibility task result"
+2026-10-14 00:07:50.150  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "6 - normalize space payload distance unit"
+2026-10-14 00:07:50.154  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "7 - add skipped pairs to visibility task result"
+2026-10-14 00:07:50.163  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "8 - align wintool space payload rate markers"
+2026-10-14 00:07:50.168  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "9 - add selection json to visibility task result"
+2026-10-14 00:07:50.174  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "10 - align station max elevation with wintool"
+2026-10-14 00:07:50.180  INFO 63072 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 10 migrations to schema "public", now at version v10 (execution time 00:00.133s)
+2026-10-14 00:07:51.196  INFO 63072 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-14 00:07:51.197  INFO 63072 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-14 00:07:51.197  INFO 63072 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-14 00:07:51.216  INFO 63072 --- [           main] SpaceVisibilityControllerIntegrationTest : Started SpaceVisibilityControllerIntegrationTest in 2.379 seconds (JVM running for 2.897)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /index.html
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = org.springframework.web.servlet.resource.ResourceHttpRequestHandler
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.885 s <<< FAILURE! - in com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest
+[ERROR] servesBundledSinglePageApplication  Time elapsed: 0.272 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest.servesBundledSinglePageApplication(SpaceVisibilityControllerIntegrationTest.java:165)
+
+2026-10-14 00:07:51.538  INFO 63072 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-14 00:07:51.540  INFO 63072 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   SpaceVisibilityControllerIntegrationTest.servesBundledSinglePageApplication:165 Status expected:<200> but was:<404>
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.985 s
+[INFO] Finished at: 2026-10-14T00:07:52+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project space-target-visible: There are test failures.
+[ERROR] 
+[ERROR] Please refer to G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\backend\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

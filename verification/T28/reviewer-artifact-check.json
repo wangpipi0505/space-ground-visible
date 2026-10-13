@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "sourceHashesVerified": 716,
+  "packageHashesVerified": 359,
+  "jarSha256": "1ce148b106493a0229594491f11d204b5a9d632cd0bad9b018233d97a04657f9",
+  "oldClassesIdentical": 287,
+  "addedClasses": [
+    "BOOT-INF/classes/com/runisys/orbit/spacevisibility/api/ApiCorsConfiguration.class"
+  ],
+  "testFixtureAbsentFromProductJar": true,
+  "currentCleanClassesEqualJar": true,
+  "backendActualSurefireTotals": {
+    "tests": 347,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "downloadHashesVerified": 10,
+  "csvRows": [
+    8560,
+    1633,
+    31,
+    2576,
+    2576
+  ],
+  "numericalArtifactRecomparison": [
+    {
+      "actual": "verification\\runtime\\T28\\root-ballistic-actual",
+      "files": 15,
+      "differences": []
+    },
+    {
+      "actual": "verification\\runtime\\T28\\root-space-actual",
+      "files": 9,
+      "differences": []
+    },
+    {
+      "actual": "verification\\runtime\\T28\\root-complete-clean-actual",
+      "files": 21,
+      "differences": []
+    }
+  ],
+  "scope": "Independent read-only verification of existing artifacts; no full build/browser rerun; no product or Git changes."
+}

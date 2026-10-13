@@ -1,0 +1,7 @@
+后端必须使用 Java 8
+At G:\5-YG\space-ground-visible\verification\runtime\T28\deployment-package-v3\start-backend.ps1:17 char:45
++ if ($version -notmatch 'version "1\.8\.') { throw '后端必须使用 Java 8' }
++                                             ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (后端必须使用 Java 8:String) [], RuntimeException
+    + FullyQualifiedErrorId : 后端必须使用 Java 8
+ 

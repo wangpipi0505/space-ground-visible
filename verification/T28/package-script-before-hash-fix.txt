@@ -1,0 +1,8 @@
+ForEach-Object : The term 'Get-FileHash' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At G:\5-YG\space-ground-visible\verification\runtime\T28\clean-source\deploy\package.ps1:13 char:58
++ ... ChildItem -LiteralPath $packageRoot -File -Recurse | ForEach-Object {
++                                                          ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-FileHash:String) [ForEach-Object], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException,Microsoft.PowerShell.Commands.ForEachObjectCommand
+ 

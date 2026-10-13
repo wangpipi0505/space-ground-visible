@@ -1,0 +1,13 @@
+{
+  "label": "env-before",
+  "origin": "http://127.0.0.1:15132",
+  "status": 403,
+  "headers": {
+    "Connection": "close",
+    "Transfer-Encoding": "chunked",
+    "Date": "Tue, 13 Oct 2026 16:28:13 GMT",
+    "Vary": "Origin"
+  },
+  "body": "Invalid CORS request",
+  "expectedStatus": 403
+}

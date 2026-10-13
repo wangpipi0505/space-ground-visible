@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "candidateJarSha256": "1ce148b106493a0229594491f11d204b5a9d632cd0bad9b018233d97a04657f9",
+  "comparisons": [
+    {
+      "name": "ballistic15",
+      "expectedFiles": 15,
+      "differences": []
+    },
+    {
+      "name": "space9",
+      "expectedFiles": 9,
+      "differences": []
+    },
+    {
+      "name": "spaceComplete21",
+      "expectedFiles": 21,
+      "differences": []
+    }
+  ],
+  "comparison": "原版JSON Decimal结构/数值/顺序完全相等，CSV和报告逐字节；不加容差或替换黄金"
+}

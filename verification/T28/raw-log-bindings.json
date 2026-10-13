@@ -1,0 +1,92 @@
+[
+  {
+    "source": "verification/T28/root-complete-clean-compile.log",
+    "evidence": "verification/T28/root-complete-clean-compile.txt",
+    "sha256": "c2c73f8b68b758677a3c97477df0ac171cb2b8d8488adfcd3eb7e4cb67de9097"
+  },
+  {
+    "source": "verification/T28/root-complete-clean-run.log",
+    "evidence": "verification/T28/root-complete-clean-run.txt",
+    "sha256": "076e9c7354d426cfff2f8ee8dd53f94b3812b30a6bbdfd4221ad12a2c3139791"
+  },
+  {
+    "source": "verification/T28/root-complete-original-compile.log",
+    "evidence": "verification/T28/root-complete-original-compile.txt",
+    "sha256": "07fcd13dccaa661b20a319a6e2015f077d806fd7c5a0091c3883fbe0322428d3"
+  },
+  {
+    "source": "verification/T28/root-complete-original-run.log",
+    "evidence": "verification/T28/root-complete-original-run.txt",
+    "sha256": "d9c5c7c6f7cdaddbf6411e5a59f4781170d1b8206aec7c2a4a56c171c5093e93"
+  },
+  {
+    "source": "verification/T28/root-ballistic/fit.log",
+    "evidence": "verification/T28/root-ballistic/fit.txt",
+    "sha256": "56f9f35e3c2abb07aa9b011c641c722137afa152597f1a62feed98eededaff56"
+  },
+  {
+    "source": "verification/T28/root-ballistic/retime.log",
+    "evidence": "verification/T28/root-ballistic/retime.txt",
+    "sha256": "7eb40b0cc597174c8798600df6291317201ea3549ae345eef15d9be1654706fc"
+  },
+  {
+    "source": "verification/T28/root-ballistic/runner-classpath.log",
+    "evidence": "verification/T28/root-ballistic/runner-classpath.txt",
+    "sha256": "7bf1370f688c21a189bc5602c4733008f99e1ea19c907fa4aaa27763a4d66ceb"
+  },
+  {
+    "source": "verification/T28/root-ballistic/runner-compile.log",
+    "evidence": "verification/T28/root-ballistic/runner-compile.txt",
+    "sha256": "1f7520f2d141a43292235f36f8a7b0e7d3dc994f8defe76bb43f811f29fee6ca"
+  },
+  {
+    "source": "verification/T28/root-ballistic/simulate.log",
+    "evidence": "verification/T28/root-ballistic/simulate.txt",
+    "sha256": "baac7364a63754e305b2021985622f9bc8d834f99146cceeb7de8216b2631d10"
+  },
+  {
+    "source": "verification/T28/root-ballistic/visibility-http-ground.log",
+    "evidence": "verification/T28/root-ballistic/visibility-http-ground.txt",
+    "sha256": "fc98b50021cadd6d20ef5b54708c59dd96727432346512fe8357b0ba8b2b26d9"
+  },
+  {
+    "source": "verification/T28/root-ballistic/visibility-j2_numerical-points0.log",
+    "evidence": "verification/T28/root-ballistic/visibility-j2_numerical-points0.txt",
+    "sha256": "0636955f7b382fa6b78ca97327e4c76ec5a1a3c1f9639455ea3b2175043f4e3f"
+  },
+  {
+    "source": "verification/T28/root-ballistic/visibility-j2_numerical-points1.log",
+    "evidence": "verification/T28/root-ballistic/visibility-j2_numerical-points1.txt",
+    "sha256": "2571ae58899d575fa57223803e1dea7ac61f5a5c5ed05f2f1afb746b8148015f"
+  },
+  {
+    "source": "verification/T28/root-ballistic/visibility-j2_secular-points0.log",
+    "evidence": "verification/T28/root-ballistic/visibility-j2_secular-points0.txt",
+    "sha256": "2e685071aa16e8c23874b873f0a023422bb45d012cec0e3cc2fc59da33809729"
+  },
+  {
+    "source": "verification/T28/root-ballistic/visibility-j2_secular-points1.log",
+    "evidence": "verification/T28/root-ballistic/visibility-j2_secular-points1.txt",
+    "sha256": "0e142030ac5336fd1bbb921fd8f6bd02e14b5ff86881269482dc6fc2b2f5cf75"
+  },
+  {
+    "source": "verification/T28/root-ballistic/visibility-two_body-points0.log",
+    "evidence": "verification/T28/root-ballistic/visibility-two_body-points0.txt",
+    "sha256": "826430f8a811d9084754d201de1074e6cbf09437d8ce0369d4efcb2ef96ce703"
+  },
+  {
+    "source": "verification/T28/root-ballistic/visibility-two_body-points1.log",
+    "evidence": "verification/T28/root-ballistic/visibility-two_body-points1.txt",
+    "sha256": "d6dea94cd5652a3070b3444d1d46cc87fc7e713c4ae4db6053c7213746b9704a"
+  },
+  {
+    "source": "verification/T28/root-space/space-runner-compile.log",
+    "evidence": "verification/T28/root-space/space-runner-compile.txt",
+    "sha256": "beb2f6d95a849f0e9c4bae73ea52eb30d0d46a3a50e6661959314050ea0319d0"
+  },
+  {
+    "source": "verification/T28/root-space/space-runner.log",
+    "evidence": "verification/T28/root-space/space-runner.txt",
+    "sha256": "5b650c7d366f1f6ec3481b2c456b63ed1b0499b8d241ab5ebd03760347be3c6d"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "source": "verification/runtime/T28/cors-diagnostic-cli.txt",
+  "rawBytes": 2965,
+  "rawSha256": "61395b4ae5488519504c73a1b5a3ec2d12cfad19e46018a8b1692b7b51c367eb",
+  "originalDiagnostic": {
+    "origin": "http://127.0.0.1:15130",
+    "api": "http://127.0.0.1:18130",
+    "catalogStatus": 200,
+    "satelliteCount": 2,
+    "jsonPreflightValidationStatus": 500,
+    "validationBody": "{\"error\":\"trajectory-0.1s-standard.csv\"}",
+    "uploadStatus": 201,
+    "downloadStatus": 200,
+    "reference": {
+      "fileId": "b92564e8-e946-49c2-aaa3-7f3a6c8122da",
+      "originalName": "cors-catalog.json",
+      "sizeBytes": 1896,
+      "contentType": "application/json",
+      "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T28\\independent-server\\files\\uploads\\upload-7758583648205888389.json"
+    },
+    "disposition": "attachment; filename=\"cors-catalog.json\"; filename*=UTF-8''cors-catalog.json",
+    "bytes": 1896,
+    "downloadSha256": "eeda322bb115adfdd60826e0c95b7b45f31f7e98a54757b0e7d0259278017e97",
+    "exactSourceSha256": "eeda322bb115adfdd60826e0c95b7b45f31f7e98a54757b0e7d0259278017e97"
+  },
+  "rootCause": "验收脚本将原空DTO默认文件行为误期望为400，不改计算API；改正式targets/query验证跨域"
+}

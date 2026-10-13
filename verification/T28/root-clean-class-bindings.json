@@ -1,0 +1,11 @@
+{
+  "oldJarSha256": "6f0cde71a608294585c40e512d9c649c80d826627d1c16f851b93bb1102e20cb",
+  "candidateJarSha256": "1ce148b106493a0229594491f11d204b5a9d632cd0bad9b018233d97a04657f9",
+  "classesCompared": 287,
+  "changedClasses": [],
+  "addedClasses": [
+    "BOOT-INF/classes/com/runisys/orbit/spacevisibility/api/ApiCorsConfiguration.class"
+  ],
+  "currentClassesEqualJar": true,
+  "bundledFrontendOrFixture": []
+}

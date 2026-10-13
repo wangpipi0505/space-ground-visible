@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+      "-version"
+    ],
+    "output": "openjdk version \"1.8.0_472\"\r\nOpenJDK Runtime Environment (Temurin)(build 1.8.0_472-b08)\r\nOpenJDK 64-Bit Server VM (Temurin)(build 25.472-b08, mixed mode)\r\n"
+  },
+  {
+    "command": [
+      "mvn.cmd",
+      "-version"
+    ],
+    "output": "Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)\r\nMaven home: C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\r\nJava version: 1.8.0_472, vendor: Temurin, runtime: C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\jre\r\nDefault locale: zh_CN, platform encoding: GBK\r\nOS name: \"windows 11\", version: \"10.0\", arch: \"amd64\", family: \"windows\"\r\n"
+  },
+  {
+    "command": [
+      "pnpm.cmd",
+      "--version"
+    ],
+    "output": "11.21.0\n"
+  },
+  {
+    "command": [
+      "node.exe",
+      "--version"
+    ],
+    "output": "v24.16.0\r\n"
+  }
+]

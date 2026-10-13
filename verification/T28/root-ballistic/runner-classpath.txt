@@ -1,0 +1,18 @@
+["C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd", "dependency:build-classpath", "-Dmdep.outputFile=G:\\5-YG\\space-ground-visible\\verification\\runtime\\T28\\root-ballistic-runner\\classpath.txt"]
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.3.0:build-classpath (default-cli) @ space-target-visible ---
+[INFO] Wrote classpath file 'G:\5-YG\space-ground-visible\verification\runtime\T28\root-ballistic-runner\classpath.txt'.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.523 s
+[INFO] Finished at: 2026-10-14T00:12:28+08:00
+[INFO] ------------------------------------------------------------------------
+
+exit=0

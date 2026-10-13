@@ -25,6 +25,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -160,9 +161,12 @@ class SpaceVisibilityControllerIntegrationTest {
     }
 
     @Test
-    void servesBundledSinglePageApplication() throws Exception {
+    // 验证 Spring 的可选静态资源服务能力；仅使用 test/resources 中明确的夹具。
+    // 正式 Vue 页面独立构建部署，不要求 Maven 测试依赖 ignored 的历史生成 static。
+    void servesOptionalStaticResourceFixture() throws Exception {
         mockMvc.perform(get("/index.html"))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("T28_STATIC_TEST_FIXTURE")));
     }
 
     @Test

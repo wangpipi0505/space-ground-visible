@@ -1,0 +1,1 @@
+{"command": ["mvn.cmd", "-B", "-Dtest=SpaceVisibilityControllerIntegrationTest#servesBundledSinglePageApplication", "test"], "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T28\\clean-source\\backend", "exitCode": 1}

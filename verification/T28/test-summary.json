@@ -1,0 +1,589 @@
+{
+  "backend": {
+    "tests": 347,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "suites": [
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.ApiCorsConfigurationTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.ApiExceptionHandlerTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.BallisticFileControllerIntegrationTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.BallisticFitHttpTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.BallisticFitWorkingDirectoryTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.BallisticMultipartHttpTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.BallisticRetimeHttpTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.BallisticSimulationHttpTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.BallisticVisibilityHttpTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.BallisticVisibilityWebTest",
+      "tests": "12",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.PlanningTaskControllerIntegrationTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.SpaceVisibilityControllerIntegrationTest",
+      "tests": "31",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.StandardPayloadHttpTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.api.VisibilityTaskResultControllerIntegrationTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticRetimeServiceTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticSimulationServiceTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticTrajectoryServiceTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.DownlinkPlanningServiceTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.DownlinkWindowValidatorTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.ObservationSampleEvaluatorTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.OrbitStateProviderFactoryTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.PayloadConstraintFactoryTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.PlanningFacadeServiceLoggingTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.PlanningFacadeServicePayloadTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.PlanningFailureReasonFormatterTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.PlanningTaskServiceTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.VisibilityArcTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.VisibilityConstraintPlannerTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.VisibilityExecutorConfigurationTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.VisibilityPlanningServiceTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.VisibilityTaskResultServiceUnitTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.WinToolAzimuthConventionAnalysisTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.WinToolReportFormatterTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.WinToolTargetWindowFourTargetCountReferenceTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixReferenceTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixTargetCountReferenceTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlannerTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.downlink.IlluminationRequirementTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometryTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.geometry.SharedGeometryTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.BallisticOrbitBindingTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.BallisticPropagationIsolationTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.KeplerOrbitStateProviderTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationToolTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.SpaceOrbitStateProviderTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.SpacePropagationIsolationTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.TimeFrameAdaptersTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProviderAlpha5Test",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProviderTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.payload.IlluminationConstraintTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.payload.SolarGeometryTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadMathTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadSolarContextTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.payload.WinToolAttitudeConventionDiagnosticTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculatorTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.window.ScanStatisticsAccumulatorTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.window.SharedWindowTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.window.TimeWindowScannerTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.domain.window.WindowNormalizerTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorageTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "1"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.infrastructure.files.BallisticResultWorkspaceTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.infrastructure.persistence.DemoDataInitializerTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.infrastructure.persistence.SatelliteMapperIntegrationTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.infrastructure.persistence.StationMapperIntegrationTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.infrastructure.web.Nio2ShutdownRaceTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.runisys.orbit.spacevisibility.infrastructure.web.TomcatProtocolCustomizerTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.api.BallisticFileInputCompatibilityTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.api.StandardPayloadRequestTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.api.StandardPayloadValidationTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.api.VisibilityRequestMultiPayloadTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.OrbitCalculatorMultiPayloadTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.OrbitCalculatorResultTimeTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.OrbitCalculatorVisibilityStabilityTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.StandardPayloadScanTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.trajectory.TargetTrajectoryFitterInterpolationTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.TrajectoryFileResolverTest",
+      "tests": "13",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tx.alg.TrajectoryFileScopeTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "frontend": {
+    "files": 27,
+    "tests": 112,
+    "failed": 0
+  }
+}
