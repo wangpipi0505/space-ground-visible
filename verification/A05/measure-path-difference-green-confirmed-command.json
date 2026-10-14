@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "-c",
+    "import json; from pathlib import Path; m=json.loads(Path('verification/A05/metrics-final.json').read_text(encoding='utf-8')); assert all(w['exactPhysicalJsonEqual'] and w['comparison']['equal'] for w in m['windows'].values()); print('PASS: source-path-only mapping after equal CSV SHA; all physical fields and arcs exact')"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T08:06:10.970581+00:00",
+  "executorSha256": "2b11d2cc7457bc79e9a1dfeed4e48b36b558bec73095cb6704f39913d2a8d687",
+  "inputFiles": [],
+  "endedUtc": "2026-10-14T08:06:11.005948+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "measure-path-difference-green-confirmed.stdout.bin",
+  "stderrFile": "measure-path-difference-green-confirmed.stderr.bin",
+  "stdoutSha256": "4fb8d3b759cb9a294a8266f67a2e333d6e59d5398c671deb6a97664018c71246",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

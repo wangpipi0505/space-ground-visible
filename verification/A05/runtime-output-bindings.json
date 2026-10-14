@@ -1,0 +1,94 @@
+{
+  "files": [
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-frames.json",
+      "sha256": "3da0bdfdb3bf329101def8594c4c2de74614530afde1222b3275cefdfdbf696f",
+      "bytes": 400
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-satellite.csv",
+      "sha256": "49ad5917be74cef38df36b81fe6168e9c62d15acaa719c053bb831067beae7cc",
+      "bytes": 1187839
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-simulate\\result.json",
+      "sha256": "0ede197f4359d387a3df4cd0d48a829ddb153f4c4da5d7d712c9d66c5035b26b",
+      "bytes": 652
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-simulate\\trajectory.csv",
+      "sha256": "26f13000fe30218329cb523001ea641d4d0b84a18d1811e6b83b171bec3a29c7",
+      "bytes": 1603476
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-window-reconstructed-0.json",
+      "sha256": "ed3e903285f8a9d75423fd32c91282f30090932535d400bc47107a1ed824ef8e",
+      "bytes": 7952
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-window-reconstructed-1120.json",
+      "sha256": "402556bf140e9db688625034c9c2a2b00b9fd100612948fa0feb14be44a3b776",
+      "bytes": 16680
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-window-stk-0.json",
+      "sha256": "7073860082d343f5979b46b535d3021589f790f7efec5abfba62c9dc97915c59",
+      "bytes": 7882
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-window-stk-1120.json",
+      "sha256": "d77e8c62792c4716c01e220d77226261c1499514447b373547a915f52d162db3",
+      "bytes": 16590
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-frames.json",
+      "sha256": "3da0bdfdb3bf329101def8594c4c2de74614530afde1222b3275cefdfdbf696f",
+      "bytes": 400
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-satellite.csv",
+      "sha256": "49ad5917be74cef38df36b81fe6168e9c62d15acaa719c053bb831067beae7cc",
+      "bytes": 1187839
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-simulate\\result.json",
+      "sha256": "a248044a93041552968ca8bbb4191a19c363274d2843253a3bca28342c2c41fc",
+      "bytes": 653
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-simulate\\trajectory.csv",
+      "sha256": "26f13000fe30218329cb523001ea641d4d0b84a18d1811e6b83b171bec3a29c7",
+      "bytes": 1603476
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-window-reconstructed-0.json",
+      "sha256": "1085c206bacc3547dcc10297763058d5de8dc17c79d965783f94abb58e9ed630",
+      "bytes": 7954
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-window-reconstructed-1120.json",
+      "sha256": "47be8ac553ccd8f8163632d18028272076491e8390c0f135a959bad19bf59449",
+      "bytes": 16682
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-window-stk-0.json",
+      "sha256": "7073860082d343f5979b46b535d3021589f790f7efec5abfba62c9dc97915c59",
+      "bytes": 7882
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-window-stk-1120.json",
+      "sha256": "d77e8c62792c4716c01e220d77226261c1499514447b373547a915f52d162db3",
+      "bytes": 16590
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\satellite-times.csv",
+      "sha256": "205629564f9b581ba36c785841fdc93a34dd724e5e486ea0dc223d91b5d57576",
+      "bytes": 432065
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\stk-target-21.csv",
+      "sha256": "2f60d731931d77e6c0015fe557d233df9e957e7685a190536712ab78fe988ff7",
+      "bytes": 1356845
+    }
+  ]
+}

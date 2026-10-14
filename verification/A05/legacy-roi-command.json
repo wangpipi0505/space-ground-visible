@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "verification/A05/run_stk_validation.py",
+    "legacy-roi"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T08:00:19.724222+00:00",
+  "executorSha256": "2b11d2cc7457bc79e9a1dfeed4e48b36b558bec73095cb6704f39913d2a8d687",
+  "inputFiles": [
+    {
+      "path": "verification/A05/run_stk_validation.py",
+      "sha256": "2b11d2cc7457bc79e9a1dfeed4e48b36b558bec73095cb6704f39913d2a8d687"
+    }
+  ],
+  "endedUtc": "2026-10-14T08:00:19.991187+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "legacy-roi.stdout.bin",
+  "stderrFile": "legacy-roi.stderr.bin",
+  "stdoutSha256": "604921f568a6f7fce421278986e7867e795fd8128513484df43822370df25c8a",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,8 @@
+"""A05初始RED解析器；重复表头会覆盖前组，本文件随后修复。"""
+import csv
+import io
+def parse_stk_text(text, kind):
+    rows = []
+    for row in csv.DictReader(io.StringIO(text)):
+        rows.append({'ecefP': tuple(float(row[name]) * 1000 for name in ('x (km)', 'y (km)', 'z (km)'))})
+    return rows

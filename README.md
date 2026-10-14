@@ -49,6 +49,7 @@ pnpm dev --host 127.0.0.1
 
 ## 接口、工具与验证入口
 
+- [原始STK精度补充报告（A05）](verification/A05/STK原始数据精度补充测试报告.md)：三份原始STK参考、7371点弹道及8641点卫星位置/真实速度对照、旧诊断时段与四种窗口场景；[独立审查](verification/A05/独立STK精度审查报告.md)。原精确模拟请求缺失，分别采用具名ECI/ECEF端点重建；独立STK Access起止表缺失，绝对窗口精度仍未测。在项目根运行 `python -X utf8 -B verification/A05/delivery_check.py` 可只读核对参考与已交付证据，完整物理重算的本机资产要求见报告。
 - [专项精度测试报告（A04）](verification/A04/精度测试报告.md)：新编译77项专项测试、15/9/21严格新旧对照、同刻插值留出误差和时间/坐标边界；[独立复审](verification/A04/独立精度复审报告.md)。在项目根运行 `python -X utf8 -B verification/A04/delivery_check.py` 可只读核对已交付证据，完整数值重算的本机资产前提见报告第10节。
 - [软件功能使用说明（A03）](docs/软件功能使用说明.md)：安装/正式启动、空间操作链、四个弹道页面、完整非生产输入与真实截图、时间/单位/文件失败恢复；[A03来源核验](verification/A03/验证报告.md)。
 - [新版完整接口文档（A02）](docs/接口文档.md)与[OpenAPI 3.0.3](docs/openapi/openapi.json)：35条活动操作、完整嵌套字段、实际状态/样例、载荷/UTC/CSV和文件生命周期合同；[A02验证证据](verification/A02/验证报告.md)。

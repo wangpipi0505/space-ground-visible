@@ -1,0 +1,39 @@
+{
+  "unexpectedFailures": [
+    "original-compile-command.json",
+    "original-window-stk-0-command.json",
+    "original-window-stk-0-repaired-command.json"
+  ],
+  "failures": [
+    {
+      "command": "original-compile",
+      "cause": "原DTO转换方法包级可见；探针必须与原api处于同包",
+      "repair": "仅QA探针加入com.tx.alg.api包",
+      "retest": "original-compile-repaired",
+      "sourceSnapshot": "failed-probe-source.java.txt"
+    },
+    {
+      "command": "original-window-stk-0",
+      "cause": "原DTO转换不包含控制器的默认ballistics兜底",
+      "repair": "请求显式列出目标输入",
+      "retest": "original-window-stk-0-repaired"
+    },
+    {
+      "command": "original-window-stk-0-repaired",
+      "cause": "原DTO转换不包含控制器默认卫星兜底",
+      "repair": "显式SAT-A/B旧默认根数与同物理130全锥",
+      "retest": "original-window-stk-0-retry1"
+    }
+  ],
+  "statisticsFailure": {
+    "evidence": "metrics.json",
+    "cause": "隔离两版生成文件csvPath不同且best/allResults重复",
+    "repair": "真实模拟CSV SHA相同前提下仅映射csvPath，其他JSON全字段严格比较；弧段只取allResults，metrics-final.json保留最终全量统计"
+  },
+  "redToGreen": {
+    "red": "tests-red-command.json",
+    "green": "tests-green-command.json",
+    "counterexample": "重复header覆盖使Fixed第一组三维1000被ECI第二组7000替换，实际AssertionError",
+    "redSource": "red-parser-source.py.txt"
+  }
+}

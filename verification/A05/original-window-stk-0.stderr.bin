@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.IllegalArgumentException: ballistics不能为空。
+	at com.tx.alg.OrbitCalculator.validateMultiTargetInputs(OrbitCalculator.java:2223)
+	at com.tx.alg.OrbitCalculator.searchLaunchOffsetsV2(OrbitCalculator.java:1911)
+	at com.tx.alg.api.StkStateProbe.main(StkStateProbe.java:53)

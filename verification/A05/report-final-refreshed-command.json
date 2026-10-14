@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "verification/A05/generate_report.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T08:04:58.087508+00:00",
+  "executorSha256": "2b11d2cc7457bc79e9a1dfeed4e48b36b558bec73095cb6704f39913d2a8d687",
+  "inputFiles": [
+    {
+      "path": "verification/A05/generate_report.py",
+      "sha256": "77a051b34c7b85131f95d0c6543fb26d7a28a7e91bccdd52fca25677478df890"
+    }
+  ],
+  "endedUtc": "2026-10-14T08:04:58.162639+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "report-final-refreshed.stdout.bin",
+  "stderrFile": "report-final-refreshed.stderr.bin",
+  "stdoutSha256": "3ef1861cb4b3229ac5190ca3b8e2813acdb54edc7fd8bb8825ba388dc7a1ed13",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "verification/A05/run_stk_validation.py",
+    "protect"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T07:59:22.644252+00:00",
+  "executorSha256": "6843bd542494fcee8c943131bf8d131e01410d406ca3d1a01e05847dc9451e6b",
+  "inputFiles": [
+    {
+      "path": "verification/A05/run_stk_validation.py",
+      "sha256": "6843bd542494fcee8c943131bf8d131e01410d406ca3d1a01e05847dc9451e6b"
+    }
+  ],
+  "endedUtc": "2026-10-14T07:59:23.210227+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "protect-post-ecef.stdout.bin",
+  "stderrFile": "protect-post-ecef.stderr.bin",
+  "stdoutSha256": "0ef73cd3832206e60e2840852c9da8cfa59567293bdd49672c6944c3e0758227",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

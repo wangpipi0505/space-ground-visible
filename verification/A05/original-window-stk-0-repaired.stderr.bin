@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.IllegalArgumentException: 请至少输入一颗卫星。
+	at com.tx.alg.OrbitCalculator.validateSearchInputsV2(OrbitCalculator.java:2462)
+	at com.tx.alg.OrbitCalculator.searchLaunchOffsetsV2(OrbitCalculator.java:1912)
+	at com.tx.alg.api.StkStateProbe.main(StkStateProbe.java:53)

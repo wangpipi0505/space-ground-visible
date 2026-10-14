@@ -1,0 +1,26 @@
+test_duplicate_headers_and_units (test_stk_validation.StkValidationTest.test_duplicate_headers_and_units) ... FAIL
+
+======================================================================
+FAIL: test_duplicate_headers_and_units (test_stk_validation.StkValidationTest.test_duplicate_headers_and_units)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A05\test_stk_validation.py", line 23, in test_duplicate_headers_and_units
+    self.assertEqual(rows[0]['ecefP'], (1000., 2000., 3000.))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (7000.0, 8000.0, 9000.0) != (1000.0, 2000.0, 3000.0)
+
+First differing element 0:
+7000.0
+1000.0
+
+- (7000.0, 8000.0, 9000.0)
+?  ^       ^       ^
+
++ (1000.0, 2000.0, 3000.0)
+?  ^       ^       ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

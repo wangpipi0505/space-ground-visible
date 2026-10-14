@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "verification/A05/run_stk_validation.py",
+    "measure"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T07:55:31.115046+00:00",
+  "endedUtc": "2026-10-14T07:55:31.924519+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "measure-repaired.stdout.bin",
+  "stderrFile": "measure-repaired.stderr.bin",
+  "stdoutSha256": "504f521e362ccd7387ff0735bdbb290c65c7de0b6803f42ec80738d3720f90dc",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

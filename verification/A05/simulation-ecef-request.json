@@ -1,0 +1,21 @@
+{
+  "taskName": "A05_STK_ECEF_endpoint_reconstruction",
+  "targetId": "A05-STK-ECEF-REBUILT",
+  "launchTimeUtc": "2026/07/01 08:24:00.000",
+  "impactTimeUtc": "2026/07/01 08:36:16.990",
+  "taskStartTime": "2026/07/01 08:24:00.000",
+  "taskEndTime": "2026/07/01 08:36:16.990",
+  "launchPointCoordFrame": "ECEF",
+  "impactPointCoordFrame": "ECEF",
+  "launchPointUnit": "m",
+  "impactPointUnit": "m",
+  "outputPointDurationSec": 0.1,
+  "integrationStepSec": 0.1,
+  "phaseEvents": [],
+  "launchPointX": -1832845.456,
+  "launchPointY": 4636330.2299999995,
+  "launchPointZ": 3967380.7569999998,
+  "impactPointX": 318111.601,
+  "impactPointY": 4757505.551,
+  "impactPointZ": 4223521.483
+}

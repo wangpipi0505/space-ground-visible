@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\runtime\A05\delivery-without-runtime\verification\A05\delivery_check.py", line 97, in <module>
+    main()
+    ~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\runtime\A05\delivery-without-runtime\verification\A05\delivery_check.py", line 36, in main
+    raise ValueError('候选SHA不符：'+item['path'])
+ValueError: 候选SHA不符：test-data/reference/stk/A05/raw/Missile1 ECEFECI-0.1.csv

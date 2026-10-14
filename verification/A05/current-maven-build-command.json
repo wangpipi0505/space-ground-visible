@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    "-DskipTests",
+    "package"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-source\\backend",
+  "startedUtc": "2026-10-14T07:51:55.957608+00:00",
+  "endedUtc": "2026-10-14T07:52:04.155407+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "current-maven-build.stdout.bin",
+  "stderrFile": "current-maven-build.stderr.bin",
+  "stdoutSha256": "8d9fae9217b4785af75461a4a513433992f5a7cfdc58d671a0c81e3963cd3746",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

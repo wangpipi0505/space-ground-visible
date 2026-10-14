@@ -1,0 +1,17 @@
+{
+  "sourceSha256": "c4ba9a8519efb4d2ac18ed28f0ef82f0f43eedcbc842690818428a89f471a172",
+  "files": [
+    {
+      "version": "original",
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-runner\\com\\tx\\alg\\api\\StkStateProbe.class",
+      "sha256": "55faa4b6f106f52c9e5c8e0c5535b80e21cc68868e3aad78e4df4bd8913f9877",
+      "compileCommandSha256": "95418da85b25033f21f5c8182861f3fd60c774560228b01bc85bf2d63d62848c"
+    },
+    {
+      "version": "current",
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-runner\\com\\tx\\alg\\api\\StkStateProbe.class",
+      "sha256": "55faa4b6f106f52c9e5c8e0c5535b80e21cc68868e3aad78e4df4bd8913f9877",
+      "compileCommandSha256": "a9f1320318ba749c1341a74335b1e1404a5b8687a62d4a23d7321b30bf09fd63"
+    }
+  ]
+}

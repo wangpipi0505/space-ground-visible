@@ -1,0 +1,6 @@
+{
+  "executorSha256": "6843bd542494fcee8c943131bf8d131e01410d406ca3d1a01e05847dc9451e6b",
+  "metricsSha256": "c33462f0b35fc7d05c1fc20959052cf73ace6927aa5af2f6fdda1b2b5f754f40",
+  "fullMetricsExactlyEqual": true,
+  "inputBindingsSha256": "bc9a68e0149b7e465ddb6eff4731d15e8fe35e74ea2adf369756027d5da7d548"
+}

@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    "-version"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T07:51:41.514958+00:00",
+  "endedUtc": "2026-10-14T07:51:41.770339+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "maven-version.stdout.bin",
+  "stderrFile": "maven-version.stderr.bin",
+  "stdoutSha256": "a7128f11742e148e768c1283e8cfc6b0e32797f8bad35ae45fe9ce6901c8b6be",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

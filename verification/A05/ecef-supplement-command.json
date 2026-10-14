@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "verification/A05/run_stk_validation.py",
+    "ecef"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T07:57:54.636111+00:00",
+  "endedUtc": "2026-10-14T07:57:56.212384+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "ecef-supplement.stdout.bin",
+  "stderrFile": "ecef-supplement.stderr.bin",
+  "stdoutSha256": "5fd99c53f3a6f99be40b5fe21d97898e87ad189364e0910d7aef45e267246d85",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

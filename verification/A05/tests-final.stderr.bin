@@ -1,0 +1,11 @@
+test_duplicate_headers_and_units (test_stk_validation.StkValidationTest.test_duplicate_headers_and_units) ... ok
+test_full_utc_alignment_rejects_offset_missing_reorder (test_stk_validation.StkValidationTest.test_full_utc_alignment_rejects_offset_missing_reorder) ... ok
+test_invalid_order_duplicate_nonfinite_width (test_stk_validation.StkValidationTest.test_invalid_order_duplicate_nonfinite_width) ... ok
+test_one_ms_window_change (test_stk_validation.StkValidationTest.test_one_ms_window_change) ... ok
+test_reject_software_access_truth (test_stk_validation.StkValidationTest.test_reject_software_access_truth) ... ok
+test_tiny_position_velocity_change_not_hidden (test_stk_validation.StkValidationTest.test_tiny_position_velocity_change_not_hidden) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+OK

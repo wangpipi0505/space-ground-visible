@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "-c",
+    "import json; from pathlib import Path; m=json.loads(Path('verification/A05/metrics.json').read_text(encoding='utf-8')); assert all(w['exactJsonEqual'] for w in m['windows'].values()), '初次统计严比失败原因为原/当前csvPath隔离来源路径不同；原现场metrics.json不改'"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T08:06:10.915348+00:00",
+  "executorSha256": "2b11d2cc7457bc79e9a1dfeed4e48b36b558bec73095cb6704f39913d2a8d687",
+  "inputFiles": [],
+  "endedUtc": "2026-10-14T08:06:10.966660+00:00",
+  "exitCode": 1,
+  "expectedExitCode": 1,
+  "stdoutFile": "measure-path-difference-red-reproduced.stdout.bin",
+  "stderrFile": "measure-path-difference-red-reproduced.stderr.bin",
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "49bde31b600f4fa7dcfde28172c9612c7c1e2f9dc1aa76584a3cf99ec9bb6a92"
+}

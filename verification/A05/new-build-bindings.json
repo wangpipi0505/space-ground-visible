@@ -1,0 +1,1207 @@
+{
+  "jarPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\current-source\\backend\\target\\space-target-visible-1.0.0-SNAPSHOT.jar",
+  "jarSha256": "79c13e8c50ccc6361f434d0a9e6fb4a57e4d0a0a85e6cee33cde1e090e33c90a",
+  "sourceManifestSha256": "8d8c230eff7f72f7d1e9c2fec8ad86b6bea0cddae3522bfb0eb6f90030dbf231",
+  "classes": [
+    {
+      "path": "backend/target/classes/application-demo.yml",
+      "sha256": "89448bd53f77589dd3ebe0e03dcf371ae62a76f309cd57c5ba1258b7009bdd45"
+    },
+    {
+      "path": "backend/target/classes/application.yml",
+      "sha256": "9cef1b8a17dd4c4f674e88b4e34430b2d0372f39d170133a736f9fc42daf30b6"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ApiCorsConfiguration.class",
+      "sha256": "188d1f3469ef3f28cedb7aed4ee74708ad734458733d4bb452f9f2cc07418f12"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ApiExceptionHandler.class",
+      "sha256": "32dcc086f5f1dbad900b25de39845ec7d32ee7856a7a724b2cda05f0be5801ae"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.class",
+      "sha256": "590666c664f24681a3760a44e83b77549506674522d2e041a34b37a35d12f43b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileExceptionHandler.class",
+      "sha256": "e0bea33f5051fd45bbdb128398362ba733bb7dbf992df56d52d490ed1bedd4bd"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels$FileReference.class",
+      "sha256": "3c7f289661b27a87de5833eb8fd131add00b9971d47dcfc7fb8a9f0c349bbef7"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels$Preview.class",
+      "sha256": "baa4496e9bba24321f3500fbbf6a7e4c43fc3e53a8140f1b0f0d6e19e655f153"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels$RegisterResultRequest.class",
+      "sha256": "a6bd314f12e639d57f740783251adefaafc426e49dd9a2369fce35588f45038c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.class",
+      "sha256": "a9616e97b518321dd3c1f2556c2f4a65fbc55b667ece7b2dc60d815ba25ae65b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.class",
+      "sha256": "8dfe464e4baf86265132394df5d4c0e6bf47af35f55f120af9897564f991a308"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticMultipartExceptionResolver.class",
+      "sha256": "b80088fc398255cede11516a2f11993cc3496f9640c8fe74d912da5a0298519f"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticPayloadController.class",
+      "sha256": "068df817f0fcd5e84b602899a01c2b1ae28f99994c263ebfdc26aeb0581e4acb"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.class",
+      "sha256": "503ac0499dc386b7998b24e9e5bfbe9c76abeeeea27b011caca0b7d0d32ca8d4"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.class",
+      "sha256": "a9043f2fc833a23b4f8f52ec222663512b2576d1f4cbff02b10f87777336ddbf"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.class",
+      "sha256": "2cb9ff787f1875491c3e18e11959c4aca4b13ab43134713acc72af04bc994bc3"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/PlanningTaskController.class",
+      "sha256": "db1031af7bde5808ac9559cb1a2c21c2c06a8b9ad17836f58d8279065ef00e1d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$BelongOptionResponse.class",
+      "sha256": "76d32f7373e60e84af0242e1196ac65439f86124fbe6fbcf208c99cc25469d2b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$CoverageWindowResponse.class",
+      "sha256": "b5263008e917635b08b1edc496a807a4b1bfb3ac941a8ed156cd5d3ba62ccf93"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$DownlinkPlanRequest.class",
+      "sha256": "4cc8a66493cc5b5680722b118e1c9804cae32302f2de25f0fd32cb76897cf677"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$DownlinkPlanResponse.class",
+      "sha256": "9d9644935fd3270ce53efa36e8710672238125ba35d19263ff8facbf6816a848"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$EphemerisWarningResponse.class",
+      "sha256": "f2c160457875c02ac76679a3ca81ed3309b2de25c06c0280a778c810bcfc3941"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$IlluminationConstraintRequest.class",
+      "sha256": "2bf90c7f3cd7e724a79ded8cb5bcc03ee6f5d024c39a4cbe4f49329684cd62f5"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$ObservationConstraintRequest.class",
+      "sha256": "846ef3b8b8be614f37c41b0725f1916e31f11346099a2a12452d7d56e0135d34"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$PageResponse.class",
+      "sha256": "9eb15015ae1bc5f3362fa770db062417d790a2f37ba8fea81894d6181d60e33a"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$PayloadProfileRequest.class",
+      "sha256": "e15011d6a066f2334d49f0bf688a17c328c6febf3335eb2c5de5306715d62fdd"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$PayloadProfileResponse.class",
+      "sha256": "409e0b13c9dfe6b19196f4d963bc0b7273179e7a03e4b5a1b3485bd915ba110f"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$PayloadProfilesResponse.class",
+      "sha256": "ee92ee3b3124766fb1b6a38c9dc03132cb2fcb167d66ff6f2756d0fd8990adbc"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$PlanningTaskStatusResponse.class",
+      "sha256": "c482c3d653a034dc4534c8da0bdc27afaf461e85a3a893727e433b94f04acf77"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SatelliteOptionResponse.class",
+      "sha256": "ffdbd2f3663f6637e9de84abc39d547aa81d054fb17d5b468be1519bd68758b1"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SatelliteStationLinkRequest.class",
+      "sha256": "adfa057a0dc5d6f6c8f866eb01fa63183e328e2628ceb5a202f5478660cac31c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SatelliteStationLinkResponse.class",
+      "sha256": "4536258a91228ade1826dafd668d18537750607b864a28812cc1024b9363e7e0"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SatelliteStationWindowResponse.class",
+      "sha256": "8b8798740e492027027e5b46467bc8addfe8776f2e3ed56db46d23487c9e8a15"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SatelliteSummaryResponse.class",
+      "sha256": "e23588c55a26720f56f585d6eed7527f7c77b1cd04521266f6b64c28a4db697c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SkippedLinkResponse.class",
+      "sha256": "de3051add0e415fd637cb7469304f8c33d19d81af5b8d94ffd2a8f5e4bb4c43b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SkippedPairResponse.class",
+      "sha256": "2e140c0447eb7adac810089c6b98c3a7a82bed27c00b2677add716f390da5f14"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SpacePayloadConfigurationRequest.class",
+      "sha256": "3e25ceb560b8b89f01176d42ad8601d4b85f147e383dc18666a82cccafd91ea0"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$SpacePayloadConfigurationResponse.class",
+      "sha256": "2451ef6922830207f57327c48ec8603e8124d50d8e40892ebfef1cbec46c1ff2"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$StationConstraintRequest.class",
+      "sha256": "1fc669287cc5c236406a7d5af985893ad3ae35cafef6123538db7061417f705e"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$TargetFilterBreakdownResponse.class",
+      "sha256": "a71bf4a09f6b022eb02a59ecdbef7ee82617a1e5564c980c5201dd3805981390"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$TargetQueryRequest.class",
+      "sha256": "7d21d305a426c0b6621c71440066a3f994cbcb25405d1216e49a2156b80eb69d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$TargetQueryResponse.class",
+      "sha256": "cfb7c7d66393c8d9b39526cd3ada6ff694e0eae6e937c28bffb9ace2c35e3158"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$VisibilityPlanRequest.class",
+      "sha256": "06119b37f85cbf3c2db7e4a41c58c793b973e562c08f0ad6ce8b9072cc263b86"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$VisibilityPlanResponse.class",
+      "sha256": "1707641990792bc36f2f81fe95b3dfcf27558d53413d268cc418793cc8eba17b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$VisibilityTaskResultDetailResponse.class",
+      "sha256": "40b8fd14ba2b0d7564d908f00a4770201c79c0cd1d06df6bdfc757ab207cc032"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$VisibilityTaskResultRemarkRequest.class",
+      "sha256": "f2f89371b54bd2c076deb4019da611dbf48daa68c4f59e8313f11ebc591ae44b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$VisibilityTaskResultSelectionRequest.class",
+      "sha256": "99fb96883cf003e893b5e8b4c4cb08fecee2e896df0b180b34f26d1274d94a55"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$VisibilityTaskResultSelectionResponse.class",
+      "sha256": "271db3b7f2b29992385702447f7e92abbc4c20b8d798267717c3e4ac941b7cf4"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$VisibilityTaskResultSummaryResponse.class",
+      "sha256": "e31fd6c8a240fe3e966cf98b8b29d0c33c6f76a01d969a53a16d8207fda6aa54"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$WindowResponse.class",
+      "sha256": "5c7ff464d4dd9012243b5b004d71448c588178ffa5a14c17f112cf2f1274fd5c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels$WindowValidationResponse.class",
+      "sha256": "478de19abdc7aa4684dd4346256e4186d117af6024306575482e755ae22a9d33"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceApiModels.class",
+      "sha256": "4442a352baad20341a908b0fac012de23a48d11f87112f94e4265a140f414fdd"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.class",
+      "sha256": "d6ff9fc50cdbb878361f3bd7150448b99be9007bfb76192757f88119fd478030"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.class",
+      "sha256": "b8e54aa630ea7dc167d1187e8f71ba23778e5564ab3fa9a811ff198ccdf630f0"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ballistic/BallisticFileService.class",
+      "sha256": "d34aaef3d6459d3c647d4eff61fc1b935639986051ab61f4bf1d114a68b1a206"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ballistic/BallisticFitService.class",
+      "sha256": "bdfb56b58f74619a78334502ac5862ebe9842c50d5f26eb9dbb580fc9d3a9b15"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ballistic/BallisticRetimeService.class",
+      "sha256": "fa1ecca1277c8b78807a6b1ca830693b3ba507d7180dbd15f3ed8d02c9f17b9e"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ballistic/BallisticSimulationService.class",
+      "sha256": "f821b2027119b1719d391198884d0a1a44be5df32f0506162741e10cf943b46e"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService$1.class",
+      "sha256": "98c3de3334275d490a56cb9d32e90764aa7b511b7430a6a508bf1628bc475f25"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService$ParsedTrajectory.class",
+      "sha256": "12ca753a6d351cab8c180b7cfc9fb01894720116bbf880093c8ce30b39e5fbd0"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService.class",
+      "sha256": "7f4f7bb68a2af5c1dd3e5e3fd4b8997f63366b001b99c0105d4ef4ac1c77dd08"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityService.class",
+      "sha256": "c7767bb078849c18de68eb71ff05de09cce1d904611f2b5d4763ded23af4bd0d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkCoverageWindowMerger$1.class",
+      "sha256": "166b69d04b3ae8b7d80ad18fe2de4726159309b482884fa9ee40c6eef6cce4e7"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkCoverageWindowMerger$SourceWindow.class",
+      "sha256": "d5da9b9cbc9b67156c5ff822ae5ed51c3a4ce06c653283c0f2223bba361b9c45"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkCoverageWindowMerger.class",
+      "sha256": "a4b17043322835d462eb3435478bbad5a9aa9f0be5c97046354fa27b35ef4d55"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkPair.class",
+      "sha256": "3f82c4bd42d2a0132508b90ef506b93702317f21afeb956ba8f9cd367c1bb777"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkPairResult.class",
+      "sha256": "f74a09d58546adc824393e570739160a054195c6c386b640ebe632cc21f9d065"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkPlanningOutcome.class",
+      "sha256": "de9f0d9989f59a9168a3a0116f665edf4439070921f26fa8781b474a1c3cbb17"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkPlanningService$1.class",
+      "sha256": "54648b6895463c26fdbd0f7e9fdd637c7d6f7e3049b8728475757bbbeab16a8c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkPlanningService$PendingDownlinkPair.class",
+      "sha256": "7eb19b5990b385a7f5908a6932fa611f5eb24e9be6b67cc0e39aea98e540167b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkPlanningService.class",
+      "sha256": "66e961d69e025182c8f2ba1607df3fa51ebc204b54a9859f7e2bf35174ddb66d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkSkippedLink$Stage.class",
+      "sha256": "6007b81eea23c1cd41f890c7fa8acc424b7cd7f8d033ddfb1ebbd227f94edd12"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkSkippedLink.class",
+      "sha256": "cf8369ef5ecc2799dd31be5a044c143571fdabf1bdbc044973ef77be35666b5d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/DownlinkWindowValidator.class",
+      "sha256": "d0428af2e122c101d90311d74c95d00ada5c2ce8ed93345751b137e9cccfd1e2"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ObservationSampleEvaluator.class",
+      "sha256": "a5b02803b03ecac6360c8dd502fef8bfb348bfb91187966ddea3532305b0cc76"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/OrbitPositionCache$1.class",
+      "sha256": "d7abaabff7ad82891b5971e599cb3f917d0464c9390f49d5e77d5c6d58ada190"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/OrbitPositionCache.class",
+      "sha256": "93e4e2efb6ff77b59fd4eba27b47a7add28870d617337f6ee28145155b127bb4"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/OrbitStateProviderFactory.class",
+      "sha256": "1819c6f65133d80954dcc72723ecce7024bf652b9c295d8921168d4f3a2f825a"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PayloadConstraintFactory$1.class",
+      "sha256": "cf82787eaf5f8dd5dc29f9e133550a6f80908b133b577ca7f6ddb8c9012c092b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PayloadConstraintFactory$PayloadDefinition.class",
+      "sha256": "e9f04762110f4819c320031fa3d0ea6e958f20e6aebc0e30a6f3d930492450e1"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PayloadConstraintFactory$PayloadProfiles.class",
+      "sha256": "2caca7ffd6c3f804155ae6af76cf289ae69354768e2341d13d88baec56991e82"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PayloadConstraintFactory.class",
+      "sha256": "31070050b6a1eecf43fa99bf46267c6ab34622b4069f1dc5f21affb6107eae67"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PlanningFacadeService.class",
+      "sha256": "212645ded0b7704375fdc284a0c643f3525d55b608ca1a31bc3590e77f1a9b55"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PlanningFailureReasonFormatter.class",
+      "sha256": "7978c82445fe85e0ff1986db2cf143de5632c55e71ecdbf8f763f42c0475c3ea"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PlanningTask$Status.class",
+      "sha256": "255276c40edf4361ac4799b7e7fb1705b139151ca301e078603677fbd2b7de85"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PlanningTask.class",
+      "sha256": "a6aad4edaa2b0b595982f99c230eccbf1524a3f40e06bf7d2055aa9821b98f0e"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PlanningTaskService$PlanningTaskListener.class",
+      "sha256": "adb66b7d414f8805492b566e9e89572ebb7355963e55a0351c1532cfd5d56b98"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PlanningTaskService$PlanningTaskWork.class",
+      "sha256": "e51862599cda94641b3a9504773906f7bcb38a7d6cb0119575c32bae08bd26fa"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/PlanningTaskService.class",
+      "sha256": "c2652d9136d7a16f536b01e9f52d33e9c15bbdaac67da9255bf23c6af3854782"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/ReferenceDataService.class",
+      "sha256": "eaca6b9fb820c0f2d428432f759dad689d3bdae3ffceb8ed60b863637ba1984a"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityArc$1.class",
+      "sha256": "b0afea0d7084b52ee51ae472c358d690445f7d390fd3e67bb0384ee9de49818b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityArc$IlluminationSegment.class",
+      "sha256": "a916149461acb8e5918d0032d2ad04e0e3efef53a4516189715c6b9deed568a7"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityArc$ObserverIllumination.class",
+      "sha256": "3ff1a88520d99994eeb0ea277a296c73f6c619e8b2d9eca78d22d7347ebc4766"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityArc$SatelliteSegment.class",
+      "sha256": "c44a8a1f98b7a33fffeda6d3a7954d0edf5e8ad56f3d36158d1fb8f4a00dd192"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityArc$TargetIllumination.class",
+      "sha256": "bddb9dc921dad0aa164ff7f0a90d824e419182eaad1052f564d3aa9979246a6d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityArc.class",
+      "sha256": "7cf334a72167a5cea116949655dfd20c066f832b6740d6838b7b7f37eaf185bb"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityConstraintPlanner.class",
+      "sha256": "3ac343d51b776964297e5ed7b0fc574b52f534cec764a85d57ec758042be909b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityExecutorConfiguration$1.class",
+      "sha256": "c8fba374355187b6c007e0b07e98bc28f9b6d3ae455ec617f1a82f2f154e3dc5"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityExecutorConfiguration$VisibilityThreadFactory.class",
+      "sha256": "10eebcf641c37534a14a695d7b58fbaff7516a256f12a7840c12cd1f3b457df7"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityExecutorConfiguration.class",
+      "sha256": "3634bbee27687f2d9039671b9424da0a5517b206489040e754645757118be2cd"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityObservationResult.class",
+      "sha256": "f7927bc5da0b9f148eab3f19e7bdf2a4d33aa1a3e88cc8cf714dcbf2fb817150"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityObserver.class",
+      "sha256": "f6454ebaa6aa3f05c55b860364558a80a75d780e3ae58b1b24e02b64230a7c22"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityPairResult.class",
+      "sha256": "dba35eeae0c13bc5ef7517f3a8669f7345aba9116c40d3aedf20d99a91946f19"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityPairStatistics.class",
+      "sha256": "c6a3ef9a9419c16e39aaa003a016de631e0aaf9c1e6c944450bd2573b5e10d78"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityPlanningOutcome.class",
+      "sha256": "8bff78f0cec76ec692f69f98d637b8119c19219fefbda772fe456d5c29572cd1"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityPlanningService$1.class",
+      "sha256": "d29bbd280bb9b87b5b516607c781bdb51fd4a5e4ce7a2646a730ff2898702709"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityPlanningService$IlluminationSignature.class",
+      "sha256": "1771934ccb5c5b5dd5743140aeaf9294d328da31d68b44d95e84e4fd9a03e28d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityPlanningService$PendingVisibilityPair.class",
+      "sha256": "378648955bda76589e635a18cabf30f3b0e872441602af36dea69fc8c138d34e"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityPlanningService.class",
+      "sha256": "66325669ea8a8fb9b646a0caa7ff1d9641f164e751231b4b101c2f6cd234f250"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilitySkippedPair$Stage.class",
+      "sha256": "46df2d7bf7354c50fcc3f71ea76fd80fc7c2eb8645f8a535f7a54a8783327325"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilitySkippedPair.class",
+      "sha256": "767fffe3c07e39d4ce319a0b68490e5d82954d57f741708cbbf4f48a58b8790f"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityTarget.class",
+      "sha256": "e2920917814f3b5ad48482aec21bdce111cd2fbeecaae88ebe1eb05aa8ef4352"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/VisibilityTaskResultService.class",
+      "sha256": "a0bf2daabf2268ff0cef5ace81b6fe31233c9cf83b205c20992a50036eac8952"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/WinToolReportFormatter$TargetInfo.class",
+      "sha256": "e6ecc32f307070446d237468bed42fc6622852c95c4628e5e66388e4ec10286d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/application/WinToolReportFormatter.class",
+      "sha256": "fc3d677afdbee12a5bcfd60211bc5a765a175055c6eb7fd615d41c9f7dce3cde"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/downlink/DownlinkPlanner.class",
+      "sha256": "9b07e7f26e4fcd0f9c6d6aa082d6c50cd963489bedaced3fffe83530861c2d29"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/downlink/IlluminationRequirement$1.class",
+      "sha256": "1e5941554719fe198835124e8574254ad5dc73a7d47aa6152697a64ca07105f2"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/downlink/IlluminationRequirement$2.class",
+      "sha256": "de5117ba457348a4048e80aaa85601785d8f08f244213f2a6114c40e4ae736f0"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/downlink/IlluminationRequirement$3.class",
+      "sha256": "6df32b460d5899c2d58e67ea30cc0d545685a69a4c90a018958b564c01180eea"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/downlink/IlluminationRequirement.class",
+      "sha256": "e4f654ed9557fa251eadace08f97320a4f9b2725712abc1a5eef6c5f1e47270c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/GeometryMath.class",
+      "sha256": "6975b4c613c1d2c162ae1a2bc28eb7a8c47f472530aff69c14abf946d6749fd0"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/GroundStationCoordinate.class",
+      "sha256": "3b84235a4f9b696fd879c2d6f269ff943767cf318e19e3155a1c41b7ce0447f0"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/GroundStationGeometry.class",
+      "sha256": "1be82d9b1df9da2c1c331d4b2c0e7441e051cf38966f0ed93c15786bf9835a0d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/LegacyJ2000Frames$EarthOrientation.class",
+      "sha256": "74e47b9dfac4c6ac7ad3794dc42daaf13aba9db0786bd5af8b435515cf13653d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/LegacyJ2000Frames.class",
+      "sha256": "24a7f891294601e56882f85a21ef6ae8606b1fc47d83b52170a820df15b275d6"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/TemeEarthFixedFrames.class",
+      "sha256": "e3f014f6868af483efd930af53b782fb24531dbf5ed59e2d70225fabd78d3761"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/geometry/Vector3.class",
+      "sha256": "1f717e24cf2cd53de0d07b9d483691a7bf6dad30d1a6312252bc221a63718e04"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation$State.class",
+      "sha256": "8aa418f106fa6543ae864f35cfad074b4f9901e4be847f28ecbb3ea9670cb714"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.class",
+      "sha256": "5559b1541847c48d2afc7b1af00c0eba09e822697454db0e77323da491c35bb7"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation$StateVector.class",
+      "sha256": "5c38e2597690bad7bd21f497110820952530049866e360d2a55132e4388bfe4a"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.class",
+      "sha256": "152c95cb9fbc66df4bc86f2af54f5499ec369b0abd2e55e756496612acc970ac"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/KeplerOrbitStateProvider$1.class",
+      "sha256": "05ccdfe6aaf3256eb0242901b7e4f968a3e72c8fc7ab69e9b6554d445c2da99f"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/KeplerOrbitStateProvider$ThreadPropagation.class",
+      "sha256": "89ac4c76cfe66cf0535f10e428b50707c72fcc10e12b67a2db5bbe27c951b1bf"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/KeplerOrbitStateProvider.class",
+      "sha256": "1dbaa2bb30ac168cc84ca2f88f57a2573952445b88fa2885f7ce79863c1373ff"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition$1.class",
+      "sha256": "0c992718b247c94bc08f1188a30b70cc0ce5ca76bb681aab47b9fd51ad7906b1"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition$Cartesian.class",
+      "sha256": "0aa53b0d1401e8c81309140166ef9c0d2c77ce9054d7a30becc4618e9b995bbe"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition$Elements.class",
+      "sha256": "27b1bfd6b06ac8f2fa1f27781e3cdba03195e14ede17867bbe2ffac67bf37550"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition$Frame.class",
+      "sha256": "fdf4d3b565e146c14018e5abd3a8d6cd8df6ad858934ddc2846c067e7c38d864"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition$Model.class",
+      "sha256": "9821a59bb861af7ffa65715dbc40d620bdbbbafc3abc18555ee885409bb7564f"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition$Tle.class",
+      "sha256": "f784e8b9e201c0a62431a1b5d6c7f686ac9f515e0115df608927667d5ef59ed1"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition.class",
+      "sha256": "ce46bf2be2198bae57b5f2300eb6ade14ac2ca16bdba0df92d806696636efd11"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool$NativePropagation.class",
+      "sha256": "48f0e59030c52131464f4aaa3b961fdf1a5329f531a944158f2afb8b053cc837"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.class",
+      "sha256": "0d5ac518ef93a0d936c34a5a4a79388b1ec2d5be894b18c9614ad27338e333d7"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitState.class",
+      "sha256": "ba222c03b45a527c3cca86978f01aa6887d43d5c8f09899f7b26baf6028d51a6"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitStateProvider.class",
+      "sha256": "38cede1e30c2d6b8c7f24a3915a4c1311cab49efbb0211f264e8e9356b527c25"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitTime$Basis.class",
+      "sha256": "12815f08ef0cc9d149dfdd89670f543292d62997ffd200ad05321c0793b110ec"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrbitTime.class",
+      "sha256": "737d72265539b66fea19210a8b6e684460719f263c68b69153995304ce991d26"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrekitDataInitializer$1.class",
+      "sha256": "673d2742d0575057568ffa99c99a23a8b64561b25a73f30bb41ef3017d45b031"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrekitDataInitializer$De405Metadata.class",
+      "sha256": "c2183bd0932da3697a59f9c3f39103c96d6c05b1d44320382ca174a11541bb01"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/OrekitDataInitializer.class",
+      "sha256": "54ebcd4305a44b6806bd9dd88bfa05bb32f8daebf96aecbab3113b2905c5fa63"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/SpaceOrbitStateProvider$1.class",
+      "sha256": "8ccc6924d0597f4cbc4213d28506e1b6f08e2f277d5419fd1849a2bb519a67c9"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/SpaceOrbitStateProvider.class",
+      "sha256": "fa9f714d8192a7891bc5af8bb9932bd7657371cfb4fde6c9eb3b01f231414ce6"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/SpaceTimeFrames.class",
+      "sha256": "b44fff3a35b359e358f4e35d402327503556b0a56ea4baa145212503c4839493"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/TleOrbitStateProvider$1.class",
+      "sha256": "10994430b7498d2cb1675ad2b3b89a805adab49e0dcb643efd8424aa956c5840"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/orbit/TleOrbitStateProvider.class",
+      "sha256": "3a0ab711b866ab696edefea1a31a2ba4abd24c9ea563d1a0806f16e81b4b9059"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/IlluminationConstraint$Mode.class",
+      "sha256": "26d6d99e6ef85e15c72f14f6ec56fe733f6f14ad50ad2e628edab46848834bcd"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/IlluminationConstraint.class",
+      "sha256": "d5972ba2df7ab7a2180df40ee84da1caa203cfa81e45dfefcc717bfeddc62a3f"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/IlluminationState.class",
+      "sha256": "f4be76ef1f5dd499579358f4dfde7c51782b1566ce97f07f8fe9b70349dce00a"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraint.class",
+      "sha256": "a7face8f3748dd4dd426b55af38edb20ada2eae4af876126567fd317e5fbaef2"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraintMath$1.class",
+      "sha256": "67054ad047b0a8af13b2f309ad19eea4ac47e7f977bca436783c03dd09e31a1d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraintMath$LvlhAngles.class",
+      "sha256": "8d27a243c048787c7d76c32a26cf5e9b825002cb745b9e380f205f747e8e5072"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraintMath.class",
+      "sha256": "2ea9c9c73cac39fe4e6e39cd1a63da2f4e1d6cc76fa18eb57d651ffe590de974"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/PayloadType.class",
+      "sha256": "712d2c21980c58ff1540aa08046f489db58fdfb3c9b9d9837a20cbaa9028c8d2"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/PayloadVisibilityEvaluator.class",
+      "sha256": "7d6f723d4769f545470c16fbe7ae82286e2f12861420cb4e525d68aee5bcbb60"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/SolarGeometry$SunSource.class",
+      "sha256": "dc902ebf40dda5b81611311c046ceac35de14c4dc2365e41a41738cbb8e65efa"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/SolarGeometry.class",
+      "sha256": "2e1b3d5d95e64687e9a00d0821ae9e34e5fa8203233e07e340c5c5635758e7f2"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/StandardPayloads.class",
+      "sha256": "478b91021e55b37ddc09353405b9a19bb9282be6b26cad25986722a97bf395b5"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/payload/VisibilitySample.class",
+      "sha256": "36713155cb9c40b094032e1b67f3c0a2c860e19ae33ee0ab97a8a65f633d7275"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/time/LegacyJ2000Time.class",
+      "sha256": "c97d2bd73e203ff5b94ccab0a2a26bbffd20bcffd726c58886679f9d376da216"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/CombinationConstraint.class",
+      "sha256": "28fcc9d1fc3ed7ddfa9846fcdadbda894098966554bd24a021daa74bff2870bb"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/CombinationWindow.class",
+      "sha256": "f802a336099777fc677cdadcab0c3d0707568d6b089181986f75d47b7ae28c6f"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/CombinationWindowCalculator.class",
+      "sha256": "6efcf24c9a4701152fb90c74ee41fd3168de3f78ce34e661cec932cc11a1c42d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/SampledStateRuns$1.class",
+      "sha256": "774bc8caff41c693cc95f85fabc93c7b06f8c9136d6958ce6a3b2bbea2ba272f"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/SampledStateRuns$Segment.class",
+      "sha256": "6a8f127018d3ba1f4b98fbc1e0108eb6b7f81f6a538d62c5cc2551581dc9f143"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/SampledStateRuns.class",
+      "sha256": "805cb6efb8d86f8dd158673feee79514ca6ee8a9ea2c1bb06a04fe7d91052565"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/ScanStatisticsAccumulator.class",
+      "sha256": "485172105d58186271108189d73b8e3b0f94391085fb7a2c3f2e491f666b57cc"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/StateInterval.class",
+      "sha256": "2a9197ba8c05125c00531992c93d21b446189516de08b43f694f5639576fd5e4"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/TimeInterval.class",
+      "sha256": "e36256c62210078797cad852cab4f62fdc30f3fd5c3832f21d2899906d5d2dfc"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner$1.class",
+      "sha256": "682f8424d94c3e2a1a219e536fd01ba6e40a02645a83df42b253494009ee451e"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner$SamplingCounter.class",
+      "sha256": "796fb820b522c3a5cd7679b92943fe82d4433ed520c1f66b275c7b5d10bedadc"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner$ScanStatistics.class",
+      "sha256": "8f819acd085075602c7a72ace0cf04e14b5929665aee582a8e5498d85042709e"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner.class",
+      "sha256": "86b10fe2f5a8dc06cf1df912d7e5f85f8464105d5987a628986a7e453759ec59"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals$1.class",
+      "sha256": "12ffa9b1bad240dcae385ec8b21ba4950ee7082453d1270d450fcb062afc7000"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals$Totals.class",
+      "sha256": "cf63d6db2e5a1a712d2970374019391599e52f322eeaac75d6b46052be372956"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.class",
+      "sha256": "d439a719e4acbac757c82ddc0e6084d72a1e5ad6e5253e315d4652651b6f033d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/domain/window/WindowNormalizer.class",
+      "sha256": "3cf8fa50ab4f686ea7793ee2ae1064a4f40049e743dcca8e9e41ce1485f20656"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/config/MybatisPlusConfiguration.class",
+      "sha256": "1fb81f1dfb9a977a7af76efc293c053247043ae2739dfaf2c507535ec4d5385c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileConfiguration.class",
+      "sha256": "3ab7fa1a3e6852d77baa85c228f8a4857655bdee402a58ba89e914b07b3422c7"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage$1.class",
+      "sha256": "3e8647daef7b727ed2763d9e9ed0b2cc7c8c37ba1e4803b0ac870094a8d00e08"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage$Lease.class",
+      "sha256": "6ee53d2a9a0f342baf170f759e002fa76f7c18a65a526d640ffb2bee803394c0"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage$Record.class",
+      "sha256": "2ab44d86fcbf5a12dacc4e378ef210a30ae7cc103d7903820c0b0ecc7de05ee2"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage$ResultWorkspace.class",
+      "sha256": "407615f32c6c29a52f8bb418687397d3ea9f440b5f70ae09c7b17de244d96a1c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage$TemporaryWorkspace.class",
+      "sha256": "9dc2abbc20a474badc2760e382e5d5228bf60bc0f532db82314a72dce064625b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage.class",
+      "sha256": "0fb323bb9ef621e87e0baba3b884e837940d0fde65988e302c361da72751591b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/files/ManagedFileException.class",
+      "sha256": "347b4bbd231ca96a054af881c856df69aba76171d6ecc5946c7621394557a176"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/DemoDataInitializer.class",
+      "sha256": "bda071525285ce6bcac9679894d05ad3b6615b2e1188cfdad68b21ab4a41e26b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/SatelliteEntity.class",
+      "sha256": "10ee485923f87ce735798026bad74c143ea2952116975a7d234d9e5aeaceda6b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/StationEntity.class",
+      "sha256": "d53ebcc800a902797f9e8e8e09209699ae43ef2d71f90b4030b08fbf4bcea97b"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/TargetEntity.class",
+      "sha256": "6fd077b8bfed69a3aeb9e679bdcd49c0f1a69a7771bf01b68cf3a68f81168b0d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/VisibilityTaskResultEntity.class",
+      "sha256": "e65123ddbddfe19f994fcf3cdfdcf4a407222b95acb294fb5d02094e434d316c"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/SatelliteMapper.class",
+      "sha256": "f88cddea174ec795ad42e79cda21bd4cf96f3922846a6c20d157857f10ea494d"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/StationMapper.class",
+      "sha256": "526fdf3aa05ac7db40650607400d86a0fe067b5326c77a7f2bd64a14a4ee144a"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/TargetMapper.class",
+      "sha256": "a171239951baf4902599bb763a92f2bf4d540065ee6ee18a2a93a1d7da0a6ed5"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/VisibilityTaskResultMapper.class",
+      "sha256": "4843d22ad83e1625c514032457eafb682252d7c4ac733d66036d26f65928ad95"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/web/ClosingSafeNio2Protocol$ClosingSafeEndpoint$ClosingSafeAcceptor.class",
+      "sha256": "6513412f69d47603c5375026b9caa7759bf086982dbc011fee99162360bf36f7"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/web/ClosingSafeNio2Protocol$ClosingSafeEndpoint.class",
+      "sha256": "bf1efae5b111e0c4c457771d84f8145db81288114dc5ab1cc1550d0f546a5b73"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/web/ClosingSafeNio2Protocol.class",
+      "sha256": "5209fa8ff0e6ef78df9dc76346cd71a6f42a969ec047c1783b55a04620c51887"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/infrastructure/web/TomcatProtocolCustomizer.class",
+      "sha256": "687171e3cda0364da1d61ebb58281c93956bff7bceacd2ceae807204402358f6"
+    },
+    {
+      "path": "backend/target/classes/com/runisys/orbit/spacevisibility/SpaceTargetVisibleApplication.class",
+      "sha256": "f3c26ea51f1a9e001d39b43823062596c01beb5a867713d9086ebd07aa6cf778"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/api/OrbitVisibilityController.class",
+      "sha256": "da00b8b5ae9a30c8af4387a655fe2d2796d68fbf1dc6fe0a8c228211e9cd63db"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/api/TargetTrajectoryFitController$ErrorResponse.class",
+      "sha256": "b0377388b5d2cd8951d025f00a5fa47772a30b54a49476e43bb6ed028624ee7f"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/api/TargetTrajectoryFitController.class",
+      "sha256": "5c0619c24c110241c02e51ff7eed4306f18abae9d2d7ac0c18f4dc87cf9bf9e3"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/api/VisibilityRequest$BallisticDef.class",
+      "sha256": "649d3a51652cb550fb97b268a2ee9b559c3ec5dc1d08d9178cd7ae7bf0ab8d31"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/api/VisibilityRequest$PayloadDef.class",
+      "sha256": "add106d101ec5a5b8ac9d9e327860cb70b4e5e70423dec46880d8f5969ec4ccb"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/api/VisibilityRequest$SatelliteDef.class",
+      "sha256": "8ab301a313a99cb83148a340b822ae9e06c7eb60e20193f9b3bada7dce1022d4"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/api/VisibilityRequest.class",
+      "sha256": "745fc4cdfb84a73ccd38382f17dc2aa20cc3d02c0cda329c329479e15ccb197e"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$1.class",
+      "sha256": "1abc49f50024586cdc727682d5668f44637d5f5a06079880aaf8b233dd053fb2"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$2.class",
+      "sha256": "542e977f73465e5ddee3f0aabe8685c96fbf4b6be12b4201dee22d904d1078f9"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$3.class",
+      "sha256": "b4ba8f03935ebfae316ee8a5e521907601f31e30ec87c1b9fa675fb7f1b8a0c4"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$4.class",
+      "sha256": "99e9383239532214b3e82a3fb868cbd85fb5be94332d5061ae6866273ed0c109"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$5.class",
+      "sha256": "f180b9b2610688470050128a578600cff76eb923ac0c527ec71126dea7870f8c"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$BallisticCsvLoader.class",
+      "sha256": "0753179482109f736c67d51badc28feff8f2e8018200581fc672268454fc4cb4"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$BallisticParseState.class",
+      "sha256": "bac5d67bd644b4f30e0b5025e649848db46213858445991488005402ae356bdf"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$BallisticPoint.class",
+      "sha256": "a194175e1d22447f4a6b555324b4739d56fb391c882893cef6ef048c8c724de8"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$BallisticTargetInput.class",
+      "sha256": "7750070a7dd5d093b12067a1619e911e5559d14652abcdf82e4e644354e4d613"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$CachedSatellitePositionProvider.class",
+      "sha256": "d403bda5b837b6f6360d34c42a34dfbf4cd4bdb410ddf1187c6ad1bb8f836c3c"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$GeodeticDatum.class",
+      "sha256": "3849a8f6c969587e389ae1e3ceac80b13288f62b24246cd0f3d2c40ccb71eeda"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$IndexedLaunchOffsetCalc.class",
+      "sha256": "432c920f16a09e7e4cc5af8ddc4f111f8f0c55e2d6230feeef94a669fe12d178"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$LaunchEstimationResult.class",
+      "sha256": "31b06b6226ecbebd4c30c63af1415dc891d38b3e1d346b924b49b1cfbdfc6809"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$LaunchOffsetCalcResult.class",
+      "sha256": "533b02d8e432a8896d356b6ae08d56afe95b38140589455dfd22d2f9a3acadb6"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$LaunchOffsetResult.class",
+      "sha256": "5a02c36fc0838346d6dd7c56e93201ecbe039978143a8d7d6e83acb6dbd5ba75"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$LaunchSearchResult.class",
+      "sha256": "117316e3dea9cad610754d7aac88076bda257f0c3e97206438e600107883cf3e"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$LaunchSearchResultV2.class",
+      "sha256": "94f5c9017c9f4e18af7c71df66e79e036eb06eae39908846622a142392c30780"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$OrbitElements.class",
+      "sha256": "f49e2ffa24a9372d13c3221bc80ea7e1a4caf20a127f1d032afeefd08ced42cd"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$OrbitModel.class",
+      "sha256": "b6bb42ee5aedc4e320789a08e223acfb888e543b0c35807648b9e86546a445bb"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$ParsedBallisticCsv.class",
+      "sha256": "a9ceb1c11bcf7edbda3b0ac76067918196b3d7cfa4d7dc4a5d0645581ddd1a9f"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$PayloadType.class",
+      "sha256": "7984e8791b193794032fd872b232a18a3e9d36c2f5db2f8a9e4966a82efa807c"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$PreparedBallisticTarget.class",
+      "sha256": "9e2358c1c51cc0c34e50ab66a40641e2b550aadd54dde5ddc4cf4464f2dc59ce"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$ProgressCallback.class",
+      "sha256": "c1a56ec5dc799a97d694e6a4a94fc61d0794ba88ccfaf74fc934b086ab3c5668"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$SatellitePayloadConfig.class",
+      "sha256": "2d4356087dc3c7c981a2e7917c298bc317a28e0901f003fa3c808ce2e6f7e9ce"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$SatellitePositionProvider.class",
+      "sha256": "ba7f3e7b6ea02f4b967b03a20895783d599cc115b55075e3c9fd7b2e20ab6cda"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$SatelliteVisibilityResult.class",
+      "sha256": "994f9ffec4556976b75ea7021fd028aed1e61581f464fbbfac3c9742014ae31c"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$SatelliteVisibilityWindow.class",
+      "sha256": "8c17b116f6af9d2492f936eb70a28580824dd429442c5d3fc8f8f392453b6795"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$SensorVisibilityConfig.class",
+      "sha256": "a3637eeefd50f828e21228be1dddef038367ea548b88ce097a5efa36f2189aab"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$StateVector.class",
+      "sha256": "d5ac8252e1e2f2b95eea3ad7b0c30ad2a95c9892ea4671f259eb20b7c5b2cc3f"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$TargetVisibilitySummary.class",
+      "sha256": "ebc8fe3fc4a68eaab13130bcb4dcb6afae4f41a24c0dfe8d48ebc91d80ac21fb"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$TimedPosition.class",
+      "sha256": "c06c0a3ee1b1df2876cd7852e3d2774d2156bb8765dd6735f09fbfa4d0b90ec4"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$TimeWindowSummary.class",
+      "sha256": "b0a41492e0980cb39e3e402287529cb9cfaaad4a6df8dbb4aad2907e942f9cf8"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$Track.class",
+      "sha256": "96a28c72ebc23f8d74308b8a9b27fd4011fe460220c10263353e5980d0c095bb"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$TrajectoryPoint.class",
+      "sha256": "f3a6e57d7013e40ac4c00bed88dcf4628b1138c84c85ac297eac49efea2916b7"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$Vector3.class",
+      "sha256": "fe1b8d83776f6fca1ca9ab203515b9a1fee091d1c34493d614414afef6745eec"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$VisibilityConstraintSummary.class",
+      "sha256": "a6797b05e03f86751ee119727101421e0a6c079597da6bf93eae6e1eb900ae84"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$VisibilityWindow.class",
+      "sha256": "ea727aabf3c49f587f9969aa3d725b9b139926ebb72c7b270de0675b8ef51ef6"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$VisibleTrajectoryPoint.class",
+      "sha256": "639b8dedf9926666b35f0fd0ae67418eabc5ebd15c4b1614492ce7026bb4e78e"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator$VisibleWindowSummary.class",
+      "sha256": "9fe2ee937fb45e640fe6bb80101560b06682408417bfa7637e41fe735d54ce93"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/OrbitCalculator.class",
+      "sha256": "c33a68680ceeb5c2dab287750019b8d986a77f31a32e44cea3e874b367f1780c"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$1.class",
+      "sha256": "d07c7f133478b2aca17889e93c505fcab335306f535f4a1b52b3201b156cea27"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$2.class",
+      "sha256": "f3356ba491d367fd6a29d20f6d454684c0352525c64b1afd63cbd247fca4ec9d"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$BoundaryInfo.class",
+      "sha256": "78915610c20be8222c582bcc316bb777938ce5272f35039cd1dda068006e8b76"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$Bracket.class",
+      "sha256": "130bfd0458deb457f44e2c9a16adfca0e034319032eb97255f9e58b65747249c"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$CompleteTrajectoryInput.class",
+      "sha256": "8360f3fb74035cd3dac8c7221d4dc3cb2a42ba99926b76f38a80314c31fe1660"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$CoordinateInfo.class",
+      "sha256": "8e3e02c23f42203a45c086bb3b8eaa5d3dadcb7556d7c19704662e94f0a7b235"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$EventEstimate.class",
+      "sha256": "ce8353d35916766f1565d55b340fdf4db254ec646273240e7faac316cb03c145"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$FileResult.class",
+      "sha256": "a7421cbea4758f4ce7c1673c973192b59545e7294437e8e0e662e65a9ce30292"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$FitRequest.class",
+      "sha256": "063cad052b6c47855e7e54fbdbd1bf76e9b87a65b65c6d70c6039f588df8f4bb"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$FitRunResult.class",
+      "sha256": "52f126136b47b74e4467ac72551e065364f4ba177b98ab4cd35ca986c2e3f166"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$FittedPoint.class",
+      "sha256": "e227d54cdcbe5158380e620d1c27c033a7e815babc5559afa9eb42110c2a68c5"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$FittedTrajectory.class",
+      "sha256": "7e352806d11c698177138e3f90f5d1ca1f202d8995a511567b41191f4c9d2df6"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$FittingPolicy.class",
+      "sha256": "59b48dc2262f12d05920cdb19c47eb4b53e8e108cf2e46cfde96b0aea022f61a"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$LambertSolution.class",
+      "sha256": "3a7b088cc0219d653c28bd9b6f4bae175713be85a41abcb9ecdf0579be4837b0"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$Package102Record.class",
+      "sha256": "6c78e8178d08538dfdae1175aca6a6c08da5d4119e282251706b21ef589b304b"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$PhaseEvent.class",
+      "sha256": "48f0fd3dc0268dc676495290940239e7998911013fd7749415dc5af7e3b23d6e"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$PhysicalWindow.class",
+      "sha256": "141391ff6effead40c62b14a02ff97c4f64adca2bf8f13149f520c3eca72b0e2"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$RetimeTrajectoryRequest.class",
+      "sha256": "4d0ab37d28f9d7b69cdf0694aecdb7f8cb97050a3d12f23e9bc45e8708eb9be6"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$SimulationEndpointPlan.class",
+      "sha256": "5271ac85d020e4983dc550cf4913c5d67fffcaf070153f898b2413bba76b9867"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$SimulationRequest.class",
+      "sha256": "90ac36f3b7736fc8bc5209382be5d61ecc817d4627f61e0e467092681dfc5953"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$State.class",
+      "sha256": "8c53f825cc8d687d1386914f6c3a6bbd71d6aeb6334d8fcd1985e8d2e1892047"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$TargetInfo.class",
+      "sha256": "513e2f8db467b34f6f0a4d2003831093a70342c6eddbb17fcca87b7ce6cd019a"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$TrajectoryModel.class",
+      "sha256": "b1ccf03162cfc4edfef14175ea21b4cc95ac6b488cf2015854d33b383b22137d"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$TrajectorySample.class",
+      "sha256": "0d9d403feb2cbef73fc5bc8b9e790eb4b8504f9b44f68060440ede005db74ed5"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter$ValidationResult.class",
+      "sha256": "c68edf5ba71f0adfe9c456de1bb570c70135f94db49dd689a5fcaac5a0af2c57"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/trajectory/TargetTrajectoryFitter.class",
+      "sha256": "158c06369623f1951eca5a354ac9da69d61514a11f2249b753a763a3bbc58e10"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/TrajectoryFileResolver$1.class",
+      "sha256": "1a24080675353679b68f65d92a141f2250a25266ad401b1b743454959752e3ec"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/TrajectoryFileResolver$MinioLocation.class",
+      "sha256": "b65584694bdc37cef135abe3c760e720f3f46437e9bd9d7a94e685301fcb0e0c"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/TrajectoryFileResolver$ResolvedFile.class",
+      "sha256": "a64392ccb367a1f81883cc3eacdb161e6e6c46a3cf2e1d8a286dfdd046a2d74d"
+    },
+    {
+      "path": "backend/target/classes/com/tx/alg/TrajectoryFileResolver.class",
+      "sha256": "84f56a60220429c96dfe1d9d1c71accae439b4cad5ce27233a6fb4337b0662a5"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V10__align_station_max_elevation_with_wintool.sql",
+      "sha256": "e9990b0438e1ba279e014c3b8fe7e51c9b018183d8ea5c17d58c301d8e451a75"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V1__create_space_visibility_tables.sql",
+      "sha256": "e828f270a793223becffafd0d865eb94506f862d9bb964f5fe9bb3e5e60e2608"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V2__ReplaceNameUniqueKeys$1.class",
+      "sha256": "570b8e4132b05b1596ab3b511201d37b7436580ad74d3d0ca08c5563743eb36d"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V2__ReplaceNameUniqueKeys$TableReference.class",
+      "sha256": "abb68365c49cf116b74ce81144822e82a9ef14268c5c34067390963c4b910a72"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V2__ReplaceNameUniqueKeys.class",
+      "sha256": "5ea94de47898dff4fafb58f8a159bdc05e8bc1c2b6ddf65b25b20337f9fc1643"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V3__AddSpaceTrackCatalogFields.sql",
+      "sha256": "14102a5a82c49aaac43030e1e1e715c7ddec656fb79c8fb4001ee863b46915b7"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V4__AddSatelliteWeight.sql",
+      "sha256": "7f56ef570ca9ed2a838003eafe8416f68e0a6f4b76bbc12746104163c24e4b67"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V5__create_visibility_task_result.sql",
+      "sha256": "aa2a276d04b37f04db1b4345994acaf75f0d7bb642b6809d2fefe35dad7923d7"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V6__normalize_space_payload_distance_unit.class",
+      "sha256": "4772a4b08ba9b25e9050123b69d051d00233c9dfbb232968075c627bb3af4e8b"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V7__add_skipped_pairs_to_visibility_task_result.sql",
+      "sha256": "4c4c78653fcd92f394d6d2310ce784aa76d9f31523b8f711aa7366511cd8b6c8"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V8__align_wintool_space_payload_rate_markers.sql",
+      "sha256": "1d9efda9249efaba1e063e1f7759facd1bfcb189cea1733d05ca42ebf0aec00c"
+    },
+    {
+      "path": "backend/target/classes/db/migration/V9__add_selection_json_to_visibility_task_result.sql",
+      "sha256": "9810470d44e2be7d65b095d62f06d29a2a31fa1ca194dac07b8aba681431385f"
+    },
+    {
+      "path": "backend/target/classes/orekit-data/tai-utc.dat",
+      "sha256": "3524e1ae34d67e858873a89e59983bbc5bd100221da898e796c1b36036a310c3"
+    }
+  ],
+  "originalJarPath": "G:\\5-YG\\space-ground-visible\\verification\\baseline-copies\\ballistic\\build\\alg-toolkit-1.0.0-plain.jar",
+  "originalJarSha256": "6dec33be2ec401b5a32b0ed1cb9a7a86568eb57771990225ab80337d5da27501",
+  "testsSkipped": true,
+  "reason": "仅新增A05验证工具/参考，定向Python与Java真实双跑独立执行"
+}

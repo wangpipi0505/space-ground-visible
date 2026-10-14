@@ -1,0 +1,512 @@
+{
+  "configs": [
+    {
+      "path": "G:\\STK-file\\Scenario3\\Scenario3.sc",
+      "sha256": "1f6d38e0c0369f9b4f8b653d365df8a58b9fe50fb78e4a4342eb887b16f4b11b",
+      "excerpts": [
+        {
+          "line": 6,
+          "text": "BEGIN Epoch"
+        },
+        {
+          "line": 8,
+          "text": "    Epoch        1 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 9,
+          "text": "    SmartEpoch"
+        },
+        {
+          "line": 11,
+          "text": "\t\t\tEpoch\t1 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 12,
+          "text": "\t\t\tEventEpoch"
+        },
+        {
+          "line": 15,
+          "text": "\t\t\t\t\tName\tAnalysisStartTime"
+        },
+        {
+          "line": 17,
+          "text": "\t\t\tEpochState\tImplicit"
+        },
+        {
+          "line": 21,
+          "text": "END Epoch"
+        },
+        {
+          "line": 36,
+          "text": "EpochUsesAnalStart      No"
+        },
+        {
+          "line": 52,
+          "text": "    MissileStopTimeWarning   No"
+        },
+        {
+          "line": 175,
+          "text": "\t\tLWTimeConvergence                       1.000e-03"
+        },
+        {
+          "line": 177,
+          "text": "\t\tLWTSRTimeConvergence                    1.000e-04"
+        },
+        {
+          "line": 223,
+          "text": "\t\tLatitudeUnit\t\tDegrees"
+        },
+        {
+          "line": 224,
+          "text": "\t\tLongitudeUnit\t\tDegrees"
+        },
+        {
+          "line": 241,
+          "text": "\t\tAviatorAltitudeUnit\t\tFeet"
+        },
+        {
+          "line": 270,
+          "text": "\t\tLatitudeUnit\t\tDegrees"
+        },
+        {
+          "line": 271,
+          "text": "\t\tLongitudeUnit\t\tDegrees"
+        },
+        {
+          "line": 288,
+          "text": "\t\tAviatorAltitudeUnit\t\tFeet"
+        },
+        {
+          "line": 317,
+          "text": "\t\tLatitudeUnit\t\tDegrees"
+        },
+        {
+          "line": 318,
+          "text": "\t\tLongitudeUnit\t\tDegrees"
+        },
+        {
+          "line": 335,
+          "text": "\t\tAviatorAltitudeUnit\t\tFeet"
+        },
+        {
+          "line": 1077,
+          "text": "    StartTime          1 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 1166,
+          "text": "            CenterLatitude       0.000000"
+        },
+        {
+          "line": 1167,
+          "text": "            CenterLongitude      0.000000"
+        },
+        {
+          "line": 1168,
+          "text": "            ProjectionAltitude   63621860.000000"
+        },
+        {
+          "line": 1317,
+          "text": "            DisplayAltitude              0.000000"
+        },
+        {
+          "line": 1352,
+          "text": "            CenterLatitude       0.000000"
+        },
+        {
+          "line": 1353,
+          "text": "            CenterLongitude      0.000000"
+        },
+        {
+          "line": 1354,
+          "text": "            ProjectionAltitude   63621860.000000"
+        },
+        {
+          "line": 1503,
+          "text": "            DisplayAltitude              0.000000"
+        }
+      ]
+    },
+    {
+      "path": "G:\\STK-file\\Scenario3\\Scenario3.sca",
+      "sha256": "3c407751d2d60f8cfdd141236db28c1884d06bfa79eb9acc8cfa8dcb67db9cc1",
+      "excerpts": [
+        {
+          "line": 13,
+          "text": "    ClockHost                Base"
+        },
+        {
+          "line": 14,
+          "text": "    TimeSense                Transmit"
+        },
+        {
+          "line": 19,
+          "text": "    TimeConvergence          5.000000e-03"
+        },
+        {
+          "line": 44,
+          "text": "    ClockHost                Base"
+        },
+        {
+          "line": 45,
+          "text": "    TimeSense                Transmit"
+        },
+        {
+          "line": 50,
+          "text": "    TimeConvergence          5.000000e-03"
+        }
+      ]
+    },
+    {
+      "path": "G:\\STK-file\\Scenario3\\Satellite1.sa",
+      "sha256": "0186733fce0ef62dacf205ee5f65d18a400bd18c994c1143d37289d7f331d3c2",
+      "excerpts": [
+        {
+          "line": 13,
+          "text": "         StartTime            1 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 14,
+          "text": "         StopTime             2 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 23,
+          "text": "    EphemSmartEpoch"
+        },
+        {
+          "line": 25,
+          "text": "\t\t\tEpoch\t1 Jul 2026 10:00:00.000000000"
+        },
+        {
+          "line": 26,
+          "text": "\t\t\tEpochState\tExplicit"
+        },
+        {
+          "line": 40,
+          "text": "    EphemEpoch          1 Jul 2026 10:00:00.000000000"
+        },
+        {
+          "line": 42,
+          "text": "    StartTime           1 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 43,
+          "text": "    StopTime            2 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 51,
+          "text": "    MaxDegree           2"
+        },
+        {
+          "line": 52,
+          "text": "    MaxOrder            0"
+        },
+        {
+          "line": 59,
+          "text": "    MaxDegreeOceanTides 4"
+        },
+        {
+          "line": 60,
+          "text": "    MaxOrderOceanTides  4"
+        },
+        {
+          "line": 62,
+          "text": "    MassAtEpoch         1.00000000000000e+03"
+        },
+        {
+          "line": 63,
+          "text": "    UseDrag             No"
+        },
+        {
+          "line": 78,
+          "text": "    UseSRP              No"
+        },
+        {
+          "line": 120,
+          "text": "    AltitudeCutOff         10000.000000"
+        },
+        {
+          "line": 126,
+          "text": "           MaxDegreeForPartials 4"
+        },
+        {
+          "line": 127,
+          "text": "           MaxOrderForPartials 4"
+        },
+        {
+          "line": 154,
+          "text": "    DisplayCoordSmartEpoch"
+        },
+        {
+          "line": 156,
+          "text": "\t\t\tEpoch\t1 Jan 2000 11:58:55.815999985"
+        },
+        {
+          "line": 157,
+          "text": "\t\t\tEpochState\tExplicit"
+        },
+        {
+          "line": 170,
+          "text": "        GeodeticAltRad      Altitude"
+        },
+        {
+          "line": 179,
+          "text": "    BreakType           Latitude"
+        },
+        {
+          "line": 190,
+          "text": "    ScenarioEpoch       1 Jul 2026 04:00:00.000000"
+        },
+        {
+          "line": 229,
+          "text": "ScenarioEpoch            1 Jul 2026 04:00:00.000000"
+        },
+        {
+          "line": 231,
+          "text": "# Epoch in JDate format: 2461222.66666666666667"
+        },
+        {
+          "line": 232,
+          "text": "# Epoch in YYDDD format:   26182.16666666666667"
+        },
+        {
+          "line": 8908,
+          "text": "     \tScenarioEpoch\t\t 1 Jul 2026 04:00:00.000000"
+        },
+        {
+          "line": 8913,
+          "text": "          StartTime\t\t\t 0.000000000000e+00"
+        },
+        {
+          "line": 9012,
+          "text": "\t\tLWTimeConvergence                       1.000e-03"
+        },
+        {
+          "line": 9014,
+          "text": "\t\tLWTSRTimeConvergence                    1.000e-04"
+        },
+        {
+          "line": 9061,
+          "text": "            ReferenceEpoch      1 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 9117,
+          "text": "\tStartTime  1 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 9118,
+          "text": "\tStopTime  2 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 9121,
+          "text": "    SmartEpochPtr"
+        },
+        {
+          "line": 9123,
+          "text": "\t\t\tEpoch\t1 Jul 2026 04:00:00.000000000"
+        },
+        {
+          "line": 9124,
+          "text": "\t\t\tEventEpoch"
+        },
+        {
+          "line": 9127,
+          "text": "\t\t\t\t\tName\tEphemerisStartTime"
+        },
+        {
+          "line": 9129,
+          "text": "\t\t\tEpochState\tImplicit"
+        },
+        {
+          "line": 9278,
+          "text": "        TimesTrackVehStartTime Yes"
+        },
+        {
+          "line": 9287,
+          "text": "    MassAtEpoch                1000.000000"
+        },
+        {
+          "line": 9579,
+          "text": "               SaaAltitude         500000.000000"
+        },
+        {
+          "line": 9609,
+          "text": "\t\tAltitude          0.000000e+00"
+        },
+        {
+          "line": 9610,
+          "text": "\t\tShowAtAltitude    Off"
+        }
+      ]
+    },
+    {
+      "path": "G:\\STK-file\\Scenario3\\Sensor3.sn",
+      "sha256": "fe9e964f0b6623962084bee5fe2d42c32e02007e760781de262daf3e1670d8a4",
+      "excerpts": [
+        {
+          "line": 12,
+          "text": "        ConeAngle              6.500000000000e+01"
+        },
+        {
+          "line": 79,
+          "text": "\t\t\tMaxTargetAltitude\t1.00000000000000e+04"
+        },
+        {
+          "line": 109,
+          "text": "\t\t\tMinDisplayAltitude      0.000000000000e+00"
+        },
+        {
+          "line": 110,
+          "text": "\t\t\tMaxDisplayAltitude      1.000000000000e+07"
+        },
+        {
+          "line": 111,
+          "text": "\t\t\tAltitudeIntersectSense           Either"
+        }
+      ]
+    },
+    {
+      "path": "G:\\STK-file\\Scenario3\\Missile1.mi",
+      "sha256": "46faa50649e4a02af72db0d51457f69282bc2b0389c13fc4c4509b72d76bcf38",
+      "excerpts": [
+        {
+          "line": 13,
+          "text": "         StartTime            1 Jul 2026 08:20:50.000000000"
+        },
+        {
+          "line": 14,
+          "text": "         StopTime             1 Jul 2026 08:33:06.990226678"
+        },
+        {
+          "line": 32,
+          "text": "    LaunchTime          1 Jul 2026 08:20:50.000000000 "
+        },
+        {
+          "line": 33,
+          "text": "    ImpactTime          1 Jul 2026 08:33:06.990226678 "
+        },
+        {
+          "line": 35,
+          "text": "    LaunchLatitude      3.870000000000e+01"
+        },
+        {
+          "line": 36,
+          "text": "    LaunchLongitude     1.115700000000e+02"
+        },
+        {
+          "line": 37,
+          "text": "    LaunchAltitude      1.599999999998e+03"
+        },
+        {
+          "line": 38,
+          "text": "    ImpactLatitude      4.172500000000e+01"
+        },
+        {
+          "line": 39,
+          "text": "    ImpactLongitude     8.617460000000e+01"
+        },
+        {
+          "line": 40,
+          "text": "    ImpactAltitude      1.000000000000e+03"
+        },
+        {
+          "line": 62,
+          "text": "ScenarioEpoch            1 Jul 2026 04:00:00.000000"
+        },
+        {
+          "line": 64,
+          "text": "# Epoch in JDate format: 2461222.66666666666667"
+        },
+        {
+          "line": 65,
+          "text": "# Epoch in YYDDD format:   26182.16666666666667"
+        },
+        {
+          "line": 838,
+          "text": "     \tScenarioEpoch\t\t 1 Jul 2026 04:00:00.000000"
+        },
+        {
+          "line": 843,
+          "text": "          StartTime\t\t\t 1.565000000000e+04"
+        },
+        {
+          "line": 942,
+          "text": "\t\tLWTimeConvergence                       1.000e-03"
+        },
+        {
+          "line": 944,
+          "text": "\t\tLWTSRTimeConvergence                    1.000e-04"
+        },
+        {
+          "line": 1164,
+          "text": "        TimesTrackVehStartTime Yes"
+        },
+        {
+          "line": 1170,
+          "text": "    MassAtEpoch                1000.000000"
+        },
+        {
+          "line": 1249,
+          "text": "\t\t\t\tTimeConvergence\t 1.0000000000000000e-03"
+        },
+        {
+          "line": 1250,
+          "text": "\t\t\t\tTimeSense\tReceive"
+        },
+        {
+          "line": 1275,
+          "text": "\t\t\t\tTimeConvergence\t 1.0000000000000000e-03"
+        },
+        {
+          "line": 1276,
+          "text": "\t\t\t\tTimeSense\tReceive"
+        },
+        {
+          "line": 1301,
+          "text": "\t\t\t\tTimeConvergence\t 1.0000000000000000e-03"
+        },
+        {
+          "line": 1302,
+          "text": "\t\t\t\tTimeSense\tReceive"
+        },
+        {
+          "line": 1540,
+          "text": "               SaaAltitude         500000.000000"
+        },
+        {
+          "line": 1579,
+          "text": "\t\tAltitude          0.000000e+00"
+        },
+        {
+          "line": 1580,
+          "text": "\t\tShowAtAltitude    Off"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\STK可见窗口误差诊断与验证说明.md",
+      "sha256": "120c7d949f9b854fab5ac75bd591926bdfc6db60fbc39c37ff0f37953d25ba56"
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\弹道拟合算法说明\\弹道拟合算法关键技术说明.md",
+      "sha256": "12ee38d194dc4c6dbc5dfd3630bd2f19b5d516bad35dd7ec9be6a2aaa68f6421"
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\trajectory-0.1s.profile.txt",
+      "sha256": "bd1494779ad782adb58629aa294250b6ed90be77253a55708570a969b720c831"
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\examples\\target_trajectory_simulate_default.json",
+      "sha256": "fbca1c68adfff9cd12a56f79b72047f448627be5bb501a6f92e47d2b80ae0aca"
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\examples\\target_trajectory_simulate_lla.json",
+      "sha256": "60d41dcb3f2a38608558e067a7d16bf0e54a580fa7c0ceb97af38cef4ed6518b"
+    }
+  ],
+  "oldExactRequest": "NOT_FOUND",
+  "oldDiagnosticCsv": "NOT_FOUND defaultSimTask_2026-07-01_04_24_00.000_2026-07-01_12_24_00.000_SIM-001_20260625_182251_789.csv",
+  "reconstruction": "STK原始J2000首末精确位置重建，非旧报告完全复现",
+  "accessStatus": "NOT_TESTED_MISSING_STK_ACCESS"
+}

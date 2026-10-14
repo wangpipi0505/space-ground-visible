@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json; from pathlib import Path; m=json.loads(Path('verification/A05/metrics.json').read_text(encoding='utf-8')); assert all(w['exactJsonEqual'] for w in m['windows'].values()), '初次统计严比失败原因为原/当前csvPath隔离来源路径不同；原现场metrics.json不改'
+                                                                                                                                   ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 初次统计严比失败原因为原/当前csvPath隔离来源路径不同；原现场metrics.json不改

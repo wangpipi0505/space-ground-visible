@@ -1,0 +1,148 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tx.alg.OrbitCalculator;
+import com.tx.alg.api.VisibilityRequest;
+import com.tx.alg.trajectory.TargetTrajectoryFitter;
+import java.io.BufferedWriter;
+import java.io.Writer;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+/**
+ * A05隔离双跑真实业务探针。模拟保留SimulationRequest/simulateToCsv和原21列输出；
+ * J2速度读取原私有RK4状态或当前抽取工具真实状态，不数值差分、不另写动力学。
+ * 时间为旧UTC日历J2000秒，窗口调用原legacySimpleCone130业务入口。
+ */
+public final class StkStateProbe {
+    private StkStateProbe() { }
+
+    /** 操作simulate/states/windows/frames，参数为来源和新输出绝对路径。 */
+    public static void main(String[] args) throws Exception {
+        Locale.setDefault(Locale.US);
+        OrbitCalculator.utcOffsetSec = 0.0;
+        ObjectMapper mapper = new ObjectMapper();
+        if ("simulate".equals(args[0])) {
+            Path output = Paths.get(args[2]);
+            Files.createDirectory(output);
+            TargetTrajectoryFitter.SimulationRequest input = mapper.readValue(Paths.get(args[1]).toFile(), TargetTrajectoryFitter.SimulationRequest.class);
+            input.outputDir = output.toString();
+            TargetTrajectoryFitter.FitRunResult result = TargetTrajectoryFitter.simulateToCsv(input);
+            if (result.files.size() != 1) throw new IllegalStateException("模拟文件数错误");
+            Files.move(Paths.get(result.files.get(0).csvPath), output.resolve("trajectory.csv"));
+            mapper.writeValue(output.resolve("result.json").toFile(), result);
+        } else if ("states".equals(args[0])) {
+            states(args[1], Paths.get(args[2]), Paths.get(args[3]));
+        } else if ("windows".equals(args[0])) {
+            VisibilityRequest input = mapper.readValue(Paths.get(args[1]).toFile(), VisibilityRequest.class);
+            List<OrbitCalculator.OrbitElements> satellites = input.toSatellites();
+            for (OrbitCalculator.OrbitElements satellite : satellites) {
+                for (OrbitCalculator.SatellitePayloadConfig payload : satellite.payloads) {
+                    payload.sensorConfig = OrbitCalculator.SensorVisibilityConfig.legacySimpleCone(input.getSensorFovDeg());
+                }
+            }
+            OrbitCalculator.LaunchSearchResultV2 result = OrbitCalculator.searchLaunchOffsetsV2(input.toBallisticInputs(), input.getStartOffsetSec(),
+                input.getStepSizeSec(), input.getNumCalculations(), satellites, input.getSensorFovDeg(), input.toOrbitModel(),
+                input.getTargetSampleStepSec(), input.getTrajectoryPointOutput(), OrbitCalculator.SensorVisibilityConfig.legacySimpleCone(input.getSensorFovDeg()), null);
+            try (Writer writer = Files.newBufferedWriter(Paths.get(args[2]), StandardCharsets.UTF_8)) { result.writeJsonTo(writer, true); }
+        } else if ("frames".equals(args[0])) {
+            frames(Paths.get(args[1]), Paths.get(args[2]));
+        } else { throw new IllegalArgumentException("未知探针操作"); }
+    }
+
+    /** 旧默认SAT-A根数，a米/角度度；每时刻从10:00UTC历元重新传播。 */
+    private static OrbitCalculator.OrbitElements elements() {
+        OrbitCalculator.OrbitElements e = new OrbitCalculator.OrbitElements();
+        e.semiMajorAxisM=7530612.0; e.eccentricity=0.000850; e.inclinationDeg=64.8;
+        e.raanDeg=120.0; e.argumentOfPerigeeDeg=270.0; e.meanAnomalyDeg=30.0;
+        e.epochSec=OrbitCalculator.utcToJ2000Sec("2026/07/01 10:00:00");
+        return e;
+    }
+
+    /** 原状态容器为兼容Vector3，当前容器为领域Vector3，只读取字段/访问器。 */
+    private static double[] vector(Object state, String fieldName, boolean original) throws Exception {
+        Field field=state.getClass().getDeclaredField(fieldName); field.setAccessible(true);
+        Object vector=field.get(state);
+        if (original) {
+            OrbitCalculator.Vector3 v=(OrbitCalculator.Vector3) vector;
+            return new double[]{v.x,v.y,v.z};
+        }
+        return new double[]{(Double)vector.getClass().getMethod("getX").invoke(vector),
+                            (Double)vector.getClass().getMethod("getY").invoke(vector),
+                            (Double)vector.getClass().getMethod("getZ").invoke(vector)};
+    }
+
+    /** 反射仅绑定两个实际版本的内核，原classpath不含当前任何产品classes。 */
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    private static void states(String label, Path times, Path output) throws Exception {
+        boolean original="original".equals(label);
+        OrbitCalculator.OrbitElements elements=elements();
+        Method query;
+        Object tool=null, frame=null;
+        Method timeFactory=null;
+        if (original) {
+            query=OrbitCalculator.class.getDeclaredMethod("propagateJ2Numerical", OrbitCalculator.OrbitElements.class, double.class);
+            query.setAccessible(true);
+        } else {
+            String p="com.runisys.orbit.spacevisibility.domain.orbit.";
+            Class<?> timeType=Class.forName(p+"OrbitTime");
+            timeFactory=timeType.getMethod("legacyJ2000",double.class,double.class);
+            Class<?> model=Class.forName(p+"OrbitDefinition$Model");
+            Class<?> definition=Class.forName(p+"OrbitDefinition$Elements");
+            Constructor<?> ctor=definition.getConstructor(model,double.class,double.class,double.class,double.class,double.class,double.class,timeType,double.class);
+            Object e=ctor.newInstance(Enum.valueOf((Class)model,"J2_NUMERICAL"),7530612.0,0.000850,64.8,120.0,270.0,30.0,timeFactory.invoke(null,elements.epochSec,0.0),0.0);
+            tool=Class.forName(p+"BallisticOrbitPropagation").getMethod("bind",definition).invoke(null,e);
+            Class<?> frameType=Class.forName(p+"OrbitDefinition$Frame");
+            frame=Enum.valueOf((Class)frameType,"J2000");
+            query=tool.getClass().getMethod("stateAt",timeType,frameType);
+        }
+        List<String> lines=Files.readAllLines(times,StandardCharsets.UTF_8);
+        try (BufferedWriter writer=Files.newBufferedWriter(output,StandardCharsets.UTF_8)) {
+            writer.write("utc,px,py,pz,vx,vy,vz\n");
+            for (int i=1;i<lines.size();i++) {
+                String[] row=lines.get(i).split(",");
+                double t=OrbitCalculator.utcToJ2000Sec(row[1]);
+                Object state=original ? query.invoke(null,elements,t) : query.invoke(tool,timeFactory.invoke(null,t,0.0),frame);
+                double[] pos=vector(state,original?"position":"positionM",original), vel=vector(state,original?"velocity":"velocityMps",original);
+                OrbitCalculator.Vector3 publicPosition=OrbitCalculator.propagateAtAbsolute(elements,t,OrbitCalculator.OrbitModel.J2_NUMERICAL);
+                if (publicPosition.x!=pos[0] || publicPosition.y!=pos[1] || publicPosition.z!=pos[2]) throw new IllegalStateException("真实状态与公开位置不同");
+                writer.write(row[0]);
+                for (double v:pos) { if (!Double.isFinite(v)) throw new IllegalStateException("非有限位置"); writer.write(","+Double.toString(v)); }
+                for (double v:vel) { if (!Double.isFinite(v)) throw new IllegalStateException("非有限速度"); writer.write(","+Double.toString(v)); }
+                writer.write("\n");
+            }
+        }
+        System.out.println("真实J2 RK4状态点数="+(lines.size()-1)+"；全部位置与公开入口一致；速度无差分");
+    }
+
+    /** 用真实原转换核验证原STK两帧列位顺序及Fixed惯性速度分量口径。 */
+    private static void frames(Path source, Path output) throws Exception {
+        List<String> lines=Files.readAllLines(source,StandardCharsets.UTF_8);
+        double ps=0,vs=0,pm=0,vm=0; double[] first=null,last=null;
+        for (int i=1;i<lines.size();i++) {
+            String[] r=lines.get(i).split(",");
+            double t=OrbitCalculator.utcToJ2000Sec(r[0]+"/"+r[1]+"/"+r[2]+" "+r[3]+":"+r[4]+":"+r[5]);
+            OrbitCalculator.Vector3 fixed=new OrbitCalculator.Vector3(Double.parseDouble(r[6]),Double.parseDouble(r[7]),Double.parseDouble(r[8]));
+            OrbitCalculator.Vector3 eci=new OrbitCalculator.Vector3(Double.parseDouble(r[11]),Double.parseDouble(r[12]),Double.parseDouble(r[13]));
+            OrbitCalculator.Vector3 v=new OrbitCalculator.Vector3(Double.parseDouble(r[14]),Double.parseDouble(r[15]),Double.parseDouble(r[16]));
+            OrbitCalculator.Vector3 fv=new OrbitCalculator.Vector3(Double.parseDouble(r[17]),Double.parseDouble(r[18]),Double.parseDouble(r[19]));
+            double dp=OrbitCalculator.eciToEcefPos(eci,t).subtract(fixed).norm();
+            double dv=OrbitCalculator.eciToStkFixedVelocity(v,t).subtract(fv).norm();
+            ps+=dp*dp; vs+=dv*dv; pm=Math.max(pm,dp); vm=Math.max(vm,dv);
+            if (i==1) first=OrbitCalculator.ecefToGeodetic(fixed);
+            if (i==lines.size()-1) last=OrbitCalculator.ecefToGeodetic(fixed);
+        }
+        Map<String,Object> result=new LinkedHashMap<String,Object>(); int n=lines.size()-1;
+        result.put("count",n); result.put("positionRmseM",Math.sqrt(ps/n)); result.put("positionMaxM",pm);
+        result.put("stkFixedVelocityRmseMps",Math.sqrt(vs/n)); result.put("stkFixedVelocityMaxMps",vm);
+        result.put("firstGeodeticLatLonHeight",first); result.put("lastGeodeticLatLonHeight",last);
+        new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(output.toFile(),result);
+    }
+}

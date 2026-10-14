@@ -1,0 +1,10 @@
+G:\5-YG\space-ground-visible\verification\A05\StkStateProbe.java:45: 错误: toSatellites()在VisibilityRequest中不是公共的; 无法从外部程序包中对其进行访问
+            List<OrbitCalculator.OrbitElements> satellites = input.toSatellites();
+                                                                  ^
+G:\5-YG\space-ground-visible\verification\A05\StkStateProbe.java:51: 错误: toBallisticInputs()在VisibilityRequest中不是公共的; 无法从外部程序包中对其进行访问
+            OrbitCalculator.LaunchSearchResultV2 result = OrbitCalculator.searchLaunchOffsetsV2(input.toBallisticInputs(), input.getStartOffsetSec(),
+                                                                                                     ^
+G:\5-YG\space-ground-visible\verification\A05\StkStateProbe.java:52: 错误: toOrbitModel()在VisibilityRequest中不是公共的; 无法从外部程序包中对其进行访问
+                input.getStepSizeSec(), input.getNumCalculations(), satellites, input.getSensorFovDeg(), input.toOrbitModel(),
+                                                                                                              ^
+3 个错误

@@ -1,0 +1,1 @@
+{"status": "PASS_READ_ONLY_DELIVERY", "candidateFiles": 786, "sourceFiles": 635, "commandsChecked": 36, "rawRows": [7371, 8641, 8641], "runtimeRequired": false, "jarClassesRequired": false, "scope": "交付SHA/原流/参考质量/已存摘要内部一致性；未重算物理", "stkAccess": "NOT_TESTED_MISSING_STK_ACCESS"}

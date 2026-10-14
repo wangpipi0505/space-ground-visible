@@ -1,0 +1,21 @@
+{
+  "taskName": "A05_STK_ECI_endpoint_reconstruction",
+  "targetId": "A05-STK-REBUILT",
+  "launchTimeUtc": "2026/07/01 08:24:00.000",
+  "impactTimeUtc": "2026/07/01 08:36:16.990",
+  "taskStartTime": "2026/07/01 08:24:00.000",
+  "taskEndTime": "2026/07/01 08:36:16.990",
+  "launchPointCoordFrame": "J2000",
+  "impactPointCoordFrame": "J2000",
+  "launchPointUnit": "m",
+  "impactPointUnit": "m",
+  "outputPointDurationSec": 0.1,
+  "integrationStepSec": 0.1,
+  "phaseEvents": [],
+  "launchPointX": -4566470.6790000005,
+  "launchPointY": 1977006.813,
+  "launchPointZ": 3979168.272,
+  "impactPointX": -3320508.6849999996,
+  "impactPointY": 3411340.342,
+  "impactPointZ": 4232040.516
+}

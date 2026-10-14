@@ -1,0 +1,12 @@
+{
+  "files": [
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\satellite-times.csv",
+      "sha256": "205629564f9b581ba36c785841fdc93a34dd724e5e486ea0dc223d91b5d57576"
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\stk-target-21.csv",
+      "sha256": "2f60d731931d77e6c0015fe557d233df9e957e7685a190536712ab78fe988ff7"
+    }
+  ]
+}

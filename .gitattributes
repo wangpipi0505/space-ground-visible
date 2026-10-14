@@ -52,6 +52,10 @@ verification/A04/**/*.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 verification/A04/**/*.bin -text -whitespace
 verification/A04/surefire-reports/*.dump* -text -whitespace
 verification/A04/delivery-fix/history/** -text -whitespace
+# A05原始STK补充精度证据以实际字节SHA绑定，原双流和工具末尾空行保留。
+verification/A05/** -text whitespace=cr-at-eol
+verification/A05/**/*.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+verification/A05/**/*.bin -text -whitespace
 # 整体审查修复的新证据单独绑定，二进制后缀也可能保存真实 CRLF 终端文本。
 verification/补充验收修复/** -text whitespace=cr-at-eol
 verification/补充验收修复/**/*.bin -text -whitespace

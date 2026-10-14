@@ -1,0 +1,9 @@
+{
+  "root": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\delivery-without-runtime",
+  "candidateSha256": "64def832077eb29bb2abe4919498d78a5e69ce36540bd68c7266da24d604ef3b",
+  "copiedFiles": 787,
+  "runtimeAbsent": true,
+  "jarAbsent": true,
+  "classAbsent": true,
+  "numericRecomputed": false
+}

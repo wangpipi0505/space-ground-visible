@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\delivery-without-runtime\\verification\\A05\\delivery_check.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\delivery-without-runtime",
+  "startedUtc": "2026-10-14T08:05:35.731367+00:00",
+  "executorSha256": "2b11d2cc7457bc79e9a1dfeed4e48b36b558bec73095cb6704f39913d2a8d687",
+  "inputFiles": [
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\delivery-without-runtime\\verification\\A05\\delivery_check.py",
+      "sha256": "9c540f01036178416718ae70aa6fee1a4adc6f2b240fff044109c5b6fde1babe"
+    }
+  ],
+  "endedUtc": "2026-10-14T08:05:39.408102+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "delivery-without-runtime.stdout.bin",
+  "stderrFile": "delivery-without-runtime.stderr.bin",
+  "stdoutSha256": "3c26a0292d0f69d419d7f51fdbc93335d91319243d578f808010f48dc0bfdce3",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

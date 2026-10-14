@@ -1,0 +1,43 @@
+{
+  "ballisticCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-simulate\\trajectory.csv",
+  "baseLaunchUtc": "2026/07/01 08:24:00.000",
+  "startOffsetSec": 0,
+  "stepSizeSec": 1,
+  "numCalculations": 1,
+  "sensorFovDeg": 130.0,
+  "targetSampleStepSec": 0.5,
+  "trajectoryPointOutput": 0,
+  "orbitModel": "J2_NUMERICAL",
+  "ballistics": [
+    {
+      "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A05\\original-simulate\\trajectory.csv",
+      "baseLaunchUtc": "2026/07/01 08:24:00.000",
+      "targetId": "A05-STK",
+      "targetName": "A05-reconstructed"
+    }
+  ],
+  "satellites": [
+    {
+      "satelliteId": "SAT-A",
+      "name": "SAT-A",
+      "semiMajorAxisM": 7530612.0,
+      "eccentricity": 0.00085,
+      "inclinationDeg": 64.8,
+      "raanDeg": 120.0,
+      "argumentOfPerigeeDeg": 270.0,
+      "meanAnomalyDeg": 30.0,
+      "epochUtc": "2026/07/01 10:00:00"
+    },
+    {
+      "satelliteId": "SAT-B",
+      "name": "SAT-B",
+      "semiMajorAxisM": 7530612.0,
+      "eccentricity": 0.00085,
+      "inclinationDeg": 64.8,
+      "raanDeg": 120.0,
+      "argumentOfPerigeeDeg": 270.0,
+      "meanAnomalyDeg": 0.0,
+      "epochUtc": "2026/07/01 10:00:00"
+    }
+  ]
+}

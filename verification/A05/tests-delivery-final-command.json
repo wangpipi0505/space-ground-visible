@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "test_stk_validation",
+    "-v"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\A05",
+  "startedUtc": "2026-10-14T08:04:57.972219+00:00",
+  "executorSha256": "2b11d2cc7457bc79e9a1dfeed4e48b36b558bec73095cb6704f39913d2a8d687",
+  "inputFiles": [],
+  "endedUtc": "2026-10-14T08:04:58.081271+00:00",
+  "exitCode": 0,
+  "expectedExitCode": 0,
+  "stdoutFile": "tests-delivery-final.stdout.bin",
+  "stderrFile": "tests-delivery-final.stderr.bin",
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "68ad97358db14399c083a9acb10971162c046dc8740356d88edee2dcdfe1d568"
+}
