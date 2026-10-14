@@ -2842,12 +2842,12 @@
   {
     "path": "docs/superpowers/plans/2026-10-14-precision-validation.md",
     "bytes": 4388,
-    "sha256": "33f6ba86e21e69ded16cb809d066d0983963135877ae464d564f2a1ce893d300"
+    "sha256": "400b14a1db633453a4f97593e996655ad180ea29a2f8786c17beb71266375582"
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 12033,
-    "sha256": "ccda5b81da9098e80c2362ccd8798ff0d9d57ba0714a2290b31c9088e403575a"
+    "bytes": 12828,
+    "sha256": "2a3e2a02065e710b59c1aac07b5e84f5c5971dc5a883f734bc54f93a593fe9f2"
   },
   {
     "path": "scripts/freeze_baselines.py",
@@ -3748,6 +3748,21 @@
     "path": "verification/A04/finalize_precision.py",
     "bytes": 26767,
     "sha256": "e22b15d20564dbcad77f0b3b7d1b84bfb4fd8406f60da1ed515433e8c97d9231"
+  },
+  {
+    "path": "verification/A04/git-delivery-check/version-manifest-green-command.json",
+    "bytes": 792,
+    "sha256": "924adfd5c501d3d55f015e3bde497adb85c926fff242ee2740b98614b3731347"
+  },
+  {
+    "path": "verification/A04/git-delivery-check/version-manifest-green.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A04/git-delivery-check/version-manifest-green.stdout.bin",
+    "bytes": 157,
+    "sha256": "bd41cea48fe1dd71c8cb1efb8ce44e9d94ca04188c67c527b7531375fcb0c754"
   },
   {
     "path": "verification/A04/git-delivery-check/version-manifest-red-command.json",
@@ -4846,8 +4861,8 @@
   },
   {
     "path": "verification/A04/交付核对记录.md",
-    "bytes": 5729,
-    "sha256": "b5387775584a2572133621aa118db043e38254850bd70bdc09a4eb7ec6fe7163"
+    "bytes": 6570,
+    "sha256": "310598e844d844d98584b02c0772e82a3502e913e09d36919fb618e3a8bbacad"
   },
   {
     "path": "verification/A04/独立交付字节复审报告.md",
@@ -4868,6 +4883,21 @@
     "path": "verification/A04/精度测试报告.md",
     "bytes": 31014,
     "sha256": "f4f3befa015981e31ab2e273695ed489adc4cae5af20da27dc4a3936fcf113a5"
+  },
+  {
+    "path": "verification/A04/远端同步核验-stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A04/远端同步核验-stdout.txt",
+    "bytes": 2411,
+    "sha256": "126549c059a849162c395ca1fa452ec1ba3df5b931ba2bc27169cf40c83be71e"
+  },
+  {
+    "path": "verification/A04/远端同步核验.json",
+    "bytes": 6199,
+    "sha256": "6b887fd36b6332c8a9dc0224b370c2d40ff5163069894f4b9dcb1c9e94dc6e2e"
   },
   {
     "path": "verification/T04/BallisticBaseline.java",

@@ -1,0 +1,25 @@
+{
+  "startedUtc": "2026-10-14T04:59:00.323189+00:00",
+  "endedUtc": "2026-10-14T04:59:01.097545+00:00",
+  "argv": [
+    "C:/Python314/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/runtime/audit_version_manifest.py",
+    "a00a4ae9f3141232d485bd3ed9248079f74b69eb",
+    "verification/A04/交付清单.json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A04/git-delivery-check/version-manifest-green.stdout.bin",
+    "bytes": 157,
+    "sha256": "bd41cea48fe1dd71c8cb1efb8ce44e9d94ca04188c67c527b7531375fcb0c754"
+  },
+  "stderr": {
+    "path": "verification/A04/git-delivery-check/version-manifest-green.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
