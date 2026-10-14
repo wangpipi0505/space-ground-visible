@@ -32,7 +32,7 @@
   {
     "path": "docs/superpowers/plans/2026-10-14-comprehensive-acceptance-and-docs.md",
     "bytes": 8146,
-    "sha256": "43d3efcf33025f3240013b33d05cdaad608b62d1c0803463dacbcab1a6286928"
+    "sha256": "400aa4d2d514ebba62a10b1aa7d7ca0bcce6b2cd670e14ff23ac47bdc92960d7"
   },
   {
     "path": "docs/接口文档.md",
@@ -41,8 +41,8 @@
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 7542,
-    "sha256": "a047fcf1bc908e8c7599f8f346c0f2cf9c5cccec84c29be32afbd88c7d66d31c"
+    "bytes": 8293,
+    "sha256": "2e3c64d3adbdaa00d280296bd5c650a0d465f91b9380dc51d4c06efbcd623bbe"
   },
   {
     "path": "docs/软件功能使用说明.md",
@@ -4016,8 +4016,8 @@
   },
   {
     "path": "verification/补充验收交付记录.md",
-    "bytes": 4425,
-    "sha256": "734dc291ca2f79787f59e79d58e29341479d02bd81cde35bcc7fe654a1988afd"
+    "bytes": 5375,
+    "sha256": "0ce2463852447ccbdc56238e52c9f4ca9a3d770e768b1e087a45f018d4a54fd8"
   },
   {
     "path": "verification/补充验收修复/README.md",
@@ -4488,5 +4488,20 @@
     "path": "verification/补充验收整体审查报告.md",
     "bytes": 16030,
     "sha256": "91aaf2ce9365147d5d3f97b2fafaffe0068250a32f79dbd838f48eb56ec268a4"
+  },
+  {
+    "path": "verification/补充验收远端同步核验-stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/补充验收远端同步核验-stdout.txt",
+    "bytes": 2334,
+    "sha256": "41fc3e69499d21bd0ad7ff8e5a31a9974e39a41888323d73a61561d223322eda"
+  },
+  {
+    "path": "verification/补充验收远端同步核验.json",
+    "bytes": 6041,
+    "sha256": "12500925180e6f4262bb873177e318469621aaaecc8acc5c98aff349431ce323"
   }
 ]
