@@ -2847,12 +2847,12 @@
   {
     "path": "docs/superpowers/plans/2026-10-14-swing-input-web-alignment.md",
     "bytes": 10307,
-    "sha256": "fa3051cf006a7d1afa0e11b9cc22e22922f3dde518a58217b7daf0d904fd9c35"
+    "sha256": "ac71aa564ff9a945e6bf76bf0820287840a2a049afda8542d1759e4c612e4d4f"
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 19353,
-    "sha256": "93f19a5a21cbdbb1ac6a1b18582e9d0fb1cff93f8e6fffe5fa21a1e4b955bb7a"
+    "bytes": 20005,
+    "sha256": "3efccf68771ff67ab88a25511579f4cc2f033ea2a03c8c62c717f05b9f6d9bb5"
   },
   {
     "path": "docs/软件功能使用说明.md",
@@ -3647,12 +3647,12 @@
   {
     "path": "verification/A04/交付清单.json",
     "bytes": 182064,
-    "sha256": "ac44fadf56cbb8f4390903cf9c68febca74cb4d368823424eaddf6eab781fca2"
+    "sha256": "740cfd388f9c7b0bdab7a757196b78b32ca5d5980e2c4e957a0dbb8d28ad3134"
   },
   {
     "path": "verification/A05/交付清单.json",
     "bytes": 154127,
-    "sha256": "c29c77303f6465a34ba7456555f220dfb54cf229b94b9a590518547d79bdec08"
+    "sha256": "1a9edf028f3452ef0a31e48f9f13bf87b2927f27d8558c769a840852e0212c13"
   },
   {
     "path": "verification/A06/baseline.json",
@@ -4328,6 +4328,81 @@
     "path": "verification/A06/git-delivery-check/current-A05-check.stdout.bin",
     "bytes": 325,
     "sha256": "937bb7af7c43a3fc93099bace8a51cea46d80f04df1bd3cc2c8352e8beba5142"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/feature-push.json",
+    "bytes": 922,
+    "sha256": "2a6c887bb317253f219ef918b658a8a5b53fa4d30a0ae2d8628fa3ff2058612b"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/feature-push.stderr.bin",
+    "bytes": 230,
+    "sha256": "f5e0a491f67616ef62e232db59ade92e363a6991d4e65889c6a5f5c274ef2530"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/feature-push.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/feature-version.json",
+    "bytes": 907,
+    "sha256": "5c84af1c9b8a7bd4306b1271ba19cb1bd33fb7b9b68a5279cda72217dd8f1727"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/feature-version.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/feature-version.stdout.bin",
+    "bytes": 122,
+    "sha256": "6f5ffb7ec0e7ae3b291da106827eb3c10619361f7a74b48cf7c193a4bc23843d"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-bytes.json",
+    "bytes": 866,
+    "sha256": "da241eefcdc24a8ff5ad1c17fb3ea7cd702c087780520f665e83f87f16722d99"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-bytes.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-bytes.stdout.bin",
+    "bytes": 57,
+    "sha256": "680e38efa360993c59823a56eac84901ce00ce80c1b0040300e789d62339f9c0"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-diff.json",
+    "bytes": 820,
+    "sha256": "5190e67346819e99476de8d41a5e654120ea3b3f262df3e44c1a13aa79d3438b"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-diff.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-diff.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-version.json",
+    "bytes": 967,
+    "sha256": "7337a0fb9bc9279f565be1088e0aec43adbde6c88cf11228960958a859074705"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-version.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A06/git-delivery-check/final-precommit-version.stdout.bin",
+    "bytes": 158,
+    "sha256": "787422fbd6656ee20acc9ae7a369d2dbe797ca926a9e59646e5f9f2a5eba4bb4"
   },
   {
     "path": "verification/A06/git-delivery-check/old-A04-tag.json",
@@ -5061,8 +5136,8 @@
   },
   {
     "path": "verification/A06/交付核对记录.md",
-    "bytes": 5735,
-    "sha256": "1077e47852fb829247cab81aa474590c8575a9397d4937146564deb17950ab3c"
+    "bytes": 6643,
+    "sha256": "3f37443b02b8b53cbfd8677bf5cdcfaee39f3879d970c2599362cea57b359801"
   },
   {
     "path": "verification/A06/参数对照与验证报告.md",
@@ -5088,5 +5163,20 @@
     "path": "verification/A06/独立输入与导航审查报告.md",
     "bytes": 17467,
     "sha256": "ebd8841dfb658242be72605f816f1214bd949364ece1331e584548166eb0efa7"
+  },
+  {
+    "path": "verification/A06/远端同步核验-stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A06/远端同步核验-stdout.txt",
+    "bytes": 2648,
+    "sha256": "8da45883393953cd14f36a3e7f00a861917ed4fb93945e8e189fa2016c22f927"
+  },
+  {
+    "path": "verification/A06/远端同步核验.json",
+    "bytes": 6776,
+    "sha256": "6c09a247b2be7c5f147e4a0f28ae7f7bb45279d92fecc82f18611d27d84e2990"
   }
 ]

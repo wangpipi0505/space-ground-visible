@@ -1,0 +1,29 @@
+{
+  "startedUtc": "2026-10-14T11:15:55.747245+00:00",
+  "finishedUtc": "2026-10-14T11:16:00.676097+00:00",
+  "argv": [
+    "git",
+    "push",
+    "--atomic",
+    "origin",
+    "HEAD:refs/heads/main",
+    "HEAD:refs/heads/feat/swing-input-web-alignment",
+    "refs/tags/acceptance/2026-10-14/A06"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A06/git-delivery-check/feature-push.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "verification/A06/git-delivery-check/feature-push.stderr.bin",
+    "bytes": 230,
+    "sha256": "f5e0a491f67616ef62e232db59ade92e363a6991d4e65889c6a5f5c274ef2530"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A06/root-gates/feature-push.json",
+    "sha256": "1b7940bad3efd4fc13d49d6772411ac2812312e41f9fcde8c55cf54c0bfbb103"
+  }
+}

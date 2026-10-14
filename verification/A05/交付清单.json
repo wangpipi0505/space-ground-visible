@@ -2846,8 +2846,8 @@
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 19353,
-    "sha256": "93f19a5a21cbdbb1ac6a1b18582e9d0fb1cff93f8e6fffe5fa21a1e4b955bb7a"
+    "bytes": 20005,
+    "sha256": "3efccf68771ff67ab88a25511579f4cc2f033ea2a03c8c62c717f05b9f6d9bb5"
   },
   {
     "path": "scripts/freeze_baselines.py",
@@ -3217,7 +3217,7 @@
   {
     "path": "verification/A04/交付清单.json",
     "bytes": 182064,
-    "sha256": "ac44fadf56cbb8f4390903cf9c68febca74cb4d368823424eaddf6eab781fca2"
+    "sha256": "740cfd388f9c7b0bdab7a757196b78b32ca5d5980e2c4e957a0dbb8d28ad3134"
   },
   {
     "path": "verification/A05/STK原始数据精度补充测试报告.md",
