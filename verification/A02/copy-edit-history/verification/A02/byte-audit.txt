@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "commandLogs": 12,
+  "logShaMismatches": 0,
+  "manifestAllActualBytesChecked": true,
+  "historyFiles": 47,
+  "historicalStdoutAudit": [
+    {
+      "file": "curl-version.txt",
+      "savedShaMatches": false,
+      "crcrlf": 4,
+      "normalizedCrLfShaMatches": true
+    },
+    {
+      "file": "generate.txt",
+      "savedShaMatches": false,
+      "crcrlf": 1,
+      "normalizedCrLfShaMatches": true
+    },
+    {
+      "file": "compile.txt",
+      "savedShaMatches": true,
+      "crcrlf": 0,
+      "normalizedCrLfShaMatches": true
+    },
+    {
+      "file": "curl-transport.txt",
+      "savedShaMatches": false,
+      "crcrlf": 6,
+      "normalizedCrLfShaMatches": true
+    },
+    {
+      "file": "contract.txt",
+      "savedShaMatches": false,
+      "crcrlf": 28,
+      "normalizedCrLfShaMatches": true
+    }
+  ],
+  "sourceFingerprints": 64,
+  "existingJarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71",
+  "currentSchemaSha256": "4455f9d0e1c90b7d02982e6e030870ea2074dac4fb7e0c88db5e1d1e8f0a95b4",
+  "boundary": "旧四份日志保存字节不一致；旧 exit0 不代表旧日志完整性通过。当前只检查证据字节，不新构建/运行业务。",
+  "errors": []
+}

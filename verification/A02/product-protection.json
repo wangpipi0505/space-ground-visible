@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-14T01:36:29.193867+00:00",
+  "scope": "文档阶段只读源指纹与已有验收JAR核对，不是重新构建或业务测试",
+  "sourceFiles": 726,
+  "sourceMismatches": [],
+  "jarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71",
+  "jarMatches": true,
+  "originals": [
+    {
+      "name": "space",
+      "files": 526,
+      "differences": []
+    },
+    {
+      "name": "ballistic",
+      "files": 171,
+      "differences": []
+    }
+  ],
+  "originalFiles": 697
+}

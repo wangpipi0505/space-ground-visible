@@ -1,0 +1,17 @@
+{
+  "targetIds": [],
+  "belongs": [
+    "US"
+  ],
+  "minWeight": 100.0,
+  "maxWeight": 150.0,
+  "epochStartTime": null,
+  "epochEndTime": null,
+  "minTleEpochCode": null,
+  "maxApproximationDays": null,
+  "planningStartTime": "2026-07-01T10:00:00Z",
+  "planningEndTime": "2026-07-01T10:10:00Z",
+  "excludeNameRegex": null,
+  "pageNumber": 1,
+  "pageSize": 50
+}

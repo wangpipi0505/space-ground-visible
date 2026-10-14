@@ -1,0 +1,23 @@
+{
+  "passed": false,
+  "results": [
+    {
+      "finding": "I07",
+      "passed": false,
+      "error": "planningStartTime 未公开业务忽略"
+    },
+    {
+      "finding": "I08",
+      "passed": false,
+      "error": "belongsHit 漏快照口径"
+    }
+  ],
+  "sourceSha256": {
+    "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java": "30e7392a95cb5ccdd6ad9fecba7a727549d3add4219ca635a92e62daf77f6a79",
+    "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java": "599bbf338ae8a469702dee2750eec48f1f0482f9116a2d960bc089cad5a5a234",
+    "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningFacadeService.java": "9b392a705fb18449b24c6b79f52cf6eff732069efe2b6664a7bbe23bf5a06360",
+    "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ReferenceDataService.java": "974a2771b4140f50c50bf74ccc70a588078917a861605b72d043ff56669c90cd"
+  },
+  "currentSchemaSha256": "6eeb15cf98a22e553221c1a6ad3b02e44838307e17038c229a2b5003d359c7c4",
+  "boundary": "限定合成schema案例与只读源码断言；不是实跑Java绑定、HTTP或传播测试。"
+}

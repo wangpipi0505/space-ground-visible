@@ -1,0 +1,28 @@
+{
+  "time": "2026-10-14T01:07:08.778797+00:00",
+  "passed": true,
+  "operations": 35,
+  "controllerOperations": 35,
+  "a01Operations": 35,
+  "schemas": 84,
+  "topLevelProperties": 677,
+  "properties": 682,
+  "checks": {
+    "refs": 184,
+    "responseSamples": 224,
+    "requestSamples": 84,
+    "valueChecks": 172271,
+    "markdownLinks": 286,
+    "jsonFences": 74,
+    "sourceClasses": 59,
+    "sourceFields": 521,
+    "binaryOrEmptyResponses": 23,
+    "shaResponses": 247,
+    "schemaObjects": 916,
+    "defaults": 91,
+    "enumValues": 64,
+    "nullableBranches": 474,
+    "markdownAnchors": 185
+  },
+  "errors": []
+}

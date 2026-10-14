@@ -1,0 +1,1041 @@
+[
+  {
+    "operation": "GET /api/v1/space/health",
+    "method": "GET",
+    "path": "/api/v1/space/health",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/space/satellites",
+    "method": "GET",
+    "path": "/api/v1/space/satellites",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/space/satellites/page",
+    "method": "GET",
+    "path": "/api/v1/space/satellites/page",
+    "query": "pageNumber=999999&pageSize=200",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/space/satellites/options",
+    "method": "GET",
+    "path": "/api/v1/space/satellites/options",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/space/satellites/{satelliteId}/payload",
+    "method": "GET",
+    "path": "/api/v1/space/satellites/{satelliteId}/payload",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "PUT /api/v1/space/satellites/{satelliteId}/payload",
+    "method": "PUT",
+    "path": "/api/v1/space/satellites/{satelliteId}/payload",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "PUT",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation06.json"
+    ],
+    "body": {
+      "azimuthMinDeg": null,
+      "azimuthMaxDeg": null,
+      "elevationMinDeg": null,
+      "elevationMaxDeg": null,
+      "angleRateDegPerSec": -1,
+      "sunAvoidHalfAngleDeg": 0,
+      "startupAngleRateDegPerSec": -1,
+      "minDistanceM": 0,
+      "maxDistanceM": 0
+    }
+  },
+  {
+    "operation": "GET /api/v1/space/satellites/{satelliteId}/payload-profiles",
+    "method": "GET",
+    "path": "/api/v1/space/satellites/{satelliteId}/payload-profiles",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+    "method": "PUT",
+    "path": "/api/v1/space/satellites/{satelliteId}/payload-profiles",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "PUT",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation08.json"
+    ],
+    "body": {
+      "payloadType": "SPACE",
+      "minDistanceKm": 0,
+      "maxDistanceKm": 0,
+      "azimuthMinDeg": null,
+      "azimuthMaxDeg": null,
+      "elevationMinDeg": null,
+      "elevationMaxDeg": null,
+      "angleRateDegPerSec": 0,
+      "sunAvoidHalfAngleDeg": 0,
+      "startupAngleRateDegPerSec": null
+    }
+  },
+  {
+    "operation": "GET /api/v1/space/stations",
+    "method": "GET",
+    "path": "/api/v1/space/stations",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/space/defaults",
+    "method": "GET",
+    "path": "/api/v1/space/defaults",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "POST /api/v1/space/targets/query",
+    "method": "POST",
+    "path": "/api/v1/space/targets/query",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation11.json"
+    ],
+    "body": {
+      "targetIds": [],
+      "belongs": [
+        "US"
+      ],
+      "minWeight": 100.0,
+      "maxWeight": 150.0,
+      "epochStartTime": null,
+      "epochEndTime": null,
+      "minTleEpochCode": null,
+      "maxApproximationDays": null,
+      "planningStartTime": "2026-07-01T10:00:00Z",
+      "planningEndTime": "2026-07-01T10:10:00Z",
+      "excludeNameRegex": null,
+      "pageNumber": 1,
+      "pageSize": 50
+    }
+  },
+  {
+    "operation": "GET /api/v1/space/targets/belong-options",
+    "method": "GET",
+    "path": "/api/v1/space/targets/belong-options",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "POST /api/v1/space/downlink/plan",
+    "method": "POST",
+    "path": "/api/v1/space/downlink/plan",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation13.json"
+    ],
+    "body": {
+      "startTime": "2026-07-01T10:00:00Z",
+      "endTime": "2026-07-01T10:10:00Z",
+      "coarseStepSec": 60.0,
+      "fineStepSec": 1.0,
+      "satelliteIds": [
+        1
+      ],
+      "preGuardSec": 0.0,
+      "postGuardSec": 0.0,
+      "allowedGapSec": 0.0,
+      "satelliteIllumination": "ANY",
+      "stations": [
+        {
+          "stationId": "DEMO-STATION",
+          "minElevationDeg": 0.0,
+          "maxElevationDeg": 90.0
+        }
+      ],
+      "links": [
+        {
+          "satelliteId": 1,
+          "stationId": "DEMO-STATION"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "POST /api/v1/space/downlink/validate-window",
+    "method": "POST",
+    "path": "/api/v1/space/downlink/validate-window",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation14.json"
+    ],
+    "body": {
+      "startTime": "2026-07-01T10:00:00Z",
+      "endTime": "2026-07-01T10:10:00Z",
+      "coarseStepSec": 60.0,
+      "fineStepSec": 1.0,
+      "satelliteIds": [
+        1
+      ],
+      "preGuardSec": 0.0,
+      "postGuardSec": 0.0,
+      "allowedGapSec": 0.0,
+      "satelliteIllumination": "ANY",
+      "stations": [
+        {
+          "stationId": "DEMO-STATION",
+          "minElevationDeg": 0.0,
+          "maxElevationDeg": 90.0
+        }
+      ],
+      "links": [
+        {
+          "satelliteId": 1,
+          "stationId": "DEMO-STATION"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "POST /api/v1/space/visibility/plan",
+    "method": "POST",
+    "path": "/api/v1/space/visibility/plan",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation15.json"
+    ],
+    "body": {
+      "observerSatelliteIds": [
+        1
+      ],
+      "targetIds": [
+        2
+      ],
+      "belongs": [],
+      "minWeight": null,
+      "maxWeight": null,
+      "epochStartTime": null,
+      "epochEndTime": null,
+      "minTleEpochCode": null,
+      "maxApproximationDays": null,
+      "excludeNameRegex": null,
+      "startTime": "2026-07-01T10:00:00Z",
+      "endTime": "2026-07-01T10:10:00Z",
+      "coarseStepSec": 60.0,
+      "fineStepSec": 1.0,
+      "illuminationConstraint": null,
+      "observationConstraints": [],
+      "winToolReport": false
+    }
+  },
+  {
+    "operation": "POST /api/v1/space/visibility/tasks",
+    "method": "POST",
+    "path": "/api/v1/space/visibility/tasks",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation16.json"
+    ],
+    "body": {
+      "observerSatelliteIds": [
+        1
+      ],
+      "targetIds": [
+        2
+      ],
+      "belongs": [],
+      "minWeight": null,
+      "maxWeight": null,
+      "epochStartTime": null,
+      "epochEndTime": null,
+      "minTleEpochCode": null,
+      "maxApproximationDays": null,
+      "excludeNameRegex": null,
+      "startTime": "2026-07-01T10:00:00Z",
+      "endTime": "2026-07-01T10:10:00Z",
+      "coarseStepSec": 60.0,
+      "fineStepSec": 1.0,
+      "illuminationConstraint": null,
+      "observationConstraints": [],
+      "winToolReport": false
+    }
+  },
+  {
+    "operation": "GET /api/v1/space/visibility/tasks/{taskId}",
+    "method": "GET",
+    "path": "/api/v1/space/visibility/tasks/{taskId}",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+    "method": "GET",
+    "path": "/api/v1/space/visibility/tasks/{taskId}/result",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "DELETE /api/v1/space/visibility/tasks/{taskId}",
+    "method": "DELETE",
+    "path": "/api/v1/space/visibility/tasks/{taskId}",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "DELETE"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/space/visibility/task-results",
+    "method": "GET",
+    "path": "/api/v1/space/visibility/task-results",
+    "query": "pageNumber=999999&pageSize=200",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/space/visibility/task-results/{id}",
+    "method": "GET",
+    "path": "/api/v1/space/visibility/task-results/{id}",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "PUT /api/v1/space/visibility/task-results/{id}",
+    "method": "PUT",
+    "path": "/api/v1/space/visibility/task-results/{id}",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "PUT",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation22.json"
+    ],
+    "body": {
+      "remark": ""
+    }
+  },
+  {
+    "operation": "PUT /api/v1/space/visibility/task-results/{id}/selection",
+    "method": "PUT",
+    "path": "/api/v1/space/visibility/task-results/{id}/selection",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "PUT",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation23.json"
+    ],
+    "body": {
+      "selections": [
+        {
+          "targetId": "2",
+          "targetName": "演示目标星（非生产资料）",
+          "observerSatelliteIds": [
+            "1"
+          ],
+          "observerSatelliteNames": [
+            "演示观测星（非生产资料）"
+          ],
+          "arcs": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:10:00.000Z",
+              "observerIlluminations": [
+                {
+                  "satelliteId": "1",
+                  "satelliteName": "演示观测星（非生产资料）",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                }
+              ],
+              "targetIllumination": {
+                "targetId": "2",
+                "targetName": "演示目标星（非生产资料）",
+                "state": "SUNLIT",
+                "stateName": "阳照"
+              },
+              "illuminationSegments": [
+                {
+                  "startTime": "2026-07-01T10:00:00.000Z",
+                  "endTime": "2026-07-01T10:10:00.000Z",
+                  "observerIlluminations": [
+                    {
+                      "satelliteId": "1",
+                      "satelliteName": "演示观测星（非生产资料）",
+                      "state": "SUNLIT",
+                      "stateName": "阳照"
+                    }
+                  ],
+                  "targetIllumination": {
+                    "targetId": "2",
+                    "targetName": "演示目标星（非生产资料）",
+                    "state": "SUNLIT",
+                    "stateName": "阳照"
+                  },
+                  "durationSec": 600.0
+                }
+              ],
+              "durationSec": 600.0
+            }
+          ],
+          "observationType": "SINGLE",
+          "observationTypeName": "单星观测",
+          "conciseSummary": "任务摘要：A(600.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)",
+          "targetNorad": "null",
+          "targetWeightKg": 120.0
+        }
+      ]
+    }
+  },
+  {
+    "operation": "DELETE /api/v1/space/visibility/task-results/{id}",
+    "method": "DELETE",
+    "path": "/api/v1/space/visibility/task-results/{id}",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "DELETE"
+    ],
+    "body": null
+  },
+  {
+    "operation": "POST /api/v1/ballistic/files",
+    "method": "POST",
+    "path": "/api/v1/ballistic/files",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-F",
+      "file=@test-data/reference/ballistic/trajectory-0.1s-standard.csv"
+    ],
+    "body": null
+  },
+  {
+    "operation": "POST /api/v1/ballistic/files/register-result",
+    "method": "POST",
+    "path": "/api/v1/ballistic/files/register-result",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation26.json"
+    ],
+    "body": {
+      "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-2236795664842838380\\T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_072929_428.csv",
+      "taskName": "T04-retime",
+      "targetId": "RETIMED-TGT"
+    }
+  },
+  {
+    "operation": "GET /api/v1/ballistic/files/{fileId}/preview",
+    "method": "GET",
+    "path": "/api/v1/ballistic/files/{fileId}/preview",
+    "query": "page=999&limit=500",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "GET /api/v1/ballistic/files/{fileId}/download",
+    "method": "GET",
+    "path": "/api/v1/ballistic/files/{fileId}/download",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "POST /api/v1/ballistic/payloads/preview",
+    "method": "POST",
+    "path": "/api/v1/ballistic/payloads/preview",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation29.json"
+    ],
+    "body": {
+      "payloadId": "A01-SPACE",
+      "payloadName": "全面验收载荷",
+      "payloadType": "SPACE",
+      "minDistanceKm": 0,
+      "maxDistanceKm": 0,
+      "azimuthMinDeg": 0,
+      "azimuthMaxDeg": 360,
+      "elevationMinDeg": -90,
+      "elevationMaxDeg": 90,
+      "angleRateDegPerSec": 0,
+      "sunAvoidHalfAngleDeg": 0,
+      "startupAngleRateDegPerSec": 0
+    }
+  },
+  {
+    "operation": "GET /api/orbit/health",
+    "method": "GET",
+    "path": "/api/orbit/health",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "POST /api/orbit/visibility/search",
+    "method": "POST",
+    "path": "/api/orbit/visibility/search",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation31.json"
+    ],
+    "body": {
+      "ballistics": [
+        {
+          "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\uploads\\upload-6761020315806561503.csv",
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元"
+        },
+        {
+          "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\uploads\\upload-6761020315806561503.csv",
+          "targetId": "TGT-002",
+          "targetName": "真实弹道独立发射历元",
+          "baseLaunchUTC": "2026/07/01 07:57:10.000"
+        }
+      ],
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 3,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 1,
+      "orbitModel": "J2_NUMERICAL",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-1",
+              "payloadName": "基准载荷1",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            },
+            {
+              "payloadId": "PAYLOAD-2",
+              "payloadName": "基准载荷2",
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0,
+              "sunExclusionAngleDeg": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "operation": "GET /api/trajectory/health",
+    "method": "GET",
+    "path": "/api/trajectory/health",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "GET"
+    ],
+    "body": null
+  },
+  {
+    "operation": "POST /api/trajectory/fit/package102",
+    "method": "POST",
+    "path": "/api/trajectory/fit/package102",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation33.json"
+    ],
+    "body": {
+      "taskName": "defaultFitTask",
+      "taskStartTime": "2026-07-01 07:56:55.000",
+      "taskEndTime": "2026-07-01 07:57:10.000",
+      "interpolationStepSec": 0.5,
+      "package102": [
+        {
+          "track_tgt_id": "TGT-001",
+          "tack3d_time_code": "2026-07-01 07:57:00.000",
+          "tack3d_tgt_pos_x": "70000000",
+          "tack3d_tgt_pos_y": "0",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-001",
+          "tack3d_time_code": "2026-07-01 07:57:01.000",
+          "tack3d_tgt_pos_x": "70010000",
+          "tack3d_tgt_pos_y": "1000",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-001",
+          "tack3d_time_code": "2026-07-01 07:57:02.000",
+          "tack3d_tgt_pos_x": "70020000",
+          "tack3d_tgt_pos_y": "2000",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-001",
+          "tack3d_time_code": "2026-07-01 07:57:03.000",
+          "tack3d_tgt_pos_x": "70030000",
+          "tack3d_tgt_pos_y": "3000",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-002",
+          "tack3d_time_code": "2026-07-01 07:57:00.000",
+          "tack3d_tgt_pos_x": "68000000",
+          "tack3d_tgt_pos_y": "100000",
+          "tack3d_tgt_pos_z": "50000",
+          "tack3d_tgt_vel_x": "0",
+          "tack3d_tgt_vel_y": "76000000",
+          "tack3d_tgt_vel_z": "100000",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x02",
+          "prop_tgt_shape_8": "0xFF",
+          "prop_tgt_flight_phase_8": "0xFF",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "68000000",
+          "launch_pos_y": "-280000",
+          "launch_pos_z": "49500",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "68000000",
+          "impact_pos_y": "860000",
+          "impact_pos_z": "51000",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-002",
+          "tack3d_time_code": "2026-07-01 07:57:01.000",
+          "tack3d_tgt_pos_x": "68000000",
+          "tack3d_tgt_pos_y": "176000",
+          "tack3d_tgt_pos_z": "50100",
+          "tack3d_tgt_vel_x": "0",
+          "tack3d_tgt_vel_y": "76000000",
+          "tack3d_tgt_vel_z": "100000",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x02",
+          "prop_tgt_shape_8": "0xFF",
+          "prop_tgt_flight_phase_8": "0xFF",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "68000000",
+          "launch_pos_y": "-280000",
+          "launch_pos_z": "49500",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "68000000",
+          "impact_pos_y": "860000",
+          "impact_pos_z": "51000",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-002",
+          "tack3d_time_code": "2026-07-01 07:57:02.000",
+          "tack3d_tgt_pos_x": "68000000",
+          "tack3d_tgt_pos_y": "252000",
+          "tack3d_tgt_pos_z": "50200",
+          "tack3d_tgt_vel_x": "0",
+          "tack3d_tgt_vel_y": "76000000",
+          "tack3d_tgt_vel_z": "100000",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x02",
+          "prop_tgt_shape_8": "0xFF",
+          "prop_tgt_flight_phase_8": "0xFF",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "68000000",
+          "launch_pos_y": "-280000",
+          "launch_pos_z": "49500",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "68000000",
+          "impact_pos_y": "860000",
+          "impact_pos_z": "51000",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "TGT-002",
+          "tack3d_time_code": "2026-07-01 07:57:03.000",
+          "tack3d_tgt_pos_x": "68000000",
+          "tack3d_tgt_pos_y": "328000",
+          "tack3d_tgt_pos_z": "50300",
+          "tack3d_tgt_vel_x": "0",
+          "tack3d_tgt_vel_y": "76000000",
+          "tack3d_tgt_vel_z": "100000",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x02",
+          "prop_tgt_shape_8": "0xFF",
+          "prop_tgt_flight_phase_8": "0xFF",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "68000000",
+          "launch_pos_y": "-280000",
+          "launch_pos_z": "49500",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10.000",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "68000000",
+          "impact_pos_y": "860000",
+          "impact_pos_z": "51000",
+          "impact_pos_unit": "0.1m"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "POST /api/trajectory/simulate",
+    "method": "POST",
+    "path": "/api/trajectory/simulate",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation34.json"
+    ],
+    "body": {
+      "taskName": "defaultSimTask",
+      "targetId": "SIM-001",
+      "launchTimeUtc": "2026-06-04 04:00:00.000",
+      "impactTimeUtc": "2026-06-04 04:42:55.000",
+      "taskStartTime": "2026-06-04 04:00:00.000",
+      "taskEndTime": "2026-06-04 04:42:55.000",
+      "launchPointX": 2167790.227,
+      "launchPointY": 4775481.109,
+      "launchPointZ": 3618557.253,
+      "launchPointCoordFrame": "J2000",
+      "launchPointUnit": "m",
+      "impactPointX": 3578635.76,
+      "impactPointY": 3522525.227,
+      "impactPointZ": 3919735.591,
+      "impactPointCoordFrame": "J2000",
+      "impactPointUnit": "m",
+      "outputPointDurationSec": 60,
+      "phaseEvents": []
+    }
+  },
+  {
+    "operation": "POST /api/trajectory/retime",
+    "method": "POST",
+    "path": "/api/trajectory/retime",
+    "query": "",
+    "arguments": [
+      "--fail-with-body",
+      "-X",
+      "POST",
+      "-H",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@verification/A02/requests/operation35.json"
+    ],
+    "body": {
+      "taskName": "T04-retime",
+      "targetId": "RETIMED-TGT",
+      "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-1187770930413257334\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_072929_162.csv",
+      "launchTimeUtc": "2026-07-02 07:57:00.000"
+    }
+  }
+]

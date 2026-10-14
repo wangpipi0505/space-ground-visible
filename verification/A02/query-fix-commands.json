@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "scope": "仅必要生成、py_compile、合同样例/路由/ref、原限定回归及I07/I08检查；无新curl/业务/压测。",
+  "commands": [
+    {
+      "name": "generate",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "verification/A02/build_contract.py"
+      ],
+      "startTime": "2026-10-14T01:59:08.884834+00:00",
+      "endTime": "2026-10-14T01:59:09.119988+00:00",
+      "exitCode": 0,
+      "stdout": "query-fix-generate.txt",
+      "stdoutSha256": "ae53f0d212b20022a57806b4e5e71638fff75feb1da0a2c1f7a226ab032c075c",
+      "stderr": "query-fix-generate-stderr.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "compile",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "py_compile",
+        "verification/A02/build_contract.py",
+        "verification/A02/validate_contract.py",
+        "verification/A02/check_review_fixes.py",
+        "verification/A02/check_ephemeris_copy.py",
+        "verification/A02/check_query_contract.py",
+        "verification/A02/run_query_fix.py",
+        "verification/A02/audit_query_fix.py"
+      ],
+      "startTime": "2026-10-14T01:59:09.120614+00:00",
+      "endTime": "2026-10-14T01:59:09.201615+00:00",
+      "exitCode": 0,
+      "stdout": "query-fix-compile.txt",
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "query-fix-compile-stderr.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "contract",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "verification/A02/validate_contract.py"
+      ],
+      "startTime": "2026-10-14T01:59:09.202092+00:00",
+      "endTime": "2026-10-14T01:59:09.904079+00:00",
+      "exitCode": 0,
+      "stdout": "query-fix-contract.txt",
+      "stdoutSha256": "ee2cbc8a09100ce964d4c7d6d8e12ecf24ba659899bc5c0bc52a59ee2e20c98e",
+      "stderr": "query-fix-contract-stderr.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "review-fixes",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "verification/A02/check_review_fixes.py"
+      ],
+      "startTime": "2026-10-14T01:59:09.905266+00:00",
+      "endTime": "2026-10-14T01:59:10.812168+00:00",
+      "exitCode": 0,
+      "stdout": "query-fix-review-fixes.txt",
+      "stdoutSha256": "30d4932db91ae7894272e0fe01fe979afd981e933080c7ef382867af4f76b5dc",
+      "stderr": "query-fix-review-fixes-stderr.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ephemeris-copy",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "verification/A02/check_ephemeris_copy.py"
+      ],
+      "startTime": "2026-10-14T01:59:10.812725+00:00",
+      "endTime": "2026-10-14T01:59:10.867391+00:00",
+      "exitCode": 0,
+      "stdout": "query-fix-ephemeris-copy.txt",
+      "stdoutSha256": "4e818c580a0010a84f162fedf4c165f2182f5de112ee410a1cf604321f54bdf3",
+      "stderr": "query-fix-ephemeris-copy-stderr.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "query-contract",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "verification/A02/check_query_contract.py"
+      ],
+      "startTime": "2026-10-14T01:59:10.868062+00:00",
+      "endTime": "2026-10-14T01:59:11.574491+00:00",
+      "exitCode": 0,
+      "stdout": "query-fix-query-contract.txt",
+      "stdoutSha256": "433730f09cada0743e474b0af49e255ae59c35e810415fdf08f7237a6fa81e17",
+      "stderr": "query-fix-query-contract-stderr.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "verification/A02/audit_query_fix.py"
+  ],
+  "startTime": "2026-10-14T02:00:59.111796+00:00",
+  "endTime": "2026-10-14T02:00:59.314101+00:00",
+  "exitCode": 0,
+  "stdout": "query-fix-byte-audit.txt",
+  "stdoutSha256": "c5fbeeb550a522360b73e0a9bcd84a81b9623c06e519c3a1d2db47a355df69f2",
+  "stderr": "query-fix-byte-audit-stderr.txt",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

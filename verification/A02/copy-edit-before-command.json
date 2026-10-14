@@ -1,0 +1,16 @@
+{
+  "name": "copy-edit-before",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "verification/A02/check_ephemeris_copy.py"
+  ],
+  "startTime": "2026-10-14T01:43:52.411165+00:00",
+  "endTime": "2026-10-14T01:43:52.472709+00:00",
+  "exitCode": 1,
+  "stdout": "copy-edit-before.txt",
+  "stderr": "copy-edit-before-stderr.txt",
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "770c9154e40e3ff064a32aa1f428375c7240ecf69fc4e20055f60666591f50aa"
+}

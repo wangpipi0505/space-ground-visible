@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scope": "只读交付描述/正文与现行筛选、风险计数、传播尝试源码；不是新业务测试",
+  "publicDescription": "规划候选统计：无显式目标ID时按目录条件逐层统计；显式目标ID快照时五个候选计数均为selectedTargetCount，不重新叠加目录筛选。星历超过建议时长仅记风险告警，不作为硬筛选排除，仍尝试传播；候选数量不等于传播成功数。",
+  "staleSourceCommentPreservedOnlyInInventory": true,
+  "sourceChecks": [
+    "风险计数与目标集合分离",
+    "风险后未修改目标集合",
+    "逐目标仍尝试两端传播",
+    "发射日期不参与目录筛选"
+  ],
+  "sourceSha256": {
+    "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningFacadeService.java": "9b392a705fb18449b24c6b79f52cf6eff732069efe2b6664a7bbe23bf5a06360",
+    "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ReferenceDataService.java": "974a2771b4140f50c50bf74ccc70a588078917a861605b72d043ff56669c90cd"
+  }
+}

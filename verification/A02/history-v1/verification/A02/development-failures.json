@@ -1,0 +1,30 @@
+{
+  "scope": "辅助脚本编制阶段真实工具输出转录，仅保留失败原因及退出码；不是重新运行失败，也不覆盖最终命令原输出。",
+  "failures": [
+    {
+      "command": "python verification/A02/validate_contract.py",
+      "exitCode": 1,
+      "output": "TypeError: 'int' object is not iterable",
+      "cause": "误把A01 summary.activeRoutes计数当列表，已改用routeMatrix实际方法路径。"
+    },
+    {
+      "command": "python verification/A02/validate_contract.py",
+      "exitCode": 1,
+      "output": "controllerOperations=33；defaults.orbitMaxApproximationDays: integer 收到 float",
+      "cause": "初始注解扫描未跨行，defaults实现明确(double)转换；已跨行抽取并改number/double。"
+    },
+    {
+      "command": "python verification/A02/validate_contract.py",
+      "exitCode": 1,
+      "output": "Markdown链接不存在 docs/接口文档.md ../verification/A02/验证报告.md；之后报告阶段environment.json/commands.json尚未生成也曾报告缺链接。",
+      "cause": "阶段性交付尚未写齐，最终全量命令在所有链接目标存在后重跑。"
+    },
+    {
+      "command": "python verification/A02/run_verification.py",
+      "exitCode": 1,
+      "output": "SyntaxError: unmatched ')'",
+      "cause": "新辅助记录器列表表达式多一个右括号；已修正，并执行全四脚本py_compile与全流程exit0。"
+    }
+  ],
+  "finalEvidence": "commands.json及validation-result.json；最终未解决失败为0。"
+}

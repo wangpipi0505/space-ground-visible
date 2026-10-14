@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "verification/A02/check_query_contract.py"
+  ],
+  "startTime": "2026-10-14T01:57:36.395832+00:00",
+  "endTime": "2026-10-14T01:57:37.090875+00:00",
+  "exitCode": 1,
+  "stdout": "query-fix-before.txt",
+  "stdoutSha256": "10b0c0ce4cecfba9a1c4d8b0341c2590c0fba33999aeb7bc454270475169ca3a",
+  "stderr": "query-fix-before-stderr.txt",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "scope": "A02 文档及核验辅助限定覆盖；不证明新的业务 HTTP 成功。",
+  "results": [
+    {
+      "finding": "I01",
+      "passed": true,
+      "details": {
+        "schemas": 3,
+        "httpDefaults": 0,
+        "controllerPresenceBranches": 3
+      }
+    },
+    {
+      "finding": "I02",
+      "passed": true,
+      "details": {
+        "cases": [
+          "satelliteIds/缺失",
+          "satelliteIds/null",
+          "satelliteIds/空数组",
+          "satelliteIds/非空",
+          "stations/缺失",
+          "stations/null",
+          "stations/空数组",
+          "stations/非空",
+          "links/缺失",
+          "links/null",
+          "links/空数组",
+          "links/非空"
+        ],
+        "sourceChecks": 3
+      }
+    },
+    {
+      "finding": "I03",
+      "passed": true,
+      "details": {
+        "legacyIgnoredFields": [
+          "minDistanceKm",
+          "maxDistanceKm",
+          "sunAvoidHalfAngleDeg"
+        ],
+        "strictRejectedCases": [
+          "StandardPayloadRequest/minDistanceKm/-1",
+          "StandardPayloadRequest/maxDistanceKm/-1",
+          "StandardPayloadRequest/sunAvoidHalfAngleDeg/-1",
+          "StandardPayloadRequest/sunAvoidHalfAngleDeg/181",
+          "PayloadProfileRequest/minDistanceKm/-1",
+          "PayloadProfileRequest/maxDistanceKm/-1",
+          "PayloadProfileRequest/sunAvoidHalfAngleDeg/-1",
+          "PayloadProfileRequest/sunAvoidHalfAngleDeg/181"
+        ],
+        "boundary": "共享 PayloadDef 是兼容宽 DTO；标准分支及跨字段约束以源码/正文为准，不能冒充全部机器校验。"
+      }
+    },
+    {
+      "finding": "I04",
+      "passed": true,
+      "details": {
+        "descriptionsScanned": 842,
+        "polluted": 0,
+        "adjacentLongJavadocPreserved": true
+      }
+    },
+    {
+      "finding": "I05",
+      "passed": true,
+      "details": {
+        "logs": 10,
+        "mismatches": []
+      }
+    },
+    {
+      "finding": "I06",
+      "passed": true,
+      "details": {
+        "cases": [
+          {
+            "actualContentType": "text/csv; charset=UTF-8",
+            "matched": "text/csv"
+          },
+          {
+            "actualContentType": "text/plain",
+            "matched": "*/*"
+          },
+          {
+            "actualContentType": "application/vnd.ms-excel",
+            "matched": "*/*"
+          },
+          {
+            "actualContentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "matched": "*/*"
+          }
+        ],
+        "specificBeforeRange": true
+      }
+    },
+    {
+      "finding": "M01",
+      "passed": true,
+      "details": {
+        "mutatedMissingField": "ObservationConstraintRequest.minDurationSec",
+        "absentFromA01AllSamples": true,
+        "inheritedDeletion": "CoverageWindowResponse <- WindowResponse.durationSec",
+        "mutationsDetected": 2
+      }
+    },
+    {
+      "finding": "M02",
+      "passed": true,
+      "details": {
+        "validOriginalBytes": true,
+        "transportMutationsRejected": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,5040 @@
+{
+  "classes": {
+    "SpacePayloadConfigurationRequest": {
+      "parent": null,
+      "fields": {
+        "minDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。",
+          "line": 35,
+          "public": false,
+          "getter": true
+        },
+        "maxDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。",
+          "line": 37,
+          "public": false,
+          "getter": true
+        },
+        "minDistanceM": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  @deprecated 请改用 {@link #minDistanceKm}，该字段始终按米解释。",
+          "line": 39,
+          "public": false,
+          "getter": true
+        },
+        "maxDistanceM": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  @deprecated 请改用 {@link #minDistanceKm}，该字段始终按米解释。 /\n        private Double minDistanceM;\n        /  @deprecated 请改用 {@link #maxDistanceKm}，该字段始终按米解释。",
+          "line": 41,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  @deprecated 请改用 {@link #minDistanceKm}，该字段始终按米解释。 /\n        private Double minDistanceM;\n        /  @deprecated 请改用 {@link #maxDistanceKm}，该字段始终按米解释。 /\n        private Double maxDistanceM;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。",
+          "line": 43,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  @deprecated 请改用 {@link #minDistanceKm}，该字段始终按米解释。 /\n        private Double minDistanceM;\n        /  @deprecated 请改用 {@link #maxDistanceKm}，该字段始终按米解释。 /\n        private Double maxDistanceM;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。",
+          "line": 45,
+          "public": false,
+          "getter": true
+        },
+        "elevationMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  @deprecated 请改用 {@link #minDistanceKm}，该字段始终按米解释。 /\n        private Double minDistanceM;\n        /  @deprecated 请改用 {@link #maxDistanceKm}，该字段始终按米解释。 /\n        private Double maxDistanceM;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。",
+          "line": 47,
+          "public": false,
+          "getter": true
+        },
+        "elevationMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  @deprecated 请改用 {@link #minDistanceKm}，该字段始终按米解释。 /\n        private Double minDistanceM;\n        /  @deprecated 请改用 {@link #maxDistanceKm}，该字段始终按米解释。 /\n        private Double maxDistanceM;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 /\n        private Double elevationMinDeg;\n        /  LVLH俯仰上限，度；必须成对且下限<上限≤90。",
+          "line": 49,
+          "public": false,
+          "getter": true
+        },
+        "angleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "@deprecated 请改用 {@link #minDistanceKm}，该字段始终按米解释。 /\n        private Double minDistanceM;\n        /  @deprecated 请改用 {@link #maxDistanceKm}，该字段始终按米解释。 /\n        private Double maxDistanceM;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 /\n        private Double elevationMinDeg;\n        /  LVLH俯仰上限，度；必须成对且下限<上限≤90。 /\n        private Double elevationMaxDeg;\n        /  跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。",
+          "line": 51,
+          "public": false,
+          "getter": true
+        },
+        "sunAvoidHalfAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "@deprecated 请改用 {@link #maxDistanceKm}，该字段始终按米解释。 /\n        private Double maxDistanceM;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 /\n        private Double elevationMinDeg;\n        /  LVLH俯仰上限，度；必须成对且下限<上限≤90。 /\n        private Double elevationMaxDeg;\n        /  跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。 /\n        private Double angleRateDegPerSec;\n        /  太阳回避半角，度；必填有限0..180，0关闭。",
+          "line": 53,
+          "public": false,
+          "getter": true
+        },
+        "startupAngleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 /\n        private Double elevationMinDeg;\n        /  LVLH俯仰上限，度；必须成对且下限<上限≤90。 /\n        private Double elevationMaxDeg;\n        /  跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。 /\n        private Double angleRateDegPerSec;\n        /  太阳回避半角，度；必填有限0..180，0关闭。 /\n        private Double sunAvoidHalfAngleDeg;\n        /  启动角速度，度/秒；null/-1禁用，其余非负有限，当前仅保存元数据。",
+          "line": 55,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "SpacePayloadConfigurationResponse": {
+      "parent": null,
+      "fields": {
+        "configured": {
+          "java": "boolean",
+          "defaultExpr": null,
+          "description": "",
+          "line": 83,
+          "public": false,
+          "getter": true
+        },
+        "payloadType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 84,
+          "public": false,
+          "getter": true
+        },
+        "minDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 85,
+          "public": false,
+          "getter": true
+        },
+        "maxDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 86,
+          "public": false,
+          "getter": true
+        },
+        "minDistanceM": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 87,
+          "public": false,
+          "getter": true
+        },
+        "maxDistanceM": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 88,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 89,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 90,
+          "public": false,
+          "getter": true
+        },
+        "elevationMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 91,
+          "public": false,
+          "getter": true
+        },
+        "elevationMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 92,
+          "public": false,
+          "getter": true
+        },
+        "angleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 93,
+          "public": false,
+          "getter": true
+        },
+        "sunAvoidHalfAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 94,
+          "public": false,
+          "getter": true
+        },
+        "startupAngleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 95,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "PayloadProfilesResponse": {
+      "parent": null,
+      "fields": {
+        "activePayloadType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 166,
+          "public": false,
+          "getter": true
+        },
+        "profiles": {
+          "java": "List<PayloadProfileResponse>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 167,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "PayloadProfileRequest": {
+      "parent": null,
+      "fields": {
+        "payloadType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 183,
+          "public": false,
+          "getter": true
+        },
+        "minDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。",
+          "line": 185,
+          "public": false,
+          "getter": true
+        },
+        "maxDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。",
+          "line": 187,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。",
+          "line": 189,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。",
+          "line": 191,
+          "public": false,
+          "getter": true
+        },
+        "elevationMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。",
+          "line": 193,
+          "public": false,
+          "getter": true
+        },
+        "elevationMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 /\n        private Double elevationMinDeg;\n        /  LVLH俯仰上限，度；必须成对且下限<上限≤90。",
+          "line": 195,
+          "public": false,
+          "getter": true
+        },
+        "angleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 /\n        private Double minDistanceKm;\n        /  最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 /\n        private Double elevationMinDeg;\n        /  LVLH俯仰上限，度；必须成对且下限<上限≤90。 /\n        private Double elevationMaxDeg;\n        /  跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。",
+          "line": 197,
+          "public": false,
+          "getter": true
+        },
+        "sunAvoidHalfAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 /\n        private Double maxDistanceKm;\n        /  LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 /\n        private Double elevationMinDeg;\n        /  LVLH俯仰上限，度；必须成对且下限<上限≤90。 /\n        private Double elevationMaxDeg;\n        /  跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。 /\n        private Double angleRateDegPerSec;\n        /  太阳回避半角，度；必填有限0..180，0关闭。",
+          "line": 199,
+          "public": false,
+          "getter": true
+        },
+        "startupAngleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 /\n        private Double azimuthMinDeg;\n        /  LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 /\n        private Double azimuthMaxDeg;\n        /  LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 /\n        private Double elevationMinDeg;\n        /  LVLH俯仰上限，度；必须成对且下限<上限≤90。 /\n        private Double elevationMaxDeg;\n        /  跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。 /\n        private Double angleRateDegPerSec;\n        /  太阳回避半角，度；必填有限0..180，0关闭。 /\n        private Double sunAvoidHalfAngleDeg;\n        /  启动角速度，度/秒；null/-1禁用，其余非负有限，当前仅保存元数据。",
+          "line": 201,
+          "public": false,
+          "getter": true
+        },
+        "sensorFullConeAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 202,
+          "public": false,
+          "getter": true
+        },
+        "maxDetectRangeKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 203,
+          "public": false,
+          "getter": true
+        },
+        "sunExclusionAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 204,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "PayloadProfileResponse": {
+      "parent": null,
+      "fields": {
+        "payloadType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 236,
+          "public": false,
+          "getter": true
+        },
+        "legacyGroundProfile": {
+          "java": "boolean",
+          "defaultExpr": null,
+          "description": "true 表示来自历史天底锥角配置，前端需要提示用户按统一字段重新保存。",
+          "line": 238,
+          "public": false,
+          "getter": true
+        },
+        "minDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 239,
+          "public": false,
+          "getter": true
+        },
+        "maxDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 240,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 241,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 242,
+          "public": false,
+          "getter": true
+        },
+        "elevationMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 243,
+          "public": false,
+          "getter": true
+        },
+        "elevationMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 244,
+          "public": false,
+          "getter": true
+        },
+        "angleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 245,
+          "public": false,
+          "getter": true
+        },
+        "sunAvoidHalfAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 246,
+          "public": false,
+          "getter": true
+        },
+        "startupAngleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 247,
+          "public": false,
+          "getter": true
+        },
+        "sensorFullConeAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 248,
+          "public": false,
+          "getter": true
+        },
+        "maxDetectRangeKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 249,
+          "public": false,
+          "getter": true
+        },
+        "sunExclusionAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 250,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "PlanningTaskStatusResponse": {
+      "parent": null,
+      "fields": {
+        "taskId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 293,
+          "public": false,
+          "getter": true
+        },
+        "status": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 294,
+          "public": false,
+          "getter": true
+        },
+        "totalPairs": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 295,
+          "public": false,
+          "getter": true
+        },
+        "completedPairs": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 296,
+          "public": false,
+          "getter": true
+        },
+        "totalTargets": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 297,
+          "public": false,
+          "getter": true
+        },
+        "completedTargets": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 298,
+          "public": false,
+          "getter": true
+        },
+        "errorMessage": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 299,
+          "public": false,
+          "getter": true
+        },
+        "createdAt": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 300,
+          "public": false,
+          "getter": true
+        },
+        "completedAt": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 301,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "VisibilityTaskResultSummaryResponse": {
+      "parent": null,
+      "fields": {
+        "id": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 348,
+          "public": false,
+          "getter": true
+        },
+        "taskId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 349,
+          "public": false,
+          "getter": true
+        },
+        "taskType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 350,
+          "public": false,
+          "getter": true
+        },
+        "status": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 351,
+          "public": false,
+          "getter": true
+        },
+        "totalPairs": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 352,
+          "public": false,
+          "getter": true
+        },
+        "completedPairs": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 353,
+          "public": false,
+          "getter": true
+        },
+        "errorMessage": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 354,
+          "public": false,
+          "getter": true
+        },
+        "remark": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 355,
+          "public": false,
+          "getter": true
+        },
+        "createTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 356,
+          "public": false,
+          "getter": true
+        },
+        "completeTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 357,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "VisibilityTaskResultDetailResponse": {
+      "parent": "VisibilityTaskResultSummaryResponse",
+      "fields": {
+        "requestJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 393,
+          "public": false,
+          "getter": true
+        },
+        "resultJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 394,
+          "public": false,
+          "getter": true
+        },
+        "skippedPairsJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 395,
+          "public": false,
+          "getter": true
+        },
+        "selectionJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "用户在结果列表勾选目标后“确认选择”提交的明细原文;未做过确认的历史记录为 null。",
+          "line": 397,
+          "public": false,
+          "omit": "空值省略",
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "VisibilityTaskResultRemarkRequest": {
+      "parent": null,
+      "fields": {
+        "remark": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 423,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "VisibilityTaskResultSelectionRequest": {
+      "parent": null,
+      "fields": {
+        "planningWindow": {
+          "java": "com.fasterxml.jackson.databind.JsonNode",
+          "defaultExpr": null,
+          "description": "规划时间段。",
+          "line": 432,
+          "public": false,
+          "getter": true
+        },
+        "mergedTimeRange": {
+          "java": "com.fasterxml.jackson.databind.JsonNode",
+          "defaultExpr": null,
+          "description": "规划时间段。 /\n        private com.fasterxml.jackson.databind.JsonNode planningWindow;\n        /  所有勾选弧段的并集(前端合并),含 segments 数组与 totalDurationSec。",
+          "line": 434,
+          "public": false,
+          "getter": true
+        },
+        "selections": {
+          "java": "com.fasterxml.jackson.databind.JsonNode",
+          "defaultExpr": null,
+          "description": "规划时间段。 /\n        private com.fasterxml.jackson.databind.JsonNode planningWindow;\n        /  所有勾选弧段的并集(前端合并),含 segments 数组与 totalDurationSec。 /\n        private com.fasterxml.jackson.databind.JsonNode mergedTimeRange;\n        /  逐目标勾选明细,每个元素含目标信息、共视时段与逐星观测统计。",
+          "line": 436,
+          "public": false,
+          "getter": true
+        },
+        "remark": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "规划时间段。 /\n        private com.fasterxml.jackson.databind.JsonNode planningWindow;\n        /  所有勾选弧段的并集(前端合并),含 segments 数组与 totalDurationSec。 /\n        private com.fasterxml.jackson.databind.JsonNode mergedTimeRange;\n        /  逐目标勾选明细,每个元素含目标信息、共视时段与逐星观测统计。 /\n        private com.fasterxml.jackson.databind.JsonNode selections;\n        /  可选备注。",
+          "line": 438,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "VisibilityTaskResultSelectionResponse": {
+      "parent": null,
+      "fields": {
+        "recordId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 452,
+          "public": false,
+          "getter": true
+        },
+        "received": {
+          "java": "boolean",
+          "defaultExpr": null,
+          "description": "",
+          "line": 453,
+          "public": false,
+          "getter": true
+        },
+        "selectionCount": {
+          "java": "int",
+          "defaultExpr": null,
+          "description": "",
+          "line": 454,
+          "public": false,
+          "getter": true
+        },
+        "mergedSegments": {
+          "java": "int",
+          "defaultExpr": null,
+          "description": "",
+          "line": 455,
+          "public": false,
+          "getter": true
+        },
+        "message": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 456,
+          "public": false,
+          "getter": true
+        },
+        "detail": {
+          "java": "VisibilityTaskResultDetailResponse",
+          "defaultExpr": null,
+          "description": "更新后的记录明细(含 selectionJson 原文)。",
+          "line": 458,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "TargetQueryRequest": {
+      "parent": null,
+      "fields": {
+        "targetIds": {
+          "java": "List<Long>",
+          "defaultExpr": "new ArrayList<Long>()",
+          "description": "",
+          "line": 480,
+          "public": false,
+          "getter": true
+        },
+        "belongs": {
+          "java": "List<String>",
+          "defaultExpr": "new ArrayList<String>()",
+          "description": "",
+          "line": 481,
+          "public": false,
+          "getter": true
+        },
+        "minWeight": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 482,
+          "public": false,
+          "getter": true
+        },
+        "maxWeight": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 483,
+          "public": false,
+          "getter": true
+        },
+        "epochStartTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 484,
+          "public": false,
+          "getter": true
+        },
+        "epochEndTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 485,
+          "public": false,
+          "getter": true
+        },
+        "minTleEpochCode": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "目录历元下限，采用 TLE 约定的 YYDDD 五位编码，例如 23340。",
+          "line": 487,
+          "public": false,
+          "getter": true
+        },
+        "maxApproximationDays": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "目录历元下限，采用 TLE 约定的 YYDDD 五位编码，例如 23340。 /\n        private String minTleEpochCode;\n        /  星历超出该天数时仅产生风险提示，不能作为硬排除条件。",
+          "line": 489,
+          "public": false,
+          "getter": true
+        },
+        "planningStartTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "目录历元下限，采用 TLE 约定的 YYDDD 五位编码，例如 23340。 /\n        private String minTleEpochCode;\n        /  星历超出该天数时仅产生风险提示，不能作为硬排除条件。 /\n        private Long maxApproximationDays;\n        /   当前任务的观测开始时间。提供该字段后，服务端会排除尚未发射目标，并计算星历时效风险； 时效风险不会阻断传播尝试。它不是用户可选的轨道历元，而是本次任务的计算时间基准。",
+          "line": 494,
+          "public": false,
+          "getter": true
+        },
+        "planningEndTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "目录历元下限，采用 TLE 约定的 YYDDD 五位编码，例如 23340。 /\n        private String minTleEpochCode;\n        /  星历超出该天数时仅产生风险提示，不能作为硬排除条件。 /\n        private Long maxApproximationDays;\n        /   当前任务的观测开始时间。提供该字段后，服务端会排除尚未发射目标，并计算星历时效风险； 时效风险不会阻断传播尝试。它不是用户可选的轨道历元，而是本次任务的计算时间基准。 /\n        private Instant planningStartTime;\n        /  当前任务的观测结束时间，必须与 {@link #planningStartTime} 成对提供。",
+          "line": 496,
+          "public": false,
+          "getter": true
+        },
+        "excludeNameRegex": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 497,
+          "public": false,
+          "getter": true
+        },
+        "pageNumber": {
+          "java": "long",
+          "defaultExpr": "1L",
+          "description": "",
+          "line": 498,
+          "public": false,
+          "getter": true
+        },
+        "pageSize": {
+          "java": "long",
+          "defaultExpr": "50L",
+          "description": "",
+          "line": 499,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "DownlinkPlanRequest": {
+      "parent": null,
+      "fields": {
+        "startTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 530,
+          "public": false,
+          "getter": true
+        },
+        "endTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 531,
+          "public": false,
+          "getter": true
+        },
+        "coarseStepSec": {
+          "java": "double",
+          "defaultExpr": "60.0",
+          "description": "",
+          "line": 532,
+          "public": false,
+          "getter": true
+        },
+        "fineStepSec": {
+          "java": "double",
+          "defaultExpr": "1.0",
+          "description": "",
+          "line": 533,
+          "public": false,
+          "getter": true
+        },
+        "satelliteIds": {
+          "java": "List<Long>",
+          "defaultExpr": "new ArrayList<Long>()",
+          "description": "",
+          "line": 534,
+          "public": false,
+          "getter": true
+        },
+        "preGuardSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 535,
+          "public": false,
+          "getter": true
+        },
+        "postGuardSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 536,
+          "public": false,
+          "getter": true
+        },
+        "allowedGapSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 537,
+          "public": false,
+          "getter": true
+        },
+        "satelliteIllumination": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 538,
+          "public": false,
+          "getter": true
+        },
+        "stations": {
+          "java": "List<StationConstraintRequest>",
+          "defaultExpr": "new ArrayList<StationConstraintRequest>()",
+          "description": "",
+          "line": 539,
+          "public": false,
+          "getter": true
+        },
+        "links": {
+          "java": "List<SatelliteStationLinkRequest>",
+          "defaultExpr": "new ArrayList<SatelliteStationLinkRequest>()",
+          "description": "",
+          "line": 540,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "StationConstraintRequest": {
+      "parent": null,
+      "fields": {
+        "stationId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 567,
+          "public": false,
+          "getter": true
+        },
+        "minElevationDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 568,
+          "public": false,
+          "getter": true
+        },
+        "maxElevationDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 569,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "SatelliteStationLinkRequest": {
+      "parent": null,
+      "fields": {
+        "satelliteId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 581,
+          "public": false,
+          "getter": true
+        },
+        "stationId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 582,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "DownlinkPlanResponse": {
+      "parent": null,
+      "fields": {
+        "satelliteStationWindows": {
+          "java": "List<SatelliteStationWindowResponse>",
+          "defaultExpr": "new ArrayList<SatelliteStationWindowResponse>()",
+          "description": "",
+          "line": 591,
+          "public": false,
+          "getter": true
+        },
+        "coverageWindows": {
+          "java": "List<CoverageWindowResponse>",
+          "defaultExpr": "new ArrayList<CoverageWindowResponse>()",
+          "description": "",
+          "line": 592,
+          "public": false,
+          "getter": true
+        },
+        "skippedLinks": {
+          "java": "List<SkippedLinkResponse>",
+          "defaultExpr": "new ArrayList<SkippedLinkResponse>()",
+          "description": "",
+          "line": 593,
+          "public": false,
+          "getter": true
+        },
+        "totalSkippedLinks": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 594,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "SkippedLinkResponse": {
+      "parent": null,
+      "fields": {
+        "satelliteId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 611,
+          "public": false,
+          "getter": true
+        },
+        "satelliteName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 612,
+          "public": false,
+          "getter": true
+        },
+        "stationId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 613,
+          "public": false,
+          "getter": true
+        },
+        "stationName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 614,
+          "public": false,
+          "getter": true
+        },
+        "stage": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 615,
+          "public": false,
+          "getter": true
+        },
+        "reason": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 616,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "SatelliteStationWindowResponse": {
+      "parent": null,
+      "fields": {
+        "satelliteId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 641,
+          "public": false,
+          "getter": true
+        },
+        "stationId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 642,
+          "public": false,
+          "getter": true
+        },
+        "windows": {
+          "java": "List<WindowResponse>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 643,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "WindowResponse": {
+      "parent": null,
+      "fields": {
+        "startTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 657,
+          "public": false,
+          "getter": true
+        },
+        "endTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 658,
+          "public": false,
+          "getter": true
+        },
+        "durationSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 659,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "CoverageWindowResponse": {
+      "parent": "WindowResponse",
+      "fields": {
+        "links": {
+          "java": "List<SatelliteStationLinkResponse>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 680,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "SatelliteStationLinkResponse": {
+      "parent": null,
+      "fields": {
+        "satelliteId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 696,
+          "public": false,
+          "getter": true
+        },
+        "stationId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 697,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "WindowValidationResponse": {
+      "parent": null,
+      "fields": {
+        "satisfied": {
+          "java": "boolean",
+          "defaultExpr": null,
+          "description": "",
+          "line": 709,
+          "public": false,
+          "getter": true
+        },
+        "plan": {
+          "java": "DownlinkPlanResponse",
+          "defaultExpr": null,
+          "description": "",
+          "line": 710,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "VisibilityPlanRequest": {
+      "parent": null,
+      "fields": {
+        "observerSatelliteIds": {
+          "java": "List<Long>",
+          "defaultExpr": "new ArrayList<Long>()",
+          "description": "",
+          "line": 722,
+          "public": false,
+          "getter": true
+        },
+        "targetIds": {
+          "java": "List<Long>",
+          "defaultExpr": "new ArrayList<Long>()",
+          "description": "",
+          "line": 723,
+          "public": false,
+          "getter": true
+        },
+        "belongs": {
+          "java": "List<String>",
+          "defaultExpr": "new ArrayList<String>()",
+          "description": "",
+          "line": 724,
+          "public": false,
+          "getter": true
+        },
+        "minWeight": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 725,
+          "public": false,
+          "getter": true
+        },
+        "maxWeight": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 726,
+          "public": false,
+          "getter": true
+        },
+        "epochStartTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 727,
+          "public": false,
+          "getter": true
+        },
+        "epochEndTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 728,
+          "public": false,
+          "getter": true
+        },
+        "minTleEpochCode": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "WinTool 风格的 YYDDD 目录历元下限；为空时不额外收窄旧集成方请求。",
+          "line": 730,
+          "public": false,
+          "getter": true
+        },
+        "maxApproximationDays": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "WinTool 风格的 YYDDD 目录历元下限；为空时不额外收窄旧集成方请求。 /\n        private String minTleEpochCode;\n        /  仅用于星历时效风险判定的建议近似传播天数。",
+          "line": 732,
+          "public": false,
+          "getter": true
+        },
+        "excludeNameRegex": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 733,
+          "public": false,
+          "getter": true
+        },
+        "startTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 734,
+          "public": false,
+          "getter": true
+        },
+        "endTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 735,
+          "public": false,
+          "getter": true
+        },
+        "coarseStepSec": {
+          "java": "double",
+          "defaultExpr": "60.0",
+          "description": "",
+          "line": 736,
+          "public": false,
+          "getter": true
+        },
+        "fineStepSec": {
+          "java": "double",
+          "defaultExpr": "1.0",
+          "description": "",
+          "line": 737,
+          "public": false,
+          "getter": true
+        },
+        "illuminationConstraint": {
+          "java": "IlluminationConstraintRequest",
+          "defaultExpr": null,
+          "description": "",
+          "line": 738,
+          "public": false,
+          "getter": true
+        },
+        "observationConstraints": {
+          "java": "List<ObservationConstraintRequest>",
+          "defaultExpr": "new ArrayList<ObservationConstraintRequest>()",
+          "description": "",
+          "line": 739,
+          "public": false,
+          "getter": true
+        },
+        "winToolReport": {
+          "java": "Boolean",
+          "defaultExpr": null,
+          "description": "WinTool 风格的 YYDDD 目录历元下限；为空时不额外收窄旧集成方请求。 /\n        private String minTleEpochCode;\n        /  仅用于星历时效风险判定的建议近似传播天数。 /\n        private Long maxApproximationDays;\n        private String excludeNameRegex;\n        private Instant startTime;\n        private Instant endTime;\n        private double coarseStepSec = 60.0;\n        private double fineStepSec = 1.0;\n        private IlluminationConstraintRequest illuminationConstraint;\n        private List<ObservationConstraintRequest> observationConstraints = new ArrayList<ObservationConstraintRequest>();\n        /  是否在响应中附带 WinTool 两段式对比报告文本（列表 + Mission 摘要/详细信息）。",
+          "line": 741,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "IlluminationConstraintRequest": {
+      "parent": null,
+      "fields": {
+        "mode": {
+          "java": "String",
+          "defaultExpr": "\"ANY\"",
+          "description": "",
+          "line": 793,
+          "public": false,
+          "getter": true
+        },
+        "observerStates": {
+          "java": "List<String>",
+          "defaultExpr": "new ArrayList<String>()",
+          "description": "",
+          "line": 794,
+          "public": false,
+          "getter": true
+        },
+        "targetStates": {
+          "java": "List<String>",
+          "defaultExpr": "new ArrayList<String>()",
+          "description": "",
+          "line": 795,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "ObservationConstraintRequest": {
+      "parent": null,
+      "fields": {
+        "satelliteIds": {
+          "java": "List<Long>",
+          "defaultExpr": "new ArrayList<Long>()",
+          "description": "",
+          "line": 817,
+          "public": false,
+          "getter": true
+        },
+        "minDurationSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 818,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "VisibilityPlanResponse": {
+      "parent": null,
+      "fields": {
+        "results": {
+          "java": "List<VisibilityObservationResult>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 827,
+          "public": false,
+          "getter": true
+        },
+        "skippedPairs": {
+          "java": "List<SkippedPairResponse>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 828,
+          "public": false,
+          "getter": true
+        },
+        "totalSkippedPairs": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 829,
+          "public": false,
+          "getter": true
+        },
+        "targetFilterBreakdown": {
+          "java": "TargetFilterBreakdownResponse",
+          "defaultExpr": null,
+          "description": "仅供异步结果持久化使用的完整跳过清单。同步接口只输出 {@link #skippedPairs}， 避免大批量坏数据令响应体无限增长。 /\n        @JsonIgnore\n        private final List<SkippedPairResponse> allSkippedPairs;\n        /  任务时间自动筛选的逐层命中数，用于说明未发射和星历过期目标并未进入传播。",
+          "line": 837,
+          "public": false,
+          "getter": true
+        },
+        "ephemerisWarnings": {
+          "java": "List<EphemerisWarningResponse>",
+          "defaultExpr": null,
+          "description": "仅供异步结果持久化使用的完整跳过清单。同步接口只输出 {@link #skippedPairs}， 避免大批量坏数据令响应体无限增长。 /\n        @JsonIgnore\n        private final List<SkippedPairResponse> allSkippedPairs;\n        /  任务时间自动筛选的逐层命中数，用于说明未发射和星历过期目标并未进入传播。 /\n        private final TargetFilterBreakdownResponse targetFilterBreakdown;\n        /  通过硬筛选但星历超出建议时长的目标风险；该清单不会阻止传播尝试。",
+          "line": 839,
+          "public": false,
+          "getter": true
+        },
+        "winToolReport": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "仅供异步结果持久化使用的完整跳过清单。同步接口只输出 {@link #skippedPairs}， 避免大批量坏数据令响应体无限增长。 /\n        @JsonIgnore\n        private final List<SkippedPairResponse> allSkippedPairs;\n        /  任务时间自动筛选的逐层命中数，用于说明未发射和星历过期目标并未进入传播。 /\n        private final TargetFilterBreakdownResponse targetFilterBreakdown;\n        /  通过硬筛选但星历超出建议时长的目标风险；该清单不会阻止传播尝试。 /\n        private final List<EphemerisWarningResponse> ephemerisWarnings;\n        /  WinTool 两段式对比报告文本；仅在请求 winToolReport=true 时生成。",
+          "line": 841,
+          "public": false,
+          "omit": "空值省略",
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "EphemerisWarningResponse": {
+      "parent": null,
+      "fields": {
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 934,
+          "public": false,
+          "getter": true
+        },
+        "targetName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 935,
+          "public": false,
+          "getter": true
+        },
+        "reason": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 936,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "SkippedPairResponse": {
+      "parent": null,
+      "fields": {
+        "observerSatelliteId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 951,
+          "public": false,
+          "getter": true
+        },
+        "observerSatelliteName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 952,
+          "public": false,
+          "getter": true
+        },
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 953,
+          "public": false,
+          "getter": true
+        },
+        "targetName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 954,
+          "public": false,
+          "getter": true
+        },
+        "stage": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 955,
+          "public": false,
+          "getter": true
+        },
+        "reason": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 956,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "TargetQueryResponse": {
+      "parent": null,
+      "fields": {
+        "total": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 981,
+          "public": false,
+          "getter": true
+        },
+        "pageNumber": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 982,
+          "public": false,
+          "getter": true
+        },
+        "pageSize": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 983,
+          "public": false,
+          "getter": true
+        },
+        "targets": {
+          "java": "List<TargetEntity>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 984,
+          "public": false,
+          "getter": true
+        },
+        "targetIds": {
+          "java": "List<Long>",
+          "defaultExpr": null,
+          "description": "与本页预览同一套条件得到的完整目标主键集合。前端把它作为规划输入回传， 以保证“页面显示的筛选结果”和“实际参与传播的目标”是同一集合。",
+          "line": 989,
+          "public": false,
+          "getter": true
+        },
+        "filterBreakdown": {
+          "java": "TargetFilterBreakdownResponse",
+          "defaultExpr": null,
+          "description": "",
+          "line": 990,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "TargetFilterBreakdownResponse": {
+      "parent": null,
+      "fields": {
+        "belongsHit": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1041,
+          "public": false,
+          "getter": true
+        },
+        "weightHit": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1042,
+          "public": false,
+          "getter": true
+        },
+        "epochHit": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1043,
+          "public": false,
+          "getter": true
+        },
+        "epochConstraintHit": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1044,
+          "public": false,
+          "getter": true
+        },
+        "ephemerisWarningHit": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1045,
+          "public": false,
+          "getter": true
+        },
+        "excludeHit": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1046,
+          "public": false,
+          "getter": true
+        },
+        "maxApproximationDays": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1047,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "BelongOptionResponse": {
+      "parent": null,
+      "fields": {
+        "code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1085,
+          "public": false,
+          "getter": true
+        },
+        "count": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1086,
+          "public": false,
+          "getter": true
+        },
+        "description": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1087,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "PageResponse": {
+      "parent": null,
+      "fields": {
+        "total": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1106,
+          "public": false,
+          "getter": true
+        },
+        "pageNumber": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1107,
+          "public": false,
+          "getter": true
+        },
+        "pageSize": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1108,
+          "public": false,
+          "getter": true
+        },
+        "records": {
+          "java": "List<T>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1109,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "SatelliteSummaryResponse": {
+      "parent": null,
+      "fields": {
+        "id": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1128,
+          "public": false,
+          "getter": true
+        },
+        "name": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1129,
+          "public": false,
+          "getter": true
+        },
+        "modelType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1130,
+          "public": false,
+          "getter": true
+        },
+        "type": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1131,
+          "public": false,
+          "getter": true
+        },
+        "scid": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1132,
+          "public": false,
+          "getter": true
+        },
+        "objectId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1133,
+          "public": false,
+          "getter": true
+        },
+        "objectName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1134,
+          "public": false,
+          "getter": true
+        },
+        "noradCatId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1135,
+          "public": false,
+          "getter": true
+        },
+        "country": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1136,
+          "public": false,
+          "getter": true
+        },
+        "period": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1137,
+          "public": false,
+          "getter": true
+        },
+        "catalogInclination": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1138,
+          "public": false,
+          "getter": true
+        },
+        "apogee": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1139,
+          "public": false,
+          "getter": true
+        },
+        "perigee": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1140,
+          "public": false,
+          "getter": true
+        },
+        "rcsSize": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1141,
+          "public": false,
+          "getter": true
+        },
+        "rcsValue": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1142,
+          "public": false,
+          "getter": true
+        },
+        "launchDate": {
+          "java": "java.time.LocalDate",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1143,
+          "public": false,
+          "getter": true
+        },
+        "catalogComment": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1144,
+          "public": false,
+          "getter": true
+        },
+        "weight": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1145,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "SatelliteOptionResponse": {
+      "parent": null,
+      "fields": {
+        "id": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1192,
+          "public": false,
+          "getter": true
+        },
+        "name": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1193,
+          "public": false,
+          "getter": true
+        },
+        "modelType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1194,
+          "public": false,
+          "getter": true
+        },
+        "type": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1195,
+          "public": false,
+          "getter": true
+        },
+        "scid": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1196,
+          "public": false,
+          "getter": true
+        },
+        "noradCatId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 1197,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java"
+    },
+    "FileReference": {
+      "parent": null,
+      "fields": {
+        "fileId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "随机 UUID，只作登记表查询键，不能据此拼接文件路径。",
+          "line": 15,
+          "public": true
+        },
+        "originalName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "随机 UUID，只作登记表查询键，不能据此拼接文件路径。 /\n        public String fileId;\n        /  客户端原文件名的安全末段，保留 Unicode。",
+          "line": 17,
+          "public": true
+        },
+        "sizeBytes": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "随机 UUID，只作登记表查询键，不能据此拼接文件路径。 /\n        public String fileId;\n        /  客户端原文件名的安全末段，保留 Unicode。 /\n        public String originalName;\n        /  实际已存储字节数。",
+          "line": 19,
+          "public": true
+        },
+        "contentType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "随机 UUID，只作登记表查询键，不能据此拼接文件路径。 /\n        public String fileId;\n        /  客户端原文件名的安全末段，保留 Unicode。 /\n        public String originalName;\n        /  实际已存储字节数。 /\n        public long sizeBytes;\n        /  经 HTTP 媒体类型校验后的下载类型。",
+          "line": 21,
+          "public": true
+        },
+        "serverPath": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "随机 UUID，只作登记表查询键，不能据此拼接文件路径。 /\n        public String fileId;\n        /  客户端原文件名的安全末段，保留 Unicode。 /\n        public String originalName;\n        /  实际已存储字节数。 /\n        public long sizeBytes;\n        /  经 HTTP 媒体类型校验后的下载类型。 /\n        public String contentType;\n        /  服务端规范绝对路径，与浏览器本机路径无关。",
+          "line": 23,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java"
+    },
+    "RegisterResultRequest": {
+      "parent": null,
+      "fields": {
+        "csvPath": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 28,
+          "public": true
+        },
+        "taskName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 29,
+          "public": true
+        },
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 30,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java"
+    },
+    "Preview": {
+      "parent": null,
+      "fields": {
+        "fileId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 35,
+          "public": true
+        },
+        "header": {
+          "java": "List<String>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 36,
+          "public": true
+        },
+        "rows": {
+          "java": "List<List<String>>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 37,
+          "public": true
+        },
+        "totalRows": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 38,
+          "public": true
+        },
+        "page": {
+          "java": "int",
+          "defaultExpr": null,
+          "description": "页码从 1 开始，limit 默认 50，上限由配置确定（默认 500）。",
+          "line": 40,
+          "public": true
+        },
+        "limit": {
+          "java": "int",
+          "defaultExpr": null,
+          "description": "",
+          "line": 41,
+          "public": true
+        },
+        "metadata": {
+          "java": "Map<String,String>",
+          "defaultExpr": null,
+          "description": "页码从 1 开始，limit 默认 50，上限由配置确定（默认 500）。 /\n        public int page;\n        public int limit;\n        /  仅在识别完整已知表头时给出时间、位置、速度和坐标信息。",
+          "line": 43,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java"
+    },
+    "VisibilityRequest": {
+      "parent": null,
+      "fields": {
+        "ballisticCsvPath": {
+          "java": "String",
+          "defaultExpr": "\"trajectory-0.1s-standard.csv\"",
+          "description": "弹道文件路径，支持CSV和Excel，默认 \"trajectory-0.1s-standard.csv\"",
+          "line": 22,
+          "public": false,
+          "getter": true
+        },
+        "baseLaunchUtc": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "弹道文件路径，支持CSV和Excel，默认 \"trajectory-0.1s-standard.csv\" /\n    private String ballisticCsvPath = \"trajectory-0.1s-standard.csv\";\n\n    /  基准发射UTC时间字符串（yyyy/MM/dd HH:mm:ss 或 yyyy-MM-dd HH:mm:ss），为空则使用弹道文件参考历元",
+          "line": 25,
+          "public": false,
+          "getter": true
+        },
+        "ballistics": {
+          "java": "List<BallisticDef>",
+          "defaultExpr": "new ArrayList<>()",
+          "description": "弹道文件路径，支持CSV和Excel，默认 \"trajectory-0.1s-standard.csv\" /\n    private String ballisticCsvPath = \"trajectory-0.1s-standard.csv\";\n\n    /  基准发射UTC时间字符串（yyyy/MM/dd HH:mm:ss 或 yyyy-MM-dd HH:mm:ss），为空则使用弹道文件参考历元 /\n    private String baseLaunchUtc;\n\n    /  多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。",
+          "line": 28,
+          "public": false,
+          "getter": true
+        },
+        "startOffsetSec": {
+          "java": "long",
+          "defaultExpr": "-500L",
+          "description": "弹道文件路径，支持CSV和Excel，默认 \"trajectory-0.1s-standard.csv\" /\n    private String ballisticCsvPath = \"trajectory-0.1s-standard.csv\";\n\n    /  基准发射UTC时间字符串（yyyy/MM/dd HH:mm:ss 或 yyyy-MM-dd HH:mm:ss），为空则使用弹道文件参考历元 /\n    private String baseLaunchUtc;\n\n    /  多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。 /\n    private List<BallisticDef> ballistics = new ArrayList<>();\n\n    /  发射偏移起点（秒），默认 -500",
+          "line": 31,
+          "public": false,
+          "getter": true
+        },
+        "stepSizeSec": {
+          "java": "long",
+          "defaultExpr": "10L",
+          "description": "弹道文件路径，支持CSV和Excel，默认 \"trajectory-0.1s-standard.csv\" /\n    private String ballisticCsvPath = \"trajectory-0.1s-standard.csv\";\n\n    /  基准发射UTC时间字符串（yyyy/MM/dd HH:mm:ss 或 yyyy-MM-dd HH:mm:ss），为空则使用弹道文件参考历元 /\n    private String baseLaunchUtc;\n\n    /  多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。 /\n    private List<BallisticDef> ballistics = new ArrayList<>();\n\n    /  发射偏移起点（秒），默认 -500 /\n    private long startOffsetSec = -500L;\n\n    /  发射偏移步长（秒），默认 10",
+          "line": 34,
+          "public": false,
+          "getter": true
+        },
+        "numCalculations": {
+          "java": "long",
+          "defaultExpr": "101L",
+          "description": "弹道文件路径，支持CSV和Excel，默认 \"trajectory-0.1s-standard.csv\" /\n    private String ballisticCsvPath = \"trajectory-0.1s-standard.csv\";\n\n    /  基准发射UTC时间字符串（yyyy/MM/dd HH:mm:ss 或 yyyy-MM-dd HH:mm:ss），为空则使用弹道文件参考历元 /\n    private String baseLaunchUtc;\n\n    /  多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。 /\n    private List<BallisticDef> ballistics = new ArrayList<>();\n\n    /  发射偏移起点（秒），默认 -500 /\n    private long startOffsetSec = -500L;\n\n    /  发射偏移步长（秒），默认 10 /\n    private long stepSizeSec = 10L;\n\n    /  计算次数，默认 101（覆盖 T-500 到 T+500）",
+          "line": 37,
+          "public": false,
+          "getter": true
+        },
+        "sensorFovDeg": {
+          "java": "double",
+          "defaultExpr": "140.0",
+          "description": "弹道文件路径，支持CSV和Excel，默认 \"trajectory-0.1s-standard.csv\" /\n    private String ballisticCsvPath = \"trajectory-0.1s-standard.csv\";\n\n    /  基准发射UTC时间字符串（yyyy/MM/dd HH:mm:ss 或 yyyy-MM-dd HH:mm:ss），为空则使用弹道文件参考历元 /\n    private String baseLaunchUtc;\n\n    /  多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。 /\n    private List<BallisticDef> ballistics = new ArrayList<>();\n\n    /  发射偏移起点（秒），默认 -500 /\n    private long startOffsetSec = -500L;\n\n    /  发射偏移步长（秒），默认 10 /\n    private long stepSizeSec = 10L;\n\n    /  计算次数，默认 101（覆盖 T-500 到 T+500） /\n    private long numCalculations = 101L;\n\n    /  传感器视场全锥角（度），默认 140",
+          "line": 40,
+          "public": false,
+          "getter": true
+        },
+        "payloadType": {
+          "java": "String",
+          "defaultExpr": "\"对地监视\"",
+          "description": "多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。 /\n    private List<BallisticDef> ballistics = new ArrayList<>();\n\n    /  发射偏移起点（秒），默认 -500 /\n    private long startOffsetSec = -500L;\n\n    /  发射偏移步长（秒），默认 10 /\n    private long stepSizeSec = 10L;\n\n    /  计算次数，默认 101（覆盖 T-500 到 T+500） /\n    private long numCalculations = 101L;\n\n    /  传感器视场全锥角（度），默认 140 /\n    private double sensorFovDeg = 140.0;\n\n    /   载荷分类：对地监视、对空监视、对地跟踪、对空跟踪。 旧版单载荷兼容字段，仅当 satellites[].payloads 为空时生效； 平台内嵌载荷后，每颗卫星可携带多台不同类型载荷，分别计算可见窗口。",
+          "line": 47,
+          "public": false,
+          "getter": true
+        },
+        "maxDetectRangeKm": {
+          "java": "double",
+          "defaultExpr": "0.0",
+          "description": "多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。 /\n    private List<BallisticDef> ballistics = new ArrayList<>();\n\n    /  发射偏移起点（秒），默认 -500 /\n    private long startOffsetSec = -500L;\n\n    /  发射偏移步长（秒），默认 10 /\n    private long stepSizeSec = 10L;\n\n    /  计算次数，默认 101（覆盖 T-500 到 T+500） /\n    private long numCalculations = 101L;\n\n    /  传感器视场全锥角（度），默认 140 /\n    private double sensorFovDeg = 140.0;\n\n    /   载荷分类：对地监视、对空监视、对地跟踪、对空跟踪。 旧版单载荷兼容字段，仅当 satellites[].payloads 为空时生效； 平台内嵌载荷后，每颗卫星可携带多台不同类型载荷，分别计算可见窗口。 /\n    private String payloadType = \"对地监视\";\n\n    /  最远探测距离，单位km；小于等于0表示不限制",
+          "line": 50,
+          "public": false,
+          "getter": true
+        },
+        "sunExclusionAngleDeg": {
+          "java": "double",
+          "defaultExpr": "OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG",
+          "description": "发射偏移起点（秒），默认 -500 /\n    private long startOffsetSec = -500L;\n\n    /  发射偏移步长（秒），默认 10 /\n    private long stepSizeSec = 10L;\n\n    /  计算次数，默认 101（覆盖 T-500 到 T+500） /\n    private long numCalculations = 101L;\n\n    /  传感器视场全锥角（度），默认 140 /\n    private double sensorFovDeg = 140.0;\n\n    /   载荷分类：对地监视、对空监视、对地跟踪、对空跟踪。 旧版单载荷兼容字段，仅当 satellites[].payloads 为空时生效； 平台内嵌载荷后，每颗卫星可携带多台不同类型载荷，分别计算可见窗口。 /\n    private String payloadType = \"对地监视\";\n\n    /  最远探测距离，单位km；小于等于0表示不限制 /\n    private double maxDetectRangeKm = 0.0;\n\n    /  视线方向与太阳方向最小夹角，单位度；默认45，小于该值判为不可见",
+          "line": 53,
+          "public": false,
+          "getter": true
+        },
+        "targetSampleStepSec": {
+          "java": "double",
+          "defaultExpr": "1.0",
+          "description": "计算次数，默认 101（覆盖 T-500 到 T+500） /\n    private long numCalculations = 101L;\n\n    /  传感器视场全锥角（度），默认 140 /\n    private double sensorFovDeg = 140.0;\n\n    /   载荷分类：对地监视、对空监视、对地跟踪、对空跟踪。 旧版单载荷兼容字段，仅当 satellites[].payloads 为空时生效； 平台内嵌载荷后，每颗卫星可携带多台不同类型载荷，分别计算可见窗口。 /\n    private String payloadType = \"对地监视\";\n\n    /  最远探测距离，单位km；小于等于0表示不限制 /\n    private double maxDetectRangeKm = 0.0;\n\n    /  视线方向与太阳方向最小夹角，单位度；默认45，小于该值判为不可见 /\n    private double sunExclusionAngleDeg = OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG;\n\n    /  目标轨迹可见性采样步长（秒），默认 1；小于等于0时使用算法自动步长",
+          "line": 56,
+          "public": false,
+          "getter": true
+        },
+        "trajectoryPointOutput": {
+          "java": "int",
+          "defaultExpr": "1",
+          "description": "传感器视场全锥角（度），默认 140 /\n    private double sensorFovDeg = 140.0;\n\n    /   载荷分类：对地监视、对空监视、对地跟踪、对空跟踪。 旧版单载荷兼容字段，仅当 satellites[].payloads 为空时生效； 平台内嵌载荷后，每颗卫星可携带多台不同类型载荷，分别计算可见窗口。 /\n    private String payloadType = \"对地监视\";\n\n    /  最远探测距离，单位km；小于等于0表示不限制 /\n    private double maxDetectRangeKm = 0.0;\n\n    /  视线方向与太阳方向最小夹角，单位度；默认45，小于该值判为不可见 /\n    private double sunExclusionAngleDeg = OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG;\n\n    /  目标轨迹可见性采样步长（秒），默认 1；小于等于0时使用算法自动步长 /\n    private double targetSampleStepSec = 1.0;\n\n    /  1 输出窗口内轨迹点明细；0 仅输出窗口摘要。",
+          "line": 59,
+          "public": false,
+          "getter": true
+        },
+        "orbitModel": {
+          "java": "String",
+          "defaultExpr": "\"J2_NUMERICAL\"",
+          "description": "载荷分类：对地监视、对空监视、对地跟踪、对空跟踪。 旧版单载荷兼容字段，仅当 satellites[].payloads 为空时生效； 平台内嵌载荷后，每颗卫星可携带多台不同类型载荷，分别计算可见窗口。 /\n    private String payloadType = \"对地监视\";\n\n    /  最远探测距离，单位km；小于等于0表示不限制 /\n    private double maxDetectRangeKm = 0.0;\n\n    /  视线方向与太阳方向最小夹角，单位度；默认45，小于该值判为不可见 /\n    private double sunExclusionAngleDeg = OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG;\n\n    /  目标轨迹可见性采样步长（秒），默认 1；小于等于0时使用算法自动步长 /\n    private double targetSampleStepSec = 1.0;\n\n    /  1 输出窗口内轨迹点明细；0 仅输出窗口摘要。 /\n    private int trajectoryPointOutput = 1;\n\n    /  轨道模型：TWO_BODY / J2_SECULAR / J2_NUMERICAL，默认 J2_NUMERICAL",
+          "line": 62,
+          "public": false,
+          "getter": true
+        },
+        "satellites": {
+          "java": "List<SatelliteDef>",
+          "defaultExpr": "new ArrayList<>()",
+          "description": "最远探测距离，单位km；小于等于0表示不限制 /\n    private double maxDetectRangeKm = 0.0;\n\n    /  视线方向与太阳方向最小夹角，单位度；默认45，小于该值判为不可见 /\n    private double sunExclusionAngleDeg = OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG;\n\n    /  目标轨迹可见性采样步长（秒），默认 1；小于等于0时使用算法自动步长 /\n    private double targetSampleStepSec = 1.0;\n\n    /  1 输出窗口内轨迹点明细；0 仅输出窗口摘要。 /\n    private int trajectoryPointOutput = 1;\n\n    /  轨道模型：TWO_BODY / J2_SECULAR / J2_NUMERICAL，默认 J2_NUMERICAL /\n    private String orbitModel = \"J2_NUMERICAL\";\n\n    /  卫星列表，为空时使用内置2星LEO星座",
+          "line": 65,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java"
+    },
+    "BallisticDef": {
+      "parent": null,
+      "fields": {
+        "csvPath": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 119,
+          "public": false,
+          "getter": true
+        },
+        "baseLaunchUTC": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 120,
+          "public": false,
+          "getter": true
+        },
+        "baseLaunchUtc": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 121,
+          "public": false,
+          "getter": true
+        },
+        "baselaunchUTC": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 122,
+          "public": false,
+          "getter": true
+        },
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 123,
+          "public": false,
+          "getter": true
+        },
+        "targetName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 124,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java"
+    },
+    "SatelliteDef": {
+      "parent": null,
+      "fields": {
+        "satelliteId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 164,
+          "public": false,
+          "getter": true
+        },
+        "name": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 165,
+          "public": false,
+          "getter": true
+        },
+        "semiMajorAxisM": {
+          "java": "double",
+          "defaultExpr": "7530612.0",
+          "description": "",
+          "line": 166,
+          "public": false,
+          "getter": true
+        },
+        "eccentricity": {
+          "java": "double",
+          "defaultExpr": "0.00085",
+          "description": "",
+          "line": 167,
+          "public": false,
+          "getter": true
+        },
+        "inclinationDeg": {
+          "java": "double",
+          "defaultExpr": "64.8",
+          "description": "",
+          "line": 168,
+          "public": false,
+          "getter": true
+        },
+        "raanDeg": {
+          "java": "double",
+          "defaultExpr": "120.0",
+          "description": "",
+          "line": 169,
+          "public": false,
+          "getter": true
+        },
+        "argumentOfPerigeeDeg": {
+          "java": "double",
+          "defaultExpr": "270.0",
+          "description": "",
+          "line": 170,
+          "public": false,
+          "getter": true
+        },
+        "meanAnomalyDeg": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 171,
+          "public": false,
+          "getter": true
+        },
+        "epochUtc": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 172,
+          "public": false,
+          "getter": true
+        },
+        "payloads": {
+          "java": "List<PayloadDef>",
+          "defaultExpr": "new ArrayList<PayloadDef>()",
+          "description": "卫星平台内嵌载荷；为空时使用顶层旧版单载荷参数。",
+          "line": 174,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java"
+    },
+    "PayloadDef": {
+      "parent": null,
+      "fields": {
+        "payloadId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 239,
+          "public": false,
+          "getter": true
+        },
+        "payloadName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 240,
+          "public": false,
+          "getter": true
+        },
+        "payloadType": {
+          "java": "String",
+          "defaultExpr": "\"对地监视\"",
+          "description": "",
+          "line": 241,
+          "public": false,
+          "getter": true
+        },
+        "maxDetectRangeKm": {
+          "java": "double",
+          "defaultExpr": "0.0",
+          "description": "",
+          "line": 242,
+          "public": false,
+          "getter": true
+        },
+        "sunExclusionAngleDeg": {
+          "java": "double",
+          "defaultExpr": "OrbitCalculator.DEFAULT_SUN_EXCLUSION_ANGLE_DEG",
+          "description": "",
+          "line": 243,
+          "public": false,
+          "getter": true
+        },
+        "minDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "标准最近距离（公里），必填有限且非负。",
+          "line": 246,
+          "public": false,
+          "getter": true
+        },
+        "maxDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "标准最近距离（公里），必填有限且非负。 /\n        private Double minDistanceKm;\n        public Double getMinDistanceKm() { return minDistanceKm; }\n        public void setMinDistanceKm(Double value) { minDistanceKm = value; }\n\n        /  标准最远距离（公里），必填；0不限，否则须大于最近距离。",
+          "line": 251,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "标准最近距离（公里），必填有限且非负。 /\n        private Double minDistanceKm;\n        public Double getMinDistanceKm() { return minDistanceKm; }\n        public void setMinDistanceKm(Double value) { minDistanceKm = value; }\n\n        /  标准最远距离（公里），必填；0不限，否则须大于最近距离。 /\n        private Double maxDistanceKm;\n        public Double getMaxDistanceKm() { return maxDistanceKm; }\n        public void setMaxDistanceKm(Double value) { maxDistanceKm = value; }\n\n        /  LVLH方位下限（度），与上限同时null表示不限，范围0到360。",
+          "line": 256,
+          "public": false,
+          "getter": true
+        },
+        "azimuthMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "标准最远距离（公里），必填；0不限，否则须大于最近距离。 /\n        private Double maxDistanceKm;\n        public Double getMaxDistanceKm() { return maxDistanceKm; }\n        public void setMaxDistanceKm(Double value) { maxDistanceKm = value; }\n\n        /  LVLH方位下限（度），与上限同时null表示不限，范围0到360。 /\n        private Double azimuthMinDeg;\n        public Double getAzimuthMinDeg() { return azimuthMinDeg; }\n        public void setAzimuthMinDeg(Double value) { azimuthMinDeg = value; }\n\n        /  LVLH方位上限（度），须严格大于下限。",
+          "line": 261,
+          "public": false,
+          "getter": true
+        },
+        "elevationMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "LVLH方位下限（度），与上限同时null表示不限，范围0到360。 /\n        private Double azimuthMinDeg;\n        public Double getAzimuthMinDeg() { return azimuthMinDeg; }\n        public void setAzimuthMinDeg(Double value) { azimuthMinDeg = value; }\n\n        /  LVLH方位上限（度），须严格大于下限。 /\n        private Double azimuthMaxDeg;\n        public Double getAzimuthMaxDeg() { return azimuthMaxDeg; }\n        public void setAzimuthMaxDeg(Double value) { azimuthMaxDeg = value; }\n\n        /  LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。",
+          "line": 266,
+          "public": false,
+          "getter": true
+        },
+        "elevationMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "LVLH方位上限（度），须严格大于下限。 /\n        private Double azimuthMaxDeg;\n        public Double getAzimuthMaxDeg() { return azimuthMaxDeg; }\n        public void setAzimuthMaxDeg(Double value) { azimuthMaxDeg = value; }\n\n        /  LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。 /\n        private Double elevationMinDeg;\n        public Double getElevationMinDeg() { return elevationMinDeg; }\n        public void setElevationMinDeg(Double value) { elevationMinDeg = value; }\n\n        /  LVLH俯仰上限（度），最大90且严格大于下限。",
+          "line": 271,
+          "public": false,
+          "getter": true
+        },
+        "angleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。 /\n        private Double elevationMinDeg;\n        public Double getElevationMinDeg() { return elevationMinDeg; }\n        public void setElevationMinDeg(Double value) { elevationMinDeg = value; }\n\n        /  LVLH俯仰上限（度），最大90且严格大于下限。 /\n        private Double elevationMaxDeg;\n        public Double getElevationMaxDeg() { return elevationMaxDeg; }\n        public void setElevationMaxDeg(Double value) { elevationMaxDeg = value; }\n\n        /  跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。",
+          "line": 276,
+          "public": false,
+          "getter": true
+        },
+        "sunAvoidHalfAngleDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "LVLH俯仰上限（度），最大90且严格大于下限。 /\n        private Double elevationMaxDeg;\n        public Double getElevationMaxDeg() { return elevationMaxDeg; }\n        public void setElevationMaxDeg(Double value) { elevationMaxDeg = value; }\n\n        /  跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。 /\n        private Double angleRateDegPerSec;\n        public Double getAngleRateDegPerSec() { return angleRateDegPerSec; }\n        public void setAngleRateDegPerSec(Double value) { angleRateDegPerSec = value; }\n\n        /  太阳回避半角（度），必填有限0到180；0关闭。",
+          "line": 281,
+          "public": false,
+          "getter": true
+        },
+        "startupAngleRateDegPerSec": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。 /\n        private Double angleRateDegPerSec;\n        public Double getAngleRateDegPerSec() { return angleRateDegPerSec; }\n        public void setAngleRateDegPerSec(Double value) { angleRateDegPerSec = value; }\n\n        /  太阳回避半角（度），必填有限0到180；0关闭。 /\n        private Double sunAvoidHalfAngleDeg;\n        public Double getSunAvoidHalfAngleDeg() { return sunAvoidHalfAngleDeg; }\n        public void setSunAvoidHalfAngleDeg(Double value) { sunAvoidHalfAngleDeg = value; }\n\n        /  启动角速度元数据（度/秒）；null/-1禁用，0/正值仅回显不参与判定。",
+          "line": 286,
+          "public": false,
+          "getter": true
+        },
+        "standard": {
+          "java": "boolean",
+          "defaultExpr": null,
+          "description": "",
+          "line": 320,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java"
+    },
+    "FitRequest": {
+      "parent": null,
+      "fields": {
+        "taskName": {
+          "java": "String",
+          "defaultExpr": "\"task\"",
+          "description": "",
+          "line": 131,
+          "public": true
+        },
+        "package102": {
+          "java": "List<Package102Record>",
+          "defaultExpr": "new ArrayList<Package102Record>()",
+          "description": "",
+          "line": 132,
+          "public": true
+        },
+        "taskStartTime": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 133,
+          "public": true
+        },
+        "taskEndTime": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 134,
+          "public": true
+        },
+        "interpolationStepSec": {
+          "java": "double",
+          "defaultExpr": "1.0",
+          "description": "",
+          "line": 135,
+          "public": true
+        },
+        "outputDir": {
+          "java": "String",
+          "defaultExpr": "\".\"",
+          "description": "",
+          "line": 136,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "Package102Record": {
+      "parent": null,
+      "fields": {
+        "coordinateInfo": {
+          "java": "CoordinateInfo",
+          "defaultExpr": null,
+          "description": "",
+          "line": 141,
+          "public": true
+        },
+        "coordinate": {
+          "java": "CoordinateInfo",
+          "defaultExpr": null,
+          "description": "",
+          "line": 142,
+          "public": true
+        },
+        "coords": {
+          "java": "CoordinateInfo",
+          "defaultExpr": null,
+          "description": "",
+          "line": 143,
+          "public": true
+        },
+        "targetInfo": {
+          "java": "TargetInfo",
+          "defaultExpr": null,
+          "description": "",
+          "line": 144,
+          "public": true
+        },
+        "target": {
+          "java": "TargetInfo",
+          "defaultExpr": null,
+          "description": "",
+          "line": 145,
+          "public": true
+        },
+        "tack3d_time_code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 147,
+          "public": true
+        },
+        "track3d_time_code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 148,
+          "public": true
+        },
+        "tack3d_tgt_pos_x": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 149,
+          "public": true
+        },
+        "tack3d_tgt_pos_y": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 150,
+          "public": true
+        },
+        "tack3d_tgt_pos_z": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 151,
+          "public": true
+        },
+        "tack3d_tgt_vel_x": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 152,
+          "public": true
+        },
+        "tack3d_tgt_vel_y": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 153,
+          "public": true
+        },
+        "tack3d_tgt_vel_z": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 154,
+          "public": true
+        },
+        "tack3d_tgt_acc_x": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 155,
+          "public": true
+        },
+        "tack3d_tgt_acc_y": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 156,
+          "public": true
+        },
+        "tack3d_tgt_acc_z": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 157,
+          "public": true
+        },
+        "prop_tgt_type_8": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 158,
+          "public": true
+        },
+        "prop_tgt_shape_8": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 159,
+          "public": true
+        },
+        "prop_tgt_flight_phase_8": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 160,
+          "public": true
+        },
+        "prob_tgt_critical_incident": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 161,
+          "public": true
+        },
+        "prob_tgt_critical_incident_time_code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 162,
+          "public": true
+        },
+        "track_tgt_id": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 163,
+          "public": true
+        },
+        "launch_time_code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 164,
+          "public": true
+        },
+        "launch_coord_frame": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 165,
+          "public": true
+        },
+        "launch_pos_x": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 166,
+          "public": true
+        },
+        "launch_pos_y": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 167,
+          "public": true
+        },
+        "launch_pos_z": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 168,
+          "public": true
+        },
+        "launch_pos_unit": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 169,
+          "public": true
+        },
+        "impact_time_code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 170,
+          "public": true
+        },
+        "impact_coord_frame": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 171,
+          "public": true
+        },
+        "impact_pos_x": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 172,
+          "public": true
+        },
+        "impact_pos_y": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 173,
+          "public": true
+        },
+        "impact_pos_z": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 174,
+          "public": true
+        },
+        "impact_pos_unit": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 175,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "CoordinateInfo": {
+      "parent": null,
+      "fields": {
+        "tack3d_time_code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 212,
+          "public": true
+        },
+        "track3d_time_code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 213,
+          "public": true
+        },
+        "tack3d_tgt_pos_x": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 214,
+          "public": true
+        },
+        "tack3d_tgt_pos_y": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 215,
+          "public": true
+        },
+        "tack3d_tgt_pos_z": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 216,
+          "public": true
+        },
+        "tack3d_tgt_vel_x": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 217,
+          "public": true
+        },
+        "tack3d_tgt_vel_y": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 218,
+          "public": true
+        },
+        "tack3d_tgt_vel_z": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 219,
+          "public": true
+        },
+        "tack3d_tgt_acc_x": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 220,
+          "public": true
+        },
+        "tack3d_tgt_acc_y": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 221,
+          "public": true
+        },
+        "tack3d_tgt_acc_z": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 222,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "TargetInfo": {
+      "parent": null,
+      "fields": {
+        "prop_tgt_type_8": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 227,
+          "public": true
+        },
+        "prop_tgt_shape_8": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 228,
+          "public": true
+        },
+        "prop_tgt_flight_phase_8": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 229,
+          "public": true
+        },
+        "prob_tgt_critical_incident": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 230,
+          "public": true
+        },
+        "prob_tgt_critical_incident_time_code": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 231,
+          "public": true
+        },
+        "track_tgt_id": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 232,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "TrajectorySample": {
+      "parent": null,
+      "fields": {
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 237,
+          "public": true
+        },
+        "absoluteTimeSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 238,
+          "public": true
+        },
+        "positionEciM": {
+          "java": "OrbitCalculator.Vector3",
+          "defaultExpr": null,
+          "description": "",
+          "line": 239,
+          "public": true
+        },
+        "velocityEciMs": {
+          "java": "OrbitCalculator.Vector3",
+          "defaultExpr": null,
+          "description": "",
+          "line": 240,
+          "public": true
+        },
+        "accelerationEciMs2": {
+          "java": "OrbitCalculator.Vector3",
+          "defaultExpr": null,
+          "description": "",
+          "line": 241,
+          "public": true
+        },
+        "targetInfo": {
+          "java": "TargetInfo",
+          "defaultExpr": null,
+          "description": "",
+          "line": 242,
+          "public": true
+        },
+        "sourceIndex": {
+          "java": "int",
+          "defaultExpr": null,
+          "description": "",
+          "line": 243,
+          "public": true
+        },
+        "originalConstraint": {
+          "java": "boolean",
+          "defaultExpr": "true",
+          "description": "",
+          "line": 244,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "FittedPoint": {
+      "parent": null,
+      "fields": {
+        "absoluteTimeSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 249,
+          "public": true
+        },
+        "relativeTimeSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 250,
+          "public": true
+        },
+        "positionEciM": {
+          "java": "OrbitCalculator.Vector3",
+          "defaultExpr": null,
+          "description": "",
+          "line": 251,
+          "public": true
+        },
+        "velocityEciMs": {
+          "java": "OrbitCalculator.Vector3",
+          "defaultExpr": null,
+          "description": "",
+          "line": 252,
+          "public": true
+        },
+        "accelerationEciMs2": {
+          "java": "OrbitCalculator.Vector3",
+          "defaultExpr": null,
+          "description": "",
+          "line": 253,
+          "public": true
+        },
+        "positionEcefM": {
+          "java": "OrbitCalculator.Vector3",
+          "defaultExpr": null,
+          "description": "",
+          "line": 254,
+          "public": true
+        },
+        "velocityEcefMs": {
+          "java": "OrbitCalculator.Vector3",
+          "defaultExpr": null,
+          "description": "",
+          "line": 255,
+          "public": true
+        },
+        "energy": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 256,
+          "public": true
+        },
+        "dtMs": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 257,
+          "public": true
+        },
+        "original": {
+          "java": "boolean",
+          "defaultExpr": null,
+          "description": "",
+          "line": 258,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "FittedTrajectory": {
+      "parent": null,
+      "fields": {
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 263,
+          "public": true
+        },
+        "model": {
+          "java": "TrajectoryModel",
+          "defaultExpr": null,
+          "description": "",
+          "line": 264,
+          "public": true
+        },
+        "points": {
+          "java": "List<FittedPoint>",
+          "defaultExpr": "new ArrayList<FittedPoint>()",
+          "description": "",
+          "line": 265,
+          "public": true
+        },
+        "warnings": {
+          "java": "List<String>",
+          "defaultExpr": "new ArrayList<String>()",
+          "description": "",
+          "line": 266,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "FileResult": {
+      "parent": null,
+      "fields": {
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 271,
+          "public": true
+        },
+        "model": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 272,
+          "public": true
+        },
+        "csvPath": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 273,
+          "public": true
+        },
+        "pointCount": {
+          "java": "int",
+          "defaultExpr": null,
+          "description": "",
+          "line": 274,
+          "public": true
+        },
+        "warnings": {
+          "java": "List<String>",
+          "defaultExpr": "new ArrayList<String>()",
+          "description": "",
+          "line": 275,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "FitRunResult": {
+      "parent": null,
+      "fields": {
+        "taskName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 280,
+          "public": true
+        },
+        "targetCount": {
+          "java": "int",
+          "defaultExpr": null,
+          "description": "",
+          "line": 281,
+          "public": true
+        },
+        "files": {
+          "java": "List<FileResult>",
+          "defaultExpr": "new ArrayList<FileResult>()",
+          "description": "",
+          "line": 282,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "SimulationRequest": {
+      "parent": null,
+      "fields": {
+        "taskName": {
+          "java": "String",
+          "defaultExpr": "\"simulation\"",
+          "description": "",
+          "line": 287,
+          "public": true
+        },
+        "targetId": {
+          "java": "String",
+          "defaultExpr": "\"SIM-TGT\"",
+          "description": "",
+          "line": 288,
+          "public": true
+        },
+        "taskStartTime": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 289,
+          "public": true
+        },
+        "taskEndTime": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 290,
+          "public": true
+        },
+        "launchTimeUtc": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 291,
+          "public": true
+        },
+        "impactTimeUtc": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 292,
+          "public": true
+        },
+        "impactTime": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 293,
+          "public": true
+        },
+        "launchPointX": {
+          "java": "double",
+          "defaultExpr": "2167790.227",
+          "description": "",
+          "line": 294,
+          "public": true
+        },
+        "launchPointY": {
+          "java": "double",
+          "defaultExpr": "4775481.109",
+          "description": "",
+          "line": 295,
+          "public": true
+        },
+        "launchPointZ": {
+          "java": "double",
+          "defaultExpr": "3618557.253",
+          "description": "",
+          "line": 296,
+          "public": true
+        },
+        "launchPointCoordFrame": {
+          "java": "String",
+          "defaultExpr": "\"J2000\"",
+          "description": "",
+          "line": 297,
+          "public": true
+        },
+        "launchPointUnit": {
+          "java": "String",
+          "defaultExpr": "\"m\"",
+          "description": "",
+          "line": 298,
+          "public": true
+        },
+        "impactPointX": {
+          "java": "double",
+          "defaultExpr": "3578635.760",
+          "description": "",
+          "line": 299,
+          "public": true
+        },
+        "impactPointY": {
+          "java": "double",
+          "defaultExpr": "3522525.227",
+          "description": "",
+          "line": 300,
+          "public": true
+        },
+        "impactPointZ": {
+          "java": "double",
+          "defaultExpr": "3919735.591",
+          "description": "",
+          "line": 301,
+          "public": true
+        },
+        "impactPointCoordFrame": {
+          "java": "String",
+          "defaultExpr": "\"J2000\"",
+          "description": "",
+          "line": 302,
+          "public": true
+        },
+        "impactPointUnit": {
+          "java": "String",
+          "defaultExpr": "\"m\"",
+          "description": "",
+          "line": 303,
+          "public": true
+        },
+        "outputPointDurationSec": {
+          "java": "double",
+          "defaultExpr": "1.0",
+          "description": "",
+          "line": 304,
+          "public": true
+        },
+        "phaseEvents": {
+          "java": "List<PhaseEvent>",
+          "defaultExpr": "new ArrayList<PhaseEvent>()",
+          "description": "",
+          "line": 305,
+          "public": true
+        },
+        "targetTypeCode": {
+          "java": "String",
+          "defaultExpr": "\"0x01\"",
+          "description": "",
+          "line": 311,
+          "public": true
+        },
+        "targetShapeCode": {
+          "java": "String",
+          "defaultExpr": "\"0x02\"",
+          "description": "",
+          "line": 312,
+          "public": true
+        },
+        "flightPhaseCode": {
+          "java": "String",
+          "defaultExpr": "\"0x01\"",
+          "description": "",
+          "line": 313,
+          "public": true
+        },
+        "launchLatDeg": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 314,
+          "public": true
+        },
+        "launchLonDeg": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 315,
+          "public": true
+        },
+        "launchHeightM": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 316,
+          "public": true
+        },
+        "initialSpeedMs": {
+          "java": "double",
+          "defaultExpr": "1500.0",
+          "description": "",
+          "line": 317,
+          "public": true
+        },
+        "azimuthDeg": {
+          "java": "double",
+          "defaultExpr": "90.0",
+          "description": "",
+          "line": 318,
+          "public": true
+        },
+        "elevationDeg": {
+          "java": "double",
+          "defaultExpr": "45.0",
+          "description": "",
+          "line": 319,
+          "public": true
+        },
+        "durationSec": {
+          "java": "double",
+          "defaultExpr": "600.0",
+          "description": "",
+          "line": 320,
+          "public": true
+        },
+        "integrationStepSec": {
+          "java": "double",
+          "defaultExpr": "0.1",
+          "description": "",
+          "line": 321,
+          "public": true
+        },
+        "outputStepSec": {
+          "java": "double",
+          "defaultExpr": "1.0",
+          "description": "",
+          "line": 322,
+          "public": true
+        },
+        "boostDurationSec": {
+          "java": "double",
+          "defaultExpr": "80.0",
+          "description": "",
+          "line": 323,
+          "public": true
+        },
+        "boostAccelerationMs2": {
+          "java": "double",
+          "defaultExpr": "18.0",
+          "description": "",
+          "line": 324,
+          "public": true
+        },
+        "dragCdAreaOverMass": {
+          "java": "double",
+          "defaultExpr": "0.0",
+          "description": "",
+          "line": 325,
+          "public": true
+        },
+        "outputDir": {
+          "java": "String",
+          "defaultExpr": "\".\"",
+          "description": "",
+          "line": 326,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "RetimeTrajectoryRequest": {
+      "parent": null,
+      "fields": {
+        "taskName": {
+          "java": "String",
+          "defaultExpr": "\"retimeTrajectory\"",
+          "description": "",
+          "line": 331,
+          "public": true
+        },
+        "targetId": {
+          "java": "String",
+          "defaultExpr": "\"RETIMED-TGT\"",
+          "description": "",
+          "line": 332,
+          "public": true
+        },
+        "trajectoryCsvPath": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 333,
+          "public": true
+        },
+        "launchTimeUtc": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 334,
+          "public": true
+        },
+        "outputDir": {
+          "java": "String",
+          "defaultExpr": "\".\"",
+          "description": "",
+          "line": 335,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "PhaseEvent": {
+      "parent": null,
+      "fields": {
+        "phaseType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 340,
+          "public": true
+        },
+        "eventType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 341,
+          "public": true
+        },
+        "startTime": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 342,
+          "public": true
+        },
+        "endTime": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 343,
+          "public": true
+        },
+        "eventTime": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 344,
+          "public": true
+        },
+        "dynamics": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 345,
+          "public": true
+        },
+        "directionMode": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 346,
+          "public": true
+        },
+        "accelerationMs2": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 347,
+          "public": true
+        },
+        "deltaVms": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 348,
+          "public": true
+        },
+        "liftDragRatio": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 349,
+          "public": true
+        },
+        "dragCdAreaOverMass": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 350,
+          "public": true
+        }
+      },
+      "source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+    },
+    "VisibilityObservationResult": {
+      "parent": null,
+      "fields": {
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 12,
+          "public": false,
+          "getter": true
+        },
+        "targetName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 13,
+          "public": false,
+          "getter": true
+        },
+        "observerSatelliteIds": {
+          "java": "List<String>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 14,
+          "public": false,
+          "getter": true
+        },
+        "observerSatelliteNames": {
+          "java": "List<String>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 15,
+          "public": false,
+          "getter": true
+        },
+        "arcs": {
+          "java": "List<VisibilityArc>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 16,
+          "public": false,
+          "getter": true
+        },
+        "observationType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 17,
+          "public": false,
+          "getter": true
+        },
+        "observationTypeName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 18,
+          "public": false,
+          "getter": true
+        },
+        "conciseSummary": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "WinTool 简约格式的观测摘要（任务摘要 + 各单星观测时段），仅供展示。",
+          "line": 20,
+          "public": false,
+          "getter": true
+        },
+        "targetNorad": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "WinTool 简约格式的观测摘要（任务摘要 + 各单星观测时段），仅供展示。 /\n    private String conciseSummary;\n    /  目标 NORAD 编号（供 WinTool 格式摘要与对外对账使用）；目录缺失时为 null。",
+          "line": 22,
+          "public": false,
+          "omit": "空值省略",
+          "getter": true
+        },
+        "targetWeightKg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "WinTool 简约格式的观测摘要（任务摘要 + 各单星观测时段），仅供展示。 /\n    private String conciseSummary;\n    /  目标 NORAD 编号（供 WinTool 格式摘要与对外对账使用）；目录缺失时为 null。 /\n    private String targetNorad;\n    /  目标质量（公斤）；目录缺失时为 null。",
+          "line": 24,
+          "public": false,
+          "omit": "空值省略",
+          "getter": true
+        },
+        "firstOrbitLine": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "WinTool 简约格式的观测摘要（任务摘要 + 各单星观测时段），仅供展示。 /\n    private String conciseSummary;\n    /  目标 NORAD 编号（供 WinTool 格式摘要与对外对账使用）；目录缺失时为 null。 /\n    private String targetNorad;\n    /  目标质量（公斤）；目录缺失时为 null。 /\n    private Double targetWeightKg;\n    /  目标两行根数第一行；非 TLE_SGP4 目标为 null。",
+          "line": 26,
+          "public": false,
+          "omit": "空值省略",
+          "getter": true
+        },
+        "secondOrbitLine": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "WinTool 简约格式的观测摘要（任务摘要 + 各单星观测时段），仅供展示。 /\n    private String conciseSummary;\n    /  目标 NORAD 编号（供 WinTool 格式摘要与对外对账使用）；目录缺失时为 null。 /\n    private String targetNorad;\n    /  目标质量（公斤）；目录缺失时为 null。 /\n    private Double targetWeightKg;\n    /  目标两行根数第一行；非 TLE_SGP4 目标为 null。 /\n    private String firstOrbitLine;\n    /  目标两行根数第二行；非 TLE_SGP4 目标为 null。",
+          "line": 28,
+          "public": false,
+          "omit": "空值省略",
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityObservationResult.java"
+    },
+    "VisibilityArc": {
+      "parent": null,
+      "fields": {
+        "startTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 18,
+          "public": false,
+          "getter": true
+        },
+        "endTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 19,
+          "public": false,
+          "getter": true
+        },
+        "observerIlluminations": {
+          "java": "List<ObserverIllumination>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 20,
+          "public": false,
+          "getter": true
+        },
+        "targetIllumination": {
+          "java": "TargetIllumination",
+          "defaultExpr": null,
+          "description": "",
+          "line": 21,
+          "public": false,
+          "getter": true
+        },
+        "illuminationSegments": {
+          "java": "List<IlluminationSegment>",
+          "defaultExpr": null,
+          "description": "父窗口内部因光照状态变化产生的稳定片段。父窗口才是组合时长约束的判定单位， 此字段只用于保留状态变化明细，不能被误展示为独立的合格观测窗口。",
+          "line": 26,
+          "public": false,
+          "omit": "空数组省略",
+          "getter": true
+        },
+        "satelliteSegments": {
+          "java": "List<SatelliteSegment>",
+          "defaultExpr": null,
+          "description": "父窗口内部因光照状态变化产生的稳定片段。父窗口才是组合时长约束的判定单位， 此字段只用于保留状态变化明细，不能被误展示为独立的合格观测窗口。 /\n    private final List<IlluminationSegment> illuminationSegments;\n    /   组合父窗口对应的各星原始连续单星窗口。该字段与父窗口不同：父窗口是各星求交后的共同时间， 此处保留各星各自完整的连续可观测范围，供页面解释组合起止边界的来源。",
+          "line": 31,
+          "public": false,
+          "omit": "空数组省略",
+          "getter": true
+        },
+        "statistics": {
+          "java": "VisibilityPairStatistics",
+          "defaultExpr": null,
+          "description": "父窗口内部因光照状态变化产生的稳定片段。父窗口才是组合时长约束的判定单位， 此字段只用于保留状态变化明细，不能被误展示为独立的合格观测窗口。 /\n    private final List<IlluminationSegment> illuminationSegments;\n    /   组合父窗口对应的各星原始连续单星窗口。该字段与父窗口不同：父窗口是各星求交后的共同时间， 此处保留各星各自完整的连续可观测范围，供页面解释组合起止边界的来源。 /\n    private final List<SatelliteSegment> satelliteSegments;\n    /   单星约束弧段的观测统计（距离/方位/俯仰/角速度极值）。仅当组合成员只有一颗星时填充， 多星组合的统计分别挂在其 satelliteSegments 上；旧数据为 null。",
+          "line": 36,
+          "public": false,
+          "omit": "空值省略",
+          "getter": true
+        },
+        "durationSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 112,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java"
+    },
+    "ObserverIllumination": {
+      "parent": null,
+      "fields": {
+        "satelliteId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 197,
+          "public": false,
+          "getter": true
+        },
+        "satelliteName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 198,
+          "public": false,
+          "getter": true
+        },
+        "state": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 199,
+          "public": false,
+          "getter": true
+        },
+        "stateName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 200,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java"
+    },
+    "TargetIllumination": {
+      "parent": null,
+      "fields": {
+        "targetId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 220,
+          "public": false,
+          "getter": true
+        },
+        "targetName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 221,
+          "public": false,
+          "getter": true
+        },
+        "state": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 222,
+          "public": false,
+          "getter": true
+        },
+        "stateName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 223,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java"
+    },
+    "IlluminationSegment": {
+      "parent": null,
+      "fields": {
+        "startTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 243,
+          "public": false,
+          "getter": true
+        },
+        "endTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 244,
+          "public": false,
+          "getter": true
+        },
+        "observerIlluminations": {
+          "java": "List<ObserverIllumination>",
+          "defaultExpr": null,
+          "description": "",
+          "line": 245,
+          "public": false,
+          "getter": true
+        },
+        "targetIllumination": {
+          "java": "TargetIllumination",
+          "defaultExpr": null,
+          "description": "",
+          "line": 246,
+          "public": false,
+          "getter": true
+        },
+        "durationSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 268,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java"
+    },
+    "SatelliteSegment": {
+      "parent": null,
+      "fields": {
+        "satelliteId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 279,
+          "public": false,
+          "getter": true
+        },
+        "satelliteName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 280,
+          "public": false,
+          "getter": true
+        },
+        "state": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 281,
+          "public": false,
+          "getter": true
+        },
+        "stateName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 282,
+          "public": false,
+          "getter": true
+        },
+        "startTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 283,
+          "public": false,
+          "getter": true
+        },
+        "endTime": {
+          "java": "Instant",
+          "defaultExpr": null,
+          "description": "",
+          "line": 284,
+          "public": false,
+          "getter": true
+        },
+        "durationSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 285,
+          "public": false,
+          "getter": true
+        },
+        "statistics": {
+          "java": "VisibilityPairStatistics",
+          "defaultExpr": null,
+          "description": "该星覆盖本时段的原始观测统计（距离/方位/俯仰/角速度极值）；旧数据为 null。",
+          "line": 287,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java"
+    },
+    "VisibilityPairStatistics": {
+      "parent": null,
+      "fields": {
+        "samples": {
+          "java": "long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 16,
+          "public": false,
+          "getter": true
+        },
+        "minAzimuthDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 19,
+          "public": false,
+          "getter": true
+        },
+        "maxAzimuthDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 20,
+          "public": false,
+          "getter": true
+        },
+        "minElevationDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 21,
+          "public": false,
+          "getter": true
+        },
+        "maxElevationDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 22,
+          "public": false,
+          "getter": true
+        },
+        "maxAngleRateDegPerSec": {
+          "java": "double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 23,
+          "public": false,
+          "getter": true
+        },
+        "minDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 52,
+          "public": false,
+          "getter": true
+        },
+        "maxDistanceKm": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 57,
+          "public": false,
+          "getter": true
+        },
+        "azimuthRelativeMinusXMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 87,
+          "public": false,
+          "getter": true
+        },
+        "azimuthRelativeMinusXMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 92,
+          "public": false,
+          "getter": true
+        },
+        "elevationZenithMinDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 97,
+          "public": false,
+          "getter": true
+        },
+        "elevationZenithMaxDeg": {
+          "java": "Double",
+          "defaultExpr": null,
+          "description": "",
+          "line": 102,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPairStatistics.java"
+    },
+    "SatelliteEntity": {
+      "parent": null,
+      "fields": {
+        "id": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 20,
+          "public": false,
+          "getter": true
+        },
+        "type": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 21,
+          "public": false,
+          "getter": true
+        },
+        "libraryModelId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 22,
+          "public": false,
+          "getter": true
+        },
+        "name": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 23,
+          "public": false,
+          "getter": true
+        },
+        "scid": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 24,
+          "public": false,
+          "getter": true
+        },
+        "objectId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 25,
+          "public": false,
+          "getter": true
+        },
+        "objectName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 26,
+          "public": false,
+          "getter": true
+        },
+        "noradCatId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 27,
+          "public": false,
+          "getter": true
+        },
+        "country": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 28,
+          "public": false,
+          "getter": true
+        },
+        "period": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 29,
+          "public": false,
+          "getter": true
+        },
+        "catalogInclination": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 30,
+          "public": false,
+          "getter": true
+        },
+        "apogee": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 31,
+          "public": false,
+          "getter": true
+        },
+        "perigee": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 32,
+          "public": false,
+          "getter": true
+        },
+        "rcsSize": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 33,
+          "public": false,
+          "getter": true
+        },
+        "rcsValue": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 34,
+          "public": false,
+          "getter": true
+        },
+        "launchDate": {
+          "java": "LocalDate",
+          "defaultExpr": null,
+          "description": "",
+          "line": 35,
+          "public": false,
+          "getter": true
+        },
+        "catalogComment": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 36,
+          "public": false,
+          "getter": true
+        },
+        "weight": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 37,
+          "public": false,
+          "getter": true
+        },
+        "modelType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 38,
+          "public": false,
+          "getter": true
+        },
+        "epochTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 39,
+          "public": false,
+          "getter": true
+        },
+        "semiMajorAxis": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 40,
+          "public": false,
+          "getter": true
+        },
+        "eccentricity": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 41,
+          "public": false,
+          "getter": true
+        },
+        "inclination": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 42,
+          "public": false,
+          "getter": true
+        },
+        "meanAnomaly": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 43,
+          "public": false,
+          "getter": true
+        },
+        "raan": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 44,
+          "public": false,
+          "getter": true
+        },
+        "argumentOfPerigee": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 45,
+          "public": false,
+          "getter": true
+        },
+        "payloadJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 46,
+          "public": false,
+          "getter": true
+        },
+        "firstOrbit": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 47,
+          "public": false,
+          "getter": true
+        },
+        "secondOrbit": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 48,
+          "public": false,
+          "getter": true
+        },
+        "createdBy": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 49,
+          "public": false,
+          "getter": true
+        },
+        "updateBy": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 50,
+          "public": false,
+          "getter": true
+        },
+        "createTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 51,
+          "public": false,
+          "getter": true
+        },
+        "updateTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 52,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/SatelliteEntity.java"
+    },
+    "StationEntity": {
+      "parent": null,
+      "fields": {
+        "id": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 19,
+          "public": false,
+          "getter": true
+        },
+        "name": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 21,
+          "public": false,
+          "getter": true
+        },
+        "longitude": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 23,
+          "public": false,
+          "getter": true
+        },
+        "latitude": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 25,
+          "public": false,
+          "getter": true
+        },
+        "height": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 27,
+          "public": false,
+          "getter": true
+        },
+        "minElevation": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 29,
+          "public": false,
+          "getter": true
+        },
+        "maxElevation": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 31,
+          "public": false,
+          "getter": true
+        },
+        "createBy": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 33,
+          "public": false,
+          "getter": true
+        },
+        "createOrgId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 35,
+          "public": false,
+          "getter": true
+        },
+        "createTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 37,
+          "public": false,
+          "getter": true
+        },
+        "updateBy": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 39,
+          "public": false,
+          "getter": true
+        },
+        "updateTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 41,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/StationEntity.java"
+    },
+    "TargetEntity": {
+      "parent": null,
+      "fields": {
+        "id": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 20,
+          "public": false,
+          "getter": true
+        },
+        "type": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 21,
+          "public": false,
+          "getter": true
+        },
+        "libraryModelId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 22,
+          "public": false,
+          "getter": true
+        },
+        "name": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 23,
+          "public": false,
+          "getter": true
+        },
+        "scid": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 24,
+          "public": false,
+          "getter": true
+        },
+        "objectId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 25,
+          "public": false,
+          "getter": true
+        },
+        "objectName": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 26,
+          "public": false,
+          "getter": true
+        },
+        "noradCatId": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 27,
+          "public": false,
+          "getter": true
+        },
+        "country": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 28,
+          "public": false,
+          "getter": true
+        },
+        "period": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 29,
+          "public": false,
+          "getter": true
+        },
+        "catalogInclination": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 30,
+          "public": false,
+          "getter": true
+        },
+        "apogee": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 31,
+          "public": false,
+          "getter": true
+        },
+        "perigee": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 32,
+          "public": false,
+          "getter": true
+        },
+        "rcsSize": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 33,
+          "public": false,
+          "getter": true
+        },
+        "rcsValue": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 34,
+          "public": false,
+          "getter": true
+        },
+        "launchDate": {
+          "java": "LocalDate",
+          "defaultExpr": null,
+          "description": "",
+          "line": 35,
+          "public": false,
+          "getter": true
+        },
+        "catalogComment": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 36,
+          "public": false,
+          "getter": true
+        },
+        "modelType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 37,
+          "public": false,
+          "getter": true
+        },
+        "epochTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 38,
+          "public": false,
+          "getter": true
+        },
+        "semiMajorAxis": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 39,
+          "public": false,
+          "getter": true
+        },
+        "eccentricity": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 40,
+          "public": false,
+          "getter": true
+        },
+        "inclination": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 41,
+          "public": false,
+          "getter": true
+        },
+        "meanAnomaly": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 42,
+          "public": false,
+          "getter": true
+        },
+        "raan": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 43,
+          "public": false,
+          "getter": true
+        },
+        "argumentOfPerigee": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 44,
+          "public": false,
+          "getter": true
+        },
+        "firstOrbit": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 45,
+          "public": false,
+          "getter": true
+        },
+        "secondOrbit": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 46,
+          "public": false,
+          "getter": true
+        },
+        "belong": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 47,
+          "public": false,
+          "getter": true
+        },
+        "weight": {
+          "java": "BigDecimal",
+          "defaultExpr": null,
+          "description": "",
+          "line": 48,
+          "public": false,
+          "getter": true
+        },
+        "createBy": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 49,
+          "public": false,
+          "getter": true
+        },
+        "updateBy": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 50,
+          "public": false,
+          "getter": true
+        },
+        "createOrgId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 51,
+          "public": false,
+          "getter": true
+        },
+        "createTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 52,
+          "public": false,
+          "getter": true
+        },
+        "updateTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 53,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/TargetEntity.java"
+    },
+    "VisibilityTaskResultEntity": {
+      "parent": null,
+      "fields": {
+        "id": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 18,
+          "public": false,
+          "getter": true
+        },
+        "taskId": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 19,
+          "public": false,
+          "getter": true
+        },
+        "taskType": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 20,
+          "public": false,
+          "getter": true
+        },
+        "status": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 21,
+          "public": false,
+          "getter": true
+        },
+        "totalPairs": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 22,
+          "public": false,
+          "getter": true
+        },
+        "completedPairs": {
+          "java": "Long",
+          "defaultExpr": null,
+          "description": "",
+          "line": 23,
+          "public": false,
+          "getter": true
+        },
+        "errorMessage": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 24,
+          "public": false,
+          "getter": true
+        },
+        "requestJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 25,
+          "public": false,
+          "getter": true
+        },
+        "resultJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 26,
+          "public": false,
+          "getter": true
+        },
+        "skippedPairsJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 27,
+          "public": false,
+          "getter": true
+        },
+        "remark": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 28,
+          "public": false,
+          "getter": true
+        },
+        "selectionJson": {
+          "java": "String",
+          "defaultExpr": null,
+          "description": "",
+          "line": 29,
+          "public": false,
+          "getter": true
+        },
+        "createTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 30,
+          "public": false,
+          "getter": true
+        },
+        "completeTime": {
+          "java": "LocalDateTime",
+          "defaultExpr": null,
+          "description": "",
+          "line": 31,
+          "public": false,
+          "getter": true
+        }
+      },
+      "source": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/VisibilityTaskResultEntity.java"
+    }
+  },
+  "routes": [
+    "GET /api/v1/space/health",
+    "GET /api/v1/space/satellites",
+    "GET /api/v1/space/satellites/page",
+    "GET /api/v1/space/satellites/options",
+    "GET /api/v1/space/satellites/{satelliteId}/payload",
+    "PUT /api/v1/space/satellites/{satelliteId}/payload",
+    "GET /api/v1/space/satellites/{satelliteId}/payload-profiles",
+    "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+    "GET /api/v1/space/stations",
+    "GET /api/v1/space/defaults",
+    "POST /api/v1/space/targets/query",
+    "GET /api/v1/space/targets/belong-options",
+    "POST /api/v1/space/downlink/plan",
+    "POST /api/v1/space/downlink/validate-window",
+    "POST /api/v1/space/visibility/plan",
+    "POST /api/v1/space/visibility/tasks",
+    "GET /api/v1/space/visibility/tasks/{taskId}",
+    "GET /api/v1/space/visibility/tasks/{taskId}/result",
+    "DELETE /api/v1/space/visibility/tasks/{taskId}",
+    "GET /api/v1/space/visibility/task-results",
+    "GET /api/v1/space/visibility/task-results/{id}",
+    "PUT /api/v1/space/visibility/task-results/{id}",
+    "PUT /api/v1/space/visibility/task-results/{id}/selection",
+    "DELETE /api/v1/space/visibility/task-results/{id}",
+    "POST /api/v1/ballistic/files",
+    "POST /api/v1/ballistic/files/register-result",
+    "GET /api/v1/ballistic/files/{fileId}/preview",
+    "GET /api/v1/ballistic/files/{fileId}/download",
+    "POST /api/v1/ballistic/payloads/preview",
+    "GET /api/orbit/health",
+    "POST /api/orbit/visibility/search",
+    "GET /api/trajectory/health",
+    "POST /api/trajectory/fit/package102",
+    "POST /api/trajectory/simulate",
+    "POST /api/trajectory/retime"
+  ],
+  "jar": {
+    "path": "verification/runtime/A01/final-candidate/release/backend/server.jar",
+    "sha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71",
+    "note": "本项只重新计算既有A01正式JAR指纹，不新构建或运行服务。"
+  },
+  "sources": [
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ApiCorsConfiguration.java",
+      "sha256": "ae7d44cb037bd7aed06bbe3d404a139d3fc6e17dd53c7f476653242bdd15792c"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ApiExceptionHandler.java",
+      "sha256": "76eefa7d2c8bd931ddf13c3d1ac418b445783200007bfcf817279ddb4c800c5c"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+      "sha256": "c2cc858ca3ee7c4635d5c2a2f6bf35a0330bfcb09bf908d2467c373e8c1e8362"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileExceptionHandler.java",
+      "sha256": "5904d2ddfe3281c7bf6be46ab9ee71ee148066eb347a08483244a4065d3ded7b"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "sha256": "a9b789229680e5f59705ca91820ff41de969c38157de58bb1a949e5b0571d1dc"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.java",
+      "sha256": "62de008a72db544880f8adbc1381ab6355f71b0e9f2ceabcbee62141c43b0316"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticMultipartExceptionResolver.java",
+      "sha256": "833bcc89d207fbc0708c2260b2ce97c2bb4e69435ad066dc23e41dc2e2fbe2a8"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticPayloadController.java",
+      "sha256": "49acd51941137e956f72ce4bd21d58ef5044854e29333f4c37c010dbf8ac00ef"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java",
+      "sha256": "059e8684dce4ce96b1e513f39695d3d3dff2f2f0d3f63b51f9e7f336caa9a17a"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java",
+      "sha256": "2f676e6478d167e1e08ab096dfd6e9d2fb9022a2c999c00d40bc07bdf4bb90de"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.java",
+      "sha256": "1ffb8bd19992696b6b16b191d5b63eadae371891773e5d4dc3c5ed74beb40211"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/PlanningTaskController.java",
+      "sha256": "75092b1582792ce92fb41297296961621aca4bb7b3c0c34607c849c2a968775e"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+      "sha256": "30e7392a95cb5ccdd6ad9fecba7a727549d3add4219ca635a92e62daf77f6a79"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+      "sha256": "599bbf338ae8a469702dee2750eec48f1f0482f9116a2d960bc089cad5a5a234"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.java",
+      "sha256": "87bc344871f63ab630a7cef03d51097619285a12b842f2e36f3e6803b5e108bd"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticFileService.java",
+      "sha256": "f0ab80b0026e6118ffb6c0bf9778631572f5709d26e51d37d144782a29a6e512"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticFitService.java",
+      "sha256": "372fe97e0018c106c07266b5be75e9bd3bb5aa9f36fe92ba69fbdfa7859fb0a5"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticRetimeService.java",
+      "sha256": "c7919ee99033a3a6b8ad500604e1b903a03b5341eb15be544eff9c6768702b83"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticSimulationService.java",
+      "sha256": "fb483b03506c544e7757677e8121aacb0b31fd5466c6be5b332460b5f002c448"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService.java",
+      "sha256": "43d7896d05fc8c3d495de9c09be7e9b3148dcd66cc0ba052120aa103ace6256b"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityService.java",
+      "sha256": "d649e65b9affdf2119a17e1a2127217441396a505f14e7d5b48a9c43e2a4e406"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkCoverageWindowMerger.java",
+      "sha256": "62cf73dd96687d5c35ee09ee7aa31ca331f4c0c6a53b9bce2520292d841af7d8"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkPair.java",
+      "sha256": "5c24499373f78ba135b527bf4ce0d95ac4f00cb4978a067dc7a8b6dcc83e1418"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkPairResult.java",
+      "sha256": "c04390fd894f0b76ae0a4c1100c0a521c9cdd3f0138b4fef2d53b9407d658a70"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkPlanningOutcome.java",
+      "sha256": "68af1b9ea64873c462adc15aa20767b02fc4ea35e8cffa025cd5fad2be212e88"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkPlanningService.java",
+      "sha256": "12f6cfe20aeb9c0c7672adf69ef240010355ae08f7d5b4b3139b547983f8ed0a"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkSkippedLink.java",
+      "sha256": "dda9789ae1985d70e276c0511baac05d41965f59db870ebd189d0c7bdf3dc64c"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/DownlinkWindowValidator.java",
+      "sha256": "bd9451eb242dbcec4a2dc2c28dc5bd190cb1f512251da0327c35cccef38b3c8d"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ObservationSampleEvaluator.java",
+      "sha256": "fb755dc291f6baccc72c16006966acb46c9d1a011dea8cd95bd5a36a47c83f28"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/OrbitPositionCache.java",
+      "sha256": "b42b71f62b5958912af5c3eb2983a83e7f0e3dfbbe0e8ddf5c385bd36ca3d9b1"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/OrbitStateProviderFactory.java",
+      "sha256": "fb309b341550997f90ae3adb98a08b6681a1a17066c06d472b108bb16a2fc90f"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PayloadConstraintFactory.java",
+      "sha256": "790669965aba531ae9c7cab16dbe84d5ef65bdc98f5a33ad6ea49f9882cc35bf"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningFacadeService.java",
+      "sha256": "9b392a705fb18449b24c6b79f52cf6eff732069efe2b6664a7bbe23bf5a06360"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningFailureReasonFormatter.java",
+      "sha256": "57cf0eb6fdb93dfa9fd570ea42f8455a216e78cb1bd40c5028336de190c7a625"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningTask.java",
+      "sha256": "a4e284fab84f91f63acd78459ac0620d6840ebf89faef6c0461ad0c6eb3ca078"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/PlanningTaskService.java",
+      "sha256": "6cd44d2d797d3cc228ee831410c0ebed9b755ce5a9c0979bf3e4437e3b0b6d85"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/ReferenceDataService.java",
+      "sha256": "974a2771b4140f50c50bf74ccc70a588078917a861605b72d043ff56669c90cd"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java",
+      "sha256": "8832d1c2626b36d2a3d1504b59ed8a2d39ad6fce9ba1c87a69d9cdfc98fbe98a"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityConstraintPlanner.java",
+      "sha256": "bc7470792f210837092f888bd7462bbf8fa88746949519b53a6dbec17ac6c11f"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityExecutorConfiguration.java",
+      "sha256": "c282233295c9955093c2130a5bc0cde4f9dfb43c26a1e08bf0e74c7f5c229384"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityObservationResult.java",
+      "sha256": "9a6bfebf8bd3c73509788cd4b81b38c741f280f69aabd3f9298448f9770c59c5"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityObserver.java",
+      "sha256": "0ec4e3a6d76a642b3b8602f74ef3eb2de0abcbc0e200028094b50f63c1102d86"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPairResult.java",
+      "sha256": "0bacbb6f74bb5983138363b027441ee10f2051e8bd1219537d1ec27f109b28be"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPairStatistics.java",
+      "sha256": "d16e7d9c571c6d0f4e912c10ff664f999adc6a5fc6c5ac45ed615d04a751ec22"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPlanningOutcome.java",
+      "sha256": "fb81c5008d374a9c1c140b9ca4a939427fdc798f9c7e2e4cbf6d537f7917ed9c"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPlanningService.java",
+      "sha256": "a1a6c4b46647eea63d20145ce4b547b0676ea828b2259fcee829059a8520859f"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilitySkippedPair.java",
+      "sha256": "587676eb19b8389053becfe8f0b09d1cbeda2f32de4e35ce8cfd4020499f793d"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityTarget.java",
+      "sha256": "cf7e7cfb2319a4b75d12278385678b706d9693633b2f7a262daebdf32ea5e2c3"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityTaskResultService.java",
+      "sha256": "b9ac955cf031e3f37f6338736933230c6db99b0a9ca7f1df0233791070a85480"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/WinToolReportFormatter.java",
+      "sha256": "2d1e8ec6ce6ef486e0f658dbfd6ebedcfcf6aee2739ceb8521515861b07de7f3"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileConfiguration.java",
+      "sha256": "f003df14c57fcdfc9cacad3460ba376ac87eac0e992026e6d984456b626563ad"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage.java",
+      "sha256": "f744c9fff13ef59a0e7642d12d80c20b11e678e0b2412df43137385866a67195"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/files/ManagedFileException.java",
+      "sha256": "ac89a9a897393b592f360a49bc119ed1d4283353d002f3edbf1a8738d6e4c426"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/SatelliteEntity.java",
+      "sha256": "9df3bdc882397a8eaff48e5ced23dbb1e7a936ff56566695f064b10c5a98494d"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/StationEntity.java",
+      "sha256": "174239d33dd8c74a391d5c1eb0abb0b66e44d0fdc961990b7627726955600edc"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/TargetEntity.java",
+      "sha256": "bf97f446d50318d905e594208ec026aaaca766920befdbee54e41cb3ef52eb24"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/VisibilityTaskResultEntity.java",
+      "sha256": "e9a3980908f483439bab74870fc85a0207905d3a49b9006197f64cc4a9da4587"
+    },
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/SpaceTargetVisibleApplication.java",
+      "sha256": "e80a2eb8f64fc5480d4ecabd8626dca06eafa2c9c31e8881ddeda90cc861a5b2"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+      "sha256": "619de18b0e4aec091a6c2a2cbaa2c44f7abf02585430601a3020b8336b67d73f"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/OrbitCalculator.java",
+      "sha256": "93417703f28aef52e8aa70795bce9253a6e8e8bd782352aeaa55320af61531ea"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "sha256": "0004bca34ccea05ad072d72f962f85d5cbf721578f9501e6819e1bb51cc47d38"
+    },
+    {
+      "path": "backend/src/main/resources/application.yml",
+      "sha256": "9cef1b8a17dd4c4f674e88b4e34430b2d0372f39d170133a736f9fc42daf30b6"
+    },
+    {
+      "path": "frontend/src/api/ballisticWindowTypes.ts",
+      "sha256": "6b1a94b1632ed162c3f44666b61d7c62ef7d209f524b28533932d7f29a70541e"
+    },
+    {
+      "path": "frontend/src/api/types.ts",
+      "sha256": "c8353bc7a2dfe9900ae23b4c5f60ac9bf935c89f6d8f4a6700161548c75dcde5"
+    }
+  ]
+}

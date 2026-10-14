@@ -1,0 +1,37 @@
+[
+  {
+    "path": "verification/A02/build_contract.py",
+    "bytes": 85730,
+    "sha256": "a585b1df0b95418517d29f95a477babb36dce7e036d3f9e66f1b69c15a1346a8"
+  },
+  {
+    "path": "docs/接口文档.md",
+    "bytes": 224507,
+    "sha256": "8c7c8b01b3e3705c3989cb4c29197601a09e0ba7973204a4a40e03d5a2ea85d8"
+  },
+  {
+    "path": "docs/openapi/openapi.json",
+    "bytes": 442334,
+    "sha256": "6eeb15cf98a22e553221c1a6ad3b02e44838307e17038c229a2b5003d359c7c4"
+  },
+  {
+    "path": "verification/A02/source-inventory.json",
+    "bytes": 149421,
+    "sha256": "b3297fee759e17bd3bfaa04c575d4e786b7e04638ebeca6736fcff5adc62f190"
+  },
+  {
+    "path": "verification/A02/validation-result.json",
+    "bytes": 1021,
+    "sha256": "29aec43dc028cfe47e4e971364c98c9b12b17b783eaf49de8ee1256e1b8cd149"
+  },
+  {
+    "path": "verification/A02/artifact-manifest.json",
+    "bytes": 42033,
+    "sha256": "953b33c470a2790807cb5b38ca9cab134ef4b379bb8ab9f6f3eab96a3d590068"
+  },
+  {
+    "path": "verification/runtime/A02-implementation-report.md",
+    "bytes": 17010,
+    "sha256": "753d0531c07e45c5a46b034f285ab43f42db055a49c532169f2b6ed6677d5660"
+  }
+]

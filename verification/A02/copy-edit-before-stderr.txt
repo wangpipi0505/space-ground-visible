@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A02\check_ephemeris_copy.py", line 11, in <module>
+    assert '星历过期目标并未进入传播' not in description, '公开字段仍复制过期源注释'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 公开字段仍复制过期源注释

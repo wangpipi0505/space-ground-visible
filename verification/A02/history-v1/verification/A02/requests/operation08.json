@@ -1,0 +1,12 @@
+{
+  "payloadType": "SPACE",
+  "minDistanceKm": 0,
+  "maxDistanceKm": 0,
+  "azimuthMinDeg": null,
+  "azimuthMaxDeg": null,
+  "elevationMinDeg": null,
+  "elevationMaxDeg": null,
+  "angleRateDegPerSec": 0,
+  "sunAvoidHalfAngleDeg": 0,
+  "startupAngleRateDegPerSec": null
+}

@@ -1,0 +1,6 @@
+{
+  "taskName": "T04-retime",
+  "targetId": "RETIMED-TGT",
+  "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-1187770930413257334\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_072929_162.csv",
+  "launchTimeUtc": "2026-07-02 07:57:00.000"
+}

@@ -46,11 +46,11 @@ assert percentile_ms([10, 20, 30, 40], .95) == 40
 
 **Files:** 新建docs/接口文档.md、docs/openapi/openapi.json，必要生成/核验脚本verification/A02/，报告verification/A02/验证报告.md；README添加新入口。输入A01测试和正式Controller/DTO/序列化/前端调用，输出人读中文合同及OpenAPI3.0.3 JSON。
 
-- [ ] 以实际35路由建立每操作：方法/路径/用途/内容类型、path/query/body/multipart、必填/默认/类型/单位/特殊值/约束、成功/错误/取消状态、真实脱敏请求响应与curl。
-- [ ] 全量对照请求/响应嵌套字段/枚举/别名、Long与字符串ID、两UTC口径、完整CSV列及速度、显式outputDir/上传登记/下载/预览生命周期；新标准payload与兼容旧摘要分列。
-- [ ] OpenAPI定义真实活动操作及组件schema/nullable/format、文件二进制/JSON响应、已有错误形态，不新增包装/身份认证/伪字段；以A01实际请求/响应核对，不引用动态假fileId当实测。
-- [ ] 标准库加载JSON、遍历全部$ref存在、operations=35、方法路径与Controller清单一致；检查示例字段/required/响应类型与本项实际请求；核验中文Markdown链接/样例语法。新增普通Java工具接口入口引用现有独立工具说明。
-- [ ] 独立审查后补充台账A02完成/中文提交/acceptance日期标签，旧T03/T29历史文档保留来源，新README指向本完整文档。
+- [x] 以实际35路由建立每操作：方法/路径/用途/内容类型、path/query/body/multipart、必填/默认/类型/单位/特殊值/约束、成功/错误/取消状态、真实脱敏请求响应与curl。
+- [x] 全量对照请求/响应嵌套字段/枚举/别名、Long与字符串ID、两UTC口径、完整CSV列及速度、显式outputDir/上传登记/下载/预览生命周期；新标准payload与兼容旧摘要分列。
+- [x] OpenAPI定义真实活动操作及组件schema/nullable/format、文件二进制/JSON响应、已有错误形态，不新增包装/身份认证/伪字段；以A01实际请求/响应核对，不引用动态假fileId当实测。
+- [x] 标准库加载JSON、遍历全部$ref存在、operations=35、方法路径与Controller清单一致；检查示例字段/required/响应类型与本项实际请求；核验中文Markdown链接/样例语法。新增普通Java工具接口入口引用现有独立工具说明。
+- [x] 独立审查后补充台账A02完成/中文提交/acceptance日期标签，旧T03/T29历史文档保留来源，新README指向本完整文档。
 
 ### A03：软件功能使用说明
 

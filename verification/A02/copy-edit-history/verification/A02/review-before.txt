@@ -1,0 +1,46 @@
+{
+  "passed": false,
+  "scope": "A02 文档及核验辅助限定覆盖；不证明新的业务 HTTP 成功。",
+  "results": [
+    {
+      "finding": "I01",
+      "passed": false,
+      "error": "FitRequest 仍把 Java 初始化值写成 HTTP 默认值"
+    },
+    {
+      "finding": "I02",
+      "passed": false,
+      "error": "satelliteIds 允许 null"
+    },
+    {
+      "finding": "I03",
+      "passed": false,
+      "error": "旧中文入口被无关标准数值拒绝"
+    },
+    {
+      "finding": "I04",
+      "passed": false,
+      "error": "description 源码污染 74"
+    },
+    {
+      "finding": "I05",
+      "passed": false,
+      "error": "日志实际字节 SHA 不一致 ['curl-version.txt', 'generate.txt', 'curl-transport.txt', 'contract.txt']"
+    },
+    {
+      "finding": "I06",
+      "passed": false,
+      "error": "缺少登记动态媒体范围"
+    },
+    {
+      "finding": "M01",
+      "passed": false,
+      "error": "未对加载的 schema 比较源字段"
+    },
+    {
+      "finding": "M02",
+      "passed": false,
+      "error": "没有可核验原字节/媒体类型的传输断言"
+    }
+  ]
+}

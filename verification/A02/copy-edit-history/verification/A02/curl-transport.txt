@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "curlOperations": 35,
+  "scope": "只核验PowerShell/curl.exe方法、路径、query、JSON请求文件原字节/Content-Type和multipart CSV原字节/媒体类型；echoReceiver只检查传输语法，不是新业务成功证明；不是业务HTTP重跑，不证明当前动态引用仍可用。",
+  "listenerClosed": true
+}

@@ -1,0 +1,20 @@
+{
+  "taskName": "defaultSimTask",
+  "targetId": "SIM-001",
+  "launchTimeUtc": "2026-06-04 04:00:00.000",
+  "impactTimeUtc": "2026-06-04 04:42:55.000",
+  "taskStartTime": "2026-06-04 04:00:00.000",
+  "taskEndTime": "2026-06-04 04:42:55.000",
+  "launchPointX": 2167790.227,
+  "launchPointY": 4775481.109,
+  "launchPointZ": 3618557.253,
+  "launchPointCoordFrame": "J2000",
+  "launchPointUnit": "m",
+  "impactPointX": 3578635.76,
+  "impactPointY": 3522525.227,
+  "impactPointZ": 3919735.591,
+  "impactPointCoordFrame": "J2000",
+  "impactPointUnit": "m",
+  "outputPointDurationSec": 60,
+  "phaseEvents": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "copy-edit-byte-audit",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "verification/A02/audit_copy_edit.py"
+  ],
+  "startTime": "2026-10-14T01:46:17.864103+00:00",
+  "endTime": "2026-10-14T01:46:18.050213+00:00",
+  "exitCode": 0,
+  "stdout": "copy-edit-byte-audit.txt",
+  "stderr": "copy-edit-byte-audit-stderr.txt",
+  "stdoutSha256": "5a60bb4317004253e68624abd6d6b4223c6c50cb9c677836a1de9e21224a692c",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,81 @@
+{
+  "running": false,
+  "passed": true,
+  "commands": [
+    {
+      "name": "curl-version",
+      "command": [
+        "curl.exe",
+        "--version"
+      ],
+      "startTime": "2026-10-14T01:07:00.430152+00:00",
+      "endTime": "2026-10-14T01:07:00.447060+00:00",
+      "exitCode": 0,
+      "stdout": "curl-version.txt",
+      "stderr": "curl-version-stderr.txt",
+      "stdoutSha256": "462db4e956d97703eae92a1863090a26987ab7b9bc55c43b4e11565918cc56a4",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "generate",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verification/A02/build_contract.py"
+      ],
+      "startTime": "2026-10-14T01:07:00.447225+00:00",
+      "endTime": "2026-10-14T01:07:00.687393+00:00",
+      "exitCode": 0,
+      "stdout": "generate.txt",
+      "stderr": "generate-stderr.txt",
+      "stdoutSha256": "ae53f0d212b20022a57806b4e5e71638fff75feb1da0a2c1f7a226ab032c075c",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "compile",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "py_compile",
+        "verification/A02/build_contract.py",
+        "verification/A02/validate_contract.py",
+        "verification/A02/verify_curl.py",
+        "verification/A02/run_verification.py"
+      ],
+      "startTime": "2026-10-14T01:07:00.687567+00:00",
+      "endTime": "2026-10-14T01:07:00.765158+00:00",
+      "exitCode": 0,
+      "stdout": "compile.txt",
+      "stderr": "compile-stderr.txt",
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "curl-transport",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verification/A02/verify_curl.py"
+      ],
+      "startTime": "2026-10-14T01:07:00.765336+00:00",
+      "endTime": "2026-10-14T01:07:08.033129+00:00",
+      "exitCode": 0,
+      "stdout": "curl-transport.txt",
+      "stderr": "curl-transport-stderr.txt",
+      "stdoutSha256": "8c63e3b5094cf029e836a54e96bfad448ec4ea571c0d11589c5a50b4e1abd429",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "contract",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verification/A02/validate_contract.py"
+      ],
+      "startTime": "2026-10-14T01:07:08.033365+00:00",
+      "endTime": "2026-10-14T01:07:08.787369+00:00",
+      "exitCode": 0,
+      "stdout": "contract.txt",
+      "stderr": "contract-stderr.txt",
+      "stdoutSha256": "796ecd426cf54157b56352a64fb0387b3f14293423f87a500f793b1fb80240d6",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

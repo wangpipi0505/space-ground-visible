@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-14T01:33:07.425502+00:00",
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+  "shell": "真实powershell.exe -NoProfile -NonInteractive",
+  "curl": "真实curl.exe，版本见curl-version.txt",
+  "frontendLockSha256": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8",
+  "sourceBaseline": "ba5821a692e6a60e6cd9148ec88999cd08c339d2",
+  "javaSpringOrekit": "保持产品Java8/Spring Boot2.7.18/Orekit12.0；本项未启动Java或重建，A01JAR重新计算SHA绑定源码清单。",
+  "scope": "仅A02文档、原证据读取、35 curl传输语法；不运行A01业务或压测，不修改产品/Git/台账/远端。"
+}

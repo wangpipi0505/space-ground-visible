@@ -1,0 +1,20 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@apidevtools/swagger-cli@4.0.4",
+    "swagger-cli",
+    "validate",
+    "docs/openapi/openapi.json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 4.103366136550903,
+  "toolVersion": "4.0.4",
+  "sourceSha256": "bfeb596dcb4dd1879c233bdbc2ec314f62ad97ea18f9763b4a6163a176ddba35",
+  "sourceUnchanged": true,
+  "stdoutSha256": "76abf387458a6cefef93820a9ae045c3605235989aab056f11058d8faa5022e1",
+  "officialToolSource": "https://github.com/APIDevTools/swagger-cli",
+  "scope": "固定版本OpenAPI3.0 schema/spec格式交叉校验；不替代业务字段/实际请求响应核验。只用npx缓存，无项目依赖改动；工具已归档。"
+}

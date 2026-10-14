@@ -27,6 +27,18 @@ verification/A01/**/*.json -text whitespace=cr-at-eol
 verification/A01/测试报告.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 verification/A01/独立审查修复报告.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 verification/A01/review-fix/history/测试报告.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+# A02 实际接口文档核验日志保留工具输出字节，格式校验终端自带末尾空行也保留。
+verification/A02/**/*.txt -text -whitespace
+# A02 合同与证据已逐字节绑定 SHA；初审快照包含真实旧换行，不作源码格式化。
+verification/A02/**/*.json -text whitespace=cr-at-eol
+verification/A02/**/*.md -text whitespace=cr-at-eol
+# 核验脚本也绑定实际执行时的 SHA，提交按已运行字节保存。
+verification/A02/**/*.py -text whitespace=cr-at-eol
+verification/A02/history-v1/** -text -whitespace
+verification/A02/copy-edit-history/** -text -whitespace
+verification/A02/query-fix-history/** -text -whitespace
+docs/openapi/openapi.json -text whitespace=cr-at-eol
+docs/接口文档.md -text whitespace=cr-at-eol
 # 浏览器快照和工具响应是原始验证证据，保留字节及工具自带的末尾空行。
 output/playwright/** -text -whitespace
 *.jar binary

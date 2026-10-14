@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "commandLogs": 12,
+  "logShaMismatches": 0,
+  "manifestAllActualBytesChecked": true,
+  "historyFiles": 47,
+  "historicalStdoutAudit": [
+    {
+      "file": "curl-version.txt",
+      "savedShaMatches": false,
+      "crcrlf": 4,
+      "normalizedCrLfShaMatches": true
+    },
+    {
+      "file": "generate.txt",
+      "savedShaMatches": false,
+      "crcrlf": 1,
+      "normalizedCrLfShaMatches": true
+    },
+    {
+      "file": "compile.txt",
+      "savedShaMatches": true,
+      "crcrlf": 0,
+      "normalizedCrLfShaMatches": true
+    },
+    {
+      "file": "curl-transport.txt",
+      "savedShaMatches": false,
+      "crcrlf": 6,
+      "normalizedCrLfShaMatches": true
+    },
+    {
+      "file": "contract.txt",
+      "savedShaMatches": false,
+      "crcrlf": 28,
+      "normalizedCrLfShaMatches": true
+    }
+  ],
+  "sourceFingerprints": 64,
+  "existingJarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71",
+  "currentSchemaSha256": "df3bbd2ad3d1b7561ae0f7f56adce0c38db2e18f282f34494ee0f07eff69ebb6",
+  "boundary": "旧四份日志保存字节不一致；旧 exit0 不代表旧日志完整性通过。当前只检查证据字节，不新构建/运行业务。",
+  "errors": [],
+  "queryFix": {
+    "schemaDifferences": [
+      "/components/schemas/TargetFilterBreakdownResponse/properties/belongsHit/description",
+      "/components/schemas/TargetFilterBreakdownResponse/properties/ephemerisWarningHit/description",
+      "/components/schemas/TargetFilterBreakdownResponse/properties/epochConstraintHit/description",
+      "/components/schemas/TargetFilterBreakdownResponse/properties/epochHit/description",
+      "/components/schemas/TargetFilterBreakdownResponse/properties/excludeHit/description",
+      "/components/schemas/TargetFilterBreakdownResponse/properties/maxApproximationDays/description",
+      "/components/schemas/TargetFilterBreakdownResponse/properties/weightHit/description",
+      "/components/schemas/TargetQueryRequest/properties/maxApproximationDays/description",
+      "/components/schemas/TargetQueryRequest/properties/maxApproximationDays/minimum",
+      "/components/schemas/TargetQueryRequest/properties/maxApproximationDays/x-source-comment-status",
+      "/components/schemas/TargetQueryRequest/properties/planningEndTime/description",
+      "/components/schemas/TargetQueryRequest/properties/planningEndTime/x-source-comment-status",
+      "/components/schemas/TargetQueryRequest/properties/planningStartTime/description",
+      "/components/schemas/TargetQueryRequest/properties/planningStartTime/x-source-comment-status",
+      "/components/schemas/TargetQueryResponse/properties/filterBreakdown/description",
+      "/components/schemas/VisibilityPlanResponse/properties/targetFilterBreakdown/description"
+    ],
+    "oldSchemaSha256": "6eeb15cf98a22e553221c1a6ad3b02e44838307e17038c229a2b5003d359c7c4",
+    "newSchemaSha256": "df3bbd2ad3d1b7561ae0f7f56adce0c38db2e18f282f34494ee0f07eff69ebb6",
+    "savedOriginalFiles": 7,
+    "protectedPriorFilesUnchanged": 231,
+    "newCommands": 6,
+    "newLogsShaMatched": 12,
+    "redExit": 1,
+    "redFindings": [
+      "I07",
+      "I08"
+    ],
+    "greenExit": 0,
+    "noNewCurlOrBusinessRun": true
+  }
+}

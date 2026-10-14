@@ -1,0 +1,30 @@
+{
+  "time": "2026-10-14T01:28:57.357688+00:00",
+  "passed": false,
+  "operations": 35,
+  "controllerOperations": 35,
+  "a01Operations": 35,
+  "schemas": 84,
+  "topLevelProperties": 677,
+  "properties": 682,
+  "checks": {
+    "refs": 184,
+    "responseSamples": 224,
+    "requestSamples": 84,
+    "valueChecks": 172268,
+    "markdownLinks": 286,
+    "jsonFences": 74,
+    "sourceClasses": 59,
+    "sourceFields": 534,
+    "binaryOrEmptyResponses": 23,
+    "shaResponses": 247,
+    "schemaObjects": 916,
+    "defaults": 88,
+    "enumValues": 64,
+    "nullableBranches": 471,
+    "markdownAnchors": 185
+  },
+  "errors": [
+    "GET /api/v1/ballistic/files/{fileId}/download: 实际 Content-Type 无匹配合同 None"
+  ]
+}
