@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "scope": "仅静态文案与当前组件渲染条件/异常状态核验，不是浏览器执行证明",
+  "checks": [
+    {
+      "name": "窗口翻页控件只在已有真实预览时渲染",
+      "passed": true,
+      "evidence": "<details v-if=\"target.preview\" open><summary>原数据预览 · 共 {{ target.preview.totalRows }} 行 · 第 {{ target.preview.page }} 页</summary>\n          <pre>{{ JSON.stringify(target.preview.metadata, null, 2) }}</pre>\n          <div class=\"ballistic-table-scroll\"><table><thead><tr><th v-for=\"(header, index) in target.preview.header\" :key=\"index\">{{ header }}</th></tr></thead><tbody><tr v-for=\"(row, index) in target.preview.rows\" :key=\"index\"><td v-for=\"(cell, column) in row\" :key=\"column\">{{ cell }}</td></tr></tbody></table></div>\n          <div class=\"ballistic-actions\"><button type=\"button\" :disabled=\"target.busy || target.preview.page <= 1\" @click=\"loadPreview(target, target.preview.page - 1)\">预览上一页</button><button type=\"button\" :disabled=\"target.busy || target.preview.page * target.preview.limit >= target.preview.totalRows\" @click=\"loadPreview(target, target.preview.page + 1)\">预览下一页</button></div>\n        </details>"
+    },
+    {
+      "name": "窗口预览和下载异常仅设错误且保留引用/成功页",
+      "passed": true,
+      "evidence": {
+        "previewCatch": "\n    target.error = error instanceof Error ? error.message : '文件预览失败'\n  ",
+        "downloadCatch": " target.error = error instanceof Error ? error.message : '原文件下载失败' "
+      }
+    },
+    {
+      "name": "原生重选清旧来源后上传且允许再次选择同一文件",
+      "passed": true,
+      "evidence": "async function chooseFile(target: TargetDraft, event: Event): Promise<void> {\n  const input = event.target\n  if (!(input instanceof HTMLInputElement)) return\n  const file = input.files?.[0]\n  if (!file) return\n  clearSource(target)\n  target.busy = true\n  try {\n    const reference = await uploadBallisticFile(file)\n    if (!targets.includes(target)) return\n    target.file = reference\n    await loadPreview(target, 1)\n  } catch (error) {\n    target.error = error instanceof Error ? error.message : '文件上传失败，请检查服务连接'\n  } finally {\n    target.busy = false\n    input.value = ''\n  }\n}"
+    },
+    {
+      "name": "生成结果可先选空项清旧再显式选引用并真实读取第一页",
+      "passed": true,
+      "evidence": "async function selectGenerated(target: TargetDraft, event: Event): Promise<void> {\n  if (!(event.target instanceof HTMLSelectElement)) return\n  const id = event.target.value\n  clearSource(target)\n  const selected = props.generatedResults?.find(item => item.reference.fileId === id)\n  if (!selected) { target.error = '生成结果选择已失效，请重新登记或选择'; return }\n  target.generatedId = id\n  target.file = selected.reference\n  target.targetName = selected.targetName\n  target.baseLaunchUTC = ''\n  await loadPreview(target, 1)\n}"
+    },
+    {
+      "name": "手册首次失败按真实可用的原生重选/清空再显式选择恢复",
+      "passed": true,
+      "evidence": "尚无成功预览时没有翻页按钮。本地上传：修正连接或文件问题后，用原生选择重新上传完整CSV（可重新选择同一文件）。服务已生成结果：在“选择真实登记结果”先选空项“请选择已成功登记的模拟/拟合/重定时结果”清旧来源，再次显式选择有效生成引用；需要新引用时先回生成页重新登记或重算。重新上传/选择后等待真实预览成功，再核对表头、行数、目标UTC及同日卫星历元"
+    },
+    {
+      "name": "手册已有预览的翻页失败保留旧页并只重试可用页按钮",
+      "passed": true,
+      "evidence": "此前成功页仍保留。修复连接后点当前成功页上可用的“预览上一页”或“预览下一页”（首末页边界按钮可能禁用）；等到实际新页成功才视为读取完成。若需重新从第一页读取，按上述原生重选/先选空项再显式选择恢复；404按下列窗口恢复"
+    },
+    {
+      "name": "手册窗口404明确保留引用/旧页并要求重新上传或重新生成选择",
+      "passed": true,
+      "evidence": "本页异常只显示错误，仍保留文件引用和此前成功预览（如有），不会自动清旧；旧页/旧ID不能视为恢复成功。本地来源用原生选择重新上传已保存的完整CSV；生成来源回拟合/模拟/重定时页重新登记（原CSV仍存在或已恢复）或重算取得有效引用，再在窗口先选空项并显式选择有效生成结果。等待真实预览成功后再计算或下载；重新上传/选择会清旧引用与预览"
+    },
+    {
+      "name": "共用生成结果辅助404撤销父级候选但不直接清本页引用",
+      "passed": true,
+      "evidence": "function revokeMissingReference(failure: unknown): void {\n  if (failure instanceof ApiRequestError && failure.status === 404) emit('reference', undefined)\n}"
+    },
+    {
+      "name": "共用辅助异常调用404撤销:loadPreview",
+      "passed": true,
+      "evidence": " previewError.value = message(failure); revokeMissingReference(failure) "
+    },
+    {
+      "name": "共用辅助异常调用404撤销:loadTrajectory",
+      "passed": true,
+      "evidence": " trajectoryError.value = message(failure); revokeMissingReference(failure) "
+    },
+    {
+      "name": "共用辅助异常调用404撤销:download",
+      "passed": true,
+      "evidence": " downloadError.value = message(failure); revokeMissingReference(failure) "
+    },
+    {
+      "name": "手册区分共用辅助404撤销候选、窗口监听失效与本页原计算保留",
+      "passed": true,
+      "evidence": "共用生成结果组件的预览/完整CSV/下载辅助请求收到404会撤销父级生成候选；窗口监听候选变化，已选该候选时清旧引用与预览。生成页仍保留原计算成功及独立错误，本页“已登记”显示也不会因这个404立即清除，不能当作引用有效。若原CSV仍在服务管理目录/可恢复，点“重新登记结果文件”；真实登记取得新ID后回窗口再次显式选择，等待真实预览成功。若已清理不可恢复，重算或上传已保存完整CSV"
+    },
+    {
+      "name": "不再泛称窗口总有预览页按钮或所有404自动撤销",
+      "passed": true,
+      "evidence": "\n默认本体限额67108864字节（64MiB），multipart边界空间另加65536；超过返回413。不要通过截断/降采样改变业务输入绕过限额；核对部署的 `BALLISTIC_MAX_FILE_BYTES` 与代理限额，需更大文件由部署方明确调整后重传。\n\n默认TTL86400000ms（24h）、按最后访问计，清理间隔60000ms；解析、预览与下载租约期间不会清理使用中文件。过期且无租约会清文件/元数据，旧ID再访问404。重启同运行根可以恢复文件登记/数据库，但网页草稿及异步内存task不同。\n\n| 现象 | 可实行恢复 |\n|---|---|\n| 上传失败/413 | 保留完整本地文件，检查真实字节数与服务/代理配置，修正后用原生选择重新上传；旧引用不继续用 |\n| 原计算成功但登记失败 | 点“重试结果文件登记”；核对管理根是否有原CSV及权限，登记成功才开放下载与跨页候选 |\n| 拟合/模拟/重定时预览失败 | 点“重试文件预览”，重试实际失败页；此前成功页仍是旧页，不能称新页已读；404另按下列生成结果辅助恢复 |\n| 窗口首次预览失败 | 尚无成功预览时没有翻页按钮。本地上传：修正连接或文件问题后，用原生选择重新上传完整CSV（可重新选择同一文件）。服务已生成结果：在“选择真实登记结果”先选空项“请选择已成功登记的模拟/拟合/重定时结果”清旧来源，再次显式选择有效生成引用；需要新引用时先回生成页重新登记或重算。重新上传/选择后等待真实预览成功，再核对表头、行数、目标UTC及同日卫星历元 |\n| 窗口已有预览后翻页失败 | 此前成功页仍保留。修复连接后点当前成功页上可用的“预览上一页”或“预览下一页”（首末页边界按钮可能禁用）；等到实际新页成功才视为读取完成。若需重新从第一页读取，按上述原生重选/先选空项再显式选择恢复；404按下列窗口恢复 |\n| 完整轨迹读取失败 | 点“重试完整CSV轨迹”，核对CSV命名列；分页预览不能替代完整图 |\n| 下载失败 | 修复连接后重试“HTTP 下载原CSV/原文件”；错误JSON不会当CSV保存 |\n| 窗口预览/下载404 | 本页异常只显示错误，仍保留文件引用和此前成功预览（如有），不会自动清旧；旧页/旧ID不能视为恢复成功。本地来源用原生选择重新上传已保存的完整CSV；生成来源回拟合/模拟/重定时页重新登记（原CSV仍存在或已恢复）或重算取得有效引用，再在窗口先选空项并显式选择有效生成结果。等待真实预览成功后再计算或下载；重新上传/选择会清旧引用与预览 |\n| 拟合/模拟/重定时辅助404、生成候选失效 | 共用生成结果组件的预览/完整CSV/下载辅助请求收到404会撤销父级生成候选；窗口监听候选变化，已选该候选时清旧引用与预览。生成页仍保留原计算成功及独立错误，本页“已登记”显示也不会因这个404立即清除，不能当作引用有效。若原CSV仍在服务管理目录/可恢复，点“重新登记结果文件”；真实登记取得新ID后回窗口再次显式选择，等待真实预览成功。若已清理不可恢复，重算或上传已保存完整CSV |\n| 新尝试失败后没有旧结果 | 正常清旧成功，先修复本次输入再算，勿把先前结果当当前成功 |\n\n![A01真实Chrome辅助404后重新登记恢复](../output/playwright/A01/final/fit/aux-real-reregister-recovered.png)\n"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/软件功能使用说明.md",
+      "bytes": 35505,
+      "sha256": "a9b79890b259c70e72ee42cd21bcd5108dd2815cb6e47b55e1aa3eda2e69c96d"
+    },
+    {
+      "path": "frontend/src/components/BallisticWindowControls.vue",
+      "bytes": 15636,
+      "sha256": "b018b78c16fe7128f50136d94245e2a1099ab73f8eb3b83c0530e812964b41cc"
+    },
+    {
+      "path": "frontend/src/components/BallisticFitFileResult.vue",
+      "bytes": 8323,
+      "sha256": "fa22b8f1ca4a0bfd1a6f463b36481597c5416effb29a01d11f63a19036f3e9c1"
+    }
+  ],
+  "errors": []
+}

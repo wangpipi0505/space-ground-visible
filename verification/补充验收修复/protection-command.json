@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-B",
+    "verification/补充验收修复/evidence.py",
+    "protect"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "started": "2026-10-14T03:19:35.954399+00:00",
+  "ended": "2026-10-14T03:19:39.044750+00:00",
+  "exit": 0,
+  "stdout": "verification/补充验收修复/protection-stdout.bin",
+  "stdoutBytes": 862,
+  "stdoutSha256": "724eda594328929e107396dcb79113a154ff4355f05770c9cb5b1d591ec8fc6b",
+  "stderr": "verification/补充验收修复/protection-stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,11 @@
+{
+  "azimuthMinDeg": null,
+  "azimuthMaxDeg": null,
+  "elevationMinDeg": null,
+  "elevationMaxDeg": null,
+  "angleRateDegPerSec": -1,
+  "sunAvoidHalfAngleDeg": 0,
+  "startupAngleRateDegPerSec": -1,
+  "minDistanceM": 0,
+  "maxDistanceM": 0
+}

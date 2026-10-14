@@ -1,0 +1,158 @@
+[
+  {
+    "path": "verification/补充验收修复/final-audit-command.json",
+    "sha256": "158d79802018c690418c20fe87ba22e59610385d8ed8fe4714f042e1b3a9fdf8"
+  },
+  {
+    "path": "verification/补充验收修复/final-audit-public-command.json",
+    "sha256": "2bba17e323896264cdd08af5b31b7449c3dca98cee38797348ba7a16cf58bb9d"
+  },
+  {
+    "path": "verification/补充验收修复/final-audit-public-stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/补充验收修复/final-audit-public-stdout.bin",
+    "sha256": "1187d63dd76f82f81de1426b036c3c646a7b599d359c0e12cc15dd6f408aa716"
+  },
+  {
+    "path": "verification/补充验收修复/final-audit-stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/补充验收修复/final-audit-stdout.bin",
+    "sha256": "26d06d7c901fa1ec35d83b2f0f80089d20e1da242dd4e5304d2ea2706595e0a0"
+  },
+  {
+    "path": "verification/补充验收修复/generate-command.json",
+    "sha256": "a976abfc30f607cffe300358d0fd901318fe2d1ca1ee793f59d290416ea1af1d"
+  },
+  {
+    "path": "verification/补充验收修复/generate-stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/补充验收修复/generate-stdout.bin",
+    "sha256": "ae53f0d212b20022a57806b4e5e71638fff75feb1da0a2c1f7a226ab032c075c"
+  },
+  {
+    "path": "verification/补充验收修复/green-attempt1-command.json",
+    "sha256": "8e01decb5fcc328374cc4175001cceefb5f3755eee94c9eef31c6f8d431c3035"
+  },
+  {
+    "path": "verification/补充验收修复/green-attempt1-stderr.bin",
+    "sha256": "b310ed0e01bc415948fad6db46c6f0366b44f7c50b06aec07713c83971b8bf33"
+  },
+  {
+    "path": "verification/补充验收修复/green-attempt1-stdout.bin",
+    "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+  },
+  {
+    "path": "verification/补充验收修复/green-command.json",
+    "sha256": "fbf6e94db3316985208e054a03f65facfa98dca68aacf6bce1d29fc05e07e708"
+  },
+  {
+    "path": "verification/补充验收修复/green-stderr.bin",
+    "sha256": "c7479c79bec2789ca198f0cbb9241b7d05717260228e4cdd24aed7d2d2056bfe"
+  },
+  {
+    "path": "verification/补充验收修复/green-stdout.bin",
+    "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+  },
+  {
+    "path": "verification/补充验收修复/protection-command.json",
+    "sha256": "d9ad9c9a6e8cf0ebb9822712685daf64b9b54e43abf9e4816107d036a01896ca"
+  },
+  {
+    "path": "verification/补充验收修复/protection-stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/补充验收修复/protection-stdout.bin",
+    "sha256": "724eda594328929e107396dcb79113a154ff4355f05770c9cb5b1d591ec8fc6b"
+  },
+  {
+    "path": "verification/补充验收修复/red-command.json",
+    "sha256": "d043ccb91531a9fe2bf892c233d12cec1c745ddb912b28fb7967fef13a1151c4"
+  },
+  {
+    "path": "verification/补充验收修复/red-corrected-command.json",
+    "sha256": "400006a4c9e52cc28897024287d50ffb3db8ddf7171cb0dbe30d2a34076bc165"
+  },
+  {
+    "path": "verification/补充验收修复/red-corrected-stderr.bin",
+    "sha256": "4b6a135608c28df483dcd45fbe3ba244c245cd9216fa5f4bc7909cb5745a0313"
+  },
+  {
+    "path": "verification/补充验收修复/red-corrected-stdout.bin",
+    "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+  },
+  {
+    "path": "verification/补充验收修复/red-final-command.json",
+    "sha256": "480b9470ffa3df61c7760337b0570a12cb1c37c94c1bc96e2db2d88c06a23df5"
+  },
+  {
+    "path": "verification/补充验收修复/red-final-stderr.bin",
+    "sha256": "c58f31b9301da5f02b1ced696d6abef6232729311aef5aae49e5fd3ae063496f"
+  },
+  {
+    "path": "verification/补充验收修复/red-final-stdout.bin",
+    "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+  },
+  {
+    "path": "verification/补充验收修复/red-source-corrected-command.json",
+    "sha256": "0015e0cbb48a2045c31159c8d01cdae9bdf7e71c464ee2fce3243b2a77b1c79d"
+  },
+  {
+    "path": "verification/补充验收修复/red-source-corrected-stderr.bin",
+    "sha256": "c792021c0e3cfcb5b18980e8b8c5f2a1c0fa03765e52f7f27b666dc490f6695c"
+  },
+  {
+    "path": "verification/补充验收修复/red-source-corrected-stdout.bin",
+    "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+  },
+  {
+    "path": "verification/补充验收修复/red-stderr.bin",
+    "sha256": "36bd027097c80d1b1e97fe3ef6b67313ba49ad5d5cb771d9d9880f61b32de688"
+  },
+  {
+    "path": "verification/补充验收修复/red-stdout.bin",
+    "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+  },
+  {
+    "path": "verification/补充验收修复/report-command.json",
+    "sha256": "cef86b6c235c05a51f059cf5d45dd080656c48db23fbedbe98f913d852dadaa3"
+  },
+  {
+    "path": "verification/补充验收修复/report-final-command.json",
+    "sha256": "9db29bbbd19e08c27a95cbde547d900c61620d6a00eff7fc8bf773c799b436b6"
+  },
+  {
+    "path": "verification/补充验收修复/report-final-stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/补充验收修复/report-final-stdout.bin",
+    "sha256": "ed752aae4b86dd8d2b8ff84120735add1dd9de641407cd987368db1062e2b8c8"
+  },
+  {
+    "path": "verification/补充验收修复/report-public-command.json",
+    "sha256": "4abc120d6f7f83f10197869972d9365b077a143c3b03b6b1895860e568a3a9b3"
+  },
+  {
+    "path": "verification/补充验收修复/report-public-stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/补充验收修复/report-public-stdout.bin",
+    "sha256": "1f2c0e7ce63250b5176f4e6166022a11d00b51427c6b1ee1e78ad97e9d989944"
+  },
+  {
+    "path": "verification/补充验收修复/report-stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/补充验收修复/report-stdout.bin",
+    "sha256": "0ad875d0ff1764d6fcdbb77513793a85f2e027b036ff22f3f3d222366c4491c5"
+  }
+]

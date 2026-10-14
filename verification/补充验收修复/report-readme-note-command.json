@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-B",
+    "verification/补充验收修复/write_report.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "started": "2026-10-14T03:31:56.781555+00:00",
+  "ended": "2026-10-14T03:31:56.844173+00:00",
+  "exit": 0,
+  "stdout": "verification/补充验收修复/report-readme-note-stdout.bin",
+  "stdoutBytes": 953,
+  "stdoutSha256": "68199d6fa0dfc5fd993c29b9bd1374dabddab8404ce74e35c52b29d6a9cb7047",
+  "stderr": "verification/补充验收修复/report-readme-note-stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,16 @@
+test_35_routes_refs_source_fields_and_selected_real_examples (__main__.TargetedContract.test_35_routes_refs_source_fields_and_selected_real_examples) ... ok
+test_I01_duration_compatibility (__main__.TargetedContract.test_I01_duration_compatibility) ... ok
+test_I01_fit_and_space_owner_rules_remain (__main__.TargetedContract.test_I01_fit_and_space_owner_rules_remain) ... ok
+test_I01_phase_event_is_compatibility_text (__main__.TargetedContract.test_I01_phase_event_is_compatibility_text) ... ok
+test_I01_simulation_time_metadata (__main__.TargetedContract.test_I01_simulation_time_metadata) ... ok
+test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames) ... ok
+test_M01_manual_button_and_download_success (__main__.TargetedContract.test_M01_manual_button_and_download_success) ... ok
+test_M02_disclosed_boundaries_remain (__main__.TargetedContract.test_M02_disclosed_boundaries_remain) ... ok
+test_M03_preview_int32_only (__main__.TargetedContract.test_M03_preview_int32_only) ... ok
+test_M04_station_string_identity (__main__.TargetedContract.test_M04_station_string_identity) ... ok
+test_only_allowed_contract_changes (__main__.TargetedContract.test_only_allowed_contract_changes) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.016s
+
+OK

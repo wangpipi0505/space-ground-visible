@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-B",
+    "verification/补充验收修复/audit_manifest.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "started": "2026-10-14T03:24:31.879384+00:00",
+  "ended": "2026-10-14T03:24:32.010725+00:00",
+  "exit": 0,
+  "stdout": "verification/补充验收修复/final-audit-stdout.bin",
+  "stdoutBytes": 221,
+  "stdoutSha256": "26d06d7c901fa1ec35d83b2f0f80089d20e1da242dd4e5304d2ea2706595e0a0",
+  "stderr": "verification/补充验收修复/final-audit-stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

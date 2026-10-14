@@ -1,0 +1,277 @@
+{
+  "time": "2026-10-14T03:24:31.328578+00:00",
+  "commands": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "verification/A02/build_contract.py",
+        "--evidence-dir",
+        "verification/补充验收修复/generated"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:18:58.935576+00:00",
+      "ended": "2026-10-14T03:18:59.198997+00:00",
+      "exit": 0,
+      "stdout": "verification/补充验收修复/generate-stdout.bin",
+      "stdoutBytes": 51,
+      "stdoutSha256": "ae53f0d212b20022a57806b4e5e71638fff75feb1da0a2c1f7a226ab032c075c",
+      "stderr": "verification/补充验收修复/generate-stderr.bin",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record": "verification/补充验收修复/generate-command.json",
+      "recordSha256": "a976abfc30f607cffe300358d0fd901318fe2d1ca1ee793f59d290416ea1af1d",
+      "unittest": null
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-B",
+        "verification/补充验收修复/test_targeted_contract.py"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:19:08.923656+00:00",
+      "ended": "2026-10-14T03:19:09.187910+00:00",
+      "exit": 1,
+      "stdout": "verification/补充验收修复/green-attempt1-stdout.bin",
+      "stdoutBytes": 97,
+      "stdoutSha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739",
+      "stderr": "verification/补充验收修复/green-attempt1-stderr.bin",
+      "stderrBytes": 3462,
+      "stderrSha256": "b310ed0e01bc415948fad6db46c6f0366b44f7c50b06aec07713c83971b8bf33",
+      "record": "verification/补充验收修复/green-attempt1-command.json",
+      "recordSha256": "8e01decb5fcc328374cc4175001cceefb5f3755eee94c9eef31c6f8d431c3035",
+      "unittest": {
+        "tests": 11,
+        "outcome": "FAILED (failures=2)"
+      }
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-B",
+        "verification/补充验收修复/test_targeted_contract.py"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:19:35.156778+00:00",
+      "ended": "2026-10-14T03:19:35.399184+00:00",
+      "exit": 0,
+      "stdout": "verification/补充验收修复/green-stdout.bin",
+      "stdoutBytes": 97,
+      "stdoutSha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739",
+      "stderr": "verification/补充验收修复/green-stderr.bin",
+      "stderrBytes": 1360,
+      "stderrSha256": "c7479c79bec2789ca198f0cbb9241b7d05717260228e4cdd24aed7d2d2056bfe",
+      "record": "verification/补充验收修复/green-command.json",
+      "recordSha256": "fbf6e94db3316985208e054a03f65facfa98dca68aacf6bce1d29fc05e07e708",
+      "unittest": {
+        "tests": 11,
+        "outcome": "OK"
+      }
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-B",
+        "verification/补充验收修复/evidence.py",
+        "protect"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:19:35.954399+00:00",
+      "ended": "2026-10-14T03:19:39.044750+00:00",
+      "exit": 0,
+      "stdout": "verification/补充验收修复/protection-stdout.bin",
+      "stdoutBytes": 862,
+      "stdoutSha256": "724eda594328929e107396dcb79113a154ff4355f05770c9cb5b1d591ec8fc6b",
+      "stderr": "verification/补充验收修复/protection-stderr.bin",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record": "verification/补充验收修复/protection-command.json",
+      "recordSha256": "d9ad9c9a6e8cf0ebb9822712685daf64b9b54e43abf9e4816107d036a01896ca",
+      "unittest": null
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-B",
+        "verification/补充验收修复/test_targeted_contract.py"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:15:54.736912+00:00",
+      "ended": "2026-10-14T03:15:54.980944+00:00",
+      "exit": 1,
+      "stdout": "verification/补充验收修复/red-stdout.bin",
+      "stdoutBytes": 97,
+      "stdoutSha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739",
+      "stderr": "verification/补充验收修复/red-stderr.bin",
+      "stderrBytes": 164436,
+      "stderrSha256": "36bd027097c80d1b1e97fe3ef6b67313ba49ad5d5cb771d9d9880f61b32de688",
+      "record": "verification/补充验收修复/red-command.json",
+      "recordSha256": "d043ccb91531a9fe2bf892c233d12cec1c745ddb912b28fb7967fef13a1151c4",
+      "unittest": {
+        "tests": 11,
+        "outcome": "FAILED (failures=13, errors=1)"
+      }
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-B",
+        "verification/补充验收修复/test_targeted_contract.py"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:16:23.131916+00:00",
+      "ended": "2026-10-14T03:16:23.400665+00:00",
+      "exit": 1,
+      "stdout": "verification/补充验收修复/red-corrected-stdout.bin",
+      "stdoutBytes": 97,
+      "stdoutSha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739",
+      "stderr": "verification/补充验收修复/red-corrected-stderr.bin",
+      "stderrBytes": 163447,
+      "stderrSha256": "4b6a135608c28df483dcd45fbe3ba244c245cd9216fa5f4bc7909cb5745a0313",
+      "record": "verification/补充验收修复/red-corrected-command.json",
+      "recordSha256": "400006a4c9e52cc28897024287d50ffb3db8ddf7171cb0dbe30d2a34076bc165",
+      "unittest": {
+        "tests": 11,
+        "outcome": "FAILED (failures=13)"
+      }
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-B",
+        "verification/补充验收修复/test_targeted_contract.py"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:16:33.519267+00:00",
+      "ended": "2026-10-14T03:16:33.756631+00:00",
+      "exit": 1,
+      "stdout": "verification/补充验收修复/red-final-stdout.bin",
+      "stdoutBytes": 97,
+      "stdoutSha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739",
+      "stderr": "verification/补充验收修复/red-final-stderr.bin",
+      "stderrBytes": 163501,
+      "stderrSha256": "c58f31b9301da5f02b1ced696d6abef6232729311aef5aae49e5fd3ae063496f",
+      "record": "verification/补充验收修复/red-final-command.json",
+      "recordSha256": "480b9470ffa3df61c7760337b0570a12cb1c37c94c1bc96e2db2d88c06a23df5",
+      "unittest": {
+        "tests": 11,
+        "outcome": "FAILED (failures=13)"
+      }
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-B",
+        "verification/补充验收修复/test_targeted_contract.py"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:16:42.385068+00:00",
+      "ended": "2026-10-14T03:16:42.621911+00:00",
+      "exit": 1,
+      "stdout": "verification/补充验收修复/red-source-corrected-stdout.bin",
+      "stdoutBytes": 97,
+      "stdoutSha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739",
+      "stderr": "verification/补充验收修复/red-source-corrected-stderr.bin",
+      "stderrBytes": 11225,
+      "stderrSha256": "c792021c0e3cfcb5b18980e8b8c5f2a1c0fa03765e52f7f27b666dc490f6695c",
+      "record": "verification/补充验收修复/red-source-corrected-command.json",
+      "recordSha256": "0015e0cbb48a2045c31159c8d01cdae9bdf7e71c464ee2fce3243b2a77b1c79d",
+      "unittest": {
+        "tests": 11,
+        "outcome": "FAILED (failures=12)"
+      }
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-B",
+        "verification/补充验收修复/write_report.py"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible",
+      "started": "2026-10-14T03:22:48.063041+00:00",
+      "ended": "2026-10-14T03:22:48.183882+00:00",
+      "exit": 0,
+      "stdout": "verification/补充验收修复/report-stdout.bin",
+      "stdoutBytes": 952,
+      "stdoutSha256": "0ad875d0ff1764d6fcdbb77513793a85f2e027b036ff22f3f3d222366c4491c5",
+      "stderr": "verification/补充验收修复/report-stderr.bin",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record": "verification/补充验收修复/report-command.json",
+      "recordSha256": "cef86b6c235c05a51f059cf5d45dd080656c48db23fbedbe98f913d852dadaa3",
+      "unittest": null
+    }
+  ],
+  "bindings": [
+    {
+      "path": "verification/A02/build_contract.py",
+      "bytes": 90691,
+      "sha256": "a6c9ef65113fc881582f0c43f0bb83e1f7855120cfe9f9a3e95e15849fa815dd"
+    },
+    {
+      "path": "docs/接口文档.md",
+      "bytes": 223254,
+      "sha256": "0546e6075ee4c4eb0549e06b6cab99d7c60654c60cd2c91aa91b24a46e062e9e"
+    },
+    {
+      "path": "docs/openapi/openapi.json",
+      "bytes": 434382,
+      "sha256": "5e800207b11f6de429bc6d71f1327c8cd5ae4f4a80762d2ad3ca9e05658449a7"
+    },
+    {
+      "path": "docs/软件功能使用说明.md",
+      "bytes": 35800,
+      "sha256": "a6b9d1ff5781a71e5b0884c03206e01e4cdc82ecca29c854e027380624b9eb9a"
+    },
+    {
+      "path": "verification/补充验收修复/test_targeted_contract.py",
+      "bytes": 15815,
+      "sha256": "73ec78e0931b94cce58ab577315b5c378acccada04793c9170e42f1b7aa58c0e"
+    },
+    {
+      "path": "verification/补充验收修复/evidence.py",
+      "bytes": 6066,
+      "sha256": "10d83b835c0a6c1ce5de064e3adb9b73ed4e284d11d72611880685486179fcfe"
+    },
+    {
+      "path": "verification/补充验收修复/history/test_targeted_contract.red.py.bin",
+      "bytes": 15782,
+      "sha256": "d7e6b01532de286c25605b6b10b0603bef79768c0ee43ca371a49148e62fba95"
+    },
+    {
+      "path": "verification/A02/validate_contract.py",
+      "bytes": 12959,
+      "sha256": "86c2d534f86b6b478a2f7c90e1e542f7c3d1c01d918d9b57d84cb53e7560c352"
+    },
+    {
+      "path": "verification/补充验收修复/generated/examples.json",
+      "bytes": 140669,
+      "sha256": "dac7e07e80fd09bc93561ee04c6990055f0575d58c02209aaafd1e7985eacccc"
+    },
+    {
+      "path": "verification/补充验收修复/generated/source-inventory.json",
+      "bytes": 144381,
+      "sha256": "3a38bcff76830b266530a9e3e320cf3a30341ef5014c93f751dc9aa25aa1509c"
+    },
+    {
+      "path": "verification/补充验收修复/external-openapi-current-check.json",
+      "bytes": 970,
+      "sha256": "986a1a0621588289f3e2c32939ba144a659960c8b84ce8af655f6256acdf5ae2"
+    },
+    {
+      "path": "verification/补充验收修复/external-openapi-current-check.txt",
+      "bytes": 35,
+      "sha256": "76abf387458a6cefef93820a9ae045c3605235989aab056f11058d8faa5022e1"
+    },
+    {
+      "path": "verification/补充验收修复/external-openapi-current-check-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "protectionPassed": true,
+  "utf8LfCurrentFiles": 4
+}

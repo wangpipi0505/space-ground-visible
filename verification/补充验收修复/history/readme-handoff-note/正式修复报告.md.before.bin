@@ -1,0 +1,201 @@
+# 整体审查完整修复波交接
+
+本轮状态 **DONE_WITH_CONCERNS**：I01/I02/M01/M03/M04 文档修复已通过限定检查，M02 的已披露运行边界原样保留。当前四个允许文件已稳定；根已保存当前SHA的固定Swagger CLI4.0.4格式检查exit0；原审查者定向复审及根台账/提交/标签/同步尚待根执行，未宣称这些步骤完成。
+
+## 修改与源码依据
+
+- I01：新增 owner 优先说明覆盖 SimulationRequest 的 taskStartTime/taskEndTime/durationSec 与 PhaseEvent 的 startTime/endTime。模拟任务时间可空/空白，非空仍走原 parseTimeCode、告警与命名；CSV 采样仍由 plan.timeOfFlightSec 决定，不裁剪或扩展。durationSec 默认600、类型double及旧兼容性质保留；事件只读取数量、文本不解析也不做起止顺序校验。FitRequest 的首末观测覆盖、成对顺序和原解析规则、空间 durationSec 未变。实际字段没有通用时间 pattern/format，本轮未新增或放宽拟合时间模式。
+- I02：模拟两单位缺失/null/空串/纯空白均回退 m，两框架同样回退 J2000；源码 simulationEndpointEci 与 simulationEndpointRangeReference 均调用 blankToDefault。102 boundaryField 无有效单位返回 null，positionUnitScale 才回退0.1m；地理分支提前返回，经纬度度/高度米且忽略单位。公共默认句与四字段说明同步；default/nullable/type/算法不变。
+- M01：窗口404恢复行明确重新登记按钮依赖该生成页自己的 previewError/trajectoryError/downloadError；无按钮先使用该结果 HTTP 下载原CSV，真实成功按成功处理，实际辅助失败才在原CSV仍存在或已恢复条件下登记，也可直接重算。不改 Vue 控件，不人为制造错误。
+- M03：只将文件 preview 的 page/limit 查询参数声明为 int32，保持1/50默认、minimum1、配置上限与现行错误；Controller 实际是 int，空间 Long 分页保持 int64。
+- M04：StationEntity.id 独立说明原字符串站点主键；公共约定限定卫星/目标目录ID与下传satelliteId为数字、stationId为字符串，未全局改Long。
+- M02：只读核对 A01 原报告及真实 R2 日志，MVC SimpleAsyncTaskExecutor 与关闭线程 WARN、最高并发6、N10/N12、v4五行进程/两行jstat、无SLA、外部BLOCKED、符号链接SKIP及长期/热卸载未测仍披露；本轮不扩大产品改动，也不声称无WARN或已证明长期泄漏/无泄漏。
+
+具名源码为 TargetTrajectoryFitter.java 的 simulateToCsv/simulate/buildSimulationEndpointPlan、simulationEndpointEci/RangeReference、boundaryInfo/boundaryField/parseBoundaryPositionEci/positionUnitScale/blankToDefault/parseTimeCode；BallisticFileController.java 的 preview int 参数；StationEntity.java 的 String id/getId；BallisticFitFileResult.vue 的按钮 v-if 与 download 捕获/成功保存。它们全部在本轮保护快照中。
+
+## 限定 RED/GREEN 与核验含义
+
+完整测试文件：`verification/补充验收修复/test_targeted_contract.py`。修复前最终可复现版本另保存 `history/test_targeted_contract.red.py.bin`。11 个 unittest 方法包含字段 subTest；不能把 subTest failures 当作独立业务场景总数。最终 RED 实际运行11方法，12个断言失败、0 errors（对应7个失败方法）；最终 GREEN 为11/11、0 failures/0 errors、exit0。
+
+初轮 red 还包含一个测试脚本 owner 定位错误（站星包装没有durationSec）以及命名调用匹配错误；red-corrected/red-final 继续保留命名定位错误，后按真实 firstNonBlank 调用纠正，red-source-corrected 成为无工具错误的最终 RED。green-attempt1 有两处过于字面化的检查：否定句“或共同观测窗口”被误认为旧交集语义、“也可直接重算”被要求精确匹配“或重算”。将断言收窄至旧错误短句和真实重算说明之后 GREEN；交付文件在 generate 后未再次修改。所有初始输出及退出码都保留，不删除失败或改写为通过。
+
+检查直接读取当前交付 OAS、Markdown、手册及真实 Java/Vue 源码；合成反例覆盖可缺失/可空/空串/空白/兼容标签、字符串与数字错型、未读durationSec数值、事件逆序兼容文本、preview正边界与int32溢出。OAS不能完整表达原时间parse与跨字段业务规则，合成schema接收检查不等于实际运行 Java；非空模拟时间仍需原parser，Fit真实规则由来源断言保留。单位/地理实际分支由源码绑定核对，不在Python中伪造动力学或声称重跑数值。
+
+限定结构结果为35/35活动Controller路径、184引用、59份选定真实响应结构、15份选定真实请求结构。生成器保留68组历史选例，其中二进制/空响应不作为JSON验证；没有重跑247 HTTP。旧核验器只从AST加载七个纯函数，未执行顶层完整247来源套件及旧结果写入。机器结构差异检查确认当前OAS除10个字段description、preview两format外与修复前完全相同，拟合和空间字段未受波及。
+
+## 历史保护和新轮入口
+
+先用 write_bytes 原样保存将改的四个文件，SHA绑定 `history/preserved-manifest.json`；旧OpenAPI df3bbd2ad3d1b7561ae0f7f56adce0c38db2e18f282f34494ee0f07eff69ebb6、旧手册a9b79890b259c70e72ee42cd21bcd5108dd2815cb6e47b55e1aa3eda2e69c96d 均在history保留。A02的714037e验收标签及271条artifact-manifest、A03原58条清单是旧核验时点；未向它们倒填当前SHA，未将新契约冒充旧格式已验证。
+
+当前轮保护结果：1947项当前保护文件及两个原目录的697项具名文件，差异0、保护范围新增路径0，实际exit0。保护包括A01 458件、A02 271件（排除唯一允许当前生成源）、A03 56件，产品/依赖/锁/参考数据、实际读取的HTTP原字节与JAR、HEAD/index/packed-refs/分支及标签引用。包含归档副本的当前文件数量不是原清单声明数量。
+
+按根明确范围只绑定具名runtime/HTTP原字节及JAR，不扫描runtime冻结源码副本、缓存和大运行数据；根的当前执行恢复.md、台账/计划合法修改不纳入本波禁止变化。首次全runtime保护进程过宽，读取阶段由精确PID38444终止，未得到保护结果；随后收敛到上述明确范围重建，初始四文件仍未修改。本轮没有操作Git/index/提交/tag/台账/计划/attrs。
+
+生成器增加 `--evidence-dir` 单一参数，实际命令指定新目录generated；examples/source-inventory/请求/curl都仅写新目录，当前两文档使用UTF8/LF原字节写入。历史默认入口仍服务原流程，本波不使用它；README列新轮入口。旧验证入口不运行，新结果全部留本目录。
+
+## 当前稳定字节
+
+| 文件 | 字节数 | SHA256 |
+| --- | --- | --- |
+| `verification/A02/build_contract.py` | 90691 | `a6c9ef65113fc881582f0c43f0bb83e1f7855120cfe9f9a3e95e15849fa815dd` |
+| `docs/接口文档.md` | 223254 | `0546e6075ee4c4eb0549e06b6cab99d7c60654c60cd2c91aa91b24a46e062e9e` |
+| `docs/openapi/openapi.json` | 434382 | `5e800207b11f6de429bc6d71f1327c8cd5ae4f4a80762d2ad3ca9e05658449a7` |
+| `docs/软件功能使用说明.md` | 35800 | `a6b9d1ff5781a71e5b0884c03206e01e4cdc82ecca29c854e027380624b9eb9a` |
+| `verification/补充验收修复/test_targeted_contract.py` | 15815 | `73ec78e0931b94cce58ab577315b5c378acccada04793c9170e42f1b7aa58c0e` |
+| `verification/补充验收修复/evidence.py` | 6066 | `10d83b835c0a6c1ce5de064e3adb9b73ed4e284d11d72611880685486179fcfe` |
+| `verification/补充验收修复/history/test_targeted_contract.red.py.bin` | 15782 | `d7e6b01532de286c25605b6b10b0603bef79768c0ee43ca371a49148e62fba95` |
+| `verification/A02/validate_contract.py` | 12959 | `86c2d534f86b6b478a2f7c90e1e542f7c3d1c01d918d9b57d84cb53e7560c352` |
+| `verification/补充验收修复/generated/examples.json` | 140669 | `dac7e07e80fd09bc93561ee04c6990055f0575d58c02209aaafd1e7985eacccc` |
+| `verification/补充验收修复/generated/source-inventory.json` | 144381 | `3a38bcff76830b266530a9e3e320cf3a30341ef5014c93f751dc9aa25aa1509c` |
+| `verification/补充验收修复/external-openapi-current-check.json` | 970 | `986a1a0621588289f3e2c32939ba144a659960c8b84ce8af655f6256acdf5ae2` |
+| `verification/补充验收修复/external-openapi-current-check.txt` | 35 | `76abf387458a6cefef93820a9ae045c3605235989aab056f11058d8faa5022e1` |
+| `verification/补充验收修复/external-openapi-current-check-stderr.txt` | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
+
+当前四文件均检查UTF8无BOM、无CR、以LF保存；stdout/stderr保留实际原始字节和原行尾，未重编码“美化”。新生成source-inventory对原JAR只计算指纹，没有新构建或运行服务。完整机器绑定见 `handoff-bindings.json`。
+
+## 精确命令和原流
+
+以下为 evidence.py 实际子进程argv，cwd统一仓库根；命令记录本身及原流均绑定保存字节SHA，UTC起止与真实exit如下。unittest常规进度写stderr，不将非空stderr等同失败。
+
+### final-audit-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/audit_manifest.py"]
+```
+
+- UTC：`2026-10-14T03:24:31.879384+00:00` → `2026-10-14T03:24:32.010725+00:00`；exit `0`。
+- 记录：`verification/补充验收修复/final-audit-command.json`；SHA `158d79802018c690418c20fe87ba22e59610385d8ed8fe4714f042e1b3a9fdf8`。
+- stdout：`verification/补充验收修复/final-audit-stdout.bin`，221B；SHA `26d06d7c901fa1ec35d83b2f0f80089d20e1da242dd4e5304d2ea2706595e0a0`。
+- stderr：`verification/补充验收修复/final-audit-stderr.bin`，0B；SHA `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+### generate-command
+
+```json
+["C:/Python314/python.exe", "-X", "utf8", "-B", "verification/A02/build_contract.py", "--evidence-dir", "verification/补充验收修复/generated"]
+```
+
+- UTC：`2026-10-14T03:18:58.935576+00:00` → `2026-10-14T03:18:59.198997+00:00`；exit `0`。
+- 记录：`verification/补充验收修复/generate-command.json`；SHA `a976abfc30f607cffe300358d0fd901318fe2d1ca1ee793f59d290416ea1af1d`。
+- stdout：`verification/补充验收修复/generate-stdout.bin`，51B；SHA `ae53f0d212b20022a57806b4e5e71638fff75feb1da0a2c1f7a226ab032c075c`。
+- stderr：`verification/补充验收修复/generate-stderr.bin`，0B；SHA `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+### green-attempt1-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/test_targeted_contract.py"]
+```
+
+- UTC：`2026-10-14T03:19:08.923656+00:00` → `2026-10-14T03:19:09.187910+00:00`；exit `1`。
+- 记录：`verification/补充验收修复/green-attempt1-command.json`；SHA `8e01decb5fcc328374cc4175001cceefb5f3755eee94c9eef31c6f8d431c3035`。
+- stdout：`verification/补充验收修复/green-attempt1-stdout.bin`，97B；SHA `929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739`。
+- stderr：`verification/补充验收修复/green-attempt1-stderr.bin`，3462B；SHA `b310ed0e01bc415948fad6db46c6f0366b44f7c50b06aec07713c83971b8bf33`。
+- 原输出统计：11方法，`FAILED (failures=2)`。
+
+### green-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/test_targeted_contract.py"]
+```
+
+- UTC：`2026-10-14T03:19:35.156778+00:00` → `2026-10-14T03:19:35.399184+00:00`；exit `0`。
+- 记录：`verification/补充验收修复/green-command.json`；SHA `fbf6e94db3316985208e054a03f65facfa98dca68aacf6bce1d29fc05e07e708`。
+- stdout：`verification/补充验收修复/green-stdout.bin`，97B；SHA `929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739`。
+- stderr：`verification/补充验收修复/green-stderr.bin`，1360B；SHA `c7479c79bec2789ca198f0cbb9241b7d05717260228e4cdd24aed7d2d2056bfe`。
+- 原输出统计：11方法，`OK`。
+
+### protection-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/evidence.py", "protect"]
+```
+
+- UTC：`2026-10-14T03:19:35.954399+00:00` → `2026-10-14T03:19:39.044750+00:00`；exit `0`。
+- 记录：`verification/补充验收修复/protection-command.json`；SHA `d9ad9c9a6e8cf0ebb9822712685daf64b9b54e43abf9e4816107d036a01896ca`。
+- stdout：`verification/补充验收修复/protection-stdout.bin`，862B；SHA `724eda594328929e107396dcb79113a154ff4355f05770c9cb5b1d591ec8fc6b`。
+- stderr：`verification/补充验收修复/protection-stderr.bin`，0B；SHA `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+### red-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/test_targeted_contract.py"]
+```
+
+- UTC：`2026-10-14T03:15:54.736912+00:00` → `2026-10-14T03:15:54.980944+00:00`；exit `1`。
+- 记录：`verification/补充验收修复/red-command.json`；SHA `d043ccb91531a9fe2bf892c233d12cec1c745ddb912b28fb7967fef13a1151c4`。
+- stdout：`verification/补充验收修复/red-stdout.bin`，97B；SHA `929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739`。
+- stderr：`verification/补充验收修复/red-stderr.bin`，164436B；SHA `36bd027097c80d1b1e97fe3ef6b67313ba49ad5d5cb771d9d9880f61b32de688`。
+- 原输出统计：11方法，`FAILED (failures=13, errors=1)`。
+
+### red-corrected-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/test_targeted_contract.py"]
+```
+
+- UTC：`2026-10-14T03:16:23.131916+00:00` → `2026-10-14T03:16:23.400665+00:00`；exit `1`。
+- 记录：`verification/补充验收修复/red-corrected-command.json`；SHA `400006a4c9e52cc28897024287d50ffb3db8ddf7171cb0dbe30d2a34076bc165`。
+- stdout：`verification/补充验收修复/red-corrected-stdout.bin`，97B；SHA `929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739`。
+- stderr：`verification/补充验收修复/red-corrected-stderr.bin`，163447B；SHA `4b6a135608c28df483dcd45fbe3ba244c245cd9216fa5f4bc7909cb5745a0313`。
+- 原输出统计：11方法，`FAILED (failures=13)`。
+
+### red-final-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/test_targeted_contract.py"]
+```
+
+- UTC：`2026-10-14T03:16:33.519267+00:00` → `2026-10-14T03:16:33.756631+00:00`；exit `1`。
+- 记录：`verification/补充验收修复/red-final-command.json`；SHA `480b9470ffa3df61c7760337b0570a12cb1c37c94c1bc96e2db2d88c06a23df5`。
+- stdout：`verification/补充验收修复/red-final-stdout.bin`，97B；SHA `929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739`。
+- stderr：`verification/补充验收修复/red-final-stderr.bin`，163501B；SHA `c58f31b9301da5f02b1ced696d6abef6232729311aef5aae49e5fd3ae063496f`。
+- 原输出统计：11方法，`FAILED (failures=13)`。
+
+### red-source-corrected-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/test_targeted_contract.py"]
+```
+
+- UTC：`2026-10-14T03:16:42.385068+00:00` → `2026-10-14T03:16:42.621911+00:00`；exit `1`。
+- 记录：`verification/补充验收修复/red-source-corrected-command.json`；SHA `0015e0cbb48a2045c31159c8d01cdae9bdf7e71c464ee2fce3243b2a77b1c79d`。
+- stdout：`verification/补充验收修复/red-source-corrected-stdout.bin`，97B；SHA `929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739`。
+- stderr：`verification/补充验收修复/red-source-corrected-stderr.bin`，11225B；SHA `c792021c0e3cfcb5b18980e8b8c5f2a1c0fa03765e52f7f27b666dc490f6695c`。
+- 原输出统计：11方法，`FAILED (failures=12)`。
+
+### report-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/write_report.py"]
+```
+
+- UTC：`2026-10-14T03:22:48.063041+00:00` → `2026-10-14T03:22:48.183882+00:00`；exit `0`。
+- 记录：`verification/补充验收修复/report-command.json`；SHA `cef86b6c235c05a51f059cf5d45dd080656c48db23fbedbe98f913d852dadaa3`。
+- stdout：`verification/补充验收修复/report-stdout.bin`，952B；SHA `0ad875d0ff1764d6fcdbb77513793a85f2e027b036ff22f3f3d222366c4491c5`。
+- stderr：`verification/补充验收修复/report-stderr.bin`，0B；SHA `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+### report-final-command
+
+```json
+["C:/Python314/python.exe", "-B", "verification/补充验收修复/write_report.py"]
+```
+
+- UTC：`2026-10-14T03:24:31.277854+00:00` → `2026-10-14T03:24:31.337436+00:00`；exit `0`。
+- 记录：`verification/补充验收修复/report-final-command.json`；SHA `9db29bbbd19e08c27a95cbde547d900c61620d6a00eff7fc8bf773c799b436b6`。
+- stdout：`verification/补充验收修复/report-final-stdout.bin`，952B；SHA `ed752aae4b86dd8d2b8ff84120735add1dd9de641407cd987368db1062e2b8c8`。
+- stderr：`verification/补充验收修复/report-final-stderr.bin`，0B；SHA `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+## 根保存的当前外部格式检查
+
+```json
+["npx.cmd", "--yes", "--package", "@apidevtools/swagger-cli@4.0.4", "swagger-cli", "validate", "docs/openapi/openapi.json"]
+```
+
+根记录时间 `2026-10-14T03:21:53.611334+00:00`，耗时 `2.234788400121033` 秒，toolVersion `4.0.4`，实际exitCode `0`，绑定当前OAS `5e800207b11f6de429bc6d71f1327c8cd5ae4f4a80762d2ad3ca9e05658449a7`；sourceUnchanged `True`。本实现者只复核该新记录和stdout/stderr保存字节SHA，没有重复执行该命令。该工具记录仅有时间与持续时长，未推算伪造结束时间。
+
+## 未执行与交接
+
+本轮未重跑351/112前后端、15/9/21数值、247 HTTP、12 Chrome、负载或外部部署，本实现者未新装依赖、启动服务；这些仍是原阶段证据。根新4.0.4结果只证明当前OAS格式规范，不把旧df3b结果或新格式检查写成新业务/精度通过。A01已有WARN/有限样本/无SLA/外部BLOCKED等限制保持。
+
+根下一步：让原最强reviewer针对六项与保护/新证据复审；随后按既有授权更新台账/计划、中文提交、新A03验收标签及指定远端正常同步。任何合法提交后的Git指纹变化须按新时点解释。当前修复文件稳定，不再由本实现者编辑。
+
+正式可提交报告为 `verification/补充验收修复/正式修复报告.md`；runtime同字节副本仅用于任务交接，属于忽略的运行记录，不直接纳入最终artifact-manifest。最终清单及字节审计见本目录artifact-manifest.json/artifact-audit.json；审计自身输出按明示例外保存，精确命令、UTC起止与原流见final-audit-public-command.json及对应stdout/stderr，不造成报告/清单循环SHA。

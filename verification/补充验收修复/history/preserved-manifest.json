@@ -1,0 +1,30 @@
+[
+  {
+    "path": "verification/A02/build_contract.py",
+    "bytes": 88036,
+    "sha256": "8de20b0299a9421f5b96a143ec6a5c0af6dce135860be483ec065d860c96ecd7",
+    "saved": "verification/补充验收修复/history/verification__A02__build_contract.py.before.bin",
+    "savedSha256": "8de20b0299a9421f5b96a143ec6a5c0af6dce135860be483ec065d860c96ecd7"
+  },
+  {
+    "path": "docs/接口文档.md",
+    "bytes": 225193,
+    "sha256": "7c6167e49f4bf80606e32d685aeabaeb9f90fe324c23bc897224016a1477d3d6",
+    "saved": "verification/补充验收修复/history/docs__接口文档.md.before.bin",
+    "savedSha256": "7c6167e49f4bf80606e32d685aeabaeb9f90fe324c23bc897224016a1477d3d6"
+  },
+  {
+    "path": "docs/openapi/openapi.json",
+    "bytes": 443461,
+    "sha256": "df3bbd2ad3d1b7561ae0f7f56adce0c38db2e18f282f34494ee0f07eff69ebb6",
+    "saved": "verification/补充验收修复/history/docs__openapi__openapi.json.before.bin",
+    "savedSha256": "df3bbd2ad3d1b7561ae0f7f56adce0c38db2e18f282f34494ee0f07eff69ebb6"
+  },
+  {
+    "path": "docs/软件功能使用说明.md",
+    "bytes": 35505,
+    "sha256": "a9b79890b259c70e72ee42cd21bcd5108dd2815cb6e47b55e1aa3eda2e69c96d",
+    "saved": "verification/补充验收修复/history/docs__软件功能使用说明.md.before.bin",
+    "savedSha256": "a9b79890b259c70e72ee42cd21bcd5108dd2815cb6e47b55e1aa3eda2e69c96d"
+  }
+]

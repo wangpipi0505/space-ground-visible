@@ -1,0 +1,3560 @@
+# 空间与弹道目标可见性完整接口文档（A02）
+
+本文对应基准 `ba5821a692e6a60e6cd9148ec88999cd08c339d2`，以正式扫描 Controller、DTO/getter、Jackson、应用服务、Vue 实际调用与 A01 原 HTTP 字节交叉编制。共有 **35 操作：24 空间 + 6 弹道原计算 + 5 辅助**。配套机器合同为 [OpenAPI 3.0.3 JSON](openapi/openapi.json)，完整实际样例及来源为 [A02 样例集合](../verification/A02/examples.json)，核验范围见 [A02 验证报告](../verification/A02/验证报告.md)。本项不改变产品、数值模型或旧文件格式。
+
+## 共同约定
+
+- 服务示例根 `http://127.0.0.1:8080`；Vue 同源 `/api`，正式部署反向代理及根变量见 [部署说明](../deploy/部署说明.md) 与 [前端配置说明](前端载荷配置说明.md)。没有新增认证、统一包装或伪分页。
+- 空间请求卫星/目标 ID 是 Long JSON 数字；目录实体及下传响应仍为数字。观测结果身份是字符串；持久记录主键是十进制字符串，路径实际绑定 Long；弹道身份全部字符串。不能把所有 Long 泛化成字符串，也不能把记录 ID 转成 JavaScript Number。
+- 空间时间为 UTC ISO Instant（窗口、任务输出 `yyyy-MM-ddTHH:mm:ss.SSSZ`）；记录 `createTime/completeTime` 为 UTC LocalDateTime 三位毫秒**无 Z**。弹道输入/输出是 `yyyy/MM/dd HH:mm:ss[.SSS]` 或 `yyyy-MM-dd HH:mm:ss[.SSS]` 字面 UTC，不经过浏览器 Date 时区加减。
+- 默认值仅在字段缺失时初始化；显式 null、空白、空集合是否回退见各字段。`nullable` 与 `required` 独立：属性可不出现不等于其允许 null；标准必填数值明确拒绝 null。默认Jackson保留显式null，只有标注NON_NULL的selectionJson、winToolReport、观测目标元数据/单星statistics等空字段省略，satelliteSegments/illuminationSegments按NON_EMPTY省略空数组。窗口手写JSON保留非有限数的null，不能把两种序列化混同。
+- 正文各操作请求/响应指向完整组件字段表，数组、继承及嵌套组件继续沿链接展开。`requestJson/resultJson/skippedPairsJson/selectionJson` 始终是 JSON **原文字符串**，不是嵌套对象。未知目录原值的物理单位不猜测。
+- 样例来自 A01 的非生产隔离测试；每例保存原字节 SHA、事件名、实际状态和源位置。正文为**结构摘录**（数组只展示首项、长 JSON 原文字符串展示前缀），完整响应位于样例集合；计算统计不得由正文摘录数组重新相加。动态 `taskId/fileId/recordId/serverPath/csvPath` 属于当次运行，已过期引用不可直接重放。
+
+## 标准载荷与旧兼容摘要
+
+标准十业务字段为 `payloadType,minDistanceKm,maxDistanceKm,azimuthMinDeg,azimuthMaxDeg,elevationMinDeg,elevationMaxDeg,angleRateDegPerSec,sunAvoidHalfAngleDeg,startupAngleRateDegPerSec`；弹道另有 `payloadId/payloadName` 两身份元数据。必填为类型、最近/最远距离、跟踪角速度、太阳半角；姿态双端可空，startup 可空。SPACE/GROUND 去空白、不区分大小写归一。
+
+| 字段组合 | 真实约束 |
+| --- | --- |
+| min/max 距离 | km，有限非负；max=0 不限，max非0须>min；边界闭区间，零视线拒绝；乘1000溢出拒绝 |
+| 方位双端 | 双null不限；否则0≤min<max≤360；不能倒置表达跨0范围 |
+| 俯仰双端 | 双null不限；SPACE min≥-90，GROUND min≥-91；min<max≤90 |
+| 跟踪率 | °/s；SPACE 0/-1 不限，GROUND 0 真零上限、-1 拒绝 |
+| 太阳半角 | °，0..180；0关闭；等于半角允许，小于拒绝 |
+| startup | °/s；null/-1禁用，其它有限非负；只保存/回显元数据，改变它不改变窗口 |
+
+`/satellites/{satelliteId}/payload` 旧入口仅 SPACE；公里与米距离必须二选一且不能混发。`payload-profiles` 按类型保存并启用，保留另一类。历史 GROUND 锥角 `legacyGroundProfile=true` 只回显旧锥角，须重新保存标准字段；标准请求中兼容锥角字段虽然可绑定，保存标准配置不会拿它替代矩形约束。
+
+旧弹道顶层/内嵌载荷中文四类 `对地监视/对空监视/对地跟踪/对空跟踪` 继续原分支，不能当成 SPACE/GROUND 别名。内嵌 `PayloadDef` 仅当 payloadType 去空白且忽略大小写为 SPACE/GROUND 时校验标准字段；中文兼容分支只读取类型/maxDetectRangeKm/sunExclusionAngleDeg，其它标准字段（包括无关负值）绑定后被忽略。共享 PayloadDef 保留宽兼容类型，不能自动校验标准分支的全部范围/必填及跨字段组合；严格标准 preview 使用 StandardPayloadRequest，计算入口的标准规则仍以正文及源码为准。窗口旧 `visibilityConstraint` 只有类型、最大距离、太阳角及四个锥角；标准载荷将四锥角显式输出 null，只映射类型/maxDistance/sunAvoid，不能从摘要恢复十字段。完整标准配置通过 preview 读取，不在旧计算响应增加字段。详见 [载荷时间与文件口径](载荷时间与文件口径.md)。
+
+## 时间、坐标与 CSV 文件合同
+
+旧弹道 J2000 秒以 UTC 日历 `2000-01-01 12:00:00` 为零，不是 Orekit TT `AbsoluteDate.J2000_EPOCH` 的偏移。空间 TLE 输出 TEME；空间六根数在原 EME2000 中心引力+J2 RK4 后转 TEME。弹道 ECI 保留原 J2000，ECEF 保留原岁差/章动/恒星时链。位置 m、速度 m/s、加速度 m/s²、角度 °。
+
+拟合/模拟固定21列、原顺序如下：
+
+```text
+YYYY,MM,dd,HH,mm,ss.SSS,ECEF_X,ECEF_Y,ECEF_Z,energy,dt,ECI_X,ECI_Y,ECI_Z,ECI_VX,ECI_VY,ECI_VZ,ECEF_Vx,ECEF_Vy,ECEF_Vz,isOriginal
+```
+
+| 列 | 类型/单位/含义 |
+| --- | --- |
+| YYYY,MM,dd,HH,mm,ss.SSS | UTC 年/月/日/时/分/秒文本，秒三位毫秒 |
+| ECEF_X,ECEF_Y,ECEF_Z | ECEF 位置 m，文本三位小数 |
+| energy | `0.5\|v\|²-μ/\|r\|` m²/s²，九位小数 |
+| dt | 拟合/模拟相邻间隔 ms，首点0；重定时有该列时改为距新首点累计 ms，无该列不追加 |
+| ECI_X,ECI_Y,ECI_Z | ECI 位置 m，三位小数 |
+| ECI_VX,ECI_VY,ECI_VZ | ECI 速度 m/s，九位小数 |
+| ECEF_Vx,ECEF_Vy,ECEF_Vz | 原 STK Fixed 旋转速度 m/s，九位小数，不等于含地球自转项的地固坐标导数 |
+| isOriginal | 原始硬约束点标记；重定时继承原单元格，不因时间变化重判 |
+| timeIntervalMs（重定时） | 相邻间隔 ms，首点0，负间隔按原规则夹0；已有列更新，否则追加 |
+
+重定时要求 UTC六分列、ECEF_X/Y/Z、ECI_X/Y/Z、ECI_VX/VY/VZ、ECEF_Vx/Vy/Vz 等原列名；保留原表头次序、行序、未知列和 isOriginal 单元格，保留 ECEF 原位置/速度单元格，在新 UTC 按原 `ecefToEciPos/ecefToEciVel` 重算 ECI。固定输出舍入位数不是内部数值精度保证。窗口20列标准参考CSV（含单位后缀）不是同一重定时输入合同。
+
+preview 精确识别下列20列表头时 metadata 才有 `timeScale=UTC,positionUnit=m,velocityUnit=m/s,frames=ECI,ECEF,dtUnit=ms`；其它表头 metadata 为 `{}`，不猜单位。
+
+```text
+YYYY,MM,dd,HH,mm,ss.SSS,ECEF_X(m),ECEF_Y(m),ECEF_Z(m),energy,dt(ms),ECI_X(m),ECI_Y(m),ECI_Z(m),ECI_Vx(m/s),ECI_Vy(m/s),ECI_Vz(m/s),ECEF_Vx(m/s),ECEF_Vy(m/s),ECEF_Vz(m/s)
+```
+
+102 `coordinateInfo > coordinate > coords > 扁平字段`，`targetInfo > target > 扁平字段`，时间 `tack3d_time_code` 非空优先于 `track3d_time_code`。编码位置0.1m/速度0.0001m/s/加速度0.01m/s²，保留原 targetOrbit 单位比例自动识别与 warnings；17位时间码应发送字符串，浏览器未引号数字会损失精度。物理 launch/impact 时间与任务输出时间分开。
+
+端点框架归一去横杠/下划线/空格并大写：J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA；地理框架 x=经度°、y=纬度°、z=高度m。位置单位 m/meter/meters、km/kilometer/kilometers、0.1m/dm/package102/102，或原数值倍率；空单位原倍率0.1m。模拟字段缺省unit=m；显式空值与缺省不同。phaseEvents及旧速度/推力字段可绑定，当前端点求解路径没有读取其事件动力学，不额外宣称生效。
+
+窗口 `allResults` 按输入偏移顺序回填；best按累计double时长严格大于才替换，并列保留首次。累计逐卫星/目标/载荷弧段相加、重叠不去重；有点但非正时长旧回退按点数。finalVisibleWindow 是最早到最晚包络，可能含不可见间隔；稳定弧段至少2点且≥0.001秒，退出滞回保持原1e-6度。points=0只去点数组，统计保留。空间组合求交，最小时长判父窗口，光照明细与逐星原窗口不能重复计为独立合格窗口。
+
+## 文件生命周期与取消/错误
+
+浏览器先上传并确认201，从真实响应取 `fileId/serverPath`，再送入原路径字段；本机路径/fakepath不能代替服务端引用。窗口原计算继续支持服务器路径及原 HTTP/HTTPS/MinIO，远程兼容不意味着纳入管理下载。重定时原DTO只接受服务器本地CSV路径。
+
+未提交 outputDir 的三轨迹计算分配独占管理 results 工作区，成功自动登记；之后用真实 `files[].csvPath` 调 register-result 201 获得引用，重复有效登记复用ID。显式 outputDir（含null/空白/点目录）按旧语义；结果越出管理根时不向浏览器开放登记。管理目录拒绝路径越界、符号链接替换和非现存文件。失败只回滚自己拥有的独占结果/标记，旧显式目录不任意删除。
+
+| 配置/生命周期 | 当前实际默认或行为 |
+| --- | --- |
+| 单文件上限 | `BALLISTIC_MAX_FILE_BYTES=67108864`（64MiB）；multipart总上限自动+65536B，只给边界/请求头空间 |
+| 预览 | page=1、limit=50；limit上限 `BALLISTIC_PREVIEW_MAX_ROWS=500`；CSV/TXT/XLS/XLSX/XLSM，Excel首工作表，原单元格文本 |
+| TTL | `BALLISTIC_FILE_TTL_MILLIS=86400000`（24h），按最后访问；默认清理间隔60000ms，租约覆盖完整解析/预览/下载 |
+| 到期 | 到期且无活动租约才清理字节/元数据，之后404；不能继续使用旧ID；租约释放或中断后自然进入清理 |
+| 重启 | 同运行根登记元数据/文件及数据库记录可恢复；异步内存task缓存不恢复，重启后其查询404 |
+| 下载 | 原二进制、Content-Type来自登记、Content-Length为校验字节数；Content-Disposition含ASCII filename及UTF-8 filename*，nosniff |
+
+异步 `PENDING→RUNNING→SUCCEEDED/FAILED/CANCELLED`。DELETE 200可能仍RUNNING，只表示受理协作取消，须继续轮询确认；先成功再取消保留SUCCEEDED。GET result 对所有未SUCCEEDED状态均409，不能仅凭409断言已取消。任务缓存默认TTL2h，持久记录独立；取消任务与删除记录是不同操作。
+
+空间业务400 `{code,error}`、兜底500 `{code,error,requestId}`；非法Instant绑定和非数字BIGINT记录ID保持原500。未知task/合法未知数字记录404为空体。旧窗口/三轨迹计算内部400/500为 `{error}`；MVC绑定可进入原全局500，已提交的流式传输故障不保证JSON错误体。文件400/404/413/500使用自身 `{code,error,requestId?}`，payload preview非法400使用 `{code:INVALID_ARGUMENT,error}`。逐操作列出源码边界与A01实际状态，不把未运行状态称为实测。
+
+确认选择后端只强制 `selections` 非空数组，planningWindow/mergedTimeRange和每项用 JsonNode 透明保存；推荐前端完整嵌套结构见 [SelectionTarget](#selectiontarget)、[SelectionMergedTimeRange](#selectionmergedtimerange)。服务不重算前端并集，也不强制每项推荐字段；OpenAPI使用递归真实JSON值合同，未伪造强校验。
+
+## PowerShell curl 执行约定
+
+从仓库根运行 `curl.exe`，避免PowerShell同名别名。每个JSON请求配套文件来自A01真实成功请求（[请求文件目录](../verification/A02/requests)），上传引用/结果路径须换为**当前服务当次响应**。下列公共变量只能从成功响应提取，不能直接使用正文历史ID：
+
+```powershell
+$api = 'http://127.0.0.1:8080'
+$satelliteId = ((curl.exe --fail-with-body "$api/api/v1/space/satellites/options") | ConvertFrom-Json)[0].id
+$upload = (curl.exe --fail-with-body -F 'file=@test-data/reference/ballistic/trajectory-0.1s-standard.csv' "$api/api/v1/ballistic/files") | ConvertFrom-Json
+$fileId = $upload.fileId
+$serverPath = $upload.serverPath
+# $taskId 取操作16受理响应.taskId；$id 取操作20分页.records[].id，保留字符串。
+# 计算成功后 $csvPath 取真实响应.files[].csvPath，登记后的$fileId与serverPath重新赋值。
+```
+
+POST/PUT下面使用 `--data-binary '@verification/A02/requests/operationNN.json'`，不内联手工转义JSON。样例中的动态路径、ID来自已结束的A01实例，调用前须按当前引用替换；样例目的为合同与语法，不是可访问历史服务的保证。只更换文件位置/身份所依赖的请求值，不更改数值模型/采样或CSV。完整带生命周期执行示例仍可参见 [既有HTTP脚本](examples/http_flow.py)。本项以临时本机HTTP接收器核验35条curl方法、参数、JSON字节与multipart，不把接收器当成业务服务。
+
+## 逐操作合同与实际样例
+
+### 01 空间健康检查
+`GET /api/v1/space/health`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [Health](#health) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/health"
+```
+
+A01 200实际样例：`space-health`，原响应 15B，SHA256 `647a83cca85203d6d4eb07eea84ef6eb91d5c6482eaff2ac8bb65a342b9f2946`。
+
+响应结构摘录：
+
+```json
+{
+  "status": "UP"
+}
+```
+
+### 02 完整观测星目录
+`GET /api/v1/space/satellites`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [SatelliteEntity](#satelliteentity)[] | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/satellites"
+```
+
+A01 200实际样例：`catalog-satellites`，原响应 815B，SHA256 `4c77fc83a9c5416ee18d190dd49a778086d30c78c28ed40c8b99daa2209d2b59`。
+
+响应结构摘录：
+
+```json
+[
+  {
+    "id": 1,
+    "type": null,
+    "libraryModelId": null,
+    "name": "演示观测星（非生产资料）",
+    "scid": null,
+    "objectId": null,
+    "objectName": null,
+    "noradCatId": null,
+    "country": null,
+    "period": null,
+    "catalogInclination": null,
+    "apogee": null,
+    "perigee": null,
+    "rcsSize": null,
+    "rcsValue": null,
+    "launchDate": null,
+    "catalogComment": null,
+    "weight": null,
+    "modelType": "KEPLER_6",
+    "epochTime": "2026-07-01T10:00:00",
+    "semiMajorAxis": 7078137.0,
+    "eccentricity": 0.0,
+    "inclination": 50.0,
+    "meanAnomaly": 0.0,
+    "raan": 30.0,
+    "argumentOfPerigee": 0.0,
+    "payloadJson": "{\"payloadType\":\"SPACE\",\"distance\":[100000,8000000],\"distanceUnit\":\"M\",\"azimuth\":[10,350],\"elevation\":[-80,80],\"angleRate\":0.5,\"sunAvoidHalfAngle\":15}",
+    "firstOrbit": null,
+    "secondOrbit": null,
+    "createdBy": null,
+    "updateBy": null,
+    "createTime": null,
+    "updateTime": null
+  }
+]
+```
+
+### 03 观测星分页目录
+`GET /api/v1/space/satellites/page`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| pageNumber | query | 否 | integer (int64) | default=1, minimum=1 | 页码1起。 |
+| pageSize | query | 否 | integer (int64) | default=50, minimum=1, maximum=200 | 每页1..200。 |
+| keyword | query | 否 | string | 无固定默认 | 卫星名/目录信息或任务ID/备注关键字，可空。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [SatellitePage](#satellitepage) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/satellites/page?pageNumber=999999&pageSize=200"
+```
+
+A01 200实际样例：`empty-last-page`，原响应 59B，SHA256 `e4c43d150d94667a61f853cde39c2ca1fc8879d1dbc5e07da6122ff7fbdac59a`。
+
+响应结构摘录：
+
+```json
+{
+  "total": 1,
+  "pageNumber": 999999,
+  "pageSize": 200,
+  "records": []
+}
+```
+
+A01 400实际样例：`page-invalid`，原响应 58B，SHA256 `b844d0eb6afe6dde2a5b649f533f8347cf337cc494ea12b05149517963b57523`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "页码必须大于 0"
+}
+```
+
+### 04 观测星轻量选项
+`GET /api/v1/space/satellites/options`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [SatelliteOptionResponse](#satelliteoptionresponse)[] | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/satellites/options"
+```
+
+A01 200实际样例：`catalog-satellites-options`，原响应 121B，SHA256 `06e34973008e34cb391db13a3a3c0c42fe8666e0c073a1c018e3999557183cb2`。
+
+响应结构摘录：
+
+```json
+[
+  {
+    "id": 1,
+    "name": "演示观测星（非生产资料）",
+    "modelType": "KEPLER_6",
+    "type": null,
+    "scid": null,
+    "noradCatId": null
+  }
+]
+```
+
+### 05 读取旧对空配置
+`GET /api/v1/space/satellites/{satelliteId}/payload`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| satelliteId | path | 是 | integer (int64) | 无固定默认 | 空间卫星Long数字主键，未知400。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [SpacePayloadConfigurationResponse](#spacepayloadconfigurationresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/satellites/$satelliteId/payload"
+```
+
+A01 200实际样例：`catalog-satellites-1-payload`，原响应 311B，SHA256 `7f316ec713f422451cda1933e0a5940a520bbb7fc876441aacfb76732c231cae`。
+
+响应结构摘录：
+
+```json
+{
+  "configured": true,
+  "payloadType": "SPACE",
+  "minDistanceKm": 100.0,
+  "maxDistanceKm": 8000.0,
+  "minDistanceM": 100000.0,
+  "maxDistanceM": 8000000.0,
+  "azimuthMinDeg": 10.0,
+  "azimuthMaxDeg": 350.0,
+  "elevationMinDeg": -80.0,
+  "elevationMaxDeg": 80.0,
+  "angleRateDegPerSec": 0.5,
+  "sunAvoidHalfAngleDeg": 15.0,
+  "startupAngleRateDegPerSec": null
+}
+```
+
+A01 400实际样例：`missing-satellite`，原响应 59B，SHA256 `ddd4f155cf4cf604df71b89abb8951f75f133cc45ee3cf68a108a2568b6ed50d`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "我方卫星不存在"
+}
+```
+
+### 06 保存旧对空配置
+`PUT /api/v1/space/satellites/{satelliteId}/payload`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| satelliteId | path | 是 | integer (int64) | 无固定默认 | 空间卫星Long数字主键，未知400。 |
+
+请求：[SpacePayloadConfigurationRequest](#spacepayloadconfigurationrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [SpacePayloadConfigurationResponse](#spacepayloadconfigurationresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X PUT -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation06.json' "$api/api/v1/space/satellites/$satelliteId/payload"
+```
+
+A01 200实际样例：`space-legacy-metres-save`，原响应 293B，SHA256 `d3b81766b3a104646d2413985c504554323007e0fea916872c52e5b734ade677`。
+
+请求结构摘录：
+
+```json
+{
+  "azimuthMinDeg": null,
+  "azimuthMaxDeg": null,
+  "elevationMinDeg": null,
+  "elevationMaxDeg": null,
+  "angleRateDegPerSec": -1,
+  "sunAvoidHalfAngleDeg": 0,
+  "startupAngleRateDegPerSec": -1,
+  "minDistanceM": 0,
+  "maxDistanceM": 0
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "configured": true,
+  "payloadType": "SPACE",
+  "minDistanceKm": 0.0,
+  "maxDistanceKm": 0.0,
+  "minDistanceM": 0.0,
+  "maxDistanceM": 0.0,
+  "azimuthMinDeg": null,
+  "azimuthMaxDeg": null,
+  "elevationMinDeg": null,
+  "elevationMaxDeg": null,
+  "angleRateDegPerSec": -1.0,
+  "sunAvoidHalfAngleDeg": 0.0,
+  "startupAngleRateDegPerSec": -1.0
+}
+```
+
+A01 400实际样例：`mixed-unit`，原响应 86B，SHA256 `438270574036afea3b28f06f8c4674e636ec4b58b6bafd15abb8cc62c0f0b8f0`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "探测距离不能同时使用公里和米字段"
+}
+```
+
+### 07 读取按类独立载荷配置
+`GET /api/v1/space/satellites/{satelliteId}/payload-profiles`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| satelliteId | path | 是 | integer (int64) | 无固定默认 | 空间卫星Long数字主键，未知400。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [PayloadProfilesResponse](#payloadprofilesresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/satellites/$satelliteId/payload-profiles"
+```
+
+A01 200实际样例：`read-SPACE`，原响应 389B，SHA256 `2d0b210e63bfb3ab5e6a70a0d35fecd7d17bb2dd12c4eb419caac62b3b1179e4`。
+
+响应结构摘录：
+
+```json
+{
+  "activePayloadType": "SPACE",
+  "profiles": [
+    {
+      "payloadType": "SPACE",
+      "legacyGroundProfile": false,
+      "minDistanceKm": 0.0,
+      "maxDistanceKm": 0.0,
+      "azimuthMinDeg": null,
+      "azimuthMaxDeg": null,
+      "elevationMinDeg": null,
+      "elevationMaxDeg": null,
+      "angleRateDegPerSec": 0.0,
+      "sunAvoidHalfAngleDeg": 0.0,
+      "startupAngleRateDegPerSec": null,
+      "sensorFullConeAngleDeg": null,
+      "maxDetectRangeKm": null,
+      "sunExclusionAngleDeg": null
+    }
+  ]
+}
+```
+
+A01 400实际样例：`missing-satellite`，原响应 59B，SHA256 `ddd4f155cf4cf604df71b89abb8951f75f133cc45ee3cf68a108a2568b6ed50d`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "我方卫星不存在"
+}
+```
+
+### 08 保存标准配置并启用类型
+`PUT /api/v1/space/satellites/{satelliteId}/payload-profiles`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| satelliteId | path | 是 | integer (int64) | 无固定默认 | 空间卫星Long数字主键，未知400。 |
+
+请求：[PayloadProfileRequest](#payloadprofilerequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [PayloadProfilesResponse](#payloadprofilesresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X PUT -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation08.json' "$api/api/v1/space/satellites/$satelliteId/payload-profiles"
+```
+
+A01 200实际样例：`persist-SPACE`，原响应 389B，SHA256 `2d0b210e63bfb3ab5e6a70a0d35fecd7d17bb2dd12c4eb419caac62b3b1179e4`。
+
+请求结构摘录：
+
+```json
+{
+  "payloadType": "SPACE",
+  "minDistanceKm": 0,
+  "maxDistanceKm": 0,
+  "azimuthMinDeg": null,
+  "azimuthMaxDeg": null,
+  "elevationMinDeg": null,
+  "elevationMaxDeg": null,
+  "angleRateDegPerSec": 0,
+  "sunAvoidHalfAngleDeg": 0,
+  "startupAngleRateDegPerSec": null
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "activePayloadType": "SPACE",
+  "profiles": [
+    {
+      "payloadType": "SPACE",
+      "legacyGroundProfile": false,
+      "minDistanceKm": 0.0,
+      "maxDistanceKm": 0.0,
+      "azimuthMinDeg": null,
+      "azimuthMaxDeg": null,
+      "elevationMinDeg": null,
+      "elevationMaxDeg": null,
+      "angleRateDegPerSec": 0.0,
+      "sunAvoidHalfAngleDeg": 0.0,
+      "startupAngleRateDegPerSec": null,
+      "sensorFullConeAngleDeg": null,
+      "maxDetectRangeKm": null,
+      "sunExclusionAngleDeg": null
+    }
+  ]
+}
+```
+
+A01 400实际样例：`bad-type`，原响应 76B，SHA256 `f23425b4c27c502d3bf518c16ee3bb84e76e504be72029a424ea1e63c312d9ff`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "载荷类型仅支持 SPACE 或 GROUND"
+}
+```
+
+### 09 完整地面站目录
+`GET /api/v1/space/stations`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [StationEntity](#stationentity)[] | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/stations"
+```
+
+A01 200实际样例：`catalog-stations`，原响应 249B，SHA256 `0302e8c04ea89b566834f3b366269f4f9d46b2264b9dbd87025896ae2239b018`。
+
+响应结构摘录：
+
+```json
+[
+  {
+    "id": "DEMO-STATION",
+    "name": "演示站（非生产资料）",
+    "longitude": 100.0,
+    "latitude": 30.0,
+    "height": 0.0,
+    "minElevation": 0.0,
+    "maxElevation": 90.0,
+    "createBy": null,
+    "createOrgId": null,
+    "createTime": null,
+    "updateBy": null,
+    "updateTime": null
+  }
+]
+```
+
+### 10 读取规划配置默认值
+`GET /api/v1/space/defaults`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [Defaults](#defaults) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/defaults"
+```
+
+A01 200实际样例：`catalog-defaults`，原响应 125B，SHA256 `a808347ff5328fd73b6070f7221369532499319ffcb8bd20c0bdd98c19b3a80e`。
+
+响应结构摘录：
+
+```json
+{
+  "preGuardSec": 300.0,
+  "postGuardSec": 0.0,
+  "allowedGapSec": 0.0,
+  "orbitMaxApproximationDays": 14.0,
+  "targetMinTleEpochCode": "23340"
+}
+```
+
+### 11 筛选并分页目标目录
+`POST /api/v1/space/targets/query`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[TargetQueryRequest](#targetqueryrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [TargetQueryResponse](#targetqueryresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation11.json' "$api/api/v1/space/targets/query"
+```
+
+A01 200实际样例：`target-query`，原响应 894B，SHA256 `082a21e2e5ac0a89a1df3acd4a430ac4f7e1586f0d2b3fabb6e3cb73df0ac709`。
+
+请求结构摘录：
+
+```json
+{
+  "targetIds": [],
+  "belongs": [
+    "US"
+  ],
+  "minWeight": 100.0,
+  "maxWeight": 150.0,
+  "epochStartTime": null,
+  "epochEndTime": null,
+  "minTleEpochCode": null,
+  "maxApproximationDays": null,
+  "planningStartTime": "2026-07-01T10:00:00Z",
+  "planningEndTime": "2026-07-01T10:10:00Z",
+  "excludeNameRegex": null,
+  "pageNumber": 1,
+  "pageSize": 50
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "total": 1,
+  "pageNumber": 1,
+  "pageSize": 50,
+  "targets": [
+    {
+      "id": 2,
+      "type": null,
+      "libraryModelId": null,
+      "name": "演示目标星（非生产资料）",
+      "scid": null,
+      "objectId": null,
+      "objectName": null,
+      "noradCatId": null,
+      "country": null,
+      "period": null,
+      "catalogInclination": null,
+      "apogee": null,
+      "perigee": null,
+      "rcsSize": null,
+      "rcsValue": null,
+      "launchDate": "2020-01-01",
+      "catalogComment": null,
+      "modelType": "KEPLER_6",
+      "epochTime": "2026-07-01T10:00:00",
+      "semiMajorAxis": 7278137.0,
+      "eccentricity": 0.0,
+      "inclination": 50.0,
+      "meanAnomaly": 30.0,
+      "raan": 30.0,
+      "argumentOfPerigee": 0.0,
+      "firstOrbit": null,
+      "secondOrbit": null,
+      "belong": "US",
+      "weight": 120.0,
+      "createBy": null,
+      "updateBy": null,
+      "createOrgId": null,
+      "createTime": null,
+      "updateTime": null
+    }
+  ],
+  "targetIds": [
+    2
+  ],
+  "filterBreakdown": {
+    "belongsHit": 1,
+    "weightHit": 1,
+    "epochHit": 1,
+    "epochConstraintHit": 1,
+    "ephemerisWarningHit": 0,
+    "excludeHit": 1,
+    "maxApproximationDays": 0
+  }
+}
+```
+
+A01 400实际样例：`bad-regex`，原响应 71B，SHA256 `f16b177c4956cf1d48b46dcf28a74c6d0ab611602422c293d60a99f57ec8f8e9`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "排除目标正则表达式无效"
+}
+```
+
+### 12 目录实际国籍编码选项
+`GET /api/v1/space/targets/belong-options`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [BelongOptionResponse](#belongoptionresponse)[] | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/targets/belong-options"
+```
+
+A01 200实际样例：`catalog-targets-belong-options`，原响应 72B，SHA256 `faa8ff468f5d8e76407a0a43e3a6463f1d98ed02f5377aeb53c7997544b05731`。
+
+响应结构摘录：
+
+```json
+[
+  {
+    "code": "US",
+    "count": 1,
+    "description": "BELONG_=US，当前目标数=1"
+  }
+]
+```
+
+### 13 站星链路稳定窗口及覆盖并集
+`POST /api/v1/space/downlink/plan`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[DownlinkPlanRequest](#downlinkplanrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [DownlinkPlanResponse](#downlinkplanresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation13.json' "$api/api/v1/space/downlink/plan"
+```
+
+A01 200实际样例：`downlink-plan`，原响应 148B，SHA256 `b597f52414e39f079798194938da560aa587ce17de9f043430173ea63bc8292f`。
+
+请求结构摘录：
+
+```json
+{
+  "startTime": "2026-07-01T10:00:00Z",
+  "endTime": "2026-07-01T10:10:00Z",
+  "coarseStepSec": 60.0,
+  "fineStepSec": 1.0,
+  "satelliteIds": [
+    1
+  ],
+  "preGuardSec": 0.0,
+  "postGuardSec": 0.0,
+  "allowedGapSec": 0.0,
+  "satelliteIllumination": "ANY",
+  "stations": [
+    {
+      "stationId": "DEMO-STATION",
+      "minElevationDeg": 0.0,
+      "maxElevationDeg": 90.0
+    }
+  ],
+  "links": [
+    {
+      "satelliteId": 1,
+      "stationId": "DEMO-STATION"
+    }
+  ]
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "satelliteStationWindows": [
+    {
+      "satelliteId": 1,
+      "stationId": "DEMO-STATION",
+      "windows": []
+    }
+  ],
+  "coverageWindows": [],
+  "skippedLinks": [],
+  "totalSkippedLinks": 0
+}
+```
+
+### 14 完整时段下传覆盖判定
+`POST /api/v1/space/downlink/validate-window`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[DownlinkPlanRequest](#downlinkplanrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [WindowValidationResponse](#windowvalidationresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation14.json' "$api/api/v1/space/downlink/validate-window"
+```
+
+A01 200实际样例：`downlink-validation`，原响应 175B，SHA256 `e64abb0941e1d09f5ebe967e11d951d6512d26d9c863e56d6f9e0f4dae2e2832`。
+
+请求结构摘录：
+
+```json
+{
+  "startTime": "2026-07-01T10:00:00Z",
+  "endTime": "2026-07-01T10:10:00Z",
+  "coarseStepSec": 60.0,
+  "fineStepSec": 1.0,
+  "satelliteIds": [
+    1
+  ],
+  "preGuardSec": 0.0,
+  "postGuardSec": 0.0,
+  "allowedGapSec": 0.0,
+  "satelliteIllumination": "ANY",
+  "stations": [
+    {
+      "stationId": "DEMO-STATION",
+      "minElevationDeg": 0.0,
+      "maxElevationDeg": 90.0
+    }
+  ],
+  "links": [
+    {
+      "satelliteId": 1,
+      "stationId": "DEMO-STATION"
+    }
+  ]
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "satisfied": false,
+  "plan": {
+    "satelliteStationWindows": [
+      {
+        "satelliteId": 1,
+        "stationId": "DEMO-STATION",
+        "windows": []
+      }
+    ],
+    "coverageWindows": [],
+    "skippedLinks": [],
+    "totalSkippedLinks": 0
+  }
+}
+```
+
+### 15 同步观测规划
+`POST /api/v1/space/visibility/plan`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[VisibilityPlanRequest](#visibilityplanrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [VisibilityPlanResponse](#visibilityplanresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation15.json' "$api/api/v1/space/visibility/plan"
+```
+
+A01 200实际样例：`sync`，原响应 1394B，SHA256 `d5c86534fd7e0527d6052b0f886b51bbb278f0fc44da3adb1a479e25860ea05a`。
+
+请求结构摘录：
+
+```json
+{
+  "observerSatelliteIds": [
+    1
+  ],
+  "targetIds": [
+    2
+  ],
+  "belongs": [],
+  "minWeight": null,
+  "maxWeight": null,
+  "epochStartTime": null,
+  "epochEndTime": null,
+  "minTleEpochCode": null,
+  "maxApproximationDays": null,
+  "excludeNameRegex": null,
+  "startTime": "2026-07-01T10:00:00Z",
+  "endTime": "2026-07-01T10:10:00Z",
+  "coarseStepSec": 60.0,
+  "fineStepSec": 1.0,
+  "illuminationConstraint": null,
+  "observationConstraints": [],
+  "winToolReport": false
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "results": [
+    {
+      "targetId": "2",
+      "targetName": "演示目标星（非生产资料）",
+      "observerSatelliteIds": [
+        "1"
+      ],
+      "observerSatelliteNames": [
+        "演示观测星（非生产资料）"
+      ],
+      "arcs": [
+        {
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:10:00.000Z",
+          "observerIlluminations": [
+            {
+              "satelliteId": "1",
+              "satelliteName": "演示观测星（非生产资料）",
+              "state": "SUNLIT",
+              "stateName": "阳照"
+            }
+          ],
+          "targetIllumination": {
+            "targetId": "2",
+            "targetName": "演示目标星（非生产资料）",
+            "state": "SUNLIT",
+            "stateName": "阳照"
+          },
+          "illuminationSegments": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:10:00.000Z",
+              "observerIlluminations": [
+                {
+                  "satelliteId": "1",
+                  "satelliteName": "演示观测星（非生产资料）",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                }
+              ],
+              "targetIllumination": {
+                "targetId": "2",
+                "targetName": "演示目标星（非生产资料）",
+                "state": "SUNLIT",
+                "stateName": "阳照"
+              },
+              "durationSec": 600.0
+            }
+          ],
+          "durationSec": 600.0
+        }
+      ],
+      "observationType": "SINGLE",
+      "observationTypeName": "单星观测",
+      "conciseSummary": "任务摘要：A(600.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)",
+      "targetNorad": "null",
+      "targetWeightKg": 120.0
+    }
+  ],
+  "skippedPairs": [],
+  "totalSkippedPairs": 0,
+  "targetFilterBreakdown": {
+    "belongsHit": 1,
+    "weightHit": 1,
+    "epochHit": 1,
+    "epochConstraintHit": 1,
+    "ephemerisWarningHit": 0,
+    "excludeHit": 1,
+    "maxApproximationDays": 14
+  },
+  "ephemerisWarnings": []
+}
+```
+
+A01 400实际样例：`reverse-sync-400`，原响应 68B，SHA256 `6873accc8989b955465a06647e470addee7b0193a8629b48a0ea87011beaa1bc`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "规划时间段或步长无效"
+}
+```
+
+### 16 受理异步观测规划
+`POST /api/v1/space/visibility/tasks`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[VisibilityPlanRequest](#visibilityplanrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [TaskAccepted](#taskaccepted) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 A01该状态有实际证据。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation16.json' "$api/api/v1/space/visibility/tasks"
+```
+
+A01 200实际样例：`async-submit`，原响应 49B，SHA256 `98a94fcffdf72d7435c453805b171319a960e3263b543689be2313bf98b9c196`。
+
+请求结构摘录：
+
+```json
+{
+  "observerSatelliteIds": [
+    1
+  ],
+  "targetIds": [
+    2
+  ],
+  "belongs": [],
+  "minWeight": null,
+  "maxWeight": null,
+  "epochStartTime": null,
+  "epochEndTime": null,
+  "minTleEpochCode": null,
+  "maxApproximationDays": null,
+  "excludeNameRegex": null,
+  "startTime": "2026-07-01T10:00:00Z",
+  "endTime": "2026-07-01T10:10:00Z",
+  "coarseStepSec": 60.0,
+  "fineStepSec": 1.0,
+  "illuminationConstraint": null,
+  "observationConstraints": [],
+  "winToolReport": false
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "taskId": "eaed77dc-12c5-4f5c-8b59-ead4adc49ed9"
+}
+```
+
+A01 500实际样例：`instant-invalid-original-500`，原响应 105B，SHA256 `9354b01adb86869853c28911de1b09fd82f08d5dd0be9d257054eb2de0b68396`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INTERNAL_ERROR",
+  "error": "服务处理失败",
+  "requestId": "385106c6-251e-4263-a654-8ed9e13978e1"
+}
+```
+
+### 17 查询异步状态与进度
+`GET /api/v1/space/visibility/tasks/{taskId}`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。 DELETE 200可仍为RUNNING，只表示受理协作取消，须继续轮询CANCELLED；成功先完成时保留SUCCEEDED。任务缓存TTL默认2小时，持久记录独立。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| taskId | path | 是 | string | 无固定默认 | 当次受理返回的任务字符串ID，未知404；内存缓存重启丢失。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [PlanningTaskStatusResponse](#planningtaskstatusresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 404 | 空体 | 未知任务/合法数字记录ID，404空体。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/visibility/tasks/$taskId"
+```
+
+A01 200实际样例：`async-poll-0`，原响应 218B，SHA256 `d268e2ed48adc68febf64fa8a31dc8ed6a3c4198e80aeb40af711801313d4b41`。
+
+响应结构摘录：
+
+```json
+{
+  "taskId": "eaed77dc-12c5-4f5c-8b59-ead4adc49ed9",
+  "status": "RUNNING",
+  "totalPairs": 0,
+  "completedPairs": 0,
+  "totalTargets": 0,
+  "completedTargets": 0,
+  "errorMessage": null,
+  "createdAt": "2026-10-13T23:29:27.458Z",
+  "completedAt": null
+}
+```
+
+A01 404实际样例：`unknown-task-404`，原响应 0B，SHA256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+响应为空体；见样例集合的字节长度/原SHA与原HTTP头。
+
+### 18 查询成功任务完整结果
+`GET /api/v1/space/visibility/tasks/{taskId}/result`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。 DELETE 200可仍为RUNNING，只表示受理协作取消，须继续轮询CANCELLED；成功先完成时保留SUCCEEDED。任务缓存TTL默认2小时，持久记录独立。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| taskId | path | 是 | string | 无固定默认 | 当次受理返回的任务字符串ID，未知404；内存缓存重启丢失。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [VisibilityPlanResponse](#visibilityplanresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 404 | 空体 | 未知任务/合法数字记录ID，404空体。 |
+| 409 | application/json [LegacyError](#legacyerror) | 任务尚未SUCCEEDED：PENDING/RUNNING/FAILED/CANCELLED均409；仅error字段。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/visibility/tasks/$taskId/result"
+```
+
+A01 200实际样例：`prepare-current-result`，原响应 1268B，SHA256 `d41aa44b6bbc17fea9d86f89bbd0d887c9dd00857f1426accb5d260862e5f419`。
+
+响应结构摘录：
+
+```json
+{
+  "results": [
+    {
+      "targetId": "2",
+      "targetName": "基准目标星",
+      "observerSatelliteIds": [
+        "1"
+      ],
+      "observerSatelliteNames": [
+        "基准观测星"
+      ],
+      "arcs": [
+        {
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:10:00.000Z",
+          "observerIlluminations": [
+            {
+              "satelliteId": "1",
+              "satelliteName": "基准观测星",
+              "state": "SUNLIT",
+              "stateName": "阳照"
+            }
+          ],
+          "targetIllumination": {
+            "targetId": "2",
+            "targetName": "基准目标星",
+            "state": "SUNLIT",
+            "stateName": "阳照"
+          },
+          "illuminationSegments": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:10:00.000Z",
+              "observerIlluminations": [
+                {
+                  "satelliteId": "1",
+                  "satelliteName": "基准观测星",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                }
+              ],
+              "targetIllumination": {
+                "targetId": "2",
+                "targetName": "基准目标星",
+                "state": "SUNLIT",
+                "stateName": "阳照"
+              },
+              "durationSec": 600.0
+            }
+          ],
+          "durationSec": 600.0
+        }
+      ],
+      "observationType": "SINGLE",
+      "observationTypeName": "单星观测",
+      "conciseSummary": "任务摘要：A(600.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)",
+      "targetNorad": "null",
+      "targetWeightKg": 120.0
+    }
+  ],
+  "skippedPairs": [],
+  "totalSkippedPairs": 0,
+  "targetFilterBreakdown": {
+    "belongsHit": 1,
+    "weightHit": 1,
+    "epochHit": 1,
+    "epochConstraintHit": 1,
+    "ephemerisWarningHit": 0,
+    "excludeHit": 1,
+    "maxApproximationDays": 14
+  },
+  "ephemerisWarnings": []
+}
+```
+
+A01 404实际样例：`unknown-task`，原响应 0B，SHA256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+响应为空体；见样例集合的字节长度/原SHA与原HTTP头。
+
+A01 409实际样例：`failed-result-409`，原响应 65B，SHA256 `d9d8e8e1230e127ee5c3d55af1475a204421992d03ba20c5e015bfc90bfecdb7`。
+
+响应结构摘录：
+
+```json
+{
+  "error": "规划任务尚未成功完成，当前状态: FAILED"
+}
+```
+
+### 19 受理协作取消并回传真实状态
+`DELETE /api/v1/space/visibility/tasks/{taskId}`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。 DELETE 200可仍为RUNNING，只表示受理协作取消，须继续轮询CANCELLED；成功先完成时保留SUCCEEDED。任务缓存TTL默认2小时，持久记录独立。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| taskId | path | 是 | string | 无固定默认 | 当次受理返回的任务字符串ID，未知404；内存缓存重启丢失。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [PlanningTaskStatusResponse](#planningtaskstatusresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 404 | 空体 | 未知任务/合法数字记录ID，404空体。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X DELETE "$api/api/v1/space/visibility/tasks/$taskId"
+```
+
+A01 200实际样例：`cancel-accepted`，原响应 218B，SHA256 `bf4cfda7df6a05fa83fecef261456f41a4c0010ffd3568a240f3e9fbec4d682d`。
+
+响应结构摘录：
+
+```json
+{
+  "taskId": "1c2429a8-b868-4387-9534-15d51cc7d397",
+  "status": "RUNNING",
+  "totalPairs": 0,
+  "completedPairs": 0,
+  "totalTargets": 0,
+  "completedTargets": 0,
+  "errorMessage": null,
+  "createdAt": "2026-10-13T23:29:27.747Z",
+  "completedAt": null
+}
+```
+
+A01 404实际样例：`unknown-task`，原响应 0B，SHA256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+响应为空体；见样例集合的字节长度/原SHA与原HTTP头。
+
+### 20 持久记录分页
+`GET /api/v1/space/visibility/task-results`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| pageNumber | query | 否 | integer (int64) | default=1, minimum=1 | 页码1起。 |
+| pageSize | query | 否 | integer (int64) | default=20, minimum=1, maximum=200 | 每页1..200。 |
+| keyword | query | 否 | string | 无固定默认 | 卫星名/目录信息或任务ID/备注关键字，可空。 |
+| status | query | 否 | string | 无固定默认 | PENDING/RUNNING/SUCCEEDED/FAILED/CANCELLED，空白不限；非法400。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [TaskResultPage](#taskresultpage) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/visibility/task-results?pageNumber=999999&pageSize=200"
+```
+
+A01 200实际样例：`empty-last-page`，原响应 59B，SHA256 `e4c43d150d94667a61f853cde39c2ca1fc8879d1dbc5e07da6122ff7fbdac59a`。
+
+响应结构摘录：
+
+```json
+{
+  "total": 1,
+  "pageNumber": 999999,
+  "pageSize": 200,
+  "records": []
+}
+```
+
+A01 400实际样例：`page-invalid`，原响应 58B，SHA256 `b844d0eb6afe6dde2a5b649f533f8347cf337cc494ea12b05149517963b57523`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "页码必须大于 0"
+}
+```
+
+### 21 持久记录完整明细
+`GET /api/v1/space/visibility/task-results/{id}`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| id | path | 是 | string | pattern="^[+-]?\\d+$" | 持久记录主键十进制文本，Controller实际Long绑定；合法未知数字404，非数字原500，不改写为404。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [VisibilityTaskResultDetailResponse](#visibilitytaskresultdetailresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 404 | 空体 | 未知任务/合法数字记录ID，404空体。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/space/visibility/task-results/$id"
+```
+
+A01 200实际样例：`remark-retest-empty-read`，原响应 2181B，SHA256 `61828637dbadf5ad275ada83a44b520e94af1f69262289a389ccbdd91f1d97b0`。
+
+响应结构摘录：
+
+```json
+{
+  "id": "2110154897857761282",
+  "taskId": "b9f94f28-da43-4c23-9033-1bd26da85248",
+  "taskType": "VISIBILITY",
+  "status": "SUCCEEDED",
+  "totalPairs": 1,
+  "completedPairs": 1,
+  "errorMessage": null,
+  "remark": "",
+  "createTime": "2026-10-13T23:45:07.093",
+  "completeTime": "2026-10-13T23:45:07.100",
+  "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":null,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:10:00Z\",\"coarseStepSec\":60.0,\"fineStepSec\":1.0,\"illuminationConstraint\":null,\"observationConstraints\":[],\"winToolReport\":false}",
+  "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:10:00.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:10:00.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":600.0}],\"durationSec\":600.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(600.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+  "skippedPairsJson": null
+}
+```
+
+A01 404实际样例：`deleted-record-404`，原响应 0B，SHA256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+响应为空体；见样例集合的字节长度/原SHA与原HTTP头。
+
+### 22 更新备注或null清空
+`PUT /api/v1/space/visibility/task-results/{id}`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| id | path | 是 | string | pattern="^[+-]?\\d+$" | 持久记录主键十进制文本，Controller实际Long绑定；合法未知数字404，非数字原500，不改写为404。 |
+
+请求：[VisibilityTaskResultRemarkRequest](#visibilitytaskresultremarkrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [VisibilityTaskResultDetailResponse](#visibilitytaskresultdetailresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 404 | 空体 | 未知任务/合法数字记录ID，404空体。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 A01该状态有实际证据。 |
+
+```powershell
+curl.exe --fail-with-body -X PUT -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation22.json' "$api/api/v1/space/visibility/task-results/$id"
+```
+
+A01 200实际样例：`remark-retest-empty-string`，原响应 2181B，SHA256 `61828637dbadf5ad275ada83a44b520e94af1f69262289a389ccbdd91f1d97b0`。
+
+请求结构摘录：
+
+```json
+{
+  "remark": ""
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "id": "2110154897857761282",
+  "taskId": "b9f94f28-da43-4c23-9033-1bd26da85248",
+  "taskType": "VISIBILITY",
+  "status": "SUCCEEDED",
+  "totalPairs": 1,
+  "completedPairs": 1,
+  "errorMessage": null,
+  "remark": "",
+  "createTime": "2026-10-13T23:45:07.093",
+  "completeTime": "2026-10-13T23:45:07.100",
+  "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":null,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:10:00Z\",\"coarseStepSec\":60.0,\"fineStepSec\":1.0,\"illuminationConstraint\":null,\"observationConstraints\":[],\"winToolReport\":false}",
+  "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"基准观测星\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:10:00.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:10:00.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"基准观测星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"基准目标星\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":600.0}],\"durationSec\":600.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(600.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarnings\":[]}",
+  "skippedPairsJson": null
+}
+```
+
+A01 400实际样例：`remark-513-rejected`，原响应 73B，SHA256 `22a14663ddcb9042c1dab5ff64622f92fcf1c59a2d1b79df374370d097202f2e`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "备注长度不能超过 512 字符"
+}
+```
+
+A01 404实际样例：`unknown-record`，原响应 0B，SHA256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+响应为空体；见样例集合的字节长度/原SHA与原HTTP头。
+
+A01 500实际样例：`unknown-null-remark-404`，原响应 105B，SHA256 `414c1813d5f27171b2b5c85e01bb880c2719e2f4a685d841e4ddd32cadf96ff1`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INTERNAL_ERROR",
+  "error": "服务处理失败",
+  "requestId": "8382a886-e8b4-4e70-9fee-db182dcfb254"
+}
+```
+
+### 23 保存确认选择原文并返回回执
+`PUT /api/v1/space/visibility/task-results/{id}/selection`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| id | path | 是 | string | pattern="^[+-]?\\d+$" | 持久记录主键十进制文本，Controller实际Long绑定；合法未知数字404，非数字原500，不改写为404。 |
+
+请求：[VisibilityTaskResultSelectionRequest](#visibilitytaskresultselectionrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [VisibilityTaskResultSelectionResponse](#visibilitytaskresultselectionresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 404 | 空体 | 未知任务/合法数字记录ID，404空体。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X PUT -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation23.json' "$api/api/v1/space/visibility/task-results/$id/selection"
+```
+
+A01 200实际样例：`selection-real-result-valid`，原响应 3837B，SHA256 `972e139e549ca919e5a1bf3aa8a798ce56a817b05ccefc468908a8683bbd6ef1`。
+
+请求结构摘录：
+
+```json
+{
+  "selections": [
+    {
+      "targetId": "2",
+      "targetName": "演示目标星（非生产资料）",
+      "observerSatelliteIds": [
+        "1"
+      ],
+      "observerSatelliteNames": [
+        "演示观测星（非生产资料）"
+      ],
+      "arcs": [
+        {
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:10:00.000Z",
+          "observerIlluminations": [
+            {
+              "satelliteId": "1",
+              "satelliteName": "演示观测星（非生产资料）",
+              "state": "SUNLIT",
+              "stateName": "阳照"
+            }
+          ],
+          "targetIllumination": {
+            "targetId": "2",
+            "targetName": "演示目标星（非生产资料）",
+            "state": "SUNLIT",
+            "stateName": "阳照"
+          },
+          "illuminationSegments": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:10:00.000Z",
+              "observerIlluminations": [
+                {
+                  "satelliteId": "1",
+                  "satelliteName": "演示观测星（非生产资料）",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                }
+              ],
+              "targetIllumination": {
+                "targetId": "2",
+                "targetName": "演示目标星（非生产资料）",
+                "state": "SUNLIT",
+                "stateName": "阳照"
+              },
+              "durationSec": 600.0
+            }
+          ],
+          "durationSec": 600.0
+        }
+      ],
+      "observationType": "SINGLE",
+      "observationTypeName": "单星观测",
+      "conciseSummary": "任务摘要：A(600.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)",
+      "targetNorad": "null",
+      "targetWeightKg": 120.0
+    }
+  ]
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "recordId": "2110150970286362626",
+  "received": true,
+  "selectionCount": 1,
+  "mergedSegments": 0,
+  "message": "确认选择已保存",
+  "detail": {
+    "id": "2110150970286362626",
+    "taskId": "910f8bb4-09e9-46f4-a573-a8f9a38fa877",
+    "taskType": "VISIBILITY",
+    "status": "SUCCEEDED",
+    "totalPairs": 1,
+    "completedPairs": 1,
+    "errorMessage": null,
+    "remark": null,
+    "createTime": "2026-10-13T23:29:30.690",
+    "completeTime": "2026-10-13T23:29:30.702",
+    "requestJson": "{\"observerSatelliteIds\":[1],\"targetIds\":[2],\"belongs\":[],\"minWeight\":null,\"maxWeight\":null,\"epochStartTime\":null,\"epochEndTime\":null,\"minTleEpochCode\":null,\"maxApproximationDays\":null,\"excludeNameRegex\":null,\"startTime\":\"2026-07-01T10:00:00Z\",\"endTime\":\"2026-07-01T10:10:00Z\",\"coarseStepSec\":60.0,\"fineStepSec\":1.0,\"illuminationConstraint\":null,\"observationConstraints\":[],\"winToolReport\":false}",
+    "resultJson": "{\"results\":[{\"targetId\":\"2\",\"targetName\":\"演示目标星（非生产资料）\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"演示观测星（非生产资料）\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:10:00.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"演示观测星（非生产资料）\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"演示目标星（非生产资料）\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:10:00.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"演示观测星（非生产资料）\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"演示目标星（非生产资料）\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":600.0}],\"durationSec\":600.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(600.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"skippedPairs\":[],\"totalSkippedPairs\":0,\"targetFilterBreakdown\":{\"belongsHit\":1,\"weightHit\":1,\"epochHit\":1,\"epochConstraintHit\":1,\"ephemerisWarningHit\":0,\"excludeHit\":1,\"maxApproximationDays\":14},\"ephemerisWarni…（字符串展示截取；完整原文见examples.json）",
+    "skippedPairsJson": null,
+    "selectionJson": "{\"planningWindow\":null,\"mergedTimeRange\":null,\"selections\":[{\"targetId\":\"2\",\"targetName\":\"演示目标星（非生产资料）\",\"observerSatelliteIds\":[\"1\"],\"observerSatelliteNames\":[\"演示观测星（非生产资料）\"],\"arcs\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:10:00.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"演示观测星（非生产资料）\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"演示目标星（非生产资料）\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"illuminationSegments\":[{\"startTime\":\"2026-07-01T10:00:00.000Z\",\"endTime\":\"2026-07-01T10:10:00.000Z\",\"observerIlluminations\":[{\"satelliteId\":\"1\",\"satelliteName\":\"演示观测星（非生产资料）\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"}],\"targetIllumination\":{\"targetId\":\"2\",\"targetName\":\"演示目标星（非生产资料）\",\"state\":\"SUNLIT\",\"stateName\":\"阳照\"},\"durationSec\":600.0}],\"durationSec\":600.0}],\"observationType\":\"SINGLE\",\"observationTypeName\":\"单星观测\",\"conciseSummary\":\"任务摘要：A(600.000)\\nA 星情况：\\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)\",\"targetNorad\":\"null\",\"targetWeightKg\":120.0}],\"remark\":null}"
+  }
+}
+```
+
+A01 400实际样例：`selection-null-invalid`，原响应 86B，SHA256 `ad3fd6c23a9cff5346bb0a05ce03fadc8e18b4533344774b8a6088fa71daa78c`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "确认选择内容无效:selections 不能为空"
+}
+```
+
+A01 404实际样例：`unknown-record`，原响应 0B，SHA256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+响应为空体；见样例集合的字节长度/原SHA与原HTTP头。
+
+### 24 删除持久记录
+`DELETE /api/v1/space/visibility/task-results/{id}`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| id | path | 是 | string | pattern="^[+-]?\\d+$" | 持久记录主键十进制文本，Controller实际Long绑定；合法未知数字404，非数字原500，不改写为404。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | 空体 | 删除成功空体，不返回伪造对象。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 404 | 空体 | 未知任务/合法数字记录ID，404空体。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X DELETE "$api/api/v1/space/visibility/task-results/$id"
+```
+
+A01 200实际样例：`record-delete`，原响应 0B，SHA256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+响应为空体；见样例集合的字节长度/原SHA与原HTTP头。
+
+A01 404实际样例：`unknown-record`，原响应 0B，SHA256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。
+
+响应为空体；见样例集合的字节长度/原SHA与原HTTP头。
+
+### 25 上传受管理文件
+`POST /api/v1/ballistic/files`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[MultipartUpload](#multipartupload)；必填请求体；Content-Type=multipart/form-data。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 201 | application/json [FileReference](#filereference) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 413 | application/json [CodeError](#codeerror) | 超过文件或multipart字节上限。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -F 'file=@test-data/reference/ballistic/trajectory-0.1s-standard.csv' "$api/api/v1/ballistic/files"
+```
+
+A01 201实际样例：`upload-after-limit-recovery`，原响应 274B，SHA256 `1208597276172a2bcccc2888e6f458ce09d76052e2bffe038dff0ca67629b088`。
+
+响应结构摘录：
+
+```json
+{
+  "fileId": "7639376d-96a5-467a-adb3-f99d32fd4106",
+  "originalName": "全面验收.csv",
+  "sizeBytes": 4,
+  "contentType": "text/csv",
+  "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\uploads\\upload-151325279463901837.csv"
+}
+```
+
+A01 413实际样例：`upload-real-limit-plus-one`，原响应 86B，SHA256 `1d0122d6491099b7c495e1418382797f8f0d95143d666544cc0b394273d4f204`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "FILE_TOO_LARGE",
+  "error": "文件或 multipart 请求超过配置字节上限"
+}
+```
+
+### 26 登记管理结果根现有文件
+`POST /api/v1/ballistic/files/register-result`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[RegisterResultRequest](#registerresultrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 201 | application/json [FileReference](#filereference) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 404 | application/json [CodeError](#codeerror) | 未知/过期文件引用，原文件错误对象。 由代码异常边界声明，本项未补跑HTTP。 |
+| 413 | application/json [CodeError](#codeerror) | 超过文件或multipart字节上限。 由代码异常边界声明，本项未补跑HTTP。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation26.json' "$api/api/v1/ballistic/files/register-result"
+```
+
+A01 201实际样例：`retime-register-0`，原响应 399B，SHA256 `5fedf418ad0fd4e6cc3cba5f3bdebc49ff380c5a717f8b95df174f1d5303c8f8`。
+
+请求结构摘录：
+
+```json
+{
+  "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-2236795664842838380\\T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_072929_428.csv",
+  "taskName": "T04-retime",
+  "targetId": "RETIMED-TGT"
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "fileId": "2a16cccb-93f5-4a09-aacd-4051a569d4eb",
+  "originalName": "T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_072929_428.csv",
+  "sizeBytes": 593970,
+  "contentType": "text/csv",
+  "serverPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-2236795664842838380\\T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_072929_428.csv"
+}
+```
+
+A01 400实际样例：`register-empty-path`，原响应 89B，SHA256 `fbd269aff2f72a5cebd152bc69023c288c993b37e7dc75f27430715aefb4a3d2`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "文件请求参数无效：IllegalArgumentException"
+}
+```
+
+### 27 原表头原单元格分页预览
+`GET /api/v1/ballistic/files/{fileId}/preview`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| fileId | path | 是 | string | 无固定默认 | 当次上传或登记201取得的不透明ID，未知/过期404。 |
+| page | query | 否 | integer (int64) | default=1, minimum=1 | 页码≥1。 |
+| limit | query | 否 | integer (int64) | default=50, minimum=1 | 1..可配置preview-max-rows（默认500），默认50。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [Preview](#preview) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 404 | application/json [CodeError](#codeerror) | 未知/过期文件引用，原文件错误对象。 A01该状态有实际证据。 |
+| 413 | application/json [CodeError](#codeerror) | 超过文件或multipart字节上限。 由代码异常边界声明，本项未补跑HTTP。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/ballistic/files/$fileId/preview?page=999&limit=500"
+```
+
+A01 200实际样例：`quoted-last-empty`，原响应 145B，SHA256 `69f79986c653259c8e1d537d4caa5a56064519c75122d8a9a7b73ca5152d6b82`。
+
+响应结构摘录：
+
+```json
+{
+  "fileId": "0044ff73-02d8-45b8-acaf-5a31f526f368",
+  "header": [
+    "名称"
+  ],
+  "rows": [],
+  "totalRows": 2,
+  "page": 999,
+  "limit": 500,
+  "metadata": {}
+}
+```
+
+A01 400实际样例：`file-page-invalid`，原响应 89B，SHA256 `fbd269aff2f72a5cebd152bc69023c288c993b37e7dc75f27430715aefb4a3d2`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "文件请求参数无效：IllegalArgumentException"
+}
+```
+
+A01 404实际样例：`unknown-file-404`，原响应 69B，SHA256 `d10122685ee86259b60ab9602723323635aa86f520771b300a898c9963e895e7`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "FILE_NOT_FOUND",
+  "error": "文件引用不存在或已清理"
+}
+```
+
+### 28 下载原文件字节
+`GET /api/v1/ballistic/files/{fileId}/download`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+| 参数 | 位置 | 必填 | 类型 | 默认/范围 | 含义 |
+| --- | --- | --- | --- | --- | --- |
+| fileId | path | 是 | string | 无固定默认 | 当次上传或登记201取得的不透明ID，未知/过期404。 |
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/octet-stream string (binary), text/csv string (binary), */* string (binary) | 原二进制；Content-Type取已登记的合法contentType，支持text/plain及Excel等动态媒体类型，以*/*范围覆盖；原字节不经CSV重写。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 由代码异常边界声明，本项未补跑HTTP。 |
+| 404 | application/json [CodeError](#codeerror) | 未知/过期文件引用，原文件错误对象。 A01该状态有实际证据。 |
+| 413 | application/json [CodeError](#codeerror) | 超过文件或multipart字节上限。 由代码异常边界声明，本项未补跑HTTP。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/v1/ballistic/files/$fileId/download" --output "$env:TEMP/ballistic-download.csv"
+```
+
+A01 200实际样例：`file-after-real-restart`，原响应 8B，SHA256 `492d5ea496056f1a6a6592241032fab764c321596317930b4fa0e1e8bc3b7470`。
+
+响应为原文件二进制，不能当作JSON；见样例集合的字节长度/原SHA与原HTTP头。
+
+A01 404实际样例：`unknown-download-404`，原响应 69B，SHA256 `d10122685ee86259b60ab9602723323635aa86f520771b300a898c9963e895e7`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "FILE_NOT_FOUND",
+  "error": "文件引用不存在或已清理"
+}
+```
+
+### 29 校验并回显标准载荷
+`POST /api/v1/ballistic/payloads/preview`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[StandardPayloadRequest](#standardpayloadrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [StandardPayloadResponse](#standardpayloadresponse) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [CodeError](#codeerror) | 参数错误，保留本路由原异常边界。 A01该状态有实际证据。 |
+| 500 | application/json [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation29.json' "$api/api/v1/ballistic/payloads/preview"
+```
+
+A01 200实际样例：`valid-payload`，原响应 295B，SHA256 `ee04399d915e526237816b28e6d02cd25e4f1a55e9608217c5142bd4aa2a192a`。
+
+请求结构摘录：
+
+```json
+{
+  "payloadId": "A01-SPACE",
+  "payloadName": "全面验收载荷",
+  "payloadType": "SPACE",
+  "minDistanceKm": 0,
+  "maxDistanceKm": 0,
+  "azimuthMinDeg": 0,
+  "azimuthMaxDeg": 360,
+  "elevationMinDeg": -90,
+  "elevationMaxDeg": 90,
+  "angleRateDegPerSec": 0,
+  "sunAvoidHalfAngleDeg": 0,
+  "startupAngleRateDegPerSec": 0
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "payloadId": "A01-SPACE",
+  "payloadName": "全面验收载荷",
+  "payloadType": "SPACE",
+  "minDistanceKm": 0.0,
+  "maxDistanceKm": 0.0,
+  "azimuthMinDeg": 0.0,
+  "azimuthMaxDeg": 360.0,
+  "elevationMinDeg": -90.0,
+  "elevationMaxDeg": 90.0,
+  "angleRateDegPerSec": 0.0,
+  "sunAvoidHalfAngleDeg": 0.0,
+  "startupAngleRateDegPerSec": 0.0
+}
+```
+
+A01 400实际样例：`invalid-payload-400`，原响应 56B，SHA256 `d9b05c3f6c090165dca96fe3af0b516017fba8715f89da00aae131e43afc6a66`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INVALID_ARGUMENT",
+  "error": "载荷参数无效"
+}
+```
+
+### 30 原窗口纯文本健康检查
+`GET /api/orbit/health`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | text/plain string | 原纯文本OK。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/orbit/health"
+```
+
+A01 200实际样例：`orbit-health`，原响应 2B，SHA256 `565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3`。
+
+响应结构摘录：
+
+```json
+"OK"
+```
+
+### 31 多目标多星多载荷偏移搜索
+`POST /api/orbit/visibility/search`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：[VisibilityRequest](#visibilityrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [LaunchSearchResult](#launchsearchresult) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [LegacyError](#legacyerror) | 参数错误，保留本路由原异常边界。 计算内部错误为error；MVC绑定异常可走全局code/error/requestId，流式传输已提交后不保证JSON错误体。 A01该状态有实际证据。 |
+| 500 | application/json [LegacyError](#legacyerror) / [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 计算内部错误为error；MVC绑定异常可走全局code/error/requestId，流式传输已提交后不保证JSON错误体。 由代码异常边界声明，本项未补跑HTTP。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation31.json' "$api/api/orbit/visibility/search"
+```
+
+A01 200实际样例：`window-legacy`，原响应 6955B，SHA256 `439a314c59b931b91ab7f379dd97654eb1fb09e61606bd7494c17c682f312837`。
+
+请求结构摘录：
+
+```json
+{
+  "ballistics": [
+    {
+      "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\uploads\\upload-6761020315806561503.csv",
+      "targetId": "TGT-001",
+      "targetName": "真实弹道首历元"
+    }
+  ],
+  "startOffsetSec": 1200,
+  "stepSizeSec": 10,
+  "numCalculations": 3,
+  "targetSampleStepSec": 1.0,
+  "trajectoryPointOutput": 1,
+  "orbitModel": "J2_NUMERICAL",
+  "satellites": [
+    {
+      "satelliteId": "SAT-A",
+      "name": "SAT-A",
+      "semiMajorAxisM": 7530612.0,
+      "eccentricity": 0.00085,
+      "inclinationDeg": 64.8,
+      "raanDeg": 120.0,
+      "argumentOfPerigeeDeg": 270.0,
+      "meanAnomalyDeg": 30.0,
+      "epochUtc": "2026/07/01 10:00:00.000",
+      "payloads": [
+        {
+          "payloadId": "PAYLOAD-1",
+          "payloadName": "基准载荷1",
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0,
+          "sunExclusionAngleDeg": 0
+        }
+      ]
+    }
+  ]
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "referenceUtc": "2026/07/01 07:57:00.000",
+  "payloadType": "对地监视",
+  "visibilityConstraint": {
+    "payloadType": "对地监视",
+    "maxDetectRangeKm": 0.0,
+    "sunExclusionAngleDeg": 45.0,
+    "simpleConeHalfAngleDeg": null,
+    "halfConeAngleDeg": 57.5,
+    "innerConeAngleDeg": null,
+    "outerConeAngleDeg": null
+  },
+  "best": {
+    "offsetSecond": 1200,
+    "launchTimeUtc": "2026/07/01 08:17:00.000",
+    "launchTimeJ2000Sec": 836165819.9999999,
+    "payloadType": "对地监视",
+    "visibilityConstraint": {
+      "payloadType": "对地监视",
+      "maxDetectRangeKm": 0.0,
+      "sunExclusionAngleDeg": 45.0,
+      "simpleConeHalfAngleDeg": null,
+      "halfConeAngleDeg": 57.5,
+      "innerConeAngleDeg": null,
+      "outerConeAngleDeg": null
+    },
+    "finalVisibleWindow": null,
+    "visibleArcCount": 0,
+    "visiblePointCount": 0,
+    "visibleDurationSec": 0.0,
+    "targets": [
+      {
+        "targetId": "TGT-001",
+        "targetName": "真实弹道首历元",
+        "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\uploads\\upload-6761020315806561503.csv",
+        "baseLaunchUTC": "2026/07/01 07:57:00.000",
+        "launchUTC": "2026/07/01 08:17:00.000",
+        "payloadType": "对地监视",
+        "launchTimeJ2000Sec": 836165819.9999999,
+        "finalVisibleWindow": null,
+        "visibleWindows": []
+      }
+    ],
+    "visibleSatellites": []
+  },
+  "allResults": [
+    {
+      "offsetSecond": 1200,
+      "launchTimeUtc": "2026/07/01 08:17:00.000",
+      "launchTimeJ2000Sec": 836165819.9999999,
+      "payloadType": "对地监视",
+      "visibilityConstraint": {
+        "payloadType": "对地监视",
+        "maxDetectRangeKm": 0.0,
+        "sunExclusionAngleDeg": 45.0,
+        "simpleConeHalfAngleDeg": null,
+        "halfConeAngleDeg": 57.5,
+        "innerConeAngleDeg": null,
+        "outerConeAngleDeg": null
+      },
+      "finalVisibleWindow": null,
+      "visibleArcCount": 0,
+      "visiblePointCount": 0,
+      "visibleDurationSec": 0.0,
+      "targets": [
+        {
+          "targetId": "TGT-001",
+          "targetName": "真实弹道首历元",
+          "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\uploads\\upload-6761020315806561503.csv",
+          "baseLaunchUTC": "2026/07/01 07:57:00.000",
+          "launchUTC": "2026/07/01 08:17:00.000",
+          "payloadType": "对地监视",
+          "launchTimeJ2000Sec": 836165819.9999999,
+          "finalVisibleWindow": null,
+          "visibleWindows": []
+        }
+      ],
+      "visibleSatellites": []
+    }
+  ]
+}
+```
+
+A01 400实际样例：`window-bad-standard`，原响应 30B，SHA256 `5854bc9913ba2b59e124278e06b0d8d7d872a19837ceb2ddafd390626bcec51f`。
+
+响应结构摘录：
+
+```json
+{
+  "error": "载荷参数无效"
+}
+```
+
+### 32 原轨迹纯文本健康检查
+`GET /api/trajectory/health`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。
+
+请求：无请求体。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | text/plain string | 原纯文本OK。 |
+
+```powershell
+curl.exe --fail-with-body -X GET "$api/api/trajectory/health"
+```
+
+A01 200实际样例：`trajectory-health`，原响应 2B，SHA256 `565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3`。
+
+响应结构摘录：
+
+```json
+"OK"
+```
+
+### 33 原102观测拟合并写CSV
+`POST /api/trajectory/fit/package102`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。 outputDir字段缺失才分配管理results独占目录；显式null/空白/点目录仍旧兼容；成功自动登记CSV，失败只回滚自己独占目录。
+
+请求：[FitRequest](#fitrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [FitRunResult](#fitrunresult) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [LegacyError](#legacyerror) | 参数错误，保留本路由原异常边界。 计算内部错误为error；MVC绑定异常可走全局code/error/requestId，流式传输已提交后不保证JSON错误体。 A01该状态有实际证据。 |
+| 500 | application/json [LegacyError](#legacyerror) / [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 计算内部错误为error；MVC绑定异常可走全局code/error/requestId，流式传输已提交后不保证JSON错误体。 A01该状态有实际证据。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation33.json' "$api/api/trajectory/fit/package102"
+```
+
+A01 200实际样例：`fit`，原响应 3211B，SHA256 `8b95a4654edd21b981f1d23d2bc99e80da38312fb7ad36307b21d717d60627f5`。
+
+请求结构摘录：
+
+```json
+{
+  "taskName": "defaultFitTask",
+  "taskStartTime": "2026-07-01 07:56:55.000",
+  "taskEndTime": "2026-07-01 07:57:10.000",
+  "interpolationStepSec": 0.5,
+  "package102": [
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:00.000",
+      "tack3d_tgt_pos_x": "70000000",
+      "tack3d_tgt_pos_y": "0",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    }
+  ]
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "taskName": "defaultFitTask",
+  "targetCount": 2,
+  "files": [
+    {
+      "targetId": "TGT-001",
+      "model": "BALLISTIC_MIDCOURSE_TWO_BODY",
+      "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-6131183864713490267\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_072928_892.csv",
+      "pointCount": 1633,
+      "warnings": [
+        "已根据package102状态通过二体反向地面交点推算发射时间。推算发射时间=2026-07-01 07:52:18.000, 第一个package102时间=2026-07-01 07:57:00.000, 反推秒数=282.000"
+      ]
+    }
+  ]
+}
+```
+
+A01 400实际样例：`fit-empty-original-400`，原响应 69B，SHA256 `c84860d834a5c48ac828bd06e607ed912f565fcf48e86a598a59896a422e1d82`。
+
+响应结构摘录：
+
+```json
+{
+  "error": "IllegalArgumentException: package102数据不能为空。"
+}
+```
+
+A01 500实际样例：`fit-type-original-500`，原响应 105B，SHA256 `cb2bdb5f585eee6f1d2096e267359a165b94de6fadfbcec48ffe74a292c33ef1`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INTERNAL_ERROR",
+  "error": "服务处理失败",
+  "requestId": "d36ed676-5fef-4fa4-adef-68490bf4b341"
+}
+```
+
+### 34 原端点约束模拟并写CSV
+`POST /api/trajectory/simulate`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。 outputDir字段缺失才分配管理results独占目录；显式null/空白/点目录仍旧兼容；成功自动登记CSV，失败只回滚自己独占目录。
+
+请求：[SimulationRequest](#simulationrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [FitRunResult](#fitrunresult) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [LegacyError](#legacyerror) | 参数错误，保留本路由原异常边界。 计算内部错误为error；MVC绑定异常可走全局code/error/requestId，流式传输已提交后不保证JSON错误体。 A01该状态有实际证据。 |
+| 500 | application/json [LegacyError](#legacyerror) / [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 计算内部错误为error；MVC绑定异常可走全局code/error/requestId，流式传输已提交后不保证JSON错误体。 A01该状态有实际证据。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation34.json' "$api/api/trajectory/simulate"
+```
+
+A01 200实际样例：`two-utc-format-False`，原响应 646B，SHA256 `bd753fefc6f0c26f8fbd0d59de2c270cc8b353f95fbadeae3c1eb889727f2a2e`。
+
+请求结构摘录：
+
+```json
+{
+  "taskName": "defaultSimTask",
+  "targetId": "SIM-001",
+  "launchTimeUtc": "2026-06-04 04:00:00.000",
+  "impactTimeUtc": "2026-06-04 04:42:55.000",
+  "taskStartTime": "2026-06-04 04:00:00.000",
+  "taskEndTime": "2026-06-04 04:42:55.000",
+  "launchPointX": 2167790.227,
+  "launchPointY": 4775481.109,
+  "launchPointZ": 3618557.253,
+  "launchPointCoordFrame": "J2000",
+  "launchPointUnit": "m",
+  "impactPointX": 3578635.76,
+  "impactPointY": 3522525.227,
+  "impactPointZ": 3919735.591,
+  "impactPointCoordFrame": "J2000",
+  "impactPointUnit": "m",
+  "outputPointDurationSec": 60,
+  "phaseEvents": []
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "taskName": "defaultSimTask",
+  "targetCount": 1,
+  "files": [
+    {
+      "targetId": "SIM-001",
+      "model": "SYSTEM_SIMULATED_LAMBERT",
+      "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-530594106332241321\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_072933_304.csv",
+      "pointCount": 44,
+      "warnings": [
+        "系统模拟使用端点约束Lambert射击法和二体RK4传播。"
+      ]
+    }
+  ]
+}
+```
+
+A01 400实际样例：`simulation-time-original-400`，原响应 64B，SHA256 `aeebe91fcfdf37fb6e48abeabef795d9710550ac44a224d7645069e56f620ba6`。
+
+响应结构摘录：
+
+```json
+{
+  "error": "NumberFormatException: For input string: \"INVALID\""
+}
+```
+
+A01 500实际样例：`simulate-type-original-500`，原响应 105B，SHA256 `3c19a67c9033b42bf05e8ea66036ca13e03e0528ac484f24d5ca5e7a3a198a14`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INTERNAL_ERROR",
+  "error": "服务处理失败",
+  "requestId": "8202e93f-664b-49ed-8c1b-646a78e53ea0"
+}
+```
+
+### 35 保留ECEF轨迹重定时并写CSV
+`POST /api/trajectory/retime`
+真实活动HTTP合同。请求/响应完整字段见组件；以下example来自A01非生产隔离验收，动态ID/服务器路径已过期，不可直接复用。 outputDir字段缺失才分配管理results独占目录；显式null/空白/点目录仍旧兼容；成功自动登记CSV，失败只回滚自己独占目录。
+
+请求：[RetimeTrajectoryRequest](#retimetrajectoryrequest)；必填请求体；Content-Type=application/json。
+
+| 状态 | 内容类型/结构 | 真实语义 |
+| --- | --- | --- |
+| 200 | application/json [FitRunResult](#fitrunresult) | 原成功结构；普通可空引用保留null，仅明确NON_NULL/NON_EMPTY字段省略；手写窗口null保留。 |
+| 400 | application/json [LegacyError](#legacyerror) | 参数错误，保留本路由原异常边界。 计算内部错误为error；MVC绑定异常可走全局code/error/requestId，流式传输已提交后不保证JSON错误体。 A01该状态有实际证据。 |
+| 500 | application/json [LegacyError](#legacyerror) / [CodeError](#codeerror) | 原未预期异常或绑定失败；空间非法Instant、非数字BIGINT记录ID保持原500。 计算内部错误为error；MVC绑定异常可走全局code/error/requestId，流式传输已提交后不保证JSON错误体。 A01该状态有实际证据。 |
+
+```powershell
+curl.exe --fail-with-body -X POST -H 'Content-Type: application/json' --data-binary '@verification/A02/requests/operation35.json' "$api/api/trajectory/retime"
+```
+
+A01 200实际样例：`retime`，原响应 508B，SHA256 `dc2d021454cca0c5875e87c7a793983443c7fd9e677af0e4dbddc0830daff65d`。
+
+请求结构摘录：
+
+```json
+{
+  "taskName": "T04-retime",
+  "targetId": "RETIMED-TGT",
+  "trajectoryCsvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-1187770930413257334\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_072929_162.csv",
+  "launchTimeUtc": "2026-07-02 07:57:00.000"
+}
+```
+
+响应结构摘录：
+
+```json
+{
+  "taskName": "T04-retime",
+  "targetCount": 1,
+  "files": [
+    {
+      "targetId": "RETIMED-TGT",
+      "model": "RETIMED_TRAJECTORY",
+      "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\results\\fit-2236795664842838380\\T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_072929_428.csv",
+      "pointCount": 2576,
+      "warnings": [
+        "弹道文件重定时保持ECEF位置和速度不变；按新的绝对时刻重算ECI位置和速度，并更新时间列、dt列和timeIntervalMs列。"
+      ]
+    }
+  ]
+}
+```
+
+A01 400实际样例：`retime-empty-original-400`，原响应 70B，SHA256 `3ae44bc323593688caa9a1c27ef6d9c75409a7b059ac849e4add1ebf067da343`。
+
+响应结构摘录：
+
+```json
+{
+  "error": "IllegalArgumentException: trajectoryCsvPath不能为空。"
+}
+```
+
+A01 500实际样例：`retime-type-original-500`，原响应 105B，SHA256 `b4331e015dbb29cd37a963991916254b9f0a40e86ccbe796060c7a42791dc960`。
+
+响应结构摘录：
+
+```json
+{
+  "code": "INTERNAL_ERROR",
+  "error": "服务处理失败",
+  "requestId": "ffef8110-524f-4c6f-9732-f923ddc63374"
+}
+```
+
+## 完整字段组件
+
+本节和OpenAPI由同一schema源生成，逐字段列明类型、必填、nullable、缺省及业务含义。响应可不出现的字段不纳入required；null省略不表示补0。继承父模型字段按父组件展开。标准载荷及时间/文件跨字段约束见前文，OpenAPI3.0.3不能完整表达成对null、类型相关0/-1、路径根/租约和状态时序，正文为其必要合同。
+
+### SpacePayloadConfigurationRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `minDistanceKm` | number (double) | 否 | 是 |  | 最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 源注释：最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 |
+| `maxDistanceKm` | number (double) | 否 | 是 |  | 最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 源注释：最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 |
+| `minDistanceM` | number (double) | 否 | 是 |  | 最近距离 m；旧载荷请求与公里字段互斥。 源注释：@deprecated 请改用 ，该字段始终按米解释。 |
+| `maxDistanceM` | number (double) | 否 | 是 |  | 最远距离 m；旧载荷请求与公里字段互斥，0不限。 源注释：@deprecated 请改用 ，该字段始终按米解释。 |
+| `azimuthMinDeg` | number (double) | 否 | 是 |  | LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 源注释：LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 |
+| `azimuthMaxDeg` | number (double) | 否 | 是 |  | LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 源注释：LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 |
+| `elevationMinDeg` | number (double) | 否 | 是 |  | LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 源注释：LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 |
+| `elevationMaxDeg` | number (double) | 否 | 是 |  | LVLH俯仰上限 °，与下限成对且min<max≤90。 源注释：LVLH俯仰上限，度；必须成对且下限<上限≤90。 |
+| `angleRateDegPerSec` | number (double) | 是 | 否 |  | 跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 源注释：跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。 |
+| `sunAvoidHalfAngleDeg` | number (double) | 是 | 否 |  | 太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 源注释：太阳回避半角，度；必填有限0..180，0关闭。 |
+| `startupAngleRateDegPerSec` | number (double) | 否 | 是 |  | 启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 源注释：启动角速度，度/秒；null/-1禁用，其余非负有限，当前仅保存元数据。 |
+
+### SpacePayloadConfigurationResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `configured` | boolean | 是 | 否 |  | 是否有可用SPACE配置；未配置返回false和payloadType=SPACE，其它字段为null。 |
+| `payloadType` | string | 是 | 是 | 枚举=["SPACE", null] | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `minDistanceKm` | number (double) | 是 | 是 |  | 最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 |
+| `maxDistanceKm` | number (double) | 是 | 是 |  | 最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 |
+| `minDistanceM` | number (double) | 是 | 是 |  | 最近距离 m；旧载荷请求与公里字段互斥。 |
+| `maxDistanceM` | number (double) | 是 | 是 |  | 最远距离 m；旧载荷请求与公里字段互斥，0不限。 |
+| `azimuthMinDeg` | number (double) | 是 | 是 |  | LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 |
+| `azimuthMaxDeg` | number (double) | 是 | 是 |  | LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 |
+| `elevationMinDeg` | number (double) | 是 | 是 |  | LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 |
+| `elevationMaxDeg` | number (double) | 是 | 是 |  | LVLH俯仰上限 °，与下限成对且min<max≤90。 |
+| `angleRateDegPerSec` | number (double) | 是 | 是 |  | 跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 |
+| `sunAvoidHalfAngleDeg` | number (double) | 是 | 是 |  | 太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 |
+| `startupAngleRateDegPerSec` | number (double) | 是 | 是 |  | 启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 |
+
+### PayloadProfilesResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `activePayloadType` | string | 是 | 是 | 枚举=["SPACE", "GROUND", null] | 当前启用的SPACE/GROUND类型；未配置可为空。 |
+| `profiles` | [PayloadProfileResponse](#payloadprofileresponse)[] | 是 | 是 |  | 按类型独立保存的载荷配置；保存一种并启用，另一种保留。 |
+
+### PayloadProfileRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `payloadType` | string | 是 | 否 | 规范值=["SPACE", "GROUND"]; pattern=^\s*([Ss][Pp][Aa][Cc][Ee]\|[Gg][Rr][Oo][Uu][Nn][Dd])\s*$ | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `minDistanceKm` | number (double) | 是 | 否 | minimum=0 | 最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 源注释：最近距离，公里；标准保存必填有限非负，旧米入口另按米字段解析。 |
+| `maxDistanceKm` | number (double) | 是 | 否 | minimum=0 | 最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 源注释：最远距离，公里；标准保存必填，0不限，非零须大于最近距离。 |
+| `azimuthMinDeg` | number (double) | 否 | 是 |  | LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 源注释：LVLH方位下限，度；上下限双null不限，否则0≤下限<上限≤360。 |
+| `azimuthMaxDeg` | number (double) | 否 | 是 |  | LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 源注释：LVLH方位上限，度；必须与下限成对，跨0范围不能用倒置端点表示。 |
+| `elevationMinDeg` | number (double) | 否 | 是 |  | LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 源注释：LVLH俯仰下限，度；双null不限，SPACE下界-90、GROUND下界-91。 |
+| `elevationMaxDeg` | number (double) | 否 | 是 |  | LVLH俯仰上限 °，与下限成对且min<max≤90。 源注释：LVLH俯仰上限，度；必须成对且下限<上限≤90。 |
+| `angleRateDegPerSec` | number (double) | 是 | 否 |  | 跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 源注释：跟踪视线角速度上限，度/秒；SPACE 0/-1不限，GROUND 0真零上限且拒绝-1。 |
+| `sunAvoidHalfAngleDeg` | number (double) | 是 | 否 | minimum=0; maximum=180 | 太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 源注释：太阳回避半角，度；必填有限0..180，0关闭。 |
+| `startupAngleRateDegPerSec` | number (double) | 否 | 是 |  | 启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 源注释：启动角速度，度/秒；null/-1禁用，其余非负有限，当前仅保存元数据。 |
+| `sensorFullConeAngleDeg` | number (double) | 否 | 是 |  | 历史对地全锥角 °，标准profiles仅读取旧值；保存标准配置时不作为矩形约束。 |
+| `maxDetectRangeKm` | number (double) | 否 | 是 |  | 旧最远探测距离 km，≤0不限；标准摘要仅映射maxDistanceKm。 |
+| `sunExclusionAngleDeg` | number (double) | 否 | 是 |  | 旧太阳回避最小夹角 °；标准摘要仅映射sunAvoidHalfAngleDeg。 |
+
+### PayloadProfileResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `payloadType` | string | 是 | 是 | 枚举=["SPACE", "GROUND", null] | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `legacyGroundProfile` | boolean | 是 | 否 |  | 历史天底锥角配置标记；true时请按十标准字段重新保存。 源注释：true 表示来自历史天底锥角配置，前端需要提示用户按统一字段重新保存。 |
+| `minDistanceKm` | number (double) | 是 | 是 |  | 最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 |
+| `maxDistanceKm` | number (double) | 是 | 是 |  | 最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 |
+| `azimuthMinDeg` | number (double) | 是 | 是 |  | LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 |
+| `azimuthMaxDeg` | number (double) | 是 | 是 |  | LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 |
+| `elevationMinDeg` | number (double) | 是 | 是 |  | LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 |
+| `elevationMaxDeg` | number (double) | 是 | 是 |  | LVLH俯仰上限 °，与下限成对且min<max≤90。 |
+| `angleRateDegPerSec` | number (double) | 是 | 是 |  | 跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 |
+| `sunAvoidHalfAngleDeg` | number (double) | 是 | 是 |  | 太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 |
+| `startupAngleRateDegPerSec` | number (double) | 是 | 是 |  | 启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 |
+| `sensorFullConeAngleDeg` | number (double) | 是 | 是 |  | 历史对地全锥角 °，标准profiles仅读取旧值；保存标准配置时不作为矩形约束。 |
+| `maxDetectRangeKm` | number (double) | 是 | 是 |  | 旧最远探测距离 km，≤0不限；标准摘要仅映射maxDistanceKm。 |
+| `sunExclusionAngleDeg` | number (double) | 是 | 是 |  | 旧太阳回避最小夹角 °；标准摘要仅映射sunAvoidHalfAngleDeg。 |
+
+### PlanningTaskStatusResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `taskId` | string | 是 | 是 |  | 异步内存任务不透明字符串标识；重启后不恢复内存任务。 |
+| `status` | string | 是 | 是 | 枚举=["PENDING", "RUNNING", "SUCCEEDED", "FAILED", "CANCELLED", null] | 原任务状态PENDING/RUNNING/SUCCEEDED/FAILED/CANCELLED。 |
+| `totalPairs` | integer (int64) | 是 | 否 |  | 总观测星—目标计算组合数。 |
+| `completedPairs` | integer (int64) | 是 | 否 |  | 已计算组合数。 |
+| `totalTargets` | integer (int64) | 是 | 否 |  | 目标总数。 |
+| `completedTargets` | integer (int64) | 是 | 否 |  | 已处理目标数。 |
+| `errorMessage` | string | 是 | 是 |  | 任务失败原因，未失败可空或省略。 |
+| `createdAt` | string (date-time) | 是 | 是 |  | 任务创建UTC Instant，三位毫秒带Z。 |
+| `completedAt` | string (date-time) | 是 | 是 |  | 任务终态UTC Instant，未结束为null。 |
+
+### VisibilityTaskResultSummaryResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `id` | string | 是 | 是 |  | 目录主键；实体响应为 Long 数字，任务记录响应为十进制字符串。 |
+| `taskId` | string | 是 | 是 |  | 异步内存任务不透明字符串标识；重启后不恢复内存任务。 |
+| `taskType` | string | 是 | 是 |  | 持久任务类型，当前VISIBILITY。 |
+| `status` | string | 是 | 是 | 枚举=["PENDING", "RUNNING", "SUCCEEDED", "FAILED", "CANCELLED", null] | 原任务状态PENDING/RUNNING/SUCCEEDED/FAILED/CANCELLED。 |
+| `totalPairs` | integer (int64) | 是 | 是 |  | 总观测星—目标计算组合数。 |
+| `completedPairs` | integer (int64) | 是 | 是 |  | 已计算组合数。 |
+| `errorMessage` | string | 是 | 是 |  | 任务失败原因，未失败可空或省略。 |
+| `remark` | string | 是 | 是 |  | 备注，null或缺失表示清空；selection备注另随选择保存。 |
+| `createTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 记录UTC LocalDateTime，三位毫秒无Z；目录实体保留其默认LocalDateTime序列化。 |
+| `completeTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 记录终态UTC LocalDateTime，三位毫秒无Z；未终态为null。 |
+
+### VisibilityTaskResultDetailResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+继承：[VisibilityTaskResultSummaryResponse](#visibilitytaskresultsummaryresponse)，下表为追加字段。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `requestJson` | string | 是 | 是 |  | 提交时完整VisibilityPlanRequest JSON原文字符串。 |
+| `resultJson` | string | 是 | 是 |  | 成功完整VisibilityPlanResponse JSON原文字符串，未成功为null。 |
+| `skippedPairsJson` | string | 是 | 是 |  | 未截断失败组合JSON原文字符串，仅成功且有跳过组合时有值，否则null。 |
+| `selectionJson` | string | 否 | 是 |  | 最后一次确认选择JSON原文字符串，未确认按NON_NULL省略。 源注释：用户在结果列表勾选目标后“确认选择”提交的明细原文;未做过确认的历史记录为 null。 空值省略。 |
+
+### VisibilityTaskResultRemarkRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `remark` | string | 否 | 是 |  | 备注，null或缺失表示清空；selection备注另随选择保存。 |
+
+### VisibilityTaskResultSelectionRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `planningWindow` | [JsonValue](#jsonvalue) / null | 否 | 是 |  | 透明保存的规划窗口JSON；推荐前端结构startTime/endTime。 源注释：规划时间段。 |
+| `mergedTimeRange` | [JsonValue](#jsonvalue) / null | 否 | 是 |  | 透明保存的并集JSON；推荐segments及totalDurationSec；服务不重新计算。 源注释：所有勾选弧段的并集(前端合并),含 segments 数组与 totalDurationSec。 |
+| `selections` | [JsonValue](#jsonvalue)[] | 是 | 否 | minItems=1 | 必填非空JSON数组；每项原文保存，推荐SelectionTarget结构；服务不额外校验每项字段。 |
+| `remark` | string | 否 | 是 |  | 可选备注，随selectionJson原文保存；当前代码未把它持久更新到记录remark，记录备注请调用单独PUT备注接口。 |
+
+### VisibilityTaskResultSelectionResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `recordId` | string | 是 | 是 |  | 持久记录十进制字符串主键，避免浏览器 53 位整数精度丢失。 |
+| `received` | boolean | 是 | 否 |  | 服务已接受确认选择的回执。 |
+| `selectionCount` | integer (int32) | 是 | 否 |  | selections数组长度。 |
+| `mergedSegments` | integer (int32) | 是 | 否 |  | mergedTimeRange.segments数组长度，不由服务重新计算并集。 |
+| `message` | string | 是 | 是 |  | 中文回执或错误文本。 |
+| `detail` | [VisibilityTaskResultDetailResponse](#visibilitytaskresultdetailresponse) / null | 是 | 是 |  | 更新后的完整持久记录。 源注释：更新后的记录明细(含 selectionJson 原文)。 |
+
+### TargetQueryRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `targetIds` | integer (int64)[] | 否 | 是 | 缺失=[] | 空间目标Long数字集合；查询响应含全部筛选命中ID，不受分页影响。 |
+| `belongs` | string[] | 否 | 是 | 缺失=[] | BELONG_目录编码筛选，空集合不限制。 |
+| `minWeight` | number | 否 | 是 | minimum=0 | 目标质量筛选下限 kg，可空，非负。 |
+| `maxWeight` | number | 否 | 是 | minimum=0 | 目标质量筛选上限 kg，可空，非负且须不小于下限。 |
+| `epochStartTime` | string (date-time) | 否 | 是 |  | 轨道历元UTC Instant筛选下限，可空。 |
+| `epochEndTime` | string (date-time) | 否 | 是 |  | 轨道历元UTC Instant筛选上限，可空，须不早于下限。 |
+| `minTleEpochCode` | string | 否 | 是 |  | TLE目录历元下限YYDDD，默认配置23340；五位字符串。 源注释：目录历元下限，采用 TLE 约定的 YYDDD 五位编码，例如 23340。 |
+| `maxApproximationDays` | integer (int64) | 否 | 是 |  | 可空的兼容Long字段；目录查询业务不读取它，不套用配置默认阈值，也不做非负业务校验；仍须满足Long类型绑定。 |
+| `planningStartTime` | string (date-time) | 否 | 是 |  | 可空的兼容UTC Instant字段；目录查询业务不读取它，无规划时间成对要求，不参与筛选或风险判定。 |
+| `planningEndTime` | string (date-time) | 否 | 是 |  | 可空的兼容UTC Instant字段；目录查询业务不读取它，无须晚于planningStartTime，不参与筛选或风险判定。 |
+| `excludeNameRegex` | string | 否 | 是 |  | 目标名称排除正则，空白不限；非法正则400。 |
+| `pageNumber` | integer (int64) | 否 | 否 | 缺失=1; minimum=1 | 页码从1开始；<1拒绝。 |
+| `pageSize` | integer (int64) | 否 | 否 | 缺失=50; minimum=1; maximum=200 | 每页记录数1..200。 |
+
+### DownlinkPlanRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `startTime` | string (date-time) | 是 | 否 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string (date-time) | 是 | 否 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `coarseStepSec` | number (double) | 否 | 否 | 缺失=60.0; minimum=0.001 | 粗选扫描间隔 s，必须有限≥0.001。 |
+| `fineStepSec` | number (double) | 否 | 否 | 缺失=1.0; minimum=0.001 | 精选间隔 s，必须有限≥0.001且不得大于粗选间隔。 |
+| `satelliteIds` | integer (int64)[] | 是 | 否 | minItems=1 | 空间卫星Long数字数组；具体是否必需见所在请求的组合规则。 DTO初始化为空数组，但业务强制非空，省略会失败，不把空数组声明为有效默认请求。 |
+| `preGuardSec` | number (double) | 否 | 是 |  | 前保护秒数；缺省取配置300；非负业务值，负值在链路执行归一化中失败，可能返回200的skippedLinks而非400。 |
+| `postGuardSec` | number (double) | 否 | 是 |  | 后保护秒数；缺省取配置0；非负业务值，负值可进入200的skippedLinks。 |
+| `allowedGapSec` | number (double) | 否 | 是 |  | 允许断链秒数；缺省取配置0；非负业务值，负值可进入200的skippedLinks。 |
+| `satelliteIllumination` | string | 否 | 是 |  | 下传观测星光照ANY/SUNLIT/SHADOW，缺省ANY。 |
+| `stations` | [StationConstraintRequest](#stationconstraintrequest)[] | 是 | 否 | minItems=1 | 本次临时站点约束；不会覆盖站点长期参数。 DTO初始化为空数组，但业务强制非空，省略会失败，不把空数组声明为有效默认请求。 |
+| `links` | [SatelliteStationLinkRequest](#satellitestationlinkrequest)[] | 是 | 否 | minItems=1 | 显式卫星—站点选择关系；coverageWindows中为该并集的贡献链路。 DTO初始化为空数组，但业务强制非空，省略会失败，不把空数组声明为有效默认请求。 |
+
+### StationConstraintRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `stationId` | string | 是 | 否 |  | 地面站字符串主键。 |
+| `minElevationDeg` | number (double) | 否 | 是 |  | 仰角/俯仰下限 °，临时站点缺省取实体或配置10；统计为LVLH实际最小俯仰。 |
+| `maxElevationDeg` | number (double) | 否 | 是 |  | 仰角/俯仰上限 °，临时站点缺省取实体或配置90；下传≤0不限制上仰角；统计为LVLH实际最大俯仰。 |
+
+### SatelliteStationLinkRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | integer (int64) | 是 | 否 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `stationId` | string | 是 | 否 |  | 地面站字符串主键。 |
+
+### DownlinkPlanResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteStationWindows` | [SatelliteStationWindowResponse](#satellitestationwindowresponse)[] | 是 | 是 |  | 逐站星链路稳定窗口列表。 |
+| `coverageWindows` | [CoverageWindowResponse](#coveragewindowresponse)[] | 是 | 是 |  | 重叠或相接的链路窗口并集；存在断档时不合并。 |
+| `skippedLinks` | [SkippedLinkResponse](#skippedlinkresponse)[] | 是 | 是 |  | 计算失败链路明细最多500条，不等于正常无窗。 |
+| `totalSkippedLinks` | integer (int64) | 是 | 否 |  | 失败链路完整计数，可大于返回明细条数。 |
+
+### SkippedLinkResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | integer (int64) | 是 | 是 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `satelliteName` | string | 是 | 是 |  | 观测星显示名称。 |
+| `stationId` | string | 是 | 是 |  | 地面站字符串主键。 |
+| `stationName` | string | 是 | 是 |  | 站点显示名称。 |
+| `stage` | string | 是 | 是 |  | 失败阶段原代码；下传SCAN，观测由原轨道/扫描过程给出。 |
+| `reason` | string | 是 | 是 |  | 原失败或星历风险原因摘要。 |
+
+### SatelliteStationWindowResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | integer (int64) | 是 | 是 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `stationId` | string | 是 | 是 |  | 地面站字符串主键。 |
+| `windows` | [WindowResponse](#windowresponse)[] | 是 | 是 |  | 该链路原始窗口数组。 |
+
+### WindowResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `startTime` | string (date-time) | 是 | 是 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string (date-time) | 是 | 是 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `durationSec` | number (double) | 是 | 否 |  | 该时段持续秒数；共同观测父窗口按成员交集计算。 |
+
+### CoverageWindowResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+继承：[WindowResponse](#windowresponse)，下表为追加字段。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `links` | [SatelliteStationLinkResponse](#satellitestationlinkresponse)[] | 是 | 是 |  | 显式卫星—站点选择关系；coverageWindows中为该并集的贡献链路。 |
+
+### SatelliteStationLinkResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | integer (int64) | 是 | 是 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `stationId` | string | 是 | 是 |  | 地面站字符串主键。 |
+
+### WindowValidationResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satisfied` | boolean | 是 | 否 |  | 完整请求时段是否由下传覆盖；不表示观测可见性。 |
+| `plan` | [DownlinkPlanResponse](#downlinkplanresponse) / null | 是 | 是 |  | 用于核对覆盖结论的真实下传规划结果。 |
+
+### VisibilityPlanRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `observerSatelliteIds` | integer (int64)[] | 是 | 否 | minItems=1 | 观测星集合；请求Long数字数组，结果字符串数组。 DTO初始化为空数组，但业务强制非空，省略会失败，不把空数组声明为有效默认请求。 |
+| `targetIds` | integer (int64)[] | 否 | 是 | 缺失=[] | 空间目标Long数字集合；查询响应含全部筛选命中ID，不受分页影响。 |
+| `belongs` | string[] | 否 | 是 | 缺失=[] | BELONG_目录编码筛选，空集合不限制。 |
+| `minWeight` | number | 否 | 是 | minimum=0 | 目标质量筛选下限 kg，可空，非负。 |
+| `maxWeight` | number | 否 | 是 | minimum=0 | 目标质量筛选上限 kg，可空，非负且须不小于下限。 |
+| `epochStartTime` | string (date-time) | 否 | 是 |  | 轨道历元UTC Instant筛选下限，可空。 |
+| `epochEndTime` | string (date-time) | 否 | 是 |  | 轨道历元UTC Instant筛选上限，可空，须不早于下限。 |
+| `minTleEpochCode` | string | 否 | 是 |  | TLE目录历元下限YYDDD，默认配置23340；五位字符串。 源注释：WinTool 风格的 YYDDD 目录历元下限；为空时不额外收窄旧集成方请求。 |
+| `maxApproximationDays` | integer (int64) | 否 | 是 | minimum=0 | 星历建议近似传播天数，默认配置14，≥0；超出只产生风险提示，不硬排除。 源注释：仅用于星历时效风险判定的建议近似传播天数。 |
+| `excludeNameRegex` | string | 否 | 是 |  | 目标名称排除正则，空白不限；非法正则400。 |
+| `startTime` | string (date-time) | 是 | 否 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string (date-time) | 是 | 否 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `coarseStepSec` | number (double) | 否 | 否 | 缺失=60.0; minimum=0.001 | 粗选扫描间隔 s，必须有限≥0.001。 |
+| `fineStepSec` | number (double) | 否 | 否 | 缺失=1.0; minimum=0.001 | 精选间隔 s，必须有限≥0.001且不得大于粗选间隔。 |
+| `illuminationConstraint` | [IlluminationConstraintRequest](#illuminationconstraintrequest) / null | 否 | 是 |  | 临时观测星—目标光照组合；null不限。 |
+| `observationConstraints` | [ObservationConstraintRequest](#observationconstraintrequest)[] | 否 | 是 | 缺失=[] | 共同观测组合及各组合最小时长；非空成员集合，成员须在观测星中。 |
+| `winToolReport` | boolean | 否 | 是 |  | 请求boolean控制是否生成两段式报告；响应string原报告，未请求时省略。 源注释：是否在响应中附带 WinTool 两段式对比报告文本（列表 + Mission 摘要/详细信息）。 |
+
+### IlluminationConstraintRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `mode` | string | 否 | 是 | 缺失="ANY"; 规范值=["ANY", "TARGET_SUNLIT", "OBSERVER_SHADOW_TARGET_SUNLIT", "BOTH_SHADOW", "CUSTOM"] | ANY/TARGET_SUNLIT/OBSERVER_SHADOW_TARGET_SUNLIT/BOTH_SHADOW/CUSTOM；空白或null按ANY。 |
+| `observerStates` | string[] | 否 | 是 | 缺失=[] | CUSTOM观测星精确光照状态，至少一项；其它模式忽略。 |
+| `targetStates` | string[] | 否 | 是 | 缺失=[] | CUSTOM目标精确光照状态，至少一项；其它模式忽略。 |
+
+### ObservationConstraintRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteIds` | integer (int64)[] | 是 | 否 | minItems=1 | 空间卫星Long数字数组；具体是否必需见所在请求的组合规则。 DTO初始化为空数组，但业务强制非空，省略会失败，不把空数组声明为有效默认请求。 |
+| `minDurationSec` | number (double) | 否 | 否 | 缺失=0 | 组合父窗口最小时长 s，有限非负。 |
+
+### VisibilityPlanResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `results` | [VisibilityObservationResult](#visibilityobservationresult)[] | 是 | 是 |  | 按目标及卫星组合分组的实际观测结果。 |
+| `skippedPairs` | [SkippedPairResponse](#skippedpairresponse)[] | 是 | 是 |  | 失败组合明细最多500条，不含正常业务排除。 |
+| `totalSkippedPairs` | integer (int64) | 是 | 否 |  | 失败组合完整计数；全量明细单独存入记录skippedPairsJson。 |
+| `targetFilterBreakdown` | [TargetFilterBreakdownResponse](#targetfilterbreakdownresponse) / null | 是 | 是 |  | 规划候选统计：无显式目标ID时按目录条件逐层统计；显式目标ID快照时五个候选计数均为selectedTargetCount，不重新叠加目录筛选。星历超过建议时长仅记风险告警，不作为硬筛选排除，仍尝试传播；候选数量不等于传播成功数。 |
+| `ephemerisWarnings` | [EphemerisWarningResponse](#ephemeriswarningresponse)[] | 是 | 是 |  | 通过硬筛选并继续计算的星历过期风险，不以假窗口替代计算。 源注释：通过硬筛选但星历超出建议时长的目标风险；该清单不会阻止传播尝试。 |
+| `winToolReport` | string | 否 | 是 |  | 请求boolean控制是否生成两段式报告；响应string原报告，未请求时省略。 源注释：WinTool 两段式对比报告文本；仅在请求 winToolReport=true 时生成。 空值省略。 |
+
+### EphemerisWarningResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `targetId` | string | 是 | 是 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `targetName` | string | 是 | 是 |  | 目标显示名称。 |
+| `reason` | string | 是 | 是 |  | 原失败或星历风险原因摘要。 |
+
+### SkippedPairResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `observerSatelliteId` | string | 是 | 是 |  | 观测星字符串身份。 |
+| `observerSatelliteName` | string | 是 | 是 |  | 观测星显示名称。 |
+| `targetId` | string | 是 | 是 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `targetName` | string | 是 | 是 |  | 目标显示名称。 |
+| `stage` | string | 是 | 是 |  | 失败阶段原代码；下传SCAN，观测由原轨道/扫描过程给出。 |
+| `reason` | string | 是 | 是 |  | 原失败或星历风险原因摘要。 |
+
+### TargetQueryResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `total` | integer (int64) | 是 | 否 |  | 筛选总条数。 |
+| `pageNumber` | integer (int64) | 是 | 否 |  | 页码从1开始；<1拒绝。 |
+| `pageSize` | integer (int64) | 是 | 否 |  | 每页记录数1..200。 |
+| `targets` | [TargetEntity](#targetentity)[] | 是 | 是 |  | 筛选目录目标列表或弹道逐目标摘要，见具体schema。 |
+| `targetIds` | integer (int64)[] | 是 | 是 |  | 空间目标Long数字集合；查询响应含全部筛选命中ID，不受分页影响。 源注释：与本页预览同一套条件得到的完整目标主键集合。前端把它作为规划输入回传， 以保证“页面显示的筛选结果”和“实际参与传播的目标”是同一集合。 |
+| `filterBreakdown` | [TargetFilterBreakdownResponse](#targetfilterbreakdownresponse) / null | 是 | 是 |  | 目录查询逐层候选统计；epochConstraintHit恒等epochHit，无单独任务时间或发射过滤；ephemerisWarningHit/maxApproximationDays固定0，查询未计算风险或采用风险阈值。 |
+
+### TargetFilterBreakdownResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `belongsHit` | integer (int64) | 是 | 否 |  | 目录查询或无显式ID目录规划：目标ID/国籍前置目录条件后的数量；显式目标ID快照规划：selectedTargetCount。 |
+| `weightHit` | integer (int64) | 是 | 否 |  | 目录查询或无显式ID目录规划：叠加质量条件后的数量；显式目标ID快照规划：selectedTargetCount。 |
+| `epochHit` | integer (int64) | 是 | 否 |  | 目录查询或无显式ID目录规划：叠加实际目录历元条件后的数量；显式目标ID快照规划：selectedTargetCount。 |
+| `epochConstraintHit` | integer (int64) | 是 | 否 |  | 恒等epochHit的兼容输出，无单独任务时间或发射过滤；显式目标ID快照规划：selectedTargetCount。 |
+| `ephemerisWarningHit` | integer (int64) | 是 | 否 |  | 目录查询固定0；规划为风险清单数量，只告警仍尝试传播。 |
+| `excludeHit` | integer (int64) | 是 | 否 |  | 目录查询或无显式ID目录规划：名称排除后的候选数量；显式目标ID快照规划：selectedTargetCount。候选数量不等于传播成功数。 |
+| `maxApproximationDays` | integer (int64) | 是 | 否 |  | 目录查询固定0，查询未采用风险阈值；无显式ID目录规划或显式目标ID快照规划为本次实际星历风险阈值（天），0是可用阈值，不表示必然没有风险。 |
+
+### BelongOptionResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `code` | string | 是 | 是 |  | 错误协议代码或目录编码，见所在模型。 |
+| `count` | integer (int64) | 是 | 否 |  | 该BELONG_编码目录数量。 |
+| `description` | string | 是 | 是 |  | 目录编码说明。 |
+
+### SatelliteSummaryResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `id` | integer (int64) | 是 | 是 |  | 目录主键；实体响应为 Long 数字，任务记录响应为十进制字符串。 |
+| `name` | string | 是 | 是 |  | 目录或平台名称，空值沿原序列化规则处理。 |
+| `modelType` | string | 是 | 是 |  | 轨道模型类型，原TLE_SGP4/KEPLER_J2等代码。 |
+| `type` | string | 是 | 是 |  | 目录原类型码。 |
+| `scid` | integer (int64) | 是 | 是 |  | 目录SCID数字。 |
+| `objectId` | string | 是 | 是 |  | 目录对象代号。 |
+| `objectName` | string | 是 | 是 |  | 目录对象名称。 |
+| `noradCatId` | integer (int64) | 是 | 是 |  | 目录NORAD编号Long数字。 |
+| `country` | string | 是 | 是 |  | 目录国家编码。 |
+| `period` | number | 是 | 是 |  | 目录周期原值，导入单位不在HTTP边界强制换算。 |
+| `catalogInclination` | number | 是 | 是 |  | 目录倾角原值，与传播inclination分列。 |
+| `apogee` | number | 是 | 是 |  | 目录远地点原值，导入单位不在HTTP边界强制换算。 |
+| `perigee` | number | 是 | 是 |  | 目录近地点原值，导入单位不在HTTP边界强制换算。 |
+| `rcsSize` | string | 是 | 是 |  | 目录雷达截面分类。 |
+| `rcsValue` | number | 是 | 是 |  | 目录雷达截面原值，未知导入量纲不推测。 |
+| `launchDate` | string (date) | 是 | 是 |  | 目录发射日期 yyyy-MM-dd。 |
+| `catalogComment` | string | 是 | 是 |  | 目录原备注。 |
+| `weight` | number | 是 | 是 |  | 目录质量 kg；缺失时不补造。 |
+
+### SatelliteOptionResponse
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/SpaceApiModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `id` | integer (int64) | 是 | 是 |  | 目录主键；实体响应为 Long 数字，任务记录响应为十进制字符串。 |
+| `name` | string | 是 | 是 |  | 目录或平台名称，空值沿原序列化规则处理。 |
+| `modelType` | string | 是 | 是 |  | 轨道模型类型，原TLE_SGP4/KEPLER_J2等代码。 |
+| `type` | string | 是 | 是 |  | 目录原类型码。 |
+| `scid` | integer (int64) | 是 | 是 |  | 目录SCID数字。 |
+| `noradCatId` | integer (int64) | 是 | 是 |  | 目录NORAD编号Long数字。 |
+
+### FileReference
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `fileId` | string | 是 | 是 |  | 上传/登记201响应的不透明UUID；必须来自当次响应，过期或重启未恢复引用须重取。 源注释：随机 UUID，只作登记表查询键，不能据此拼接文件路径。 |
+| `originalName` | string | 是 | 是 |  | 经安全末段处理的客户端原名，保留Unicode，控制字符拒绝。 源注释：客户端原文件名的安全末段，保留 Unicode。 |
+| `sizeBytes` | integer (int64) | 是 | 否 |  | 实际存储文件字节数。 源注释：实际已存储字节数。 |
+| `contentType` | string | 是 | 是 |  | 经HTTP媒体类型校验的下载类型。 源注释：经 HTTP 媒体类型校验后的下载类型。 |
+| `serverPath` | string | 是 | 是 |  | 服务器规范绝对路径，可传原csvPath等；不是浏览器本机路径。 源注释：服务端规范绝对路径，与浏览器本机路径无关。 |
+
+### RegisterResultRequest
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `csvPath` | string | 是 | 否 |  | 服务端现有CSV路径；register-result必须位于管理results根且现存，计算支持其各自旧路径语义。 |
+| `taskName` | string | 否 | 是 |  | 任务名；不同计算缺省见default，null/空白由原算法回退。 |
+| `targetId` | string | 否 | 是 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+
+### Preview
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `fileId` | string | 是 | 是 |  | 上传/登记201响应的不透明UUID；必须来自当次响应，过期或重启未恢复引用须重取。 |
+| `header` | string[] | 是 | 是 |  | 首个非空记录原表头字符串数组。 |
+| `rows` | string[][] | 是 | 是 |  | 本页原单元格文本二维数组；预览不采样、不改变原文件。 |
+| `totalRows` | integer (int64) | 是 | 否 |  | 不含表头的非空数据记录总数。 |
+| `page` | integer (int32) | 是 | 否 |  | 预览页码≥1。 源注释：页码从 1 开始，limit 默认 50，上限由配置确定（默认 500）。 |
+| `limit` | integer (int32) | 是 | 否 |  | 预览每页1..配置上限，默认50，上限默认500。 |
+| `metadata` | object | 是 | 否 |  | 仅精确识别已知20列表头时提供timeScale/positionUnit/velocityUnit/frames/dtUnit，否则空映射。 |
+
+### VisibilityRequest
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/api/VisibilityRequest.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `ballisticCsvPath` | string | 否 | 是 | 缺失="trajectory-0.1s-standard.csv" | 旧单目标服务端CSV/Excel或原HTTP/HTTPS/MinIO地址；ballistics非空时忽略。 源注释：弹道文件路径，支持CSV和Excel，默认 "trajectory-0.1s-standard.csv" |
+| `baseLaunchUtc` | string | 否 | 是 |  | 字面UTC文本；单目标缺省用文件历元，多目标用本目标别名优先级。 源注释：基准发射UTC时间字符串（yyyy/MM/dd HH:mm:ss 或 yyyy-MM-dd HH:mm:ss），为空则使用弹道文件参考历元 |
+| `ballistics` | [BallisticDef](#ballisticdef)[] | 否 | 是 | 缺失=[] | 非空时按数组顺序多目标输入，否则旧单目标字段生效；各目标独立文件历元。 源注释：多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。 |
+| `startOffsetSec` | integer (int64) | 否 | 否 | 缺失=-500 | 扫描起点 s，可为负。 源注释：发射偏移起点（秒），默认 -500 |
+| `stepSizeSec` | integer (int64) | 否 | 否 | 缺失=10; minimum=1 | 偏移步长 s，整数>0。 源注释：发射偏移步长（秒），默认 10 |
+| `numCalculations` | integer (int64) | 否 | 否 | 缺失=101; minimum=1 | 计算次数，整数>0。 源注释：计算次数，默认 101（覆盖 T-500 到 T+500） |
+| `sensorFovDeg` | number (double) | 否 | 否 | 缺失=140.0 | 旧顶层视场全锥角 °，冻结兼容字段；实际载荷判定仍按原中文类型配置分支。 源注释：传感器视场全锥角（度），默认 140 |
+| `payloadType` | string | 否 | 是 | 缺失="对地监视" | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 源注释：载荷分类：对地监视、对空监视、对地跟踪、对空跟踪。 旧版单载荷兼容字段，仅当 satellites[].payloads 为空时生效； 平台内嵌载荷后，每颗卫星可携带多台不同类型载荷，分别计算可见窗口。 |
+| `maxDetectRangeKm` | number (double) | 否 | 否 | 缺失=0.0 | 旧最远探测距离 km，≤0不限；标准摘要仅映射maxDistanceKm。 源注释：最远探测距离，单位km；小于等于0表示不限制 |
+| `sunExclusionAngleDeg` | number (double) | 否 | 否 | 缺失=45 | 旧太阳回避最小夹角 °；标准摘要仅映射sunAvoidHalfAngleDeg。 源注释：视线方向与太阳方向最小夹角，单位度；默认45，小于该值判为不可见 |
+| `targetSampleStepSec` | number (double) | 否 | 否 | 缺失=1.0 | 目标轨迹采样步长 s，≤0按旧自动步长。 源注释：目标轨迹可见性采样步长（秒），默认 1；小于等于0时使用算法自动步长 |
+| `trajectoryPointOutput` | integer (int32) | 否 | 否 | 缺失=1; 枚举=[0, 1] | 1含完整轨迹点，0保留摘要与统计但轨迹数组为空。 源注释：1 输出窗口内轨迹点明细；0 仅输出窗口摘要。 |
+| `orbitModel` | string | 否 | 是 | 缺失="J2_NUMERICAL" | TWO_BODY/J2_SECULAR/J2_NUMERICAL及原中文显示名；字段缺省J2_NUMERICAL，显式null/空白回退TWO_BODY。 源注释：轨道模型：TWO_BODY / J2_SECULAR / J2_NUMERICAL，默认 J2_NUMERICAL 原中文显示名为二体Kepler/J2长期摄动/J2数值积分RK4；含RK4/NUMERICAL/J2_NUM→J2_NUMERICAL，含SECULAR/J2_SEC→J2_SECULAR，含TWO/KEPLER/2BODY及其余未知文本→TWO_BODY。 |
+| `satellites` | [SatelliteDef](#satellitedef)[] | 否 | 是 | 缺失=[] | 显式平台列表；null/空列表用SAT-A/B内置双星，平近点角30/0。 源注释：卫星列表，为空时使用内置2星LEO星座 |
+
+### BallisticDef
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/api/VisibilityRequest.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `csvPath` | string | 是 | 否 |  | 服务端现有CSV路径；register-result必须位于管理results根且现存，计算支持其各自旧路径语义。 |
+| `baseLaunchUTC` | string | 否 | 是 |  | 多目标第一优先非空发射UTC。 |
+| `baseLaunchUtc` | string | 否 | 是 |  | 字面UTC文本；单目标缺省用文件历元，多目标用本目标别名优先级。 |
+| `baselaunchUTC` | string | 否 | 是 |  | 多目标第三优先非空发射UTC。 |
+| `targetId` | string | 否 | 是 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `targetName` | string | 否 | 是 |  | 目标显示名称。 |
+
+### SatelliteDef
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/api/VisibilityRequest.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | string | 否 | 是 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `name` | string | 否 | 是 |  | 目录或平台名称，空值沿原序列化规则处理。 |
+| `semiMajorAxisM` | number (double) | 否 | 否 | 缺失=7530612.0 | 轨道半长轴 m。 |
+| `eccentricity` | number (double) | 否 | 否 | 缺失=0.00085 | 偏心率，无量纲。 |
+| `inclinationDeg` | number (double) | 否 | 否 | 缺失=64.8 | 轨道倾角 °。 |
+| `raanDeg` | number (double) | 否 | 否 | 缺失=120.0 | 升交点赤经 °。 |
+| `argumentOfPerigeeDeg` | number (double) | 否 | 否 | 缺失=270.0 | 近地点幅角 °。 |
+| `meanAnomalyDeg` | number (double) | 否 | 否 | 缺失=0 | 平近点角 °；显式单星缺省0。 |
+| `epochUtc` | string | 否 | 是 |  | 字面UTC历元，空白/缺失使用2026/07/01 10:00:00；无epochSec请求字段。 HTTP没有epochSec字段。 |
+| `payloads` | [PayloadDef](#payloaddef)[] | 否 | 是 | 缺失=[] | 平台多载荷列表，缺失/null/空时使用旧顶层配置；每项不可为null。 源注释：卫星平台内嵌载荷；为空时使用顶层旧版单载荷参数。 |
+
+### PayloadDef
+兼容宽 DTO：payloadType 去空白忽略大小写为 SPACE/GROUND 时才进入标准分支，标准必填、范围及跨字段校验由 toStandardConstraint 执行；旧中文四类走原 forPayload，仅读取 payloadType/maxDetectRangeKm/sunExclusionAngleDeg，标准字段的无关负值可绑定但被忽略。本共享 schema 不能自动覆盖按类型的全部标准分支约束；严格标准入口另见 StandardPayloadRequest。
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/api/VisibilityRequest.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `payloadId` | string | 否 | 是 |  | 弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。 |
+| `payloadName` | string | 否 | 是 |  | 载荷显示名；计算入口缺省回退payloadId，preview只回显原值。 |
+| `payloadType` | string | 否 | 是 | 缺失="对地监视" | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `maxDetectRangeKm` | number (double) | 否 | 否 | 缺失=0.0 | 旧最远探测距离 km，≤0不限；标准摘要仅映射maxDistanceKm。 |
+| `sunExclusionAngleDeg` | number (double) | 否 | 否 | 缺失=45 | 旧太阳回避最小夹角 °；标准摘要仅映射sunAvoidHalfAngleDeg。 |
+| `minDistanceKm` | number (double) | 否 | 是 |  | 最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 源注释：标准最近距离（公里），必填有限且非负。 范围仅对 SPACE/GROUND 标准分支生效；旧中文分支不读取该字段，兼容 DTO 不无条件声明此范围。 |
+| `maxDistanceKm` | number (double) | 否 | 是 |  | 最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 源注释：标准最远距离（公里），必填；0不限，否则须大于最近距离。 范围仅对 SPACE/GROUND 标准分支生效；旧中文分支不读取该字段，兼容 DTO 不无条件声明此范围。 |
+| `azimuthMinDeg` | number (double) | 否 | 是 |  | LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 源注释：LVLH方位下限（度），与上限同时null表示不限，范围0到360。 |
+| `azimuthMaxDeg` | number (double) | 否 | 是 |  | LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 源注释：LVLH方位上限（度），须严格大于下限。 |
+| `elevationMinDeg` | number (double) | 否 | 是 |  | LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 源注释：LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。 |
+| `elevationMaxDeg` | number (double) | 否 | 是 |  | LVLH俯仰上限 °，与下限成对且min<max≤90。 源注释：LVLH俯仰上限（度），最大90且严格大于下限。 |
+| `angleRateDegPerSec` | number (double) | 否 | 是 |  | 跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 源注释：跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。 |
+| `sunAvoidHalfAngleDeg` | number (double) | 否 | 是 |  | 太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 源注释：太阳回避半角（度），必填有限0到180；0关闭。 范围仅对 SPACE/GROUND 标准分支生效；旧中文分支不读取该字段，兼容 DTO 不无条件声明此范围。 |
+| `startupAngleRateDegPerSec` | number (double) | 否 | 是 |  | 启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 源注释：启动角速度元数据（度/秒）；null/-1禁用，0/正值仅回显不参与判定。 |
+
+### FitRequest
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `taskName` | string | 否 | 是 | 缺失="task" | 任务名；不同计算缺省见default，null/空白由原算法回退。 |
+| `package102` | [Package102Record](#package102record)[] | 是 | 否 | minItems=2 | 原102记录数组，至少两个有效三维观测点；不同目标分别拟合。 DTO初始化为空数组，但业务强制非空，省略会失败，不把空数组声明为有效默认请求。 |
+| `taskStartTime` | string | 否 | 是 |  | 字面UTC输出开始时刻；拟合须覆盖首观测，模拟与物理起落区间分开。 |
+| `taskEndTime` | string | 否 | 是 |  | 字面UTC输出结束时刻；拟合须覆盖末观测，模拟与物理起落区间分开。 |
+| `interpolationStepSec` | number (double) | 否 | 否 | 缺失=1.0 | 输出步长 s，原normalizeStep最小0.001。 |
+| `outputDir` | string | 否 | 是 | 缺失时分配管理 results 独占目录；显式传值按旧语义。 | HTTP未出现字段时分配管理results独占目录；显式值/null/空白/点目录按旧语义，DTO默认点不代表HTTP省略后写源码目录。 以原 JSON 字段存在性切换分支，Java 内部初始化为点目录，不声明为 HTTP 默认值。 |
+
+### Package102Record
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `coordinateInfo` | [CoordinateInfo](#coordinateinfo) / null | 否 | 是 |  | 102嵌套坐标第一优先入口；优先于coordinate/coords/扁平同名字段。 |
+| `coordinate` | [CoordinateInfo](#coordinateinfo) / null | 否 | 是 |  | 102嵌套坐标第二优先入口。 |
+| `coords` | [CoordinateInfo](#coordinateinfo) / null | 否 | 是 |  | 102嵌套坐标第三优先入口。 |
+| `targetInfo` | [TargetInfo](#targetinfo) / null | 否 | 是 |  | 102嵌套目标第一优先入口。 |
+| `target` | [TargetInfo](#targetinfo) / null | 否 | 是 |  | 102嵌套目标第二优先入口，否则取扁平字段。 |
+| `tack3d_time_code` | string | 否 | 是 |  | 历史拼写时间码字符串，UTC时间；支持原文本/17位毫秒码，避免JS数字丢精度。 |
+| `track3d_time_code` | string | 否 | 是 |  | 正确拼写的时间码别名，tack3d非空优先。 |
+| `tack3d_tgt_pos_x` | string | 否 | 是 |  | 原102位置编码字符串，每单位0.1 m。 |
+| `tack3d_tgt_pos_y` | string | 否 | 是 |  | 原102位置编码字符串，每单位0.1 m。 |
+| `tack3d_tgt_pos_z` | string | 否 | 是 |  | 原102位置编码字符串，每单位0.1 m。 |
+| `tack3d_tgt_vel_x` | string | 否 | 是 |  | 原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。 |
+| `tack3d_tgt_vel_y` | string | 否 | 是 |  | 原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。 |
+| `tack3d_tgt_vel_z` | string | 否 | 是 |  | 原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。 |
+| `tack3d_tgt_acc_x` | string | 否 | 是 |  | 原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。 |
+| `tack3d_tgt_acc_y` | string | 否 | 是 |  | 原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。 |
+| `tack3d_tgt_acc_z` | string | 否 | 是 |  | 原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。 |
+| `prop_tgt_type_8` | string | 否 | 是 |  | 原目标类型码字符串，参与模型选择。 |
+| `prop_tgt_shape_8` | string | 否 | 是 |  | 原目标形状码字符串。 |
+| `prop_tgt_flight_phase_8` | string | 否 | 是 |  | 原飞行阶段码字符串，参与拟合策略。 |
+| `prob_tgt_critical_incident` | string | 否 | 是 |  | 原关键事件码字符串。 |
+| `prob_tgt_critical_incident_time_code` | string | 否 | 是 |  | 关键事件UTC时间码字符串。 |
+| `track_tgt_id` | string | 否 | 是 |  | 102目标字符串身份；未提供按原UNKNOWN等默认路径处理。 |
+| `launch_time_code` | string | 否 | 是 |  | 102物理发射UTC时间码，非输出窗口端点。 |
+| `launch_coord_frame` | string | 否 | 是 |  | 发射点原坐标框架J2000/ECI/ECEF等按原解析。 |
+| `launch_pos_x` | string | 否 | 是 |  | 原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。 |
+| `launch_pos_y` | string | 否 | 是 |  | 原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。 |
+| `launch_pos_z` | string | 否 | 是 |  | 原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。 |
+| `launch_pos_unit` | string | 否 | 是 |  | 发射点位置单位原m/km/0.1m解析。 |
+| `impact_time_code` | string | 否 | 是 |  | 102物理落点UTC时间码，非输出窗口端点。 |
+| `impact_coord_frame` | string | 否 | 是 |  | 落点原坐标框架按原解析。 |
+| `impact_pos_x` | string | 否 | 是 |  | 原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。 |
+| `impact_pos_y` | string | 否 | 是 |  | 原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。 |
+| `impact_pos_z` | string | 否 | 是 |  | 原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。 |
+| `impact_pos_unit` | string | 否 | 是 |  | 落点位置单位原m/km/0.1m解析。 |
+
+### CoordinateInfo
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `tack3d_time_code` | string | 否 | 是 |  | 历史拼写时间码字符串，UTC时间；支持原文本/17位毫秒码，避免JS数字丢精度。 |
+| `track3d_time_code` | string | 否 | 是 |  | 正确拼写的时间码别名，tack3d非空优先。 |
+| `tack3d_tgt_pos_x` | string | 否 | 是 |  | 原102位置编码字符串，每单位0.1 m。 |
+| `tack3d_tgt_pos_y` | string | 否 | 是 |  | 原102位置编码字符串，每单位0.1 m。 |
+| `tack3d_tgt_pos_z` | string | 否 | 是 |  | 原102位置编码字符串，每单位0.1 m。 |
+| `tack3d_tgt_vel_x` | string | 否 | 是 |  | 原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。 |
+| `tack3d_tgt_vel_y` | string | 否 | 是 |  | 原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。 |
+| `tack3d_tgt_vel_z` | string | 否 | 是 |  | 原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。 |
+| `tack3d_tgt_acc_x` | string | 否 | 是 |  | 原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。 |
+| `tack3d_tgt_acc_y` | string | 否 | 是 |  | 原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。 |
+| `tack3d_tgt_acc_z` | string | 否 | 是 |  | 原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。 |
+
+### TargetInfo
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `prop_tgt_type_8` | string | 否 | 是 |  | 原目标类型码字符串，参与模型选择。 |
+| `prop_tgt_shape_8` | string | 否 | 是 |  | 原目标形状码字符串。 |
+| `prop_tgt_flight_phase_8` | string | 否 | 是 |  | 原飞行阶段码字符串，参与拟合策略。 |
+| `prob_tgt_critical_incident` | string | 否 | 是 |  | 原关键事件码字符串。 |
+| `prob_tgt_critical_incident_time_code` | string | 否 | 是 |  | 关键事件UTC时间码字符串。 |
+| `track_tgt_id` | string | 否 | 是 |  | 102目标字符串身份；未提供按原UNKNOWN等默认路径处理。 |
+
+### FileResult
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `targetId` | string | 是 | 是 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `model` | string | 是 | 是 |  | 原拟合/模拟/重定时模型名称字符串。 |
+| `csvPath` | string | 是 | 是 |  | 服务端现有CSV路径；register-result必须位于管理results根且现存，计算支持其各自旧路径语义。 |
+| `pointCount` | integer (int32) | 是 | 否 |  | 文件完整数据点数，非预览页长度。 |
+| `warnings` | string[] | 是 | 是 |  | 未截断原算法告警文本数组。 |
+
+### FitRunResult
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `taskName` | string | 是 | 是 |  | 任务名；不同计算缺省见default，null/空白由原算法回退。 |
+| `targetCount` | integer (int32) | 是 | 否 |  | 结果目标数量。 |
+| `files` | [FileResult](#fileresult)[] | 是 | 是 |  | 每目标CSV摘要，所有路径均取本次真实响应，不猜文件名。 |
+
+### SimulationRequest
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `taskName` | string | 否 | 是 | 缺失="simulation" | 任务名；不同计算缺省见default，null/空白由原算法回退。 |
+| `targetId` | string | 否 | 是 | 缺失="SIM-TGT" | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `taskStartTime` | string | 否 | 是 |  | 字面UTC输出开始时刻；拟合须覆盖首观测，模拟与物理起落区间分开。 |
+| `taskEndTime` | string | 否 | 是 |  | 字面UTC输出结束时刻；拟合须覆盖末观测，模拟与物理起落区间分开。 |
+| `launchTimeUtc` | string | 是 | 否 |  | 必填字面发射UTC文本。 |
+| `impactTimeUtc` | string | 否 | 是 |  | 物理落点UTC，优先于impactTime；须晚于发射，未给则原自动求解。 |
+| `impactTime` | string | 否 | 是 |  | 旧落点UTC别名，impactTimeUtc非空优先。 |
+| `launchPointX` | number (double) | 否 | 否 | 缺失=2167790.227 | 物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。 |
+| `launchPointY` | number (double) | 否 | 否 | 缺失=4775481.109 | 物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。 |
+| `launchPointZ` | number (double) | 否 | 否 | 缺失=3618557.253 | 物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。 |
+| `launchPointCoordFrame` | string | 否 | 是 | 缺失="J2000" | 发射端点原框架，默认J2000；支持J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA，归一去空白/横杠/下划线。 |
+| `launchPointUnit` | string | 否 | 是 | 缺失="m" | 发射端点坐标单位，默认m，原m/km/0.1m分支。 |
+| `impactPointX` | number (double) | 否 | 否 | 缺失=3578635.76 | 物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。 |
+| `impactPointY` | number (double) | 否 | 否 | 缺失=3522525.227 | 物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。 |
+| `impactPointZ` | number (double) | 否 | 否 | 缺失=3919735.591 | 物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。 |
+| `impactPointCoordFrame` | string | 否 | 是 | 缺失="J2000" | 落点端点原框架，默认J2000。 |
+| `impactPointUnit` | string | 否 | 是 | 缺失="m" | 落点端点坐标单位，默认m。 |
+| `outputPointDurationSec` | number (double) | 否 | 否 | 缺失=1.0 | 输出间隔 s，优先取正值，否则outputStepSec/1；最终最小0.001。 |
+| `phaseEvents` | [PhaseEvent](#phaseevent)[] | 否 | 是 | 缺失=[] | 保留的分段事件DTO数组；当前端点求解路径只读取数量并生成预留告警，不参与事件动力学。 |
+| `targetTypeCode` | string | 否 | 是 | 缺失="0x01" | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `targetShapeCode` | string | 否 | 是 | 缺失="0x02" | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `flightPhaseCode` | string | 否 | 是 | 缺失="0x01" | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `launchLatDeg` | number (double) | 否 | 否 | 缺失=0 | 旧兼容角字段 °；当前端点约束路径不以此字段替代端点求解。 |
+| `launchLonDeg` | number (double) | 否 | 否 | 缺失=0 | 旧兼容角字段 °；当前端点约束路径不以此字段替代端点求解。 |
+| `launchHeightM` | number (double) | 否 | 否 | 缺失=0 | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `initialSpeedMs` | number (double) | 否 | 否 | 缺失=1500.0 | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `azimuthDeg` | number (double) | 否 | 否 | 缺失=90.0 | 旧兼容角字段 °；当前端点约束路径不以此字段替代端点求解。 |
+| `elevationDeg` | number (double) | 否 | 否 | 缺失=45.0 | 旧兼容角字段 °；当前端点约束路径不以此字段替代端点求解。 |
+| `durationSec` | number (double) | 否 | 否 | 缺失=600.0 | 该时段持续秒数；共同观测父窗口按成员交集计算。 |
+| `integrationStepSec` | number (double) | 否 | 否 | 缺失=0.1 | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `outputStepSec` | number (double) | 否 | 否 | 缺失=1.0 | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `boostDurationSec` | number (double) | 否 | 否 | 缺失=80.0 | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `boostAccelerationMs2` | number (double) | 否 | 否 | 缺失=18.0 | 旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。 |
+| `dragCdAreaOverMass` | number (double) | 否 | 否 | 缺失=0.0 | 阻力系数面积质量比，兼容字段，端点路径未读取。 |
+| `outputDir` | string | 否 | 是 | 缺失时分配管理 results 独占目录；显式传值按旧语义。 | HTTP未出现字段时分配管理results独占目录；显式值/null/空白/点目录按旧语义，DTO默认点不代表HTTP省略后写源码目录。 以原 JSON 字段存在性切换分支，Java 内部初始化为点目录，不声明为 HTTP 默认值。 |
+
+### RetimeTrajectoryRequest
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `taskName` | string | 否 | 是 | 缺失="retimeTrajectory" | 任务名；不同计算缺省见default，null/空白由原算法回退。 |
+| `targetId` | string | 否 | 是 | 缺失="RETIMED-TGT" | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `trajectoryCsvPath` | string | 是 | 否 |  | 重定时本地服务器CSV路径，要求原UTC分列/ECEF列；不直接支持远程URL。 |
+| `launchTimeUtc` | string | 是 | 否 |  | 必填字面发射UTC文本。 |
+| `outputDir` | string | 否 | 是 | 缺失时分配管理 results 独占目录；显式传值按旧语义。 | HTTP未出现字段时分配管理results独占目录；显式值/null/空白/点目录按旧语义，DTO默认点不代表HTTP省略后写源码目录。 以原 JSON 字段存在性切换分支，Java 内部初始化为点目录，不声明为 HTTP 默认值。 |
+
+### PhaseEvent
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `phaseType` | string | 否 | 是 |  | 原阶段类型字符串，端点求解路径未读取。 |
+| `eventType` | string | 否 | 是 |  | 原事件类型字符串，端点求解路径未读取。 |
+| `startTime` | string | 否 | 是 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string | 否 | 是 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `eventTime` | string | 否 | 是 |  | 原事件字面UTC文本，端点求解路径未读取。 |
+| `dynamics` | string | 否 | 是 |  | 原动力学字符串，端点求解路径未读取。 |
+| `directionMode` | string | 否 | 是 |  | 原方向模式字符串，端点求解路径未读取。 |
+| `accelerationMs2` | number (double) | 否 | 否 | 缺失=0 | 加速度 m/s²，兼容元数据。 |
+| `deltaVms` | number (double) | 否 | 否 | 缺失=0 | 速度增量 m/s，兼容元数据。 |
+| `liftDragRatio` | number (double) | 否 | 否 | 缺失=0 | 升阻比，无量纲，兼容字段。 |
+| `dragCdAreaOverMass` | number (double) | 否 | 否 | 缺失=0 | 阻力系数面积质量比，兼容字段，端点路径未读取。 |
+
+### VisibilityObservationResult
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityObservationResult.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `targetId` | string | 是 | 是 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `targetName` | string | 是 | 是 |  | 目标显示名称。 |
+| `observerSatelliteIds` | string[] | 是 | 是 |  | 观测星集合；请求Long数字数组，结果字符串数组。 |
+| `observerSatelliteNames` | string[] | 是 | 是 |  | 与观测星身份顺序对应的显示名称数组。 |
+| `arcs` | [VisibilityArc](#visibilityarc)[] | 是 | 是 |  | 满足组合时长的父观测窗口；光照片段不是独立合格窗口。 |
+| `observationType` | string | 是 | 是 |  | 原SINGLE/COMBINATION等观测类型代码，见当前服务输出。 |
+| `observationTypeName` | string | 是 | 是 |  | 观测类型中文名。 |
+| `conciseSummary` | string | 是 | 是 |  | WinTool格式任务及逐星时段展示文本。 源注释：WinTool 简约格式的观测摘要（任务摘要 + 各单星观测时段），仅供展示。 |
+| `targetNorad` | string | 否 | 是 |  | 目标NORAD文本，目录缺失省略。 源注释：目标 NORAD 编号（供 WinTool 格式摘要与对外对账使用）；目录缺失时为 null。 空值省略。 |
+| `targetWeightKg` | number (double) | 否 | 是 |  | 目标质量 kg，缺失省略。 源注释：目标质量（公斤）；目录缺失时为 null。 空值省略。 |
+| `firstOrbitLine` | string | 否 | 是 |  | 原TLE第一行，非TLE目标省略。 源注释：目标两行根数第一行；非 TLE_SGP4 目标为 null。 空值省略。 |
+| `secondOrbitLine` | string | 否 | 是 |  | 原TLE第二行，非TLE目标省略。 源注释：目标两行根数第二行；非 TLE_SGP4 目标为 null。 空值省略。 |
+
+### VisibilityArc
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `startTime` | string (date-time) | 是 | 是 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string (date-time) | 是 | 是 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `observerIlluminations` | [ObserverIllumination](#observerillumination)[] | 是 | 是 |  | 按参与卫星顺序的精确光照状态。 |
+| `targetIllumination` | [TargetIllumination](#targetillumination) / null | 是 | 是 |  | 目标精确光照状态。 |
+| `illuminationSegments` | [IlluminationSegment](#illuminationsegment)[] | 否 | 是 |  | 父窗口内稳定光照片段，空集合省略。 源注释：父窗口内部因光照状态变化产生的稳定片段。父窗口才是组合时长约束的判定单位， 此字段只用于保留状态变化明细，不能被误展示为独立的合格观测窗口。 空数组省略。 |
+| `satelliteSegments` | [SatelliteSegment](#satellitesegment)[] | 否 | 是 |  | ≥2颗星时的各星原始连续窗口，单星省略；父窗口是这些窗口交集。 源注释：组合父窗口对应的各星原始连续单星窗口。该字段与父窗口不同：父窗口是各星求交后的共同时间， 此处保留各星各自完整的连续可观测范围，供页面解释组合起止边界的来源。 空数组省略。 |
+| `statistics` | [VisibilityPairStatistics](#visibilitypairstatistics) / null | 否 | 是 |  | 可见采样点统计；单星挂父弧段，多星挂各satelliteSegments，旧数据可空。 源注释：单星约束弧段的观测统计（距离/方位/俯仰/角速度极值）。仅当组合成员只有一颗星时填充， 多星组合的统计分别挂在其 satelliteSegments 上；旧数据为 null。 空值省略。 |
+| `durationSec` | number (double) | 是 | 否 |  | 该时段持续秒数；共同观测父窗口按成员交集计算。 |
+
+### ObserverIllumination
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | string | 是 | 是 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `satelliteName` | string | 是 | 是 |  | 观测星显示名称。 |
+| `state` | string | 是 | 是 | 枚举=["SUNLIT", "PENUMBRA", "UMBRA", null] | 精确光照SUNLIT/PENUMBRA/UMBRA；当前圆柱影不产生PENUMBRA，保留兼容枚举。 |
+| `stateName` | string | 是 | 是 |  | 阳照/半影/本影中文名称。 |
+
+### TargetIllumination
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `targetId` | string | 是 | 是 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `targetName` | string | 是 | 是 |  | 目标显示名称。 |
+| `state` | string | 是 | 是 | 枚举=["SUNLIT", "PENUMBRA", "UMBRA", null] | 精确光照SUNLIT/PENUMBRA/UMBRA；当前圆柱影不产生PENUMBRA，保留兼容枚举。 |
+| `stateName` | string | 是 | 是 |  | 阳照/半影/本影中文名称。 |
+
+### IlluminationSegment
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `startTime` | string (date-time) | 是 | 是 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string (date-time) | 是 | 是 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `observerIlluminations` | [ObserverIllumination](#observerillumination)[] | 是 | 是 |  | 按参与卫星顺序的精确光照状态。 |
+| `targetIllumination` | [TargetIllumination](#targetillumination) / null | 是 | 是 |  | 目标精确光照状态。 |
+| `durationSec` | number (double) | 是 | 否 |  | 该时段持续秒数；共同观测父窗口按成员交集计算。 |
+
+### SatelliteSegment
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityArc.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | string | 是 | 是 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `satelliteName` | string | 是 | 是 |  | 观测星显示名称。 |
+| `state` | string | 是 | 是 | 枚举=["SUNLIT", "PENUMBRA", "UMBRA", null] | 精确光照SUNLIT/PENUMBRA/UMBRA；当前圆柱影不产生PENUMBRA，保留兼容枚举。 |
+| `stateName` | string | 是 | 是 |  | 阳照/半影/本影中文名称。 |
+| `startTime` | string (date-time) | 是 | 是 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string (date-time) | 是 | 是 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `durationSec` | number (double) | 是 | 否 |  | 该时段持续秒数；共同观测父窗口按成员交集计算。 |
+| `statistics` | [VisibilityPairStatistics](#visibilitypairstatistics) / null | 是 | 是 |  | 可见采样点统计；单星挂父弧段，多星挂各satelliteSegments，旧数据可空。 源注释：该星覆盖本时段的原始观测统计（距离/方位/俯仰/角速度极值）；旧数据为 null。 |
+
+### VisibilityPairStatistics
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityPairStatistics.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `samples` | integer (int64) | 是 | 否 |  | 参与累计的实际可见采样点数。 |
+| `minAzimuthDeg` | number (double) | 是 | 是 |  | LVLH最小方位 °，0沿速度；缺几何可空。 |
+| `maxAzimuthDeg` | number (double) | 是 | 是 |  | LVLH最大方位 °，0沿速度；缺几何可空。 |
+| `minElevationDeg` | number (double) | 是 | 是 |  | 仰角/俯仰下限 °，临时站点缺省取实体或配置10；统计为LVLH实际最小俯仰。 |
+| `maxElevationDeg` | number (double) | 是 | 是 |  | 仰角/俯仰上限 °，临时站点缺省取实体或配置90；下传≤0不限制上仰角；统计为LVLH实际最大俯仰。 |
+| `maxAngleRateDegPerSec` | number (double) | 是 | 否 |  | 可见采样点最大视线角速度 °/s。 |
+| `minDistanceKm` | number (double) | 是 | 是 |  | 最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 |
+| `maxDistanceKm` | number (double) | 是 | 是 |  | 最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 |
+| `azimuthRelativeMinusXMinDeg` | number (double) | 是 | 是 |  | LVLH方位+180°归一到[-180,180)后排序的最小值 °。 |
+| `azimuthRelativeMinusXMaxDeg` | number (double) | 是 | 是 |  | LVLH方位+180°归一到[-180,180)后排序的最大值 °。 |
+| `elevationZenithMinDeg` | number (double) | 是 | 是 |  | 视线与天底夹角下限 °=LVLH俯仰+90。 |
+| `elevationZenithMaxDeg` | number (double) | 是 | 是 |  | 视线与天底夹角上限 °=LVLH俯仰+90。 |
+
+### SatelliteEntity
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/SatelliteEntity.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `id` | integer (int64) | 是 | 是 |  | 目录主键；实体响应为 Long 数字，任务记录响应为十进制字符串。 |
+| `type` | string | 是 | 是 |  | 目录原类型码。 |
+| `libraryModelId` | integer (int64) | 是 | 是 |  | 目录关联模型Long主键。 |
+| `name` | string | 是 | 是 |  | 目录或平台名称，空值沿原序列化规则处理。 |
+| `scid` | integer (int64) | 是 | 是 |  | 目录SCID数字。 |
+| `objectId` | string | 是 | 是 |  | 目录对象代号。 |
+| `objectName` | string | 是 | 是 |  | 目录对象名称。 |
+| `noradCatId` | integer (int64) | 是 | 是 |  | 目录NORAD编号Long数字。 |
+| `country` | string | 是 | 是 |  | 目录国家编码。 |
+| `period` | number | 是 | 是 |  | 目录周期原值，导入单位不在HTTP边界强制换算。 |
+| `catalogInclination` | number | 是 | 是 |  | 目录倾角原值，与传播inclination分列。 |
+| `apogee` | number | 是 | 是 |  | 目录远地点原值，导入单位不在HTTP边界强制换算。 |
+| `perigee` | number | 是 | 是 |  | 目录近地点原值，导入单位不在HTTP边界强制换算。 |
+| `rcsSize` | string | 是 | 是 |  | 目录雷达截面分类。 |
+| `rcsValue` | number | 是 | 是 |  | 目录雷达截面原值，未知导入量纲不推测。 |
+| `launchDate` | string (date) | 是 | 是 |  | 目录发射日期 yyyy-MM-dd。 |
+| `catalogComment` | string | 是 | 是 |  | 目录原备注。 |
+| `weight` | number | 是 | 是 |  | 目录质量 kg；缺失时不补造。 |
+| `modelType` | string | 是 | 是 |  | 轨道模型类型，原TLE_SGP4/KEPLER_J2等代码。 |
+| `epochTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 轨道UTC LocalDateTime历元，默认序列化无时区后缀。 |
+| `semiMajorAxis` | number | 是 | 是 |  | 传播六根数半长轴 m。 |
+| `eccentricity` | number | 是 | 是 |  | 偏心率，无量纲。 |
+| `inclination` | number | 是 | 是 |  | 传播六根数倾角 °。 |
+| `meanAnomaly` | number | 是 | 是 |  | 传播六根数平近点角 °。 |
+| `raan` | number | 是 | 是 |  | 传播六根数升交点赤经 °。 |
+| `argumentOfPerigee` | number | 是 | 是 |  | 传播六根数近地点幅角 °。 |
+| `payloadJson` | string | 是 | 是 |  | 持久载荷JSON原文字符串。 |
+| `firstOrbit` | string | 是 | 是 |  | TLE第一行原文。 |
+| `secondOrbit` | string | 是 | 是 |  | TLE第二行原文。 |
+| `createdBy` | string | 是 | 是 |  | 目录创建人标识。 |
+| `updateBy` | string | 是 | 是 |  | 目录更新人标识。 |
+| `createTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 记录UTC LocalDateTime，三位毫秒无Z；目录实体保留其默认LocalDateTime序列化。 |
+| `updateTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 目录更新LocalDateTime。 |
+
+### StationEntity
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/StationEntity.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `id` | string | 是 | 是 |  | 目录主键；实体响应为 Long 数字，任务记录响应为十进制字符串。 |
+| `name` | string | 是 | 是 |  | 目录或平台名称，空值沿原序列化规则处理。 |
+| `longitude` | number | 是 | 是 |  | 站点经度 °。 |
+| `latitude` | number | 是 | 是 |  | 站点纬度 °。 |
+| `height` | number | 是 | 是 |  | 站点高度 m。 |
+| `minElevation` | number | 是 | 是 |  | 站点最小仰角 °。 |
+| `maxElevation` | number | 是 | 是 |  | 站点最大仰角 °。 |
+| `createBy` | string | 是 | 是 |  | 目录创建人标识。 |
+| `createOrgId` | string | 是 | 是 |  | 目录创建组织标识。 |
+| `createTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 记录UTC LocalDateTime，三位毫秒无Z；目录实体保留其默认LocalDateTime序列化。 |
+| `updateBy` | string | 是 | 是 |  | 目录更新人标识。 |
+| `updateTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 目录更新LocalDateTime。 |
+
+### TargetEntity
+
+源码：[类型定义](../backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/TargetEntity.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `id` | integer (int64) | 是 | 是 |  | 目录主键；实体响应为 Long 数字，任务记录响应为十进制字符串。 |
+| `type` | string | 是 | 是 |  | 目录原类型码。 |
+| `libraryModelId` | integer (int64) | 是 | 是 |  | 目录关联模型Long主键。 |
+| `name` | string | 是 | 是 |  | 目录或平台名称，空值沿原序列化规则处理。 |
+| `scid` | integer (int64) | 是 | 是 |  | 目录SCID数字。 |
+| `objectId` | string | 是 | 是 |  | 目录对象代号。 |
+| `objectName` | string | 是 | 是 |  | 目录对象名称。 |
+| `noradCatId` | integer (int64) | 是 | 是 |  | 目录NORAD编号Long数字。 |
+| `country` | string | 是 | 是 |  | 目录国家编码。 |
+| `period` | number | 是 | 是 |  | 目录周期原值，导入单位不在HTTP边界强制换算。 |
+| `catalogInclination` | number | 是 | 是 |  | 目录倾角原值，与传播inclination分列。 |
+| `apogee` | number | 是 | 是 |  | 目录远地点原值，导入单位不在HTTP边界强制换算。 |
+| `perigee` | number | 是 | 是 |  | 目录近地点原值，导入单位不在HTTP边界强制换算。 |
+| `rcsSize` | string | 是 | 是 |  | 目录雷达截面分类。 |
+| `rcsValue` | number | 是 | 是 |  | 目录雷达截面原值，未知导入量纲不推测。 |
+| `launchDate` | string (date) | 是 | 是 |  | 目录发射日期 yyyy-MM-dd。 |
+| `catalogComment` | string | 是 | 是 |  | 目录原备注。 |
+| `modelType` | string | 是 | 是 |  | 轨道模型类型，原TLE_SGP4/KEPLER_J2等代码。 |
+| `epochTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 轨道UTC LocalDateTime历元，默认序列化无时区后缀。 |
+| `semiMajorAxis` | number | 是 | 是 |  | 传播六根数半长轴 m。 |
+| `eccentricity` | number | 是 | 是 |  | 偏心率，无量纲。 |
+| `inclination` | number | 是 | 是 |  | 传播六根数倾角 °。 |
+| `meanAnomaly` | number | 是 | 是 |  | 传播六根数平近点角 °。 |
+| `raan` | number | 是 | 是 |  | 传播六根数升交点赤经 °。 |
+| `argumentOfPerigee` | number | 是 | 是 |  | 传播六根数近地点幅角 °。 |
+| `firstOrbit` | string | 是 | 是 |  | TLE第一行原文。 |
+| `secondOrbit` | string | 是 | 是 |  | TLE第二行原文。 |
+| `belong` | string | 是 | 是 |  | 目录BELONG_原编码，非固定硬编码集合。 |
+| `weight` | number | 是 | 是 |  | 目录质量 kg；缺失时不补造。 |
+| `createBy` | string | 是 | 是 |  | 目录创建人标识。 |
+| `updateBy` | string | 是 | 是 |  | 目录更新人标识。 |
+| `createOrgId` | string | 是 | 是 |  | 目录创建组织标识。 |
+| `createTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 记录UTC LocalDateTime，三位毫秒无Z；目录实体保留其默认LocalDateTime序列化。 |
+| `updateTime` | string | 是 | 是 | pattern=^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?$ | 目录更新LocalDateTime。 |
+
+### JsonValue
+后端JsonNode透明保存的任意JSON值。这里只是实际开放合同；推荐前端嵌套结构另见SelectionTarget/SelectionMergedTimeRange，不假装服务器强制其字段。
+
+允许值：string / number / boolean / [JsonValue](#jsonvalue)[] / object；对象键和数组元素递归遵循JsonValue，null允许。
+
+### SatellitePage
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `total` | integer (int64) | 是 | 否 |  | 筛选总数。 |
+| `pageNumber` | integer (int64) | 是 | 否 |  | 当前页码。 |
+| `pageSize` | integer (int64) | 是 | 否 |  | 每页数量。 |
+| `records` | [SatelliteSummaryResponse](#satellitesummaryresponse)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### TaskResultPage
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `total` | integer (int64) | 是 | 否 |  | 筛选总数。 |
+| `pageNumber` | integer (int64) | 是 | 否 |  | 当前页码。 |
+| `pageSize` | integer (int64) | 是 | 否 |  | 每页数量。 |
+| `records` | [VisibilityTaskResultSummaryResponse](#visibilitytaskresultsummaryresponse)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### Health
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `status` | string | 是 | 否 | 枚举=["UP"] | 服务进程轻量健康状态，不访问数据库。 |
+
+### TaskAccepted
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `taskId` | string | 是 | 否 |  | 异步内存任务不透明字符串标识；重启后不恢复内存任务。 |
+
+### Defaults
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `preGuardSec` | number | 是 | 否 | 缺失=300 | 前保护秒数；缺省取配置300；非负业务值，负值在链路执行归一化中失败，可能返回200的skippedLinks而非400。 |
+| `postGuardSec` | number | 是 | 否 | 缺失=0 | 后保护秒数；缺省取配置0；非负业务值，负值可进入200的skippedLinks。 |
+| `allowedGapSec` | number | 是 | 否 | 缺失=0 | 允许断链秒数；缺省取配置0；非负业务值，负值可进入200的skippedLinks。 |
+| `orbitMaxApproximationDays` | number (double) | 是 | 否 | 缺失=14 | 建议近似传播天数，可配置。 |
+| `targetMinTleEpochCode` | string | 是 | 否 | 缺失="23340" | 默认TLE历元YYDDD，可配置。 |
+
+### CodeError
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `code` | string | 是 | 否 |  | INVALID_ARGUMENT/INTERNAL_ERROR或文件错误代码，按原边界输出。 |
+| `error` | string | 是 | 否 |  | 原中文错误信息。 |
+| `requestId` | string (uuid) | 否 | 否 |  | 只在兜底500提供的追踪号。 |
+
+### LegacyError
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `error` | string | 是 | 否 |  | 原describeFailure或窗口手写错误文本。 |
+
+### StandardPayloadRequest
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/api/VisibilityRequest.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `payloadId` | string | 否 | 是 |  | 弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。 |
+| `payloadName` | string | 否 | 是 |  | 载荷显示名；计算入口缺省回退payloadId，preview只回显原值。 |
+| `payloadType` | string | 是 | 否 | 规范值=["SPACE", "GROUND"]; pattern=^\s*([Ss][Pp][Aa][Cc][Ee]\|[Gg][Rr][Oo][Uu][Nn][Dd])\s*$ | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `maxDetectRangeKm` | number (double) | 否 | 否 | 缺失=0.0 | 旧最远探测距离 km，≤0不限；标准摘要仅映射maxDistanceKm。 此preview入口仍绑定完整PayloadDef，允许发送该旧兼容字段，但标准校验及12字段回显不读取它。 |
+| `sunExclusionAngleDeg` | number (double) | 否 | 否 | 缺失=45 | 旧太阳回避最小夹角 °；标准摘要仅映射sunAvoidHalfAngleDeg。 此preview入口仍绑定完整PayloadDef，允许发送该旧兼容字段，但标准校验及12字段回显不读取它。 |
+| `minDistanceKm` | number (double) | 是 | 否 | minimum=0 | 最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 源注释：标准最近距离（公里），必填有限且非负。 |
+| `maxDistanceKm` | number (double) | 是 | 否 | minimum=0 | 最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 源注释：标准最远距离（公里），必填；0不限，否则须大于最近距离。 |
+| `azimuthMinDeg` | number (double) | 否 | 是 |  | LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 源注释：LVLH方位下限（度），与上限同时null表示不限，范围0到360。 |
+| `azimuthMaxDeg` | number (double) | 否 | 是 |  | LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 源注释：LVLH方位上限（度），须严格大于下限。 |
+| `elevationMinDeg` | number (double) | 否 | 是 |  | LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 源注释：LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。 |
+| `elevationMaxDeg` | number (double) | 否 | 是 |  | LVLH俯仰上限 °，与下限成对且min<max≤90。 源注释：LVLH俯仰上限（度），最大90且严格大于下限。 |
+| `angleRateDegPerSec` | number (double) | 是 | 否 |  | 跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 源注释：跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。 |
+| `sunAvoidHalfAngleDeg` | number (double) | 是 | 否 | minimum=0; maximum=180 | 太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 源注释：太阳回避半角（度），必填有限0到180；0关闭。 |
+| `startupAngleRateDegPerSec` | number (double) | 否 | 是 |  | 启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 源注释：启动角速度元数据（度/秒）；null/-1禁用，0/正值仅回显不参与判定。 |
+
+### StandardPayloadResponse
+
+源码：[类型定义](../backend/src/main/java/com/tx/alg/api/VisibilityRequest.java)。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `payloadId` | string | 是 | 是 |  | 弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。 |
+| `payloadName` | string | 是 | 是 |  | 载荷显示名；计算入口缺省回退payloadId，preview只回显原值。 |
+| `payloadType` | string | 是 | 是 | 枚举=["SPACE", "GROUND", null] | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `minDistanceKm` | number (double) | 是 | 是 | minimum=0 | 最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 源注释：标准最近距离（公里），必填有限且非负。 |
+| `maxDistanceKm` | number (double) | 是 | 是 | minimum=0 | 最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 源注释：标准最远距离（公里），必填；0不限，否则须大于最近距离。 |
+| `azimuthMinDeg` | number (double) | 是 | 是 |  | LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 源注释：LVLH方位下限（度），与上限同时null表示不限，范围0到360。 |
+| `azimuthMaxDeg` | number (double) | 是 | 是 |  | LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 源注释：LVLH方位上限（度），须严格大于下限。 |
+| `elevationMinDeg` | number (double) | 是 | 是 |  | LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 源注释：LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。 |
+| `elevationMaxDeg` | number (double) | 是 | 是 |  | LVLH俯仰上限 °，与下限成对且min<max≤90。 源注释：LVLH俯仰上限（度），最大90且严格大于下限。 |
+| `angleRateDegPerSec` | number (double) | 是 | 是 |  | 跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 源注释：跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。 |
+| `sunAvoidHalfAngleDeg` | number (double) | 是 | 是 | minimum=0; maximum=180 | 太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 源注释：太阳回避半角（度），必填有限0到180；0关闭。 |
+| `startupAngleRateDegPerSec` | number (double) | 是 | 是 |  | 启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 源注释：启动角速度元数据（度/秒）；null/-1禁用，0/正值仅回显不参与判定。 |
+
+### VisibilityConstraintSummary
+旧摘要：标准载荷只映射类型/最远距离/太阳半角，四个锥角显式null；最小距离/姿态/角速度/startup没有旧摘要字段，完整配置另用preview。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `payloadType` | string | 是 | 否 |  | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `maxDetectRangeKm` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `sunExclusionAngleDeg` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `simpleConeHalfAngleDeg` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `halfConeAngleDeg` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `innerConeAngleDeg` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `outerConeAngleDeg` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+
+### BallisticTimeWindow
+最早至最晚包络，可包含不可见间隔；无可见点时整个对象null。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `startTime` | string | 是 | 否 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string | 是 | 否 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `startJ2000Sec` | number (double) | 是 | 是 |  | 原UTC日历J2000秒。 |
+| `endJ2000Sec` | number (double) | 是 | 是 |  | 原UTC日历J2000秒。 |
+| `durationSeconds` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+
+### VisibleWindowSummary
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `startTime` | string | 是 | 否 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string | 是 | 否 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `startJ2000Sec` | number (double) | 是 | 是 |  | 原UTC日历J2000秒。 |
+| `endJ2000Sec` | number (double) | 是 | 是 |  | 原UTC日历J2000秒。 |
+| `durationSeconds` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `satelliteId` | string | 是 | 否 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `satelliteName` | string | 是 | 否 |  | 观测星显示名称。 |
+| `payloadId` | string | 是 | 否 |  | 弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。 |
+| `payloadName` | string | 是 | 否 |  | 载荷显示名；计算入口缺省回退payloadId，preview只回显原值。 |
+| `payloadType` | string | 是 | 否 |  | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `satelliteIndex` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+| `arcIndex` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+| `pointCount` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+
+### VisibleTrajectoryPoint
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `longitudeDeg` | number (double) | 是 | 是 |  | 经度 °。 |
+| `latitudeDeg` | number (double) | 是 | 是 |  | 纬度 °。 |
+| `heightM` | number (double) | 是 | 是 |  | 高度 m。 |
+| `absoluteTimeJ2000Sec` | number (double) | 是 | 是 |  | 当前点原UTC日历J2000秒。 |
+| `relativeTimeSec` | number (double) | 是 | 是 |  | 相对输入文件参考历元秒。 |
+| `absoluteTimeUtc` | string | 是 | 否 |  | 偏移后的字面UTC毫秒文本。 |
+| `sourceTrajectoryUtc` | string | 是 | 否 |  | 输入原文件对应点字面UTC毫秒文本。 |
+
+### VisibleArc
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `startTime` | string | 是 | 否 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string | 是 | 否 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `startJ2000Sec` | number (double) | 是 | 是 |  | 原UTC日历J2000秒。 |
+| `endJ2000Sec` | number (double) | 是 | 是 |  | 原UTC日历J2000秒。 |
+| `durationSeconds` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `arcIndex` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+| `pointCount` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+| `payloadId` | string | 是 | 否 |  | 弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。 |
+| `payloadName` | string | 是 | 否 |  | 载荷显示名；计算入口缺省回退payloadId，preview只回显原值。 |
+| `payloadType` | string | 是 | 否 |  | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `trajectoryPoints` | [VisibleTrajectoryPoint](#visibletrajectorypoint)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### PayloadTargetResult
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `targetId` | string | 是 | 否 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `targetName` | string | 是 | 否 |  | 目标显示名称。 |
+| `payloadId` | string | 是 | 否 |  | 弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。 |
+| `payloadName` | string | 是 | 否 |  | 载荷显示名；计算入口缺省回退payloadId，preview只回显原值。 |
+| `payloadType` | string | 是 | 否 |  | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `visibleArcs` | [VisibleArc](#visiblearc)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### SatellitePayloadResult
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `payloadId` | string | 是 | 否 |  | 弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。 |
+| `payloadName` | string | 是 | 否 |  | 载荷显示名；计算入口缺省回退payloadId，preview只回显原值。 |
+| `payloadType` | string | 是 | 否 |  | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `visibilityConstraint` | [VisibilityConstraintSummary](#visibilityconstraintsummary) | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `finalVisibleWindow` | [BallisticTimeWindow](#ballistictimewindow) / null | 是 | 是 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `targets` | [PayloadTargetResult](#payloadtargetresult)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### BallisticSatelliteResult
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | string | 是 | 否 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `satelliteName` | string | 是 | 否 |  | 观测星显示名称。 |
+| `satelliteIndex` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+| `finalVisibleWindow` | [BallisticTimeWindow](#ballistictimewindow) / null | 是 | 是 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `payloadResults` | [SatellitePayloadResult](#satellitepayloadresult)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### BallisticTargetSummary
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `targetId` | string | 是 | 否 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `targetName` | string | 是 | 否 |  | 目标显示名称。 |
+| `csvPath` | string | 是 | 否 |  | 服务端现有CSV路径；register-result必须位于管理results根且现存，计算支持其各自旧路径语义。 |
+| `baseLaunchUTC` | string | 是 | 否 |  | 多目标第一优先非空发射UTC。 |
+| `launchUTC` | string | 是 | 否 |  | 原字面UTC文本。 |
+| `payloadType` | string | 是 | 否 |  | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `launchTimeJ2000Sec` | number (double) | 是 | 是 |  | 原UTC日历J2000秒。 |
+| `finalVisibleWindow` | [BallisticTimeWindow](#ballistictimewindow) / null | 是 | 是 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `visibleWindows` | [VisibleWindowSummary](#visiblewindowsummary)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### LaunchOffsetResult
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `offsetSecond` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+| `visibleArcCount` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+| `visiblePointCount` | integer (int64) | 是 | 否 |  | 原整数计数或索引，数组顺序不变。 |
+| `launchTimeUtc` | string | 是 | 否 |  | 必填字面发射UTC文本。 |
+| `payloadType` | string | 是 | 否 |  | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `launchTimeJ2000Sec` | number (double) | 是 | 是 |  | 原UTC日历J2000秒。 |
+| `visibleDurationSec` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `visibilityConstraint` | [VisibilityConstraintSummary](#visibilityconstraintsummary) | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `finalVisibleWindow` | [BallisticTimeWindow](#ballistictimewindow) / null | 是 | 是 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `targets` | [BallisticTargetSummary](#ballistictargetsummary)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `visibleSatellites` | [BallisticSatelliteResult](#ballisticsatelliteresult)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### LaunchSearchResult
+allResults按startOffsetSec+i*stepSizeSec输入顺序；best按累计double时长严格>更新，并列保留首次。逐载荷弧段时长相加不去交叠。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `referenceUtc` | string | 是 | 否 |  | 原字面UTC文本。 |
+| `payloadType` | string | 是 | 否 |  | 载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 |
+| `visibilityConstraint` | [VisibilityConstraintSummary](#visibilityconstraintsummary) | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `best` | [LaunchOffsetResult](#launchoffsetresult) / null | 是 | 是 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `allResults` | [LaunchOffsetResult](#launchoffsetresult)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### SelectionSatellite
+Vue确认选择推荐结构；服务器透明保存，不强制每项字段。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `satelliteId` | string | 是 | 否 |  | 卫星身份；空间下传为 Long 数字，观测及弹道为字符串。 |
+| `satelliteName` | string | 是 | 否 |  | 观测星显示名称。 |
+| `startTime` | string | 是 | 否 |  | 窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `endTime` | string | 是 | 否 |  | 窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。 |
+| `durationSec` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `distanceMinKm` | number (double) | 否 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `distanceMaxKm` | number (double) | 否 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `azimuthRelativeMinusXMinDeg` | number (double) | 否 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `azimuthRelativeMinusXMaxDeg` | number (double) | 否 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `elevationZenithMinDeg` | number (double) | 否 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `elevationZenithMaxDeg` | number (double) | 否 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `maxAngleRateDegPerSec` | number (double) | 否 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+
+### SelectionTarget
+Vue逐目标推荐结构，源码frontend/src/api/types.ts。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `targetId` | string | 是 | 否 |  | 目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。 |
+| `targetName` | string | 是 | 否 |  | 目标显示名称。 |
+| `noradCatId` | string | 否 | 否 |  | 原字符串身份或显示名。 |
+| `firstOrbitLine` | string | 否 | 否 |  | 原TLE第一行，非TLE目标省略。 |
+| `secondOrbitLine` | string | 否 | 否 |  | 原TLE第二行，非TLE目标省略。 |
+| `combination` | string | 是 | 否 |  | 原字符串身份或显示名。 |
+| `weightKg` | number (double) | 否 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `totalDurationSec` | number (double) | 是 | 是 |  | 原时长秒/角度/公里数值，字段单位见名称；非有限值按手写JSON输出null。 |
+| `mergedWindows` | [WindowResponse](#windowresponse)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `satellites` | [SelectionSatellite](#selectionsatellite)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+
+### SelectionMergedTimeRange
+Vue推荐结构；不表示服务器重算或强制校验。
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `segments` | [WindowResponse](#windowresponse)[] | 是 | 否 |  | 按所引用完整嵌套组件解释，数组保持原顺序。 |
+| `totalDurationSec` | number | 是 | 否 |  | 前端合并弧段累计秒数。 |
+
+### MultipartUpload
+
+| 字段 | 类型/嵌套 | 必填 | 可null | 缺省/枚举 | 含义、单位、范围与特殊值 |
+| --- | --- | --- | --- | --- | --- |
+| `file` | string (binary) | 是 | 否 |  | multipart字段file必填，原始字节；单文件上限默认67108864B，空文件沿原上传规则。 |
+| `purpose` | string | 否 | 是 |  | 可选用途文本，仅登记关联，不选择算法。 |
+
+## 来源、验证与普通 Java 工具入口
+
+原 T03 [接口与数值口径基线](接口与数值口径基线.md) 与 T29 [接口使用说明](接口使用说明.md) 保留为历史来源，不替代本完整字段合同。A01 [测试报告](../verification/A01/测试报告.md) 和 [35路由原矩阵](../verification/A01/final/http-extended-summary.json) 提供原业务验证。普通Java8外推工具的签名、独立类路径与线程边界见 [独立外推工具与后续方案](独立外推工具与后续方案.md)；它们不是新增HTTP路由，D01—D06仍暂缓。

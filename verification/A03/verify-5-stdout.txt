@@ -1,0 +1,2 @@
+{"passed": false, "checks": 1786, "valueChecks": 377, "protectedFiles": 1133, "errors": ["相对链接/锚点:byte-audit-result.json", "相对链接/锚点:artifact-manifest.json"]}
+links=55; referencedScreenshots=10; csvInputs=2

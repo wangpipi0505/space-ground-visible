@@ -1,0 +1,2 @@
+{"passed": false, "checks": 1782, "valueChecks": 374, "protectedFiles": 1133, "errors": ["相对链接/锚点:validation-result.json", "允许null:A02同步接口集成输入/illuminationConstraint"]}
+links=51; referencedScreenshots=10; csvInputs=2

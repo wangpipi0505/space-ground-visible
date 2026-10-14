@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A03\verify_manual.py", line 163, in <module>
+    check('模拟完整点2576', browser['simulation']['result']['raw']['files'][0]['pointCount'] == 2576)
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'files'

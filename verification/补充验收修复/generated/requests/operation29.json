@@ -1,0 +1,14 @@
+{
+  "payloadId": "A01-SPACE",
+  "payloadName": "全面验收载荷",
+  "payloadType": "SPACE",
+  "minDistanceKm": 0,
+  "maxDistanceKm": 0,
+  "azimuthMinDeg": 0,
+  "azimuthMaxDeg": 360,
+  "elevationMinDeg": -90,
+  "elevationMaxDeg": 90,
+  "angleRateDegPerSec": 0,
+  "sunAvoidHalfAngleDeg": 0,
+  "startupAngleRateDegPerSec": 0
+}

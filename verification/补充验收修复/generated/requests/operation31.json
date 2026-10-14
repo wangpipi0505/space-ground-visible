@@ -1,0 +1,77 @@
+{
+  "ballistics": [
+    {
+      "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\uploads\\upload-6761020315806561503.csv",
+      "targetId": "TGT-001",
+      "targetName": "真实弹道首历元"
+    },
+    {
+      "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fresh\\files\\uploads\\upload-6761020315806561503.csv",
+      "targetId": "TGT-002",
+      "targetName": "真实弹道独立发射历元",
+      "baseLaunchUTC": "2026/07/01 07:57:10.000"
+    }
+  ],
+  "startOffsetSec": 1200,
+  "stepSizeSec": 10,
+  "numCalculations": 3,
+  "targetSampleStepSec": 1.0,
+  "trajectoryPointOutput": 1,
+  "orbitModel": "J2_NUMERICAL",
+  "satellites": [
+    {
+      "satelliteId": "SAT-A",
+      "name": "SAT-A",
+      "semiMajorAxisM": 7530612.0,
+      "eccentricity": 0.00085,
+      "inclinationDeg": 64.8,
+      "raanDeg": 120.0,
+      "argumentOfPerigeeDeg": 270.0,
+      "meanAnomalyDeg": 30.0,
+      "epochUtc": "2026/07/01 10:00:00.000",
+      "payloads": [
+        {
+          "payloadId": "PAYLOAD-1",
+          "payloadName": "基准载荷1",
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0,
+          "sunExclusionAngleDeg": 0
+        },
+        {
+          "payloadId": "PAYLOAD-2",
+          "payloadName": "基准载荷2",
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0,
+          "sunExclusionAngleDeg": 0
+        }
+      ]
+    },
+    {
+      "satelliteId": "SAT-B",
+      "name": "SAT-B",
+      "semiMajorAxisM": 7530612.0,
+      "eccentricity": 0.00085,
+      "inclinationDeg": 64.8,
+      "raanDeg": 120.0,
+      "argumentOfPerigeeDeg": 270.0,
+      "meanAnomalyDeg": 0.0,
+      "epochUtc": "2026/07/01 10:00:00.000",
+      "payloads": [
+        {
+          "payloadId": "PAYLOAD-1",
+          "payloadName": "基准载荷1",
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0,
+          "sunExclusionAngleDeg": 0
+        },
+        {
+          "payloadId": "PAYLOAD-2",
+          "payloadName": "基准载荷2",
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0,
+          "sunExclusionAngleDeg": 0
+        }
+      ]
+    }
+  ]
+}

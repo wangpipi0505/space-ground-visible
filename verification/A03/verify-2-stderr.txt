@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A03\verify_manual.py", line 175, in <module>
+    window_response = json.loads(browser['window']['result']['rawText'])
+  File "C:\Python314\Lib\json\__init__.py", line 345, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+                    f'not {s.__class__.__name__}')
+TypeError: the JSON object must be str, bytes or bytearray, not dict

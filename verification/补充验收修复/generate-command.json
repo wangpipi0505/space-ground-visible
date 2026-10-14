@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/A02/build_contract.py",
+    "--evidence-dir",
+    "verification/补充验收修复/generated"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "started": "2026-10-14T03:18:58.935576+00:00",
+  "ended": "2026-10-14T03:18:59.198997+00:00",
+  "exit": 0,
+  "stdout": "verification/补充验收修复/generate-stdout.bin",
+  "stdoutBytes": 51,
+  "stdoutSha256": "ae53f0d212b20022a57806b4e5e71638fff75feb1da0a2c1f7a226ab032c075c",
+  "stderr": "verification/补充验收修复/generate-stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

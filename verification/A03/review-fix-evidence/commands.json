@@ -1,0 +1,149 @@
+[
+  {
+    "startUtc": "2026-10-14T02:39:55.091259+00:00",
+    "endUtc": "2026-10-14T02:39:55.137034+00:00",
+    "cwd": "G:\\5-YG\\space-ground-visible",
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-B",
+      "verification/A03/verify_recovery.py"
+    ],
+    "exitCode": 1,
+    "stdout": {
+      "path": "verification/A03/review-fix-evidence/1-recovery-stdout.txt",
+      "bytes": 7658,
+      "sha256": "62e8c8722426ae3487c8b004c6b93189aec95bd3c5f367c61ca0f549d695b87c"
+    },
+    "stderr": {
+      "path": "verification/A03/review-fix-evidence/1-recovery-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "startUtc": "2026-10-14T02:40:30.163954+00:00",
+    "endUtc": "2026-10-14T02:40:30.211594+00:00",
+    "cwd": "G:\\5-YG\\space-ground-visible",
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-B",
+      "verification/A03/verify_recovery.py"
+    ],
+    "exitCode": 0,
+    "stdout": {
+      "path": "verification/A03/review-fix-evidence/2-recovery-stdout.txt",
+      "bytes": 10863,
+      "sha256": "65e0cb5282170e1adbb5c037fad33c2b6c8e6439ad535129862b3016d71b4a20"
+    },
+    "stderr": {
+      "path": "verification/A03/review-fix-evidence/2-recovery-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "startUtc": "2026-10-14T02:40:46.228101+00:00",
+    "endUtc": "2026-10-14T02:40:46.467439+00:00",
+    "cwd": "G:\\5-YG\\space-ground-visible",
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-B",
+      "verification/A03/verify_manual.py"
+    ],
+    "exitCode": 0,
+    "stdout": {
+      "path": "verification/A03/review-fix-evidence/3-source-stdout.txt",
+      "bytes": 141,
+      "sha256": "dff156ab23ec7d85d3dc60dadb80cca7e98b683a4ed14a228c006d2e709aa101"
+    },
+    "stderr": {
+      "path": "verification/A03/review-fix-evidence/3-source-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "startUtc": "2026-10-14T02:43:18.633397+00:00",
+    "endUtc": "2026-10-14T02:43:18.892679+00:00",
+    "cwd": "G:\\5-YG\\space-ground-visible",
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-B",
+      "verification/A03/verify_manual.py"
+    ],
+    "exitCode": 0,
+    "stdout": {
+      "path": "verification/A03/review-fix-evidence/4-source-stdout.txt",
+      "bytes": 141,
+      "sha256": "814945898abcb61fa36a43decf824e16885287f3774db44ffefc3ccdfd6f40b7"
+    },
+    "stderr": {
+      "path": "verification/A03/review-fix-evidence/4-source-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "startUtc": "2026-10-14T02:43:19.470465+00:00",
+    "endUtc": "2026-10-14T02:43:19.519655+00:00",
+    "cwd": "G:\\5-YG\\space-ground-visible",
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-B",
+      "verification/A03/audit_artifacts.py"
+    ],
+    "exitCode": 0,
+    "stdout": {
+      "path": "verification/A03/review-fix-evidence/5-audit-stdout.txt",
+      "bytes": 273,
+      "sha256": "d5f2631598ac733ae8cdadc94603922bbcaee2602c77cc77df23c4ca1b2ca40b"
+    },
+    "stderr": {
+      "path": "verification/A03/review-fix-evidence/5-audit-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "startUtc": "2026-10-14T02:43:46.185384+00:00",
+    "endUtc": "2026-10-14T02:43:46.303891+00:00",
+    "cwd": "G:\\5-YG\\space-ground-visible",
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-B",
+      "verification/A03/verify_review_fix_bytes.py"
+    ],
+    "exitCode": 0,
+    "stdout": {
+      "path": "verification/A03/review-fix-evidence/6-final-stdout.txt",
+      "bytes": 509,
+      "sha256": "5c8b4153b30e4555d68bee4bdc29d82c77bfc3d2b7f8ea3622cda0111d74f380"
+    },
+    "stderr": {
+      "path": "verification/A03/review-fix-evidence/6-final-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "startUtc": "2026-10-14T02:44:59.864356+00:00",
+    "endUtc": "2026-10-14T02:44:59.976293+00:00",
+    "cwd": "G:\\5-YG\\space-ground-visible",
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-B",
+      "verification/A03/verify_review_fix_bytes.py"
+    ],
+    "exitCode": 0,
+    "stdout": {
+      "path": "verification/A03/review-fix-evidence/7-final-stdout.txt",
+      "bytes": 509,
+      "sha256": "4440c681b23334dac6b09102e569e90d098685e65538701ec3180cb702821bbc"
+    },
+    "stderr": {
+      "path": "verification/A03/review-fix-evidence/7-final-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+]

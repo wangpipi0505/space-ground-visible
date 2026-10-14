@@ -39,6 +39,19 @@ verification/A02/copy-edit-history/** -text -whitespace
 verification/A02/query-fix-history/** -text -whitespace
 docs/openapi/openapi.json -text whitespace=cr-at-eol
 docs/接口文档.md -text whitespace=cr-at-eol
+# A03 来源核验与恢复修复保留已运行文件字节，旧快照及工具原输出不作格式化。
+verification/A03/**/*.txt -text -whitespace
+verification/A03/**/*.json -text whitespace=cr-at-eol
+verification/A03/**/*.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+verification/A03/**/*.py -text whitespace=cr-at-eol
+verification/A03/review-fix-history/** -text -whitespace
+docs/软件功能使用说明.md -text whitespace=cr-at-eol,-blank-at-eol
+# 整体审查修复的新证据单独绑定，二进制后缀也可能保存真实 CRLF 终端文本。
+verification/补充验收修复/** -text whitespace=cr-at-eol
+verification/补充验收修复/**/*.bin -text -whitespace
+verification/补充验收修复/history/** -text -whitespace
+verification/补充验收*.md -text whitespace=cr-at-eol,-blank-at-eol
+verification/补充验收*.json -text whitespace=cr-at-eol
 # 浏览器快照和工具响应是原始验证证据，保留字节及工具自带的末尾空行。
 output/playwright/** -text -whitespace
 *.jar binary

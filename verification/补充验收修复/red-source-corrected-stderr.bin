@@ -1,0 +1,139 @@
+test_35_routes_refs_source_fields_and_selected_real_examples (__main__.TargetedContract.test_35_routes_refs_source_fields_and_selected_real_examples) ... ok
+test_I01_duration_compatibility (__main__.TargetedContract.test_I01_duration_compatibility) ... FAIL
+test_I01_fit_and_space_owner_rules_remain (__main__.TargetedContract.test_I01_fit_and_space_owner_rules_remain) ... ok
+test_I01_phase_event_is_compatibility_text (__main__.TargetedContract.test_I01_phase_event_is_compatibility_text) ... 
+  test_I01_phase_event_is_compatibility_text (__main__.TargetedContract.test_I01_phase_event_is_compatibility_text) (field='startTime') ... FAIL
+  test_I01_phase_event_is_compatibility_text (__main__.TargetedContract.test_I01_phase_event_is_compatibility_text) (field='endTime') ... FAIL
+test_I01_simulation_time_metadata (__main__.TargetedContract.test_I01_simulation_time_metadata) ... 
+  test_I01_simulation_time_metadata (__main__.TargetedContract.test_I01_simulation_time_metadata) (field='taskStartTime') ... FAIL
+  test_I01_simulation_time_metadata (__main__.TargetedContract.test_I01_simulation_time_metadata) (field='taskEndTime') ... FAIL
+test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames) ... 
+  test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames) (field='launchPointUnit') ... FAIL
+  test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames) (field='launchPointCoordFrame') ... FAIL
+test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames) ... FAIL
+test_M01_manual_button_and_download_success (__main__.TargetedContract.test_M01_manual_button_and_download_success) ... FAIL
+test_M02_disclosed_boundaries_remain (__main__.TargetedContract.test_M02_disclosed_boundaries_remain) ... ok
+test_M03_preview_int32_only (__main__.TargetedContract.test_M03_preview_int32_only) ... 
+  test_M03_preview_int32_only (__main__.TargetedContract.test_M03_preview_int32_only) (parameter='page') ... FAIL
+  test_M03_preview_int32_only (__main__.TargetedContract.test_M03_preview_int32_only) (parameter='limit') ... FAIL
+test_M04_station_string_identity (__main__.TargetedContract.test_M04_station_string_identity) ... FAIL
+test_only_allowed_contract_changes (__main__.TargetedContract.test_only_allowed_contract_changes) ... ok
+
+======================================================================
+FAIL: test_I01_duration_compatibility (__main__.TargetedContract.test_I01_duration_compatibility)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 78, in test_I01_duration_compatibility
+    self.assertIn('旧兼容数值', schema['description'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '旧兼容数值' not found in '该时段持续秒数；共同观测父窗口按成员交集计算。'
+
+======================================================================
+FAIL: test_I01_phase_event_is_compatibility_text (__main__.TargetedContract.test_I01_phase_event_is_compatibility_text) (field='startTime')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 93, in test_I01_phase_event_is_compatibility_text
+    self.assertIn('兼容文本', schema['description'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '兼容文本' not found in '窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。'
+
+======================================================================
+FAIL: test_I01_phase_event_is_compatibility_text (__main__.TargetedContract.test_I01_phase_event_is_compatibility_text) (field='endTime')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 93, in test_I01_phase_event_is_compatibility_text
+    self.assertIn('兼容文本', schema['description'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '兼容文本' not found in '窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。'
+
+======================================================================
+FAIL: test_I01_simulation_time_metadata (__main__.TargetedContract.test_I01_simulation_time_metadata) (field='taskStartTime')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 57, in test_I01_simulation_time_metadata
+    self.assertIn(text, schema['description'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '任务/文件元数据' not found in '字面UTC输出开始时刻；拟合须覆盖首观测，模拟与物理起落区间分开。'
+
+======================================================================
+FAIL: test_I01_simulation_time_metadata (__main__.TargetedContract.test_I01_simulation_time_metadata) (field='taskEndTime')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 57, in test_I01_simulation_time_metadata
+    self.assertIn(text, schema['description'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '任务/文件元数据' not found in '字面UTC输出结束时刻；拟合须覆盖末观测，模拟与物理起落区间分开。'
+
+======================================================================
+FAIL: test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames) (field='launchPointUnit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 122, in test_I02_endpoint_empty_units_and_frames
+    self.assertIn('缺失/null/空串/空白', schema['description'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '缺失/null/空串/空白' not found in '发射端点坐标单位，默认m，原m/km/0.1m分支。'
+
+======================================================================
+FAIL: test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames) (field='launchPointCoordFrame')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 122, in test_I02_endpoint_empty_units_and_frames
+    self.assertIn('缺失/null/空串/空白', schema['description'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '缺失/null/空串/空白' not found in '发射端点原框架，默认J2000；支持J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA，归一去空白/横杠/下划线。'
+
+======================================================================
+FAIL: test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 131, in test_I02_endpoint_empty_units_and_frames
+    self.assertIn(text, unit)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: '数值倍率' not found in '发射端点坐标单位，默认m，原m/km/0.1m分支。'
+
+======================================================================
+FAIL: test_M01_manual_button_and_download_success (__main__.TargetedContract.test_M01_manual_button_and_download_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 146, in test_M01_manual_button_and_download_success
+    self.assertIn(text, row)
+    ~~~~~~~~~~~~~^^^^^^^^^^^
+AssertionError: '该生成页自身' not found in '| 窗口预览/下载404 | 本页异常只显示错误，仍保留文件引用和此前成功预览（如有），不会自动清旧；旧页/旧ID不能视为恢复成功。本地来源用原生选择重新上传已保存的完整CSV；生成来源回拟合/模拟/重定时页重新登记（原CSV仍存在或已恢复）或重算取得有效引用，再在窗口先选空项并显式选择有效生成结果。等待真实预览成功后再计算或下载；重新上传/选择会清旧引用与预览 |'
+
+======================================================================
+FAIL: test_M03_preview_int32_only (__main__.TargetedContract.test_M03_preview_int32_only) (parameter='page')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 157, in test_M03_preview_int32_only
+    self.assertEqual(schema['format'], 'int32')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'int64' != 'int32'
+- int64
++ int32
+
+
+======================================================================
+FAIL: test_M03_preview_int32_only (__main__.TargetedContract.test_M03_preview_int32_only) (parameter='limit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 157, in test_M03_preview_int32_only
+    self.assertEqual(schema['format'], 'int32')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'int64' != 'int32'
+- int64
++ int32
+
+
+======================================================================
+FAIL: test_M04_station_string_identity (__main__.TargetedContract.test_M04_station_string_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 175, in test_M04_station_string_identity
+    self.assertIn('原地面站字符串主键', schema['description'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '原地面站字符串主键' not found in '目录主键；实体响应为 Long 数字，任务记录响应为十进制字符串。'
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.017s
+
+FAILED (failures=12)

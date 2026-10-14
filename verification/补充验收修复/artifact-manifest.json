@@ -1,0 +1,454 @@
+{
+  "time": "2026-10-14T03:31:57.476130+00:00",
+  "scope": "本轮新证据（含根新4.0.4格式结果）、README、交接报告及稳定四文件；不替代旧A02/A03历史清单。",
+  "excludedSelfOutputs": [
+    "artifact-audit.json",
+    "artifact-manifest.json",
+    "final-audit-public-command.json",
+    "final-audit-public-stderr.bin",
+    "final-audit-public-stdout.bin"
+  ],
+  "total": 88,
+  "files": [
+    {
+      "path": "docs/openapi/openapi.json",
+      "bytes": 434382,
+      "sha256": "5e800207b11f6de429bc6d71f1327c8cd5ae4f4a80762d2ad3ca9e05658449a7"
+    },
+    {
+      "path": "docs/接口文档.md",
+      "bytes": 223254,
+      "sha256": "0546e6075ee4c4eb0549e06b6cab99d7c60654c60cd2c91aa91b24a46e062e9e"
+    },
+    {
+      "path": "docs/软件功能使用说明.md",
+      "bytes": 35800,
+      "sha256": "a6b9d1ff5781a71e5b0884c03206e01e4cdc82ecca29c854e027380624b9eb9a"
+    },
+    {
+      "path": "verification/A02/build_contract.py",
+      "bytes": 90691,
+      "sha256": "a6c9ef65113fc881582f0c43f0bb83e1f7855120cfe9f9a3e95e15849fa815dd"
+    },
+    {
+      "path": "verification/补充验收修复/audit_manifest.py",
+      "bytes": 3071,
+      "sha256": "6a2e52d1857c99b3442244be292eb88ca334c93f939fed7c7ede1434ad1ebda3"
+    },
+    {
+      "path": "verification/补充验收修复/evidence.py",
+      "bytes": 6066,
+      "sha256": "10d83b835c0a6c1ce5de064e3adb9b73ed4e284d11d72611880685486179fcfe"
+    },
+    {
+      "path": "verification/补充验收修复/external-openapi-current-check-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/补充验收修复/external-openapi-current-check.json",
+      "bytes": 970,
+      "sha256": "986a1a0621588289f3e2c32939ba144a659960c8b84ce8af655f6256acdf5ae2"
+    },
+    {
+      "path": "verification/补充验收修复/external-openapi-current-check.txt",
+      "bytes": 35,
+      "sha256": "76abf387458a6cefef93820a9ae045c3605235989aab056f11058d8faa5022e1"
+    },
+    {
+      "path": "verification/补充验收修复/final-audit-command.json",
+      "bytes": 623,
+      "sha256": "158d79802018c690418c20fe87ba22e59610385d8ed8fe4714f042e1b3a9fdf8"
+    },
+    {
+      "path": "verification/补充验收修复/final-audit-stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/补充验收修复/final-audit-stdout.bin",
+      "bytes": 221,
+      "sha256": "26d06d7c901fa1ec35d83b2f0f80089d20e1da242dd4e5304d2ea2706595e0a0"
+    },
+    {
+      "path": "verification/补充验收修复/generate-command.json",
+      "bytes": 694,
+      "sha256": "a976abfc30f607cffe300358d0fd901318fe2d1ca1ee793f59d290416ea1af1d"
+    },
+    {
+      "path": "verification/补充验收修复/generate-stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/补充验收修复/generate-stdout.bin",
+      "bytes": 51,
+      "sha256": "ae53f0d212b20022a57806b4e5e71638fff75feb1da0a2c1f7a226ab032c075c"
+    },
+    {
+      "path": "verification/补充验收修复/generated/curl-cases.json",
+      "bytes": 30041,
+      "sha256": "4ea7a1524dad216baa36975e24a2666f4c291bd540bbf07ca7ab762326252c90"
+    },
+    {
+      "path": "verification/补充验收修复/generated/examples.json",
+      "bytes": 140669,
+      "sha256": "dac7e07e80fd09bc93561ee04c6990055f0575d58c02209aaafd1e7985eacccc"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation06.json",
+      "bytes": 241,
+      "sha256": "24a575baa6006c7fb8167db2170a302b7bf5f8ddc998a757b634584e5342c402"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation08.json",
+      "bytes": 270,
+      "sha256": "782ae1aa69a212cdf2e4c705beadb383cfd4c4d0b23a16b0eb1a1757d3728560"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation11.json",
+      "bytes": 361,
+      "sha256": "54b2f0b483a0abef311ec78cf2beca80ff7ad7c450f778b1f52f261ce513300b"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation13.json",
+      "bytes": 476,
+      "sha256": "569c3bc657bbc68a1a9a5855b6ac0146f8ca81f8722b1871e8c0ba83b0c16e9f"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation14.json",
+      "bytes": 476,
+      "sha256": "569c3bc657bbc68a1a9a5855b6ac0146f8ca81f8722b1871e8c0ba83b0c16e9f"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation15.json",
+      "bytes": 481,
+      "sha256": "600ec797e681c9ebe2a62d036a851f0f31eae32bb50a82c370cda695dd3da46d"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation16.json",
+      "bytes": 481,
+      "sha256": "600ec797e681c9ebe2a62d036a851f0f31eae32bb50a82c370cda695dd3da46d"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation22.json",
+      "bytes": 19,
+      "sha256": "a2cff4b1f5ceafcfe9c2f809ee33c548397f41e97418aae62002daaddd580b9d"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation23.json",
+      "bytes": 1907,
+      "sha256": "6f8d521be060a6eb217fcce3a4c9790d3a21cecf3d00a49afa61f30ac06c64bf"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation26.json",
+      "bytes": 279,
+      "sha256": "73b3ead87fa44bfecd07e838088ffe58a4a68a598e9da308014cd8a053758606"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation29.json",
+      "bytes": 327,
+      "sha256": "e651ba96688879fa2b064bc253d6670cd9c8bd484331a22c100b9de689c8169b"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation31.json",
+      "bytes": 2242,
+      "sha256": "188888a22c8aea393e44e502dab46aa63bdb66e3942face948663bdb6c7fef83"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation33.json",
+      "bytes": 8495,
+      "sha256": "c63d34de64b54040b445ccc276607f951659ec28e93c73fa404c33ac42058177"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation34.json",
+      "bytes": 604,
+      "sha256": "f7ca97d1ac51e7a4bea22c8eb3241b12e0e3b88fa40d1724f31ed9afa7b6a50a"
+    },
+    {
+      "path": "verification/补充验收修复/generated/requests/operation35.json",
+      "bytes": 359,
+      "sha256": "520c98801bcc48a990849160b2efc516dd379b6e38c9866f1eee60b8a17a3630"
+    },
+    {
+      "path": "verification/补充验收修复/generated/source-inventory.json",
+      "bytes": 144381,
+      "sha256": "3a38bcff76830b266530a9e3e320cf3a30341ef5014c93f751dc9aa25aa1509c"
+    },
+    {
+      "path": "verification/补充验收修复/green-attempt1-command.json",
+      "bytes": 639,
+      "sha256": "8e01decb5fcc328374cc4175001cceefb5f3755eee94c9eef31c6f8d431c3035"
+    },
+    {
+      "path": "verification/补充验收修复/green-attempt1-stderr.bin",
+      "bytes": 3462,
+      "sha256": "b310ed0e01bc415948fad6db46c6f0366b44f7c50b06aec07713c83971b8bf33"
+    },
+    {
+      "path": "verification/补充验收修复/green-attempt1-stdout.bin",
+      "bytes": 97,
+      "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+    },
+    {
+      "path": "verification/补充验收修复/green-command.json",
+      "bytes": 621,
+      "sha256": "fbf6e94db3316985208e054a03f65facfa98dca68aacf6bce1d29fc05e07e708"
+    },
+    {
+      "path": "verification/补充验收修复/green-stderr.bin",
+      "bytes": 1360,
+      "sha256": "c7479c79bec2789ca198f0cbb9241b7d05717260228e4cdd24aed7d2d2056bfe"
+    },
+    {
+      "path": "verification/补充验收修复/green-stdout.bin",
+      "bytes": 97,
+      "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+    },
+    {
+      "path": "verification/补充验收修复/handoff-bindings.json",
+      "bytes": 14580,
+      "sha256": "b580785b8591eaf6cf2a1733b94f7efd60c6ffcf1029abd0ff65763f64961ee9"
+    },
+    {
+      "path": "verification/补充验收修复/history/artifact-audit.json.runtime-before.bin",
+      "bytes": 213,
+      "sha256": "5e17cef95d43cc635ccf430de273245c100e1cbc7ab99d646d7fd8e00ff55bdc"
+    },
+    {
+      "path": "verification/补充验收修复/history/artifact-manifest.json.runtime-before.bin",
+      "bytes": 13836,
+      "sha256": "05b073a780551ac340342ff8f85ab0ccad9356ff4769ad37c8638d7ed87c0106"
+    },
+    {
+      "path": "verification/补充验收修复/history/docs__openapi__openapi.json.before.bin",
+      "bytes": 443461,
+      "sha256": "df3bbd2ad3d1b7561ae0f7f56adce0c38db2e18f282f34494ee0f07eff69ebb6"
+    },
+    {
+      "path": "verification/补充验收修复/history/docs__接口文档.md.before.bin",
+      "bytes": 225193,
+      "sha256": "7c6167e49f4bf80606e32d685aeabaeb9f90fe324c23bc897224016a1477d3d6"
+    },
+    {
+      "path": "verification/补充验收修复/history/docs__软件功能使用说明.md.before.bin",
+      "bytes": 35505,
+      "sha256": "a9b79890b259c70e72ee42cd21bcd5108dd2815cb6e47b55e1aa3eda2e69c96d"
+    },
+    {
+      "path": "verification/补充验收修复/history/handoff-bindings.json.runtime-before.bin",
+      "bytes": 11026,
+      "sha256": "04bb55b20338bacbc2419c3427514a50fe7e174af9591f620f33fd4f902c79b6"
+    },
+    {
+      "path": "verification/补充验收修复/history/preserved-manifest.json",
+      "bytes": 1357,
+      "sha256": "429f5bc493500de730ded36ef5e360f52e3a7c63bb197798de644fd3df96f48a"
+    },
+    {
+      "path": "verification/补充验收修复/history/readme-handoff-note/artifact-audit.json.before.bin",
+      "bytes": 213,
+      "sha256": "566170ab4c5d850f7f98d0644c8cfa87403c6c9b9a16e96aac232b7d8fe49663"
+    },
+    {
+      "path": "verification/补充验收修复/history/readme-handoff-note/artifact-manifest.json.before.bin",
+      "bytes": 15638,
+      "sha256": "79e691319d59305892d7a2afe5f7cf53c4567a62099ceb950dad9e0e735386a0"
+    },
+    {
+      "path": "verification/补充验收修复/history/readme-handoff-note/handoff-bindings.json.before.bin",
+      "bytes": 12791,
+      "sha256": "0348e4354b101a1fe2b02b2ca52f64d179a8748ec141d3b07e1be8627b01b0af"
+    },
+    {
+      "path": "verification/补充验收修复/history/readme-handoff-note/preserved-command-shas.json",
+      "bytes": 6266,
+      "sha256": "0ddb96032388a2c77ca8528c206fd9a955e6c270d2af777238fdceed214599f3"
+    },
+    {
+      "path": "verification/补充验收修复/history/readme-handoff-note/write_report.py.before.bin",
+      "bytes": 14245,
+      "sha256": "55974d8e97c1e36bec9ba361a23ee04b1e4c99738e956ddfe6ceecb1ae63a2ac"
+    },
+    {
+      "path": "verification/补充验收修复/history/readme-handoff-note/正式修复报告.md.before.bin",
+      "bytes": 18579,
+      "sha256": "a9ab42c2736141768ada4da7fb7f31955c03e86dd0382aaac106affb0a6985b4"
+    },
+    {
+      "path": "verification/补充验收修复/history/test_targeted_contract.red.py.bin",
+      "bytes": 15782,
+      "sha256": "d7e6b01532de286c25605b6b10b0603bef79768c0ee43ca371a49148e62fba95"
+    },
+    {
+      "path": "verification/补充验收修复/history/verification__A02__build_contract.py.before.bin",
+      "bytes": 88036,
+      "sha256": "8de20b0299a9421f5b96a143ec6a5c0af6dce135860be483ec065d860c96ecd7"
+    },
+    {
+      "path": "verification/补充验收修复/protection-after.json",
+      "bytes": 832,
+      "sha256": "39eb96064a28f36b2b78771c28b1befe86b4bc27bd4a4a8063302af4525a00ac"
+    },
+    {
+      "path": "verification/补充验收修复/protection-before.json",
+      "bytes": 549293,
+      "sha256": "933677fa670355609108476c4015216a4687b69bdeba28bd99900e514e3e37f0"
+    },
+    {
+      "path": "verification/补充验收修复/protection-command.json",
+      "bytes": 630,
+      "sha256": "d9ad9c9a6e8cf0ebb9822712685daf64b9b54e43abf9e4816107d036a01896ca"
+    },
+    {
+      "path": "verification/补充验收修复/protection-stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/补充验收修复/protection-stdout.bin",
+      "bytes": 862,
+      "sha256": "724eda594328929e107396dcb79113a154ff4355f05770c9cb5b1d591ec8fc6b"
+    },
+    {
+      "path": "verification/补充验收修复/README.md",
+      "bytes": 2862,
+      "sha256": "c1f3cffbd83e59d032cb10b2295aa0da40e4023d4961fbdfa6324865a7e84981"
+    },
+    {
+      "path": "verification/补充验收修复/red-command.json",
+      "bytes": 619,
+      "sha256": "d043ccb91531a9fe2bf892c233d12cec1c745ddb912b28fb7967fef13a1151c4"
+    },
+    {
+      "path": "verification/补充验收修复/red-corrected-command.json",
+      "bytes": 639,
+      "sha256": "400006a4c9e52cc28897024287d50ffb3db8ddf7171cb0dbe30d2a34076bc165"
+    },
+    {
+      "path": "verification/补充验收修复/red-corrected-stderr.bin",
+      "bytes": 163447,
+      "sha256": "4b6a135608c28df483dcd45fbe3ba244c245cd9216fa5f4bc7909cb5745a0313"
+    },
+    {
+      "path": "verification/补充验收修复/red-corrected-stdout.bin",
+      "bytes": 97,
+      "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+    },
+    {
+      "path": "verification/补充验收修复/red-final-command.json",
+      "bytes": 631,
+      "sha256": "480b9470ffa3df61c7760337b0570a12cb1c37c94c1bc96e2db2d88c06a23df5"
+    },
+    {
+      "path": "verification/补充验收修复/red-final-stderr.bin",
+      "bytes": 163501,
+      "sha256": "c58f31b9301da5f02b1ced696d6abef6232729311aef5aae49e5fd3ae063496f"
+    },
+    {
+      "path": "verification/补充验收修复/red-final-stdout.bin",
+      "bytes": 97,
+      "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+    },
+    {
+      "path": "verification/补充验收修复/red-source-corrected-command.json",
+      "bytes": 652,
+      "sha256": "0015e0cbb48a2045c31159c8d01cdae9bdf7e71c464ee2fce3243b2a77b1c79d"
+    },
+    {
+      "path": "verification/补充验收修复/red-source-corrected-stderr.bin",
+      "bytes": 11225,
+      "sha256": "c792021c0e3cfcb5b18980e8b8c5f2a1c0fa03765e52f7f27b666dc490f6695c"
+    },
+    {
+      "path": "verification/补充验收修复/red-source-corrected-stdout.bin",
+      "bytes": 97,
+      "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+    },
+    {
+      "path": "verification/补充验收修复/red-stderr.bin",
+      "bytes": 164436,
+      "sha256": "36bd027097c80d1b1e97fe3ef6b67313ba49ad5d5cb771d9d9880f61b32de688"
+    },
+    {
+      "path": "verification/补充验收修复/red-stdout.bin",
+      "bytes": 97,
+      "sha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739"
+    },
+    {
+      "path": "verification/补充验收修复/report-command.json",
+      "bytes": 611,
+      "sha256": "cef86b6c235c05a51f059cf5d45dd080656c48db23fbedbe98f913d852dadaa3"
+    },
+    {
+      "path": "verification/补充验收修复/report-final-command.json",
+      "bytes": 623,
+      "sha256": "9db29bbbd19e08c27a95cbde547d900c61620d6a00eff7fc8bf773c799b436b6"
+    },
+    {
+      "path": "verification/补充验收修复/report-final-stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/补充验收修复/report-final-stdout.bin",
+      "bytes": 952,
+      "sha256": "ed752aae4b86dd8d2b8ff84120735add1dd9de641407cd987368db1062e2b8c8"
+    },
+    {
+      "path": "verification/补充验收修复/report-public-command.json",
+      "bytes": 625,
+      "sha256": "4abc120d6f7f83f10197869972d9365b077a143c3b03b6b1895860e568a3a9b3"
+    },
+    {
+      "path": "verification/补充验收修复/report-public-stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/补充验收修复/report-public-stdout.bin",
+      "bytes": 953,
+      "sha256": "1f2c0e7ce63250b5176f4e6166022a11d00b51427c6b1ee1e78ad97e9d989944"
+    },
+    {
+      "path": "verification/补充验收修复/report-readme-note-command.json",
+      "bytes": 635,
+      "sha256": "0e349edaa42cf47eff59519700eb27786d9b94ae15843777fb5dd96bf6d12888"
+    },
+    {
+      "path": "verification/补充验收修复/report-readme-note-stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/补充验收修复/report-readme-note-stdout.bin",
+      "bytes": 953,
+      "sha256": "68199d6fa0dfc5fd993c29b9bd1374dabddab8404ce74e35c52b29d6a9cb7047"
+    },
+    {
+      "path": "verification/补充验收修复/report-stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/补充验收修复/report-stdout.bin",
+      "bytes": 952,
+      "sha256": "0ad875d0ff1764d6fcdbb77513793a85f2e027b036ff22f3f3d222366c4491c5"
+    },
+    {
+      "path": "verification/补充验收修复/test_targeted_contract.py",
+      "bytes": 15815,
+      "sha256": "73ec78e0931b94cce58ab577315b5c378acccada04793c9170e42f1b7aa58c0e"
+    },
+    {
+      "path": "verification/补充验收修复/write_report.py",
+      "bytes": 14350,
+      "sha256": "2396e2bff9149adbd7f1ca80e1b5b81d2b84c6354bf099ee5de8f2391a4d0b70"
+    },
+    {
+      "path": "verification/补充验收修复/正式修复报告.md",
+      "bytes": 20054,
+      "sha256": "19df2af4691ec51cabd2d7c656d4952e72c02e7624dafad176c00602620324a0"
+    }
+  ]
+}

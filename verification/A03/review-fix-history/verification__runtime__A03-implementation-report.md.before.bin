@@ -1,0 +1,67 @@
+# A03 实现与交接报告
+
+状态：**DONE_WITH_CONCERNS**（本项文档及限定来源核验已完成；外部生产集成缺口沿用A01，最终独立审查/台账/提交由根完成）。
+
+## 交付及范围
+
+- 新增 `docs/软件功能使用说明.md`（33717字节）与 `verification/A03/验证报告.md`，README新增操作者入口。
+- 手册写清正式构建/新交付目录/运行根/生产配置/Vite联调、六个实际页签与无独立子路由；空间目录→SPACE/GROUND保存启用→站星下传→选/校验窗口→目标快照→单星/共同观测→异步进度/取消终态→选择保存/明细/备注清空/删除。
+- 同步能力明确属于 `POST /api/v1/space/visibility/plan` 接口集成入口（当前A02 operation15），页面没有同步切换按钮。没有改产品补按钮。
+- 四弹道页完整来源/参数/控件/等待/输出/恢复；完整拟合JSON8原包双目标、模拟起落米坐标/UTC、原21列CSV重定时、双目标双星四载荷三偏移窗口例。生成结果真实201→分页/完整CSV/原字节下载→显式选择回窗口→同日真实卫星历元可照步骤执行。
+- 10幅已提交A01真实截图链接；不新增示意图或重跑浏览器。明确UTC字面与空间Date/Instant、十字段与特殊值、公里/米/度/度每秒、生产真实根数与非生产示例、旧结果快照/刷新、404/413/TTL。
+- 按最新A02描述目录候选与显式ID五项快照计数，目录兼容planningStartTime/planningEndTime/maxApproximationDays仅绑定不参与筛选；真正规划阈值≥0/缺省14且仅风险告警，仍尝试传播，不把候选/风险/成功传播/可见窗口混同。
+
+轻量标准库核验器 `verify_manual.py` + 原字节执行驱动 `run_verification.py` + 字节清单审计 `audit_artifacts.py`；不安装依赖、不启动Java/Chrome/数据库、不构建、不压测。没有Git操作、台账/计划/attrs修改。
+
+## 环境和来源绑定
+
+实际宿主 Windows-11-10.0.26200-SP0，Python3.14.5（C:/Python314/python.exe），PowerShell，项目cwd G:/5-YG/space-ground-visible。所有新Markdown/Python/JSON为UTF-8、LF；stdout/stderr原字节直接write_bytes，取保存文件SHA，不归一化日志。
+
+基准A02提交：714037e94f396fb8469b9676792d04a9d6a9a610；OpenAPI原SHA `df3bbd2ad3d1b7561ae0f7f56adce0c38db2e18f282f34494ee0f07eff69ebb6`。
+
+既有A01 JAR位于 `verification/runtime/A01/final-candidate/release/backend/server.jar`，本项仅读取重新计算原SHA：`d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71`；前端锁原SHA `bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8`。A02保存64产品源码指纹逐一匹配。当前部署脚本/控件/输入/截图及来源清单逐文件字节和SHA均在 `verification/A03/validation-result.json`。
+
+1133保护文件快照包括backend/src、frontend/src、deploy、A01/A02所有证据、A01所有截图、test-data、pom/lock/配置、台账/计划/attrs；限定核验阶段逐字节无变化。快照在手册/README编辑后、首次核验前建立，不把它误称A03开始前全仓库快照；同时A02既有源码SHA与A01图片/下载源SHA作为过去原值独立核验。
+
+README属于A03正常后续版本；A02 manifest绑定其验收标签原版本，不能拿当前README去覆盖或重写A02旧SHA。A03独立新manifest绑定当前README与手册。
+
+## 真实命令、失败和复测
+
+执行 `python -B verification/A03/run_verification.py --snapshot` 实际exit0，工具输出 `protected snapshot files=1133`。子进程序列如下，命令完整argv/cwd/UTC结束时刻与stdout/stderr实际保存路径/字节/SHA在 `verification/A03/commands.json`；每项失败日志原字节照存：
+
+| 次序 | 子进程 | UTC开始 | exit | 原stdout/原stderr字节 |
+|---|---|---|---:|---|
+| 1 | C:/Python314/python.exe -B verification/A03/verify_manual.py | 2026-10-14T02:22:50.388932+00:00 | 1 | 0 / 336 |
+| 2 | 同上 | 2026-10-14T02:23:47.639933+00:00 | 1 | 0 / 466 |
+| 3 | 同上 | 2026-10-14T02:24:21.344329+00:00 | 1 | 251 / 0 |
+| 4 | 同上 | 2026-10-14T02:24:42.809767+00:00 | 0 | 141 / 0 |
+| 5 | 同上 | 2026-10-14T02:26:44.625400+00:00 | 1 | 232 / 0 |
+| 6 | C:/Python314/python.exe -B verification/A03/audit_artifacts.py | 2026-10-14T02:26:45.495024+00:00 | 0 | 264 / 0 |
+| 7 | C:/Python314/python.exe -B verification/A03/verify_manual.py | 2026-10-14T02:27:32.881823+00:00 | 0 | 141 / 0 |
+| 8 | C:/Python314/python.exe -B verification/A03/audit_artifacts.py | 2026-10-14T02:27:33.499710+00:00 | 0 | 270 / 0 |
+
+第1次错误为核验器将simulation.raw（已保存字节摘要）当响应对象产生KeyError；第2次将window.rawText摘要传json.loads产生TypeError。修正来源分别为A01既有四图pathCounts+黄金结果、既有完整窗口响应下载并先核对原SHA，不重新跑计算。
+
+第3次失败包括新report对validation-result.json前向链接尚未落盘和核验器未展开anyOf合法nullable；修正分支校验。第5次是在报告补充字节审计/清单链接后两件新证据尚未生成，正确报告缺链接；第6次生成后第7/8次限定复核通过。没有将这些失败归咎产品或改写为成功。
+
+首次只读来源探查有Windows rg glob、错文件名和临时JSON类型错误；最终来源用真实deploy/部署说明.md、验收用例矩阵.json及既有完整下载文件。一次报告patch上下文不匹配，按实际原行重新apply；这些辅助操作未改产品、不列为通过检查。
+
+最终来源命令stdout（141字节）SHA `dff156ab23ec7d85d3dc60dadb80cca7e98b683a4ed14a228c006d2e709aa101`，stderr0字节SHA `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。其实际输出 passed=true、1786 checks、377 valueChecks、1133 protectedFiles、errors=[]；links=55、referencedScreenshots=10、csvInputs=2。
+
+最终字节审计stdout270字节SHA `3a592134e16aefb3aeaf0b2db9a236695cb9a7c2d34cb0f9f4453c278bfd74da`，stderr0字节。审计已有7命令14原流、当次已有27清单件，无错；驱动随后写本命令及其流，刷新当前清单为29件，清单自身排除以避免自指。
+
+最后实际只读Python核验清单29件全部字节/SHA匹配，所有新写MD/PY/JSON及README没有CRLF；原日志无CRCRLF。该读取退出0，当前明确原字节指纹：
+
+| 文档 | SHA256 |
+|---|---|
+| README.md | 7a98a5a3a58b43b3f0c96776e63041be8b436756fa230a48b706fe9d62de14f1 |
+| docs/软件功能使用说明.md | 1bc9fc38b384d908aa96119cc3c2af44ab3bfd10cec390ac8e452e06fb5e0a71 |
+| verification/A03/验证报告.md | 2c4639e9db80fbed4d77dbaa466dce160c74d74335c20bfdebf97222f4be9262 |
+
+机器证据入口：`verification/A03/commands.json`、`environment.json`、`validation-result.json`、`protected-before.json`、`byte-audit-result.json`、`artifact-manifest.json`及对应原日志。未更改A01/A02 manifest或历史输出。
+
+## 自审/限制/交接
+
+依据说明能找到六页签、源输入文件、字段/单位、等待实际终态、输出与恢复。空间双星示例须有实际双星站点库，fresh demo仅单星不隐含A01 fixture。完整拟合/模拟请求与A01实际提交逐值相同（仅省略outputDir），20列窗口与21列重定时来源完整读取，必要列与所有行结构核验；引用10PNG的字节/SHA均匹配A01已提交27图清单。
+
+本项不把静态来源检查称为再次实走浏览器，A01的12流程PASS仅读取已有证据。生产MySQL/达梦/MinIO/Nginx没有新实跑、无SLA、不隐去关闭WARN/Windows符号链接skip。数值模型/步长/精度、原合同均未改；D01—D06暂缓。根接力独立读者审查、全分支审查、台账与提交后才可做最终交付结论。

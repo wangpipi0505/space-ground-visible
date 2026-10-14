@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "commandsAudited": 8,
+  "rawStreamsAudited": 16,
+  "manifestFilesAudited": 51,
+  "historicalExitCodes": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "errors": [],
+  "note": "本次只审计当次已有清单；外层驱动在保存本命令后刷新清单，避免自指哈希。"
+}

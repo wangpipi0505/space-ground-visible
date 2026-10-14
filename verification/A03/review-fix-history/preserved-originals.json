@@ -1,0 +1,183 @@
+{
+  "saved": [
+    {
+      "original": {
+        "path": "docs/软件功能使用说明.md",
+        "bytes": 33717,
+        "sha256": "1bc9fc38b384d908aa96119cc3c2af44ab3bfd10cec390ac8e452e06fb5e0a71"
+      },
+      "saved": {
+        "path": "verification/A03/review-fix-history/docs__软件功能使用说明.md.before.bin",
+        "bytes": 33717,
+        "sha256": "1bc9fc38b384d908aa96119cc3c2af44ab3bfd10cec390ac8e452e06fb5e0a71"
+      }
+    },
+    {
+      "original": {
+        "path": "verification/A03/验证报告.md",
+        "bytes": 5895,
+        "sha256": "2c4639e9db80fbed4d77dbaa466dce160c74d74335c20bfdebf97222f4be9262"
+      },
+      "saved": {
+        "path": "verification/A03/review-fix-history/verification__A03__验证报告.md.before.bin",
+        "bytes": 5895,
+        "sha256": "2c4639e9db80fbed4d77dbaa466dce160c74d74335c20bfdebf97222f4be9262"
+      }
+    },
+    {
+      "original": {
+        "path": "verification/A03/validation-result.json",
+        "bytes": 283579,
+        "sha256": "b43f31a37bae45f3010cbab908a02008bb46affa2e09abd3b4c95c4514100eba"
+      },
+      "saved": {
+        "path": "verification/A03/review-fix-history/verification__A03__validation-result.json.before.bin",
+        "bytes": 283579,
+        "sha256": "b43f31a37bae45f3010cbab908a02008bb46affa2e09abd3b4c95c4514100eba"
+      }
+    },
+    {
+      "original": {
+        "path": "verification/A03/byte-audit-result.json",
+        "bytes": 317,
+        "sha256": "594771a17e6c7b6eff7c7f8992ecdc1135cc00aeafdfa3646723ab768bbbacb1"
+      },
+      "saved": {
+        "path": "verification/A03/review-fix-history/verification__A03__byte-audit-result.json.before.bin",
+        "bytes": 317,
+        "sha256": "594771a17e6c7b6eff7c7f8992ecdc1135cc00aeafdfa3646723ab768bbbacb1"
+      }
+    },
+    {
+      "original": {
+        "path": "verification/A03/artifact-manifest.json",
+        "bytes": 4592,
+        "sha256": "8579f029dc207030b41b440d2425572c3b00bfd32c0dfe98204e5ebc46733162"
+      },
+      "saved": {
+        "path": "verification/A03/review-fix-history/verification__A03__artifact-manifest.json.before.bin",
+        "bytes": 4592,
+        "sha256": "8579f029dc207030b41b440d2425572c3b00bfd32c0dfe98204e5ebc46733162"
+      }
+    },
+    {
+      "original": {
+        "path": "verification/runtime/A03-implementation-report.md",
+        "bytes": 7737,
+        "sha256": "9f5a6a4422978082d8d0746b516b2ef1e8e0961a026e4dd52c414e17ac93e58a"
+      },
+      "saved": {
+        "path": "verification/A03/review-fix-history/verification__runtime__A03-implementation-report.md.before.bin",
+        "bytes": 7737,
+        "sha256": "9f5a6a4422978082d8d0746b516b2ef1e8e0961a026e4dd52c414e17ac93e58a"
+      }
+    }
+  ],
+  "unchanged": [
+    {
+      "path": "verification/A03/commands.json",
+      "bytes": 5537,
+      "sha256": "5f449f06784013900057059a192c117b57a3ff754f4eae0dcfc33a151ee23ecb"
+    },
+    {
+      "path": "verification/A03/environment.json",
+      "bytes": 394,
+      "sha256": "b84341d50a5e41395c93d53e9e67cbc1bb06772b6443a4b0e1db65b2287b347a"
+    },
+    {
+      "path": "verification/A03/protected-before.json",
+      "bytes": 207623,
+      "sha256": "5e4a368224ac56bf71f9f4d9f966f4d84c94d8aa9f77fd43c0548f5a68eac23b"
+    },
+    {
+      "path": "verification/A03/verify-1-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/verify-1-stderr.txt",
+      "bytes": 336,
+      "sha256": "00fcc29682c6285bbe7e02af1460cca35700bce936375ae98ccaef4cd620655e"
+    },
+    {
+      "path": "verification/A03/verify-2-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/verify-2-stderr.txt",
+      "bytes": 466,
+      "sha256": "5d2b004257a7ebec2629438a3f3452d3ad02537e4106b98ab579fb468fa05ab7"
+    },
+    {
+      "path": "verification/A03/verify-3-stdout.txt",
+      "bytes": 251,
+      "sha256": "150d80774099084fd59ec71318af676f656666082a601dd4d3c1527186c80f3f"
+    },
+    {
+      "path": "verification/A03/verify-3-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/verify-4-stdout.txt",
+      "bytes": 141,
+      "sha256": "7593b7837fb7a54df3df9663f5e2487f90694266313f7dad404d5b366121385e"
+    },
+    {
+      "path": "verification/A03/verify-4-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/verify-5-stdout.txt",
+      "bytes": 232,
+      "sha256": "dc86e95dc50d2806cd9d7cb8d2c16af6162f0da8ad6f15bf1bd6ef25f1b81f9d"
+    },
+    {
+      "path": "verification/A03/verify-5-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/audit-6-stdout.txt",
+      "bytes": 264,
+      "sha256": "1d4b7cc48010a21fad8178195090216f61fb9e34b9f559b1efbb1b80353e4740"
+    },
+    {
+      "path": "verification/A03/audit-6-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/verify-7-stdout.txt",
+      "bytes": 141,
+      "sha256": "dff156ab23ec7d85d3dc60dadb80cca7e98b683a4ed14a228c006d2e709aa101"
+    },
+    {
+      "path": "verification/A03/verify-7-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/audit-8-stdout.txt",
+      "bytes": 270,
+      "sha256": "3a592134e16aefb3aeaf0b2db9a236695cb9a7c2d34cb0f9f4453c278bfd74da"
+    },
+    {
+      "path": "verification/A03/audit-8-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/verify-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/A03/verify-stderr.txt",
+      "bytes": 336,
+      "sha256": "00fcc29682c6285bbe7e02af1460cca35700bce936375ae98ccaef4cd620655e"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "report": {
+    "path": "verification/runtime/acceptance-final-fix-report.md",
+    "bytes": 18579,
+    "sha256": "a9ab42c2736141768ada4da7fb7f31955c03e86dd0382aaac106affb0a6985b4"
+  },
+  "commandCount": 11,
+  "protectionPassed": true,
+  "currentStable": [
+    {
+      "path": "verification/A02/build_contract.py",
+      "bytes": 90691,
+      "sha256": "a6c9ef65113fc881582f0c43f0bb83e1f7855120cfe9f9a3e95e15849fa815dd"
+    },
+    {
+      "path": "docs/接口文档.md",
+      "bytes": 223254,
+      "sha256": "0546e6075ee4c4eb0549e06b6cab99d7c60654c60cd2c91aa91b24a46e062e9e"
+    },
+    {
+      "path": "docs/openapi/openapi.json",
+      "bytes": 434382,
+      "sha256": "5e800207b11f6de429bc6d71f1327c8cd5ae4f4a80762d2ad3ca9e05658449a7"
+    },
+    {
+      "path": "docs/软件功能使用说明.md",
+      "bytes": 35800,
+      "sha256": "a6b9d1ff5781a71e5b0884c03206e01e4cdc82ecca29c854e027380624b9eb9a"
+    }
+  ]
+}

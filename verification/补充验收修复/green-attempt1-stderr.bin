@@ -1,0 +1,34 @@
+test_35_routes_refs_source_fields_and_selected_real_examples (__main__.TargetedContract.test_35_routes_refs_source_fields_and_selected_real_examples) ... ok
+test_I01_duration_compatibility (__main__.TargetedContract.test_I01_duration_compatibility) ... FAIL
+test_I01_fit_and_space_owner_rules_remain (__main__.TargetedContract.test_I01_fit_and_space_owner_rules_remain) ... ok
+test_I01_phase_event_is_compatibility_text (__main__.TargetedContract.test_I01_phase_event_is_compatibility_text) ... ok
+test_I01_simulation_time_metadata (__main__.TargetedContract.test_I01_simulation_time_metadata) ... ok
+test_I02_endpoint_empty_units_and_frames (__main__.TargetedContract.test_I02_endpoint_empty_units_and_frames) ... ok
+test_M01_manual_button_and_download_success (__main__.TargetedContract.test_M01_manual_button_and_download_success) ... FAIL
+test_M02_disclosed_boundaries_remain (__main__.TargetedContract.test_M02_disclosed_boundaries_remain) ... ok
+test_M03_preview_int32_only (__main__.TargetedContract.test_M03_preview_int32_only) ... ok
+test_M04_station_string_identity (__main__.TargetedContract.test_M04_station_string_identity) ... ok
+test_only_allowed_contract_changes (__main__.TargetedContract.test_only_allowed_contract_changes) ... ok
+
+======================================================================
+FAIL: test_I01_duration_compatibility (__main__.TargetedContract.test_I01_duration_compatibility)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 80, in test_I01_duration_compatibility
+    self.assertNotIn('共同观测', schema['description'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '共同观测' unexpectedly found in '默认600秒的旧兼容数值；当前端点模型不读取，不用于控制模拟CSV时域或共同观测窗口。'
+
+======================================================================
+FAIL: test_M01_manual_button_and_download_success (__main__.TargetedContract.test_M01_manual_button_and_download_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\补充验收修复\test_targeted_contract.py", line 146, in test_M01_manual_button_and_download_success
+    self.assertIn(text, row)
+    ~~~~~~~~~~~~~^^^^^^^^^^^
+AssertionError: '或重算' not found in '| 窗口预览/下载404 | 本页异常只显示错误，仍保留文件引用和此前成功预览（如有），不会自动清旧；旧页/旧ID不能视为恢复成功。本地来源用原生选择重新上传已保存的完整CSV。生成来源回拟合/模拟/重定时页：“重新登记结果文件”按钮仅在该生成页自身预览/完整CSV/下载发生辅助错误后显示；若无按钮，可先点该结果的“HTTP 下载原CSV”。下载成功则按实际成功处理；只有实际辅助请求失败并显示按钮时，才在原CSV仍存在或已恢复的条件下重新登记；也可直接重算。取得有效引用后，在窗口先选空项并显式选择有效生成结果，等待真实预览成功后再计算或下载；重新上传/选择会清旧引用与预览 |'
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.016s
+
+FAILED (failures=2)

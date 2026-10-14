@@ -1,0 +1,2 @@
+{"passed": true, "checks": 1782, "valueChecks": 377, "protectedFiles": 1133, "errors": []}
+links=51; referencedScreenshots=10; csvInputs=2

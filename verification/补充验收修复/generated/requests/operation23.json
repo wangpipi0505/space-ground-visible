@@ -1,0 +1,61 @@
+{
+  "selections": [
+    {
+      "targetId": "2",
+      "targetName": "演示目标星（非生产资料）",
+      "observerSatelliteIds": [
+        "1"
+      ],
+      "observerSatelliteNames": [
+        "演示观测星（非生产资料）"
+      ],
+      "arcs": [
+        {
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:10:00.000Z",
+          "observerIlluminations": [
+            {
+              "satelliteId": "1",
+              "satelliteName": "演示观测星（非生产资料）",
+              "state": "SUNLIT",
+              "stateName": "阳照"
+            }
+          ],
+          "targetIllumination": {
+            "targetId": "2",
+            "targetName": "演示目标星（非生产资料）",
+            "state": "SUNLIT",
+            "stateName": "阳照"
+          },
+          "illuminationSegments": [
+            {
+              "startTime": "2026-07-01T10:00:00.000Z",
+              "endTime": "2026-07-01T10:10:00.000Z",
+              "observerIlluminations": [
+                {
+                  "satelliteId": "1",
+                  "satelliteName": "演示观测星（非生产资料）",
+                  "state": "SUNLIT",
+                  "stateName": "阳照"
+                }
+              ],
+              "targetIllumination": {
+                "targetId": "2",
+                "targetName": "演示目标星（非生产资料）",
+                "state": "SUNLIT",
+                "stateName": "阳照"
+              },
+              "durationSec": 600.0
+            }
+          ],
+          "durationSec": 600.0
+        }
+      ],
+      "observationType": "SINGLE",
+      "observationTypeName": "单星观测",
+      "conciseSummary": "任务摘要：A(600.000)\nA 星情况：\n1:2026-07-01T10:00:00.000Z---2026-07-01T10:10:00.000Z(600.000s)",
+      "targetNorad": "null",
+      "targetWeightKg": 120.0
+    }
+  ]
+}

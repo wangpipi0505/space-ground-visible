@@ -2752,7 +2752,7 @@
             "required": false,
             "schema": {
               "type": "integer",
-              "format": "int64",
+              "format": "int32",
               "default": 1,
               "minimum": 1
             },
@@ -2764,7 +2764,7 @@
             "required": false,
             "schema": {
               "type": "integer",
-              "format": "int64",
+              "format": "int32",
               "default": 50,
               "minimum": 1
             },
@@ -7163,13 +7163,13 @@
           },
           "taskStartTime": {
             "type": "string",
-            "description": "字面UTC输出开始时刻；拟合须覆盖首观测，模拟与物理起落区间分开。",
+            "description": "可空/空白的任务/文件元数据；非空仍按原时间解析，参与告警及文件命名，不裁剪或扩展模拟CSV时域；物理时域由launchTimeUtc及端点模型确定的落点时间决定。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:289",
             "nullable": true
           },
           "taskEndTime": {
             "type": "string",
-            "description": "字面UTC输出结束时刻；拟合须覆盖末观测，模拟与物理起落区间分开。",
+            "description": "可空/空白的任务/文件元数据；非空仍按原时间解析，参与告警及文件命名，不裁剪或扩展模拟CSV时域；不要求它晚于taskStartTime，物理时域仍由端点模型决定。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:290",
             "nullable": true
           },
@@ -7213,14 +7213,14 @@
           },
           "launchPointCoordFrame": {
             "type": "string",
-            "description": "发射端点原框架，默认J2000；支持J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA，归一去空白/横杠/下划线。",
+            "description": "发射端点原框架；缺失/null/空串/空白均回退J2000；支持J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA，归一去空白/横杠/下划线。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:297",
             "nullable": true,
             "default": "J2000"
           },
           "launchPointUnit": {
             "type": "string",
-            "description": "发射端点坐标单位，默认m，原m/km/0.1m分支。",
+            "description": "发射端点坐标单位；缺失/null/空串/空白均回退m；非空保留原m/km/0.1m及数值倍率。地理框架x=经度°、y=纬度°、z=高度m，忽略单位。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:298",
             "nullable": true,
             "default": "m"
@@ -7248,14 +7248,14 @@
           },
           "impactPointCoordFrame": {
             "type": "string",
-            "description": "落点端点原框架，默认J2000。",
+            "description": "落点端点原框架；缺失/null/空串/空白均回退J2000；支持与launchPointCoordFrame相同的框架及归一规则。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:302",
             "nullable": true,
             "default": "J2000"
           },
           "impactPointUnit": {
             "type": "string",
-            "description": "落点端点坐标单位，默认m。",
+            "description": "落点端点坐标单位；缺失/null/空串/空白均回退m；非空保留原m/km/0.1m及数值倍率。地理框架x=经度°、y=纬度°、z=高度m，忽略单位。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:303",
             "nullable": true,
             "default": "m"
@@ -7343,7 +7343,7 @@
           "durationSec": {
             "type": "number",
             "format": "double",
-            "description": "该时段持续秒数；共同观测父窗口按成员交集计算。",
+            "description": "默认600秒的旧兼容数值；当前端点模型不读取，不用于控制模拟CSV时域或共同观测窗口。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:320",
             "default": 600.0
           },
@@ -7455,13 +7455,13 @@
           },
           "startTime": {
             "type": "string",
-            "description": "窗口开始UTC；空间ISO Instant，弹道输出为字面UTC文本。",
+            "description": "原兼容文本，可空/空白；当前端点模型不读取，不做事件起止顺序业务校验；仅接收phaseEvents并在告警中读取事件数量。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:342",
             "nullable": true
           },
           "endTime": {
             "type": "string",
-            "description": "窗口结束UTC，须晚于开始；空间ISO Instant，弹道输出为字面UTC文本。",
+            "description": "原兼容文本，可空/空白；当前端点模型不读取，不做事件起止顺序业务校验；仅接收phaseEvents并在告警中读取事件数量。",
             "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:343",
             "nullable": true
           },
@@ -8298,7 +8298,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "目录主键；实体响应为 Long 数字，任务记录响应为十进制字符串。",
+            "description": "原地面站字符串主键，如T04-STATION；不按Long数字身份解释。",
             "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/StationEntity.java:19",
             "nullable": true
           },

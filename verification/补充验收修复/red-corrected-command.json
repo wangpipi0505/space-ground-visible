@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-B",
+    "verification/补充验收修复/test_targeted_contract.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "started": "2026-10-14T03:16:23.131916+00:00",
+  "ended": "2026-10-14T03:16:23.400665+00:00",
+  "exit": 1,
+  "stdout": "verification/补充验收修复/red-corrected-stdout.bin",
+  "stdoutBytes": 97,
+  "stdoutSha256": "929e8992924e14b4449b0b34ecf408373a819f162e769263560f6797f33e0739",
+  "stderr": "verification/补充验收修复/red-corrected-stderr.bin",
+  "stderrBytes": 163447,
+  "stderrSha256": "4b6a135608c28df483dcd45fbe3ba244c245cd9216fa5f4bc7909cb5745a0313"
+}

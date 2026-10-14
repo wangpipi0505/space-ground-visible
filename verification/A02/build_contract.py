@@ -17,7 +17,7 @@ def read(path):
 
 def dump(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    path.write_bytes((json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode('utf-8'))
 
 def ref(name):
     return {'$ref': '#/components/schemas/' + name}
@@ -249,6 +249,16 @@ MEANINGS = {
 }
 
 OWNER_MEANINGS = {
+ ('SimulationRequest','taskStartTime'):'可空/空白的任务/文件元数据；非空仍按原时间解析，参与告警及文件命名，不裁剪或扩展模拟CSV时域；物理时域由launchTimeUtc及端点模型确定的落点时间决定。',
+ ('SimulationRequest','taskEndTime'):'可空/空白的任务/文件元数据；非空仍按原时间解析，参与告警及文件命名，不裁剪或扩展模拟CSV时域；不要求它晚于taskStartTime，物理时域仍由端点模型决定。',
+ ('SimulationRequest','durationSec'):'默认600秒的旧兼容数值；当前端点模型不读取，不用于控制模拟CSV时域或共同观测窗口。',
+ ('PhaseEvent','startTime'):'原兼容文本，可空/空白；当前端点模型不读取，不做事件起止顺序业务校验；仅接收phaseEvents并在告警中读取事件数量。',
+ ('PhaseEvent','endTime'):'原兼容文本，可空/空白；当前端点模型不读取，不做事件起止顺序业务校验；仅接收phaseEvents并在告警中读取事件数量。',
+ ('SimulationRequest','launchPointUnit'):'发射端点坐标单位；缺失/null/空串/空白均回退m；非空保留原m/km/0.1m及数值倍率。地理框架x=经度°、y=纬度°、z=高度m，忽略单位。',
+ ('SimulationRequest','impactPointUnit'):'落点端点坐标单位；缺失/null/空串/空白均回退m；非空保留原m/km/0.1m及数值倍率。地理框架x=经度°、y=纬度°、z=高度m，忽略单位。',
+ ('SimulationRequest','launchPointCoordFrame'):'发射端点原框架；缺失/null/空串/空白均回退J2000；支持J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA，归一去空白/横杠/下划线。',
+ ('SimulationRequest','impactPointCoordFrame'):'落点端点原框架；缺失/null/空串/空白均回退J2000；支持与launchPointCoordFrame相同的框架及归一规则。',
+ ('StationEntity','id'):'原地面站字符串主键，如T04-STATION；不按Long数字身份解释。',
  ('TargetQueryRequest','maxApproximationDays'):'可空的兼容Long字段；目录查询业务不读取它，不套用配置默认阈值，也不做非负业务校验；仍须满足Long类型绑定。',
  ('TargetFilterBreakdownResponse','belongsHit'):'目录查询或无显式ID目录规划：目标ID/国籍前置目录条件后的数量；显式目标ID快照规划：selectedTargetCount。',
  ('TargetFilterBreakdownResponse','weightHit'):'目录查询或无显式ID目录规划：叠加质量条件后的数量；显式目标ID快照规划：selectedTargetCount。',
@@ -561,6 +571,9 @@ for index,(method,path,title,req,res) in enumerate(ROUTES,1):
         if path.endswith('task-results'): parameters.append(param('status','query','string','PENDING/RUNNING/SUCCEEDED/FAILED/CANCELLED，空白不限；非法400。'))
     if path.endswith('/preview') and '{fileId}' in path:
         parameters += [param('page','query','integer','页码≥1。',1,1),param('limit','query','integer','1..可配置preview-max-rows（默认500），默认50。',50,1)]
+        # 该控制器绑定Java int；只收紧文件预览，空间Long分页继续保留int64。
+        for parameter in parameters:
+            if parameter['name'] in ['page','limit']: parameter['schema']['format']='int32'
     if parameters: operation['parameters']=parameters
     if req:
         content_type='multipart/form-data' if req=='MultipartUpload' else 'application/json'
@@ -656,9 +669,9 @@ INTRO=r'''# 空间与弹道目标可见性完整接口文档（A02）
 ## 共同约定
 
 - 服务示例根 `http://127.0.0.1:8080`；Vue 同源 `/api`，正式部署反向代理及根变量见 [部署说明](../deploy/部署说明.md) 与 [前端配置说明](前端载荷配置说明.md)。没有新增认证、统一包装或伪分页。
-- 空间请求卫星/目标 ID 是 Long JSON 数字；目录实体及下传响应仍为数字。观测结果身份是字符串；持久记录主键是十进制字符串，路径实际绑定 Long；弹道身份全部字符串。不能把所有 Long 泛化成字符串，也不能把记录 ID 转成 JavaScript Number。
+- 空间请求卫星/目标 ID 是 Long JSON 数字；卫星/目标目录ID及下传satelliteId为数字，地面站原主键及下传stationId保持字符串。观测结果身份是字符串；持久记录主键是十进制字符串，路径实际绑定 Long；弹道身份全部字符串。不能把所有 Long 泛化成字符串，也不能把记录 ID 转成 JavaScript Number。
 - 空间时间为 UTC ISO Instant（窗口、任务输出 `yyyy-MM-ddTHH:mm:ss.SSSZ`）；记录 `createTime/completeTime` 为 UTC LocalDateTime 三位毫秒**无 Z**。弹道输入/输出是 `yyyy/MM/dd HH:mm:ss[.SSS]` 或 `yyyy-MM-dd HH:mm:ss[.SSS]` 字面 UTC，不经过浏览器 Date 时区加减。
-- 默认值仅在字段缺失时初始化；显式 null、空白、空集合是否回退见各字段。`nullable` 与 `required` 独立：属性可不出现不等于其允许 null；标准必填数值明确拒绝 null。默认Jackson保留显式null，只有标注NON_NULL的selectionJson、winToolReport、观测目标元数据/单星statistics等空字段省略，satelliteSegments/illuminationSegments按NON_EMPTY省略空数组。窗口手写JSON保留非有限数的null，不能把两种序列化混同。
+- DTO字段初始化默认值在缺失时生效；显式 null、空白、空集合是否被业务归一回退见各字段。模拟两PointUnit缺失/null/空串/空白均回退m，两PointCoordFrame同样均回退J2000。`nullable` 与 `required` 独立：属性可不出现不等于其允许 null；标准必填数值明确拒绝 null。默认Jackson保留显式null，只有标注NON_NULL的selectionJson、winToolReport、观测目标元数据/单星statistics等空字段省略，satelliteSegments/illuminationSegments按NON_EMPTY省略空数组。窗口手写JSON保留非有限数的null，不能把两种序列化混同。
 - 正文各操作请求/响应指向完整组件字段表，数组、继承及嵌套组件继续沿链接展开。`requestJson/resultJson/skippedPairsJson/selectionJson` 始终是 JSON **原文字符串**，不是嵌套对象。未知目录原值的物理单位不猜测。
 - 样例来自 A01 的非生产隔离测试；每例保存原字节 SHA、事件名、实际状态和源位置。正文为**结构摘录**（数组只展示首项、长 JSON 原文字符串展示前缀），完整响应位于样例集合；计算统计不得由正文摘录数组重新相加。动态 `taskId/fileId/recordId/serverPath/csvPath` 属于当次运行，已过期引用不可直接重放。
 
@@ -711,7 +724,7 @@ YYYY,MM,dd,HH,mm,ss.SSS,ECEF_X(m),ECEF_Y(m),ECEF_Z(m),energy,dt(ms),ECI_X(m),ECI
 
 102 `coordinateInfo > coordinate > coords > 扁平字段`，`targetInfo > target > 扁平字段`，时间 `tack3d_time_code` 非空优先于 `track3d_time_code`。编码位置0.1m/速度0.0001m/s/加速度0.01m/s²，保留原 targetOrbit 单位比例自动识别与 warnings；17位时间码应发送字符串，浏览器未引号数字会损失精度。物理 launch/impact 时间与任务输出时间分开。
 
-端点框架归一去横杠/下划线/空格并大写：J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA；地理框架 x=经度°、y=纬度°、z=高度m。位置单位 m/meter/meters、km/kilometer/kilometers、0.1m/dm/package102/102，或原数值倍率；空单位原倍率0.1m。模拟字段缺省unit=m；显式空值与缺省不同。phaseEvents及旧速度/推力字段可绑定，当前端点求解路径没有读取其事件动力学，不额外宣称生效。
+端点框架归一去横杠/下划线/空格并大写：J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA。模拟launchPointUnit/impactPointUnit缺失/null/空串/空白均为m，launchPointCoordFrame/impactPointCoordFrame缺失/null/空串/空白均为J2000；102端点launch_pos_unit/impact_pos_unit未给有效单位时为0.1m。非空位置单位保留原m/meter/meters、km/kilometer/kilometers、0.1m/dm/package102/102及数值倍率。两种输入的地理框架均忽略单位，x=经度°、y=纬度°、z=高度m。模拟taskStartTime/taskEndTime可空/空白，非空按原时间解析并参与告警与文件命名，不裁剪或扩展模拟CSV物理时域；默认600秒的durationSec是当前端点模型不读取的旧兼容数值。phaseEvents仅接收并在告警中读取数量，startTime/endTime为不读取的兼容文本，没有事件起止顺序业务校验；旧速度/推力字段不额外宣称生效。FitRequest任务时间仍保留原解析、须覆盖首末观测及成对给值时结束晚于开始的真实范围规则；空间窗口durationSec仍为真实时段持续秒数。
 
 窗口 `allResults` 按输入偏移顺序回填；best按累计double时长严格大于才替换，并列保留首次。累计逐卫星/目标/载荷弧段相加、重叠不去重；有点但非正时长旧回退按点数。finalVisibleWindow 是最早到最晚包络，可能含不可见间隔；稳定弧段至少2点且≥0.001秒，退出滞回保持原1e-6度。points=0只去点数组，统计保留。空间组合求交，最小时长判父窗口，光照明细与逐星原窗口不能重复计为独立合格窗口。
 
@@ -781,7 +794,8 @@ def markdown():
         if req=='MultipartUpload': arguments+=['-F','file=@test-data/reference/ballistic/trajectory-0.1s-standard.csv']
         elif req:
             request_path='verification/A02/requests/operation'+str(index).zfill(2)+'.json'
-            dump(ROOT/request_path,sample['request'])
+            # 文档继续引用既有请求路径；新轮生成字节仅写显式证据目录，不覆盖旧A02请求。
+            dump(OUT/'requests'/('operation'+str(index).zfill(2)+'.json'),sample['request'])
             arguments+=['-H','Content-Type: application/json','--data-binary','@'+request_path]
         command='curl.exe '+ ' '.join("'"+a+"'" if ' ' in a or a.startswith(('@','file=')) else a for a in arguments)+' "$api'+concrete+'"'
         if res=='binary': command+=' --output "$env:TEMP/ballistic-download.csv"'
@@ -821,10 +835,15 @@ def markdown():
             desc=field.get('description','按所引用完整嵌套组件解释，数组保持原顺序。').replace('|','\\|').replace('\n',' ')
             parts+=['| `'+fname+'` | '+display_type(field)+' | '+('是' if fname in own.get('required',[]) else '否')+' | '+('是' if permits_null(field) else '否')+' | '+'; '.join(options).replace('|','\\|')+' | '+desc+' |\n']
     parts+=['\n## 来源、验证与普通 Java 工具入口\n\n原 T03 [接口与数值口径基线](接口与数值口径基线.md) 与 T29 [接口使用说明](接口使用说明.md) 保留为历史来源，不替代本完整字段合同。A01 [测试报告](../verification/A01/测试报告.md) 和 [35路由原矩阵](../verification/A01/final/http-extended-summary.json) 提供原业务验证。普通Java8外推工具的签名、独立类路径与线程边界见 [独立外推工具与后续方案](独立外推工具与后续方案.md)；它们不是新增HTTP路由，D01—D06仍暂缓。\n']
-    (ROOT/'docs/接口文档.md').write_text(''.join(parts),encoding='utf-8')
+    (ROOT/'docs/接口文档.md').write_bytes(''.join(parts).encode('utf-8'))
     dump(OUT/'curl-cases.json',curl_cases)
 
 if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description='生成当前接口文档；新轮须用--evidence-dir隔离辅助证据。')
+    parser.add_argument('--evidence-dir',type=Path,default=OUT)
+    args=parser.parse_args()
+    OUT=args.evidence_dir.resolve()
     dump(ROOT/'docs/openapi/openapi.json',OPENAPI)
     dump(OUT/'examples.json',EXAMPLES)
     source_paths={ROOT/info['source'] for info in CLASSES.values()} | {SOURCE/'com/tx/alg/OrbitCalculator.java',SOURCE/'com/runisys/orbit/spacevisibility/SpaceTargetVisibleApplication.java',ROOT/'backend/src/main/resources/application.yml',ROOT/'frontend/src/api/types.ts',ROOT/'frontend/src/api/ballisticWindowTypes.ts'} | set((SOURCE/'com/runisys/orbit/spacevisibility/api').rglob('*.java')) | set((SOURCE/'com/runisys/orbit/spacevisibility/application').glob('*.java')) | set((SOURCE/'com/runisys/orbit/spacevisibility/application/ballistic').glob('*.java')) | set((SOURCE/'com/runisys/orbit/spacevisibility/infrastructure/files').glob('*.java'))
