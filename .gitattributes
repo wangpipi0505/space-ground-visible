@@ -46,6 +46,12 @@ verification/A03/**/*.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 verification/A03/**/*.py -text whitespace=cr-at-eol
 verification/A03/review-fix-history/** -text -whitespace
 docs/软件功能使用说明.md -text whitespace=cr-at-eol,-blank-at-eol
+# A04 精度测试与独立核验使用实际字节摘要；保留 Java/Maven 原流和修复前小备份。
+verification/A04/** -text whitespace=cr-at-eol
+verification/A04/**/*.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+verification/A04/**/*.bin -text -whitespace
+verification/A04/surefire-reports/*.dump* -text -whitespace
+verification/A04/delivery-fix/history/** -text -whitespace
 # 整体审查修复的新证据单独绑定，二进制后缀也可能保存真实 CRLF 终端文本。
 verification/补充验收修复/** -text whitespace=cr-at-eol
 verification/补充验收修复/**/*.bin -text -whitespace

@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path\nimport ast,json,hashlib\nout=Path('verification/A04')\npaths=[out/n for n in ('finalize_precision.py','run_precision.py','selfcheck_precision.py','delivery_check.py','精度测试报告.md','candidate-delivery-manifest.json')]+list((out/'delivery-fix').glob('*.py'))\nfor p in paths:\n raw=p.read_bytes();assert b'\\r' not in raw and not raw.startswith(b'\\xef\\xbb\\xbf'),str(p)\n if p.suffix=='.py': ast.parse(raw.decode('utf-8'),filename=str(p))\nprint('UTF8无BOM/LF及Python语法：',len(paths),'文件通过；只解析，没有Java或数学计算')\nfor p in sorted((out/'delivery-fix').glob('*-command.json')):\n r=json.loads(p.read_text(encoding='utf-8'))\n for k in ('stdout','stderr'):\n  f=p.parent/r[k+'File'];assert f.stat().st_size==r[k+'Bytes'] and hashlib.sha256(f.read_bytes()).hexdigest()==r[k+'Sha256']\nprint('修复命令精确argv/原始双流bytes/SHA已核对')"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:31:02.450574+00:00",
+  "endedUtc": "2026-10-14T04:31:02.518043+00:00",
+  "exitCode": 0,
+  "stdoutFile": "syntax-lf-green.stdout.bin",
+  "stdoutBytes": 143,
+  "stdoutSha256": "4394666977b9dda6948cfa08c52ccd5df44cabe50766981a7dd1b4895873467a",
+  "stderrFile": "syntax-lf-green.stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

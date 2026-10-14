@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path\nimport hashlib,json,runpy\nout=Path('verification/A04'); module=runpy.run_path(str(out/'delivery_check.py'))\nprint(json.dumps(module['verify'](Path.cwd()),ensure_ascii=False,indent=2))\nreport=out/'交付入口修复报告.md'; raw=report.read_bytes();assert b'\\r' not in raw and not raw.startswith(b'\\xef\\xbb\\xbf')\nmanifest=out/'candidate-delivery-manifest.json'; assert hashlib.sha256(manifest.read_bytes()).hexdigest() in raw.decode('utf-8')\nfor item in json.loads((out/'delivery-fix/final-fingerprints.json').read_text(encoding='utf-8'))['files']:\n p=Path(item['path']);assert p.stat().st_size==item['bytes'] and hashlib.sha256(p.read_bytes()).hexdigest()==item['sha256']\nfor p in sorted((out/'delivery-fix').glob('*-command.json')):\n r=json.loads(p.read_text(encoding='utf-8'))\n for stream in ('stdout','stderr'):\n  f=p.parent/r[stream+'File'];assert f.stat().st_size==r[stream+'Bytes'] and hashlib.sha256(f.read_bytes()).hexdigest()==r[stream+'Sha256']\nprint('正式修复报告UTF8LF、所引用当前manifest SHA、最终指纹及全部已完成修复检查双流通过')"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:32:51.583987+00:00",
+  "endedUtc": "2026-10-14T04:32:52.212694+00:00",
+  "exitCode": 0,
+  "stdoutFile": "readonly-final-green.stdout.bin",
+  "stdoutBytes": 683,
+  "stdoutSha256": "2fb915a06aa2fbd44b44df40ceba6c14bf3ebd055072395e2a061968b5b3e90e",
+  "stderrFile": "readonly-final-green.stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

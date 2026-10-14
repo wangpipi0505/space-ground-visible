@@ -1,0 +1,199 @@
+"""A04专项精度新执行：复用原驱动，仅写本项目录；命令双流按原字节保存。"""
+from pathlib import Path
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+from unittest.mock import patch
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'verification/A01'))
+sys.path.insert(0, str(ROOT / 'scripts'))
+from acceptance_shared import Acceptance, JAVA, sha
+import run_baseline as baseline
+import run_space_baseline as space
+
+TESTS = ['TargetTrajectoryFitterInterpolationTest', 'OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest',
+         'OrbitCalculatorResultTimeTest', 'TimeFrameAdaptersTest', 'BallisticPropagationIsolationTest',
+         'SpacePropagationIsolationTest', 'SharedGeometryTest', 'GroundStationGeometryTest',
+         'SolarGeometryTest', 'SolarGeometrySunSourceTest', 'TimeWindowScannerTest', 'SharedWindowTest',
+         'CombinationWindowCalculatorTest', 'WinToolDownlinkReferenceTest',
+         'WinToolTargetWindowSixTargetCountReferenceTest', 'WinToolTargetWindowSixReferenceTest',
+         'WinToolTargetWindowFourTargetCountReferenceTest', 'DownlinkWindowValidatorTest',
+         'StandardPayloadScanTest', 'StandardPayloadRequestTest', 'StandardPayloadMathTest',
+         'StandardPayloadSolarContextTest', 'PayloadVisibilityEvaluatorTest']
+
+
+class Precision(Acceptance):
+    """借用已有完整数值任务，实例路径明确隔离A04，禁止历史证据覆盖。"""
+    def __init__(self):
+        super().__init__(final=True)
+        self.OUT = ROOT / 'verification/A04'
+        self.RUN = ROOT / 'verification/runtime/A04'
+        self.CLEAN = self.RUN / 'current-source'
+        self.OUT.mkdir(exist_ok=True)
+        self.RUN.mkdir(exist_ok=True)
+
+    def execute(self, name, arguments, cwd=ROOT):
+        """精确记录argv/cwd/UTC/退出码；不把Windows流解码后重新编码。"""
+        stdout = self.OUT / (name + '.stdout.bin')
+        stderr = self.OUT / (name + '.stderr.bin')
+        assert not stdout.exists() and not stderr.exists(), '拒绝覆盖命令证据：' + name
+        env = dict(os.environ, JAVA_HOME=str(JAVA), PYTHONIOENCODING='utf-8', PYTHONDONTWRITEBYTECODE='1')
+        env['PATH'] = str(JAVA / 'bin') + os.pathsep + env['PATH']
+        started = datetime.now(timezone.utc).isoformat()
+        with stdout.open('wb') as out, stderr.open('wb') as err:
+            result = subprocess.run(arguments, cwd=cwd, env=env, stdout=out, stderr=err)
+        self.save(name + '-command', dict(argv=arguments, cwd=str(cwd), startedUtc=started,
+            endedUtc=datetime.now(timezone.utc).isoformat(), exitCode=result.returncode,
+            stdoutFile=stdout.name, stderrFile=stderr.name, stdoutSha256=sha(stdout), stderrSha256=sha(stderr)))
+        print(name, 'exit=', result.returncode, flush=True)
+        result.check_returncode()
+
+    def prepare(self):
+        """仅复制当前必要源码和数据，按A01最终清单逐SHA核对；生成目录不参与复制。"""
+        assert not self.CLEAN.exists()
+        manifest = json.loads((ROOT / 'verification/A01/final/clean-source-manifest.json').read_text(encoding='utf-8'))
+        files = []
+        for item in manifest['files']:
+            name = item['path']
+            if not name.startswith(('backend/', 'scripts/', 'test-data/')):
+                continue
+            source = ROOT / name
+            assert sha(source) == item['sha256'], name
+            dest = self.CLEAN / name
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, dest)
+            files.append(dict(path=name, sha256=sha(dest)))
+        self.save('current-source-manifest', dict(sourceCommit='94eb0dfa363dad4f1d886037289f5a89699fa19c',
+            a01ManifestSha256=sha(ROOT / 'verification/A01/final/clean-source-manifest.json'), files=files,
+            fileCount=len(files), sourceMatchesA01Final=True))
+        protected = []
+        # 保存既有验收/事项证据和产品输入保护快照；runtime旧缓存只绑定实际用到的类与JAR。
+        for directory in ('backend', 'frontend', 'scripts', 'test-data', 'verification/A01', 'verification/A02', 'verification/A03'):
+            for path in sorted((ROOT / directory).rglob('*')):
+                if path.is_file() and not any(part in ('target', 'node_modules', '.git', '__pycache__') for part in path.parts):
+                    protected.append(dict(path=path.relative_to(ROOT).as_posix(), sha256=sha(path)))
+        for directory in sorted((ROOT / 'verification').glob('T*')):
+            for path in sorted(directory.rglob('*')):
+                if path.is_file():
+                    protected.append(dict(path=path.relative_to(ROOT).as_posix(), sha256=sha(path)))
+        for directory in ('verification/runtime/T04/space-java8-validation/target/classes', 'verification/baseline-copies/ballistic/build'):
+            for path in sorted((ROOT / directory).rglob('*')):
+                if path.is_file():
+                    protected.append(dict(path=path.relative_to(ROOT).as_posix(), sha256=sha(path)))
+        path = ROOT / 'verification/runtime/T04/space-runner/classpath.txt'
+        protected.append(dict(path=path.relative_to(ROOT).as_posix(), sha256=sha(path)))
+        self.save('protected-before', dict(files=protected, fileCount=len(protected)))
+        self.original()
+        shutil.copy2(self.OUT / 'original-directory-check.json', self.OUT / 'original-directory-before.json')
+        self.execute('java-version', [str(JAVA / 'bin/java.exe'), '-version'])
+        self.execute('maven-version', [shutil.which('mvn.cmd'), '-version'])
+        self.save('selected-tests', dict(classes=TESTS, reason='传播原bits、时间坐标、太阳几何、窗口及WinTool真实参考、拟合模拟重定时；不执行HTTP/前端/性能套件'))
+
+    def build(self):
+        """在新副本执行Maven package与精度JUnit，XML是用例数量唯一来源。"""
+        self.execute('precision-maven', [shutil.which('mvn.cmd'), '-Dtest=' + ','.join(TESTS), 'package'], self.CLEAN / 'backend')
+        reports = []
+        totals = dict(tests=0, failures=0, errors=0, skipped=0)
+        for p in sorted((self.CLEAN / 'backend/target/surefire-reports').glob('TEST-*.xml')):
+            node = ET.parse(p).getroot()
+            item = dict(file=p.name, sha256=sha(p), cases=[c.attrib['name'] for c in node.findall('testcase')],
+                        **{key: int(node.attrib[key]) for key in totals})
+            reports.append(item)
+            for key in totals:
+                totals[key] += item[key]
+        assert len(reports) == len(TESTS) and totals['tests'] > 0 and not totals['failures'] and not totals['errors'] and not totals['skipped'], totals
+        shutil.copytree(self.CLEAN / 'backend/target/surefire-reports', self.OUT / 'surefire-reports')
+        self.save('test-summary', dict(totals=totals, reports=reports))
+        jar = self.CLEAN / 'backend/target/space-target-visible-1.0.0-SNAPSHOT.jar'
+        classes = [dict(path=p.relative_to(self.CLEAN).as_posix(), sha256=sha(p))
+                   for p in sorted((self.CLEAN / 'backend/target/classes').rglob('*')) if p.is_file()]
+        self.save('new-build-bindings', dict(jarPath=str(jar), jarSha256=sha(jar), classes=classes,
+            sourceManifestSha256=sha(self.OUT / 'current-source-manifest.json'), commandSha256=sha(self.OUT / 'precision-maven-command.json')))
+
+    def numeric(self):
+        """保留原15/9/21完整调度及比较；patch仅控制日志和空间子入口的执行方式。"""
+        def logged_run(command, cwd, log):
+            log = Path(log)
+            name = log.relative_to(self.OUT).with_suffix('').as_posix().replace('/', '-')
+            self.execute(name, command, cwd)
+
+        inherited_execute = self.execute
+
+        def capture_execute(name, arguments, cwd=ROOT):
+            if name != 'space9-capture':
+                return inherited_execute(name, arguments, cwd)
+            # 原space main在同一进程执行以注入双流原字节记录；argv与参数完全保留。
+            with patch.object(sys, 'argv', arguments[1:]), patch.object(space, 'run', logged_run):
+                assert space.main() == 0
+
+        with patch.object(baseline, 'run', logged_run), patch.object(self, 'execute', capture_execute):
+            super().numeric()
+
+    def protect(self):
+        """重新计算保护文件SHA及新副本输入SHA，出现变化即失败，原目录再独立只读核对。"""
+        before = json.loads((self.OUT / 'protected-before.json').read_text(encoding='utf-8'))
+        changes = [i['path'] for i in before['files'] if not (ROOT / i['path']).is_file() or sha(ROOT / i['path']) != i['sha256']]
+        copied = json.loads((self.OUT / 'current-source-manifest.json').read_text(encoding='utf-8'))
+        copy_changes = [i['path'] for i in copied['files'] if sha(self.CLEAN / i['path']) != i['sha256']]
+        self.save('protected-after', dict(passed=not changes and not copy_changes, filesChecked=len(before['files']),
+            changes=changes, currentSourceFilesChecked=len(copied['files']), currentSourceChanges=copy_changes))
+        assert not changes and not copy_changes
+        self.original()
+        shutil.copy2(self.OUT / 'original-directory-check.json', self.OUT / 'original-directory-after.json')
+
+    def coordinates(self):
+        """对全部四份新CSV状态逐行测量原坐标转换自洽，不增加传播模型。"""
+        dependencies = (self.RUN / 'ballistic-runner/classpath.txt').read_text().strip()
+        cp = str(self.CLEAN / 'backend/target/classes') + os.pathsep + dependencies
+        runner = self.RUN / 'coordinate-runner'
+        runner.mkdir()
+        self.execute('coordinate-compile', [str(JAVA / 'bin/javac.exe'), '-encoding', 'UTF-8', '-cp', cp,
+            '-d', str(runner), str(self.OUT / 'CoordinateConsistency.java')])
+        for name in ('fit/trajectory-0', 'fit/trajectory-1', 'simulate/trajectory-0', 'retime/trajectory-0'):
+            self.execute('coordinate-' + name.replace('/', '-'), [str(JAVA / 'bin/java.exe'), '-Dfile.encoding=UTF-8',
+                '-cp', str(runner) + os.pathsep + cp, 'CoordinateConsistency',
+                str(self.RUN / 'ballistic-actual' / (name + '.csv')), 'retime' if name.startswith('retime') else 'fixed'])
+
+    def holdout(self):
+        """原JAR与新classes以完全同刻查询执行稠密代理留出实验，保留全部8560行。"""
+        dependencies = (self.RUN / 'ballistic-runner/classpath.txt').read_text().strip()
+        original = ROOT / 'verification/baseline-copies/ballistic/build/alg-toolkit-1.0.0-plain.jar'
+        source = ROOT / 'test-data/reference/ballistic/trajectory-0.1s-standard.csv'
+        self.save('holdout-input-bindings', dict(originalJarPath=str(original), originalJarSha256=sha(original),
+            denseReferencePath=str(source), denseReferenceSha256=sha(source),
+            probeSha256=sha(self.OUT / 'HoldoutInterpolation.java'), mode='中段弹道type0x01/phase0x01；精确原参考绝对秒查询'))
+        for label, classes in [('original', original), ('current', self.CLEAN / 'backend/target/classes')]:
+            cp = str(classes) + os.pathsep + dependencies
+            runner = self.RUN / ('holdout-' + label + '-runner')
+            runner.mkdir()
+            self.execute('holdout-' + label + '-compile', [str(JAVA / 'bin/javac.exe'), '-encoding', 'UTF-8',
+                '-cp', cp, '-d', str(runner), str(self.OUT / 'HoldoutInterpolation.java')])
+            for interval in (1, 5, 10):
+                self.execute('holdout-' + label + '-' + str(interval) + 's', [str(JAVA / 'bin/java.exe'),
+                    '-Dfile.encoding=UTF-8', '-cp', str(runner) + os.pathsep + cp, 'HoldoutInterpolation', str(source), str(interval)])
+
+    def grid(self):
+        """原/新公开0.1秒输出网格单独诊断，时间漂移不并入精确query插值残差。"""
+        dependencies = (self.RUN / 'ballistic-runner/classpath.txt').read_text().strip()
+        original = ROOT / 'verification/baseline-copies/ballistic/build/alg-toolkit-1.0.0-plain.jar'
+        source = ROOT / 'test-data/reference/ballistic/trajectory-0.1s-standard.csv'
+        for label, classes in [('original', original), ('current', self.CLEAN / 'backend/target/classes')]:
+            cp = str(classes) + os.pathsep + dependencies
+            runner = self.RUN / ('grid-' + label + '-runner')
+            runner.mkdir()
+            self.execute('grid-' + label + '-compile', [str(JAVA / 'bin/javac.exe'), '-encoding', 'UTF-8',
+                '-cp', cp, '-d', str(runner), str(self.OUT / 'PublicGridDiagnostics.java')])
+            self.execute('grid-' + label + '-run', [str(JAVA / 'bin/java.exe'), '-Dfile.encoding=UTF-8',
+                '-cp', str(runner) + os.pathsep + cp, 'PublicGridDiagnostics', str(source)])
+
+
+if __name__ == '__main__':
+    task = Precision()
+    {'prepare': task.prepare, 'build': task.build, 'numeric': task.numeric, 'protect': task.protect,
+     'coordinates': task.coordinates, 'holdout': task.holdout, 'grid': task.grid}[sys.argv[1]]()

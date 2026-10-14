@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    "dependency:build-classpath",
+    "-Dmdep.outputFile=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A04\\ballistic-runner\\classpath.txt"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A04\\current-source\\backend",
+  "startedUtc": "2026-10-14T03:52:40.756384+00:00",
+  "endedUtc": "2026-10-14T03:52:42.710334+00:00",
+  "exitCode": 0,
+  "stdoutFile": "ballistic-runner-classpath.stdout.bin",
+  "stderrFile": "ballistic-runner-classpath.stderr.bin",
+  "stdoutSha256": "d740c8aabb6aec3fab7909b386033519f66f3fbd8ca1109f5cf75d51e2993440",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

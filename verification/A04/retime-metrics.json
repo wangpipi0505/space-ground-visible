@@ -1,0 +1,13 @@
+{
+  "rows": 2576,
+  "ecefComponentsCompared": 15456,
+  "ecefTextPreserved": true,
+  "sourceStartUtc": "2026-06-04 04:00:00+00:00",
+  "actualStartUtc": "2026-07-02 07:57:00+00:00",
+  "timeShiftSec": "2433420",
+  "minShiftSec": "2433420",
+  "maxShiftSec": "2433420",
+  "actualRelativeDtVerified": true,
+  "actualTimeIntervalVerified": true,
+  "eciPositionChangedRows": 2576
+}

@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/A04/delivery-fix/test_delivery.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:28:39.884698+00:00",
+  "endedUtc": "2026-10-14T04:28:45.705460+00:00",
+  "exitCode": 1,
+  "stdoutFile": "green-tests.stdout.bin",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrFile": "green-tests.stderr.bin",
+  "stderrBytes": 2278,
+  "stderrSha256": "f3507462c4b38ca9f48fc789c31e84cef8c2893801c1faca354ee29279313a3c"
+}

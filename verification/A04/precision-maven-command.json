@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    "-Dtest=TargetTrajectoryFitterInterpolationTest,OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest,OrbitCalculatorResultTimeTest,TimeFrameAdaptersTest,BallisticPropagationIsolationTest,SpacePropagationIsolationTest,SharedGeometryTest,GroundStationGeometryTest,SolarGeometryTest,SolarGeometrySunSourceTest,TimeWindowScannerTest,SharedWindowTest,CombinationWindowCalculatorTest,WinToolDownlinkReferenceTest,WinToolTargetWindowSixTargetCountReferenceTest,WinToolTargetWindowSixReferenceTest,WinToolTargetWindowFourTargetCountReferenceTest,DownlinkWindowValidatorTest,StandardPayloadScanTest,StandardPayloadRequestTest,StandardPayloadMathTest,StandardPayloadSolarContextTest,PayloadVisibilityEvaluatorTest",
+    "package"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A04\\current-source\\backend",
+  "startedUtc": "2026-10-14T03:52:10.317991+00:00",
+  "endedUtc": "2026-10-14T03:52:21.646807+00:00",
+  "exitCode": 0,
+  "stdoutFile": "precision-maven.stdout.bin",
+  "stderrFile": "precision-maven.stderr.bin",
+  "stdoutSha256": "d5ab55a0b42630dd6737772cc3b1ef28bbed81193d14f75e243e4b2ae70ff967",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

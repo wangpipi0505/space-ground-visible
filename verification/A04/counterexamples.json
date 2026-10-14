@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "tests": [
+    {
+      "name": "tinyNumeric",
+      "detected": true
+    },
+    {
+      "name": "missingField",
+      "detected": true
+    },
+    {
+      "name": "missingRow",
+      "detected": true
+    },
+    {
+      "name": "reorderedArray",
+      "detected": true
+    },
+    {
+      "name": "windowBoundary1ms",
+      "detected": true,
+      "measuredEndDeltaSec": "0.001"
+    },
+    {
+      "name": "originalPoint1nm",
+      "detected": true,
+      "residualM": "0.000000001"
+    },
+    {
+      "name": "nonFinite",
+      "detected": true
+    },
+    {
+      "name": "wrongTimeType",
+      "detected": true
+    },
+    {
+      "name": "invalidTimeOrder",
+      "detected": true
+    }
+  ]
+}

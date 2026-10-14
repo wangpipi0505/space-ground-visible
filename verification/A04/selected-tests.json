@@ -1,0 +1,28 @@
+{
+  "classes": [
+    "TargetTrajectoryFitterInterpolationTest",
+    "OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest",
+    "OrbitCalculatorResultTimeTest",
+    "TimeFrameAdaptersTest",
+    "BallisticPropagationIsolationTest",
+    "SpacePropagationIsolationTest",
+    "SharedGeometryTest",
+    "GroundStationGeometryTest",
+    "SolarGeometryTest",
+    "SolarGeometrySunSourceTest",
+    "TimeWindowScannerTest",
+    "SharedWindowTest",
+    "CombinationWindowCalculatorTest",
+    "WinToolDownlinkReferenceTest",
+    "WinToolTargetWindowSixTargetCountReferenceTest",
+    "WinToolTargetWindowSixReferenceTest",
+    "WinToolTargetWindowFourTargetCountReferenceTest",
+    "DownlinkWindowValidatorTest",
+    "StandardPayloadScanTest",
+    "StandardPayloadRequestTest",
+    "StandardPayloadMathTest",
+    "StandardPayloadSolarContextTest",
+    "PayloadVisibilityEvaluatorTest"
+  ],
+  "reason": "传播原bits、时间坐标、太阳几何、窗口及WinTool真实参考、拟合模拟重定时；不执行HTTP/前端/性能套件"
+}

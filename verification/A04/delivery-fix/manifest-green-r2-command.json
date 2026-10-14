@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/A04/delivery-fix/build_manifest.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:29:34.218596+00:00",
+  "endedUtc": "2026-10-14T04:29:34.394066+00:00",
+  "exitCode": 0,
+  "stdoutFile": "manifest-green-r2.stdout.bin",
+  "stdoutBytes": 30,
+  "stdoutSha256": "151e989c1441a65221ccfaa5103cc396bed7110a7938a836d29997083296e377",
+  "stderrFile": "manifest-green-r2.stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "C:/Python314/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/A04/finalize_precision.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:28:36.670947+00:00",
+  "endedUtc": "2026-10-14T04:28:36.712145+00:00",
+  "exitCode": 0,
+  "stdoutFile": "report-green.stdout.bin",
+  "stdoutBytes": 64,
+  "stdoutSha256": "9b39ff127205a4a058b17fc7a413ee3968682fa3522619adc1b77c102dc86bff",
+  "stderrFile": "report-green.stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

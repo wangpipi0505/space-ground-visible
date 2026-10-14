@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "G:\\5-YG\\space-ground-visible\\verification\\A04\\measure_precision.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T03:56:30.855449+00:00",
+  "endedUtc": "2026-10-14T03:56:31.646737+00:00",
+  "exitCode": 1,
+  "stdoutFile": "measurement-r1.stdout.bin",
+  "stderrFile": "measurement-r1.stderr.bin",
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "cab2da52aede5f10b7f530cb8f12752890dd9bff8e9580c74688c7a3dce81269"
+}

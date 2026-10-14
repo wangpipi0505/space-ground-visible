@@ -1,0 +1,201 @@
+{
+  "passed": true,
+  "artifactsChecked": 1423,
+  "inputsChecked": 927,
+  "commands": [
+    {
+      "file": "ballistic-fit-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-retime-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-runner-classpath-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-runner-compile-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-simulate-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-visibility-http-ground-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-visibility-j2_numerical-points0-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-visibility-j2_numerical-points1-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-visibility-j2_secular-points0-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-visibility-j2_secular-points1-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-visibility-two_body-points0-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "ballistic-visibility-two_body-points1-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "complete21-current-compile-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "complete21-current-run-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "complete21-original-compile-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "complete21-original-run-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "coordinate-compile-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "coordinate-fit-trajectory-0-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "coordinate-fit-trajectory-1-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "coordinate-retime-trajectory-0-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "coordinate-simulate-trajectory-0-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "grid-current-compile-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "grid-current-run-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "grid-original-compile-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "grid-original-run-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "holdout-current-10s-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "holdout-current-1s-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "holdout-current-5s-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "holdout-current-compile-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "holdout-original-10s-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "holdout-original-1s-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "holdout-original-5s-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "holdout-original-compile-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "java-version-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "maven-version-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "measurement-final-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "measurement-r1-command.json",
+      "exitCode": 1
+    },
+    {
+      "file": "measurement-r2-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "measurement-r3-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "measurement-r4-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "precision-maven-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "report-r1-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "report-r2-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "selfcheck-r1-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "space-space-runner-command.json",
+      "exitCode": 0
+    },
+    {
+      "file": "space-space-runner-compile-command.json",
+      "exitCode": 0
+    }
+  ],
+  "junit": {
+    "tests": 77,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "junitClasses": 23,
+  "jarClassesCompared": 288,
+  "protectedFilesChecked": 2967,
+  "note": "实现自审；独立规格/质量复审由根处理"
+}

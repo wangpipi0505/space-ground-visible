@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A04\measure_precision.py", line 300, in <module>
+    counterexamples()
+    ~~~~~~~~~~~~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\A04\measure_precision.py", line 273, in counterexamples
+    assert detected, name
+           ^^^^^^^^
+AssertionError: tinyNumeric

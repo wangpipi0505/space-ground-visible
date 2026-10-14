@@ -1,0 +1,35 @@
+F.F..
+======================================================================
+FAIL: test_default_path (__main__.DeliveryTests.test_default_path)
+默认仓库路径应能核验，不需要执行 Java/Maven。
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A04\delivery-fix\test_delivery.py", line 36, in test_default_path
+    self.assertEqual(result.returncode, 0, result.stderr.decode('utf-8', errors='replace'))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A04\delivery_check.py", line 155, in <module>
+    print(json.dumps(verify(parser.parse_args().root), ensure_ascii=False, indent=2))
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "G:\5-YG\space-ground-visible\verification\A04\delivery_check.py", line 118, in verify
+    assert all(record['expectedSha256'] == record['actualSha256'] and not record.get('differences') for record in batch)
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+
+======================================================================
+FAIL: test_no_runtime_and_readonly (__main__.DeliveryTests.test_no_runtime_and_readonly)
+仅复制可交付清单所选文件，模拟其他机器没有 ignored 资产。
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A04\delivery-fix\test_delivery.py", line 53, in test_no_runtime_and_readonly
+    result = check.verify(root)
+  File "G:\5-YG\space-ground-visible\verification\A04\delivery_check.py", line 118, in verify
+    assert all(record['expectedSha256'] == record['actualSha256'] and not record.get('differences') for record in batch)
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+----------------------------------------------------------------------
+Ran 5 tests in 5.625s
+
+FAILED (failures=2)

@@ -1,0 +1,141 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 114 source files to G:\5-YG\space-ground-visible\verification\runtime\A04\current-source\backend\target\classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A04/current-source/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A04/current-source/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 83 source files to G:\5-YG\space-ground-visible\verification\runtime\A04\current-source\backend\target\test-classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A04/current-source/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: G:\5-YG\space-ground-visible\verification\runtime\A04\current-source\backend\src\test\java\com\runisys\orbit\spacevisibility\infrastructure\web\Nio2ShutdownRaceTest.java使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A04/current-source/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ space-target-visible ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.runisys.orbit.spacevisibility.application.DownlinkWindowValidatorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in com.runisys.orbit.spacevisibility.application.DownlinkWindowValidatorTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.WinToolTargetWindowFourTargetCountReferenceTest
+11:52:15.627 [main] INFO com.runisys.orbit.spacevisibility.domain.orbit.OrekitDataInitializer - 已挂载 Orekit 数据目录：G:\5-YG\space-ground-visible\verification\runtime\A04\current-source\backend\orekit-data
+11:52:15.715 [main] INFO com.runisys.orbit.spacevisibility.domain.orbit.OrekitDataInitializer - 已确认 WinTool 太阳星历：JPL DE405，文件=G:\5-YG\space-ground-visible\verification\runtime\A04\current-source\backend\orekit-data\DE-405-ephemerides\unxp2000.405，大小=4666512字节，SHA-256前缀=83EB7159D065
+11:52:15.778 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=9，跳过组合数=0，跳过分类={}，扫描次数=9，采样次数=1638，递归探针=945，精选区间=9，耗时=132ms
+11:52:15.795 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=9，跳过组合数=0，跳过分类={}，扫描次数=9，采样次数=1744，递归探针=931，精选区间=11，耗时=6ms
+11:52:15.803 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=9，跳过组合数=0，跳过分类={}，扫描次数=9，采样次数=1850，递归探针=917，精选区间=13，耗时=6ms
+11:52:15.814 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=9，跳过组合数=0，跳过分类={}，扫描次数=9，采样次数=1802，递归探针=929，精选区间=12，耗时=11ms
+11:52:15.818 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=3，跳过组合数=0，跳过分类={}，扫描次数=9，采样次数=1267，递归探针=994，精选区间=2，耗时=3ms
+11:52:15.822 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=9，跳过组合数=0，跳过分类={}，扫描次数=9，采样次数=1638，递归探针=945，精选区间=9，耗时=4ms
+ANGLE_RATE_AB current-0.30-0.30-0.30 => COSMOS-469=[2026-01-18T13:49:34.312Z..2026-01-18T13:58:56.749Z 562.437s], JASON-3=[2026-01-18T13:48:18.312Z..2026-01-18T13:55:51.312Z 453.000s][2026-01-18T13:58:12.312Z..2026-01-18T13:58:56.749Z 44.437s], SL-8-RB=[2026-01-18T13:52:02.312Z..2026-01-18T13:58:56.749Z 414.437s]
+ANGLE_RATE_AB stricter-0.20-0.20-0.20 => COSMOS-469=[2026-01-18T13:49:34.312Z..2026-01-18T13:58:11.312Z 517.000s], SL-8-RB=[2026-01-18T13:52:02.312Z..2026-01-18T13:58:56.749Z 414.437s]
+ANGLE_RATE_AB stricter-0.10-0.10-0.10 => SL-8-RB=[2026-01-18T13:52:02.312Z..2026-01-18T13:58:56.749Z 414.437s]
+ANGLE_RATE_AB literal-zero-for-A-B => <none>
+ANGLE_RATE_AB disabled-for-document-0-minus1 => COSMOS-469=[2026-01-18T13:49:34.312Z..2026-01-18T13:58:56.749Z 562.437s], JASON-3=[2026-01-18T13:48:18.312Z..2026-01-18T13:58:56.749Z 638.437s], SL-8-RB=[2026-01-18T13:52:02.312Z..2026-01-18T13:58:56.749Z 414.437s]
+11:52:15.831 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=9，批次数=9，有效组合数=9，跳过组合数=0，跳过分类={}，扫描次数=9，采样次数=1638，递归探针=945，精选区间=9，耗时=4ms
+RATE_FRAME_AB A/COSMOS-469 inertial=0.059568 lvlh=0.019036
+RATE_FRAME_AB A/JASON-3 inertial=0.284694 lvlh=0.289385
+RATE_FRAME_AB A/SL-8-RB inertial=0.078357 lvlh=0.114708
+RATE_FRAME_AB B/COSMOS-469 inertial=0.060571 lvlh=0.029196
+RATE_FRAME_AB B/JASON-3 inertial=0.358735 lvlh=0.368661
+RATE_FRAME_AB B/SL-8-RB inertial=0.064310 lvlh=0.073027
+RATE_FRAME_AB C/COSMOS-469 inertial=0.237836 lvlh=0.237105
+RATE_FRAME_AB C/JASON-3 inertial=0.059037 lvlh=0.033288
+RATE_FRAME_AB C/SL-8-RB inertial=0.080086 lvlh=0.094527
+WIN_TOOL_PUBLISHED_RATE_AB A published=0.0595687 inertial=0.059568 lvlh=0.019036
+WIN_TOOL_PUBLISHED_RATE_AB B published=0.0610451 inertial=0.060571 lvlh=0.029196
+WIN_TOOL_PUBLISHED_RATE_AB C published=0.2560390 inertial=0.237836 lvlh=0.237105
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.356 s - in com.runisys.orbit.spacevisibility.application.WinToolTargetWindowFourTargetCountReferenceTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixReferenceTest
+11:52:15.965 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=1，跳过组合数=0，跳过分类={}，扫描次数=1，采样次数=251，递归探针=112，精选区间=2，耗时=2ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixReferenceTest
+[INFO] Running com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixTargetCountReferenceTest
+11:52:16.093 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=24，批次数=24，有效组合数=24，跳过组合数=0，跳过分类={}，扫描次数=24，采样次数=5282，递归探针=2786，精选区间=34，耗时=12ms
+11:52:16.104 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=24，批次数=24，有效组合数=24，跳过组合数=0，跳过分类={}，扫描次数=24，采样次数=5655，递归探针=2739，精选区间=41，耗时=8ms
+WINDOW_SIX_ANGLE_RATE_AB current-0.30 => [COSMOS-1911, FREGAT-DEB-TANK, SDA-1673, SDA-1680, SL-8-RB-07426]
+11:52:16.113 [main] INFO com.runisys.orbit.spacevisibility.application.VisibilityPlanningService - 同步目标观测规划完成：组合数=24，批次数=24，有效组合数=24，跳过组合数=0，跳过分类={}，扫描次数=24，采样次数=5282，递归探针=2786，精选区间=34，耗时=7ms
+WINDOW_SIX_ANGLE_RATE_AB disabled => [COSMOS-1911, FREGAT-DEB-TANK, ONEWEB-0153, ONEWEB-0490, SDA-1673, SDA-1680, SL-8-RB-07426, SL-8-RB-11136]
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s - in com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixTargetCountReferenceTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 s - in com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometryTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometryTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.geometry.SharedGeometryTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in com.runisys.orbit.spacevisibility.domain.geometry.SharedGeometryTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.orbit.BallisticPropagationIsolationTest
+T11 ballistic analytic cold/warm measured velocity differenceMps=0.0; shared/independent same-thread exact bits
+T11 Cartesian: 6 shared definitions; sequential 26 original golden PV + 52 actual absolute-subtraction references; concurrency 4 workers x 2 waves x 78 = 624 states/1248 vectors/3744 coordinates; exact bits; maxPositionM=0 maxVelocityMps=0
+T11 ballistic analytic cold/warm measured velocity differenceMps=4.6566128730773926E-10; shared/independent same-thread exact bits
+T11 ballistic models: 18 shared definitions; sequential 216 original golden positions + 72 original golden PV states; concurrency 4 workers x 2 waves x 288 = 2304 states/4608 vectors/13824 coordinates; exact bits versus golden/independent same-thread reference
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 s - in com.runisys.orbit.spacevisibility.domain.orbit.BallisticPropagationIsolationTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.orbit.SpacePropagationIsolationTest
+T11 cross-history: maxPositionM=0.0; maxVelocityMps=0.0; 10s/3.5s; 10 exact vector comparisons
+T11 space concurrency: 4 workers x 2 waves x 4 shared models x 10 queries = 320 states/640 vectors/1920 coordinates; exact bits; 16 distinct reused contexts
+T11 space histories: 120 states/240 vectors/720 coordinates; original/tool exact bits
+T11 cache: 8200 exact position comparisons; 8193 actual anchors -> 8192 retained; oldest=+1.809s newest=+10s; repeated/60s/floor/+1s epoch fallback verified
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.573 s - in com.runisys.orbit.spacevisibility.domain.orbit.SpacePropagationIsolationTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.orbit.TimeFrameAdaptersTest
+T12 TEME/ECEF original roundtrip maxPositionM=9.313225746154785E-10; 18 x 2 x 2 vectors exact bits
+T12 J2000/ECEF original roundtrip maxPositionM=2.882307954863633E-9 maxVelocityMps=2.7754494148515964E-12; 18 x 6 x 2 vectors exact bits
+T12 shared Orekit history original/extracted 18 PV exact bits; cold/hot velocity differenceMps=2.9954423580223447E-9
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in com.runisys.orbit.spacevisibility.domain.orbit.TimeFrameAdaptersTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.SolarGeometryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.runisys.orbit.spacevisibility.domain.payload.SolarGeometryTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadMathTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadMathTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadSolarContextTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadSolarContextTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculatorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculatorTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.window.SharedWindowTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in com.runisys.orbit.spacevisibility.domain.window.SharedWindowTest
+[INFO] Running com.runisys.orbit.spacevisibility.domain.window.TimeWindowScannerTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.runisys.orbit.spacevisibility.domain.window.TimeWindowScannerTest
+[INFO] Running com.tx.alg.api.StandardPayloadRequestTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.tx.alg.api.StandardPayloadRequestTest
+[INFO] Running com.tx.alg.OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 s - in com.tx.alg.OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest
+[INFO] Running com.tx.alg.OrbitCalculatorResultTimeTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.tx.alg.OrbitCalculatorResultTimeTest
+[INFO] Running com.tx.alg.StandardPayloadScanTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in com.tx.alg.StandardPayloadScanTest
+[INFO] Running com.tx.alg.trajectory.TargetTrajectoryFitterInterpolationTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in com.tx.alg.trajectory.TargetTrajectoryFitterInterpolationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 77, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ space-target-visible ---
+[INFO] Building jar: G:\5-YG\space-ground-visible\verification\runtime\A04\current-source\backend\target\space-target-visible-1.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:2.7.18:repackage (repackage) @ space-target-visible ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.437 s
+[INFO] Finished at: 2026-10-14T11:52:21+08:00
+[INFO] ------------------------------------------------------------------------

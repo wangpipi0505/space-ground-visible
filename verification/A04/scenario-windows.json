@@ -1,0 +1,1414 @@
+{
+  "ballistic": [
+    {
+      "scenario": "visibility-http-ground",
+      "bestOffsetSec": "1200",
+      "offsets": [
+        {
+          "offsetSec": "1200",
+          "windows": 0,
+          "arcs": [],
+          "visibleDurationSec": "0E-9",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1210",
+          "windows": 0,
+          "arcs": [],
+          "visibleDurationSec": "0E-9",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1220",
+          "windows": 0,
+          "arcs": [],
+          "visibleDurationSec": "0E-9",
+          "offsetDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "scenario": "visibility-j2_numerical-points0",
+      "bestOffsetSec": "1220",
+      "offsets": [
+        {
+          "offsetSec": "1200",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:04.000",
+              "endTime": "2026/07/01 08:27:29.000",
+              "startJ2000Sec": "836166363.999999900",
+              "endJ2000Sec": "836166448.999999900",
+              "durationSec": "85.000000000",
+              "pointCount": "86",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:08.000",
+              "startJ2000Sec": "836166349.000000100",
+              "endJ2000Sec": "836166488.000000100",
+              "durationSec": "139.000000000",
+              "pointCount": "140",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:04.000",
+              "endTime": "2026/07/01 08:27:29.000",
+              "startJ2000Sec": "836166363.999999900",
+              "endJ2000Sec": "836166448.999999900",
+              "durationSec": "85.000000000",
+              "pointCount": "86",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:08.000",
+              "startJ2000Sec": "836166349.000000100",
+              "endJ2000Sec": "836166488.000000100",
+              "durationSec": "139.000000000",
+              "pointCount": "140",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "448.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1210",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:08.000",
+              "startJ2000Sec": "836166348.999999900",
+              "endJ2000Sec": "836166487.999999900",
+              "durationSec": "139.000000000",
+              "pointCount": "140",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:41.000",
+              "endTime": "2026/07/01 08:28:40.000",
+              "startJ2000Sec": "836166341.000000100",
+              "endJ2000Sec": "836166520.000000100",
+              "durationSec": "179.000000000",
+              "pointCount": "180",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:08.000",
+              "startJ2000Sec": "836166348.999999900",
+              "endJ2000Sec": "836166487.999999900",
+              "durationSec": "139.000000000",
+              "pointCount": "140",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:41.000",
+              "endTime": "2026/07/01 08:28:40.000",
+              "startJ2000Sec": "836166341.000000100",
+              "endJ2000Sec": "836166520.000000100",
+              "durationSec": "179.000000000",
+              "pointCount": "180",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "636.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1220",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:41.000",
+              "endTime": "2026/07/01 08:28:40.000",
+              "startJ2000Sec": "836166340.999999900",
+              "endJ2000Sec": "836166519.999999900",
+              "durationSec": "179.000000000",
+              "pointCount": "180",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:36.000",
+              "endTime": "2026/07/01 08:29:09.000",
+              "startJ2000Sec": "836166336.000000100",
+              "endJ2000Sec": "836166549.000000100",
+              "durationSec": "213.000000000",
+              "pointCount": "214",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:41.000",
+              "endTime": "2026/07/01 08:28:40.000",
+              "startJ2000Sec": "836166340.999999900",
+              "endJ2000Sec": "836166519.999999900",
+              "durationSec": "179.000000000",
+              "pointCount": "180",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:36.000",
+              "endTime": "2026/07/01 08:29:09.000",
+              "startJ2000Sec": "836166336.000000100",
+              "endJ2000Sec": "836166549.000000100",
+              "durationSec": "213.000000000",
+              "pointCount": "214",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "784.000000000",
+          "offsetDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "scenario": "visibility-j2_numerical-points1",
+      "bestOffsetSec": "1220",
+      "offsets": [
+        {
+          "offsetSec": "1200",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:04.000",
+              "endTime": "2026/07/01 08:27:29.000",
+              "startJ2000Sec": "836166363.999999900",
+              "endJ2000Sec": "836166448.999999900",
+              "durationSec": "85.000000000",
+              "pointCount": "86",
+              "actualOutputTrajectoryPoints": 86,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:08.000",
+              "startJ2000Sec": "836166349.000000100",
+              "endJ2000Sec": "836166488.000000100",
+              "durationSec": "139.000000000",
+              "pointCount": "140",
+              "actualOutputTrajectoryPoints": 140,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:04.000",
+              "endTime": "2026/07/01 08:27:29.000",
+              "startJ2000Sec": "836166363.999999900",
+              "endJ2000Sec": "836166448.999999900",
+              "durationSec": "85.000000000",
+              "pointCount": "86",
+              "actualOutputTrajectoryPoints": 86,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:08.000",
+              "startJ2000Sec": "836166349.000000100",
+              "endJ2000Sec": "836166488.000000100",
+              "durationSec": "139.000000000",
+              "pointCount": "140",
+              "actualOutputTrajectoryPoints": 140,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "448.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1210",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:08.000",
+              "startJ2000Sec": "836166348.999999900",
+              "endJ2000Sec": "836166487.999999900",
+              "durationSec": "139.000000000",
+              "pointCount": "140",
+              "actualOutputTrajectoryPoints": 140,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:41.000",
+              "endTime": "2026/07/01 08:28:40.000",
+              "startJ2000Sec": "836166341.000000100",
+              "endJ2000Sec": "836166520.000000100",
+              "durationSec": "179.000000000",
+              "pointCount": "180",
+              "actualOutputTrajectoryPoints": 180,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:08.000",
+              "startJ2000Sec": "836166348.999999900",
+              "endJ2000Sec": "836166487.999999900",
+              "durationSec": "139.000000000",
+              "pointCount": "140",
+              "actualOutputTrajectoryPoints": 140,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:41.000",
+              "endTime": "2026/07/01 08:28:40.000",
+              "startJ2000Sec": "836166341.000000100",
+              "endJ2000Sec": "836166520.000000100",
+              "durationSec": "179.000000000",
+              "pointCount": "180",
+              "actualOutputTrajectoryPoints": 180,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "636.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1220",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:41.000",
+              "endTime": "2026/07/01 08:28:40.000",
+              "startJ2000Sec": "836166340.999999900",
+              "endJ2000Sec": "836166519.999999900",
+              "durationSec": "179.000000000",
+              "pointCount": "180",
+              "actualOutputTrajectoryPoints": 180,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:36.000",
+              "endTime": "2026/07/01 08:29:09.000",
+              "startJ2000Sec": "836166336.000000100",
+              "endJ2000Sec": "836166549.000000100",
+              "durationSec": "213.000000000",
+              "pointCount": "214",
+              "actualOutputTrajectoryPoints": 214,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:41.000",
+              "endTime": "2026/07/01 08:28:40.000",
+              "startJ2000Sec": "836166340.999999900",
+              "endJ2000Sec": "836166519.999999900",
+              "durationSec": "179.000000000",
+              "pointCount": "180",
+              "actualOutputTrajectoryPoints": 180,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:36.000",
+              "endTime": "2026/07/01 08:29:09.000",
+              "startJ2000Sec": "836166336.000000100",
+              "endJ2000Sec": "836166549.000000100",
+              "durationSec": "213.000000000",
+              "pointCount": "214",
+              "actualOutputTrajectoryPoints": 214,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "784.000000000",
+          "offsetDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "scenario": "visibility-j2_secular-points0",
+      "bestOffsetSec": "1220",
+      "offsets": [
+        {
+          "offsetSec": "1200",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:40.000",
+              "endTime": "2026/07/01 08:26:51.000",
+              "startJ2000Sec": "836166399.999999900",
+              "endJ2000Sec": "836166410.999999900",
+              "durationSec": "11.000000000",
+              "pointCount": "12",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:02.000",
+              "endTime": "2026/07/01 08:27:52.000",
+              "startJ2000Sec": "836166362.000000100",
+              "endJ2000Sec": "836166472.000000100",
+              "durationSec": "110.000000000",
+              "pointCount": "111",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:40.000",
+              "endTime": "2026/07/01 08:26:51.000",
+              "startJ2000Sec": "836166399.999999900",
+              "endJ2000Sec": "836166410.999999900",
+              "durationSec": "11.000000000",
+              "pointCount": "12",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:02.000",
+              "endTime": "2026/07/01 08:27:52.000",
+              "startJ2000Sec": "836166362.000000100",
+              "endJ2000Sec": "836166472.000000100",
+              "durationSec": "110.000000000",
+              "pointCount": "111",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "242.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1210",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:02.000",
+              "endTime": "2026/07/01 08:27:52.000",
+              "startJ2000Sec": "836166361.999999900",
+              "endJ2000Sec": "836166471.999999900",
+              "durationSec": "110.000000000",
+              "pointCount": "111",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:51.000",
+              "endTime": "2026/07/01 08:28:27.000",
+              "startJ2000Sec": "836166351.000000100",
+              "endJ2000Sec": "836166507.000000100",
+              "durationSec": "156.000000000",
+              "pointCount": "157",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:02.000",
+              "endTime": "2026/07/01 08:27:52.000",
+              "startJ2000Sec": "836166361.999999900",
+              "endJ2000Sec": "836166471.999999900",
+              "durationSec": "110.000000000",
+              "pointCount": "111",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:51.000",
+              "endTime": "2026/07/01 08:28:27.000",
+              "startJ2000Sec": "836166351.000000100",
+              "endJ2000Sec": "836166507.000000100",
+              "durationSec": "156.000000000",
+              "pointCount": "157",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "532.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1220",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:51.000",
+              "endTime": "2026/07/01 08:28:27.000",
+              "startJ2000Sec": "836166350.999999900",
+              "endJ2000Sec": "836166506.999999900",
+              "durationSec": "156.000000000",
+              "pointCount": "157",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:44.000",
+              "endTime": "2026/07/01 08:28:58.000",
+              "startJ2000Sec": "836166344.000000100",
+              "endJ2000Sec": "836166538.000000100",
+              "durationSec": "194.000000000",
+              "pointCount": "195",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:51.000",
+              "endTime": "2026/07/01 08:28:27.000",
+              "startJ2000Sec": "836166350.999999900",
+              "endJ2000Sec": "836166506.999999900",
+              "durationSec": "156.000000000",
+              "pointCount": "157",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:44.000",
+              "endTime": "2026/07/01 08:28:58.000",
+              "startJ2000Sec": "836166344.000000100",
+              "endJ2000Sec": "836166538.000000100",
+              "durationSec": "194.000000000",
+              "pointCount": "195",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "700.000000000",
+          "offsetDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "scenario": "visibility-j2_secular-points1",
+      "bestOffsetSec": "1220",
+      "offsets": [
+        {
+          "offsetSec": "1200",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:40.000",
+              "endTime": "2026/07/01 08:26:51.000",
+              "startJ2000Sec": "836166399.999999900",
+              "endJ2000Sec": "836166410.999999900",
+              "durationSec": "11.000000000",
+              "pointCount": "12",
+              "actualOutputTrajectoryPoints": 12,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:02.000",
+              "endTime": "2026/07/01 08:27:52.000",
+              "startJ2000Sec": "836166362.000000100",
+              "endJ2000Sec": "836166472.000000100",
+              "durationSec": "110.000000000",
+              "pointCount": "111",
+              "actualOutputTrajectoryPoints": 111,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:40.000",
+              "endTime": "2026/07/01 08:26:51.000",
+              "startJ2000Sec": "836166399.999999900",
+              "endJ2000Sec": "836166410.999999900",
+              "durationSec": "11.000000000",
+              "pointCount": "12",
+              "actualOutputTrajectoryPoints": 12,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:02.000",
+              "endTime": "2026/07/01 08:27:52.000",
+              "startJ2000Sec": "836166362.000000100",
+              "endJ2000Sec": "836166472.000000100",
+              "durationSec": "110.000000000",
+              "pointCount": "111",
+              "actualOutputTrajectoryPoints": 111,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "242.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1210",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:02.000",
+              "endTime": "2026/07/01 08:27:52.000",
+              "startJ2000Sec": "836166361.999999900",
+              "endJ2000Sec": "836166471.999999900",
+              "durationSec": "110.000000000",
+              "pointCount": "111",
+              "actualOutputTrajectoryPoints": 111,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:51.000",
+              "endTime": "2026/07/01 08:28:27.000",
+              "startJ2000Sec": "836166351.000000100",
+              "endJ2000Sec": "836166507.000000100",
+              "durationSec": "156.000000000",
+              "pointCount": "157",
+              "actualOutputTrajectoryPoints": 157,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:02.000",
+              "endTime": "2026/07/01 08:27:52.000",
+              "startJ2000Sec": "836166361.999999900",
+              "endJ2000Sec": "836166471.999999900",
+              "durationSec": "110.000000000",
+              "pointCount": "111",
+              "actualOutputTrajectoryPoints": 111,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:51.000",
+              "endTime": "2026/07/01 08:28:27.000",
+              "startJ2000Sec": "836166351.000000100",
+              "endJ2000Sec": "836166507.000000100",
+              "durationSec": "156.000000000",
+              "pointCount": "157",
+              "actualOutputTrajectoryPoints": 157,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "532.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1220",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:51.000",
+              "endTime": "2026/07/01 08:28:27.000",
+              "startJ2000Sec": "836166350.999999900",
+              "endJ2000Sec": "836166506.999999900",
+              "durationSec": "156.000000000",
+              "pointCount": "157",
+              "actualOutputTrajectoryPoints": 157,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:44.000",
+              "endTime": "2026/07/01 08:28:58.000",
+              "startJ2000Sec": "836166344.000000100",
+              "endJ2000Sec": "836166538.000000100",
+              "durationSec": "194.000000000",
+              "pointCount": "195",
+              "actualOutputTrajectoryPoints": 195,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:51.000",
+              "endTime": "2026/07/01 08:28:27.000",
+              "startJ2000Sec": "836166350.999999900",
+              "endJ2000Sec": "836166506.999999900",
+              "durationSec": "156.000000000",
+              "pointCount": "157",
+              "actualOutputTrajectoryPoints": 157,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:44.000",
+              "endTime": "2026/07/01 08:28:58.000",
+              "startJ2000Sec": "836166344.000000100",
+              "endJ2000Sec": "836166538.000000100",
+              "durationSec": "194.000000000",
+              "pointCount": "195",
+              "actualOutputTrajectoryPoints": 195,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "700.000000000",
+          "offsetDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "scenario": "visibility-two_body-points0",
+      "bestOffsetSec": "1220",
+      "offsets": [
+        {
+          "offsetSec": "1200",
+          "windows": 2,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:11.000",
+              "endTime": "2026/07/01 08:27:43.000",
+              "startJ2000Sec": "836166371.000000100",
+              "endJ2000Sec": "836166463.000000100",
+              "durationSec": "92.000000000",
+              "pointCount": "93",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:11.000",
+              "endTime": "2026/07/01 08:27:43.000",
+              "startJ2000Sec": "836166371.000000100",
+              "endJ2000Sec": "836166463.000000100",
+              "durationSec": "92.000000000",
+              "pointCount": "93",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "184.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1210",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:11.000",
+              "endTime": "2026/07/01 08:27:43.000",
+              "startJ2000Sec": "836166370.999999900",
+              "endJ2000Sec": "836166462.999999900",
+              "durationSec": "92.000000000",
+              "pointCount": "93",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:56.000",
+              "endTime": "2026/07/01 08:28:21.000",
+              "startJ2000Sec": "836166356.000000100",
+              "endJ2000Sec": "836166501.000000100",
+              "durationSec": "145.000000000",
+              "pointCount": "146",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:11.000",
+              "endTime": "2026/07/01 08:27:43.000",
+              "startJ2000Sec": "836166370.999999900",
+              "endJ2000Sec": "836166462.999999900",
+              "durationSec": "92.000000000",
+              "pointCount": "93",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:56.000",
+              "endTime": "2026/07/01 08:28:21.000",
+              "startJ2000Sec": "836166356.000000100",
+              "endJ2000Sec": "836166501.000000100",
+              "durationSec": "145.000000000",
+              "pointCount": "146",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "474.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1220",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:56.000",
+              "endTime": "2026/07/01 08:28:21.000",
+              "startJ2000Sec": "836166355.999999900",
+              "endJ2000Sec": "836166500.999999900",
+              "durationSec": "145.000000000",
+              "pointCount": "146",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:52.000",
+              "startJ2000Sec": "836166349.000000100",
+              "endJ2000Sec": "836166532.000000100",
+              "durationSec": "183.000000000",
+              "pointCount": "184",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:56.000",
+              "endTime": "2026/07/01 08:28:21.000",
+              "startJ2000Sec": "836166355.999999900",
+              "endJ2000Sec": "836166500.999999900",
+              "durationSec": "145.000000000",
+              "pointCount": "146",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:52.000",
+              "startJ2000Sec": "836166349.000000100",
+              "endJ2000Sec": "836166532.000000100",
+              "durationSec": "183.000000000",
+              "pointCount": "184",
+              "actualOutputTrajectoryPoints": 0,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "656.000000000",
+          "offsetDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "scenario": "visibility-two_body-points1",
+      "bestOffsetSec": "1220",
+      "offsets": [
+        {
+          "offsetSec": "1200",
+          "windows": 2,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:11.000",
+              "endTime": "2026/07/01 08:27:43.000",
+              "startJ2000Sec": "836166371.000000100",
+              "endJ2000Sec": "836166463.000000100",
+              "durationSec": "92.000000000",
+              "pointCount": "93",
+              "actualOutputTrajectoryPoints": 93,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:11.000",
+              "endTime": "2026/07/01 08:27:43.000",
+              "startJ2000Sec": "836166371.000000100",
+              "endJ2000Sec": "836166463.000000100",
+              "durationSec": "92.000000000",
+              "pointCount": "93",
+              "actualOutputTrajectoryPoints": 93,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "184.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1210",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:11.000",
+              "endTime": "2026/07/01 08:27:43.000",
+              "startJ2000Sec": "836166370.999999900",
+              "endJ2000Sec": "836166462.999999900",
+              "durationSec": "92.000000000",
+              "pointCount": "93",
+              "actualOutputTrajectoryPoints": 93,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:56.000",
+              "endTime": "2026/07/01 08:28:21.000",
+              "startJ2000Sec": "836166356.000000100",
+              "endJ2000Sec": "836166501.000000100",
+              "durationSec": "145.000000000",
+              "pointCount": "146",
+              "actualOutputTrajectoryPoints": 146,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:26:11.000",
+              "endTime": "2026/07/01 08:27:43.000",
+              "startJ2000Sec": "836166370.999999900",
+              "endJ2000Sec": "836166462.999999900",
+              "durationSec": "92.000000000",
+              "pointCount": "93",
+              "actualOutputTrajectoryPoints": 93,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:56.000",
+              "endTime": "2026/07/01 08:28:21.000",
+              "startJ2000Sec": "836166356.000000100",
+              "endJ2000Sec": "836166501.000000100",
+              "durationSec": "145.000000000",
+              "pointCount": "146",
+              "actualOutputTrajectoryPoints": 146,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "474.000000000",
+          "offsetDeltaSec": "0"
+        },
+        {
+          "offsetSec": "1220",
+          "windows": 4,
+          "arcs": [
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:56.000",
+              "endTime": "2026/07/01 08:28:21.000",
+              "startJ2000Sec": "836166355.999999900",
+              "endJ2000Sec": "836166500.999999900",
+              "durationSec": "145.000000000",
+              "pointCount": "146",
+              "actualOutputTrajectoryPoints": 146,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-1",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:52.000",
+              "startJ2000Sec": "836166349.000000100",
+              "endJ2000Sec": "836166532.000000100",
+              "durationSec": "183.000000000",
+              "pointCount": "184",
+              "actualOutputTrajectoryPoints": 184,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-001",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:56.000",
+              "endTime": "2026/07/01 08:28:21.000",
+              "startJ2000Sec": "836166355.999999900",
+              "endJ2000Sec": "836166500.999999900",
+              "durationSec": "145.000000000",
+              "pointCount": "146",
+              "actualOutputTrajectoryPoints": 146,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            },
+            {
+              "satelliteId": "SAT-A",
+              "payloadId": "PAYLOAD-2",
+              "targetId": "TGT-002",
+              "arcIndex": "1",
+              "startTime": "2026/07/01 08:25:49.000",
+              "endTime": "2026/07/01 08:28:52.000",
+              "startJ2000Sec": "836166349.000000100",
+              "endJ2000Sec": "836166532.000000100",
+              "durationSec": "183.000000000",
+              "pointCount": "184",
+              "actualOutputTrajectoryPoints": 184,
+              "startDeltaSec": "0",
+              "endDeltaSec": "0",
+              "durationDeltaSec": "0"
+            }
+          ],
+          "visibleDurationSec": "656.000000000",
+          "offsetDeltaSec": "0"
+        }
+      ]
+    }
+  ],
+  "space": [
+    {
+      "group": "space-actual",
+      "file": "visibility.json",
+      "windows": 1,
+      "arcs": [
+        {
+          "targetId": "2",
+          "observerSatelliteIds": [
+            "1"
+          ],
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:10:00.000Z",
+          "durationSec": "600.0",
+          "startDeltaSec": "0",
+          "endDeltaSec": "0",
+          "durationDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "group": "space-actual",
+      "file": "downlink.json",
+      "windows": 1,
+      "arcs": [
+        {
+          "satelliteId": "1",
+          "stationId": "T04-STATION",
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:07:21.000Z",
+          "durationSec": "441.0",
+          "startDeltaSec": "0",
+          "endDeltaSec": "0",
+          "durationDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "group": "complete21-current-actual",
+      "file": "visibility.json",
+      "windows": 1,
+      "arcs": [
+        {
+          "targetId": "2",
+          "observerSatelliteIds": [
+            "1"
+          ],
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:10:00.000Z",
+          "durationSec": "600.0",
+          "startDeltaSec": "0",
+          "endDeltaSec": "0",
+          "durationDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "group": "complete21-current-actual",
+      "file": "downlink.json",
+      "windows": 1,
+      "arcs": [
+        {
+          "satelliteId": "1",
+          "stationId": "T04-STATION",
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:07:21.000Z",
+          "durationSec": "441.0",
+          "startDeltaSec": "0",
+          "endDeltaSec": "0",
+          "durationDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "group": "complete21-current-actual",
+      "file": "common-sync.json",
+      "windows": 1,
+      "arcs": [
+        {
+          "targetId": "2",
+          "observerSatelliteIds": [
+            "1",
+            "3"
+          ],
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:10:00.000Z",
+          "durationSec": "600.0",
+          "startDeltaSec": "0",
+          "endDeltaSec": "0",
+          "durationDeltaSec": "0"
+        }
+      ]
+    },
+    {
+      "group": "complete21-current-actual",
+      "file": "common-async.json",
+      "windows": 1,
+      "arcs": [
+        {
+          "targetId": "2",
+          "observerSatelliteIds": [
+            "1",
+            "3"
+          ],
+          "startTime": "2026-07-01T10:00:00.000Z",
+          "endTime": "2026-07-01T10:10:00.000Z",
+          "durationSec": "600.0",
+          "startDeltaSec": "0",
+          "endDeltaSec": "0",
+          "durationDeltaSec": "0"
+        }
+      ]
+    }
+  ],
+  "note": "弹道只计allResults的卫星/载荷/目标visibleArcs，各offset独立；空间只计实际arcs或satelliteStationWindows，覆盖/光照/持久化副本详见windows.json"
+}

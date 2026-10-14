@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "G:\\5-YG\\space-ground-visible\\verification\\A04\\selfcheck_precision.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:12:33.150718+00:00",
+  "endedUtc": "2026-10-14T04:12:33.883825+00:00",
+  "exitCode": 0,
+  "stdoutFile": "selfcheck-final.stdout.bin",
+  "stderrFile": "selfcheck-final.stderr.bin",
+  "stdoutSha256": "506d120c6a30ba803b6164c2cbc7e07ceb437bf28e0f185b8891dbb72e971a72",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

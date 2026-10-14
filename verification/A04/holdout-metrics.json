@@ -1,0 +1,132 @@
+{
+  "cases": [
+    {
+      "observationIntervalSec": 1,
+      "totalReferenceRows": 8560,
+      "observations": 857,
+      "holdoutRows": 7703,
+      "outsideObservationRows": 0,
+      "queryAndReferenceBitsEqual": true,
+      "originalCurrentByteEqual": true,
+      "originalSha256": "0bc216c1b5b81c5559ee4a845da789df403642a724e0ee3699c134cf80a0ec51",
+      "currentSha256": "0bc216c1b5b81c5559ee4a845da789df403642a724e0ee3699c134cf80a0ec51",
+      "stats": {
+        "positionM": {
+          "rmse": "0.0057959218441359173543770037782529405888454967259042226621385986630548927581728517",
+          "maximum": "0.014807222091336617755093502922423202630659022440694",
+          "p95NearestRank": "0.0085284918644061565405882784380022339978973065907628",
+          "percentileRank": 7318,
+          "maxAbsComponents": [
+            "0.0119152440",
+            "0.0118409310",
+            "0.0050806345"
+          ],
+          "observationMaxResidual": "0E-10",
+          "originalCurrentMaxDelta": "0",
+          "worstRow": "3792"
+        },
+        "velocityMps": {
+          "rmse": "0.0075828403978095756966735914984034550008669309008191011830797067202833905214056862",
+          "maximum": "0.056852351638363157164771950896319709403072402811319",
+          "p95NearestRank": "0.018380761031452195957823763918987208574926182296145",
+          "percentileRank": 7318,
+          "maxAbsComponents": [
+            "0.0347615683170",
+            "0.0406125167580",
+            "0.03120346975780"
+          ],
+          "observationMaxResidual": "0E-14",
+          "originalCurrentMaxDelta": "0",
+          "worstRow": "5"
+        }
+      }
+    },
+    {
+      "observationIntervalSec": 5,
+      "totalReferenceRows": 8560,
+      "observations": 173,
+      "holdoutRows": 8387,
+      "outsideObservationRows": 0,
+      "queryAndReferenceBitsEqual": true,
+      "originalCurrentByteEqual": true,
+      "originalSha256": "8ed393e379d17409596e575928865f93d08f94521ed067a1d971bc760f845ec8",
+      "currentSha256": "8ed393e379d17409596e575928865f93d08f94521ed067a1d971bc760f845ec8",
+      "stats": {
+        "positionM": {
+          "rmse": "0.086124410292251288745727165630785291467012484243184880380047503920445888596658659",
+          "maximum": "0.91185397768096477209107296527750575020005888243673",
+          "p95NearestRank": "0.13221612895558910969942128929939388784828043450495",
+          "percentileRank": 7968,
+          "maxAbsComponents": [
+            "0.6203068190",
+            "0.3815814590",
+            "0.5532978000"
+          ],
+          "observationMaxResidual": "0E-10",
+          "originalCurrentMaxDelta": "0",
+          "worstRow": "13"
+        },
+        "velocityMps": {
+          "rmse": "0.10267510890439289423511726080811857036184440150613369214649209550828131615659207",
+          "maximum": "1.1124093587157490345943248885709625223654086678218",
+          "p95NearestRank": "0.16713705145520929479973164516325888803667509186718",
+          "percentileRank": 7968,
+          "maxAbsComponents": [
+            "0.7756387048026",
+            "0.4858361375556",
+            "0.63395163223830"
+          ],
+          "observationMaxResidual": "0E-14",
+          "originalCurrentMaxDelta": "0",
+          "worstRow": "1"
+        }
+      }
+    },
+    {
+      "observationIntervalSec": 10,
+      "totalReferenceRows": 8560,
+      "observations": 87,
+      "holdoutRows": 8473,
+      "outsideObservationRows": 0,
+      "queryAndReferenceBitsEqual": true,
+      "originalCurrentByteEqual": true,
+      "originalSha256": "4b106f7c29bbbd6d971048233a459c095325100c657df1daf5a5df4fc6f28133",
+      "currentSha256": "4b106f7c29bbbd6d971048233a459c095325100c657df1daf5a5df4fc6f28133",
+      "stats": {
+        "positionM": {
+          "rmse": "0.65833144291681821167822989873647716731689600606100085307152974257801499651895675",
+          "maximum": "5.3981003657340738092650427816333412680450105147168",
+          "p95NearestRank": "1.0517270262816781662510293857645232033566043590054",
+          "percentileRank": 8050,
+          "maxAbsComponents": [
+            "3.6593200660",
+            "2.1950437570",
+            "3.3115981670"
+          ],
+          "observationMaxResidual": "0E-10",
+          "originalCurrentMaxDelta": "0",
+          "worstRow": "26"
+        },
+        "velocityMps": {
+          "rmse": "0.39866049882797847268531285948354133480948159460629266927324832986006362400092286",
+          "maximum": "3.4700431816546727333783904794830371380568909330256",
+          "p95NearestRank": "0.67530118803733652194756897431139918288242446173536",
+          "percentileRank": 8050,
+          "maxAbsComponents": [
+            "2.3917099150100",
+            "1.4779324821647",
+            "2.03767738458520"
+          ],
+          "observationMaxResidual": "0E-14",
+          "originalCurrentMaxDelta": "0",
+          "worstRow": "1"
+        }
+      }
+    }
+  ],
+  "referenceType": "完整原0.1s轨迹代理，非独立STK/实测真值",
+  "observedDesign": "1/5/10秒观测，首末保留，其余原密集点为留出；同一参考绝对秒bits精确查询",
+  "queryImplementation": "调用原policyFor/estimateKnotDerivatives/pointFromConstrainedSegment；public fitSamples约束原节点",
+  "absoluteAccuracyValidated": false,
+  "threshold": "用户未给绝对误差标准；报告实测数值，不擅自设置通过线"
+}

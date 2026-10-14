@@ -1,0 +1,75 @@
+{
+  "files": [
+    {
+      "path": "verification/A04/精度测试报告.md",
+      "bytes": 31014,
+      "sha256": "f4f3befa015981e31ab2e273695ed489adc4cae5af20da27dc4a3936fcf113a5"
+    },
+    {
+      "path": "verification/A04/finalize_precision.py",
+      "bytes": 26767,
+      "sha256": "e22b15d20564dbcad77f0b3b7d1b84bfb4fd8406f60da1ed515433e8c97d9231"
+    },
+    {
+      "path": "verification/A04/run_precision.py",
+      "bytes": 13446,
+      "sha256": "9439c9c82c03249e9a8289f93ead69ad445a3e6198034c204229159bc1185d73"
+    },
+    {
+      "path": "verification/A04/selfcheck_precision.py",
+      "bytes": 4129,
+      "sha256": "06e2e56a0c8c2b3e9b2e35ad8609e453be24db24cd3710c5430a5e624576decc"
+    },
+    {
+      "path": "verification/A04/delivery_check.py",
+      "bytes": 10725,
+      "sha256": "380ea54ce4c86cecd6c304ebb6176de661c195161ac3209a1761d8a2553d9c24"
+    },
+    {
+      "path": "verification/A04/delivery-fix/build_manifest.py",
+      "bytes": 2237,
+      "sha256": "705e15543df368a954f1355672ba7598ec6e5ab37c82347620173bdb08c43afe"
+    },
+    {
+      "path": "verification/A04/delivery-fix/test_delivery.py",
+      "bytes": 5385,
+      "sha256": "52f8269f817a176eb54c401a6405035df486db115ade32596fb03deaa2fecfd2"
+    },
+    {
+      "path": "verification/A04/delivery-fix/record_check.py",
+      "bytes": 1417,
+      "sha256": "ea4570578db7fdfd367700b101c006527e4222f897d4961b717363df71ff6576"
+    },
+    {
+      "path": "verification/A04/candidate-delivery-manifest.json",
+      "bytes": 170250,
+      "sha256": "0dc909dcd7abc42220f7d26e130211c7f6c0040527c1ddbce9d2bcc473c9a776"
+    },
+    {
+      "path": "verification/A04/artifact-manifest.json",
+      "bytes": 342879,
+      "sha256": "9158db0b688467526e37f4da8aeb46fbac559b046831e4825be9478b2ec1838c"
+    },
+    {
+      "path": "verification/A04/input-bindings.json",
+      "bytes": 278004,
+      "sha256": "61d53d9b3e75c05e73debacfcf3900c572cf63aeeef566ef01c21953c9bcfa32"
+    },
+    {
+      "path": "verification/A04/holdout-metrics.json",
+      "bytes": 5360,
+      "sha256": "cf78d4ba9455ca0e02f14abc39720207c0636d4475679d69496c4035ee90e232"
+    },
+    {
+      "path": "verification/A04/public-grid-metrics.json",
+      "bytes": 1475,
+      "sha256": "1211f1c06066370a1c44228991ef66acec90da160f463bb8275d954e23732c47"
+    },
+    {
+      "path": "verification/A04/交付入口修复报告.md",
+      "bytes": 10273,
+      "sha256": "6cb7a028bc6f4f1ae446085211e8c2e97bb17f53ebef19ad82f2d2fdef24974c"
+    }
+  ],
+  "note": "本机修复交接字节，不进入自身候选清单避免循环"
+}

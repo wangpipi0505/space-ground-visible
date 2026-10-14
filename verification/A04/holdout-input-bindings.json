@@ -1,0 +1,8 @@
+{
+  "originalJarPath": "G:\\5-YG\\space-ground-visible\\verification\\baseline-copies\\ballistic\\build\\alg-toolkit-1.0.0-plain.jar",
+  "originalJarSha256": "6dec33be2ec401b5a32b0ed1cb9a7a86568eb57771990225ab80337d5da27501",
+  "denseReferencePath": "G:\\5-YG\\space-ground-visible\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv",
+  "denseReferenceSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+  "probeSha256": "0aab54f421c6e2b76553067e32fd4b03708713eb16db79da10b476585696f1fe",
+  "mode": "中段弹道type0x01/phase0x01；精确原参考绝对秒查询"
+}

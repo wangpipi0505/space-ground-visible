@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "path": "verification/A04/finalize_precision.py",
+      "beforePath": "verification/A04/delivery-fix/history/finalize_precision.py.before",
+      "bytes": 23132,
+      "sha256": "db5c12dd38fdd77bd03fbf74ed4749c8679c5d62fbbc77efb883d0cb55b3998a"
+    },
+    {
+      "path": "verification/A04/run_precision.py",
+      "beforePath": "verification/A04/delivery-fix/history/run_precision.py.before",
+      "bytes": 13224,
+      "sha256": "0864feecf5ae39f0e2b4e958be1b4388ebea0270562d0bc13dbca6c370e41bab"
+    },
+    {
+      "path": "verification/A04/selfcheck_precision.py",
+      "beforePath": "verification/A04/delivery-fix/history/selfcheck_precision.py.before",
+      "bytes": 3940,
+      "sha256": "d67bba29fa77f2b1ff336e980e2e02749c83332a340d6948cd75678cb4479f23"
+    },
+    {
+      "path": "verification/A04/精度测试报告.md",
+      "beforePath": "verification/A04/delivery-fix/history/精度测试报告.md.before",
+      "bytes": 28025,
+      "sha256": "70b50201ba7146d1362859098782729b15108fd9b48fde2259b159f11c55fe92"
+    }
+  ]
+}

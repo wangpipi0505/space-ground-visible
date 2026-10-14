@@ -1,0 +1,317 @@
+{
+  "totals": {
+    "tests": 77,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "reports": [
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.DownlinkWindowValidatorTest.xml",
+      "sha256": "6e43cebef11d42218ce4a64cc75ed4f5a79095fbb3fcc918b6557eb20a8ad7ff",
+      "cases": [
+        "acceptsCustomPeriodCoveredByTouchingWindowsFromDifferentLinks",
+        "rejectsPeriodWhenOnlyPartOfItCanLink",
+        "requiresOneStationWindowToCoverEntireCustomPeriod"
+      ],
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.WinToolTargetWindowFourTargetCountReferenceTest.xml",
+      "sha256": "973a6f07e63cbbad0e4bb3d28ae33f70f31ca19bba950cdf882cfbc6c4eca51b",
+      "cases": [
+        "keepsTheThreeDeliveredCandidatesVisibleForTheThreeSatelliteConstraint",
+        "comparesAngleRateSemanticCandidatesAgainstTheDocumentTargetSet",
+        "comparesComputedRatesAgainstTheWinToolPublishedValues"
+      ],
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixReferenceTest.xml",
+      "sha256": "11a16e7c78689988fed34d8cddf5ae11a2f9a347b44f5ea98a08413905375685",
+      "cases": [
+        "keepsObservationUntilDocumentWindowEndWhenStartupAngleRateIsConfigured"
+      ],
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.WinToolTargetWindowSixTargetCountReferenceTest.xml",
+      "sha256": "d9c981ae81b68bfa071363be67ecc9eb57e17ae7d7ea7edf5ce2495e7af8c878",
+      "cases": [
+        "matchesTheEightDocumentTargetsForTheThreeSatelliteConstraint",
+        "documentsAngleRateInterpretationImpactOnTheDocumentTargetSet"
+      ],
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest.xml",
+      "sha256": "85ee9cb082c50d8876436638902901c38c852789214ec2d15f313bb833207599",
+      "cases": [
+        "matchesAllJanuaryWinToolDownlinkWindows",
+        "matchesAllOctoberWinToolDownlinkWindows"
+      ],
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometryTest.xml",
+      "sha256": "140752bc11ff0c7b726a8baaff0493e6f1b087e790e271b65c8f6237beab3278",
+      "cases": [
+        "returnsNinetyDegreesForSatelliteDirectlyAboveStation",
+        "convertsEcefBackToOriginalEciAtSameInstant",
+        "keepsLineOfSightForAPolarTangentAboveTheWgs84Ellipsoid",
+        "keepsLineOfSightForAConvertedGroundStationSurfaceEndpoint",
+        "keepsLineOfSightWhenTheGroundEndpointIsOnTheWgs84Surface"
+      ],
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.geometry.SharedGeometryTest.xml",
+      "sha256": "e415d9a13b406c17fc4bea81294ef96df49c54e498c5cf0325ea731d713ce9be",
+      "cases": [
+        "historicalPoliciesRemainDifferentAtTangentAndInsideEndpoints",
+        "sharedMathEntryMustExist",
+        "originalGoldenConstrainsBothVectorShellsAndMath"
+      ],
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.orbit.BallisticPropagationIsolationTest.xml",
+      "sha256": "00a4046509939a1368e03ec62c751439906142d261214a0e54e0871d3b075ead",
+      "cases": [
+        "fittedCartesianToolsRetainAbsoluteSubtractionDuringConcurrentReuse",
+        "threeModelsShareImmutableToolsWithoutEpochOrOffsetLeakage"
+      ],
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.orbit.SpacePropagationIsolationTest.xml",
+      "sha256": "141bf83dfe16e5124b7f12b9e145614fef449ba1dedaeb987ef47ecaa0101011",
+      "cases": [
+        "keplerQueryOrderRetainsOriginalMillimetrePositionCriterion",
+        "sharedToolsRetainIndependentNativeContextsAcrossReusedPoolThreads",
+        "originalAndToolHaveIdenticalBitsForForwardReverseAndRepeatedHistories",
+        "actualAnchorsRespectSixtySecondsEvictionAndFallback"
+      ],
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.orbit.TimeFrameAdaptersTest.xml",
+      "sha256": "0059d956b1003da1ce337ef7f9521163f12a9ca236172d88153152bfd7216df2",
+      "cases": [
+        "csvCalendarAndExplicitOffsetsDoNotReadLegacyGlobals",
+        "temeEarthFixedMatchesOriginalGmstBits",
+        "orekitUtcAndEme2000TemeMatchOriginalBits",
+        "legacyPositionAndBothVelocityConventionsMatchOriginalBits",
+        "legacyTimeMatchesFrozenParserAndFormatterBits",
+        "fixedComponentsAndCoordinateDerivativeRemainDistinct",
+        "exposesExplicitLegacyUtcConversionWithoutGlobalOffset",
+        "warmedOrekitFramesPreserveOriginalChainBits"
+      ],
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluatorTest.xml",
+      "sha256": "cef9aac14d26fde5c950f4d31edee82137bb80e850a7ed890f6e98487056e1fe",
+      "cases": [
+        "rejectsSpaceTargetBelowMinimumDetectRange",
+        "rejectsSpaceTargetInsideSunAvoidanceHalfAngle",
+        "acceptsGroundTargetInsideNadirFullCone",
+        "evaluatesStandardGroundPayloadWithUnifiedAttitudeConstraints",
+        "rejectsSpaceTargetOutsideElevationWindow",
+        "evaluatesGeometryAndBothIlluminationStatesAtOneSample",
+        "rejectsSpaceTargetWhenTrackingRateExceedsPayloadLimit",
+        "rejectsSpaceTargetOutsideAzimuthWindow"
+      ],
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.payload.SolarGeometrySunSourceTest.xml",
+      "sha256": "8c3c3345606c25dbd93a46bd65eae185cf9fb41d6be2e31ceabe3e4cdf8d0377",
+      "cases": [
+        "temeSunDirectionMatchesIndependentCorrectEpochReference",
+        "exposesJplDe405AsTheOnlyProductionSunSource",
+        "cachesSunDirectionPerUtcSecond"
+      ],
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.payload.SolarGeometryTest.xml",
+      "sha256": "0cd3c483ada4098301c98e3d03ebc89940c9fa663c3e7ee866dff1e6c907207e",
+      "cases": [
+        "treatsRayOutsideWgs84PolarRadiusAsSunlitRatherThanPenumbraOrUmbra"
+      ],
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadMathTest.xml",
+      "sha256": "ac20b039114d66c391cf17005f3e9132f17de56d607fbd3504c89dcc24e95aaa",
+      "cases": [
+        "距离闭边界与真实九十度每两秒角速度",
+        "方位四象限和俯仰正负及径向退化",
+        "太阳严格边界关闭和两种光照政策及启动元数据"
+      ],
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadSolarContextTest.xml",
+      "sha256": "5babbe3e7dacde95d25118d64441abdfd6a653d25d68938e5fe283ba97f7770a",
+      "cases": [
+        "空间本影豁免而弹道背日侧仍回避原解析太阳"
+      ],
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculatorTest.xml",
+      "sha256": "fd2ae9654c256b7297c97d19905311f8bec03dbf3304ebf2166b1c54f9734deb",
+      "cases": [
+        "returnsIntersectionOnlyWhenItMeetsCombinationDuration",
+        "keepsEveryOriginalFragmentAfterCumulativeDurationMeetsThreshold",
+        "keepsSplitIntersectionsWhenTheirTotalDurationMeetsThreshold"
+      ],
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.window.SharedWindowTest.xml",
+      "sha256": "e439f8b5a9a789c91b8de00152850deff1a358936af0120723c228e97ea7035d",
+      "cases": [
+        "originalWindowGoldenMustRemainExact",
+        "sharedRunAndIntervalInfrastructureMustExist",
+        "sharedRunsKeepNativeMarkersAndFirstLastSamples",
+        "sharedTotalsKeepOverlapAndFloatingPointOrder"
+      ],
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.window.TimeWindowScannerTest.xml",
+      "sha256": "3ac513492a9bbc01874ed8b2600a5b5a0cbde714f103c7285868458d17578a6b",
+      "cases": [
+        "reportsSamplingStatisticsForVisibilityWindowScan",
+        "findsOnlyVisibilityPulsesAtOrAboveConfiguredMinimumEventDuration",
+        "splitsIntermediateStateWhenCoarseEndpointsAreEqual",
+        "splitsStableStatesAtMillisecondFineStep",
+        "refinesCoarseVisibilityTransitionsWithFineStep",
+        "reportsAdaptiveSamplingStatisticsToTheCaller"
+      ],
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.tx.alg.api.StandardPayloadRequestTest.xml",
+      "sha256": "0a6622f0535b57458e5f449b46471f4fa8602e114d26a2b8b9fcdb77077e8f96",
+      "cases": [
+        "标准字段应进入真实约束且不伪造圆锥"
+      ],
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.tx.alg.OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest.xml",
+      "sha256": "bfcd76c5566f6055add7a6566e1b68e591fc264d1bf1ed6db050afee65e727bf",
+      "cases": [
+        "embeddedPayloadsMatchLegacySinglePayloadForReferenceTrajectory"
+      ],
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.tx.alg.OrbitCalculatorResultTimeTest.xml",
+      "sha256": "742b2ba8a14d17fdd7a0cde5654a82475009495eb5f968af7e78eeea6d175e7b",
+      "cases": [
+        "visibleArc输出使用弧段自身的开始和结束时间",
+        "可见窗口结果输出载荷分类和可见性约束摘要"
+      ],
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.tx.alg.StandardPayloadScanTest.xml",
+      "sha256": "f48902c0aeceed0d26060636436dc1e73d004d2154f385d5feb5388ead3dff1a",
+      "cases": [
+        "标准对地沿迹与法向矩形窗口实际使用原模型速度",
+        "三原模型实际采样角速度阈值与点开关",
+        "真实新距离拒绝空结果和启动元数据不参与窗口"
+      ],
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.tx.alg.trajectory.TargetTrajectoryFitterInterpolationTest.xml",
+      "sha256": "4aec6f12ee0282feb278c1e27983e64021ae6c69df26be82f5c7ef790d92f445",
+      "cases": [
+        "系统模拟Wgs84端点使用经度纬度高度顺序",
+        "package102LessThanFortyPointsStillFitsAndReportsWarnings",
+        "outputEcefVelocityUsesStkFixedVelocityConvention",
+        "describeFailureFallsBackToExceptionTypeWhenMessageIsEmpty",
+        "已生成弹道文件可按新发射时间重定时且保持地固轨迹状态不变",
+        "package102InvalidPositionReportsReadableErrorBeforePropagation",
+        "package102观测点之间使用平滑插值并严格通过原始点",
+        "重定时后应按新绝对时刻更新ECI位置和速度而保持ECEF状态不变"
+      ],
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}

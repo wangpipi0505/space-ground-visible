@@ -1,0 +1,341 @@
+{
+  "records": [
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[0].request.startOffsetSec",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[0].request.stepSizeSec",
+      "expected": "10",
+      "actual": "10",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[1].request.startOffsetSec",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[1].request.stepSizeSec",
+      "expected": "10",
+      "actual": "10",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[2].request.startOffsetSec",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[2].request.stepSizeSec",
+      "expected": "10",
+      "actual": "10",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[3].request.startOffsetSec",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[3].request.stepSizeSec",
+      "expected": "10",
+      "actual": "10",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[4].request.startOffsetSec",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[4].request.stepSizeSec",
+      "expected": "10",
+      "actual": "10",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[5].request.startOffsetSec",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[5].request.stepSizeSec",
+      "expected": "10",
+      "actual": "10",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[6].request.startOffsetSec",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "conditions.json",
+      "path": "$[6].request.stepSizeSec",
+      "expected": "10",
+      "actual": "10",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-http-ground/result.json",
+      "path": "$.best.offsetSecond",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-http-ground/result.json",
+      "path": "$.allResults[0].offsetSecond",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-http-ground/result.json",
+      "path": "$.allResults[1].offsetSecond",
+      "expected": "1210",
+      "actual": "1210",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-http-ground/result.json",
+      "path": "$.allResults[2].offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_numerical-points0/result.json",
+      "path": "$.best.offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_numerical-points0/result.json",
+      "path": "$.allResults[0].offsetSecond",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_numerical-points0/result.json",
+      "path": "$.allResults[1].offsetSecond",
+      "expected": "1210",
+      "actual": "1210",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_numerical-points0/result.json",
+      "path": "$.allResults[2].offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_numerical-points1/result.json",
+      "path": "$.best.offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_numerical-points1/result.json",
+      "path": "$.allResults[0].offsetSecond",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_numerical-points1/result.json",
+      "path": "$.allResults[1].offsetSecond",
+      "expected": "1210",
+      "actual": "1210",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_numerical-points1/result.json",
+      "path": "$.allResults[2].offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_secular-points0/result.json",
+      "path": "$.best.offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_secular-points0/result.json",
+      "path": "$.allResults[0].offsetSecond",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_secular-points0/result.json",
+      "path": "$.allResults[1].offsetSecond",
+      "expected": "1210",
+      "actual": "1210",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_secular-points0/result.json",
+      "path": "$.allResults[2].offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_secular-points1/result.json",
+      "path": "$.best.offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_secular-points1/result.json",
+      "path": "$.allResults[0].offsetSecond",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_secular-points1/result.json",
+      "path": "$.allResults[1].offsetSecond",
+      "expected": "1210",
+      "actual": "1210",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-j2_secular-points1/result.json",
+      "path": "$.allResults[2].offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-two_body-points0/result.json",
+      "path": "$.best.offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-two_body-points0/result.json",
+      "path": "$.allResults[0].offsetSecond",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-two_body-points0/result.json",
+      "path": "$.allResults[1].offsetSecond",
+      "expected": "1210",
+      "actual": "1210",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-two_body-points0/result.json",
+      "path": "$.allResults[2].offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-two_body-points1/result.json",
+      "path": "$.best.offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-two_body-points1/result.json",
+      "path": "$.allResults[0].offsetSecond",
+      "expected": "1200",
+      "actual": "1200",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-two_body-points1/result.json",
+      "path": "$.allResults[1].offsetSecond",
+      "expected": "1210",
+      "actual": "1210",
+      "delta": "0"
+    },
+    {
+      "group": "ballistic15",
+      "file": "visibility-two_body-points1/result.json",
+      "path": "$.allResults[2].offsetSecond",
+      "expected": "1220",
+      "actual": "1220",
+      "delta": "0"
+    }
+  ],
+  "count": 42
+}
