@@ -1,0 +1,2105 @@
+{
+  "startedAtEpoch": 1791937677.4209006,
+  "finishedAtEpoch": 1791937678.4391086,
+  "requestsFinishedAtEpoch": 1791937678.3866942,
+  "requestsWallSec": 0.9657936096191406,
+  "cpuBeforeSec": 13.46875,
+  "cpuAfterSec": 17.296875,
+  "cpuDeltaSec": 3.828125,
+  "preparation": [
+    {
+      "name": "stations",
+      "method": "GET",
+      "path": "/api/v1/space/stations",
+      "body": null,
+      "responsePath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\prepare-stations-response.bin",
+      "ms": 137.75019999593496,
+      "status": 200,
+      "bytes": 480,
+      "responseSha256": "1c379dda48ab8604d4deab7bca8811ecb37aba92d4fbb71c4a1fd5089fd2eab6",
+      "matchedIdentities": [
+        {
+          "id": "T04-STATION",
+          "name": "基准星下站",
+          "longitude": -39.134128,
+          "latitude": 0.129382,
+          "height": 0.0,
+          "minElevation": 0.0,
+          "maxElevation": 90.0,
+          "createBy": null,
+          "createOrgId": null,
+          "createTime": null,
+          "updateBy": null,
+          "updateTime": null
+        }
+      ]
+    },
+    {
+      "name": "satellites",
+      "method": "GET",
+      "path": "/api/v1/space/satellites",
+      "body": null,
+      "responsePath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\prepare-satellites-response.bin",
+      "ms": 8.303999900817871,
+      "status": 200,
+      "bytes": 2154,
+      "responseSha256": "9816fe1c2c4d4b150c9e6ac4f1d36c4945cc153c518139c696fb523b3d83eca7",
+      "matchedIdentities": [
+        {
+          "id": 1,
+          "type": null,
+          "libraryModelId": null,
+          "name": "基准观测星",
+          "scid": null,
+          "objectId": null,
+          "objectName": null,
+          "noradCatId": null,
+          "country": null,
+          "period": null,
+          "catalogInclination": null,
+          "apogee": null,
+          "perigee": null,
+          "rcsSize": null,
+          "rcsValue": null,
+          "launchDate": null,
+          "catalogComment": null,
+          "weight": null,
+          "modelType": "KEPLER_6",
+          "epochTime": "2026-07-01T10:00:00",
+          "semiMajorAxis": 7078137.0,
+          "eccentricity": 0.0,
+          "inclination": 50.0,
+          "meanAnomaly": 0.0,
+          "raan": 30.0,
+          "argumentOfPerigee": 0.0,
+          "payloadJson": "\"{\\\"activePayloadType\\\":\\\"SPACE\\\",\\\"payloadProfiles\\\":{\\\"SPACE\\\":{\\\"payloadType\\\":\\\"SPACE\\\",\\\"distance\\\":[0.0,0.0],\\\"distanceUnit\\\":\\\"M\\\",\\\"angleRate\\\":-1.0,\\\"sunAvoidHalfAngle\\\":0.0,\\\"startupAngleRate\\\":-1.0},\\\"GROUND\\\":{\\\"payloadType\\\":\\\"GROUND\\\",\\\"distance\\\":[1000000.0,4000000.0],\\\"distanceUnit\\\":\\\"M\\\",\\\"elevation\\\":[-91.0,0.0],\\\"angleRate\\\":180.0,\\\"sunAvoidHalfAngle\\\":45.0}}}\"",
+          "firstOrbit": null,
+          "secondOrbit": null,
+          "createdBy": null,
+          "updateBy": null,
+          "createTime": null,
+          "updateTime": null
+        },
+        {
+          "id": 3,
+          "type": null,
+          "libraryModelId": null,
+          "name": "基准共同观测星",
+          "scid": null,
+          "objectId": null,
+          "objectName": null,
+          "noradCatId": null,
+          "country": null,
+          "period": null,
+          "catalogInclination": null,
+          "apogee": null,
+          "perigee": null,
+          "rcsSize": null,
+          "rcsValue": null,
+          "launchDate": null,
+          "catalogComment": null,
+          "weight": null,
+          "modelType": "KEPLER_6",
+          "epochTime": "2026-07-01T10:00:00",
+          "semiMajorAxis": 7078137.0,
+          "eccentricity": 0.0,
+          "inclination": 50.0,
+          "meanAnomaly": 2.0,
+          "raan": 30.0,
+          "argumentOfPerigee": 0.0,
+          "payloadJson": "\"{\\\"activePayloadType\\\":\\\"SPACE\\\",\\\"payloadProfiles\\\":{\\\"SPACE\\\":{\\\"payloadType\\\":\\\"SPACE\\\",\\\"distance\\\":[0.0,0.0],\\\"distanceUnit\\\":\\\"M\\\",\\\"angleRate\\\":-1.0,\\\"sunAvoidHalfAngle\\\":0.0,\\\"startupAngleRate\\\":-1.0},\\\"GROUND\\\":{\\\"payloadType\\\":\\\"GROUND\\\",\\\"distance\\\":[0.0,0.0],\\\"distanceUnit\\\":\\\"M\\\",\\\"angleRate\\\":180.0,\\\"sunAvoidHalfAngle\\\":0.0}}}\"",
+          "firstOrbit": null,
+          "secondOrbit": null,
+          "createdBy": null,
+          "updateBy": null,
+          "createTime": null,
+          "updateTime": null
+        }
+      ]
+    }
+  ],
+  "preparationStartedAtEpoch": 1791937677.4215214,
+  "preparationFinishedAtEpoch": 1791937677.5703015,
+  "pid": 62732,
+  "jarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71",
+  "heap": "-Xms256m -Xmx4g",
+  "scenarios": [
+    {
+      "name": "space-downlink",
+      "kind": "downlink",
+      "scale": {
+        "satellites": 2,
+        "stations": 1,
+        "links": 2,
+        "intervalSec": 600,
+        "coarseStepSec": 60,
+        "fineStepSec": 1,
+        "expectedOutput": {
+          "satellites": 2,
+          "stations": 1,
+          "links": 2,
+          "satelliteStationWindows": 2,
+          "coverageWindows": 1,
+          "linkDurationSec": "848",
+          "coverageDurationSec": "441",
+          "identities": [
+            {
+              "satelliteId": 1,
+              "stationId": "T04-STATION"
+            },
+            {
+              "satelliteId": 3,
+              "stationId": "T04-STATION"
+            }
+          ],
+          "skippedLinks": 0
+        }
+      },
+      "warmup": [
+        {
+          "ms": 193.31919960677624,
+          "status": 200,
+          "bytes": 593,
+          "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+          "index": 0,
+          "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-warmup-0-response.bin",
+          "ok": true,
+          "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+          "dimensions": {
+            "satellites": 2,
+            "stations": 1,
+            "links": 2,
+            "satelliteStationWindows": 2,
+            "coverageWindows": 1,
+            "linkDurationSec": "848.0",
+            "coverageDurationSec": "441.0",
+            "identities": [
+              {
+                "satelliteId": 1,
+                "stationId": "T04-STATION"
+              },
+              {
+                "satelliteId": 3,
+                "stationId": "T04-STATION"
+              }
+            ],
+            "skippedLinks": 0
+          }
+        },
+        {
+          "ms": 33.99210004135966,
+          "status": 200,
+          "bytes": 593,
+          "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+          "index": 1,
+          "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-warmup-1-response.bin",
+          "ok": true,
+          "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+          "dimensions": {
+            "satellites": 2,
+            "stations": 1,
+            "links": 2,
+            "satelliteStationWindows": 2,
+            "coverageWindows": 1,
+            "linkDurationSec": "848.0",
+            "coverageDurationSec": "441.0",
+            "identities": [
+              {
+                "satelliteId": 1,
+                "stationId": "T04-STATION"
+              },
+              {
+                "satelliteId": 3,
+                "stationId": "T04-STATION"
+              }
+            ],
+            "skippedLinks": 0
+          }
+        }
+      ],
+      "groups": [
+        {
+          "name": "serial",
+          "concurrency": 1,
+          "requests": [
+            {
+              "ms": 16.449599992483854,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 0,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-0-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 33.8110001757741,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 1,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-1-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 13.897200115025043,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 2,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-2-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 25.928799994289875,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 3,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-3-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 10.88079996407032,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 4,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-4-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 34.92759959772229,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 5,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-5-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 9.82690043747425,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 6,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-6-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 32.68310008570552,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 7,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-7-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 8.34409985691309,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 8,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-8-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 8.440400008112192,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 9,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-serial-9-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            }
+          ],
+          "startedAtEpoch": 1791937677.7998705,
+          "finishedAtEpoch": 1791937678.0052571,
+          "cpuBeforeSec": 14.34375,
+          "cpuAfterSec": 15.140625,
+          "samples": 10,
+          "validSamples": 10,
+          "errors": 0,
+          "errorRate": 0.0,
+          "wallSec": 0.2054695002734661,
+          "rps": 48.66902380494756,
+          "validRps": 48.66902380494756,
+          "throughputBoundary": "线程池全组墙时含完整响应读取和数值/CSV校验；不是纯服务容量上界",
+          "p50Ms": 13.897200115025043,
+          "p95Ms": 34.92759959772229,
+          "p99Ms": 34.92759959772229,
+          "minMs": 8.34409985691309,
+          "maxMs": 34.92759959772229,
+          "p99Caution": "N<100：仅本次观测上界，不能推断稳健SLA"
+        },
+        {
+          "name": "c1",
+          "concurrency": 1,
+          "requests": [
+            {
+              "ms": 9.358900133520365,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 0,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-0-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 33.330200240015984,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 1,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-1-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 9.107899852097034,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 2,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-2-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 10.225399862974882,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 3,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-3-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 28.819500003010035,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 4,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-4-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 26.045100297778845,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 5,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-5-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 7.958999834954739,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 6,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-6-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 7.834999822080135,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 7,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-7-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 8.058100007474422,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 8,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-8-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 7.894500158727169,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 9,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-9-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 7.8660002909600735,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 10,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-10-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 7.3194000869989395,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 11,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c1-11-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            }
+          ],
+          "startedAtEpoch": 1791937678.0057042,
+          "finishedAtEpoch": 1791937678.1753597,
+          "cpuBeforeSec": 15.140625,
+          "cpuAfterSec": 15.71875,
+          "samples": 12,
+          "validSamples": 12,
+          "errors": 0,
+          "errorRate": 0.0,
+          "wallSec": 0.16974030015990138,
+          "rps": 70.69623412174701,
+          "validRps": 70.69623412174701,
+          "throughputBoundary": "线程池全组墙时含完整响应读取和数值/CSV校验；不是纯服务容量上界",
+          "p50Ms": 8.058100007474422,
+          "p95Ms": 33.330200240015984,
+          "p99Ms": 33.330200240015984,
+          "minMs": 7.3194000869989395,
+          "maxMs": 33.330200240015984,
+          "p99Caution": "N<100：仅本次观测上界，不能推断稳健SLA"
+        },
+        {
+          "name": "c2",
+          "concurrency": 2,
+          "requests": [
+            {
+              "ms": 9.97919961810112,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 0,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-0-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 9.820399805903435,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 1,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-1-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 9.759500157088041,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 2,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-2-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 9.660399984568357,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 3,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-3-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 7.637199945747852,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 4,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-4-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 17.97980023548007,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 5,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-5-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 25.482400320470333,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 6,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-6-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 30.62650002539158,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 7,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-7-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 31.191200017929077,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 8,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-8-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 7.692200131714344,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 9,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-9-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 25.479699950665236,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 10,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-10-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 9.587599895894527,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 11,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c2-11-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            }
+          ],
+          "startedAtEpoch": 1791937678.1758277,
+          "finishedAtEpoch": 1791937678.281048,
+          "cpuBeforeSec": 15.71875,
+          "cpuAfterSec": 16.125,
+          "samples": 12,
+          "validSamples": 12,
+          "errors": 0,
+          "errorRate": 0.0,
+          "wallSec": 0.10530679998919368,
+          "rps": 113.95275519939273,
+          "validRps": 113.95275519939273,
+          "throughputBoundary": "线程池全组墙时含完整响应读取和数值/CSV校验；不是纯服务容量上界",
+          "p50Ms": 9.820399805903435,
+          "p95Ms": 31.191200017929077,
+          "p99Ms": 31.191200017929077,
+          "minMs": 7.637199945747852,
+          "maxMs": 31.191200017929077,
+          "p99Caution": "N<100：仅本次观测上界，不能推断稳健SLA"
+        },
+        {
+          "name": "c4",
+          "concurrency": 4,
+          "requests": [
+            {
+              "ms": 26.8779001198709,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 0,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-0-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 12.47100019827485,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 1,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-1-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 12.006900273263454,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 2,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-2-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 12.961599975824356,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 3,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-3-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 15.986800193786621,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 4,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-4-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 14.57470003515482,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 5,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-5-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 12.181099969893694,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 6,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-6-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 30.031099915504456,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 7,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-7-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 12.770500034093857,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 8,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-8-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 11.729000136256218,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 9,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-9-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 13.40720010921359,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 10,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-10-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 10.726199951022863,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 11,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c4-11-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            }
+          ],
+          "startedAtEpoch": 1791937678.281568,
+          "finishedAtEpoch": 1791937678.3409433,
+          "cpuBeforeSec": 16.125,
+          "cpuAfterSec": 16.796875,
+          "samples": 12,
+          "validSamples": 12,
+          "errors": 0,
+          "errorRate": 0.0,
+          "wallSec": 0.05950979981571436,
+          "rps": 201.6474603705731,
+          "validRps": 201.6474603705731,
+          "throughputBoundary": "线程池全组墙时含完整响应读取和数值/CSV校验；不是纯服务容量上界",
+          "p50Ms": 12.770500034093857,
+          "p95Ms": 30.031099915504456,
+          "p99Ms": 30.031099915504456,
+          "minMs": 10.726199951022863,
+          "maxMs": 30.031099915504456,
+          "p99Caution": "N<100：仅本次观测上界，不能推断稳健SLA"
+        },
+        {
+          "name": "c6",
+          "concurrency": 6,
+          "requests": [
+            {
+              "ms": 11.868000030517578,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 0,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-0-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 14.951199758797884,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 1,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-1-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 15.631599817425013,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 2,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-2-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 12.837599962949753,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 3,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-3-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 10.751700028777122,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 4,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-4-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 16.062299720942974,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 5,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-5-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 11.906799860298634,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 6,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-6-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 12.750400230288506,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 7,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-7-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 11.10680028796196,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 8,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-8-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 26.083699893206358,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 9,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-9-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 25.650300085544586,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 10,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-10-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            },
+            {
+              "ms": 9.187700226902962,
+              "status": 200,
+              "bytes": 593,
+              "responseSha256": "1e0e7933efad86275ec640500cc5ec120cc9a12949ab1e3028534567280c72ca",
+              "index": 11,
+              "responsePath": "verification\\runtime\\A01\\review-fix-downlink-v4\\performance-downlink-review-v4\\space-downlink-c6-11-response.bin",
+              "ok": true,
+              "numericSha256": "438be98dfdf228f481c069418d5aa80a35005f80bb30c606a8736ae175221bee",
+              "dimensions": {
+                "satellites": 2,
+                "stations": 1,
+                "links": 2,
+                "satelliteStationWindows": 2,
+                "coverageWindows": 1,
+                "linkDurationSec": "848.0",
+                "coverageDurationSec": "441.0",
+                "identities": [
+                  {
+                    "satelliteId": 1,
+                    "stationId": "T04-STATION"
+                  },
+                  {
+                    "satelliteId": 3,
+                    "stationId": "T04-STATION"
+                  }
+                ],
+                "skippedLinks": 0
+              }
+            }
+          ],
+          "startedAtEpoch": 1791937678.3418965,
+          "finishedAtEpoch": 1791937678.3854995,
+          "cpuBeforeSec": 16.796875,
+          "cpuAfterSec": 17.296875,
+          "samples": 12,
+          "validSamples": 12,
+          "errors": 0,
+          "errorRate": 0.0,
+          "wallSec": 0.04372800001874566,
+          "rps": 274.42371009091994,
+          "validRps": 274.42371009091994,
+          "throughputBoundary": "线程池全组墙时含完整响应读取和数值/CSV校验；不是纯服务容量上界",
+          "p50Ms": 12.750400230288506,
+          "p95Ms": 26.083699893206358,
+          "p99Ms": 26.083699893206358,
+          "minMs": 9.187700226902962,
+          "maxMs": 26.083699893206358,
+          "p99Caution": "N<100：仅本次观测上界，不能推断稳健SLA"
+        }
+      ],
+      "expectedSource": {
+        "path": "verification\\A01\\final\\browser-summary.json",
+        "sha256": "467fbd4f3b48396dc282f411130171a237ccd7efcfa6e16d61e01fd48b365839",
+        "event": "space.result.evidence[name=downlink]",
+        "cliStdoutSha256": "b66e71c987a8ed172734ce60120ec47e002f1813d4ac73c217d10385c97365d4",
+        "runtimeResultSha256": "66914fa76dbcf3c6ce29fec2afe399630db72c8d3534b9263b2f9e3995520b2b"
+      },
+      "warmupWallSec": 0.22849512100219727,
+      "warmupCpuDeltaSec": 0.734375
+    }
+  ],
+  "resources": {
+    "samples": 5,
+    "periodMs": 250,
+    "maxWorkingSetBytes": 676524032,
+    "maxPrivateBytes": 1092460544,
+    "maxThreads": 64,
+    "cpuTotalSec": 2.140625,
+    "workingSetIsNotHeap": true
+  },
+  "percentile": "nearest-rank",
+  "complete": true,
+  "sla": "用户未提供SLA，仅报告实测；N12的p99是观测上界"
+}

@@ -1,0 +1,18 @@
+### Ran Playwright code
+```js
+await fileChooser.setFiles(["G:\\5-YG\\space-ground-visible\\test-data\\reference\\ballistic\\target_trajectory_simulate_default.json"])
+```
+### Page
+- Page URL: http://127.0.0.1:15140/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+- [Snapshot](.playwright-cli\page-2026-10-13T23-38-56-241Z.yml)
+### Events
+- Downloading file defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_073853_523.csv ...
+- Downloaded file defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_073853_523.csv to ".playwright-cli\defaultSimTask-2026-06-04-04-00-00-000-2026-06-04-04-42-55-000-SIM-001-20261014-073853-523.csv"
+- Downloading file 模拟实际提交.json ...
+- Downloaded file 模拟实际提交.json to ".playwright-cli\模拟实际提交.json"
+- Downloading file 模拟原响应.json ...
+- Downloaded file 模拟原响应.json to ".playwright-cli\模拟原响应.json"
+- Downloading file 弹道窗口原始响应.json ...
+- Downloaded file 弹道窗口原始响应.json to ".playwright-cli\弹道窗口原始响应.json"

@@ -1,0 +1,6 @@
+### Result
+{"source":"精确恢复同CSV后只重新登记并读取，原旧ID已注销","registration":{"status":201,"reference":{"fileId":"0a12c9db-6a49-421d-b3b8-448e021e354a","originalName":"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_072157_068.csv","sizeBytes":327928,"contentType":"text/csv","serverPath":"G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\server-fixture\\files\\results\\fit-4411084309217999703\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_072157_068.csv"}},"preview":{"url":"http://127.0.0.1:15140/api/v1/ballistic/files/0a12c9db-6a49-421d-b3b8-448e021e354a/preview?page=1&limit=50","status":200,"page":1},"downloadName":"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_072157_068.csv","computeCalls":0,"errorsCleared":true}
+### Ran Playwright code
+```js
+await (async (page) => page.__a01_aux_recovery)(page);
+```

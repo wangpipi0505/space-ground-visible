@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "publicTypes": 50,
+  "declarationLinesIncludingDescriptors": 1174,
+  "source": "只读冻结原class与最终T29干净package的javap -public -s",
+  "differences": []
+}

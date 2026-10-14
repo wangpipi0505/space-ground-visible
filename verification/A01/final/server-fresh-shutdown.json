@@ -1,0 +1,23 @@
+{
+  "pid": 49816,
+  "naturalExitCode": 0,
+  "contextCloseReturned": true,
+  "mainReturned": true,
+  "nonDaemonRemaining": false,
+  "portRebind": true,
+  "jarUnchanged": true,
+  "warnLines": [
+    "2026-10-14 07:29:28.433  WARN 49816 --- [io-18140-exec-1] o.s.w.c.request.async.WebAsyncManager    : ",
+    "2026-10-14 07:29:30.527 ERROR 49816 --- [io-18140-exec-6] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=385106c6-251e-4263-a654-8ed9e13978e1",
+    "2026-10-14 07:29:30.560  WARN 49816 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务失败：taskId=e923e211-2aed-4216-9ea5-072d77468f18，异常类型=IllegalArgumentException，根因=规划时间段或步长无效",
+    "2026-10-14 07:29:33.254 ERROR 49816 --- [io-18140-exec-3] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=d36ed676-5fef-4fa4-adef-68490bf4b341",
+    "2026-10-14 07:29:33.265 ERROR 49816 --- [io-18140-exec-1] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=8202e93f-664b-49ed-8c1b-646a78e53ea0",
+    "2026-10-14 07:29:33.277 ERROR 49816 --- [io-18140-exec-9] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=ffef8110-524f-4c6f-9732-f923ddc63374",
+    "2026-10-14 07:30:45.031  WARN 49816 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:30:45.031  WARN 49816 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:30:45.031  WARN 49816 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:30:45.031  WARN 49816 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [System Clock] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:30:45.032  WARN 49816 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-planning-task-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:30:45.032  WARN 49816 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "docker",
+    "info"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 1,
+  "durationSec": 0.3067338466644287,
+  "stdoutSha256": "ed70f703c9792090984d44ffc355d7df5f635e0df3aebfe874395fa3599c457e"
+}

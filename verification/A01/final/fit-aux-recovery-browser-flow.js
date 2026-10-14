@@ -1,0 +1,27 @@
+async (page) => { page.__a01_aux_recovery = await (/** 同一CSV恢复后只重试实际文件操作，不发送第二次拟合，真实下载保存供原字节核验。 */
+async (page) => {
+  const assert = (value, message) => { if (!value) throw new Error(message) }
+  const target = page.locator('[data-fit-target="TGT-001"]')
+  let computeCalls = 0
+  const observe = request => { if (request.url().endsWith('/package102')) computeCalls++ }
+  page.on('request', observe)
+  // acquire的原兼容行为会在实体缺失时注销ID；恢复实体后先独立登记，不修改服务生命周期。
+  const registerPromise = page.waitForResponse(response => response.url().endsWith('/register-result'))
+  const previewPromise = page.waitForResponse(response => response.url().includes('/preview?page=1&limit=50'))
+  await target.locator('[data-test=fit-reregister]').click()
+  const registration = await registerPromise
+  assert(registration.status() === 201, '重新登记未201')
+  const preview = await previewPromise
+  assert(preview.status() === 200, '恢复预览未200')
+  await target.getByText('第 1 页', { exact: false }).waitFor()
+  const downloadPromise = page.waitForEvent('download')
+  await target.locator('[data-test=fit-download]').click()
+  const download = await downloadPromise
+  await download.saveAs('G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/fit/download-recovered.csv')
+  assert(!await download.failure() && await target.getByRole('alert').count() === 0, '恢复后下载失败或旧错误未清')
+  assert(computeCalls === 0, '文件辅助恢复不应重新拟合')
+  await target.screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/A01/final/fit/aux-real-reregister-recovered.png' })
+  page.off('request', observe)
+  return { source: '精确恢复同CSV后只重新登记并读取，原旧ID已注销', registration: { status: registration.status(), reference: await registration.json() }, preview: { url: preview.url(), status: preview.status(), page: (await preview.json()).page }, downloadName: download.suggestedFilename(), computeCalls, errorsCleared: true }
+}
+)(page); return page.__a01_aux_recovery; }

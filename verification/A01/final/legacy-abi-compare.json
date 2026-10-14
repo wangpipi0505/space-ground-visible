@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "publicTypes": 50,
+  "declarationLinesIncludingDescriptors": 1174,
+  "source": "A01本轮新javap -public -s：只读冻结原class与最终隔离classes",
+  "currentClasses": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\final-source-v3\\backend\\target\\classes",
+  "originalClasses": "G:\\5-YG\\space-ground-visible\\verification\\baseline-copies\\ballistic\\source\\target\\classes",
+  "differences": []
+}

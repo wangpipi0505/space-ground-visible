@@ -1,0 +1,31 @@
+{
+  "matrixCases": 894,
+  "matrixStatusCounts": {
+    "PASS": 884,
+    "SKIP": 1,
+    "FAIL": 5,
+    "BLOCKED": 4
+  },
+  "backend": {
+    "tests": 351,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "frontendTests": 112,
+  "httpRequests": 247,
+  "httpChecks": 95,
+  "uiFlows": 12,
+  "screenshots": 27,
+  "downloadComparisons": 11,
+  "performanceMeasured": 2158,
+  "warmup": 38,
+  "prepareRequests": 7,
+  "currentCoverageRequestCount": 2203,
+  "performanceScope": "18原R2+1下传v4；跨阶段，资源独立",
+  "driverTargetedChecks": 8,
+  "measuredErrors": 0,
+  "reportSha256": "7c243bcf4ec4d343aebb7beda8aa4d6f1c83e74809bcf0b10971b958b1e39644",
+  "matrixSha256": "27919956ff086ec4f30dabf404b21846da54915267d7b015e2bc22bf259c9e2e",
+  "jarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71"
+}

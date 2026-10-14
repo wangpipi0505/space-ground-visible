@@ -1,0 +1,16 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-final",
+    "upload",
+    "G:/5-YG/space-ground-visible/test-data/reference/ballistic/target_trajectory_simulate_default.json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 2.952953338623047,
+  "stdoutSha256": "b3d10c04eac19218e09d5fe97f2dc269a4de279f05c22b7e1d0346eb08da2bd4"
+}

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-acceptance",
+    "run-code",
+    "async (page) => page.__a01_aux_failure"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 2.629800796508789,
+  "stdoutSha256": "a52d6a2c004310606983e0138c326ae21430d101867ed0a2823e26ccc38fca9a"
+}

@@ -1,0 +1,17 @@
+{
+  "phase": "RED",
+  "workingDirectory": "G:\\5-YG\\space-ground-visible",
+  "javaHome": "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot",
+  "javaExecutable": "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+  "command": "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+  "arguments": [
+    "-f",
+    "backend/pom.xml",
+    "-Dtest=VisibilityTaskResultServiceTest#clearsRemarkToDatabaseNullWithoutChangingTaskFields+returnsNullWhenClearingRemarkOfMissingRecord+preservesEmptyStringRemark,SpaceVisibilityControllerIntegrationTest#clearsTaskResultRemarkThroughPutAndPersistsForGet",
+    "test"
+  ],
+  "startedAt": "2026-10-14T07:22:56.5714450+08:00",
+  "completedAt": "2026-10-14T07:23:06.1915188+08:00",
+  "exitCode": 1,
+  "output": "verification/A01/remark-fix-red.txt"
+}

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python",
+    "verification/A01/review_fix_finalize.py",
+    "selfcheck"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.7645869255065918,
+  "stdoutSha256": "83dbcf578fb0f1991cb00b5bb5596795656f4e6c6e645ad015ab75e0a132b2a6"
+}

@@ -1,0 +1,1074 @@
+{
+  "navigation": {
+    "browser": "155.0.8059.39",
+    "timezone": "Asia/Shanghai",
+    "navigations": [
+      {
+        "ttfbMs": 0.40000009536743164,
+        "domContentLoadedMs": 108.69999980926514,
+        "loadMs": 109.39999961853027,
+        "fcpMs": 136,
+        "lcpMs": 136,
+        "jsHeap": {
+          "used": 22126305,
+          "total": 99108501,
+          "limit": 4395630592
+        },
+        "navigation": {
+          "transferSize": 903,
+          "encodedBodySize": 603,
+          "decodedBodySize": 603
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:15140/assets/index-aYRW8iIe.js",
+            "type": "script",
+            "durationMs": 4,
+            "transferSize": 1115348,
+            "encodedBodySize": 1115048,
+            "decodedBodySize": 1115048
+          },
+          {
+            "name": "http://127.0.0.1:15140/assets/index-BJnLVI0b.css",
+            "type": "link",
+            "durationMs": 2.6999998092651367,
+            "transferSize": 375392,
+            "encodedBodySize": 375092,
+            "decodedBodySize": 375092
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/health",
+            "type": "fetch",
+            "durationMs": 2.6999998092651367,
+            "transferSize": 315,
+            "encodedBodySize": 15,
+            "decodedBodySize": 15
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/satellites/page?pageNumber=1&pageSize=50",
+            "type": "fetch",
+            "durationMs": 4.900000095367432,
+            "transferSize": 962,
+            "encodedBodySize": 662,
+            "decodedBodySize": 662
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/stations",
+            "type": "fetch",
+            "durationMs": 3.1000003814697266,
+            "transferSize": 780,
+            "encodedBodySize": 480,
+            "decodedBodySize": 480
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/defaults",
+            "type": "fetch",
+            "durationMs": 2.8999996185302734,
+            "transferSize": 425,
+            "encodedBodySize": 125,
+            "decodedBodySize": 125
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/targets/belong-options",
+            "type": "fetch",
+            "durationMs": 3.5,
+            "transferSize": 372,
+            "encodedBodySize": 72,
+            "decodedBodySize": 72
+          },
+          {
+            "name": "http://127.0.0.1:15140/favicon.svg",
+            "type": "other",
+            "durationMs": 1.0999999046325684,
+            "transferSize": 9822,
+            "encodedBodySize": 9522,
+            "decodedBodySize": 9522
+          }
+        ]
+      },
+      {
+        "ttfbMs": 0.6000003814697266,
+        "domContentLoadedMs": 96.7999997138977,
+        "loadMs": 97.59999990463257,
+        "fcpMs": 116,
+        "lcpMs": 116,
+        "jsHeap": {
+          "used": 47802349,
+          "total": 100700805,
+          "limit": 4395630592
+        },
+        "navigation": {
+          "transferSize": 903,
+          "encodedBodySize": 603,
+          "decodedBodySize": 603
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:15140/assets/index-BJnLVI0b.css",
+            "type": "link",
+            "durationMs": 2.0999999046325684,
+            "transferSize": 375392,
+            "encodedBodySize": 375092,
+            "decodedBodySize": 375092
+          },
+          {
+            "name": "http://127.0.0.1:15140/assets/index-aYRW8iIe.js",
+            "type": "script",
+            "durationMs": 3.4000000953674316,
+            "transferSize": 1115348,
+            "encodedBodySize": 1115048,
+            "decodedBodySize": 1115048
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/health",
+            "type": "fetch",
+            "durationMs": 2.1999998092651367,
+            "transferSize": 315,
+            "encodedBodySize": 15,
+            "decodedBodySize": 15
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/satellites/page?pageNumber=1&pageSize=50",
+            "type": "fetch",
+            "durationMs": 3.9000000953674316,
+            "transferSize": 962,
+            "encodedBodySize": 662,
+            "decodedBodySize": 662
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/stations",
+            "type": "fetch",
+            "durationMs": 2.5,
+            "transferSize": 780,
+            "encodedBodySize": 480,
+            "decodedBodySize": 480
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/defaults",
+            "type": "fetch",
+            "durationMs": 1.9000000953674316,
+            "transferSize": 425,
+            "encodedBodySize": 125,
+            "decodedBodySize": 125
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/targets/belong-options",
+            "type": "fetch",
+            "durationMs": 2.200000286102295,
+            "transferSize": 372,
+            "encodedBodySize": 72,
+            "decodedBodySize": 72
+          },
+          {
+            "name": "http://127.0.0.1:15140/favicon.svg",
+            "type": "other",
+            "durationMs": 1,
+            "transferSize": 9822,
+            "encodedBodySize": 9522,
+            "decodedBodySize": 9522
+          }
+        ]
+      },
+      {
+        "ttfbMs": 0.5,
+        "domContentLoadedMs": 99.90000009536743,
+        "loadMs": 100.60000038146973,
+        "fcpMs": 120,
+        "lcpMs": 120,
+        "jsHeap": {
+          "used": 50604217,
+          "total": 106222481,
+          "limit": 4395630592
+        },
+        "navigation": {
+          "transferSize": 903,
+          "encodedBodySize": 603,
+          "decodedBodySize": 603
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:15140/assets/index-BJnLVI0b.css",
+            "type": "link",
+            "durationMs": 2.0999999046325684,
+            "transferSize": 375392,
+            "encodedBodySize": 375092,
+            "decodedBodySize": 375092
+          },
+          {
+            "name": "http://127.0.0.1:15140/assets/index-aYRW8iIe.js",
+            "type": "script",
+            "durationMs": 3.4000000953674316,
+            "transferSize": 1115348,
+            "encodedBodySize": 1115048,
+            "decodedBodySize": 1115048
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/health",
+            "type": "fetch",
+            "durationMs": 1.8999996185302734,
+            "transferSize": 315,
+            "encodedBodySize": 15,
+            "decodedBodySize": 15
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/satellites/page?pageNumber=1&pageSize=50",
+            "type": "fetch",
+            "durationMs": 3.6999998092651367,
+            "transferSize": 962,
+            "encodedBodySize": 662,
+            "decodedBodySize": 662
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/stations",
+            "type": "fetch",
+            "durationMs": 2.6000003814697266,
+            "transferSize": 780,
+            "encodedBodySize": 480,
+            "decodedBodySize": 480
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/defaults",
+            "type": "fetch",
+            "durationMs": 1.5,
+            "transferSize": 425,
+            "encodedBodySize": 125,
+            "decodedBodySize": 125
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/targets/belong-options",
+            "type": "fetch",
+            "durationMs": 2.3000001907348633,
+            "transferSize": 372,
+            "encodedBodySize": 72,
+            "decodedBodySize": 72
+          },
+          {
+            "name": "http://127.0.0.1:15140/favicon.svg",
+            "type": "other",
+            "durationMs": 0.8000001907348633,
+            "transferSize": 9822,
+            "encodedBodySize": 9522,
+            "decodedBodySize": 9522
+          }
+        ]
+      },
+      {
+        "ttfbMs": 0.5999999046325684,
+        "domContentLoadedMs": 103.5,
+        "loadMs": 104.30000019073486,
+        "fcpMs": 120,
+        "lcpMs": 120,
+        "jsHeap": {
+          "used": 60102974,
+          "total": 120394910,
+          "limit": 4395630592
+        },
+        "navigation": {
+          "transferSize": 903,
+          "encodedBodySize": 603,
+          "decodedBodySize": 603
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:15140/assets/index-aYRW8iIe.js",
+            "type": "script",
+            "durationMs": 4.299999713897705,
+            "transferSize": 1115348,
+            "encodedBodySize": 1115048,
+            "decodedBodySize": 1115048
+          },
+          {
+            "name": "http://127.0.0.1:15140/assets/index-BJnLVI0b.css",
+            "type": "link",
+            "durationMs": 2,
+            "transferSize": 375392,
+            "encodedBodySize": 375092,
+            "decodedBodySize": 375092
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/health",
+            "type": "fetch",
+            "durationMs": 1.9000000953674316,
+            "transferSize": 315,
+            "encodedBodySize": 15,
+            "decodedBodySize": 15
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/satellites/page?pageNumber=1&pageSize=50",
+            "type": "fetch",
+            "durationMs": 3.6000003814697266,
+            "transferSize": 962,
+            "encodedBodySize": 662,
+            "decodedBodySize": 662
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/stations",
+            "type": "fetch",
+            "durationMs": 2.299999713897705,
+            "transferSize": 780,
+            "encodedBodySize": 480,
+            "decodedBodySize": 480
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/defaults",
+            "type": "fetch",
+            "durationMs": 1.5999999046325684,
+            "transferSize": 425,
+            "encodedBodySize": 125,
+            "decodedBodySize": 125
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/targets/belong-options",
+            "type": "fetch",
+            "durationMs": 2,
+            "transferSize": 372,
+            "encodedBodySize": 72,
+            "decodedBodySize": 72
+          },
+          {
+            "name": "http://127.0.0.1:15140/favicon.svg",
+            "type": "other",
+            "durationMs": 1,
+            "transferSize": 9822,
+            "encodedBodySize": 9522,
+            "decodedBodySize": 9522
+          }
+        ]
+      },
+      {
+        "ttfbMs": 0.39999961853027344,
+        "domContentLoadedMs": 94.90000009536743,
+        "loadMs": 95.7000002861023,
+        "fcpMs": 116,
+        "lcpMs": 116,
+        "jsHeap": {
+          "used": 66088201,
+          "total": 128013737,
+          "limit": 4395630592
+        },
+        "navigation": {
+          "transferSize": 903,
+          "encodedBodySize": 603,
+          "decodedBodySize": 603
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:15140/assets/index-aYRW8iIe.js",
+            "type": "script",
+            "durationMs": 3.799999713897705,
+            "transferSize": 1115348,
+            "encodedBodySize": 1115048,
+            "decodedBodySize": 1115048
+          },
+          {
+            "name": "http://127.0.0.1:15140/assets/index-BJnLVI0b.css",
+            "type": "link",
+            "durationMs": 2.0999999046325684,
+            "transferSize": 375392,
+            "encodedBodySize": 375092,
+            "decodedBodySize": 375092
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/health",
+            "type": "fetch",
+            "durationMs": 1.6999998092651367,
+            "transferSize": 315,
+            "encodedBodySize": 15,
+            "decodedBodySize": 15
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/satellites/page?pageNumber=1&pageSize=50",
+            "type": "fetch",
+            "durationMs": 3.0999999046325684,
+            "transferSize": 962,
+            "encodedBodySize": 662,
+            "decodedBodySize": 662
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/stations",
+            "type": "fetch",
+            "durationMs": 2.299999713897705,
+            "transferSize": 780,
+            "encodedBodySize": 480,
+            "decodedBodySize": 480
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/defaults",
+            "type": "fetch",
+            "durationMs": 1.4000000953674316,
+            "transferSize": 425,
+            "encodedBodySize": 125,
+            "decodedBodySize": 125
+          },
+          {
+            "name": "http://127.0.0.1:15140/api/v1/space/targets/belong-options",
+            "type": "fetch",
+            "durationMs": 1.5,
+            "transferSize": 372,
+            "encodedBodySize": 72,
+            "decodedBodySize": 72
+          },
+          {
+            "name": "http://127.0.0.1:15140/favicon.svg",
+            "type": "other",
+            "durationMs": 0.8999996185302734,
+            "transferSize": 9822,
+            "encodedBodySize": 9522,
+            "decodedBodySize": 9522
+          }
+        ]
+      }
+    ],
+    "pages": [
+      {
+        "name": "弹道载荷配置",
+        "tabClickToVisibleTwoFramesMs": 48,
+        "domNodes": 96
+      },
+      {
+        "name": "102包轨迹拟合",
+        "tabClickToVisibleTwoFramesMs": 65,
+        "domNodes": 11
+      },
+      {
+        "name": "模拟弹道",
+        "tabClickToVisibleTwoFramesMs": 67,
+        "domNodes": 46
+      },
+      {
+        "name": "弹道重定时",
+        "tabClickToVisibleTwoFramesMs": 64,
+        "domNodes": 29
+      },
+      {
+        "name": "任务结果记录",
+        "tabClickToVisibleTwoFramesMs": 82,
+        "domNodes": 316
+      },
+      {
+        "name": "规划工作台",
+        "tabClickToVisibleTwoFramesMs": 65,
+        "domNodes": 641
+      }
+    ],
+    "note": "导航5次均真实page.goto；首次冷访问与随后Chrome缓存导航分别保留。LCP是稳定500ms后的最后观测，不等于无限等待最终候选。JS heap为Chrome暴露的近似JS堆，不代表浏览器总内存。"
+  },
+  "large": {
+    "request": {
+      "startOffsetSec": 1200,
+      "stepSizeSec": 10,
+      "numCalculations": 31,
+      "targetSampleStepSec": 1,
+      "trajectoryPointOutput": 1,
+      "orbitModel": "J2_NUMERICAL",
+      "satellites": [
+        {
+          "satelliteId": "MANUAL-1",
+          "name": "手工卫星1",
+          "payloads": [
+            {
+              "payloadId": "MANUAL-1-P1",
+              "payloadName": "载荷1",
+              "payloadType": "SPACE",
+              "minDistanceKm": 0,
+              "maxDistanceKm": 0,
+              "azimuthMinDeg": null,
+              "azimuthMaxDeg": null,
+              "elevationMinDeg": null,
+              "elevationMaxDeg": null,
+              "angleRateDegPerSec": -1,
+              "sunAvoidHalfAngleDeg": 0,
+              "startupAngleRateDegPerSec": -1
+            }
+          ],
+          "semiMajorAxisM": 7530612,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120,
+          "argumentOfPerigeeDeg": 270,
+          "meanAnomalyDeg": 30,
+          "epochUtc": "2026/07/01 10:00:00.000"
+        }
+      ],
+      "ballistics": [
+        {
+          "targetId": "TARGET-1",
+          "targetName": "目标1",
+          "csvPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fixture\\files\\uploads\\upload-8805498882921921941.csv"
+        }
+      ]
+    },
+    "responseStatus": 200,
+    "responseBytes": 4026832,
+    "offsets": 31,
+    "pointCount": 13062,
+    "clickToTransferCompleteMs": 303,
+    "transferCompleteToResultDomMs": 101,
+    "clickToResultDomMs": 404,
+    "fullTrajectoryDrawMs": 63,
+    "offsetTimings": [
+      {
+        "index": 0,
+        "offset": 1200,
+        "ms": 37
+      },
+      {
+        "index": 15,
+        "offset": 1350,
+        "ms": 34
+      },
+      {
+        "index": 30,
+        "offset": 1500,
+        "ms": 32
+      }
+    ],
+    "downloadInteractionMs": 98,
+    "httpTiming": {
+      "startTime": 1791934842113.983,
+      "domainLookupStart": -1,
+      "domainLookupEnd": -1,
+      "connectStart": -1,
+      "secureConnectionStart": -1,
+      "connectEnd": -1,
+      "requestStart": 0.103,
+      "responseStart": 182.915,
+      "responseEnd": 268.057
+    },
+    "heap": {
+      "used": 60974575,
+      "total": 129359167
+    }
+  },
+  "interactions": {
+    "window": [
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934640557.6638,
+          "domainLookupStart": 0.266,
+          "domainLookupEnd": 0.388,
+          "connectStart": 0.388,
+          "secureConnectionStart": -1,
+          "connectEnd": 0.653,
+          "requestStart": 0.785,
+          "responseStart": 39.665,
+          "responseEnd": 40.579
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934640672.721,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.16,
+          "responseStart": 18.347,
+          "responseEnd": 18.898
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/orbit/visibility/search",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934642437.2861,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.099,
+          "responseStart": 314.245,
+          "responseEnd": 379.041
+        }
+      },
+      {
+        "kind": "窗口点击到完整响应解析与摘要DOM",
+        "offsets": 3,
+        "ms": 489
+      },
+      {
+        "kind": "切换偏移到两帧",
+        "offset": 1200,
+        "ms": 28
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1200,
+        "arc": 0,
+        "ms": 58
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1200,
+        "arc": 1,
+        "ms": 61
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1200,
+        "arc": 2,
+        "ms": 61
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1200,
+        "arc": 3,
+        "ms": 62
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1200,
+        "arc": 4,
+        "ms": 62
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1200,
+        "arc": 5,
+        "ms": 62
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1200,
+        "arc": 6,
+        "ms": 63
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1200,
+        "arc": 7,
+        "ms": 62
+      },
+      {
+        "kind": "切换偏移到两帧",
+        "offset": 1210,
+        "ms": 28
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1210,
+        "arc": 0,
+        "ms": 58
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1210,
+        "arc": 1,
+        "ms": 61
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1210,
+        "arc": 2,
+        "ms": 63
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1210,
+        "arc": 3,
+        "ms": 62
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1210,
+        "arc": 4,
+        "ms": 61
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1210,
+        "arc": 5,
+        "ms": 63
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1210,
+        "arc": 6,
+        "ms": 79
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1210,
+        "arc": 7,
+        "ms": 76
+      },
+      {
+        "kind": "切换偏移到两帧",
+        "offset": 1220,
+        "ms": 37
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1220,
+        "arc": 0,
+        "ms": 59
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1220,
+        "arc": 1,
+        "ms": 62
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1220,
+        "arc": 2,
+        "ms": 62
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1220,
+        "arc": 3,
+        "ms": 63
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1220,
+        "arc": 4,
+        "ms": 62
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1220,
+        "arc": 5,
+        "ms": 61
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934645074.6711,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.166,
+          "responseStart": 15.677,
+          "responseEnd": 16.212
+        }
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1220,
+        "arc": 6,
+        "ms": 67
+      },
+      {
+        "kind": "完整真实点轨迹绘图到两帧",
+        "offset": 1220,
+        "arc": 7,
+        "ms": 55
+      }
+    ],
+    "fit": [
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/trajectory/fit/package102",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934658936.1492,
+          "domainLookupStart": 0.35,
+          "domainLookupEnd": 0.451,
+          "connectStart": 0.451,
+          "secureConnectionStart": -1,
+          "connectEnd": 0.611,
+          "requestStart": 0.651,
+          "responseStart": 130.579,
+          "responseEnd": 130.987
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files/register-result",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934659069.705,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.101,
+          "responseStart": 3.017,
+          "responseEnd": 3.372
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files/register-result",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934659069.9119,
+          "domainLookupStart": 0.033,
+          "domainLookupEnd": 0.039,
+          "connectStart": 0.039,
+          "secureConnectionStart": -1,
+          "connectEnd": 0.317,
+          "requestStart": 0.344,
+          "responseStart": 3.376,
+          "responseEnd": 3.82
+        }
+      },
+      {
+        "kind": "计算点击到该目标完整四图DOM",
+        "targetId": "TGT-001",
+        "pointCount": 1633,
+        "ms": 217
+      },
+      {
+        "kind": "计算点击到该目标完整四图DOM",
+        "targetId": "TGT-002",
+        "pointCount": 31,
+        "ms": 517
+      }
+    ],
+    "simulation": [
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/trajectory/simulate",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934733506.5732,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.106,
+          "responseStart": 44.79,
+          "responseEnd": 45.152
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files/register-result",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934733552.798,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.095,
+          "responseStart": 2.662,
+          "responseEnd": 3.018
+        }
+      },
+      {
+        "kind": "计算点击到完整四图DOM",
+        "pointCount": 2576,
+        "ms": 131
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/orbit/visibility/search",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934734357.491,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.11,
+          "responseStart": 58.424,
+          "responseEnd": 70.977
+        }
+      }
+    ],
+    "retime": [
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934743512.387,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.207,
+          "responseStart": 13.482,
+          "responseEnd": 14.231
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/trajectory/retime",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934743590.417,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.11,
+          "responseStart": 44.774,
+          "responseEnd": 45.139
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files/register-result",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934743637.2048,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.103,
+          "responseStart": 2.321,
+          "responseEnd": 2.671
+        }
+      },
+      {
+        "kind": "重定时点击到完整四图DOM",
+        "name": "default",
+        "pointCount": 2576,
+        "ms": 121
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/trajectory/simulate",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934744240.2803,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.105,
+          "responseStart": 36.93,
+          "responseEnd": 37.323
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files/register-result",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934744278.734,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.108,
+          "responseStart": 2.431,
+          "responseEnd": 2.802
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/trajectory/retime",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934744424.381,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.108,
+          "responseStart": 40.903,
+          "responseEnd": 41.271
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files/register-result",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934744467.0862,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.094,
+          "responseStart": 2.228,
+          "responseEnd": 2.563
+        }
+      },
+      {
+        "kind": "重定时点击到完整四图DOM",
+        "name": "existing-simulation",
+        "pointCount": 2576,
+        "ms": 115
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/trajectory/retime",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934744640.224,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.104,
+          "responseStart": 42.811,
+          "responseEnd": 43.182
+        }
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/v1/ballistic/files/register-result",
+        "status": 201,
+        "timing": {
+          "startTime": 1791934744684.53,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.1,
+          "responseStart": 2.349,
+          "responseEnd": 2.715
+        }
+      },
+      {
+        "kind": "重定时点击到完整四图DOM",
+        "name": "retime-again",
+        "pointCount": 2576,
+        "ms": 105
+      },
+      {
+        "kind": "HTTP完整传输",
+        "url": "http://127.0.0.1:15140/api/orbit/visibility/search",
+        "status": 200,
+        "timing": {
+          "startTime": 1791934745091.406,
+          "domainLookupStart": -1,
+          "domainLookupEnd": -1,
+          "connectStart": -1,
+          "secureConnectionStart": -1,
+          "connectEnd": -1,
+          "requestStart": 0.102,
+          "responseStart": 56.783,
+          "responseEnd": 71.514
+        }
+      }
+    ]
+  },
+  "serviceComputeOnlyAvailable": false,
+  "note": "HTTP传输包括服务计算/序列化/本机网络与Node代理；未暴露服务计算专用计时，不把HTTP当纯数学耗时。Node测试调用观测DOM完成含协议等待，不能解释为纯浏览器CPU。"
+}

@@ -1,0 +1,258 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-14 08:27:54.392  INFO 62732 --- [           main] ManagedServer                            : Starting ManagedServer using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 62732 (G:\5-YG\space-ground-visible\verification\runtime\A01\review-fix-downlink-v4\managed-classes started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\A01\review-fix-downlink-v4\server-downlink-review-v4)
+2026-10-14 08:27:54.394  INFO 62732 --- [           main] ManagedServer                            : The following 1 profile is active: "demo"
+2026-10-14 08:27:55.295  INFO 62732 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 18140 (http)
+2026-10-14 08:27:55.300  INFO 62732 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-14 08:27:55.301  INFO 62732 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-14 08:27:55.351  INFO 62732 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-14 08:27:55.351  INFO 62732 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 924 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-10-14 08:27:56.093  INFO 62732 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-14 08:27:56.215  INFO 62732 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-14 08:27:56.233  INFO 62732 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-14 08:27:56.233  INFO 62732 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/server-fixture/database/demo (H2 1.4)
+2026-10-14 08:27:56.277  INFO 62732 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.019s)
+2026-10-14 08:27:56.287  INFO 62732 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 10
+2026-10-14 08:27:56.289  INFO 62732 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-14 08:27:56.749  INFO 62732 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 18140 (http) with context path ''
+2026-10-14 08:27:56.756  INFO 62732 --- [           main] ManagedServer                            : Started ManagedServer in 2.635 seconds (JVM running for 2.92)
+T26_READY pid=62732@WIN-REJ8TF34DM4 headless=true source=jar:file:/G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/release/backend/server.jar!/BOOT-INF/classes!/
+2026-10-14 08:27:57.476  INFO 62732 --- [io-18140-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-14 08:27:57.476  INFO 62732 --- [io-18140-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-14 08:27:57.477  INFO 62732 --- [io-18140-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-14 08:27:57.636  INFO 62732 --- [io-18140-exec-3] c.r.o.s.d.orbit.OrekitDataInitializer    : 已挂载 Orekit 数据目录：G:\5-YG\space-ground-visible\verification\runtime\A01\final-candidate\release\orekit-data
+2026-10-14 08:27:57.649  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.702  INFO 62732 --- [ce-visibility-1] c.r.o.s.d.orbit.OrekitDataInitializer    : 已确认 WinTool 太阳星历：JPL DE405，文件=G:\5-YG\space-ground-visible\verification\runtime\A01\final-candidate\release\orekit-data\DE-405-ephemerides\unxp2000.405，大小=4666512字节，SHA-256前缀=83EB7159D065
+2026-10-14 08:27:57.757  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=108ms
+2026-10-14 08:27:57.758  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=176ms
+2026-10-14 08:27:57.786  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.797  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=10ms
+2026-10-14 08:27:57.798  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=13ms
+2026-10-14 08:27:57.810  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.819  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=8ms
+2026-10-14 08:27:57.819  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=10ms
+2026-10-14 08:27:57.846  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.853  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=7ms
+2026-10-14 08:27:57.854  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=9ms
+2026-10-14 08:27:57.862  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.868  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=5ms
+2026-10-14 08:27:57.869  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=7ms
+2026-10-14 08:27:57.892  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.894  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:57.895  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:57.904  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.906  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:57.906  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:57.938  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.941  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:57.941  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:57.949  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.951  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:57.951  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:57.983  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.986  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:57.986  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:57.992  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:57.994  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:57.994  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.001  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.002  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.003  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.011  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.013  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.014  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.045  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.047  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.048  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.054  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.057  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.057  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.064  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.067  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.067  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.090  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.097  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=6ms
+2026-10-14 08:27:58.097  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=7ms
+2026-10-14 08:27:58.121  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.123  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.123  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.130  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.132  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.132  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.138  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.140  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.140  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.146  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.148  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.148  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.155  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.157  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.157  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.164  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.166  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.166  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.171  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.173  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.173  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=2ms
+2026-10-14 08:27:58.181  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.181  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.184  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.184  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.184  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.184  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.191  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.192  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.195  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.195  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.195  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.195  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.201  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.202  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.203  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.211  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.213  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.213  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=2ms
+2026-10-14 08:27:58.226  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.228  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.228  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.243  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.245  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.245  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.250  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.252  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.252  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.257  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.260  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.260  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.267  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.270  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.271  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.274  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.278  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.278  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.288  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.288  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.289  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.292  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.293  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.293  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.293  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.294  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=5ms
+2026-10-14 08:27:58.294  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=7ms
+2026-10-14 08:27:58.302  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.302  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.302  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.303  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.306  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.306  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.306  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.306  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.308  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=5ms
+2026-10-14 08:27:58.308  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=7ms
+2026-10-14 08:27:58.309  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=5ms
+2026-10-14 08:27:58.309  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=8ms
+2026-10-14 08:27:58.316  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.316  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.317  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.320  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.320  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.320  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.320  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.323  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=6ms
+2026-10-14 08:27:58.323  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=7ms
+2026-10-14 08:27:58.329  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.332  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.332  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.334  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.337  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.337  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.348  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.348  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.348  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.348  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.349  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.349  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.352  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.352  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.352  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.352  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.354  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=5ms
+2026-10-14 08:27:58.354  INFO 62732 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=7ms
+2026-10-14 08:27:58.355  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=7ms
+2026-10-14 08:27:58.356  INFO 62732 --- [io-18140-exec-4] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=8ms
+2026-10-14 08:27:58.357  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=8ms
+2026-10-14 08:27:58.357  INFO 62732 --- [io-18140-exec-2] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=9ms
+2026-10-14 08:27:58.358  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=8ms
+2026-10-14 08:27:58.358  INFO 62732 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=10ms
+2026-10-14 08:27:58.361  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.362  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.362  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.365  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.365  INFO 62732 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 08:27:58.366  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 08:27:58.366  INFO 62732 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.366  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=4ms
+2026-10-14 08:27:58.366  INFO 62732 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 08:27:58.366  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.368  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 08:27:58.368  INFO 62732 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.380  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.380  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 08:27:58.382  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.382  INFO 62732 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 08:27:58.383  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 08:27:58.383  INFO 62732 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+T26_CONTEXT_CLOSE_BEGIN
+2026-10-14 08:27:58.624  INFO 62732 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-10-14 08:27:58.624  INFO 62732 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-10-14 08:27:58.625  WARN 62732 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 08:27:58.626  WARN 62732 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 08:27:58.626  WARN 62732 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 08:27:58.626  WARN 62732 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 08:27:58.628  INFO 62732 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-14 08:27:58.633  INFO 62732 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+T26_CONTEXT_CLOSE_END uncaught=0
+T26_MAIN_RETURN

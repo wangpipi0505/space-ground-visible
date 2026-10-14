@@ -1,0 +1,10 @@
+{
+  "command": [
+    "pnpm.cmd",
+    "--version"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.2917766571044922,
+  "stdoutSha256": "4d24606a920d1175b8017de83c5a19847bd8cfe47aeb71cf43efaa75c1e5a2ec"
+}

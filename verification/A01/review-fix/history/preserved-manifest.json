@@ -1,0 +1,95 @@
+[
+  {
+    "path": "verification/A01/acceptance.py",
+    "preservedPath": "verification/A01/review-fix/history/acceptance.py",
+    "sha256": "d451c036f6aa36c61d87b982a4731a0b5fb4423d388964d5183bc2b752f36534"
+  },
+  {
+    "path": "verification/A01/acceptance_final.py",
+    "preservedPath": "verification/A01/review-fix/history/acceptance_final.py",
+    "sha256": "d9da450ccc2cdae6bab2c0e5ee856d1884e731f4d33ca9e9d9647fd4dce5bd25"
+  },
+  {
+    "path": "verification/A01/performance.py",
+    "preservedPath": "verification/A01/review-fix/history/performance.py",
+    "sha256": "cdf3e4baffbc43309735cdae2127e450cd291dfb7df531e5f778af3188ffde5d"
+  },
+  {
+    "path": "verification/A01/report.py",
+    "preservedPath": "verification/A01/review-fix/history/report.py",
+    "sha256": "9c4b2a657ab93204046bb0ce6b047a63c657f9ea9647dd1bfb86ad3169bdb447"
+  },
+  {
+    "path": "verification/A01/测试报告.md",
+    "preservedPath": "verification/A01/review-fix/history/测试报告.md",
+    "sha256": "2962f623e86a71ab72ec2cacbf448321f7fe09e50b2f92211d4c20c6aed8041b"
+  },
+  {
+    "path": "verification/A01/验收用例矩阵.json",
+    "preservedPath": "verification/A01/review-fix/history/验收用例矩阵.json",
+    "sha256": "96449718de34bb0ffe900cf01b950f9e3deeab48102ec1c256afbb501ef7930d"
+  },
+  {
+    "path": "verification/A01/final/final-selfcheck.json",
+    "preservedPath": "verification/A01/review-fix/history/final/final-selfcheck.json",
+    "sha256": "8c6d27295952fd2983974ffb9f244b1add90fe844784a4b1e3ea26db51f039e3"
+  },
+  {
+    "path": "verification/A01/final/report-generation.json",
+    "preservedPath": "verification/A01/review-fix/history/final/report-generation.json",
+    "sha256": "6c7a879a2bc7af125f15e139a7f0765698ff661edb6fd014f9d6c01c0b0909d8"
+  },
+  {
+    "path": "verification/A01/final/navigation-browser-flow.js",
+    "preservedPath": "verification/A01/review-fix/history/final/navigation-browser-flow.js",
+    "sha256": "f230f530e00e007876459cce41d1ddf1d6d0b4909663395b693a29fbb2af9a11"
+  },
+  {
+    "path": "verification/A01/final/backend-performance.json",
+    "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+  },
+  {
+    "path": "verification/A01/final/performance-r2.txt",
+    "sha256": "2e0691f975b9b8af579bec70c93f722ac7d7c0072418ded10e020a48b74c00fc"
+  },
+  {
+    "path": "verification/A01/final/performance-r2-exit.json",
+    "sha256": "82e4e585c6453f71fc90a8c919f7179bbef7eee3b9d013f805a5087f71c317ed"
+  },
+  {
+    "path": "verification/A01/final/performance-resources.csv",
+    "sha256": "0decd5ea3c9f7ca8aec79694b071a54c6967883cc6dd2e7a00579f8b6244c658"
+  },
+  {
+    "path": "verification/A01/final/performance-jstat-gc.txt",
+    "sha256": "d56e2b922a2b250dea1c1821bd8991998f87049b16ab93539582c4b483648631"
+  },
+  {
+    "path": "verification/A01/final/performance-resource-summary.json",
+    "sha256": "b6596e34d47b3244477627b77a15725603037dac65987eab1bf375ce04f35d9d"
+  },
+  {
+    "path": "verification/A01/final/server-performance-r2-binding.json",
+    "sha256": "1dd62024905250d46a3e33ecc88a1a0e42715b69d94a3f81baaace705389f2e8"
+  },
+  {
+    "path": "verification/A01/final/server-performance-r2-shutdown.json",
+    "sha256": "ec90c4e4b2dca963d551f8b44336066dc96a634cd060084fd5ae4569c2c1ee83"
+  },
+  {
+    "path": "verification/A01/final/server-performance-r2-start-stop.txt",
+    "sha256": "711ea622a5d752323243aac8508cabd4aaca49d93086f51585347d4ade58fb97"
+  },
+  {
+    "path": "verification/A01/final/performance-conditions.json",
+    "sha256": "d66ac8c6ec2980fc9e0377fd957308021351b3b84611121a97cb421caaea0de7"
+  },
+  {
+    "path": "verification/A01/final/frontend-performance.json",
+    "sha256": "b8ebabcab5225e1d8ae39b3b0f9435d38f3fcf1a6f05752dbe14f3edc9411ddc"
+  },
+  {
+    "path": "verification/A01/final/browser-summary.json",
+    "sha256": "467fbd4f3b48396dc282f411130171a237ccd7efcfa6e16d61e01fd48b365839"
+  }
+]

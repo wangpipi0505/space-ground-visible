@@ -1,0 +1,20 @@
+### Ran Playwright code
+```js
+await fileChooser.setFiles(["G:\\5-YG\\space-ground-visible\\test-data\\reference\\ballistic\\target_trajectory_simulate_default.json"])
+```
+### Page
+- Page URL: http://127.0.0.1:15140/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+- [Snapshot](.playwright-cli\page-2026-10-13T23-39-08-741Z.yml)
+### Events
+- Downloading file T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_073903_598.csv ...
+- Downloaded file T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_073903_598.csv to ".playwright-cli\T04-retime-2026-07-02-07-57-00-000-RETIMED-TGT-20261014-073903-598.csv"
+- Downloading file 重定时实际提交.json ...
+- Downloaded file 重定时实际提交.json to ".playwright-cli\重定时实际提交.json"
+- Downloading file 重定时原响应.json ...
+- Downloaded file 重定时原响应.json to ".playwright-cli\重定时原响应.json"
+- Downloading file T25-existing-simulation_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_073904_432.csv ...
+- Downloaded file T25-existing-simulation_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_073904_432.csv to ".playwright-cli\T25-existing-simulation-2026-07-02-07-57-00-000-RETIMED-TGT-20261014-073904-432.csv"
+- Downloading file T25-retime-again_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_073904_648.csv ...
+- Downloaded file T25-retime-again_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_073904_648.csv to ".playwright-cli\T25-retime-again-2026-07-02-07-57-00-000-RETIMED-TGT-20261014-073904-648.csv"

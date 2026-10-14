@@ -1,0 +1,91 @@
+### Ran Playwright code
+```js
+await (async (page) => { page.__a01_simulation = await (/** 真Chrome原生JSON→原模拟→登记/分页/完整四图/原字节下载→同一页面窗口草稿。无mock/route。 */
+async (page) => {
+  const frontendMetrics=[]
+  page.__a01_frontendMetrics=frontendMetrics
+  const transport=async r=>{if(r.url().includes('/api/')&&r.request().method()==='POST'){await r.finished();frontendMetrics.push({kind:'HTTP完整传输',url:r.url(),status:r.status(),timing:r.request().timing()})}}
+  page.on('response',transport)
+  const assert = (ok, text) => { if (!ok) throw new Error(text) }
+  const errors = [], pageErrors = [], auxiliary = []
+  page.on('console', m => { if (m.type() === 'error') errors.push(m.text()) }); page.on('pageerror', e => pageErrors.push(e.message))
+  const record = async r => { if (r.url().includes('/api/v1/ballistic/files')) auxiliary.push({ url: r.url(), status: r.status(), request: r.request().postData(), raw: r.url().includes('/download') ? undefined : await r.text() }) }
+  page.on('response', record)
+  await page.getByRole('tab', { name: '模拟弹道', exact: true }).click()
+  const view = page.locator('.ballistic-simulation-view')
+  if (!(await view.innerText()).includes('已读取 target_trajectory_simulate_default.json')) {
+    const chooser = page.waitForEvent('filechooser'); await view.locator('input[type=file]').click()
+    await (await chooser).setFiles('G:/5-YG/space-ground-visible/test-data/reference/ballistic/target_trajectory_simulate_default.json')
+  }
+  await view.getByText('已读取 target_trajectory_simulate_default.json', { exact: false }).waitFor()
+  const original = await view.locator('textarea').inputValue(), expected = JSON.parse(original); delete expected.outputDir
+  assert((await view.innerText()).includes('导入含 outputDir'), '目录适配提示缺失')
+  const responsePromise = page.waitForResponse(r => r.url().endsWith('/trajectory/simulate'))
+  const computeStarted=Date.now();await view.locator('[data-test=simulation-compute]').click(); const response = await responsePromise
+  const raw = await response.text(), result = JSON.parse(raw), request = response.request().postDataJSON()
+  assert(response.status() === 200 && JSON.stringify(request) === JSON.stringify(expected), '原请求/响应错误')
+  assert(result.targetCount === 1 && result.files[0].pointCount === 2576 && result.files[0].model === 'SYSTEM_SIMULATED_LAMBERT', '原黄金目标/模型/行数改变')
+  const fileView = view.locator('[data-fit-target=SIM-001]'), trajectory = fileView.locator('[data-test=fit-trajectory]')
+  await trajectory.waitFor()
+  const pathCounts = await trajectory.locator('svg path[stroke="#126399"]').evaluateAll(paths => paths.map(p => (p.getAttribute('d').match(/[ML]/g) || []).length))
+  frontendMetrics.push({kind:'计算点击到完整四图DOM',pointCount:2576,ms:Date.now()-computeStarted});
+  assert(pathCounts.length === 4 && pathCounts.every(n => n === 2576), '不是全行四图')
+  assert(await trajectory.locator('[data-test=fit-original-marker]').count() === 0, '模拟点伪造原点')
+  assert(JSON.stringify(await fileView.locator('ol li').allTextContents()) === JSON.stringify(result.files[0].warnings), '告警全文顺序改变')
+  const next = page.waitForResponse(r => r.url().includes('/preview?page=2'))
+  await fileView.locator('[data-test=fit-preview-next]').click(); const preview = await (await next).json()
+  assert(preview.page === 2 && preview.rows.length === 50 && preview.header.length === 21 && preview.totalRows === 2576, '原分页不正确')
+  await trajectory.screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/A01/final/simulation/default-full-trajectory.png' })
+  for (const [selector, name] of [['[data-test=fit-download]', 'download-default.csv']]) {
+    const pending = page.waitForEvent('download'); await view.locator(selector).click(); const download = await pending
+    await download.saveAs(`G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/simulation/${name}`); assert(!await download.failure(), 'CSV下载失败')
+  }
+  for (const [button, name] of [['下载实际提交 JSON', 'download-input.json'], ['下载原模拟响应 JSON', 'download-response.json']]) {
+    const pending = page.waitForEvent('download'); await view.getByRole('button', { name, exact: true }).count()
+    await view.getByRole('button', { name: button, exact: true }).click(); const download = await pending
+    await download.saveAs(`G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/simulation/${name}`); assert(!await download.failure(), 'JSON下载失败')
+  }
+  await view.locator('[data-simulation-field=launchTimeUtc]').fill('2026-06-04 04:00:01.000'); await view.locator('[data-simulation-field=launchTimeUtc]').press('Tab')
+  assert((await view.innerText()).includes('输入已修改'), '快照过期提示缺失')
+  await view.getByText('不可变实际提交快照', { exact: false }).click()
+  assert((await view.locator('[data-test=simulation-submitted]').innerText()).includes('04:00:00.000'), '编辑污染旧快照')
+  await view.locator('textarea').fill(original)
+  await page.getByRole('tab', { name: '弹道载荷配置', exact: true }).click()
+  const window = page.locator('.ballistic-payload-view')
+  await window.locator('[data-test=add-manual-satellite]').click()
+  await window.locator('[data-test=use-reference-orbit]').click()
+  await window.locator('[data-orbit-field=epochUtc]').fill('2026/06/04 04:00:00.000')
+  const payloadValues = { minDistanceKm: '0', maxDistanceKm: '0', azimuthMinDeg: '', azimuthMaxDeg: '', elevationMinDeg: '', elevationMaxDeg: '', angleRateDegPerSec: '0', sunAvoidHalfAngleDeg: '0' }
+  for (const [key, value] of Object.entries(payloadValues)) { const input = window.locator(`[data-field=${key}] input`); await input.fill(value); await input.press('Tab') }
+  await window.locator('[data-test=window-source]').selectOption('generated')
+  const options = await window.locator('[data-test=generated-result-select] option').allTextContents()
+  assert(options.length === 2 && options[1].includes('SIM-001'), '模拟真实引用没有流转')
+  const referenceId = await window.locator('[data-test=generated-result-select] option').nth(1).getAttribute('value')
+  const previewPending = page.waitForResponse(r => r.url().includes(`/files/${referenceId}/preview`))
+  await window.locator('[data-test=generated-result-select]').selectOption(referenceId); const selectedPreview = await (await previewPending).json()
+  assert(selectedPreview.header.length === 21 && selectedPreview.totalRows === 2576, '窗口来源不是原模拟文件')
+  await window.locator('[data-option=startOffsetSec]').fill('0'); await window.locator('[data-option=numCalculations]').fill('1')
+  const computation = page.waitForResponse(r => r.url().endsWith('/orbit/visibility/search'), { timeout: 60000 })
+  await window.locator('[data-test=compute-window]').click(); const winResponse = await computation
+  const winRaw = await winResponse.text(), winRequest = winResponse.request().postDataJSON()
+  assert(winResponse.status() === 200, `窗口失败${winRaw}`)
+  const registered = auxiliary.find(item => item.url.endsWith('/register-result') && item.status === 201)
+  const reference = JSON.parse(registered.raw)
+  assert(winRequest.ballistics[0].csvPath === reference.serverPath && winRequest.ballistics[0].targetId === 'SIM-001' && !('baseLaunchUTC' in winRequest.ballistics[0]), '窗口没有精确使用实际原引用/CSV历元')
+  assert(winRequest.satellites[0].epochUtc === '2026/06/04 04:00:00.000' && winRequest.satellites[0].payloads.length === 1, '单一草稿历元/载荷错误')
+  await window.locator('[data-test=window-success]').waitFor()
+  await window.locator('[data-test=window-success]').screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/A01/final/simulation/generated-window-result.png' })
+  const jsonDownload = page.waitForEvent('download'); await window.getByRole('button', { name: '下载原始响应 JSON', exact: true }).click()
+  await (await jsonDownload).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/simulation/download-window-response.json')
+  await page.getByRole('tab', { name: '102包轨迹拟合', exact: true }).click(); await page.getByRole('tab', { name: '模拟弹道', exact: true }).click()
+  assert(await view.locator('textarea').inputValue() === original && await view.locator('[data-test=fit-trajectory]').count() === 1, 'tab切换丢状态')
+  page.off('response', record)
+  assert(errors.length === 0 && pageErrors.length === 0, `成功流有错误${errors}/${pageErrors}`)
+  page.off('response',transport); return { frontendMetrics, timezone: await page.evaluate(() => Intl.DateTimeFormat().resolvedOptions().timeZone), status: response.status(), request, raw, pathCounts, preview, reference, winStatus: winResponse.status(), winRequest, winRaw, auxiliary, errors, pageErrors }
+}
+)(page); return page.__a01_simulation; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:15140/
+### Modal state
+- [File chooser]: can be handled by upload

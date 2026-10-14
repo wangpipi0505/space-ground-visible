@@ -1,0 +1,14 @@
+### Ran Playwright code
+```js
+await fileChooser.setFiles(["G:\\5-YG\\space-ground-visible\\test-data\\reference\\ballistic\\T25\\retime-irregular-reordered-source.csv"])
+```
+### Page
+- Page URL: http://127.0.0.1:15140/
+- Page Title: 空间目标可见窗口规划
+- Console: 2 errors, 0 warnings
+### Snapshot
+- [Snapshot](.playwright-cli\page-2026-10-13T23-40-13-965Z.yml)
+### Events
+- New console entries: .playwright-cli\console-2026-10-13T23-39-01-101Z.log#L1-L2
+- Downloading file T25-boundary_2026-07-02_23_59_59.375_BOUNDARY-TGT_20261014_074006_345.csv ...
+- Downloaded file T25-boundary_2026-07-02_23_59_59.375_BOUNDARY-TGT_20261014_074006_345.csv to ".playwright-cli\T25-boundary-2026-07-02-23-59-59-375-BOUNDARY-TGT-20261014-074006-345.csv"

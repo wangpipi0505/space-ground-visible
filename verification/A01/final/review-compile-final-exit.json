@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "py_compile",
+    "verification/A01/acceptance.py",
+    "verification/A01/acceptance_final.py",
+    "verification/A01/acceptance_shared.py",
+    "verification/A01/performance.py",
+    "verification/A01/report.py",
+    "verification/A01/collect_browser.py",
+    "verification/A01/review_downlink.py",
+    "verification/A01/test_review_fixes.py",
+    "verification/A01/review_fix_setup.py",
+    "verification/A01/review_fix_finalize.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.07639122009277344,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

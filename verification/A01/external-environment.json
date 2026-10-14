@@ -1,0 +1,8 @@
+{
+  "MySQL": "BLOCKED：PATH无mysql，Docker引擎不可连接",
+  "Nginx": "BLOCKED：PATH无nginx",
+  "DM": "BLOCKED：未提供隔离实例",
+  "MinIO": "BLOCKED：未提供隔离实例",
+  "dockerError": "Command '['docker', 'info']' returned non-zero exit status 1.",
+  "environmentExitExplanation": "Get-Command查询mysql/nginx未找到产生exit1；硬件输出真实保留"
+}

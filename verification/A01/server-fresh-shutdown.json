@@ -1,0 +1,27 @@
+{
+  "pid": 61320,
+  "naturalExitCode": 0,
+  "contextCloseReturned": true,
+  "mainReturned": true,
+  "nonDaemonRemaining": false,
+  "portRebind": true,
+  "jarUnchanged": true,
+  "warnLines": [
+    "2026-10-14 07:18:36.531  WARN 61320 --- [io-18140-exec-4] o.s.w.c.request.async.WebAsyncManager    : ",
+    "2026-10-14 07:18:38.693 ERROR 61320 --- [io-18140-exec-6] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=8d165ef1-1c0a-4aaf-8ced-3819abefa139",
+    "2026-10-14 07:18:38.714  WARN 61320 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务失败：taskId=ce2d14b7-14fe-4eac-b3df-85f0dec04625，异常类型=IllegalArgumentException，根因=规划时间段或步长无效",
+    "2026-10-14 07:18:39.166 ERROR 61320 --- [io-18140-exec-7] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=c784f5a7-dd35-4c67-9295-2f86e647abd1",
+    "2026-10-14 07:18:41.459 ERROR 61320 --- [io-18140-exec-3] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=321b3e65-0688-4e17-8fe1-15b2acab96e8",
+    "2026-10-14 07:18:41.471 ERROR 61320 --- [io-18140-exec-7] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=d9f93a3b-92c7-4b28-aef6-33e199a2556c",
+    "2026-10-14 07:18:41.509 ERROR 61320 --- [io-18140-exec-9] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=df212b9f-7a21-4484-a188-9b5bb1246a2c",
+    "2026-10-14 07:19:50.726 ERROR 61320 --- [io-18140-exec-9] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=79539bbb-e63a-4679-b019-081241ccad78",
+    "2026-10-14 07:19:50.738 ERROR 61320 --- [io-18140-exec-4] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=230b3524-fce1-45b7-b583-d7ee75394faa",
+    "2026-10-14 07:19:50.749 ERROR 61320 --- [io-18140-exec-2] c.r.o.s.api.ApiExceptionHandler          : 请求处理失败，requestId=8f3df9e5-75c0-4228-9201-59be8ee2dc45",
+    "2026-10-14 07:20:36.164  WARN 61320 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:20:36.164  WARN 61320 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:20:36.164  WARN 61320 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:20:36.165  WARN 61320 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [System Clock] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:20:36.165  WARN 61320 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-planning-task-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 07:20:36.165  WARN 61320 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:"
+  ]
+}

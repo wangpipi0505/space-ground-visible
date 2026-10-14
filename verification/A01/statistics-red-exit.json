@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "verification/A01/test_statistics.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 1,
+  "durationSec": 0.044466495513916016,
+  "stdoutSha256": "a89983e9641f18ad68b259c2d8fe1afcbf5be1d11888df2c5b1b9567056a4bda"
+}

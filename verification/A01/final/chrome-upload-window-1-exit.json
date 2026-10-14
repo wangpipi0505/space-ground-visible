@@ -1,0 +1,16 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-final",
+    "upload",
+    "G:/5-YG/space-ground-visible/test-data/reference/ballistic/trajectory-0.1s-standard.csv"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 2.246922492980957,
+  "stdoutSha256": "be85128eaf98611f85d380b2eec78d5c5289854af7d20e63289b2858738a28c5"
+}

@@ -1,0 +1,34 @@
+{
+  "jstatSamples": 64,
+  "configuredPeriodMs": 1000,
+  "unit": "jstat容量/使用列为KiB，乘1024；MC/MU不计入Java堆",
+  "before": {
+    "heapUsedBytes": 240380108,
+    "heapCommittedBytes": 462422016,
+    "metaspaceUsedBytes": 44568985,
+    "youngGcCount": 9,
+    "fullGcCount": 2,
+    "gcTimeSec": 0.08
+  },
+  "after": {
+    "heapUsedBytes": 484764057,
+    "heapCommittedBytes": 1688207360,
+    "metaspaceUsedBytes": 62362316,
+    "youngGcCount": 315,
+    "fullGcCount": 3,
+    "gcTimeSec": 0.677
+  },
+  "peakHeapUsedBytes": 1533859737,
+  "peakHeapCommittedBytes": 1688207360,
+  "gcTimeDeltaSec": 0.5970000000000001,
+  "youngGcDelta": 306,
+  "fullGcDelta": 1,
+  "forcedGc": false,
+  "processSampling": {
+    "configuredMs": 250,
+    "actualMedianMs": 262.0,
+    "actualMinMs": 255,
+    "actualMaxMs": 486,
+    "samples": 233
+  }
+}

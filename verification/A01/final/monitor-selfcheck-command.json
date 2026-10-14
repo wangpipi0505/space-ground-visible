@@ -1,0 +1,17 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-File",
+    "G:\\5-YG\\space-ground-visible\\verification\\A01\\monitor.ps1",
+    "-ProcessId",
+    "63368",
+    "-Destination",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-selfcheck-v2\\samples.csv",
+    "-StopFile",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-selfcheck-v2\\STOP"
+  ],
+  "destinationRepr": "'G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\A01\\\\final-candidate\\\\monitor-selfcheck-v2\\\\samples.csv'",
+  "parentExists": true,
+  "pathIsAbsolute": true
+}

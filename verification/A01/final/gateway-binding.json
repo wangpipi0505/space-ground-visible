@@ -1,0 +1,11 @@
+{
+  "pid": 54672,
+  "command": [
+    "node.exe",
+    "G:\\5-YG\\space-ground-visible\\verification\\T28\\static-validation-gateway.cjs",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\release\\frontend",
+    "http://127.0.0.1:18140",
+    "15140"
+  ],
+  "kind": "Node标准库静态验收网关"
+}

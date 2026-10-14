@@ -1,0 +1,10 @@
+{
+  "command": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "-version"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.08070540428161621,
+  "stdoutSha256": "b55e3e77ab33f87563b6d95e641e0a33daf0c23959cad9c67ea3f931f1dfb347"
+}

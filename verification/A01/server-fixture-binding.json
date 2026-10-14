@@ -1,0 +1,32 @@
+{
+  "pid": 21284,
+  "command": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "-Xms256m",
+    "-Xmx4g",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Duser.timezone=Asia/Shanghai",
+    "-Dt26.control=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\server-fixture",
+    "-Dloader.path=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\managed-classes",
+    "-Dloader.main=ManagedServer",
+    "-Dorekit.data.path=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\release\\orekit-data",
+    "-cp",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\release\\backend\\server.jar",
+    "org.springframework.boot.loader.PropertiesLauncher",
+    "--spring.profiles.active=demo",
+    "--server.port=18140",
+    "--spring.datasource.url=jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/A01/server-fixture/database/demo;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1",
+    "--ballistic.files.root=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\server-fixture\\files",
+    "--logging.file.name=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\server-fixture\\backend.log"
+  ],
+  "jarSha256": "72d2c6cb58c966aad830511abd0a3251d62b0971257f2c4db6b60a58bb170120",
+  "port": 18140,
+  "freshDemo": false,
+  "fixtureSource": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\T27\\final-regression\\browser-fixture.mv.db",
+  "fixtureSha256": "2387ba3010c0eff91e14c0828be0e3fb50c4df2f23e33a2bb295be461b44a836",
+  "actualDatasourceUrl": "jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/A01/server-fixture/database/demo;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1",
+  "actualStorageRoot": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\server-fixture\\files",
+  "reusedExistingDatabase": false,
+  "dataOrigin": "复制已记录来源SHA的T27非生产fixture"
+}

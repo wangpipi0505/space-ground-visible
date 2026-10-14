@@ -1,0 +1,18 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-final",
+    "run-code",
+    "async (page) => page.__a01_window_edge"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 2.6026742458343506,
+  "stdoutSha256": "16a96965d25693e24e116d47c8620a494cb8fed1be3d0a11732d8f7814ddf8a3",
+  "stdoutPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\browser-stdout\\chrome-window-edge-result.txt",
+  "stdoutStorage": "大原文留ignored runtime，原字节未改"
+}

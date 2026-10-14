@@ -1,0 +1,9 @@
+READY server-downlink-review-v3 40064
+space-downlink serial 10 10 p95= 35.72
+space-downlink c1 12 12 p95= 31.08
+space-downlink c2 12 12 p95= 33.25
+space-downlink c4 12 12 p95= 34.6
+space-downlink c6 12 12 p95= 26.8
+PERFORMANCE COMPLETE 1
+CLOSED server-downlink-review-v3 0
+PASS targeted downlink 2 warmup + 58 measured; process samples 5 jstat 2

@@ -1,0 +1,10 @@
+{
+  "pid": 20552,
+  "naturalExitCode": 0,
+  "contextCloseReturned": true,
+  "mainReturned": true,
+  "nonDaemonRemaining": false,
+  "portRebind": true,
+  "jarUnchanged": true,
+  "warnLines": []
+}

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-final",
+    "upload",
+    "G:/5-YG/space-ground-visible/test-data/baseline/ballistic/simulate/trajectory-0.csv"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 2.11252760887146,
+  "stdoutSha256": "3b35a86373ed8bfdb261534a8d82f6a2243b8c48f9c0a4be1a056fea61ec3423"
+}

@@ -1,0 +1,19 @@
+READY server-downlink-review 63204
+CLOSED server-downlink-review 0
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A01\review_downlink.py", line 46, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\A01\review_downlink.py", line 29, in main
+    try:performance.main()
+        ~~~~~~~~~~~~~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\A01\performance.py", line 172, in main
+    prepare_started=time.time();cases=scenarios(runtime);prepare_finished=time.time()
+                                      ~~~~~~~~~^^^^^^^^^
+  File "G:\5-YG\space-ground-visible\verification\A01\performance.py", line 107, in scenarios
+    if os.environ.get('A01_PERF_ONLY')=='downlink':return [downlink_scenario(runtime)]
+                                                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "G:\5-YG\space-ground-visible\verification\A01\performance.py", line 97, in downlink_scenario
+    for item in matches:assert all(item[key]==expected[key] for key in keys),(item,expected)
+                               ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ({'id': 3, 'type': None, 'libraryModelId': None, 'name': '基准共同观测星', 'scid': None, 'objectId': None, 'objectName': None, 'noradCatId': None, 'country': None, 'period': None, 'catalogInclination': None, 'apogee': None, 'perigee': None, 'rcsSize': None, 'rcsValue': None, 'launchDate': None, 'catalogComment': None, 'weight': None, 'modelType': 'KEPLER_6', 'epochTime': '2026-07-01T10:00:00', 'semiMajorAxis': 7078137.0, 'eccentricity': 0.0, 'inclination': 50.0, 'meanAnomaly': 2.0, 'raan': 30.0, 'argumentOfPerigee': 0.0, 'payloadJson': '"{\\"activePayloadType\\":\\"SPACE\\",\\"payloadProfiles\\":{\\"SPACE\\":{\\"payloadType\\":\\"SPACE\\",\\"distance\\":[0.0,0.0],\\"distanceUnit\\":\\"M\\",\\"angleRate\\":-1.0,\\"sunAvoidHalfAngle\\":0.0,\\"startupAngleRate\\":-1.0},\\"GROUND\\":{\\"payloadType\\":\\"GROUND\\",\\"distance\\":[0.0,0.0],\\"distanceUnit\\":\\"M\\",\\"angleRate\\":180.0,\\"sunAvoidHalfAngle\\":0.0}}}"', 'firstOrbit': None, 'secondOrbit': None, 'createdBy': None, 'updateBy': None, 'createTime': None, 'updateTime': None}, {'id': 1, 'type': None, 'libraryModelId': None, 'name': '基准观测星', 'scid': None, 'objectId': None, 'objectName': None, 'noradCatId': None, 'country': None, 'period': None, 'catalogInclination': None, 'apogee': None, 'perigee': None, 'rcsSize': None, 'rcsValue': None, 'launchDate': None, 'catalogComment': None, 'weight': None, 'modelType': 'KEPLER_6', 'epochTime': '2026-07-01T10:00:00', 'semiMajorAxis': 7078137, 'eccentricity': 0, 'inclination': 50.0, 'meanAnomaly': 0, 'raan': 30.0, 'argumentOfPerigee': 0, 'payloadJson': '"{\\"activePayloadType\\":\\"SPACE\\",\\"payloadProfiles\\":{\\"SPACE\\":{\\"payloadType\\":\\"SPACE\\",\\"distance\\":[0.0,0.0],\\"distanceUnit\\":\\"M\\",\\"angleRate\\":-1.0,\\"sunAvoidHalfAngle\\":0.0}}}"', 'firstOrbit': None, 'secondOrbit': None, 'createdBy': None, 'updateBy': None, 'createTime': None, 'updateTime': None})

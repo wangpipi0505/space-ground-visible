@@ -1,0 +1,66 @@
+### Result
+{"browser":"Chrome","timezone":"Asia/Shanghai","evidence":[{"name":"非法JSON","actualComputeRequests":0,"message":"JSON格式错误，请检查引号、逗号与完整请求结构"},{"name":"17位数字时间码未加引号","actualComputeRequests":0,"message":"JSON数字超出浏览器安全范围，请将时间码、ID和观测值按原DTO加引号编码为字符串"},{"name":"两条有效观测与taskName:null原服务成功","request":{"taskName":null,"taskStartTime":"2026-07-01 07:56:55.000","taskEndTime":"2026-07-01 07:57:10.000","interpolationStepSec":0.5,"package102":[{"track_tgt_id":"TGT-002","tack3d_time_code":"2026-07-01 07:57:00.000","tack3d_tgt_pos_x":"68000000","tack3d_tgt_pos_y":"100000","tack3d_tgt_pos_z":"50000","tack3d_tgt_vel_x":"0","tack3d_tgt_vel_y":"76000000","tack3d_tgt_vel_z":"100000","tack3d_tgt_acc_x":"0","tack3d_tgt_acc_y":"0","tack3d_tgt_acc_z":"0","prop_tgt_type_8":"0x02","prop_tgt_shape_8":"0xFF","prop_tgt_flight_phase_8":"0xFF","prob_tgt_critical_incident":"0xFF","prob_tgt_critical_incident_time_code":"","launch_time_code":"2026-07-01 07:56:55.000","launch_coord_frame":"J2000","launch_pos_x":"68000000","launch_pos_y":"-280000","launch_pos_z":"49500","launch_pos_unit":"0.1m","impact_time_code":"2026-07-01 07:57:10.000","impact_coord_frame":"J2000","impact_pos_x":"68000000","impact_pos_y":"860000","impact_pos_z":"51000","impact_pos_unit":"0.1m"},{"track_tgt_id":"TGT-002","tack3d_time_code":"2026-07-01 07:57:01.000","tack3d_tgt_pos_x":"68000000","tack3d_tgt_pos_y":"176000","tack3d_tgt_pos_z":"50100","tack3d_tgt_vel_x":"0","tack3d_tgt_vel_y":"76000000","tack3d_tgt_vel_z":"100000","tack3d_tgt_acc_x":"0","tack3d_tgt_acc_y":"0","tack3d_tgt_acc_z":"0","prop_tgt_type_8":"0x02","prop_tgt_shape_8":"0xFF","prop_tgt_flight_phase_8":"0xFF","prob_tgt_critical_incident":"0xFF","prob_tgt_critical_incident_time_code":"","launch_time_code":"2026-07-01 07:56:55.000","launch_coord_frame":"J2000","launch_pos_x":"68000000","launch_pos_y":"-280000","launch_pos_z":"49500","launch_pos_unit":"0.1m","impact_time_code":"2026-07-01 07:57:10.000","impact_coord_frame":"J2000","impact_pos_x":"68000000","impact_pos_y":"860000","impact_pos_z":"51000","impact_pos_unit":"0.1m"}]},"status":200,"rawText":"{\"taskName\":\"task\",\"targetCount\":1,\"files\":[{\"targetId\":\"TGT-002\",\"model\":\"ORBITAL_TWO_BODY\",\"csvPath\":\"G:\\\\5-YG\\\\space-ground-visible\\\\verification\\\\runtime\\\\A01\\\\final-candidate\\\\server-fixture\\\\files\\\\results\\\\fit-6013091928722320484\\\\task_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261014_073844_507.csv\",\"pointCount\":31,\"warnings\":[\"在搜索范围内未能推算发射地面交点，使用launch_time_code作为兜底参考。发射时间=2026-07-01 07:56:55.000\",\"在搜索范围内未能推算落地交点，使用秒级精度impact_time_code作为兜底参考。落点时间=2026-07-01 07:57:10.000\",\"launch_time_code和发射点位置仅作为参考使用。推算发射时间=2026-07-01 07:56:55.000, 参考发射时间=2026-07-01 07:56:55.000, 时间差秒=0.000, 位置偏差米=129.304, 坐标系=J2000, 单位=0.1m\",\"impact_time_code和落点位置仅作为参考使用。推算落点时间=2026-07-01 07:57:10.000, 参考落点时间=2026-07-01 07:57:10.000, 时间差秒=0.000, 位置偏差米=387.903, 坐标系=J2000, 单位=0.1m\",\"输出时间范围超出package102轨迹点覆盖区间，区间外已使用端点状态进行二体RK4外推。\",\"Package102拟合在原始点之间使用受端点约束的Hermite平滑插值，区间外使用二体RK4动力学外推；命中package102原始时刻时保留源样本，以保证严格通过原始点。\"]}]}"},{"name":"单条观测由原服务拒绝：至少两个","request":{"taskName":null,"taskStartTime":"2026-07-01 07:56:55.000","taskEndTime":"2026-07-01 07:57:10.000","interpolationStepSec":0.5,"package102":[{"track_tgt_id":"TGT-002","tack3d_time_code":"2026-07-01 07:57:00.000","tack3d_tgt_pos_x":"68000000","tack3d_tgt_pos_y":"100000","tack3d_tgt_pos_z":"50000","tack3d_tgt_vel_x":"0","tack3d_tgt_vel_y":"76000000","tack3d_tgt_vel_z":"100000","tack3d_tgt_acc_x":"0","tack3d_tgt_acc_y":"0","tack3d_tgt_acc_z":"0","prop_tgt_type_8":"0x02","prop_tgt_shape_8":"0xFF","prop_tgt_flight_phase_8":"0xFF","prob_tgt_critical_incident":"0xFF","prob_tgt_critical_incident_time_code":"","launch_time_code":"2026-07-01 07:56:55.000","launch_coord_frame":"J2000","launch_pos_x":"68000000","launch_pos_y":"-280000","launch_pos_z":"49500","launch_pos_unit":"0.1m","impact_time_code":"2026-07-01 07:57:10.000","impact_coord_frame":"J2000","impact_pos_x":"68000000","impact_pos_y":"860000","impact_pos_z":"51000","impact_pos_unit":"0.1m"}]},"status":400,"rawText":"{\"error\":\"IllegalArgumentException: 每个目标至少需要两个已观测的package102轨迹点。\"}"},{"name":"真正非法102观测由原服务400","request":{"taskName":null,"taskStartTime":"2026-07-01 07:56:55.000","taskEndTime":"2026-07-01 07:57:10.000","interpolationStepSec":0.5,"package102":[{"track_tgt_id":"TGT-002","tack3d_time_code":"2026-07-01 07:57:00.000","tack3d_tgt_pos_x":"非法坐标","tack3d_tgt_pos_y":"100000","tack3d_tgt_pos_z":"50000","tack3d_tgt_vel_x":"0","tack3d_tgt_vel_y":"76000000","tack3d_tgt_vel_z":"100000","tack3d_tgt_acc_x":"0","tack3d_tgt_acc_y":"0","tack3d_tgt_acc_z":"0","prop_tgt_type_8":"0x02","prop_tgt_shape_8":"0xFF","prop_tgt_flight_phase_8":"0xFF","prob_tgt_critical_incident":"0xFF","prob_tgt_critical_incident_time_code":"","launch_time_code":"2026-07-01 07:56:55.000","launch_coord_frame":"J2000","launch_pos_x":"68000000","launch_pos_y":"-280000","launch_pos_z":"49500","launch_pos_unit":"0.1m","impact_time_code":"2026-07-01 07:57:10.000","impact_coord_frame":"J2000","impact_pos_x":"68000000","impact_pos_y":"860000","impact_pos_z":"51000","impact_pos_unit":"0.1m"},{"track_tgt_id":"TGT-002","tack3d_time_code":"2026-07-01 07:57:01.000","tack3d_tgt_pos_x":"非法坐标","tack3d_tgt_pos_y":"176000","tack3d_tgt_pos_z":"50100","tack3d_tgt_vel_x":"0","tack3d_tgt_vel_y":"76000000","tack3d_tgt_vel_z":"100000","tack3d_tgt_acc_x":"0","tack3d_tgt_acc_y":"0","tack3d_tgt_acc_z":"0","prop_tgt_type_8":"0x02","prop_tgt_shape_8":"0xFF","prop_tgt_flight_phase_8":"0xFF","prob_tgt_critical_incident":"0xFF","prob_tgt_critical_incident_time_code":"","launch_time_code":"2026-07-01 07:56:55.000","launch_coord_frame":"J2000","launch_pos_x":"68000000","launch_pos_y":"-280000","launch_pos_z":"49500","launch_pos_unit":"0.1m","impact_time_code":"2026-07-01 07:57:10.000","impact_coord_frame":"J2000","impact_pos_x":"68000000","impact_pos_y":"860000","impact_pos_z":"51000","impact_pos_unit":"0.1m"}]},"status":400,"rawText":"{\"error\":\"NumberFormatException: For input string: \\\"非法坐标\\\"\"}"}],"twoPointGraphPathCounts":[31,31,31,31],"pageErrors":[],"expectedNetworkConsoleErrors":["Failed to load resource: the server responded with a status of 400 (Bad Request)","Failed to load resource: the server responded with a status of 400 (Bad Request)"],"note":"404/400网络日志为主动真实负例；成功主流另已验证0console/pageerror，不把负例错误隐藏为成功。"}
+### Ran Playwright code
+```js
+await (async (page) => { page.__a01_fit_edge = await (/** 本地非法JSON/危险编码无HTTP；真实两点成功/null任务名保留、单点/非法点原400与失败清成功。 */
+async (page) => {
+  const assert = (value, message) => { if (!value) throw new Error(message) }
+  const view = page.locator('.ballistic-fit-view')
+  const source = JSON.parse(await view.locator('textarea').inputValue())
+  const requests = []
+  const consoleErrors = []
+  const pageErrors = []
+  const observe = request => { if (request.url().endsWith('/package102')) requests.push(request.postDataJSON()) }
+  page.on('request', observe)
+  page.on('console', message => { if (message.type() === 'error') consoleErrors.push(message.text()) })
+  page.on('pageerror', failure => pageErrors.push(failure.message))
+  const evidence = []
+  for (const [name, text] of [['非法JSON', '{'], ['17位数字时间码未加引号', '{"package102":[{"tack3d_time_code":20260701075700001}]}']]) {
+    const count = requests.length
+    await view.locator('textarea').fill(text)
+    await view.locator('[data-test=fit-compute]').click()
+    await view.getByRole('alert').waitFor()
+    assert(requests.length === count && await view.locator('[data-test=fit-success]').count() === 0, '本地非法输入仍HTTP或旧成功残留')
+    evidence.push({ name, actualComputeRequests: 0, message: await view.getByRole('alert').innerText() })
+  }
+  await view.screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/A01/final/fit/local-invalid-precision-blocked.png' })
+  const calculate = async (value, expectedStatus, name) => {
+    await view.locator('textarea').fill(JSON.stringify(value, null, 2))
+    const responsePromise = page.waitForResponse(response => response.url().endsWith('/package102') && response.request().method() === 'POST')
+    await view.locator('[data-test=fit-compute]').click()
+    const response = await responsePromise
+    const rawText = await response.text()
+    assert(response.status() === expectedStatus, `${name}状态${response.status()}：${rawText}`)
+    evidence.push({ name, request: response.request().postDataJSON(), status: response.status(), rawText })
+    if (expectedStatus !== 200) {
+      await view.getByRole('alert').waitFor()
+      assert(await view.locator('[data-test=fit-success]').count() === 0, '原400后成功结果未清')
+    }
+    return JSON.parse(rawText)
+  }
+  const two = { ...source, taskName: null, package102: source.package102.slice(4, 6) }
+  delete two.outputDir
+  const twoResult = await calculate(two, 200, '两条有效观测与taskName:null原服务成功')
+  assert(requests.at(-1).taskName === null && twoResult.taskName === 'task' && twoResult.targetCount === 1, '任务名null被浏览器改写或原后端默认不符')
+  const trajectory = view.locator('[data-test=fit-trajectory]')
+  await trajectory.waitFor()
+  assert(await trajectory.locator('tbody tr').count() === 2, '两点原约束数不符')
+  const pathCounts = await trajectory.locator('svg path[stroke="#126399"]').evaluateAll(paths => paths.map(path => (path.getAttribute('d').match(/[ML]/g) || []).length))
+  assert(pathCounts.every(count => count === twoResult.files[0].pointCount), '少量点未展示全CSV')
+  await trajectory.screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/A01/final/fit/two-original-points-real.png' })
+  await calculate({ ...two, package102: two.package102.slice(0, 1) }, 400, '单条观测由原服务拒绝：至少两个')
+  const invalid = { ...two, package102: two.package102.map(record => ({ ...record, tack3d_tgt_pos_x: '非法坐标' })) }
+  await calculate(invalid, 400, '真正非法102观测由原服务400')
+  await view.screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/A01/final/fit/invalid-observation-original-400.png' })
+  assert(pageErrors.length === 0, `页面运行异常：${pageErrors}`)
+  page.off('request', observe)
+  return { browser: 'Chrome', timezone: await page.evaluate(() => Intl.DateTimeFormat().resolvedOptions().timeZone), evidence, twoPointGraphPathCounts: pathCounts, pageErrors, expectedNetworkConsoleErrors: consoleErrors, note: '404/400网络日志为主动真实负例；成功主流另已验证0console/pageerror，不把负例错误隐藏为成功。' }
+}
+)(page); return page.__a01_fit_edge; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:15140/
+- Page Title: 空间目标可见窗口规划
+- Console: 4 errors, 0 warnings
+### Events
+- New console entries: .playwright-cli\console-2026-10-13T23-31-37-056Z.log#L3-L4

@@ -1,0 +1,1383 @@
+{
+  "reportSha256": "2962f623e86a71ab72ec2cacbf448321f7fe09e50b2f92211d4c20c6aed8041b",
+  "matrixSha256": "96449718de34bb0ffe900cf01b950f9e3deeab48102ec1c256afbb501ef7930d",
+  "reportLines": 388,
+  "matrixCases": 884,
+  "linksChecked": 26,
+  "missingLinks": [],
+  "sourceUtf8LfPass": true,
+  "utf8Files": 205,
+  "rawJsonCRLFBytePreserved": [
+    "verification\\A01\\build-all-exit.json",
+    "verification\\A01\\chrome-close-exit.json",
+    "verification\\A01\\chrome-fit-aux-failure-exit.json",
+    "verification\\A01\\chrome-fit-aux-failure-result-exit.json",
+    "verification\\A01\\chrome-fit-aux-recovery-exit.json",
+    "verification\\A01\\chrome-fit-aux-recovery-result-exit.json",
+    "verification\\A01\\chrome-fit-edge-exit.json",
+    "verification\\A01\\chrome-fit-edge-result-exit.json",
+    "verification\\A01\\chrome-fit-exit.json",
+    "verification\\A01\\chrome-fit-result-exit.json",
+    "verification\\A01\\chrome-open-exit.json",
+    "verification\\A01\\chrome-snapshot-initial-exit.json",
+    "verification\\A01\\chrome-snapshot-space-state-exit.json",
+    "verification\\A01\\chrome-space-exit.json",
+    "verification\\A01\\chrome-upload-fit-1-exit.json",
+    "verification\\A01\\chrome-upload-window-1-exit.json",
+    "verification\\A01\\chrome-upload-window-2-exit.json",
+    "verification\\A01\\chrome-window-edge-exit.json",
+    "verification\\A01\\chrome-window-edge-result-exit.json",
+    "verification\\A01\\chrome-window-exit.json",
+    "verification\\A01\\chrome-window-result-exit.json",
+    "verification\\A01\\clean-source-manifest.json",
+    "verification\\A01\\complete21-current-compile-exit.json",
+    "verification\\A01\\complete21-current-run-exit.json",
+    "verification\\A01\\complete21-original-compile-exit.json",
+    "verification\\A01\\complete21-original-run-exit.json",
+    "verification\\A01\\docker-info-exit.json",
+    "verification\\A01\\environment-exit.json",
+    "verification\\A01\\external-environment.json",
+    "verification\\A01\\gateway-binding.json",
+    "verification\\A01\\java-version-exit.json",
+    "verification\\A01\\legacy-abi-compare.json",
+    "verification\\A01\\managed-compile-exit.json",
+    "verification\\A01\\maven-version-exit.json",
+    "verification\\A01\\node-version-exit.json",
+    "verification\\A01\\numeric-summary.json",
+    "verification\\A01\\original-directory-check.json",
+    "verification\\A01\\package-bindings.json",
+    "verification\\A01\\package-exit.json",
+    "verification\\A01\\pnpm-version-exit.json",
+    "verification\\A01\\powershell-version-exit.json",
+    "verification\\A01\\remark-fix-green-command.json",
+    "verification\\A01\\remark-fix-red-command.json",
+    "verification\\A01\\remark-fix-source-check.json",
+    "verification\\A01\\server-fixture-shutdown.json",
+    "verification\\A01\\server-fresh-shutdown.json",
+    "verification\\A01\\server-recovery-v2-shutdown.json",
+    "verification\\A01\\space9-capture-exit.json",
+    "verification\\A01\\statistics-green-exit.json",
+    "verification\\A01\\statistics-red-exit.json",
+    "verification\\A01\\test-summary.json",
+    "verification\\A01\\final\\backend-performance.json",
+    "verification\\A01\\final\\browser-collect-exit.json",
+    "verification\\A01\\final\\browser-collect-final-exit.json",
+    "verification\\A01\\final\\browser-summary.json",
+    "verification\\A01\\final\\build-all-exit.json",
+    "verification\\A01\\final\\chrome-close-exit.json",
+    "verification\\A01\\final\\chrome-fit-aux-failure-exit.json",
+    "verification\\A01\\final\\chrome-fit-aux-failure-result-exit.json",
+    "verification\\A01\\final\\chrome-fit-aux-recovery-exit.json",
+    "verification\\A01\\final\\chrome-fit-aux-recovery-result-exit.json",
+    "verification\\A01\\final\\chrome-fit-edge-exit.json",
+    "verification\\A01\\final\\chrome-fit-edge-result-exit.json",
+    "verification\\A01\\final\\chrome-fit-exit.json",
+    "verification\\A01\\final\\chrome-fit-result-exit.json",
+    "verification\\A01\\final\\chrome-large-exit.json",
+    "verification\\A01\\final\\chrome-navigation-exit.json",
+    "verification\\A01\\final\\chrome-navigation-result-exit.json",
+    "verification\\A01\\final\\chrome-open-exit.json",
+    "verification\\A01\\final\\chrome-reset-retime-exit.json",
+    "verification\\A01\\final\\chrome-reset-simulation-exit.json",
+    "verification\\A01\\final\\chrome-retime-edge-exit.json",
+    "verification\\A01\\final\\chrome-retime-edge-result-exit.json",
+    "verification\\A01\\final\\chrome-retime-exit.json",
+    "verification\\A01\\final\\chrome-simulation-exit.json",
+    "verification\\A01\\final\\chrome-snapshot-cancel-state-exit.json",
+    "verification\\A01\\final\\chrome-snapshot-initial-final-exit.json",
+    "verification\\A01\\final\\chrome-snapshot-space-station-final-exit.json",
+    "verification\\A01\\final\\chrome-space-exit.json",
+    "verification\\A01\\final\\chrome-space-result-exit.json",
+    "verification\\A01\\final\\chrome-upload-fit-1-exit.json",
+    "verification\\A01\\final\\chrome-upload-large-1-exit.json",
+    "verification\\A01\\final\\chrome-upload-retime-1-exit.json",
+    "verification\\A01\\final\\chrome-upload-retime-2-exit.json",
+    "verification\\A01\\final\\chrome-upload-retime-edge-1-exit.json",
+    "verification\\A01\\final\\chrome-upload-retime-edge-2-exit.json",
+    "verification\\A01\\final\\chrome-upload-retime-edge-3-exit.json",
+    "verification\\A01\\final\\chrome-upload-simulation-1-exit.json",
+    "verification\\A01\\final\\chrome-upload-window-1-exit.json",
+    "verification\\A01\\final\\chrome-upload-window-2-exit.json",
+    "verification\\A01\\final\\chrome-window-exit.json",
+    "verification\\A01\\final\\complete21-current-compile-exit.json",
+    "verification\\A01\\final\\complete21-current-run-exit.json",
+    "verification\\A01\\final\\complete21-original-compile-exit.json",
+    "verification\\A01\\final\\complete21-original-run-exit.json",
+    "verification\\A01\\final\\frontend-performance.json",
+    "verification\\A01\\final\\gateway-binding.json",
+    "verification\\A01\\final\\http-full-exit.json",
+    "verification\\A01\\final\\http-lifecycle-exit.json",
+    "verification\\A01\\final\\http-recovery-exit.json",
+    "verification\\A01\\final\\http-recovery-v2-exit.json",
+    "verification\\A01\\final\\http-remark-retest-exit.json",
+    "verification\\A01\\final\\java-version-exit.json",
+    "verification\\A01\\final\\legacy-abi-compare.json",
+    "verification\\A01\\final\\managed-compile-exit.json",
+    "verification\\A01\\final\\maven-version-exit.json",
+    "verification\\A01\\final\\node-version-exit.json",
+    "verification\\A01\\final\\numeric-summary.json",
+    "verification\\A01\\final\\package-bindings.json",
+    "verification\\A01\\final\\package-exit.json",
+    "verification\\A01\\final\\performance-exit.json",
+    "verification\\A01\\final\\performance-r2-exit.json",
+    "verification\\A01\\final\\playwright-cli-version-exit.json",
+    "verification\\A01\\final\\pnpm-version-exit.json",
+    "verification\\A01\\final\\powershell-version-exit.json",
+    "verification\\A01\\final\\r1-backend-performance.json",
+    "verification\\A01\\final\\r1-performance-exit.json",
+    "verification\\A01\\final\\resource-failure-exit.json",
+    "verification\\A01\\final\\resource-failure-summary.json",
+    "verification\\A01\\final\\server-fixture-shutdown.json",
+    "verification\\A01\\final\\server-fresh-shutdown.json",
+    "verification\\A01\\final\\server-lifecycle-shutdown.json",
+    "verification\\A01\\final\\server-performance-r2-shutdown.json",
+    "verification\\A01\\final\\server-performance-shutdown.json",
+    "verification\\A01\\final\\server-recovery-shutdown.json",
+    "verification\\A01\\final\\server-recovery-v2-shutdown.json",
+    "verification\\A01\\final\\server-remark-shutdown.json",
+    "verification\\A01\\final\\space9-capture-exit.json",
+    "verification\\A01\\final\\statistics-final-exit.json",
+    "verification\\A01\\final\\test-summary.json",
+    "verification\\A01\\final\\tool-incomplete-source-build-all-exit.json",
+    "verification\\A01\\final\\tool-incomplete-source-v2-build-all-exit.json",
+    "verification\\A01\\final\\tool-relative-path-http-remark-retest-exit.json"
+  ],
+  "files": [
+    {
+      "path": "verification\\A01\\acceptance.py",
+      "sha256": "d451c036f6aa36c61d87b982a4731a0b5fb4423d388964d5183bc2b752f36534",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\acceptance_final.py",
+      "sha256": "d9da450ccc2cdae6bab2c0e5ee856d1884e731f4d33ca9e9d9647fd4dce5bd25",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\browser.py",
+      "sha256": "44cffeef5235f3af54cf495b94fc3100bcc0eea75e3c0f0a6479efc5258a14cd",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\build-all-exit.json",
+      "sha256": "531b36b1688f44a28eb211705d5fee3331147fdb6b44b2f86b97154e5045b88a",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-close-exit.json",
+      "sha256": "5502711f7ad2cea657de9af05b9d463e7bac896fc83be654090ae66e35078f35",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-fit-aux-failure-exit.json",
+      "sha256": "fc85f7794b8029a1fe20ce15e4c64b66c67e5001d93142318720bbfb477c0214",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-fit-aux-failure-result-exit.json",
+      "sha256": "7233c8ca32b2754ea3ea6103e4a9001161afea19da33dfc7b11906853f6cff8d",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-fit-aux-recovery-exit.json",
+      "sha256": "6cbab6af5d52ce7b7e73981463cf18957c219fe1a1efb253be11b5a7e1c984f2",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-fit-aux-recovery-result-exit.json",
+      "sha256": "17fc975c0b3bd2fb4e7a7aa29093c107ce77e6e779eba3f22e2c2dccae1e5334",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-fit-edge-exit.json",
+      "sha256": "dd78a182eee51eed9ac8914613cb164a625598d1d772f0001d95129cf5a73347",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-fit-edge-result-exit.json",
+      "sha256": "bd8af72ce05c503d079ddb0c6e2728b878420e0e88dacd69b98f8d13e9716c72",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-fit-exit.json",
+      "sha256": "8e62e42fd2ecb7639dbebc7fb841b07ed1da9e04c058246bcd4b1abbfbdb1080",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-fit-result-exit.json",
+      "sha256": "dad550af97391b88c1ca14e0db26cfb28b961f1177cb0c1dd301e7bb1257dbfd",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-open-exit.json",
+      "sha256": "68bed65eb42dccb853318fd36b3c8bc9bfa0f1c4a0fa4c1c5e4b08a6320a1d65",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-snapshot-initial-exit.json",
+      "sha256": "2a46855ce77b89a4cf8b9c5a69253d7c885665d41f4a1cfd2c1d3d8137036e74",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-snapshot-space-state-exit.json",
+      "sha256": "647236fa996b2bd8ae85ba1355323840beccc3c5c823c86f00389aa8e2e3068b",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-space-exit.json",
+      "sha256": "c1bf5d4f110f1f5f7ea9caafa3bffb4d6c288efb2c1ed236acec266d20afe6b1",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-upload-fit-1-exit.json",
+      "sha256": "4303b210a8221e07b3caf25c47ac14bb476701e39c61dd2aaac170bc21f47c10",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-upload-window-1-exit.json",
+      "sha256": "ba2d310b0f78c93a2dc3903b28244cabf95f2f0919814c02db0b2c5231429577",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-upload-window-2-exit.json",
+      "sha256": "0ec3e312c91084825e3205550755eca85d62bbf0f4684dde5231ad8c55c39d14",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-window-edge-exit.json",
+      "sha256": "2052ac939c5f48e09612cdf7414b002ed02256976b7fde74774c626544b163f9",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-window-edge-result-exit.json",
+      "sha256": "4ef3daec07bc61848e12965627f0954ee59d05b46c36b80dcb27187cced21b9e",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-window-exit.json",
+      "sha256": "5b6657fb71e6dc4ae61213582bde878fb9d1c2f68e1f3fce585ed04f382fd2d0",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\chrome-window-result-exit.json",
+      "sha256": "73245c4f5378bf41845bee9e87c63f01737f19ed7ff71238f94bb3d568523de0",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\clean-source-manifest.json",
+      "sha256": "1e5e4b5f88ecfb9d5356f91c0e27d98a159f43d036808013d04631df20196646",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\collect_browser.py",
+      "sha256": "de887ed5fcd5cd5491c5113a2a721f434e99b0104d24990d7ce9b1712b8d8a9e",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\complete21-current-compile-exit.json",
+      "sha256": "1285c2adaa6fe1e90a654baf0fb05fc4dad43f1972de4ab7a095ab3ce1b37a1f",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\complete21-current-run-exit.json",
+      "sha256": "a5abc8e1baaf94fe282cc05cf0f7df64c8d5a61a75b42c2ab279655f70b955a9",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\complete21-original-compile-exit.json",
+      "sha256": "61bddc4764363d4f7b79b6ac1829c4436c811fe39509e4e318aebe9d318777b1",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\complete21-original-run-exit.json",
+      "sha256": "07a1477c5971e8c7b2ce52afa596e7f458431b97fb756b853b7446c4fda212f2",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\docker-info-exit.json",
+      "sha256": "a30de29483ae5db3cf55b1798f4d39cadf231e9f9bb3c5057fd6b3863333997f",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\environment-exit.json",
+      "sha256": "c2933cf8d291f7146b323acf100b7febb49ad1ae4fa45783f7383ae440db24eb",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\external-environment.json",
+      "sha256": "a29ebfb06efa70102cedc1a701d1519dc63cc732e0323476b5411ca3c4b87fac",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\fit-aux-failure-browser-flow.js",
+      "sha256": "d8bd422ab6ce4cd76ab81d3403b80ff655c01e5e66ce94edbf30c2bddbea57e0",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\fit-aux-recovery-browser-flow.js",
+      "sha256": "b1fd7981c864b9de68208a01d5538832f87207dd42cde7b1f403f7ba64b71851",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\fit-browser-flow.js",
+      "sha256": "829211e5056b874f0450803b93fccea175fc8984f033f46abc77ad93cdcfa91b",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\fit-edge-browser-flow.js",
+      "sha256": "cfc14ef92eb1e7f43f893ab4d8fafaf947b4fbad3015de3a50b340a3cbcf4c93",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\gateway-binding.json",
+      "sha256": "9cbb81b875a45c88d85cbb576e49d2d404fdb8a2d682d9c341d7f28414345d1d",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\http-extended-summary.json",
+      "sha256": "19a4131e449201a13e30bb29a314c2de4009974c302e4c5ed3d6652e04a713f5",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\http-recovery-tool-failure-summary.json",
+      "sha256": "00c00eed6fd5eb6028f3b524cc1464496c7003edcccdf2fd63b488fb58bb4d9a",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\http_acceptance.py",
+      "sha256": "649998a1a85e1a8fe6d1bf3e67b9f3945a441af2ddae59e19dc9fc227753da72",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\java-version-exit.json",
+      "sha256": "e456b72c335c77922acc868ceee1834505b28a4b0042847f88a2781f842c64ab",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\legacy-abi-compare.json",
+      "sha256": "f706ebc1a4a280990438738f1dfd35c492ca624ffd2ba0e095d52f3324140a84",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\managed-compile-exit.json",
+      "sha256": "68cc2dc73cde6c01fa016bb058971d36582a638cc0b22f0dde981b6e031e7c4b",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\maven-version-exit.json",
+      "sha256": "08e5f493cf704f61497a2254ae2bf28efc6ae06cb01fdd82e7f916e87745dbc9",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\monitor.ps1",
+      "sha256": "400524377fa7f70919f0eed17294de5357e1b8c93d5f15e86e16bcc2067dbfd3",
+      "lf": true,
+      "utf8Bom": true
+    },
+    {
+      "path": "verification\\A01\\navigation-browser-flow.js",
+      "sha256": "f230f530e00e007876459cce41d1ddf1d6d0b4909663395b693a29fbb2af9a11",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\node-version-exit.json",
+      "sha256": "50e1cf8463ac308b84e93975e3a23be8ed7f2577c277b1f149ba9c6873afc41e",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\numeric-summary.json",
+      "sha256": "be12cc187be66e0d6358706e9c5def6dfce2f45f3bb33339a4efe6daf3351040",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\original-directory-check.json",
+      "sha256": "6b078feeb21d9a41eb12a5433f54f2b6be87ba2ffd38e1b38de46c2a2de2c2dd",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\package-bindings.json",
+      "sha256": "32e3f9e9ef75384c22e98f7454d46ecd0eb6bdfb0a1c3656584e60d7cfbcea31",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\package-exit.json",
+      "sha256": "00c844d1cd5e2200928f1bc57e5b28b69d17af584e0b2a0cbff09a5a19f73ba8",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\performance.py",
+      "sha256": "cdf3e4baffbc43309735cdae2127e450cd291dfb7df531e5f778af3188ffde5d",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\plain-ballistic-exit.json",
+      "sha256": "6fe9276549e2ced8af587dbe310c86c8878140220e486859ef718025962996d0",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\plain-space-exit.json",
+      "sha256": "3870ced2fee85d4f5acf94ab6e6c36d869ddbe269038986ca23dceffa1152f38",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\pnpm-version-exit.json",
+      "sha256": "5ac79fa21f1900f9dc9144a3ecafab20e5559128286f1042a3b2c93e217a203e",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\powershell-version-exit.json",
+      "sha256": "16c72555eba41fbae34b52c273f1cc7b57d6da7518b72024564d7d5aed29b139",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\remark-fix-green-command.json",
+      "sha256": "222b38daa9c371af8cc28c89c3c0a695125fbaebca5754806d20cd4eecf6e4db",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\remark-fix-red-command.json",
+      "sha256": "5ee44477c1351a3f29fa5279872b3a10b9f890e613b5f416c2ab1a5c688cee8f",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\remark-fix-source-check.json",
+      "sha256": "337e560c83440025971dfb87ab410ddc645e958e3a0820d2972c9d8362a10729",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\report.py",
+      "sha256": "9c4b2a657ab93204046bb0ce6b047a63c657f9ea9647dd1bfb86ad3169bdb447",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\resources.py",
+      "sha256": "c5dfb5f7e9ebd91b9ab8ca8658377383d883e48f2346e0cffe747e676209522d",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\retime-browser-flow.js",
+      "sha256": "9de757e33b2930b1ffc01e7ba3ea0ab116d05b2a683872966fde567857de2fdb",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\retime-edge-browser-flow.js",
+      "sha256": "4ced20f181d5ee7f9ac8209a1ae681fff01bffab5d5cc6941b6b010a7936aa50",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\server-fixture-binding.json",
+      "sha256": "a57838245e957dbb0bcbcaf5e8fcb568a365fa6d0b9add23990bc3b6f7cae884",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\server-fixture-shutdown.json",
+      "sha256": "d050f72ffbf1ea1892f683acff0e79dfe74356b5046a2d4121e889cf8095e48a",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\server-fresh-binding.json",
+      "sha256": "22e762c1c1e94ba01262d02735e5a1ddedda27e751e2defe464c4ce310c944b8",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\server-fresh-shutdown.json",
+      "sha256": "213194b6304dedc6d4e0dfe5cf8a01f2e1d8834149efc9d18de860dcdac691a2",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\server-recovery-binding.json",
+      "sha256": "20c71c7cab7174d8032d5c5dca99880c80cc27283ae3ba1ae07f32ea6ec97a8f",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\server-recovery-v2-binding.json",
+      "sha256": "c9f86d8c8de63a8f6017902673deb7905a72dbf2c6c599346aa4c5d33db0ed56",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\server-recovery-v2-shutdown.json",
+      "sha256": "521414a94efa758081707f6f0573b1b5cc0c29aac5e8367ff1ff08c3b208925f",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\services.py",
+      "sha256": "83b16c0f5a01ca816ae080c36c59236dd9b47a8e81a967a1506a94574016bb63",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\simulation-browser-flow.js",
+      "sha256": "9a4986b7de28079fc13d97a51b59d7799ea9bbe743c3c30b835419d5b5a69bf4",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\space-browser-flow.js",
+      "sha256": "75b87c40b4f7a02fca351c73994fdc2c4502ed4e6975f2a71df0bc77b9b2c24e",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\space9-capture-exit.json",
+      "sha256": "57a98240198794a9d3bb7ab75bae9e578ee086e744f2c6777ba9d7708ddec335",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\statistics-green-exit.json",
+      "sha256": "eeae911aa4a697f6525deb0fd0068a85814b27037690b79f8a289bfc10b5e7ba",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\statistics-red-exit.json",
+      "sha256": "62e66c683bb8232ce8723f2411a77ba3603edbdbfdd7ce4c4fee23e4d9af999a",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\test-summary.json",
+      "sha256": "74d755f53d2e43b2129e1910a664d69b671d85c15eea190479afa1f762f3e05d",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\test_statistics.py",
+      "sha256": "75799f37c26c60335eab2b1379402fe92e1610573348a75a4bd0e9eb5fa789ad",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\tools_validation.py",
+      "sha256": "0c0c770df1853348fc9e3059705ac47ff078a9778644fb460c8f723eb9ade1f5",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\window-browser-flow.js",
+      "sha256": "b82a8ae5b5794423f239b4613aacea945eed609fed0f36a0c74525ce14a3e270",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\window-edge-browser-flow.js",
+      "sha256": "1543dd56fd21982b07a702baf300e8dba29d55ac61f577a9363b831a2a725610",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\备注清空缺陷修复报告.md",
+      "sha256": "6800fb9e19802ace627bee0598d8c9ef3697ecab25a56d71dbcdb59d7fdd34fa",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\测试报告.md",
+      "sha256": "2962f623e86a71ab72ec2cacbf448321f7fe09e50b2f92211d4c20c6aed8041b",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\验收用例矩阵.json",
+      "sha256": "96449718de34bb0ffe900cf01b950f9e3deeab48102ec1c256afbb501ef7930d",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\browser-collect-exit.json",
+      "sha256": "3853de94a14fa502d6d4a1fff8b713d6b62ad4591fe43c058aa85f8dac2a4dd9",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\browser-collect-final-exit.json",
+      "sha256": "6873c4be71bf7a64c1a397c92684ed193b9efcb72987491411f293a1db5328bf",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\browser-summary.json",
+      "sha256": "467fbd4f3b48396dc282f411130171a237ccd7efcfa6e16d61e01fd48b365839",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\build-all-exit.json",
+      "sha256": "c2d1a0ffd46dd731a26c44aea4b6860b44c353554b4ff0d299aa626862909cd2",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-close-exit.json",
+      "sha256": "3a71cae567736b418d9859154db47c6614bf1139b3a2dd879ec3e3a4d69cc726",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-fit-aux-failure-exit.json",
+      "sha256": "c3e650fa11b2863b0eb3d07a537e332e95ae527e6e7a8c894d512abf8cad5659",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-fit-aux-failure-result-exit.json",
+      "sha256": "f9f350556bc23867643967a6bb147638f8f81a8c088be69b67a69fd5bbc491d3",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-fit-aux-recovery-exit.json",
+      "sha256": "5a45c4efe5aaef7b1bfebd00d31c48924dae340ff9bcbafa9ce9378588c1793b",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-fit-aux-recovery-result-exit.json",
+      "sha256": "649c0d4ccd90c4231cbc315b28b8702c74925d39fbef7b537c4562d49c43cbb8",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-fit-edge-exit.json",
+      "sha256": "fe1453e4beed95e031eff985f9bf309187dcce1b947a6fdedde24a0b7fd75bed",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-fit-edge-result-exit.json",
+      "sha256": "74889293d9a79131bd6bf24eb24056c6529f087b144d55a4d47212a300874f1c",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-fit-exit.json",
+      "sha256": "23e54292a6b0002d80613eb9d6168de83aa6e0953382c5db3f5ddae51d710ad1",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-fit-result-exit.json",
+      "sha256": "6b7c1307d455d1049654210afa60294477e384d6ef79ae5719b19efb97f19428",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-large-exit.json",
+      "sha256": "1049822080e88134458c7aab5cf5fb91b0015966041318dc86218a5d623347ac",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-large-result-exit.json",
+      "sha256": "a252bbac6d5549cbfd49c7566ba75a434ba3b2c8420152f3c97331e81be0565e",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-navigation-exit.json",
+      "sha256": "0d96af879bf62826da02b8443013835f5c55c3607ee4c35d9694ba7e5ca5e657",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-navigation-result-exit.json",
+      "sha256": "254075bf575a53c906d928137f5b780db84514605d6ee0e8e4061e13cfb6461b",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-open-exit.json",
+      "sha256": "1f59012eae0e81368c778ba82a243cc537229cea602599a3fc2175ca0237751b",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-reset-retime-exit.json",
+      "sha256": "8cd340b19e3b669fec3d33066cff4b9be6a9b4cfa3e1e096ed02b66c9af7380b",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-reset-simulation-exit.json",
+      "sha256": "fd3afd7cdbbb7b72e5b3c828fc5cb590f0bc048b2a5e41d69813dbb9f5b62293",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-retime-edge-exit.json",
+      "sha256": "a7e7958620914cfac9b9238b12d15f4287b4480a04e9048e284830132ef7641c",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-retime-edge-result-exit.json",
+      "sha256": "4d59e446445b22a625127e52b2c3f04625132f27ea8f660d198aadd02a0a6c11",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-retime-exit.json",
+      "sha256": "b80a0be951ab6a6a3ca85da19c56d0bfc4c723000bb478d9b7a8efc40c69428c",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-retime-result-exit.json",
+      "sha256": "ba1d12f06f1100e92a34bd797e18803ca3cc63e873651cf2059b86d8c981db97",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-simulation-exit.json",
+      "sha256": "948f23ecb313ca796ce59058a5713ef43bd85bab48846d14c7168cc4c7a4e126",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-simulation-result-exit.json",
+      "sha256": "456f5b799c205fa7ffd22b7569847d95cba3cfd7f376fed46bbf4139fa46a4bf",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-snapshot-cancel-state-exit.json",
+      "sha256": "353baaa38f8298ddba45905305b7bfbd2f516eccc1001cf45dc71d87cccb70ec",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-snapshot-initial-final-exit.json",
+      "sha256": "9fe73e260d30dbb7b5c2a852e9f017a7bf2c6d99a2cdb912001f754966fa5927",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-snapshot-space-station-final-exit.json",
+      "sha256": "4bd4e7cc291780b55f3373e0653857baa8cd76d4529c195aa3a1408509033693",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-space-exit.json",
+      "sha256": "49139b4683c48dbf454dce84e533f71d46561f4566552e68edac6905695fd4c3",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-space-result-exit.json",
+      "sha256": "f39886e361b5de43616fb659fe59fa047765e6dbbd7ce408e4caec461fac9788",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-fit-1-exit.json",
+      "sha256": "a590efa6deb6b00d167a363f3ee4bc0d15aa94145e13ac06e382d8d5db59e8b4",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-large-1-exit.json",
+      "sha256": "c521aaf589a2d38e73b48ebf8d693b880bcec29db031822bd667f17e105821fc",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-retime-1-exit.json",
+      "sha256": "2ebbe27fadabbfdb2998bde131513845d7a6645a264163824116ec4f92962d1f",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-retime-2-exit.json",
+      "sha256": "2ec705d4743e99207362ce8ba49ff469bbddef77a63175fac6f6bba961e6ed71",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-retime-edge-1-exit.json",
+      "sha256": "5cb4fd6ba21330c99e28a06e5016ddceaf79efaf12f85ef6311c09942a1f58b6",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-retime-edge-2-exit.json",
+      "sha256": "9477edbc0ea490ef44ee7e61ef1ed114ff1e854bf9fb4d62f4dc00e9c11c7026",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-retime-edge-3-exit.json",
+      "sha256": "25f9bcf82de732c8c271128e1856937be6ff856cd0c20c53edd86ecab0959971",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-simulation-1-exit.json",
+      "sha256": "6f2127a9a11b85a35d34bacb1ae9701e88a569fedc71516447fbda32c4aa007c",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-window-1-exit.json",
+      "sha256": "4bba65d844d115dd0564b817f9d8ee69ed9f006e64853b3d809dc103919e8c89",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-upload-window-2-exit.json",
+      "sha256": "5cf4bd404d7170892afdb9ed3da94e0f6545cfc78512cbf2c064cc33a43d94f3",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-window-edge-exit.json",
+      "sha256": "0636f53ec3796ccf01cf2462e5edb06424237b607b6d991131021deff68f325a",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-window-edge-result-exit.json",
+      "sha256": "9cdf51f7781309a73a22d9e0d9d396f8f20160c3a245479f99bfc039b3acb486",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-window-exit.json",
+      "sha256": "012572ae493465c1c391d252a0fbeaf87cf904f8c5fa86859825e0c14f8c2437",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\chrome-window-result-exit.json",
+      "sha256": "9c2b9a0675c41aec7be816f5ca95f0644c4f8780e751a710f8b2fef2d974402c",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\class-delta.json",
+      "sha256": "fb4c483f0b8fd3e7cc851849db98a23cf15a6889fd7e6b50791bc4426773a042",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\clean-source-manifest.json",
+      "sha256": "c5bcaf82b03e9a613ae539497537351c02f888ff42e92962f8047a0bcb67266f",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\complete21-current-compile-exit.json",
+      "sha256": "e854e0a69a5cff8e138e6f741418acc63367fa7d7cb2efc1899b1b32f093ecff",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\complete21-current-run-exit.json",
+      "sha256": "c10957346afcabd8829755f3929ff3dbe5f0b8111e4e549e4057f96aae7eb62f",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\complete21-original-compile-exit.json",
+      "sha256": "d026c131c02de5c91547c0a810b5b6efbf9b5b1c2c9af4e00a225fe33afc5d5c",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\complete21-original-run-exit.json",
+      "sha256": "8616fda10e2c4f9b589289412bdf73a166b8e117767e362b0794625498c865e2",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\fit-aux-failure-browser-flow.js",
+      "sha256": "898ab8ec1854567a64a9690692afea9b689536edca46818823d3e58db10e2a28",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\fit-aux-recovery-browser-flow.js",
+      "sha256": "9b23b51aca177e8ba7877d8fc6d62a7e1df40051eae9ddb1f03245312b3d2a76",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\fit-browser-flow.js",
+      "sha256": "69dfb388cc8c6547cdc18e5b3045b87a532ffd426bb1a654824a859370498a11",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\fit-edge-browser-flow.js",
+      "sha256": "10c48937a2c70d8ed53e8be06caf2af059a6042a4908c30220fbe18a3e3c5379",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\frontend-performance.json",
+      "sha256": "b8ebabcab5225e1d8ae39b3b0f9435d38f3fcf1a6f05752dbe14f3edc9411ddc",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\gateway-binding.json",
+      "sha256": "0521c1b14a4ed8d9431b85267e430cb8ce664fdcabeeab25f502253840b0b77f",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\gateway-shutdown.json",
+      "sha256": "7bb2481bf8230ce7c83c09260a196c7fcacf93bcb25e6edbf39b7676be0710f4",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\http-extended-summary.json",
+      "sha256": "067803e01c63f76ffb400345624f608b08321ffe17e1977385ad2d44d5c3388b",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\http-full-exit.json",
+      "sha256": "37f9bed14138aa8a7cb95c3986f41f7dc6fe55866e853212ccd3fa42d6b78d10",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\http-lifecycle-exit.json",
+      "sha256": "c7214fc70923af20a938c2eb334b2b00c46fb503cf01ee6609b4db22a32be77c",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\http-recovery-exit.json",
+      "sha256": "6e03b3450f37f6b79f0d2d9b0646989d7a03dd9ffc5f27b630887939e8b44a01",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\http-recovery-v2-exit.json",
+      "sha256": "ee5f8e39f4c2c8eb5bb8929c621641f4979f3b6a65d140089234508af1d6882e",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\http-remark-retest-exit.json",
+      "sha256": "cfe2de50346b9ad2d17215da93d0bd061f86cd30f1b5012b82ca3e6e13de6450",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\java-version-exit.json",
+      "sha256": "b7f66df87685f35f886a3cc71750f7038ca2f7ea0090b953fe7fafcd871650e3",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\large-browser-flow.js",
+      "sha256": "9305aab54e58eb20bb22597dd8bb275381a392f55d593e6ba010e4ad87732c64",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\legacy-abi-compare.json",
+      "sha256": "a19a5babdea8409a6018f7fe177c9890cc37bba9c52957066983d9d1bf90bdf8",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\managed-compile-exit.json",
+      "sha256": "5299b0b52c929299b5e23d302eb7b5e75915aad3d5475963762dcb53a6461704",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\maven-version-exit.json",
+      "sha256": "68ec4b13557b1759904d6f122b9c54e98dafc65a31fd8fab12c0cc4b1e5f9ecb",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\monitor-rootcause.json",
+      "sha256": "948e4f29a1b3cf3fdfc32be479aaff0e4775f6671a979a59ef595bbb0b4c7400",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\monitor-selfcheck-bom.json",
+      "sha256": "fe62301681cf483d49dc1ae44d6d72ed4a84c9b8f661937622064cb2eb2bac1e",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\monitor-selfcheck-command.json",
+      "sha256": "a79b00ab230888b1dcf1716f2c82afabff518208f862cf867f4d2a7ef011f944",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\monitor-selfcheck-v2.json",
+      "sha256": "5c12da547e68e5b9adfc4876c70a07456ce9e3874f514057a07731781a9255ca",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\navigation-browser-flow.js",
+      "sha256": "f230f530e00e007876459cce41d1ddf1d6d0b4909663395b693a29fbb2af9a11",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\node-version-exit.json",
+      "sha256": "35e184e1211b8563b107f66d642fe19e2d3b07dc99ee3a391950b7e1f7ece03e",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\numeric-summary.json",
+      "sha256": "be12cc187be66e0d6358706e9c5def6dfce2f45f3bb33339a4efe6daf3351040",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\package-bindings.json",
+      "sha256": "46ed0274a0d8248eb6daca135e15d1d181923830c131ad782645d774bb90afe0",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\package-exit.json",
+      "sha256": "ee67f2d2e5eb20057830912fa4326e16c92d0533da96591f4781612c7c3d8ae5",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\performance-conditions.json",
+      "sha256": "d66ac8c6ec2980fc9e0377fd957308021351b3b84611121a97cb421caaea0de7",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\performance-exit.json",
+      "sha256": "4e29be34750e5f311ae8f49f8609b050d83f2b2c2e61fd031f27a2965e815e77",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\performance-r2-exit.json",
+      "sha256": "82e4e585c6453f71fc90a8c919f7179bbef7eee3b9d013f805a5087f71c317ed",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\performance-resource-summary.json",
+      "sha256": "b6596e34d47b3244477627b77a15725603037dac65987eab1bf375ce04f35d9d",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\playwright-cli-version-exit.json",
+      "sha256": "f73e94f94088747a75f9838b7847f17137d8b122fa8a4da1053d69ca994903c4",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\pnpm-version-exit.json",
+      "sha256": "307eaad34a859efd07a22b9efb7948a5fce9413ad78e71feb7b15f003f4b2d38",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\powershell-version-exit.json",
+      "sha256": "99439620b9e99e5125d8d1e86b14a7f3d887bf30da9482a5f821108920e425d6",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\r1-backend-performance.json",
+      "sha256": "43a6d96b81bee37cb8dbd1b591f7db3bf591aa31a1bfdf8d0234a3c02909280e",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\r1-performance-exit.json",
+      "sha256": "4e29be34750e5f311ae8f49f8609b050d83f2b2c2e61fd031f27a2965e815e77",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\report-generation.json",
+      "sha256": "6c7a879a2bc7af125f15e139a7f0765698ff661edb6fd014f9d6c01c0b0909d8",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\resource-failure-exit.json",
+      "sha256": "5b290f6891f2e9c47e78d1c05aa4e18cb03df7ecadd1a5741b2f4e04010f1200",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\resource-failure-summary.json",
+      "sha256": "771a282dadfe13fa70d4827d0b190b821c4dc3e29f6af48baa2f2933355967e1",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\retime-browser-flow.js",
+      "sha256": "842257bdd76161d236cf0f79d9cbdf3f4b68ef19bd93bc0e1fd77208812d119f",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\retime-edge-browser-flow.js",
+      "sha256": "6f5e89c77c8f701df56805782f8b78479e313fbe57f55788b845545ea3febdbd",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-fixture-binding.json",
+      "sha256": "9cf717a94076e63de84cb7880d41e65eef9dbb5c71e5173e66daa54745432920",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-fixture-shutdown.json",
+      "sha256": "fb3382d092f381748fd2adbc559e93959dff7bef2f8ed5456f5303a8b5c0a82e",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-fresh-binding.json",
+      "sha256": "2ce9b21a7f87db2b15051c609bea359080bc60afc4526965adcddebf422bcce3",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-fresh-shutdown.json",
+      "sha256": "7a18c381b44a2bad5360d77f0f661faf7040fc9800df3cccb6a59988951fde7b",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-lifecycle-binding.json",
+      "sha256": "78138858a3a107949ff1a73dbfdaabfde2437db4bb0aa1711bb865df9f8b1da6",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-lifecycle-shutdown.json",
+      "sha256": "123edcde5bd18c3f8cef1f73130c90e2381d968c2fe0b218041681ca32c9167a",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-performance-binding.json",
+      "sha256": "0cf128619d69151471d5eb422c27a5a91dfd8aadd6c1a477179333e4a0489176",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-performance-r2-binding.json",
+      "sha256": "1dd62024905250d46a3e33ecc88a1a0e42715b69d94a3f81baaace705389f2e8",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-performance-r2-shutdown.json",
+      "sha256": "ec90c4e4b2dca963d551f8b44336066dc96a634cd060084fd5ae4569c2c1ee83",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-performance-shutdown.json",
+      "sha256": "550582ad7dcc7c424757b2dbed7c7dca2d02b486250ff67f4c3b767d58256c8a",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-recovery-binding.json",
+      "sha256": "df5783aaae65ab33df279a154be4dd86b20424e6d8b8d1911a3de264dc6ce3d9",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-recovery-shutdown.json",
+      "sha256": "53a5622b96d9e5a8f27e01b0c49e18ca0e11899a83d6482e55cc7bb7121f8ba9",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-recovery-v2-binding.json",
+      "sha256": "95cf7910f8d5700d7ef0a64d0f6b36a678c7d4ed6b9d208fab58415115241741",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-recovery-v2-shutdown.json",
+      "sha256": "3d4fcbe0d078e162d0b0ba9b8f37f5abb3e9ea71c0368d32df04fd03c2c2aa31",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-remark-binding.json",
+      "sha256": "33fc707675f582440ee501988cb7660f9d9eabb4197deea595c68e0bc8f0583c",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\server-remark-shutdown.json",
+      "sha256": "45139fd8e4ddb195717a2843747227156451ecf2ddbde6941bf9453570c106d4",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\simulation-browser-flow.js",
+      "sha256": "a2160fb2e73b089535c9175ab808038bc7c06546c852626d57c178c0b233bc0b",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\space-browser-flow.js",
+      "sha256": "6d7ccbfa94b8add258fbeb31d877f880148026a1374e6202b18324aabe45bd86",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\space9-capture-exit.json",
+      "sha256": "fb0bbef40dd1f2f9dbf94c352ca7c9d076187d29c05500f530d50712f6f904fc",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\statistics-final-exit.json",
+      "sha256": "2f7c18bf65b70c683479cc995c55a84576d06b1688bce2f289ae59a30f1a1091",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\test-summary.json",
+      "sha256": "ffbfd191ac4bb1c777def70b0f814a71b259a5a28e7038021996ba74c8462aa5",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\tool-incomplete-source-build-all-exit.json",
+      "sha256": "99e4d19fb2df0278cf522e0759da582da780d4f72bb3b8e358c756eff18ba692",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\tool-incomplete-source-v2-build-all-exit.json",
+      "sha256": "294f9fe9523d584ee01fb309bd79c3a3dbeaa44e3caa1a97498e4627655339d3",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\tool-relative-path-http-extended-summary.json",
+      "sha256": "3d3bdb68af48b977ed08a16838c321eb8493909631c9ace2c9175f17a8e20646",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\tool-relative-path-http-remark-retest-exit.json",
+      "sha256": "a44aa152f6c8284fb956d249e5a95b2855dca6d89011a45e35f3b6e17f1bc0dd",
+      "lf": false,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\window-browser-flow.js",
+      "sha256": "5ea5217d524831d1fce32de85f97e5e7a2c77a227e3ac22227f7a8801bf53c27",
+      "lf": true,
+      "utf8Bom": false
+    },
+    {
+      "path": "verification\\A01\\final\\window-edge-browser-flow.js",
+      "sha256": "093c158b7b925135e622ba5eb773222bcfcef939b3058555157590e01cde92e2",
+      "lf": true,
+      "utf8Bom": false
+    }
+  ],
+  "servicePortsRebound": [
+    18140,
+    15140
+  ],
+  "status": "PASS",
+  "limitations": "raw stdout/早期工具元JSON保持原字节和真实SHA；PS1按Windows5中文规范UTF8 BOM+LF；报告/矩阵和新增源码LF。Git证据属性变化不参与构建。"
+}

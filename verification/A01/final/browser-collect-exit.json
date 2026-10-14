@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "verification/A01/collect_browser.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.48072266578674316,
+  "stdoutSha256": "6336dec4d1db600e7c0138de6169801089c876425c060ab864eea38123e1406a"
+}

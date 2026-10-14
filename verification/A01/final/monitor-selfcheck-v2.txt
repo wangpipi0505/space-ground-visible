@@ -1,0 +1,1 @@
+A01_MONITOR_BINDINGS {"ProcessId":63368,"BoundCount":3,"Destination":"G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-selfcheck-v2\\samples.csv","StopFile":"G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-selfcheck-v2\\STOP"}

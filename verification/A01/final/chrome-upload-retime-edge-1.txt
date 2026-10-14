@@ -1,0 +1,12 @@
+### Ran Playwright code
+```js
+await fileChooser.setFiles(["G:\\5-YG\\space-ground-visible\\test-data\\reference\\ballistic\\T25\\retime-irregular-reordered-source.csv"])
+```
+### Page
+- Page URL: http://127.0.0.1:15140/
+- Console: 2 errors, 0 warnings
+### Modal state
+- [File chooser]: can be handled by upload
+- [File chooser]: can be handled by upload
+### Snapshot
+- [Snapshot](.playwright-cli\page-2026-10-13T23-40-08-513Z.yml)

@@ -1,0 +1,5 @@
+### Error
+TimeoutError: locator.getAttribute: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('.planning-card').filter({ has: getByRole('heading', { name: '卫星载荷', exact: true }) }).locator('.payload-config-item').first().locator('[data-field=payloadType] .el-select').getByRole('combobox')[22m
+

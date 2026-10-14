@@ -1,0 +1,12 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-Command",
+    "$PSVersionTable.PSVersion.ToString()"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.12705302238464355,
+  "stdoutSha256": "20e955843dca875613392595b8b605fe7c7ddeb5dd374f8eea4f6f2820fcf270"
+}

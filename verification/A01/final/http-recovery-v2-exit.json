@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python",
+    "verification/A01/http_acceptance.py",
+    "--mode",
+    "recovery",
+    "--output-dir",
+    "verification/runtime/A01/final-candidate/http-extended",
+    "--summary-path",
+    "verification/A01/final/http-extended-summary.json",
+    "--storage-root",
+    "verification/runtime/A01/final-candidate/server-fresh/files"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.22472047805786133,
+  "stdoutSha256": "7259d6e74fe27d13bd4bd28342fbbdc19ef9c0b51b0ffe4712f83ccc5d2762be"
+}

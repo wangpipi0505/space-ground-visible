@@ -1,0 +1,18 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-final",
+    "open",
+    "http://127.0.0.1:15140",
+    "--browser",
+    "chrome"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 3.3581643104553223,
+  "stdoutSha256": "08a16e2f2fe12562d5aa3d6618e44882e9e71be8a16e8104e2fbc54c4ff14e78"
+}

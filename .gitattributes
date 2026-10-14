@@ -20,6 +20,13 @@ verification/T30/**/*.txt -text -whitespace
 verification/T30/**/*.json -text whitespace=cr-at-eol
 # 该报告已进入本轮原字节证据索引，保留其原 CRLF 与 Markdown 有意义的尾空格。
 verification/T30/终审文案修复报告.md -text whitespace=cr-at-eol,-blank-at-eol
+# A01 全面验收日志和命令元数据保留原字节；摘要绑定这些实际输出，不改写工具自带空白。
+verification/A01/**/*.txt -text -whitespace
+verification/A01/**/*.json -text whitespace=cr-at-eol
+# 以下报告已绑定证据索引 SHA，保留生成器的原末尾换行，不为格式检查改写历史证据。
+verification/A01/测试报告.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+verification/A01/独立审查修复报告.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+verification/A01/review-fix/history/测试报告.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 # 浏览器快照和工具响应是原始验证证据，保留字节及工具自带的末尾空行。
 output/playwright/** -text -whitespace
 *.jar binary

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-final",
+    "upload",
+    "G:/5-YG/space-ground-visible/test-data/reference/ballistic/T25/retime-irregular-reordered-source.csv"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 3.1670382022857666,
+  "stdoutSha256": "b1ea5aa25d84bec8c5084866ffd10c1dda988d65112a8363550f78c1a149489a"
+}

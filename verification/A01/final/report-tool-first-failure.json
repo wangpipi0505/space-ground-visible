@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python",
+    "verification/A01/report.py"
+  ],
+  "exitCode": 1,
+  "actualFailure": "AssertionError: []：本轮Vitest stdout只输出27/112汇总，无逐文件(N tests)行",
+  "evidence": "首失败见本会话exec原输出；未单独捕获原stdio，不伪造raw TXT",
+  "fix": "按真实27默认glob spec列文件组，逐文件case数null，112只来自新日志汇总，不推测静态it.each数",
+  "retest": "同生成器改后exit0；报告/矩阵链接、计数、SHA真实校验通过"
+}

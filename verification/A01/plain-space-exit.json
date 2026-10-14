@@ -1,0 +1,1 @@
+{"command": ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "G:\\5-YG\\space-ground-visible\\scripts\\verify_orbit_tool.ps1", "-JavaHome", "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot", "-EvidenceTask", "A01", "-ValidationTask", "T09"], "cwd": "G:\\5-YG\\space-ground-visible", "exitCode": 0}

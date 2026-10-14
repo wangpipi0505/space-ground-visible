@@ -1,0 +1,12 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-Command",
+    "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,TotalVisibleMemorySize,FreePhysicalMemory | ConvertTo-Json; Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors | ConvertTo-Json; Get-Command docker,mysql,nginx -ErrorAction SilentlyContinue | Select-Object Name,Source | ConvertTo-Json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 1,
+  "durationSec": 2.4645285606384277,
+  "stdoutSha256": "f0529027046d780638d36173224a728b360dc9058520b20093e3097289e37cdf"
+}

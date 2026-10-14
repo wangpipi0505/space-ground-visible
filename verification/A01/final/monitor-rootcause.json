@@ -1,0 +1,49 @@
+{
+  "hypothesis": "Windows PowerShell5按ANSI读取UTF8无BOM中文行尾吞掉LF及下行param；仅末字符改ASCII对照证明参数绑定差异",
+  "probes": [
+    {
+      "label": "chinese-final-period",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-File",
+        "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-rootcause\\chinese-final-period.ps1",
+        "-ProcessId",
+        "63368",
+        "-Destination",
+        "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-rootcause\\test.csv",
+        "-StopFile",
+        "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-rootcause\\STOP"
+      ],
+      "exitCode": 0,
+      "result": {
+        "ProcessId": null,
+        "BoundCount": 0,
+        "Destination": null,
+        "StopFile": null
+      }
+    },
+    {
+      "label": "ascii-final-period",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-File",
+        "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-rootcause\\ascii-final-period.ps1",
+        "-ProcessId",
+        "63368",
+        "-Destination",
+        "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-rootcause\\test.csv",
+        "-StopFile",
+        "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-rootcause\\STOP"
+      ],
+      "exitCode": 0,
+      "result": {
+        "ProcessId": 63368,
+        "BoundCount": 3,
+        "Destination": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-rootcause\\test.csv",
+        "StopFile": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-rootcause\\STOP"
+      }
+    }
+  ]
+}

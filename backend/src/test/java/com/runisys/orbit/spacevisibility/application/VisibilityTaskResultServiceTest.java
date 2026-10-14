@@ -165,6 +165,51 @@ class VisibilityTaskResultServiceTest {
         assertThat(taskResultService.findDetail(id)).isNull();
     }
 
+    /**
+     * 使用真实 H2 更新清空已有备注，再重新读取数据库，防止实体更新忽略 null 生成无 SET 的 SQL。
+     * 固定请求、结果、选择、跳过组合、状态、进度、错误及时间字段，确认备注维护不会覆盖任务数据。
+     */
+    @Test
+    void clearsRemarkToDatabaseNullWithoutChangingTaskFields() {
+        insertRecord("task-clear-remark", "SUCCEEDED", "待清空备注", LocalDateTime.of(2026, 8, 1, 0, 0));
+        VisibilityTaskResultEntity original = findByTaskId("task-clear-remark");
+        original.setTotalPairs(3L);
+        original.setCompletedPairs(3L);
+        original.setErrorMessage("保留的诊断说明");
+        original.setResultJson("{\"results\":[]}");
+        original.setSkippedPairsJson("[{\"targetId\":\"2\"}]");
+        original.setSelectionJson("{\"selections\":[]}");
+        original.setCompleteTime(LocalDateTime.of(2026, 8, 1, 0, 5));
+        taskResultMapper.updateById(original);
+
+        SpaceApiModels.VisibilityTaskResultDetailResponse detail = taskResultService.updateRemark(original.getId(), null);
+
+        assertThat(detail).isNotNull();
+        assertThat(detail.getRemark()).isNull();
+        assertThat(detail).usingRecursiveComparison().isEqualTo(
+                new SpaceApiModels.VisibilityTaskResultDetailResponse(taskResultMapper.selectById(original.getId())));
+        VisibilityTaskResultEntity persisted = taskResultMapper.selectById(original.getId());
+        assertThat(persisted.getRemark()).isNull();
+        assertThat(persisted).usingRecursiveComparison().ignoringFields("remark").isEqualTo(original);
+    }
+
+    /** 未知主键清空备注也必须生成合法 SQL，并按既有约定返回 null。 */
+    @Test
+    void returnsNullWhenClearingRemarkOfMissingRecord() {
+        assertThat(taskResultService.updateRemark(999999L, null)).isNull();
+        assertThat(taskResultMapper.selectCount(null)).isZero();
+    }
+
+    /** 空字符串仍是有效备注值，真实持久化后不能被转换成 null。 */
+    @Test
+    void preservesEmptyStringRemark() {
+        insertRecord("task-empty-remark", "SUCCEEDED", "旧备注", LocalDateTime.of(2026, 8, 1, 0, 0));
+        Long id = findByTaskId("task-empty-remark").getId();
+
+        assertThat(taskResultService.updateRemark(id, "").getRemark()).isEmpty();
+        assertThat(taskResultMapper.selectById(id).getRemark()).isEmpty();
+    }
+
     /** 验证超长备注被拒绝。 */
     @Test
     void rejectsTooLongRemark() {

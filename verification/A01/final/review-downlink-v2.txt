@@ -1,0 +1,18 @@
+READY server-downlink-review-v2 25620
+space-downlink serial 10 0 p95= 0
+space-downlink c1 12 0 p95= 0
+space-downlink c2 12 0 p95= 0
+space-downlink c4 12 0 p95= 0
+space-downlink c6 12 0 p95= 0
+CLOSED server-downlink-review-v2 0
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A01\review_downlink.py", line 47, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\A01\review_downlink.py", line 30, in main
+    try:performance.main()
+        ~~~~~~~~~~~~~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\A01\performance.py", line 210, in main
+    assert result['complete'],'完整样本失败；禁止宣称通过'
+           ~~~~~~^^^^^^^^^^^^
+AssertionError: 完整样本失败；禁止宣称通过

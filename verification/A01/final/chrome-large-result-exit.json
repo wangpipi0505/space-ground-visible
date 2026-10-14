@@ -1,0 +1,18 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-final",
+    "run-code",
+    "async (page) => page.__a01_large"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 2.6931517124176025,
+  "stdoutSha256": "4623799469ac3f9105745f7d8a583a94484518f417d6d659ca6d0806dc0689b5",
+  "stdoutPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\browser-stdout\\chrome-large-result.txt",
+  "stdoutStorage": "大原文留ignored runtime，原字节未改"
+}

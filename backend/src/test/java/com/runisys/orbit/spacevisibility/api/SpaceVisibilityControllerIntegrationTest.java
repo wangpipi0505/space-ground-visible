@@ -2,9 +2,13 @@ package com.runisys.orbit.spacevisibility.api;
 
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.SatelliteEntity;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.StationEntity;
+import com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.VisibilityTaskResultEntity;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.SatelliteMapper;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.StationMapper;
 import com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.TargetMapper;
+import com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.VisibilityTaskResultMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.runisys.orbit.spacevisibility.application.OrbitStateProviderFactory;
 import com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometry;
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
@@ -20,6 +24,7 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDateTime;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -41,6 +46,56 @@ class SpaceVisibilityControllerIntegrationTest {
     private TargetMapper targetMapper;
     @Autowired
     private OrbitStateProviderFactory orbitStateProviderFactory;
+    @Autowired
+    private VisibilityTaskResultMapper taskResultMapper;
+
+    /**
+     * 通过正式控制器、真实 Mapper 与 H2 验证 null 清空备注，不能用模拟持久层绕过 SQL。
+     * 将 PUT 与后续 GET 的完整 JSON 和更新前对比，除备注外全部字段保持原值；未知主键返回 404。
+     */
+    @Test
+    void clearsTaskResultRemarkThroughPutAndPersistsForGet() throws Exception {
+        VisibilityTaskResultEntity original = new VisibilityTaskResultEntity();
+        original.setTaskId("http-clear-remark");
+        original.setTaskType("VISIBILITY");
+        original.setStatus("SUCCEEDED");
+        original.setTotalPairs(3L);
+        original.setCompletedPairs(3L);
+        original.setErrorMessage("保留的诊断说明");
+        original.setRequestJson("{\"observerSatelliteIds\":[1]}");
+        original.setResultJson("{\"results\":[]}");
+        original.setSkippedPairsJson("[{\"targetId\":\"2\"}]");
+        original.setSelectionJson("{\"selections\":[]}");
+        original.setRemark("待清空备注");
+        original.setCreateTime(LocalDateTime.of(2026, 8, 1, 0, 0));
+        original.setCompleteTime(LocalDateTime.of(2026, 8, 1, 0, 5));
+        taskResultMapper.insert(original);
+        String url = "/api/v1/space/visibility/task-results/" + original.getId();
+        try {
+            ObjectMapper json = new ObjectMapper();
+            ObjectNode expected = (ObjectNode) json.readTree(mockMvc.perform(get(url))
+                    .andExpect(status().isOk()).andReturn().getResponse().getContentAsString());
+            expected.putNull("remark");
+
+            String updated = mockMvc.perform(put(url).contentType(MediaType.APPLICATION_JSON)
+                            .content("{\"remark\":null}"))
+                    .andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
+            assertThat(json.readTree(updated)).isEqualTo(expected);
+            String reread = mockMvc.perform(get(url)).andExpect(status().isOk())
+                    .andReturn().getResponse().getContentAsString();
+            assertThat(json.readTree(reread)).isEqualTo(expected);
+            VisibilityTaskResultEntity persisted = taskResultMapper.selectById(original.getId());
+            assertThat(persisted.getRemark()).isNull();
+            assertThat(persisted).usingRecursiveComparison().ignoringFields("remark").isEqualTo(original);
+
+            mockMvc.perform(put("/api/v1/space/visibility/task-results/999999")
+                            .contentType(MediaType.APPLICATION_JSON).content("{\"remark\":null}"))
+                    .andExpect(status().isNotFound());
+        } finally {
+            // 只删除本用例创建的任务记录，避免影响此类其他控制器用例的数据准备。
+            taskResultMapper.deleteById(original.getId());
+        }
+    }
 
     @BeforeEach
     void resetReferenceData() {

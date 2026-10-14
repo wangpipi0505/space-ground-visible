@@ -1,0 +1,3 @@
+record-after-real-restart 200
+volatile-task-after-restart-404 404
+{"passed": false, "totalRequests": 8, "successCoveredRoutes": 2, "assertedChecks": 2, "failures": 1}

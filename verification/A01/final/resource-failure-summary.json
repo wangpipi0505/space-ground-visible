@@ -1,0 +1,186 @@
+{
+  "passed": true,
+  "httpRequests": 16,
+  "requests": [
+    {
+      "ms": 32.792599871754646,
+      "status": 201,
+      "bytes": 281,
+      "responseSha256": "a5d71b9160533869e4360bf5810a662457016324a2013f845631b456a0a3e028",
+      "name": "source-upload",
+      "path": "/api/v1/ballistic/files",
+      "method": "POST",
+      "expected": 201
+    },
+    {
+      "ms": 126.77339976653457,
+      "status": 200,
+      "bytes": 6971,
+      "responseSha256": "0ead8cc0978fc2aa6d07da075539bae55f7f1a79c4ff918a32a108823068e656",
+      "name": "window-serial",
+      "path": "/api/orbit/visibility/search",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 8.000900037586689,
+      "status": 400,
+      "bytes": 40,
+      "responseSha256": "a294f928a92623b95ffba368c341334ca0182dcb1d154056085204881e3137ae",
+      "name": "mixed-invalid",
+      "path": "/api/orbit/visibility/search",
+      "method": "POST",
+      "expected": 400
+    },
+    {
+      "ms": 11.880199890583754,
+      "status": 200,
+      "bytes": 1507045,
+      "responseSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "name": "mixed-download",
+      "path": "/api/v1/ballistic/files/4482fe3f-d4cb-4854-8ce7-244287ef6c68/download",
+      "method": "GET",
+      "expected": 200
+    },
+    {
+      "ms": 17.173899803310633,
+      "status": 200,
+      "bytes": 11171,
+      "responseSha256": "a2b16c605ab75e02b33ab5162f65758dd8464a1f4584894d0c5f28ad4924a5ab",
+      "name": "mixed-preview",
+      "path": "/api/v1/ballistic/files/4482fe3f-d4cb-4854-8ce7-244287ef6c68/preview?page=2&limit=50",
+      "method": "GET",
+      "expected": 200
+    },
+    {
+      "ms": 185.56040013208985,
+      "status": 200,
+      "bytes": 6971,
+      "responseSha256": "0ead8cc0978fc2aa6d07da075539bae55f7f1a79c4ff918a32a108823068e656",
+      "name": "mixed-window-0",
+      "path": "/api/orbit/visibility/search",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 190.1191002689302,
+      "status": 200,
+      "bytes": 6971,
+      "responseSha256": "0ead8cc0978fc2aa6d07da075539bae55f7f1a79c4ff918a32a108823068e656",
+      "name": "mixed-window-1",
+      "path": "/api/orbit/visibility/search",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 193.90650000423193,
+      "status": 200,
+      "bytes": 6971,
+      "responseSha256": "0ead8cc0978fc2aa6d07da075539bae55f7f1a79c4ff918a32a108823068e656",
+      "name": "mixed-window-2",
+      "path": "/api/orbit/visibility/search",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 179.92200003936887,
+      "status": 200,
+      "bytes": 3215,
+      "responseSha256": "c5a7c4a9683d4f5e39ee171e44464b48c3eb962cf99c7bf68f947da0511cc1b9",
+      "name": "same-name-fit-5",
+      "path": "/api/trajectory/fit/package102",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 187.1438999660313,
+      "status": 200,
+      "bytes": 3215,
+      "responseSha256": "a18df0e977eb6e9a9fa26f7fd07fb0ee472083d4bdffab40e83b640b0c38c4c4",
+      "name": "same-name-fit-2",
+      "path": "/api/trajectory/fit/package102",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 189.74460009485483,
+      "status": 200,
+      "bytes": 3215,
+      "responseSha256": "518cb1d70082bdc025eebbfbb47826c932d2eebb49cd22ead06cc2e373dfb9e3",
+      "name": "same-name-fit-3",
+      "path": "/api/trajectory/fit/package102",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 191.97520008310676,
+      "status": 200,
+      "bytes": 3215,
+      "responseSha256": "1fde5230a446f83577d599a9f52835c09128633d182c10a47eb835c19fdfb5b6",
+      "name": "same-name-fit-4",
+      "path": "/api/trajectory/fit/package102",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 195.93309983611107,
+      "status": 200,
+      "bytes": 3215,
+      "responseSha256": "d8e365b61406a4115b3848d34558c2c7953ec328316bb2245025730c2c258b3e",
+      "name": "same-name-fit-1",
+      "path": "/api/trajectory/fit/package102",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 198.76320008188486,
+      "status": 200,
+      "bytes": 3215,
+      "responseSha256": "6d2e21f40d4af87ce62e90d2b426dd9287f77e72dc390366183fbad70cb2572e",
+      "name": "same-name-fit-0",
+      "path": "/api/trajectory/fit/package102",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 117.51020001247525,
+      "status": 200,
+      "bytes": 6971,
+      "responseSha256": "0ead8cc0978fc2aa6d07da075539bae55f7f1a79c4ff918a32a108823068e656",
+      "name": "window-after-rst",
+      "path": "/api/orbit/visibility/search",
+      "method": "POST",
+      "expected": 200
+    },
+    {
+      "ms": 7.615699898451567,
+      "status": 200,
+      "bytes": 1507045,
+      "responseSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "name": "download-after-rst",
+      "path": "/api/v1/ballistic/files/4482fe3f-d4cb-4854-8ce7-244287ef6c68/download",
+      "method": "GET",
+      "expected": 200
+    }
+  ],
+  "mixedConcurrency": 6,
+  "sameTaskNameConcurrency": 6,
+  "generatedCsvFiles": 12,
+  "generatedPathsUnique": true,
+  "csvGoldenByteExact": true,
+  "disconnects": [
+    {
+      "path": "/api/orbit/visibility/search",
+      "receivedBeforeReset": 7112,
+      "fullResponseWasNotConsumed": true
+    },
+    {
+      "path": "/api/v1/ballistic/files/4482fe3f-d4cb-4854-8ce7-244287ef6c68/download",
+      "receivedBeforeReset": 8192,
+      "fullResponseWasNotConsumed": true
+    }
+  ],
+  "completeAfterDisconnectEqual": true,
+  "tempUnchanged": true,
+  "sourceSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+}

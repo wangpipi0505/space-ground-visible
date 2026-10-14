@@ -1,0 +1,16 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-acceptance",
+    "run-code",
+    "--filename=G:\\5-YG\\space-ground-visible\\verification\\A01\\fit-edge-browser-flow.js"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 3.8654701709747314,
+  "stdoutSha256": "f6ef2bb069b5b53d8ba5bcde288cea490d9f093eb5acb9056fd9dfeffc9d8b49"
+}

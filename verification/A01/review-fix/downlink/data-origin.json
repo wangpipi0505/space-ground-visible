@@ -1,0 +1,8 @@
+{
+  "sourceBinding": "verification/A01/final/server-performance-r2-binding.json",
+  "sourceBindingSha256": "1dd62024905250d46a3e33ecc88a1a0e42715b69d94a3f81baaace705389f2e8",
+  "databasePath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\server-fixture\\database\\demo.mv.db",
+  "databaseBeforeSha256": "e901542ec4c9c7ff4c07f686fc6966c40688d5561e0c393353af05b08ccf05fa",
+  "filesRoot": "G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/server-fixture/files",
+  "note": "复用本轮Chrome验证T04双星同一隔离H2/files，已自然停止；非生产；不复制不注入响应"
+}

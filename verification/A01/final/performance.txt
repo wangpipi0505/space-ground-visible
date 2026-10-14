@@ -1,0 +1,112 @@
+catalog-satellites serial 10 10 p95= 19.4
+catalog-satellites c1 100 100 p95= 31.85
+catalog-satellites c2 100 100 p95= 22.72
+catalog-satellites c4 100 100 p95= 17.81
+catalog-satellites c6 100 100 p95= 10.9
+payload-preview serial 10 10 p95= 5.3
+payload-preview c1 100 100 p95= 24.71
+payload-preview c2 100 100 p95= 8.08
+payload-preview c4 100 100 p95= 10.12
+payload-preview c6 100 100 p95= 22.63
+file-preview serial 10 10 p95= 48.63
+file-preview c1 100 100 p95= 34.18
+file-preview c2 100 100 p95= 35.07
+file-preview c4 100 100 p95= 36.87
+file-preview c6 100 100 p95= 39.81
+file-download-1507045 serial 10 10 p95= 105.29
+file-download-1507045 c1 12 12 p95= 36.53
+file-download-1507045 c2 12 12 p95= 29.78
+file-download-1507045 c4 12 12 p95= 40.23
+file-download-1507045 c6 12 12 p95= 54.36
+file-upload-1507045 serial 10 10 p95= 39.8
+file-upload-1507045 c1 12 12 p95= 41.14
+file-upload-1507045 c2 12 12 p95= 57.28
+file-upload-1507045 c4 12 12 p95= 44.75
+file-upload-1507045 c6 12 12 p95= 48.33
+window-TWO_BODY-points0 serial 10 10 p95= 71.81
+window-TWO_BODY-points0 c1 12 12 p95= 81.52
+window-TWO_BODY-points0 c2 12 12 p95= 71.6
+window-TWO_BODY-points0 c4 12 12 p95= 78.89
+window-TWO_BODY-points0 c6 12 12 p95= 72.69
+window-TWO_BODY-points1 serial 10 10 p95= 79.71
+window-TWO_BODY-points1 c1 12 12 p95= 80.16
+window-TWO_BODY-points1 c2 12 12 p95= 77.98
+window-TWO_BODY-points1 c4 12 12 p95= 103.2
+window-TWO_BODY-points1 c6 12 12 p95= 90.95
+window-J2_SECULAR-points0 serial 10 10 p95= 73.79
+window-J2_SECULAR-points0 c1 12 12 p95= 78.94
+window-J2_SECULAR-points0 c2 12 12 p95= 77.51
+window-J2_SECULAR-points0 c4 12 12 p95= 74.72
+window-J2_SECULAR-points0 c6 12 12 p95= 79.42
+window-J2_SECULAR-points1 serial 10 10 p95= 87.32
+window-J2_SECULAR-points1 c1 12 12 p95= 88.0
+window-J2_SECULAR-points1 c2 12 12 p95= 65.83
+window-J2_SECULAR-points1 c4 12 12 p95= 84.3
+window-J2_SECULAR-points1 c6 12 12 p95= 79.85
+window-J2_NUMERICAL-points0 serial 10 10 p95= 88.62
+window-J2_NUMERICAL-points0 c1 12 12 p95= 81.39
+window-J2_NUMERICAL-points0 c2 12 12 p95= 103.92
+window-J2_NUMERICAL-points0 c4 12 12 p95= 135.77
+window-J2_NUMERICAL-points0 c6 12 12 p95= 174.88
+window-J2_NUMERICAL-points1 serial 10 10 p95= 99.85
+window-J2_NUMERICAL-points1 c1 12 12 p95= 99.72
+window-J2_NUMERICAL-points1 c2 12 12 p95= 105.83
+window-J2_NUMERICAL-points1 c4 12 12 p95= 138.49
+window-J2_NUMERICAL-points1 c6 12 12 p95= 194.22
+window-multi-2t-2s-4p serial 10 10 p95= 204.67
+window-multi-2t-2s-4p c1 12 12 p95= 215.81
+window-multi-2t-2s-4p c2 12 12 p95= 289.94
+window-multi-2t-2s-4p c4 12 12 p95= 479.05
+window-multi-2t-2s-4p c6 12 12 p95= 643.37
+window-large-31-offsets serial 10 10 p95= 282.75
+window-large-31-offsets c1 12 12 p95= 288.81
+window-large-31-offsets c2 12 12 p95= 506.31
+window-large-31-offsets c4 12 12 p95= 847.22
+window-large-31-offsets c6 12 12 p95= 1286.15
+fit serial 10 10 p95= 100.03
+fit c1 12 12 p95= 112.44
+fit c2 12 12 p95= 120.49
+fit c4 12 12 p95= 152.32
+fit c6 12 12 p95= 196.87
+simulate serial 10 10 p95= 60.33
+simulate c1 12 12 p95= 64.95
+simulate c2 12 12 p95= 54.88
+simulate c4 12 12 p95= 70.23
+simulate c6 12 12 p95= 62.38
+retime serial 10 10 p95= 62.6
+retime c1 12 12 p95= 64.6
+retime c2 12 12 p95= 64.59
+retime c4 12 12 p95= 72.05
+retime c6 12 12 p95= 73.01
+space-single serial 10 10 p95= 43.74
+space-single c1 12 12 p95= 42.87
+space-single c2 12 12 p95= 48.7
+space-single c4 12 12 p95= 26.91
+space-single c6 12 12 p95= 37.22
+space-common-two-satellites serial 10 10 p95= 26.28
+space-common-two-satellites c1 12 12 p95= 31.77
+space-common-two-satellites c2 12 12 p95= 23.12
+space-common-two-satellites c4 12 12 p95= 40.56
+space-common-two-satellites c6 12 12 p95= 39.39
+space-downlink serial 10 10 p95= 44.95
+space-downlink c1 12 12 p95= 34.76
+space-downlink c2 12 12 p95= 33.74
+space-downlink c4 12 12 p95= 17.6
+space-downlink c6 12 12 p95= 17.78
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A01\performance.py", line 157, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\A01\performance.py", line 151, in main
+    shutil_copy(runtime/'resources.csv',OUT/'performance-resources.csv');shutil_copy(runtime/'jstat-gc.txt',OUT/'performance-jstat-gc.txt')
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "G:\5-YG\space-ground-visible\verification\A01\performance.py", line 150, in <lambda>
+    shutil_copy=lambda src,dst:Path(dst).write_bytes(Path(src).read_bytes())
+                                                     ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 777, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\performance\\resources.csv'

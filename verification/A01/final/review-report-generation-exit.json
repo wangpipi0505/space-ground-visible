@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "verification/A01/report.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.40138936042785645,
+  "stdoutSha256": "41c0f8b84791053507c1ec6e7a35a5fbe0c9e641fd5550ae580e6a851e925827"
+}

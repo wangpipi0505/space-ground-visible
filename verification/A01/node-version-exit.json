@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node.exe",
+    "--version"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 0.0195310115814209,
+  "stdoutSha256": "1e818e7c43f4b13c1e913709e2425959af4b584c0bd6693bb6b5f31c29afd5e0"
+}

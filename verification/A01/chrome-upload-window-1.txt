@@ -1,0 +1,10 @@
+### Ran Playwright code
+```js
+await fileChooser.setFiles(["G:\\5-YG\\space-ground-visible\\test-data\\reference\\ballistic\\trajectory-0.1s-standard.csv"])
+```
+### Page
+- Page URL: http://127.0.0.1:15140/
+### Modal state
+- [File chooser]: can be handled by upload
+### Snapshot
+- [Snapshot](.playwright-cli\page-2026-10-13T23-21-27-507Z.yml)

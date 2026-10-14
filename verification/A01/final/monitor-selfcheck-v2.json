@@ -1,0 +1,32 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-File",
+    "G:\\5-YG\\space-ground-visible\\verification\\A01\\monitor.ps1",
+    "-ProcessId",
+    "63368",
+    "-Destination",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-selfcheck-v2\\samples.csv",
+    "-StopFile",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-selfcheck-v2\\STOP"
+  ],
+  "exitCode": 0,
+  "samples": 5,
+  "first": {
+    "timeEpochMs": "1791935574882",
+    "workingSetBytes": "1821106176",
+    "privateBytes": "2114867200",
+    "cpuSec": "278.03125",
+    "threads": "62",
+    "handles": "1205"
+  },
+  "last": {
+    "timeEpochMs": "1791935575960",
+    "workingSetBytes": "1821106176",
+    "privateBytes": "2114867200",
+    "cpuSec": "278.03125",
+    "threads": "62",
+    "handles": "1205"
+  }
+}

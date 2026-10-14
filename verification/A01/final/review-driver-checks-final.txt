@@ -1,0 +1,11 @@
+PASS 两个兼容入口路径/347与351/三处delta及同一执行实现
+PASS 两入口非法阶段拒绝，不触发构建
+raw-check exit= 0
+raw-check exit= 0
+PASS 初最终输出隔离/原字节退出码SHA/prepare和package拒绝覆盖
+PASS 读取既有真实XML和stdout验证347/351与346/350统计及构建命令，不执行构建
+PASS numeric相同黄金不写/不同黄金拒绝/异常后标准库恢复，无计算
+PASS 既有15/9/21完整实际产物沿原Decimal/字节比较器无差异，未重新计算
+PASS 359文件正式包/1432最终源副本及全部实际产品源码与锁保持原SHA
+PASS 下传非空/正时长/规模/Decimal数值等价与微小差异不掩盖
+PASS targeted checks 8

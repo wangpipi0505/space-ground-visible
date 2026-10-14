@@ -1,0 +1,16 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-acceptance",
+    "run-code",
+    "--filename=G:\\5-YG\\space-ground-visible\\verification\\A01\\window-browser-flow.js"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 2.2634193897247314,
+  "stdoutSha256": "4989846893b11d40d84491093c4fe0acf3e49b9fd224cf21414d4272c88488fd"
+}

@@ -1,0 +1,14 @@
+{
+  "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\release",
+  "jarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71",
+  "manifestSha256": "36943e02a383007294d986ce2ab950912fc04b96a4c47fee8380373d704af699",
+  "files": 359,
+  "manifestMatchesEveryFile": true,
+  "classesCompared": 288,
+  "classesEqualOwnBuild": true,
+  "bundledStatic": [],
+  "orekitFiles": 349,
+  "frontendFiles": 5,
+  "sourceFilesUnchanged": true,
+  "lockSha256": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8"
+}

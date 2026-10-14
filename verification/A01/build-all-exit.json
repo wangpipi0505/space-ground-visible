@@ -1,0 +1,18 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\clean-source\\deploy\\build.ps1",
+    "-Component",
+    "all",
+    "-JavaHome",
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\clean-source",
+  "exitCode": 0,
+  "durationSec": 110.76676630973816,
+  "stdoutSha256": "dbc3b089ab15e7ed8b6e0806030015b80c031659bb233229abdbc9d821bd904e"
+}

@@ -1,0 +1,40 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-14 07:20:57.949  INFO 29960 --- [           main] ManagedServer                            : Starting ManagedServer using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 29960 (G:\5-YG\space-ground-visible\verification\runtime\A01\managed-classes started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\A01\server-recovery-v2)
+2026-10-14 07:20:57.951  INFO 29960 --- [           main] ManagedServer                            : The following 1 profile is active: "demo"
+2026-10-14 07:20:58.858  INFO 29960 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 18140 (http)
+2026-10-14 07:20:58.864  INFO 29960 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-14 07:20:58.865  INFO 29960 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-14 07:20:58.909  INFO 29960 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-14 07:20:58.909  INFO 29960 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 925 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-10-14 07:20:59.541  INFO 29960 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-14 07:20:59.665  INFO 29960 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-14 07:20:59.683  INFO 29960 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-14 07:20:59.683  INFO 29960 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/A01/server-fresh/database/demo (H2 1.4)
+2026-10-14 07:20:59.727  INFO 29960 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.018s)
+2026-10-14 07:20:59.737  INFO 29960 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 10
+2026-10-14 07:20:59.739  INFO 29960 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-14 07:21:00.202  INFO 29960 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 18140 (http) with context path ''
+2026-10-14 07:21:00.209  INFO 29960 --- [           main] ManagedServer                            : Started ManagedServer in 2.525 seconds (JVM running for 2.794)
+T26_READY pid=29960@WIN-REJ8TF34DM4 headless=true source=jar:file:/G:/5-YG/space-ground-visible/verification/runtime/A01/release/backend/server.jar!/BOOT-INF/classes!/
+2026-10-14 07:21:00.403  INFO 29960 --- [io-18140-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-14 07:21:00.403  INFO 29960 --- [io-18140-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-14 07:21:00.403  INFO 29960 --- [io-18140-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+T26_CONTEXT_CLOSE_BEGIN
+2026-10-14 07:21:00.734  INFO 29960 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-10-14 07:21:00.734  INFO 29960 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-10-14 07:21:00.737  INFO 29960 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-14 07:21:00.738  INFO 29960 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+T26_CONTEXT_CLOSE_END uncaught=0
+T26_MAIN_RETURN

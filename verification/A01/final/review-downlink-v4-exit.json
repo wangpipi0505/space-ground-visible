@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python",
+    "verification/A01/review_downlink.py",
+    "v4"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 5.444792985916138,
+  "stdoutSha256": "e848de943386ad3da2c4ff9e90963fe662b95d27decd21a3def10f1a410860b5"
+}

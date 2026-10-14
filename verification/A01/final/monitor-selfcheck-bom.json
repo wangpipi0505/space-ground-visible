@@ -1,0 +1,36 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-File",
+    "G:\\5-YG\\space-ground-visible\\verification\\A01\\monitor.ps1",
+    "-ProcessId",
+    "21984",
+    "-Destination",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-selfcheck-bom\\samples.csv",
+    "-StopFile",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\monitor-selfcheck-bom\\STOP"
+  ],
+  "exitCode": 0,
+  "samples": 4,
+  "encoding": "UTF-8 BOM + LF",
+  "beforeSha256": "590e2a16554711dd2063b805280ed645ff13ed36cca2f4b53252d3d9b8440cad",
+  "finalSha256": "400524377fa7f70919f0eed17294de5357e1b8c93d5f15e86e16bcc2067dbfd3",
+  "onlyEncodingChanged": true,
+  "first": {
+    "timeEpochMs": "1791935839479",
+    "workingSetBytes": "1855856640",
+    "privateBytes": "2071101440",
+    "cpuSec": "282.015625",
+    "threads": "60",
+    "handles": "1205"
+  },
+  "last": {
+    "timeEpochMs": "1791935840275",
+    "workingSetBytes": "1855856640",
+    "privateBytes": "2071101440",
+    "cpuSec": "282.015625",
+    "threads": "60",
+    "handles": "1205"
+  }
+}

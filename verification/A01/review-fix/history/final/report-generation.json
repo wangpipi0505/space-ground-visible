@@ -1,0 +1,28 @@
+{
+  "matrixCases": 884,
+  "matrixStatusCounts": {
+    "PASS": 875,
+    "SKIP": 1,
+    "FAIL": 4,
+    "BLOCKED": 4
+  },
+  "backend": {
+    "tests": 351,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "frontendTests": 112,
+  "httpRequests": 247,
+  "httpChecks": 95,
+  "uiFlows": 12,
+  "screenshots": 27,
+  "downloadComparisons": 11,
+  "performanceMeasured": 2158,
+  "warmup": 38,
+  "prepareRequests": 5,
+  "measuredErrors": 0,
+  "reportSha256": "2962f623e86a71ab72ec2cacbf448321f7fe09e50b2f92211d4c20c6aed8041b",
+  "matrixSha256": "96449718de34bb0ffe900cf01b950f9e3deeab48102ec1c256afbb501ef7930d",
+  "jarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71"
+}

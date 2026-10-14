@@ -1,0 +1,15 @@
+{
+    "Caption":  "Microsoft Windows 11 Pro",
+    "Version":  "10.0.26200",
+    "TotalVisibleMemorySize":  33337620,
+    "FreePhysicalMemory":  10742344
+}
+{
+    "Name":  "Intel(R) Core(TM) i5-14600KF",
+    "NumberOfCores":  14,
+    "NumberOfLogicalProcessors":  20
+}
+{
+    "Name":  "docker.exe",
+    "Source":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe"
+}

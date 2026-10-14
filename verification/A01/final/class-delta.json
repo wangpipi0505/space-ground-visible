@@ -1,0 +1,12 @@
+{
+  "initialClasses": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\clean-source\\backend\\target\\classes",
+  "finalClasses": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\final-source-v3\\backend\\target\\classes",
+  "compared": 288,
+  "unchangedClasses": 287,
+  "changedClasses": [
+    "com/runisys/orbit/spacevisibility/application/VisibilityTaskResultService.class"
+  ],
+  "addedClasses": [],
+  "removedClasses": [],
+  "finalJarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71"
+}

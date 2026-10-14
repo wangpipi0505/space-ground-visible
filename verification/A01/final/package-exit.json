@@ -1,0 +1,16 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\final-source-v3\\deploy\\package.ps1",
+    "-Destination",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\release"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\final-source-v3",
+  "exitCode": 0,
+  "durationSec": 2.759115695953369,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

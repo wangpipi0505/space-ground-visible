@@ -1,0 +1,7 @@
+{
+  "pid": 54672,
+  "kind": "Node标准库验收网关",
+  "method": "仅本轮精确PID Stop-Process，未称自然context.close",
+  "exitCode": 0,
+  "portRebind": true
+}

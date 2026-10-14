@@ -232,10 +232,11 @@ public class VisibilityTaskResultService implements PlanningTaskService.Planning
         if (remark != null && remark.length() > MAX_REMARK_LENGTH) {
             throw new IllegalArgumentException("备注长度不能超过 512 字符");
         }
-        VisibilityTaskResultEntity entity = new VisibilityTaskResultEntity();
-        entity.setId(id);
-        entity.setRemark(remark);
-        if (taskResultMapper.updateById(entity) == 0) {
+        // 备注允许显式清空；实体部分更新默认忽略 null，会生成缺少 SET 的 SQL。
+        // 按主键仅设置备注列，令 null 真实写入数据库，同时保留任务状态、进度、时间及 JSON 等其他字段。
+        if (taskResultMapper.update(null, new LambdaUpdateWrapper<VisibilityTaskResultEntity>()
+                .eq(VisibilityTaskResultEntity::getId, id)
+                .set(VisibilityTaskResultEntity::getRemark, remark)) == 0) {
             return null;
         }
         return findDetail(id);

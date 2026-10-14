@@ -1,0 +1,15 @@
+{
+  "pid": 40064,
+  "naturalExitCode": 0,
+  "contextCloseReturned": true,
+  "mainReturned": true,
+  "nonDaemonRemaining": false,
+  "portRebind": true,
+  "jarUnchanged": true,
+  "warnLines": [
+    "2026-10-14 08:25:50.685  WARN 40064 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 08:25:50.686  WARN 40064 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 08:25:50.686  WARN 40064 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:",
+    "2026-10-14 08:25:50.686  WARN 40064 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:"
+  ]
+}

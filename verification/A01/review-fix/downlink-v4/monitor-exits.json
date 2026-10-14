@@ -1,0 +1,10 @@
+{
+  "processMonitorPid": 4016,
+  "processMonitorExitCode": 0,
+  "jstatPid": 33928,
+  "jstatExitCode": 1,
+  "jstatShutdown": "测量结束显式terminate采样器，不是JVM自然关闭",
+  "processStdoutSha256": "f26bd98fb9bba2e5d9b266743eebbaa16021abbe2e6ed724fa3bf66504de8277",
+  "processCsvSha256": "1f162606d6632938689748e3f0044a66bd0ba42558fd82c4e7893bf08345db32",
+  "jstatStdoutSha256": "c1ee4704c87eef8bf6bce533754a31f333407275f1e9a97aa7e7e12d9c0276af"
+}

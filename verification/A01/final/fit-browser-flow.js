@@ -1,0 +1,94 @@
+async (page) => { page.__a01_fit = await (/** 真Chrome原生JSON选择、原HTTP拟合/登记/预览与下载；无route/mock、无重算或替换黄金。 */
+async (page) => {
+  const frontendMetrics=[]
+  page.__a01_frontendMetrics=frontendMetrics
+  const transport=async r=>{if(r.url().includes('/api/')&&r.request().method()==='POST'){await r.finished();frontendMetrics.push({kind:'HTTP完整传输',url:r.url(),status:r.status(),timing:r.request().timing()})}}
+  page.on('response',transport)
+  const assert = (value, message) => { if (!value) throw new Error(message) }
+  await page.getByRole('tab', { name: '102包轨迹拟合', exact: true }).click()
+  const view = page.locator('.ballistic-fit-view')
+  const consoleErrors = []
+  const pageErrors = []
+  const files = []
+  page.on('console', message => { if (message.type() === 'error') consoleErrors.push(message.text()) })
+  page.on('pageerror', failure => pageErrors.push(failure.message))
+  const recorder = async response => {
+    if (response.url().includes('/api/v1/ballistic/files')) {
+      files.push({ url: response.url(), method: response.request().method(), request: response.request().postData(), status: response.status(), type: response.headers()['content-type'], disposition: response.headers()['content-disposition'], rawText: response.url().includes('/download') ? undefined : await response.text() })
+    }
+  }
+  page.on('response', recorder)
+  // 首次运行使用CLI真实chooser（工具可能等待upload后继续）；已读取同文件时可独立复跑后续验收。
+  if (!(await view.innerText()).includes('已读取 target_trajectory_fit_package102_default.json')) {
+    const chooserPromise = page.waitForEvent('filechooser')
+    await view.locator('input[type=file]').click()
+    const chooser = await chooserPromise
+    await chooser.setFiles('G:/5-YG/space-ground-visible/test-data/reference/ballistic/target_trajectory_fit_package102_default.json')
+  }
+  await view.getByText('8 条原包', { exact: false }).waitFor()
+  assert((await view.innerText()).includes('导入含 outputDir'), '旧完整JSON的存储适配未明确提示')
+  const inputOriginal = await view.locator('textarea').inputValue()
+  const source = JSON.parse(inputOriginal)
+  const expected = { ...source }; delete expected.outputDir
+  const responsePromise = page.waitForResponse(response => response.url().endsWith('/api/trajectory/fit/package102') && response.request().method() === 'POST')
+  const computeStarted=Date.now();await view.locator('[data-test=fit-compute]').click()
+  const response = await responsePromise
+  const rawText = await response.text()
+  assert(response.status() === 200, `原拟合失败${rawText}`)
+  const request = response.request().postDataJSON()
+  assert(JSON.stringify(request) === JSON.stringify(expected), '实际请求除outputDir外字段/原字符串/UTC/步长被改变')
+  const result = JSON.parse(rawText)
+  assert(result.targetCount === 2 && result.files.length === 2, '没有双目标')
+  assert(result.files[0].pointCount === 1633 && result.files[0].model === 'BALLISTIC_MIDCOURSE_TWO_BODY', '第一目标原模型/行数变化')
+  assert(result.files[1].pointCount === 31 && result.files[1].model === 'ORBITAL_TWO_BODY', '第二目标原模型/行数变化')
+  await view.locator('[data-test=fit-success]').waitFor()
+  const targetEvidence = []
+  for (const [index, file] of result.files.entries()) {
+    const target = view.locator(`[data-fit-target="${file.targetId}"]`)
+    const trajectory = target.locator('[data-test=fit-trajectory]')
+    await trajectory.waitFor()
+    assert((await trajectory.innerText()).includes(`完整CSV ${file.pointCount} 行`), '图不是完整CSV')
+    assert(await trajectory.locator('svg').count() === 4 && await trajectory.locator('[data-test=fit-original-marker]').count() === 16, '每四图原点不各4')
+    const pathCounts = await trajectory.locator('svg path[stroke="#126399"]').evaluateAll(paths => paths.map(path => (path.getAttribute('d').match(/[ML]/g) || []).length))
+    assert(pathCounts.every(count => count === file.pointCount), '图形路径点数不是实际完整行数')
+    frontendMetrics.push({kind:'计算点击到该目标完整四图DOM',targetId:file.targetId,pointCount:file.pointCount,ms:Date.now()-computeStarted});
+    const warnings = await target.locator('ol li').allTextContents()
+    assert(JSON.stringify(warnings) === JSON.stringify(file.warnings), '原告警全文或顺序改变')
+    const page2Promise = file.pointCount > 50 ? page.waitForResponse(response => response.url().includes('/preview?page=2&limit=50')) : undefined
+    if (page2Promise) {
+      await target.locator('[data-test=fit-preview-next]').click()
+      const page2 = await page2Promise
+      const preview = await page2.json()
+      assert(preview.page === 2 && preview.rows.length === 50 && preview.totalRows === file.pointCount, '真实第二页不符')
+      await target.getByText('第 2 页', { exact: false }).waitFor()
+    } else assert(await target.locator('[data-test=fit-preview-next]').isDisabled(), '31行结果不应有假第二页')
+    await trajectory.screenshot({ path: `G:/5-YG/space-ground-visible/output/playwright/A01/final/fit/target-${index}-complete-trajectory.png` })
+    const downloadPromise = page.waitForEvent('download')
+    await target.locator('[data-test=fit-download]').click()
+    const download = await downloadPromise
+    await download.saveAs(`G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/fit/download-trajectory-${index}.csv`)
+    assert(!await download.failure(), '原CSV浏览器下载失败')
+    targetEvidence.push({ targetId: file.targetId, model: file.model, pointCount: file.pointCount, graphPathCounts: pathCounts, originalPoints: await trajectory.locator('tbody tr').count(), markers: 16, warnings, downloadName: download.suggestedFilename() })
+  }
+  for (const [button, name] of [['下载实际提交 JSON', 'download-input.json'], ['下载原拟合响应 JSON', 'download-response.json']]) {
+    const downloadPromise = page.waitForEvent('download')
+    await view.getByRole('button', { name: button, exact: true }).click()
+    const download = await downloadPromise
+    await download.saveAs(`G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/fit/${name}`)
+    assert(!await download.failure(), `JSON下载失败${name}`)
+  }
+  await page.getByRole('tab', { name: '规划工作台', exact: true }).click()
+  await page.getByRole('tab', { name: '弹道载荷配置', exact: true }).click()
+  await page.getByRole('tab', { name: '102包轨迹拟合', exact: true }).click()
+  assert(await view.locator('textarea').inputValue() === inputOriginal && await view.locator('[data-fit-target]').count() === 2, 'tab切换丢草稿/结果')
+  await view.locator('textarea').fill(inputOriginal.replace('07:56:55.000', '07:56:56.000'))
+  assert((await view.innerText()).includes('输入已修改'), '改输入未标过期结果')
+  if (!await view.locator('[data-test=fit-submitted]').isVisible()) await view.getByText('不可变实际提交快照', { exact: false }).click()
+  assert((await view.locator('[data-test=fit-submitted]').innerText()).includes('07:56:55.000'), '改输入污染原结果快照')
+  await view.screenshot({ path: 'G:/5-YG/space-ground-visible/output/playwright/A01/final/fit/submitted-snapshot-stale.png' })
+  await view.locator('textarea').fill(inputOriginal)
+  page.off('response', recorder)
+  assert(consoleErrors.length === 0 && pageErrors.length === 0, `成功流控制台错误：${consoleErrors}; ${pageErrors}`)
+  page.off('response',transport); return { frontendMetrics, browser: 'Chrome', timezone: await page.evaluate(() => Intl.DateTimeFormat().resolvedOptions().timeZone), source: '原生filechooser读取冻结JSON；实际POST并逐目标登记/分页/全CSV读取/原字节下载', status: response.status(), request, rawText, targetEvidence, files, consoleErrors, pageErrors }
+}
+)(page); return page.__a01_fit; }

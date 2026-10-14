@@ -1,0 +1,351 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-14 07:31:31.025  INFO 49632 --- [           main] ManagedServer                            : Starting ManagedServer using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 49632 (G:\5-YG\space-ground-visible\verification\runtime\A01\final-candidate\managed-classes started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\A01\final-candidate\server-fixture)
+2026-10-14 07:31:31.026  INFO 49632 --- [           main] ManagedServer                            : The following 1 profile is active: "demo"
+2026-10-14 07:31:31.944  INFO 49632 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 18140 (http)
+2026-10-14 07:31:31.950  INFO 49632 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-14 07:31:31.951  INFO 49632 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-14 07:31:31.996  INFO 49632 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-14 07:31:31.996  INFO 49632 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 937 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-10-14 07:31:32.547  INFO 49632 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-14 07:31:32.682  INFO 49632 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-14 07:31:32.700  INFO 49632 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-14 07:31:32.701  INFO 49632 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/server-fixture/database/demo (H2 1.4)
+2026-10-14 07:31:32.746  INFO 49632 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.018s)
+2026-10-14 07:31:32.757  INFO 49632 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 10
+2026-10-14 07:31:32.759  INFO 49632 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-14 07:31:33.235  INFO 49632 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 18140 (http) with context path ''
+2026-10-14 07:31:33.243  INFO 49632 --- [           main] ManagedServer                            : Started ManagedServer in 2.483 seconds (JVM running for 2.753)
+T26_READY pid=49632@WIN-REJ8TF34DM4 headless=true source=jar:file:/G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/release/backend/server.jar!/BOOT-INF/classes!/
+2026-10-14 07:31:37.280  INFO 49632 --- [io-18140-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-14 07:31:37.280  INFO 49632 --- [io-18140-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-14 07:31:37.281  INFO 49632 --- [io-18140-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-14 07:34:04.951  INFO 49632 --- [io-18140-exec-6] c.r.o.s.d.orbit.OrekitDataInitializer    : 已挂载 Orekit 数据目录：G:\5-YG\space-ground-visible\verification\runtime\A01\final-candidate\release\orekit-data
+2026-10-14 07:34:04.965  INFO 49632 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:34:05.025  INFO 49632 --- [ce-visibility-1] c.r.o.s.d.orbit.OrekitDataInitializer    : 已确认 WinTool 太阳星历：JPL DE405，文件=G:\5-YG\space-ground-visible\verification\runtime\A01\final-candidate\release\orekit-data\DE-405-ephemerides\unxp2000.405，大小=4666512字节，SHA-256前缀=83EB7159D065
+2026-10-14 07:34:05.079  INFO 49632 --- [io-18140-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=113ms
+2026-10-14 07:34:05.081  INFO 49632 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=182ms
+2026-10-14 07:34:05.231  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:34:05.241  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=10ms
+2026-10-14 07:34:05.241  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=12ms
+2026-10-14 07:34:05.241  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传时段校验完成：时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，覆盖满足=false
+2026-10-14 07:34:05.300  INFO 49632 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-14 07:34:05.451  INFO 49632 --- [io-18140-exec-9] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=03303d49-0663-4c05-a0ba-da078772f937
+2026-10-14 07:34:05.455  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:34:05.477  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=21ms
+2026-10-14 07:34:05.481  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=2，跳过组合数=0，耗时=29ms
+2026-10-14 07:34:05.481  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=03303d49-0663-4c05-a0ba-da078772f937
+2026-10-14 07:34:07.686  INFO 49632 --- [io-18140-exec-5] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=4bc38abe-3877-40ae-a866-34e9b0084275
+2026-10-14 07:34:07.688  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:34:07.709  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=19ms
+2026-10-14 07:34:07.710  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=23ms
+2026-10-14 07:34:07.710  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=4bc38abe-3877-40ae-a866-34e9b0084275
+2026-10-14 07:35:09.518  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:35:09.521  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 07:35:09.521  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=4ms
+2026-10-14 07:35:09.684  INFO 49632 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:35:09.686  INFO 49632 --- [io-18140-exec-6] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=3ms
+2026-10-14 07:35:09.686  INFO 49632 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=5ms
+2026-10-14 07:35:09.687  INFO 49632 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 下传时段校验完成：时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，覆盖满足=false
+2026-10-14 07:35:09.754  INFO 49632 --- [io-18140-exec-1] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-14 07:35:09.817  INFO 49632 --- [io-18140-exec-7] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=405409c1-5a11-4261-afc0-a5f5a218f67d
+2026-10-14 07:35:09.820  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:35:09.829  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=8ms
+2026-10-14 07:35:09.830  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=2，跳过组合数=0，耗时=11ms
+2026-10-14 07:35:09.830  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=405409c1-5a11-4261-afc0-a5f5a218f67d
+2026-10-14 07:35:10.051  INFO 49632 --- [io-18140-exec-2] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=0b56d85e-61bc-4d0c-b9a4-230544f09db4
+2026-10-14 07:35:10.052  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:35:10.060  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=7ms
+2026-10-14 07:35:10.061  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=10ms
+2026-10-14 07:35:10.061  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=0b56d85e-61bc-4d0c-b9a4-230544f09db4
+2026-10-14 07:35:13.285  INFO 49632 --- [io-18140-exec-7] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=525968a9-fbc3-4353-b6f8-d4712ced28d6
+2026-10-14 07:35:13.287  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=1.0s，精选步长=0.001s，光照模式=ANY
+2026-10-14 07:35:13.308  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=884，递归探针=0，精选区间=0，耗时=21ms
+2026-10-14 07:35:13.309  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=24ms
+2026-10-14 07:35:13.309  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=525968a9-fbc3-4353-b6f8-d4712ced28d6
+2026-10-14 07:36:41.488  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:36:41.490  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 07:36:41.490  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 07:36:41.637  INFO 49632 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:36:41.639  INFO 49632 --- [io-18140-exec-9] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 07:36:41.639  INFO 49632 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=2ms
+2026-10-14 07:36:41.639  INFO 49632 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传时段校验完成：时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，覆盖满足=false
+2026-10-14 07:36:41.706  INFO 49632 --- [io-18140-exec-7] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-14 07:36:41.772  INFO 49632 --- [io-18140-exec-8] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=1c4e48d7-6674-47f9-82a2-92e8edb1d833
+2026-10-14 07:36:41.774  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:36:41.778  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=3ms
+2026-10-14 07:36:41.778  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=2，跳过组合数=0，耗时=5ms
+2026-10-14 07:36:41.778  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=1c4e48d7-6674-47f9-82a2-92e8edb1d833
+2026-10-14 07:36:41.972  INFO 49632 --- [io-18140-exec-2] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=f02d717f-5aeb-4c17-9783-81aeda2157f2
+2026-10-14 07:36:41.974  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:36:41.977  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=3ms
+2026-10-14 07:36:41.978  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=5ms
+2026-10-14 07:36:41.978  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=f02d717f-5aeb-4c17-9783-81aeda2157f2
+2026-10-14 07:36:45.505  INFO 49632 --- [o-18140-exec-10] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=e062739d-e022-4807-ae18-68510ec7b313
+2026-10-14 07:36:45.507  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=1.0s，精选步长=0.001s，光照模式=ANY
+2026-10-14 07:36:45.519  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=884，递归探针=0，精选区间=0，耗时=11ms
+2026-10-14 07:36:45.520  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=13ms
+2026-10-14 07:36:45.520  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=e062739d-e022-4807-ae18-68510ec7b313
+2026-10-14 07:37:22.715  WARN 49632 --- [io-18140-exec-7] o.s.w.c.request.async.WebAsyncManager    : 
+!!!
+An Executor is required to handle java.util.concurrent.Callable return values.
+Please, configure a TaskExecutor in the MVC config under "async support".
+The SimpleAsyncTaskExecutor currently in use is not suitable under load.
+-------------------------------
+Request URI: '/api/orbit/visibility/search'
+!!!
+2026-10-14 07:40:22.966  INFO 49632 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:40:22.968  INFO 49632 --- [o-18140-exec-10] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=2ms
+2026-10-14 07:40:22.968  INFO 49632 --- [o-18140-exec-10] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 07:40:23.133  INFO 49632 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:40:23.135  INFO 49632 --- [io-18140-exec-9] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 07:40:23.135  INFO 49632 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=2ms
+2026-10-14 07:40:23.135  INFO 49632 --- [io-18140-exec-9] c.r.o.s.a.PlanningFacadeService          : 下传时段校验完成：时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，覆盖满足=false
+2026-10-14 07:40:23.202  INFO 49632 --- [io-18140-exec-6] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-14 07:40:23.267  INFO 49632 --- [io-18140-exec-8] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=b1d1eb16-7b6c-4a1b-8904-131735db1902
+2026-10-14 07:40:23.268  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:40:23.271  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=3ms
+2026-10-14 07:40:23.271  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=2，跳过组合数=0，耗时=4ms
+2026-10-14 07:40:23.272  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=b1d1eb16-7b6c-4a1b-8904-131735db1902
+2026-10-14 07:40:23.501  INFO 49632 --- [io-18140-exec-7] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=6522413a-e3af-4734-9dc6-b01403b1bc1d
+2026-10-14 07:40:23.503  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:40:23.506  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=3ms
+2026-10-14 07:40:23.506  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=5ms
+2026-10-14 07:40:23.506  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=6522413a-e3af-4734-9dc6-b01403b1bc1d
+2026-10-14 07:40:27.017  INFO 49632 --- [io-18140-exec-8] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=10690e9d-5268-4697-ab33-4abf8d9f0bb8
+2026-10-14 07:40:27.019  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=1.0s，精选步长=0.001s，光照模式=ANY
+2026-10-14 07:40:27.031  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=884，递归探针=0，精选区间=0，耗时=11ms
+2026-10-14 07:40:27.031  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=14ms
+2026-10-14 07:40:27.031  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=10690e9d-5268-4697-ab33-4abf8d9f0bb8
+2026-10-14 07:41:29.388 ERROR 49632 --- [io-18140-exec-9] .r.o.s.a.b.BallisticFileExceptionHandler : 文件请求处理失败，requestId=c9aae8ac-3a17-4107-9a33-43aaafa3f91d
+
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:348) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.OutputBuffer.flushByteBuffer(OutputBuffer.java:777) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.OutputBuffer.append(OutputBuffer.java:680) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:383) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:361) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:97) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileController.download(BallisticFileController.java:80) ~[classes!/:1.0.0-SNAPSHOT]
+	at sun.reflect.GeneratedMethodAccessor281.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_472]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_472]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.83.jar!/:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_472]
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.write0(Native Method) ~[na:1.8.0_472]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51) ~[na:1.8.0_472]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[na:1.8.0_472]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[na:1.8.0_472]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:470) ~[na:1.8.0_472]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:136) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1431) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:775) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketWrapperBase.writeBlocking(SocketWrapperBase.java:600) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketWrapperBase.write(SocketWrapperBase.java:544) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.doWrite(Http11OutputBuffer.java:540) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.filters.IdentityOutputFilter.doWrite(IdentityOutputFilter.java:73) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11OutputBuffer.doWrite(Http11OutputBuffer.java:193) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.Response.doWrite(Response.java:606) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:335) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	... 55 common frames omitted
+
+2026-10-14 07:41:29.389  WARN 49632 --- [io-18140-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileExceptionHandler#unexpected(Exception)
+
+org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'text/csv'
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:312) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1332) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1143) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.83.jar!/:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_472]
+
+2026-10-14 07:45:07.094  INFO 49632 --- [io-18140-exec-4] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=b9f94f28-da43-4c23-9033-1bd26da85248
+2026-10-14 07:45:07.096  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:45:07.100  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=1，跳过组合数=0，跳过分类={}，扫描次数=1，采样次数=81，递归探针=70，精选区间=0，耗时=4ms
+2026-10-14 07:45:07.100  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=1，输出观测结果数=1，跳过组合数=0，耗时=6ms
+2026-10-14 07:45:07.100  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=b9f94f28-da43-4c23-9033-1bd26da85248
+2026-10-14 07:46:40.336  INFO 49632 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:46:40.338  INFO 49632 --- [io-18140-exec-8] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 07:46:40.338  INFO 49632 --- [io-18140-exec-8] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=2ms
+2026-10-14 07:46:40.485  INFO 49632 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=2，地面站数=1，站星关系数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-14 07:46:40.487  INFO 49632 --- [io-18140-exec-3] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=2，批次数=1，正常链路数=2，跳过链路数=0，跳过分类={}，扫描次数=2，采样次数=160，递归探针=18，精选区间=2，耗时=1ms
+2026-10-14 07:46:40.487  INFO 49632 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=2，原始窗口数=2，连续覆盖窗口数=1，跳过链路数=0，耗时=3ms
+2026-10-14 07:46:40.487  INFO 49632 --- [io-18140-exec-3] c.r.o.s.a.PlanningFacadeService          : 下传时段校验完成：时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，覆盖满足=false
+2026-10-14 07:46:40.553  INFO 49632 --- [io-18140-exec-5] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=0，最小质量=null，最大质量=null，历元约束=，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-14 07:46:40.619  INFO 49632 --- [o-18140-exec-10] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=3f741e16-d7f2-405d-a7a1-5b895a9eec54
+2026-10-14 07:46:40.620  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=2，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:46:40.624  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=3ms
+2026-10-14 07:46:40.624  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=2，跳过组合数=0，耗时=5ms
+2026-10-14 07:46:40.624  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=3f741e16-d7f2-405d-a7a1-5b895a9eec54
+2026-10-14 07:46:40.819  INFO 49632 --- [io-18140-exec-2] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=77237d28-3a80-463b-b8b1-de89f0b8b16b
+2026-10-14 07:46:40.820  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-14 07:46:40.823  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=130，递归探针=112，精选区间=0，耗时=3ms
+2026-10-14 07:46:40.823  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=4ms
+2026-10-14 07:46:40.823  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=77237d28-3a80-463b-b8b1-de89f0b8b16b
+2026-10-14 07:46:44.319  INFO 49632 --- [o-18140-exec-10] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=298186dd-6ede-421f-b1ba-3ac37e43d50d
+2026-10-14 07:46:44.321  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:07:21Z，粗选步长=0.005s，精选步长=0.001s，光照模式=ANY
+2026-10-14 07:46:46.530  INFO 49632 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=176402，递归探针=0，精选区间=0，耗时=2209ms
+2026-10-14 07:46:46.530  INFO 49632 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=2211ms
+2026-10-14 07:46:46.530  INFO 49632 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已取消：taskId=298186dd-6ede-421f-b1ba-3ac37e43d50d
+T26_CONTEXT_CLOSE_BEGIN
+2026-10-14 07:46:55.657  INFO 49632 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-10-14 07:46:55.658  INFO 49632 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-10-14 07:46:55.659  WARN 49632 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 07:46:55.659  WARN 49632 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 07:46:55.659  WARN 49632 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 07:46:55.659  WARN 49632 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-visibility-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 07:46:55.660  WARN 49632 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [System Clock] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 07:46:55.660  WARN 49632 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [space-planning-task-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-14 07:46:55.662  INFO 49632 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-14 07:46:55.663  INFO 49632 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+T26_CONTEXT_CLOSE_END uncaught=0
+T26_MAIN_RETURN

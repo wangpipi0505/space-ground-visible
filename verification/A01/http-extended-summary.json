@@ -1,0 +1,5117 @@
+{
+  "passed": false,
+  "mode": "recovery",
+  "baseUrl": "http://127.0.0.1:18140",
+  "phases": {
+    "full": {
+      "checks": [
+        {
+          "name": "original-complete-example",
+          "status": "PASS",
+          "requests": 68
+        },
+        {
+          "name": "payload-SPACE-rate0-startupNone",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate0-startup-1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate0-startup0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate0-startup1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate1-startupNone",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate1-startup-1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate1-startup0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate1-startup1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate180-startupNone",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate180-startup-1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate180-startup0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-SPACE-rate180-startup1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate0-startupNone",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate0-startup-1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate0-startup0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate0-startup1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate1-startupNone",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate1-startup-1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate1-startup0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate1-startup1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate180-startupNone",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate180-startup-1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate180-startup0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-GROUND-rate180-startup1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-required-minDistanceKm-False",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-required-minDistanceKm-True",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-required-maxDistanceKm-False",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-required-maxDistanceKm-True",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-required-angleRateDegPerSec-False",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-required-angleRateDegPerSec-True",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-required-sunAvoidHalfAngleDeg-False",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-required-sunAvoidHalfAngleDeg-True",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-00",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-01",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-02",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-03",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-04",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-05",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-06",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-07",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-08",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-09",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-10",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-11",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-12",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-13",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-14",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-15",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-16",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-17",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-18",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-19",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-invalid-20",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-type-trim-case",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "payload-json-syntax",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "persist-full-profile-SPACE",
+          "status": "PASS",
+          "requests": 2
+        },
+        {
+          "name": "persist-full-profile-GROUND",
+          "status": "PASS",
+          "requests": 2
+        },
+        {
+          "name": "profile-restore",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "profile-type-invalid",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "legacy-distance-unit-mixed",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-invalid-page-pageNumber=0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-invalid-page-pageSize=0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-invalid-page-pageSize=201",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-invalid-page-pageNumber=-1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-upper-empty-/api/v1/space/satellites/page",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-invalid-task-results-pageNumber=0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-invalid-task-results-pageSize=0",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-invalid-task-results-pageSize=201",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-invalid-task-results-pageNumber=-1",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "page-upper-empty-/api/v1/space/visibility/task-results",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "record-status-invalid",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "target-regex-invalid",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "satellite-missing-payload",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "satellite-missing-payload-profiles",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "record-missing-GET",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "record-missing-PUT",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "record-missing-PUT/selection",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "record-missing-DELETE",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "task-missing-GET",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "task-missing-DELETE",
+          "status": "PASS",
+          "requests": 1
+        },
+        {
+          "name": "async-failure-cancel-recovery-record-boundaries",
+          "status": "FAIL",
+          "requests": 22,
+          "error": "('remark-null-clear', 500, 200, b'{\"code\":\"INTERNAL_ERROR\",\"error\":\"\\xe6\\x9c\\x8d\\xe5\\x8a\\xa1\\xe5\\xa4\\x84\\xe7\\x90\\x86\\xe5\\xa4\\xb1\\xe8\\xb4\\xa5\",\"requestId\":\"c784f5a7-dd35-4c67-9295-2f86e647abd1\"}')",
+          "traceback": "Traceback (most recent call last):\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 129, in check\n    function()\n    ~~~~~~~~^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 528, in <lambda>\n    p.check('async-failure-cancel-recovery-record-boundaries', lambda: asynchronous(p))\n                                                                       ~~~~~~~~~~~~^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 274, in asynchronous\n    assert p.data('PUT', path, 'remark-null-clear', dict(remark=None))['remark'] is None\n           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 122, in data\n    raw = self.http(method, path, name, body, expected)\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 111, in http\n    assert event['passed'], (name, event['status'], expected, raw[:500])\n           ~~~~~^^^^^^^^^^\nAssertionError: ('remark-null-clear', 500, 200, b'{\"code\":\"INTERNAL_ERROR\",\"error\":\"\\xe6\\x9c\\x8d\\xe5\\x8a\\xa1\\xe5\\xa4\\x84\\xe7\\x90\\x86\\xe5\\xa4\\xb1\\xe8\\xb4\\xa5\",\"requestId\":\"c784f5a7-dd35-4c67-9295-2f86e647abd1\"}')\n"
+        },
+        {
+          "name": "files-quote-page-limit-rollback-recovery",
+          "status": "PASS",
+          "requests": 14
+        },
+        {
+          "name": "multi-target-multi-satellite-multi-payload-model-points",
+          "status": "PASS",
+          "requests": 11
+        },
+        {
+          "name": "trajectory-invalid-utc-formats-recovery",
+          "status": "FAIL",
+          "requests": 7,
+          "error": "('simulation-time-original-500', 400, 500, b'{\"error\":\"NumberFormatException: For input string: \\\\\"INVALID\\\\\"\"}')",
+          "traceback": "Traceback (most recent call last):\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 129, in check\n    function()\n    ~~~~~~~~^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 531, in <lambda>\n    p.check('trajectory-invalid-utc-formats-recovery', lambda: trajectory_errors(p))\n                                                               ~~~~~~~~~~~~~~~~~^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 382, in trajectory_errors\n    p.data('POST', '/api/trajectory/simulate', 'simulation-time-original-500',\n    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n           dict(simulation, launchTimeUtc='INVALID'), 500)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 122, in data\n    raw = self.http(method, path, name, body, expected)\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 111, in http\n    assert event['passed'], (name, event['status'], expected, raw[:500])\n           ~~~~~^^^^^^^^^^\nAssertionError: ('simulation-time-original-500', 400, 500, b'{\"error\":\"NumberFormatException: For input string: \\\\\"INVALID\\\\\"\"}')\n"
+        }
+      ],
+      "events": [
+        {
+          "name": "space-health",
+          "method": "GET",
+          "path": "/api/v1/space/health",
+          "status": 200,
+          "bytes": 15,
+          "sha256": "647a83cca85203d6d4eb07eea84ef6eb91d5c6482eaff2ac8bb65a342b9f2946",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/health",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "orbit-health",
+          "method": "GET",
+          "path": "/api/orbit/health",
+          "status": 200,
+          "bytes": 2,
+          "sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "2",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/orbit/health",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "trajectory-health",
+          "method": "GET",
+          "path": "/api/trajectory/health",
+          "status": 200,
+          "bytes": 2,
+          "sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "2",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/trajectory/health",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "catalog-satellites",
+          "method": "GET",
+          "path": "/api/v1/space/satellites",
+          "status": 200,
+          "bytes": 815,
+          "sha256": "4c77fc83a9c5416ee18d190dd49a778086d30c78c28ed40c8b99daa2209d2b59",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/satellites",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "catalog-satellites-page",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/page?pageNumber=1&pageSize=10",
+          "status": 200,
+          "bytes": 375,
+          "sha256": "429ac56af016000345bd6b1c53f0417e9ac56902e8752f316df104855e2f7ca5",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/satellites/page",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "catalog-satellites-options",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/options",
+          "status": 200,
+          "bytes": 121,
+          "sha256": "06e34973008e34cb391db13a3a3c0c42fe8666e0c073a1c018e3999557183cb2",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/satellites/options",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "catalog-stations",
+          "method": "GET",
+          "path": "/api/v1/space/stations",
+          "status": 200,
+          "bytes": 249,
+          "sha256": "0302e8c04ea89b566834f3b366269f4f9d46b2264b9dbd87025896ae2239b018",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/stations",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "catalog-defaults",
+          "method": "GET",
+          "path": "/api/v1/space/defaults",
+          "status": 200,
+          "bytes": 125,
+          "sha256": "a808347ff5328fd73b6070f7221369532499319ffcb8bd20c0bdd98c19b3a80e",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/defaults",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "catalog-targets-belong-options",
+          "method": "GET",
+          "path": "/api/v1/space/targets/belong-options",
+          "status": 200,
+          "bytes": 72,
+          "sha256": "faa8ff468f5d8e76407a0a43e3a6463f1d98ed02f5377aeb53c7997544b05731",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/targets/belong-options",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "catalog-satellites-1-payload",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/1/payload",
+          "status": 200,
+          "bytes": 311,
+          "sha256": "7f316ec713f422451cda1933e0a5940a520bbb7fc876441aacfb76732c231cae",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/satellites/{satelliteId}/payload",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "catalog-satellites-1-payload-profiles",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "status": 200,
+          "bytes": 397,
+          "sha256": "c5347bfae159c80dabc84bb5b2eb433ba3acb8856ae162260274b2ad1647c0a3",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "target-query",
+          "method": "POST",
+          "path": "/api/v1/space/targets/query",
+          "status": 200,
+          "bytes": 894,
+          "sha256": "082a21e2e5ac0a89a1df3acd4a430ac4f7e1586f0d2b3fabb6e3cb73df0ac709",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "POST /api/v1/space/targets/query",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "space-standard-save",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "status": 200,
+          "bytes": 390,
+          "sha256": "f7edf928de7ca8e88d6bc29f00cbe012010b048abbb17cb002a8f5de80de5c53",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "ground-zero-real-limit",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "status": 200,
+          "bytes": 739,
+          "sha256": "117bc5a51fee7eaec07c4d230dda197fff1f076325e3742ec9c76e7018c37cc6",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "restore-space-active",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "status": 200,
+          "bytes": 738,
+          "sha256": "21a87278adcbd654444ca67865cf4b19cac30aff84b8ffa475873d05c483e07d",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "space-legacy-metres-save",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload",
+          "status": 200,
+          "bytes": 293,
+          "sha256": "d3b81766b3a104646d2413985c504554323007e0fea916872c52e5b734ade677",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "stations-for-link",
+          "method": "GET",
+          "path": "/api/v1/space/stations",
+          "status": 200,
+          "bytes": 249,
+          "sha256": "0302e8c04ea89b566834f3b366269f4f9d46b2264b9dbd87025896ae2239b018",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/stations",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "downlink-plan",
+          "method": "POST",
+          "path": "/api/v1/space/downlink/plan",
+          "status": 200,
+          "bytes": 148,
+          "sha256": "b597f52414e39f079798194938da560aa587ce17de9f043430173ea63bc8292f",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "POST /api/v1/space/downlink/plan",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "downlink-validation",
+          "method": "POST",
+          "path": "/api/v1/space/downlink/validate-window",
+          "status": 200,
+          "bytes": 175,
+          "sha256": "e64abb0941e1d09f5ebe967e11d951d6512d26d9c863e56d6f9e0f4dae2e2832",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "POST /api/v1/space/downlink/validate-window",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "sync",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/plan",
+          "status": 200,
+          "bytes": 1394,
+          "sha256": "d5c86534fd7e0527d6052b0f886b51bbb278f0fc44da3adb1a479e25860ea05a",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "POST /api/v1/space/visibility/plan",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "async-submit",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/tasks",
+          "status": 200,
+          "bytes": 49,
+          "sha256": "5471f298917efb07ca537ed6fa26daa7ed10c31094da1b6fe3ed0abf2879fdbe",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "POST /api/v1/space/visibility/tasks",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "async-poll-0",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/e72fd974-35c9-4aba-8771-6a08da2aad92",
+          "status": 200,
+          "bytes": 218,
+          "sha256": "a9329185e07a334b9d6a11a704a99667e3500241488b76608bea22935b1a2031",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "async-poll-1",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/e72fd974-35c9-4aba-8771-6a08da2aad92",
+          "status": 200,
+          "bytes": 242,
+          "sha256": "e682eb01c6666ed438dccf088729814c7af8b51afc31613a2256cc5cb1feb599",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "async-result",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/e72fd974-35c9-4aba-8771-6a08da2aad92/result",
+          "status": 200,
+          "bytes": 1394,
+          "sha256": "d5c86534fd7e0527d6052b0f886b51bbb278f0fc44da3adb1a479e25860ea05a",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "cancel-submit",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/tasks",
+          "status": 200,
+          "bytes": 49,
+          "sha256": "37d6a91fb86aea3d6115429065ea179e5a55377c35f9944764f9db8dabde8309",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "POST /api/v1/space/visibility/tasks",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "cancel-accepted",
+          "method": "DELETE",
+          "path": "/api/v1/space/visibility/tasks/cf59e039-51af-4cca-b4fc-3c10fc375e5e",
+          "status": 200,
+          "bytes": 218,
+          "sha256": "ef4ba8066c146f7db0b630b00b2c3b5030b7cea6c680b2cf28bd4ca52db924ee",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "DELETE /api/v1/space/visibility/tasks/{taskId}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "cancel-poll-0",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/cf59e039-51af-4cca-b4fc-3c10fc375e5e",
+          "status": 200,
+          "bytes": 218,
+          "sha256": "ef4ba8066c146f7db0b630b00b2c3b5030b7cea6c680b2cf28bd4ca52db924ee",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:34 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "cancel-poll-1",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/cf59e039-51af-4cca-b4fc-3c10fc375e5e",
+          "status": 200,
+          "bytes": 242,
+          "sha256": "b4fd15b6d012ef37042d1f31e0e9ca624bc64f1c43559cf858f7dd3410cf4612",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "cancel-result-409",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/cf59e039-51af-4cca-b4fc-3c10fc375e5e/result",
+          "status": 409,
+          "bytes": 68,
+          "sha256": "29b778d792de87c5f4ca3643cf560563fa7c3dad136fb51cd28b4928cba9d689",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "unknown-task-404",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/unknown-example",
+          "status": 404,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "headers": {
+            "Connection": "close",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT",
+            "Content-Length": "0"
+          },
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "cancel-record-30",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?keyword=cf59e039-51af-4cca-b4fc-3c10fc375e5e",
+          "status": 200,
+          "bytes": 322,
+          "sha256": "51c8d72981fd6fd0f5a181db685f473a069413086a7df9aa349ecbba53c64305",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/task-results",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "record-page-31",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?keyword=e72fd974-35c9-4aba-8771-6a08da2aad92",
+          "status": 200,
+          "bytes": 322,
+          "sha256": "10bcee793fded0db2f15c784497e29b58cc5e969609f9865315f1d434f5c6065",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/task-results",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "record-detail",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results/2110148222786547714",
+          "status": 200,
+          "bytes": 2309,
+          "sha256": "d16361da22deb6086108ca8d1ce7887eb20042cd95d169c88b8bce248e6642e3",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "GET /api/v1/space/visibility/task-results/{id}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "record-remark",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/2110148222786547714",
+          "status": 200,
+          "bytes": 2323,
+          "sha256": "f977e5bc218fe7272ab0cbb735302ac01c01f7640911ab50500918fa18f8817e",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "PUT /api/v1/space/visibility/task-results/{id}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "record-selection",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/2110148222786547714/selection",
+          "status": 200,
+          "bytes": 3996,
+          "sha256": "ad4425e7d80c5e0325f1b7df480f24a8a6b13d419f9b040e484880478268022a",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "PUT /api/v1/space/visibility/task-results/{id}/selection",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "record-delete",
+          "method": "DELETE",
+          "path": "/api/v1/space/visibility/task-results/2110148222786547714",
+          "status": 200,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "headers": {
+            "Connection": "close",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT",
+            "Content-Length": "0"
+          },
+          "route": "DELETE /api/v1/space/visibility/task-results/{id}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "deleted-record-404",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results/2110148222786547714",
+          "status": 404,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "headers": {
+            "Connection": "close",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT",
+            "Content-Length": "0"
+          },
+          "route": "GET /api/v1/space/visibility/task-results/{id}",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "upload-window",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files",
+          "status": 201,
+          "bytes": 276,
+          "sha256": "66685062d2079ac5414f177d65036c5d80f9dbe869db1f09b39249160f221476",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "upload-window-download",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b3a920ba-d593-45b9-ac93-b4ec95cde2db/download",
+          "status": 200,
+          "bytes": 1507045,
+          "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "1507045",
+            "Content-Disposition": "attachment; filename=\"trajectory-0.1s-standard.csv\"; filename*=UTF-8''trajectory-0.1s-standard.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "upload-window-preview",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b3a920ba-d593-45b9-ac93-b4ec95cde2db/preview?page=1&limit=3",
+          "status": 200,
+          "bytes": 1063,
+          "sha256": "b642aa3a072c5a89049ce7b173eec62fc19a66d04f47e7bb3fa351d7133f3596",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "window-legacy",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "status": 200,
+          "bytes": 6819,
+          "sha256": "45aee81b0da604d690834dab6fc5cf205945b5509548ce2c400a3658ea4e9da4",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "POST /api/orbit/visibility/search",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "payload-preview",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "status": 200,
+          "bytes": 296,
+          "sha256": "ac9424e48c4761fe74cc1287f765762bd4548bb0cbb7c0a1669fb4d102ebfd8f",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "ground-minus-one-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "status": 400,
+          "bytes": 123,
+          "sha256": "42419efbd7c02298356898c5b75a691d2ec1c5b43cc305ca46e9d5b9a14b6e83",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "single-angle-end-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "status": 400,
+          "bytes": 80,
+          "sha256": "b488e289dd5375848f8802cb56a05e50dc14733b48e2465f9e1dace270b853e5",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "window-standard",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "status": 200,
+          "bytes": 406293,
+          "sha256": "c0b4ce90f575674802266114090bda9008ad1ee6cdaa5239c604bb191487a303",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "POST /api/orbit/visibility/search",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "startup-only-metadata",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "status": 200,
+          "bytes": 406293,
+          "sha256": "c0b4ce90f575674802266114090bda9008ad1ee6cdaa5239c604bb191487a303",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:36 GMT"
+          },
+          "route": "POST /api/orbit/visibility/search",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit",
+          "method": "POST",
+          "path": "/api/trajectory/fit/package102",
+          "status": 200,
+          "bytes": 3177,
+          "sha256": "8be3a28c46e5524686cdb2fa9c00f830c1a632441d2ed6f8a9e1f5b79fc4b776",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/trajectory/fit/package102",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit-register-0",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "bytes": 430,
+          "sha256": "4b581962b9e7bd08088a8b72c072ef925d8dcfbd7a1c117c30ae231409867215",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit-reregister-0",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "bytes": 430,
+          "sha256": "4b581962b9e7bd08088a8b72c072ef925d8dcfbd7a1c117c30ae231409867215",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit-download-0",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/676e554f-4b56-4d39-b966-7965d783c25c/download",
+          "status": 200,
+          "bytes": 327928,
+          "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "327928",
+            "Content-Disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_071837_033.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_071837_033.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit-preview-0",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/676e554f-4b56-4d39-b966-7965d783c25c/preview?page=1&limit=3",
+          "status": 200,
+          "bytes": 1023,
+          "sha256": "2364b6cc5b4dfc8f9efa92c83f42afee0c0a29e5ffedcf970644d796a7fd02c2",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit-register-1",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "bytes": 428,
+          "sha256": "1a9b5bf438b3e1311be8322da44ae8606aeb9bc765bead00d3efdcb5ad927ad3",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit-reregister-1",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "bytes": 428,
+          "sha256": "1a9b5bf438b3e1311be8322da44ae8606aeb9bc765bead00d3efdcb5ad927ad3",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit-download-1",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/5f89af49-f9bb-45cc-977a-1a479be843ec/download",
+          "status": 200,
+          "bytes": 6475,
+          "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "6475",
+            "Content-Disposition": "attachment; filename=\"defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261014_071837_033.csv\"; filename*=UTF-8''defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261014_071837_033.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "fit-preview-1",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/5f89af49-f9bb-45cc-977a-1a479be843ec/preview?page=1&limit=3",
+          "status": 200,
+          "bytes": 1033,
+          "sha256": "acce2d1f3b0ccc5665c31b24217df0cdf39fa844fd26afb3f1cdd87dec01eaae",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "simulate",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "status": 200,
+          "bytes": 632,
+          "sha256": "3a0df4d12ec0133784512c22086b270892ea4b73fc9116ab9bd0b65319f4ffd4",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/trajectory/simulate",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "simulate-register-0",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "bytes": 430,
+          "sha256": "336cfa1f846e4cec00030c9089c5141168dd3637c5eea9ef09318a1333cc305b",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "simulate-reregister-0",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "bytes": 430,
+          "sha256": "336cfa1f846e4cec00030c9089c5141168dd3637c5eea9ef09318a1333cc305b",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "simulate-download-0",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/7628d6d7-fc15-4305-86d2-395105343693/download",
+          "status": 200,
+          "bytes": 561736,
+          "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "561736",
+            "Content-Disposition": "attachment; filename=\"defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_071837_281.csv\"; filename*=UTF-8''defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_071837_281.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "simulate-preview-0",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/7628d6d7-fc15-4305-86d2-395105343693/preview?page=1&limit=3",
+          "status": 200,
+          "bytes": 1073,
+          "sha256": "13c7b3c30ff04e47a919ec365ae76ad8e474e27fa294c399e9f2d54c8a2bcc25",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "simulation-reference-window",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "status": 200,
+          "bytes": 992482,
+          "sha256": "11e5600043b1aed2d5a848fb373b6bbf2cb246561d545bfdb036954737dfd2eb",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/orbit/visibility/search",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "retime",
+          "method": "POST",
+          "path": "/api/trajectory/retime",
+          "status": 200,
+          "bytes": 491,
+          "sha256": "c588df1fb215b7b94f517071adad855ccd1983ebdd31cb19ed64934818575c34",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/trajectory/retime",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "retime-register-0",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "bytes": 382,
+          "sha256": "7de1fc267635188acfb81a16547f992aa994f1e9669a5d96485aa9dde1ebfac7",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "retime-reregister-0",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "status": 201,
+          "bytes": 382,
+          "sha256": "7de1fc267635188acfb81a16547f992aa994f1e9669a5d96485aa9dde1ebfac7",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "retime-download-0",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/60ccd863-f0c0-4882-923b-ce2f897e31cc/download",
+          "status": 200,
+          "bytes": 593970,
+          "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "593970",
+            "Content-Disposition": "attachment; filename=\"T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_071837_527.csv\"; filename*=UTF-8''T04-retime_2026-07-02_07_57_00.000_RETIMED-TGT_20261014_071837_527.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "retime-preview-0",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/60ccd863-f0c0-4882-923b-ce2f897e31cc/preview?page=1&limit=3",
+          "status": 200,
+          "bytes": 1126,
+          "sha256": "451a7d9af6245fea48d1475dc98df5ec520f411dc3eac453be1e2069dc779e65",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "retime-reference-window",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "status": 200,
+          "bytes": 1193306,
+          "sha256": "0adef79eb692794006e705bb4acf817c51dfd83397c8fbdf2831b86342fb03d4",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "POST /api/orbit/visibility/search",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "unknown-file-404",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/unknown-example/preview",
+          "status": 404,
+          "bytes": 69,
+          "sha256": "d10122685ee86259b60ab9602723323635aa86f520771b300a898c9963e895e7",
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "passed": true,
+          "phase": "original-example"
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 296,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "fdb07979301cb7d09b39e1b50605e7339b53c86fa4746ff015abb9e8d8d76da2",
+          "passed": true,
+          "elapsedMs": 48.5487999394536
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 296,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "3303bc379f29bbf027929aabf54589a46deaf9b7b43c7ef086af92d3674982c9",
+          "passed": true,
+          "elapsedMs": 30.153200030326843
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 295,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "ee04399d915e526237816b28e6d02cd25e4f1a55e9608217c5142bd4aa2a192a",
+          "passed": true,
+          "elapsedMs": 30.455699656158686
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 295,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "38786d4a817b99dd4adce989f2295e40772fce4822e310ff48e0b667342e9ee9",
+          "passed": true,
+          "elapsedMs": 29.63319979608059
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 296,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "842aadf013e40cc5ec5b1e102ff1c784bc9df04e14722db1871e63f3a5636795",
+          "passed": true,
+          "elapsedMs": 4.632299765944481
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 296,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "1ed4d11bc34a57845180e8be05a1fd9d7a5a240e13646d0851dd88a1bedd6fab",
+          "passed": true,
+          "elapsedMs": 24.611900094896555
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 295,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "a37ded4d4c5678c6c0b9ed51ec0a6008d0ea6493c0001c3498b481f14a5fda98",
+          "passed": true,
+          "elapsedMs": 4.749900195747614
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 295,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "268b96f1ad03d6cd998f5d9389d9760bd7386246c226cd026cc2ae16df1848dd",
+          "passed": true,
+          "elapsedMs": 4.171300213783979
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 298,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "8e241d6744a23e849ce29d34c855157aa792a404e4f4b5d1d6c1317e6e1fcdfe",
+          "passed": true,
+          "elapsedMs": 5.126200150698423
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 298,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "911135a6afdc33f60e5c548f6e4bbf90b6a281e84469e308c6c403dbe1f0a31b",
+          "passed": true,
+          "elapsedMs": 4.341000225394964
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 297,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "84ebca526bd33adb6e477db05368dc04ed2987a357380cfb9a57c963be9e6425",
+          "passed": true,
+          "elapsedMs": 4.320899955928326
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 297,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "eae0ed20786f20cb029a016e6823a65daac8fc901f39143101248d3cdb79e3df",
+          "passed": true,
+          "elapsedMs": 5.4871998727321625
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 298,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "9d3112f2fed5321981e7f09164533a0e7710e4d828c729e9adf3c7b427306105",
+          "passed": true,
+          "elapsedMs": 5.332900211215019
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 298,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "84d240b4524343a76934a965dd2ea343e3b75ca39e9cc209ff084d18f4c8928c",
+          "passed": true,
+          "elapsedMs": 4.71930019557476
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 297,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "3403573e1da2a2c4662b1fd502e19c1638b57e7cbc73f2905a59190db9c7b2ee",
+          "passed": true,
+          "elapsedMs": 21.125500090420246
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 297,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "be1bf0b106d41d0f82b15c95e93a3b56f27d109f7d727c36134f7930c9948143",
+          "passed": true,
+          "elapsedMs": 28.77349965274334
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 298,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "54ce2c2a9ecfed44dc22fb0ae18b8ce46bb927bba948f2baf577f4aa3d666b10",
+          "passed": true,
+          "elapsedMs": 30.89870000258088
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 298,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "ba755e2edc5caec3706e5e5c22c745b6b223100d217842d70dc2d243b52b97fd",
+          "passed": true,
+          "elapsedMs": 29.55420035868883
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 297,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "a5bbe269596e6bc9a04629bcb474efd7cb9c98c2bb7992173e4ded042a499510",
+          "passed": true,
+          "elapsedMs": 4.530400037765503
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 297,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "85f5a7c8e90b6204023fff7a4173e46a701f7159d582f06e49909ce69c27bcc2",
+          "passed": true,
+          "elapsedMs": 25.38820030167699
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 300,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "498701f8a2ad4574fa7e746721754b4ef74cbdd884883437bd832b27448dd205",
+          "passed": true,
+          "elapsedMs": 4.443700425326824
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 300,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "9e8ed802d06db7a52afdc179cd359c6087dff2791cbfa2a392c0903a94cb6a11",
+          "passed": true,
+          "elapsedMs": 4.463700111955404
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 299,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "ef222c9a669afae7e5d35b8e9c6cf2f964762bd530032334d6e97566a295502e",
+          "passed": true,
+          "elapsedMs": 5.544000305235386
+        },
+        {
+          "name": "valid-payload",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 299,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "1b2c28639eae89d67856d261cf5a06f1d3e1230603835e109402e7ca1eeee987",
+          "passed": true,
+          "elapsedMs": 15.410199761390686
+        },
+        {
+          "name": "required-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 77,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "4095627792d0a53a589b9dbbabb5174ebbb0b318626d264a52051513782776ab",
+          "passed": true,
+          "elapsedMs": 4.52909991145134
+        },
+        {
+          "name": "required-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 77,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "4095627792d0a53a589b9dbbabb5174ebbb0b318626d264a52051513782776ab",
+          "passed": true,
+          "elapsedMs": 25.732400361448526
+        },
+        {
+          "name": "required-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 77,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:37 GMT"
+          },
+          "sha256": "8ee1b14bf2725c2b501343bc8e5d926465abfbc8e9109dfacdb8301fe8583959",
+          "passed": true,
+          "elapsedMs": 5.50329964607954
+        },
+        {
+          "name": "required-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 77,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "8ee1b14bf2725c2b501343bc8e5d926465abfbc8e9109dfacdb8301fe8583959",
+          "passed": true,
+          "elapsedMs": 24.452099576592445
+        },
+        {
+          "name": "required-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 74,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "11a6d62e0b4c46744e93d356531988d6398b54c118abad669b6d2374b633189d",
+          "passed": true,
+          "elapsedMs": 4.596199840307236
+        },
+        {
+          "name": "required-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 74,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "11a6d62e0b4c46744e93d356531988d6398b54c118abad669b6d2374b633189d",
+          "passed": true,
+          "elapsedMs": 4.239300265908241
+        },
+        {
+          "name": "required-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 77,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "74e4248df2e9a0ca83084681003e70971c38ca8c291c22d06103b96fc93ba51e",
+          "passed": true,
+          "elapsedMs": 5.395299755036831
+        },
+        {
+          "name": "required-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 77,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "74e4248df2e9a0ca83084681003e70971c38ca8c291c22d06103b96fc93ba51e",
+          "passed": true,
+          "elapsedMs": 5.073199979960918
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 56,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "d9b05c3f6c090165dca96fe3af0b516017fba8715f89da00aae131e43afc6a66",
+          "passed": true,
+          "elapsedMs": 4.576500039547682
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 56,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "d9b05c3f6c090165dca96fe3af0b516017fba8715f89da00aae131e43afc6a66",
+          "passed": true,
+          "elapsedMs": 20.231999922543764
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 56,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "d9b05c3f6c090165dca96fe3af0b516017fba8715f89da00aae131e43afc6a66",
+          "passed": true,
+          "elapsedMs": 4.408599808812141
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 77,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "8ee1b14bf2725c2b501343bc8e5d926465abfbc8e9109dfacdb8301fe8583959",
+          "passed": true,
+          "elapsedMs": 4.488099832087755
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 123,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "42419efbd7c02298356898c5b75a691d2ec1c5b43cc305ca46e9d5b9a14b6e83",
+          "passed": true,
+          "elapsedMs": 4.739200230687857
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 98,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "056017f2f446c9dffc6295244272888a6dca6c8b564e95c882c10d79e9d52f49",
+          "passed": true,
+          "elapsedMs": 4.317199811339378
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 56,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "d9b05c3f6c090165dca96fe3af0b516017fba8715f89da00aae131e43afc6a66",
+          "passed": true,
+          "elapsedMs": 4.595300182700157
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 56,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "d9b05c3f6c090165dca96fe3af0b516017fba8715f89da00aae131e43afc6a66",
+          "passed": true,
+          "elapsedMs": 5.746999755501747
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 80,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "b488e289dd5375848f8802cb56a05e50dc14733b48e2465f9e1dace270b853e5",
+          "passed": true,
+          "elapsedMs": 4.455700051039457
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 65,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "a298e6a4d3c1f8bdd1b8b95801c9c5a7fc11c0475f7f7cf5fe6e3182a18ce3c4",
+          "passed": true,
+          "elapsedMs": 4.3357000686228275
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 65,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "a298e6a4d3c1f8bdd1b8b95801c9c5a7fc11c0475f7f7cf5fe6e3182a18ce3c4",
+          "passed": true,
+          "elapsedMs": 5.55439991876483
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 65,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "a298e6a4d3c1f8bdd1b8b95801c9c5a7fc11c0475f7f7cf5fe6e3182a18ce3c4",
+          "passed": true,
+          "elapsedMs": 16.945399809628725
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 65,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "a85698d4888831cc4b39fc990ababc9f50fb72f7d08e2eeb2367dd3c13b695e2",
+          "passed": true,
+          "elapsedMs": 5.087099969387054
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 80,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "7dff4901c348916af39c9bba76ab49537963667ccbf7f936acc5364a42c61da2",
+          "passed": true,
+          "elapsedMs": 4.547500051558018
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 65,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "a85698d4888831cc4b39fc990ababc9f50fb72f7d08e2eeb2367dd3c13b695e2",
+          "passed": true,
+          "elapsedMs": 5.312900058925152
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 65,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "a85698d4888831cc4b39fc990ababc9f50fb72f7d08e2eeb2367dd3c13b695e2",
+          "passed": true,
+          "elapsedMs": 29.503900092095137
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 123,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "42419efbd7c02298356898c5b75a691d2ec1c5b43cc305ca46e9d5b9a14b6e83",
+          "passed": true,
+          "elapsedMs": 4.59429994225502
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 123,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "42419efbd7c02298356898c5b75a691d2ec1c5b43cc305ca46e9d5b9a14b6e83",
+          "passed": true,
+          "elapsedMs": 4.632200114428997
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 82,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "2d0d087f3375d06795ee69b8b43bc821eb2deb07ccf202e77803c7ab03e7341e",
+          "passed": true,
+          "elapsedMs": 21.03010006248951
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 60,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "cbffc5dc24cfa708e3a0f2bdb5adb7e13c064334261b7cfad6f14e2b40909239",
+          "passed": true,
+          "elapsedMs": 5.4108998738229275
+        },
+        {
+          "name": "invalid-payload-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 60,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "cbffc5dc24cfa708e3a0f2bdb5adb7e13c064334261b7cfad6f14e2b40909239",
+          "passed": true,
+          "elapsedMs": 4.911799915134907
+        },
+        {
+          "name": "type-trim-case",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 200,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 296,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "c5a3c9112631133d19b060bf5826d22cd6617a18b768f61a81859b843e76b7bf",
+          "passed": true,
+          "elapsedMs": 4.545900039374828
+        },
+        {
+          "name": "malformed-400",
+          "method": "POST",
+          "path": "/api/v1/ballistic/payloads/preview",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/payloads/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 60,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "cbffc5dc24cfa708e3a0f2bdb5adb7e13c064334261b7cfad6f14e2b40909239",
+          "passed": true,
+          "elapsedMs": 4.858899861574173
+        },
+        {
+          "name": "persist-SPACE",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "expected": 200,
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 389,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "2d0b210e63bfb3ab5e6a70a0d35fecd7d17bb2dd12c4eb419caac62b3b1179e4",
+          "passed": true,
+          "elapsedMs": 7.035200018435717
+        },
+        {
+          "name": "read-SPACE",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "expected": 200,
+          "route": "GET /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 389,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "2d0b210e63bfb3ab5e6a70a0d35fecd7d17bb2dd12c4eb419caac62b3b1179e4",
+          "passed": true,
+          "elapsedMs": 18.597499933093786
+        },
+        {
+          "name": "persist-GROUND",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "expected": 200,
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 738,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "079f99b58f7418af02e30944c42eefb3baad8bfd02ff025cc47bab0858cadc6d",
+          "passed": true,
+          "elapsedMs": 6.582300178706646
+        },
+        {
+          "name": "read-GROUND",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "expected": 200,
+          "route": "GET /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 738,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "079f99b58f7418af02e30944c42eefb3baad8bfd02ff025cc47bab0858cadc6d",
+          "passed": true,
+          "elapsedMs": 5.811200011521578
+        },
+        {
+          "name": "restore-space",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "expected": 200,
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 738,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "c9ef7c043d2e121254b0723663943992a7da416be45d429207154cf35a69c6d6",
+          "passed": true,
+          "elapsedMs": 19.773799926042557
+        },
+        {
+          "name": "bad-type",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload-profiles",
+          "expected": 400,
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 76,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "f23425b4c27c502d3bf518c16ee3bb84e76e504be72029a424ea1e63c312d9ff",
+          "passed": true,
+          "elapsedMs": 5.597100127488375
+        },
+        {
+          "name": "mixed-unit",
+          "method": "PUT",
+          "path": "/api/v1/space/satellites/1/payload",
+          "expected": 400,
+          "route": "PUT /api/v1/space/satellites/{satelliteId}/payload",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 86,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "438270574036afea3b28f06f8c4674e636ec4b58b6bafd15abb8cc62c0f0b8f0",
+          "passed": true,
+          "elapsedMs": 23.051300086081028
+        },
+        {
+          "name": "page-invalid",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/page?pageNumber=0",
+          "expected": 400,
+          "route": "GET /api/v1/space/satellites/page",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 58,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "b844d0eb6afe6dde2a5b649f533f8347cf337cc494ea12b05149517963b57523",
+          "passed": true,
+          "elapsedMs": 30.70530015975237
+        },
+        {
+          "name": "page-invalid",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/page?pageSize=0",
+          "expected": 400,
+          "route": "GET /api/v1/space/satellites/page",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 79,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "342c762f209e859ba835f492de0c986cc577ea30e41111779994a70cc61b44f4",
+          "passed": true,
+          "elapsedMs": 4.4201998971402645
+        },
+        {
+          "name": "page-invalid",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/page?pageSize=201",
+          "expected": 400,
+          "route": "GET /api/v1/space/satellites/page",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 79,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "342c762f209e859ba835f492de0c986cc577ea30e41111779994a70cc61b44f4",
+          "passed": true,
+          "elapsedMs": 4.314800258725882
+        },
+        {
+          "name": "page-invalid",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/page?pageNumber=-1",
+          "expected": 400,
+          "route": "GET /api/v1/space/satellites/page",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 58,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "b844d0eb6afe6dde2a5b649f533f8347cf337cc494ea12b05149517963b57523",
+          "passed": true,
+          "elapsedMs": 5.334199871867895
+        },
+        {
+          "name": "empty-last-page",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/page?pageNumber=999999&pageSize=200",
+          "expected": 200,
+          "route": "GET /api/v1/space/satellites/page",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 59,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "e4c43d150d94667a61f853cde39c2ca1fc8879d1dbc5e07da6122ff7fbdac59a",
+          "passed": true,
+          "elapsedMs": 6.2835002318024635
+        },
+        {
+          "name": "page-invalid",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?pageNumber=0",
+          "expected": 400,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 58,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "b844d0eb6afe6dde2a5b649f533f8347cf337cc494ea12b05149517963b57523",
+          "passed": true,
+          "elapsedMs": 4.76980023086071
+        },
+        {
+          "name": "page-invalid",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?pageSize=0",
+          "expected": 400,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 79,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "342c762f209e859ba835f492de0c986cc577ea30e41111779994a70cc61b44f4",
+          "passed": true,
+          "elapsedMs": 4.654000047594309
+        },
+        {
+          "name": "page-invalid",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?pageSize=201",
+          "expected": 400,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 79,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "342c762f209e859ba835f492de0c986cc577ea30e41111779994a70cc61b44f4",
+          "passed": true,
+          "elapsedMs": 4.352999851107597
+        },
+        {
+          "name": "page-invalid",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?pageNumber=-1",
+          "expected": 400,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 58,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "b844d0eb6afe6dde2a5b649f533f8347cf337cc494ea12b05149517963b57523",
+          "passed": true,
+          "elapsedMs": 25.44899983331561
+        },
+        {
+          "name": "empty-last-page",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?pageNumber=999999&pageSize=200",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 59,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "e4c43d150d94667a61f853cde39c2ca1fc8879d1dbc5e07da6122ff7fbdac59a",
+          "passed": true,
+          "elapsedMs": 6.346199661493301
+        },
+        {
+          "name": "invalid-status",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?status=INVALID",
+          "expected": 400,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 62,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "da49243d8f65fbc66ac2bdaeb1e75ca3701126bb9e38cca39828747ba0e2f2e9",
+          "passed": true,
+          "elapsedMs": 5.365499760955572
+        },
+        {
+          "name": "bad-regex",
+          "method": "POST",
+          "path": "/api/v1/space/targets/query",
+          "expected": 400,
+          "route": "POST /api/v1/space/targets/query",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 71,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "f16b177c4956cf1d48b46dcf28a74c6d0ab611602422c293d60a99f57ec8f8e9",
+          "passed": true,
+          "elapsedMs": 6.457999814301729
+        },
+        {
+          "name": "missing-satellite",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/999999/payload",
+          "expected": 400,
+          "route": "GET /api/v1/space/satellites/{satelliteId}/payload",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 59,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "ddd4f155cf4cf604df71b89abb8951f75f133cc45ee3cf68a108a2568b6ed50d",
+          "passed": true,
+          "elapsedMs": 27.203899808228016
+        },
+        {
+          "name": "missing-satellite",
+          "method": "GET",
+          "path": "/api/v1/space/satellites/999999/payload-profiles",
+          "expected": 400,
+          "route": "GET /api/v1/space/satellites/{satelliteId}/payload-profiles",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 59,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "ddd4f155cf4cf604df71b89abb8951f75f133cc45ee3cf68a108a2568b6ed50d",
+          "passed": true,
+          "elapsedMs": 4.5350999571383
+        },
+        {
+          "name": "unknown-record",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results/999999999",
+          "expected": 404,
+          "route": "GET /api/v1/space/visibility/task-results/{id}",
+          "phase": "extended-full",
+          "status": 404,
+          "bytes": 0,
+          "headers": {
+            "Connection": "close",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT",
+            "Content-Length": "0"
+          },
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "passed": true,
+          "elapsedMs": 4.583900328725576
+        },
+        {
+          "name": "unknown-record",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/999999999",
+          "expected": 404,
+          "route": "PUT /api/v1/space/visibility/task-results/{id}",
+          "phase": "extended-full",
+          "status": 404,
+          "bytes": 0,
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "0",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "passed": true,
+          "elapsedMs": 6.525600329041481
+        },
+        {
+          "name": "unknown-record",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/999999999/selection",
+          "expected": 404,
+          "route": "PUT /api/v1/space/visibility/task-results/{id}/selection",
+          "phase": "extended-full",
+          "status": 404,
+          "bytes": 0,
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "0",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "passed": true,
+          "elapsedMs": 5.42179960757494
+        },
+        {
+          "name": "unknown-record",
+          "method": "DELETE",
+          "path": "/api/v1/space/visibility/task-results/999999999",
+          "expected": 404,
+          "route": "DELETE /api/v1/space/visibility/task-results/{id}",
+          "phase": "extended-full",
+          "status": 404,
+          "bytes": 0,
+          "headers": {
+            "Connection": "close",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT",
+            "Content-Length": "0"
+          },
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "passed": true,
+          "elapsedMs": 23.7225997261703
+        },
+        {
+          "name": "unknown-task",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/A01-unknown/result",
+          "expected": 404,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+          "phase": "extended-full",
+          "status": 404,
+          "bytes": 0,
+          "headers": {
+            "Connection": "close",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT",
+            "Content-Length": "0"
+          },
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "passed": true,
+          "elapsedMs": 16.185499727725983
+        },
+        {
+          "name": "unknown-task",
+          "method": "DELETE",
+          "path": "/api/v1/space/visibility/tasks/A01-unknown",
+          "expected": 404,
+          "route": "DELETE /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-full",
+          "status": 404,
+          "bytes": 0,
+          "headers": {
+            "Connection": "close",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT",
+            "Content-Length": "0"
+          },
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "passed": true,
+          "elapsedMs": 4.696900025010109
+        },
+        {
+          "name": "instant-invalid-original-500",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/tasks",
+          "expected": 500,
+          "route": "POST /api/v1/space/visibility/tasks",
+          "phase": "extended-full",
+          "status": 500,
+          "bytes": 105,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "7ffc97cef56f260c3bf2d609d2cd4ddc837de81a20d7851ee71d45087a3ae54c",
+          "passed": true,
+          "elapsedMs": 8.774999994784594
+        },
+        {
+          "name": "reverse-sync-400",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/plan",
+          "expected": 400,
+          "route": "POST /api/v1/space/visibility/plan",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 68,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "6873accc8989b955465a06647e470addee7b0193a8629b48a0ea87011beaa1bc",
+          "passed": true,
+          "elapsedMs": 15.1655999943614
+        },
+        {
+          "name": "reverse-async-submit",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/tasks",
+          "expected": 200,
+          "route": "POST /api/v1/space/visibility/tasks",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 49,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "7af64427b1b89069fa546fd0450c3fc6d99bca862b004e699b69dbea9c337de8",
+          "passed": true,
+          "elapsedMs": 5.5010998621582985
+        },
+        {
+          "name": "failed-poll",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/ce2d14b7-14fe-4eac-b3df-85f0dec04625",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 267,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "5b79b1b0ff0d73fa789125b5a2e7c410c8bc949a8f0a5c90d668dca21754bdfe",
+          "passed": true,
+          "elapsedMs": 24.794799741357565
+        },
+        {
+          "name": "failed-result-409",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/ce2d14b7-14fe-4eac-b3df-85f0dec04625/result",
+          "expected": 409,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+          "phase": "extended-full",
+          "status": 409,
+          "bytes": 65,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "d9d8e8e1230e127ee5c3d55af1475a204421992d03ba20c5e015bfc90bfecdb7",
+          "passed": true,
+          "elapsedMs": 4.312200006097555
+        },
+        {
+          "name": "persist-FAILED",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?keyword=ce2d14b7-14fe-4eac-b3df-85f0dec04625",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 347,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "bc331dd8dfa13219e6517464d5c5980dcf30ea3319b41670694ee2d1b9a69384",
+          "passed": true,
+          "elapsedMs": 7.267800159752369
+        },
+        {
+          "name": "long-async-submit",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/tasks",
+          "expected": 200,
+          "route": "POST /api/v1/space/visibility/tasks",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 49,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "3682e17c936c8d8b835f21dfa16219a8ee9104bd943d4fc5c4eb0373e70cb0f7",
+          "passed": true,
+          "elapsedMs": 6.429499946534634
+        },
+        {
+          "name": "status-before-cancel",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/2be443ff-3a63-495f-94ce-763d4b372bb3",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 218,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "1a3cffdcbb782f3ac01da9e755f31a854f687dcdf99ca4400b74a6e98804b4ae",
+          "passed": true,
+          "elapsedMs": 5.215700250118971
+        },
+        {
+          "name": "pending-result-409",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/2be443ff-3a63-495f-94ce-763d4b372bb3/result",
+          "expected": 409,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+          "phase": "extended-full",
+          "status": 409,
+          "bytes": 66,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "05f58faa65b071b2dc74d534bb7619c1f21a7899b2100a5db27325458fe37af9",
+          "passed": true,
+          "elapsedMs": 21.548000164330006
+        },
+        {
+          "name": "cancel-real-active",
+          "method": "DELETE",
+          "path": "/api/v1/space/visibility/tasks/2be443ff-3a63-495f-94ce-763d4b372bb3",
+          "expected": 200,
+          "route": "DELETE /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 218,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "1a3cffdcbb782f3ac01da9e755f31a854f687dcdf99ca4400b74a6e98804b4ae",
+          "passed": true,
+          "elapsedMs": 4.515899810940027
+        },
+        {
+          "name": "cancel-poll",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/2be443ff-3a63-495f-94ce-763d4b372bb3",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 218,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "1a3cffdcbb782f3ac01da9e755f31a854f687dcdf99ca4400b74a6e98804b4ae",
+          "passed": true,
+          "elapsedMs": 4.538299981504679
+        },
+        {
+          "name": "cancel-poll",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/2be443ff-3a63-495f-94ce-763d4b372bb3",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 242,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "362086a40bad38d87d08ad0426155ce9d805524b45dee2357c29eb5765640d74",
+          "passed": true,
+          "elapsedMs": 5.969600286334753
+        },
+        {
+          "name": "persist-CANCELLED",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?keyword=2be443ff-3a63-495f-94ce-763d4b372bb3",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 322,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "f1167d886f10424a2e9ac7be5c0e7f429ddeb09618cff5c2a284566226dee695",
+          "passed": true,
+          "elapsedMs": 7.240800186991692
+        },
+        {
+          "name": "after-failure-recovery-submit",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/tasks",
+          "expected": 200,
+          "route": "POST /api/v1/space/visibility/tasks",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 49,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "39d0edc429695d6d705870434a76754ddd01b5c6fd23f79ed06ce264504ebc9e",
+          "passed": true,
+          "elapsedMs": 6.8870000541210175
+        },
+        {
+          "name": "recover-poll",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/0e062a87-34c1-4314-8eb0-37b8b5b3013e",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 242,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "f7f14e7f763325e4babcfaf4cd8ea7a2e2674609ce0304ee4988962f20c1a0eb",
+          "passed": true,
+          "elapsedMs": 30.3592998534441
+        },
+        {
+          "name": "recover-result",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/0e062a87-34c1-4314-8eb0-37b8b5b3013e/result",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 1394,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "d5c86534fd7e0527d6052b0f886b51bbb278f0fc44da3adb1a479e25860ea05a",
+          "passed": true,
+          "elapsedMs": 5.0478000193834305
+        },
+        {
+          "name": "recover-sync",
+          "method": "POST",
+          "path": "/api/v1/space/visibility/plan",
+          "expected": 200,
+          "route": "POST /api/v1/space/visibility/plan",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 1394,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "d5c86534fd7e0527d6052b0f886b51bbb278f0fc44da3adb1a479e25860ea05a",
+          "passed": true,
+          "elapsedMs": 12.924100272357464
+        },
+        {
+          "name": "cancel-completed",
+          "method": "DELETE",
+          "path": "/api/v1/space/visibility/tasks/0e062a87-34c1-4314-8eb0-37b8b5b3013e",
+          "expected": 200,
+          "route": "DELETE /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 242,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "f7f14e7f763325e4babcfaf4cd8ea7a2e2674609ce0304ee4988962f20c1a0eb",
+          "passed": true,
+          "elapsedMs": 27.277600020170212
+        },
+        {
+          "name": "persist-SUCCEEDED",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?keyword=0e062a87-34c1-4314-8eb0-37b8b5b3013e",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 322,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "146ccf258875b1cd2e710a2df9042b7012e736d6a8b696e622ea9484b86fbdf8",
+          "passed": true,
+          "elapsedMs": 6.665800232440233
+        },
+        {
+          "name": "remark-513-rejected",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/2110148236971683841",
+          "expected": 400,
+          "route": "PUT /api/v1/space/visibility/task-results/{id}",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 73,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "22a14663ddcb9042c1dab5ff64622f92fcf1c59a2d1b79df374370d097202f2e",
+          "passed": true,
+          "elapsedMs": 23.571399971842766
+        },
+        {
+          "name": "remark-512-boundary",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/2110148236971683841",
+          "expected": 200,
+          "route": "PUT /api/v1/space/visibility/task-results/{id}",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 3843,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "3aed7925b318e39067c299f6b84e4b9948c5b1053b8db5ee1d43a0d9491f90e8",
+          "passed": true,
+          "elapsedMs": 5.658900365233421
+        },
+        {
+          "name": "remark-null-clear",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/2110148236971683841",
+          "expected": 200,
+          "route": "PUT /api/v1/space/visibility/task-results/{id}",
+          "phase": "extended-full",
+          "status": 500,
+          "bytes": 105,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:38 GMT"
+          },
+          "sha256": "344ad8b08202f4723c86c655009c89f0038a2578065773dd3c147f7894e98065",
+          "passed": false,
+          "failure": "('remark-null-clear', 500, 200, b'{\"code\":\"INTERNAL_ERROR\",\"error\":\"\\xe6\\x9c\\x8d\\xe5\\x8a\\xa1\\xe5\\xa4\\x84\\xe7\\x90\\x86\\xe5\\xa4\\xb1\\xe8\\xb4\\xa5\",\"requestId\":\"c784f5a7-dd35-4c67-9295-2f86e647abd1\"}')",
+          "elapsedMs": 39.176900405436754
+        },
+        {
+          "name": "upload-quoted-chinese",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files",
+          "expected": 201,
+          "route": "POST /api/v1/ballistic/files",
+          "phase": "extended-full",
+          "status": 201,
+          "bytes": 260,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "522562e0e8110a5ff3261715f30c575a130cf425480b4c149769b40d56557f0c",
+          "passed": true,
+          "elapsedMs": 20.379700232297182
+        },
+        {
+          "name": "chinese-download",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b23fdffe-035f-404e-b2aa-206028c2e907/download",
+          "expected": 200,
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 61,
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "61",
+            "Content-Disposition": "attachment; filename=\"__ __.csv\"; filename*=UTF-8''%E5%BC%B9%E9%81%93%20%E7%A4%BA%E4%BE%8B.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "sha256": "cf253af82d5904cb35303fddc318c5d189c11c8798883e08023c1fdf896400d7",
+          "passed": true,
+          "elapsedMs": 6.764799822121859
+        },
+        {
+          "name": "quoted-first-page",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b23fdffe-035f-404e-b2aa-206028c2e907/preview?page=1&limit=1",
+          "expected": 200,
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 178,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "f18834fe5457ab32e37effd618c8ba00512782beadc92945a8a98d6936a4374f",
+          "passed": true,
+          "elapsedMs": 5.859899800270796
+        },
+        {
+          "name": "quoted-second-page",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b23fdffe-035f-404e-b2aa-206028c2e907/preview?page=2&limit=1",
+          "expected": 200,
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 155,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "306d8d0c61285f17e182fc62ea9cd5fae563d7033083a3731d671239aafd08f2",
+          "passed": true,
+          "elapsedMs": 5.745000205934048
+        },
+        {
+          "name": "quoted-last-empty",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b23fdffe-035f-404e-b2aa-206028c2e907/preview?page=999&limit=500",
+          "expected": 200,
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 145,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "3dba2aee144d10fd1897e3198570e51cf24985a9c81fca5528ac29258e47cc73",
+          "passed": true,
+          "elapsedMs": 21.83280000463128
+        },
+        {
+          "name": "file-page-invalid",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b23fdffe-035f-404e-b2aa-206028c2e907/preview?page=0",
+          "expected": 400,
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 89,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "fbd269aff2f72a5cebd152bc69023c288c993b37e7dc75f27430715aefb4a3d2",
+          "passed": true,
+          "elapsedMs": 29.172700364142656
+        },
+        {
+          "name": "file-page-invalid",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b23fdffe-035f-404e-b2aa-206028c2e907/preview?limit=0",
+          "expected": 400,
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 89,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "fbd269aff2f72a5cebd152bc69023c288c993b37e7dc75f27430715aefb4a3d2",
+          "passed": true,
+          "elapsedMs": 4.494599997997284
+        },
+        {
+          "name": "file-page-invalid",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/b23fdffe-035f-404e-b2aa-206028c2e907/preview?limit=501",
+          "expected": 400,
+          "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 89,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "fbd269aff2f72a5cebd152bc69023c288c993b37e7dc75f27430715aefb4a3d2",
+          "passed": true,
+          "elapsedMs": 25.72369994595647
+        },
+        {
+          "name": "unknown-download-404",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/unknown/download",
+          "expected": 404,
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "phase": "extended-full",
+          "status": 404,
+          "bytes": 69,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "d10122685ee86259b60ab9602723323635aa86f520771b300a898c9963e895e7",
+          "passed": true,
+          "elapsedMs": 4.338399972766638
+        },
+        {
+          "name": "register-empty-path",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 89,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "fbd269aff2f72a5cebd152bc69023c288c993b37e7dc75f27430715aefb4a3d2",
+          "passed": true,
+          "elapsedMs": 25.56690014898777
+        },
+        {
+          "name": "register-upload-reject",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 89,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "fbd269aff2f72a5cebd152bc69023c288c993b37e7dc75f27430715aefb4a3d2",
+          "passed": true,
+          "elapsedMs": 5.124799907207489
+        },
+        {
+          "name": "register-source-outside-reject",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "expected": 400,
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 89,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "fbd269aff2f72a5cebd152bc69023c288c993b37e7dc75f27430715aefb4a3d2",
+          "passed": true,
+          "elapsedMs": 25.451000314205885
+        },
+        {
+          "name": "upload-real-limit-plus-one",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files",
+          "expected": 413,
+          "route": "POST /api/v1/ballistic/files",
+          "phase": "extended-full",
+          "status": 413,
+          "bytes": 86,
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "86",
+            "Content-Type": "application/json;charset=UTF-8",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "1d0122d6491099b7c495e1418382797f8f0d95143d666544cc0b394273d4f204",
+          "passed": true,
+          "elapsedMs": 206.94519998505712
+        },
+        {
+          "name": "upload-after-limit-recovery",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files",
+          "expected": 201,
+          "route": "POST /api/v1/ballistic/files",
+          "phase": "extended-full",
+          "status": 201,
+          "bytes": 258,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "bc749eebf5549a94c200e0a4b112a5a73e3ddb2efd7b48cf440b38f4e0b004a1",
+          "passed": true,
+          "elapsedMs": 29.85180029645562
+        },
+        {
+          "name": "mixed-two-target-two-satellite-points0",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 90547,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:39 GMT"
+          },
+          "sha256": "cb729143bcd58bf505b4a1ae9a7367fe93f19129490fa3a4cff079b30c18ed67",
+          "passed": true,
+          "elapsedMs": 207.15399971231818
+        },
+        {
+          "name": "mixed-two-target-two-satellite-points1",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 2387599,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:40 GMT"
+          },
+          "sha256": "dba22b3c5eeaef2ac28f2fd0eb6f8d93ff5f06f34673f47a8166e7572abc8578",
+          "passed": true,
+          "elapsedMs": 247.3828000947833
+        },
+        {
+          "name": "startup-metadata-None",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 90547,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:40 GMT"
+          },
+          "sha256": "cb729143bcd58bf505b4a1ae9a7367fe93f19129490fa3a4cff079b30c18ed67",
+          "passed": true,
+          "elapsedMs": 165.5327002517879
+        },
+        {
+          "name": "startup-metadata-0",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 90547,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:40 GMT"
+          },
+          "sha256": "cb729143bcd58bf505b4a1ae9a7367fe93f19129490fa3a4cff079b30c18ed67",
+          "passed": true,
+          "elapsedMs": 168.62510005012155
+        },
+        {
+          "name": "startup-metadata-1",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 90547,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:40 GMT"
+          },
+          "sha256": "cb729143bcd58bf505b4a1ae9a7367fe93f19129490fa3a4cff079b30c18ed67",
+          "passed": true,
+          "elapsedMs": 160.7383000664413
+        },
+        {
+          "name": "model-KEPLER",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 82458,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:40 GMT"
+          },
+          "sha256": "95d34a71920e8320a341cad81dc99af55415aadc780b0de09e4fd4759100fe8e",
+          "passed": true,
+          "elapsedMs": 101.11760022118688
+        },
+        {
+          "name": "model-J2_ANALYTICAL",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 82458,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:40 GMT"
+          },
+          "sha256": "95d34a71920e8320a341cad81dc99af55415aadc780b0de09e4fd4759100fe8e",
+          "passed": true,
+          "elapsedMs": 118.64869995042682
+        },
+        {
+          "name": "model-J2_NUMERICAL",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 90547,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:40 GMT"
+          },
+          "sha256": "cb729143bcd58bf505b4a1ae9a7367fe93f19129490fa3a4cff079b30c18ed67",
+          "passed": true,
+          "elapsedMs": 169.81070023030043
+        },
+        {
+          "name": "empty-real-distance",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 200,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 200,
+          "bytes": 6432,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "02befbeac9461d4d3608866ccdaa7691b8812d9b03eca9989a1408a9120d33ed",
+          "passed": true,
+          "elapsedMs": 158.90219993889332
+        },
+        {
+          "name": "window-bad-step",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 400,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 49,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "f295087bfb3aa724be933cd4a02d9e8e31443847bb2aabd799fed5a705850cde",
+          "passed": true,
+          "elapsedMs": 6.118800025433302
+        },
+        {
+          "name": "window-bad-standard",
+          "method": "POST",
+          "path": "/api/orbit/visibility/search",
+          "expected": 400,
+          "route": "POST /api/orbit/visibility/search",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 30,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "5854bc9913ba2b59e124278e06b0d8d7d872a19837ceb2ddafd390626bcec51f",
+          "passed": true,
+          "elapsedMs": 31.733100302517414
+        },
+        {
+          "name": "fit-empty-original-400",
+          "method": "POST",
+          "path": "/api/trajectory/fit/package102",
+          "expected": 400,
+          "route": "POST /api/trajectory/fit/package102",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 69,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "c84860d834a5c48ac828bd06e607ed912f565fcf48e86a598a59896a422e1d82",
+          "passed": true,
+          "elapsedMs": 6.650799885392189
+        },
+        {
+          "name": "fit-type-original-500",
+          "method": "POST",
+          "path": "/api/trajectory/fit/package102",
+          "expected": 500,
+          "route": "POST /api/trajectory/fit/package102",
+          "phase": "extended-full",
+          "status": 500,
+          "bytes": 105,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "d8d273021086fd29e0734030751bc406796d8423f888a982cd1ae745355921e7",
+          "passed": true,
+          "elapsedMs": 7.375100161880255
+        },
+        {
+          "name": "simulate-empty-original-400",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 400,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 66,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "78ab9dc169110a511faa901aad4a2d12e81a8936fd3fe190f92733130d77956b",
+          "passed": true,
+          "elapsedMs": 4.9911001697182655
+        },
+        {
+          "name": "simulate-type-original-500",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 500,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-full",
+          "status": 500,
+          "bytes": 105,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "b6e228334216c6a0310af5e3183ab0db100af4b9ce73b9e66a023c52aa88b18a",
+          "passed": true,
+          "elapsedMs": 6.466799881309271
+        },
+        {
+          "name": "retime-empty-original-400",
+          "method": "POST",
+          "path": "/api/trajectory/retime",
+          "expected": 400,
+          "route": "POST /api/trajectory/retime",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 70,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "3ae44bc323593688caa9a1c27ef6d9c75409a7b059ac849e4add1ebf067da343",
+          "passed": true,
+          "elapsedMs": 31.4301997423172
+        },
+        {
+          "name": "retime-type-original-500",
+          "method": "POST",
+          "path": "/api/trajectory/retime",
+          "expected": 500,
+          "route": "POST /api/trajectory/retime",
+          "phase": "extended-full",
+          "status": 500,
+          "bytes": 105,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "02efd790f5d7a963e8af055878a52ab8a0a2e58bbb1e2e8bafccf1ab0fdf5b24",
+          "passed": true,
+          "elapsedMs": 5.9588998556137085
+        },
+        {
+          "name": "simulation-time-original-500",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 500,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-full",
+          "status": 400,
+          "bytes": 64,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:18:41 GMT"
+          },
+          "sha256": "aeebe91fcfdf37fb6e48abeabef795d9710550ac44a224d7645069e56f620ba6",
+          "passed": false,
+          "failure": "('simulation-time-original-500', 400, 500, b'{\"error\":\"NumberFormatException: For input string: \\\\\"INVALID\\\\\"\"}')",
+          "elapsedMs": 5.759799852967262
+        }
+      ],
+      "failures": [
+        {
+          "name": "async-failure-cancel-recovery-record-boundaries",
+          "status": "FAIL",
+          "requests": 22,
+          "error": "('remark-null-clear', 500, 200, b'{\"code\":\"INTERNAL_ERROR\",\"error\":\"\\xe6\\x9c\\x8d\\xe5\\x8a\\xa1\\xe5\\xa4\\x84\\xe7\\x90\\x86\\xe5\\xa4\\xb1\\xe8\\xb4\\xa5\",\"requestId\":\"c784f5a7-dd35-4c67-9295-2f86e647abd1\"}')",
+          "traceback": "Traceback (most recent call last):\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 129, in check\n    function()\n    ~~~~~~~~^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 528, in <lambda>\n    p.check('async-failure-cancel-recovery-record-boundaries', lambda: asynchronous(p))\n                                                                       ~~~~~~~~~~~~^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 274, in asynchronous\n    assert p.data('PUT', path, 'remark-null-clear', dict(remark=None))['remark'] is None\n           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 122, in data\n    raw = self.http(method, path, name, body, expected)\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 111, in http\n    assert event['passed'], (name, event['status'], expected, raw[:500])\n           ~~~~~^^^^^^^^^^\nAssertionError: ('remark-null-clear', 500, 200, b'{\"code\":\"INTERNAL_ERROR\",\"error\":\"\\xe6\\x9c\\x8d\\xe5\\x8a\\xa1\\xe5\\xa4\\x84\\xe7\\x90\\x86\\xe5\\xa4\\xb1\\xe8\\xb4\\xa5\",\"requestId\":\"c784f5a7-dd35-4c67-9295-2f86e647abd1\"}')\n"
+        },
+        {
+          "name": "trajectory-invalid-utc-formats-recovery",
+          "status": "FAIL",
+          "requests": 7,
+          "error": "('simulation-time-original-500', 400, 500, b'{\"error\":\"NumberFormatException: For input string: \\\\\"INVALID\\\\\"\"}')",
+          "traceback": "Traceback (most recent call last):\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 129, in check\n    function()\n    ~~~~~~~~^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 531, in <lambda>\n    p.check('trajectory-invalid-utc-formats-recovery', lambda: trajectory_errors(p))\n                                                               ~~~~~~~~~~~~~~~~~^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 382, in trajectory_errors\n    p.data('POST', '/api/trajectory/simulate', 'simulation-time-original-500',\n    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n           dict(simulation, launchTimeUtc='INVALID'), 500)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 122, in data\n    raw = self.http(method, path, name, body, expected)\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 111, in http\n    assert event['passed'], (name, event['status'], expected, raw[:500])\n           ~~~~~^^^^^^^^^^\nAssertionError: ('simulation-time-original-500', 400, 500, b'{\"error\":\"NumberFormatException: For input string: \\\\\"INVALID\\\\\"\"}')\n"
+        }
+      ],
+      "baselineCsvComparisons": [
+        {
+          "name": "fit",
+          "targetId": "TGT-001",
+          "pointCount": 1633,
+          "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+          "csvByteExact": true,
+          "previewCellExact": true
+        },
+        {
+          "name": "fit",
+          "targetId": "TGT-002",
+          "pointCount": 31,
+          "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+          "csvByteExact": true,
+          "previewCellExact": true
+        },
+        {
+          "name": "simulate",
+          "targetId": "SIM-001",
+          "pointCount": 2576,
+          "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+          "csvByteExact": true,
+          "previewCellExact": true
+        },
+        {
+          "name": "retime",
+          "targetId": "RETIMED-TGT",
+          "pointCount": 2576,
+          "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e",
+          "csvByteExact": true,
+          "previewCellExact": true
+        }
+      ]
+    },
+    "supplement": {
+      "checks": [
+        {
+          "name": "supplement",
+          "status": "PASS",
+          "requests": 22
+        }
+      ],
+      "events": [
+        {
+          "name": "supplement-success-result",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/0e062a87-34c1-4314-8eb0-37b8b5b3013e/result",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+          "phase": "extended-supplement",
+          "status": 200,
+          "bytes": 1394,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "d5c86534fd7e0527d6052b0f886b51bbb278f0fc44da3adb1a479e25860ea05a",
+          "passed": true,
+          "elapsedMs": 23.890499956905842
+        },
+        {
+          "name": "persist-SUCCEEDED",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results?keyword=0e062a87-34c1-4314-8eb0-37b8b5b3013e",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/task-results",
+          "phase": "extended-supplement",
+          "status": 200,
+          "bytes": 1856,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "469963a8fe4868bb4ffc1dc26fae57c2fb35920b9018e5967613b69e43cc5b39",
+          "passed": true,
+          "elapsedMs": 34.739899914711714
+        },
+        {
+          "name": "selection-null-invalid",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/2110148236971683841/selection",
+          "expected": 400,
+          "route": "PUT /api/v1/space/visibility/task-results/{id}/selection",
+          "phase": "extended-supplement",
+          "status": 400,
+          "bytes": 86,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "ad3fd6c23a9cff5346bb0a05ce03fadc8e18b4533344774b8a6088fa71daa78c",
+          "passed": true,
+          "elapsedMs": 5.167299881577492
+        },
+        {
+          "name": "selection-empty-invalid",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/2110148236971683841/selection",
+          "expected": 400,
+          "route": "PUT /api/v1/space/visibility/task-results/{id}/selection",
+          "phase": "extended-supplement",
+          "status": 400,
+          "bytes": 86,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "ad3fd6c23a9cff5346bb0a05ce03fadc8e18b4533344774b8a6088fa71daa78c",
+          "passed": true,
+          "elapsedMs": 5.0837998278439045
+        },
+        {
+          "name": "selection-real-result-valid",
+          "method": "PUT",
+          "path": "/api/v1/space/visibility/task-results/2110148236971683841/selection",
+          "expected": 200,
+          "route": "PUT /api/v1/space/visibility/task-results/{id}/selection",
+          "phase": "extended-supplement",
+          "status": 200,
+          "bytes": 5371,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "755b6170afe0fd22b4aa6239ae74a95bc9f2404c83dad00ef13134b497598ddc",
+          "passed": true,
+          "elapsedMs": 34.72379967570305
+        },
+        {
+          "name": "record-selection-detail",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results/2110148236971683841",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/task-results/{id}",
+          "phase": "extended-supplement",
+          "status": 200,
+          "bytes": 5239,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "3c880665b513a2a8148f35ffc24eb4b4a11650d789f973e65ff72b9aab485983",
+          "passed": true,
+          "elapsedMs": 4.385499749332666
+        },
+        {
+          "name": "persistent-file-before-restart",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files",
+          "expected": 201,
+          "route": "POST /api/v1/ballistic/files",
+          "phase": "extended-supplement",
+          "status": 201,
+          "bytes": 258,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "34a29562abd5a498b3c31276614c35c71dc9cbbf9098ba5ec20acbe1d091675c",
+          "passed": true,
+          "elapsedMs": 9.496199898421764
+        },
+        {
+          "name": "fit-empty-original-400",
+          "method": "POST",
+          "path": "/api/trajectory/fit/package102",
+          "expected": 400,
+          "route": "POST /api/trajectory/fit/package102",
+          "phase": "extended-supplement",
+          "status": 400,
+          "bytes": 69,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "c84860d834a5c48ac828bd06e607ed912f565fcf48e86a598a59896a422e1d82",
+          "passed": true,
+          "elapsedMs": 4.302100278437138
+        },
+        {
+          "name": "fit-type-original-500",
+          "method": "POST",
+          "path": "/api/trajectory/fit/package102",
+          "expected": 500,
+          "route": "POST /api/trajectory/fit/package102",
+          "phase": "extended-supplement",
+          "status": 500,
+          "bytes": 105,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "9e0bc2f7e441abbc19b25d4631ff304cced07034cc15c343c9797a66af680c19",
+          "passed": true,
+          "elapsedMs": 5.824599880725145
+        },
+        {
+          "name": "simulate-empty-original-400",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 400,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-supplement",
+          "status": 400,
+          "bytes": 66,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "78ab9dc169110a511faa901aad4a2d12e81a8936fd3fe190f92733130d77956b",
+          "passed": true,
+          "elapsedMs": 4.804600030183792
+        },
+        {
+          "name": "simulate-type-original-500",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 500,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-supplement",
+          "status": 500,
+          "bytes": 105,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "e854dffca43e8267f5faceec4b33107100c719c0ab0434064983c3f549b090af",
+          "passed": true,
+          "elapsedMs": 6.40589976683259
+        },
+        {
+          "name": "retime-empty-original-400",
+          "method": "POST",
+          "path": "/api/trajectory/retime",
+          "expected": 400,
+          "route": "POST /api/trajectory/retime",
+          "phase": "extended-supplement",
+          "status": 400,
+          "bytes": 70,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "3ae44bc323593688caa9a1c27ef6d9c75409a7b059ac849e4add1ebf067da343",
+          "passed": true,
+          "elapsedMs": 4.951799754053354
+        },
+        {
+          "name": "retime-type-original-500",
+          "method": "POST",
+          "path": "/api/trajectory/retime",
+          "expected": 500,
+          "route": "POST /api/trajectory/retime",
+          "phase": "extended-supplement",
+          "status": 500,
+          "bytes": 105,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "81899643587dc4c64336070322cee471e852d6aef54e927861a82be87d94d1b0",
+          "passed": true,
+          "elapsedMs": 5.783200263977051
+        },
+        {
+          "name": "simulation-time-original-400",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 400,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-supplement",
+          "status": 400,
+          "bytes": 64,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "aeebe91fcfdf37fb6e48abeabef795d9710550ac44a224d7645069e56f620ba6",
+          "passed": true,
+          "elapsedMs": 5.858799908310175
+        },
+        {
+          "name": "simulation-radius-400",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 400,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-supplement",
+          "status": 400,
+          "bytes": 195,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "13d79027b60baca0daad0148e12fb47b84ebca8161184d081634b83deb143f6d",
+          "passed": true,
+          "elapsedMs": 5.60660008341074
+        },
+        {
+          "name": "simulation-reversed-400",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 400,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-supplement",
+          "status": 400,
+          "bytes": 79,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "d936587ce8e923a141119b26c119309015d4ea4f6ad7df45e5ec50ea195386ea",
+          "passed": true,
+          "elapsedMs": 26.00400010123849
+        },
+        {
+          "name": "two-utc-format-False",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 200,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-supplement",
+          "status": 200,
+          "bytes": 630,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "ee7cf8315c40b48dd35804ed2ca3c10606f24676dffc9f8cc7a9e5dda874f8f8",
+          "passed": true,
+          "elapsedMs": 31.000500079244375
+        },
+        {
+          "name": "utc-result-register-False",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "expected": 201,
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "phase": "extended-supplement",
+          "status": 201,
+          "bytes": 428,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "936d15511da0f6d5e410345191f91728414527afe99e751f4fc4147192715a55",
+          "passed": true,
+          "elapsedMs": 6.700200028717518
+        },
+        {
+          "name": "utc-result-download-False",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/a39509c4-e17f-4862-bc35-b5d539d9675f/download",
+          "expected": 200,
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "phase": "extended-supplement",
+          "status": 200,
+          "bytes": 9763,
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "9763",
+            "Content-Disposition": "attachment; filename=\"defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_071950_817.csv\"; filename*=UTF-8''defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_071950_817.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "sha256": "e20db12838b34805da87e501941d3bc8e5f2bf85d39991e7e5751b6eb3943d2e",
+          "passed": true,
+          "elapsedMs": 29.041599947959185
+        },
+        {
+          "name": "two-utc-format-True",
+          "method": "POST",
+          "path": "/api/trajectory/simulate",
+          "expected": 200,
+          "route": "POST /api/trajectory/simulate",
+          "phase": "extended-supplement",
+          "status": 200,
+          "bytes": 630,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "55e4bab1fb48924bdbeffe49fbf692f05b67521583bdcbb54616fc14cd157bd2",
+          "passed": true,
+          "elapsedMs": 26.00169973447919
+        },
+        {
+          "name": "utc-result-register-True",
+          "method": "POST",
+          "path": "/api/v1/ballistic/files/register-result",
+          "expected": 201,
+          "route": "POST /api/v1/ballistic/files/register-result",
+          "phase": "extended-supplement",
+          "status": 201,
+          "bytes": 428,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT"
+          },
+          "sha256": "822fc97a0258373f32e9bc78d652cf9e424064c980323a2cb37cb683e58fd067",
+          "passed": true,
+          "elapsedMs": 5.850000306963921
+        },
+        {
+          "name": "utc-result-download-True",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/165606d9-245e-4090-b20b-313f959a6c36/download",
+          "expected": 200,
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "phase": "extended-supplement",
+          "status": 200,
+          "bytes": 9763,
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "9763",
+            "Content-Disposition": "attachment; filename=\"defaultSimTask_2026_06_04_04_00_00.000_2026_06_04_04_42_55.000_SIM-001_20261014_071950_879.csv\"; filename*=UTF-8''defaultSimTask_2026_06_04_04_00_00.000_2026_06_04_04_42_55.000_SIM-001_20261014_071950_879.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:19:50 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "sha256": "e20db12838b34805da87e501941d3bc8e5f2bf85d39991e7e5751b6eb3943d2e",
+          "passed": true,
+          "elapsedMs": 13.832900207489729
+        }
+      ],
+      "failures": [],
+      "baselineCsvComparisons": []
+    },
+    "recovery": {
+      "checks": [
+        {
+          "name": "recovery",
+          "status": "PASS",
+          "requests": 3
+        }
+      ],
+      "events": [
+        {
+          "name": "record-after-real-restart",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/task-results/2110148236971683841",
+          "expected": 200,
+          "route": "GET /api/v1/space/visibility/task-results/{id}",
+          "phase": "extended-recovery",
+          "status": 200,
+          "bytes": 5239,
+          "headers": {
+            "Connection": "close",
+            "Transfer-Encoding": "chunked",
+            "Content-Type": "application/json",
+            "Date": "Tue, 13 Oct 2026 23:21:00 GMT"
+          },
+          "sha256": "3c880665b513a2a8148f35ffc24eb4b4a11650d789f973e65ff72b9aab485983",
+          "passed": true,
+          "elapsedMs": 108.89409994706511
+        },
+        {
+          "name": "volatile-task-after-restart-404",
+          "method": "GET",
+          "path": "/api/v1/space/visibility/tasks/0e062a87-34c1-4314-8eb0-37b8b5b3013e",
+          "expected": 404,
+          "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+          "phase": "extended-recovery",
+          "status": 404,
+          "bytes": 0,
+          "headers": {
+            "Connection": "close",
+            "Date": "Tue, 13 Oct 2026 23:21:00 GMT",
+            "Content-Length": "0"
+          },
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "passed": true,
+          "elapsedMs": 7.9275998286902905
+        },
+        {
+          "name": "file-after-real-restart",
+          "method": "GET",
+          "path": "/api/v1/ballistic/files/2dbdcaca-dc6a-45e7-bb8d-8ad3ecc5d9fb/download",
+          "expected": 200,
+          "route": "GET /api/v1/ballistic/files/{fileId}/download",
+          "phase": "extended-recovery",
+          "status": 200,
+          "bytes": 8,
+          "headers": {
+            "Connection": "close",
+            "Content-Length": "8",
+            "Content-Disposition": "attachment; filename=\"____.csv\"; filename*=UTF-8''%E5%85%A8%E9%9D%A2%E9%AA%8C%E6%94%B6.csv",
+            "Content-Type": "text/csv",
+            "Date": "Tue, 13 Oct 2026 23:21:00 GMT",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "sha256": "492d5ea496056f1a6a6592241032fab764c321596317930b4fa0e1e8bc3b7470",
+          "passed": true,
+          "elapsedMs": 9.958900045603514
+        }
+      ],
+      "failures": [],
+      "baselineCsvComparisons": []
+    }
+  },
+  "activeRoutes": 35,
+  "successCoveredRoutes": 35,
+  "totalRequests": 229,
+  "assertedChecks": 87,
+  "routeMatrix": [
+    {
+      "route": "GET /api/v1/space/health",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "GET /api/v1/space/satellites",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "GET /api/v1/space/satellites/page",
+      "requestCount": 6,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/space/satellites/options",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "GET /api/v1/space/satellites/{satelliteId}/payload",
+      "requestCount": 2,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "PUT /api/v1/space/satellites/{satelliteId}/payload",
+      "requestCount": 2,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/space/satellites/{satelliteId}/payload-profiles",
+      "requestCount": 4,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "PUT /api/v1/space/satellites/{satelliteId}/payload-profiles",
+      "requestCount": 7,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/space/stations",
+      "requestCount": 2,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "GET /api/v1/space/defaults",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "POST /api/v1/space/targets/query",
+      "requestCount": 2,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/space/targets/belong-options",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "POST /api/v1/space/downlink/plan",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "POST /api/v1/space/downlink/validate-window",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "POST /api/v1/space/visibility/plan",
+      "requestCount": 3,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "POST /api/v1/space/visibility/tasks",
+      "requestCount": 6,
+      "statuses": [
+        200,
+        500
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/space/visibility/tasks/{taskId}",
+      "requestCount": 11,
+      "statuses": [
+        200,
+        404
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/space/visibility/tasks/{taskId}/result",
+      "requestCount": 7,
+      "statuses": [
+        200,
+        404,
+        409
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "DELETE /api/v1/space/visibility/tasks/{taskId}",
+      "requestCount": 4,
+      "statuses": [
+        200,
+        404
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/space/visibility/task-results",
+      "requestCount": 12,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/space/visibility/task-results/{id}",
+      "requestCount": 5,
+      "statuses": [
+        200,
+        404
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "PUT /api/v1/space/visibility/task-results/{id}",
+      "requestCount": 5,
+      "statuses": [
+        200,
+        400,
+        404,
+        500
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "PUT /api/v1/space/visibility/task-results/{id}/selection",
+      "requestCount": 5,
+      "statuses": [
+        200,
+        400,
+        404
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "DELETE /api/v1/space/visibility/task-results/{id}",
+      "requestCount": 2,
+      "statuses": [
+        200,
+        404
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "POST /api/v1/ballistic/files",
+      "requestCount": 5,
+      "statuses": [
+        201,
+        413
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "POST /api/v1/ballistic/files/register-result",
+      "requestCount": 13,
+      "statuses": [
+        201,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/ballistic/files/{fileId}/preview",
+      "requestCount": 12,
+      "statuses": [
+        200,
+        400,
+        404
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/v1/ballistic/files/{fileId}/download",
+      "requestCount": 10,
+      "statuses": [
+        200,
+        404
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "POST /api/v1/ballistic/payloads/preview",
+      "requestCount": 58,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/orbit/health",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "POST /api/orbit/visibility/search",
+      "requestCount": 16,
+      "statuses": [
+        200,
+        400
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "GET /api/trajectory/health",
+      "requestCount": 1,
+      "statuses": [
+        200
+      ],
+      "successCovered": true,
+      "boundaryCovered": false
+    },
+    {
+      "route": "POST /api/trajectory/fit/package102",
+      "requestCount": 5,
+      "statuses": [
+        200,
+        400,
+        500
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "POST /api/trajectory/simulate",
+      "requestCount": 11,
+      "statuses": [
+        200,
+        400,
+        500
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    },
+    {
+      "route": "POST /api/trajectory/retime",
+      "requestCount": 5,
+      "statuses": [
+        200,
+        400,
+        500
+      ],
+      "successCovered": true,
+      "boundaryCovered": true
+    }
+  ],
+  "failures": [
+    {
+      "name": "async-failure-cancel-recovery-record-boundaries",
+      "status": "FAIL",
+      "requests": 22,
+      "error": "('remark-null-clear', 500, 200, b'{\"code\":\"INTERNAL_ERROR\",\"error\":\"\\xe6\\x9c\\x8d\\xe5\\x8a\\xa1\\xe5\\xa4\\x84\\xe7\\x90\\x86\\xe5\\xa4\\xb1\\xe8\\xb4\\xa5\",\"requestId\":\"c784f5a7-dd35-4c67-9295-2f86e647abd1\"}')",
+      "traceback": "Traceback (most recent call last):\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 129, in check\n    function()\n    ~~~~~~~~^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 528, in <lambda>\n    p.check('async-failure-cancel-recovery-record-boundaries', lambda: asynchronous(p))\n                                                                       ~~~~~~~~~~~~^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 274, in asynchronous\n    assert p.data('PUT', path, 'remark-null-clear', dict(remark=None))['remark'] is None\n           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 122, in data\n    raw = self.http(method, path, name, body, expected)\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 111, in http\n    assert event['passed'], (name, event['status'], expected, raw[:500])\n           ~~~~~^^^^^^^^^^\nAssertionError: ('remark-null-clear', 500, 200, b'{\"code\":\"INTERNAL_ERROR\",\"error\":\"\\xe6\\x9c\\x8d\\xe5\\x8a\\xa1\\xe5\\xa4\\x84\\xe7\\x90\\x86\\xe5\\xa4\\xb1\\xe8\\xb4\\xa5\",\"requestId\":\"c784f5a7-dd35-4c67-9295-2f86e647abd1\"}')\n"
+    },
+    {
+      "name": "trajectory-invalid-utc-formats-recovery",
+      "status": "FAIL",
+      "requests": 7,
+      "error": "('simulation-time-original-500', 400, 500, b'{\"error\":\"NumberFormatException: For input string: \\\\\"INVALID\\\\\"\"}')",
+      "traceback": "Traceback (most recent call last):\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 129, in check\n    function()\n    ~~~~~~~~^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 531, in <lambda>\n    p.check('trajectory-invalid-utc-formats-recovery', lambda: trajectory_errors(p))\n                                                               ~~~~~~~~~~~~~~~~~^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 382, in trajectory_errors\n    p.data('POST', '/api/trajectory/simulate', 'simulation-time-original-500',\n    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n           dict(simulation, launchTimeUtc='INVALID'), 500)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 122, in data\n    raw = self.http(method, path, name, body, expected)\n  File \"G:\\5-YG\\space-ground-visible\\verification\\A01\\http_acceptance.py\", line 111, in http\n    assert event['passed'], (name, event['status'], expected, raw[:500])\n           ~~~~~^^^^^^^^^^\nAssertionError: ('simulation-time-original-500', 400, 500, b'{\"error\":\"NumberFormatException: For input string: \\\\\"INVALID\\\\\"\"}')\n"
+    }
+  ],
+  "pendingLifecycle": true,
+  "pendingRealRestart": false,
+  "evidenceRoot": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\http-extended",
+  "sourceFixtures": "test-data/reference、test-data/baseline；原例子仅重新运行，历史证据未覆写"
+}

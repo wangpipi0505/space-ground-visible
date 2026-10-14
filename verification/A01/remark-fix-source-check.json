@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-14T07:24:35.9287199+08:00",
+  "sourceChecks": [
+    {
+      "path": "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityTaskResultService.java",
+      "validUtf8": true,
+      "hasBom": false,
+      "hasCarriageReturns": false,
+      "sha256": "B9AC955CF031E3F37F6338736933230C6DB99B0A9CA7F1DF0233791070A85480"
+    },
+    {
+      "path": "backend/src/test/java/com/runisys/orbit/spacevisibility/application/VisibilityTaskResultServiceTest.java",
+      "validUtf8": true,
+      "hasBom": false,
+      "hasCarriageReturns": false,
+      "sha256": "2A3FAC019574E6FAFBDB5A3DB962BC83D44CEAC7E7D7D08CC2CF8CAC2D00365C"
+    },
+    {
+      "path": "backend/src/test/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityControllerIntegrationTest.java",
+      "validUtf8": true,
+      "hasBom": false,
+      "hasCarriageReturns": false,
+      "sha256": "E781DCB016BA9F4C86468EC3D034E3C3FA40918437592FB6F6B0AC1E9229108B"
+    },
+    {
+      "path": "verification/A01/备注清空缺陷修复报告.md",
+      "validUtf8": true,
+      "hasBom": false,
+      "hasCarriageReturns": false,
+      "sha256": "6800FB9E19802ACE627BEE0598D8C9EF3697ECAB25A56D71DBCDB59D7FDD34FA"
+    }
+  ],
+  "diffCheck": {
+    "command": "git",
+    "arguments": [
+      "diff",
+      "--check",
+      "--",
+      "backend/src/main/java/com/runisys/orbit/spacevisibility/application/VisibilityTaskResultService.java",
+      "backend/src/test/java/com/runisys/orbit/spacevisibility/application/VisibilityTaskResultServiceTest.java",
+      "backend/src/test/java/com/runisys/orbit/spacevisibility/api/SpaceVisibilityControllerIntegrationTest.java",
+      "verification/A01/备注清空缺陷修复报告.md"
+    ],
+    "exitCode": 0,
+    "output": "verification/A01/remark-fix-diff-check.txt"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "source": "verification/A01/final/frontend-performance.json",
+  "sourceSha256": "b8ebabcab5225e1d8ae39b3b0f9435d38f3fcf1a6f05752dbe14f3edc9411ddc",
+  "cacheState": "not-controlled",
+  "measuredValuesUnchanged": true,
+  "note": "五次导航缓存未控制/未清理，首次前已执行功能流程；原stdout/汇总数值保持原字节，原冷访问文案以本补充说明更正"
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "-s=a01-final",
+    "run-code",
+    "async (page) => page.__a01_retime"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "durationSec": 2.6836209297180176,
+  "stdoutSha256": "167154ec9a463eff42a9231e85717d5e073947728e98d78c62396f717f11c2f9",
+  "stdoutPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\browser-stdout\\chrome-retime-result.txt",
+  "stdoutStorage": "大原文留ignored runtime，原字节未改"
+}

@@ -1,0 +1,6 @@
+### Result
+{"source":"精确本次管理CSV临时移走，真实HTTP404，未mock","preview":{"url":"http://127.0.0.1:15140/api/v1/ballistic/files/6c7a2707-a626-49e3-b655-b5aa62dd04c5/preview?page=3&limit=50","status":404,"rawText":"{\"code\":\"FILE_NOT_FOUND\",\"error\":\"文件引用不存在或已清理\"}"},"download":{"url":"http://127.0.0.1:15140/api/v1/ballistic/files/6c7a2707-a626-49e3-b655-b5aa62dd04c5/download","status":404,"rawText":"{\"code\":\"FILE_NOT_FOUND\",\"error\":\"文件引用不存在或已清理\"}"},"browserDownloads":0,"originalComputeStillSuccessful":true,"otherTargetUnaffected":true}
+### Ran Playwright code
+```js
+await (async (page) => page.__a01_aux_failure)(page);
+```

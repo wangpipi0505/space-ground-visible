@@ -1,0 +1,31 @@
+{
+  "pid": 63204,
+  "command": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "-Xms256m",
+    "-Xmx4g",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Duser.timezone=Asia/Shanghai",
+    "-Dt26.control=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\review-fix-downlink\\server-downlink-review",
+    "-Dloader.path=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\review-fix-downlink\\managed-classes",
+    "-Dloader.main=ManagedServer",
+    "-Dorekit.data.path=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\release\\orekit-data",
+    "-cp",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\final-candidate\\release\\backend\\server.jar",
+    "org.springframework.boot.loader.PropertiesLauncher",
+    "--spring.profiles.active=demo",
+    "--server.port=18140",
+    "--logging.file.name=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A01\\review-fix-downlink\\server-downlink-review\\backend.log",
+    "--spring.datasource.url=jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/server-fixture/database/demo;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1",
+    "--ballistic.files.root=G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/server-fixture/files"
+  ],
+  "jarSha256": "d9c9956c389e79d1d52619c3e8310fb4b887d2009ad8f4c226d597cc030e3c71",
+  "port": 18140,
+  "freshDemo": false,
+  "reusedExistingDatabase": true,
+  "actualDatasourceUrl": "jdbc:h2:file:G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/server-fixture/database/demo;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1",
+  "actualStorageRoot": "G:/5-YG/space-ground-visible/verification/runtime/A01/final-candidate/server-fixture/files",
+  "fixtureSource": null,
+  "fixtureSha256": null
+}

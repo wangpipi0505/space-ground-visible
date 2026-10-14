@@ -1,0 +1,263 @@
+### Page
+- Page URL: http://127.0.0.1:15140/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+```yaml
+- main [ref=e3]:
+  - heading "空间目标可见窗口规划" [level=1] [ref=e5]
+  - generic [ref=e6]:
+    - tablist [ref=e10]:
+      - tab "规划工作台" [selected] [ref=e12]
+      - tab "任务结果记录" [ref=e13]
+      - tab "弹道载荷配置" [ref=e14]
+      - tab "102包轨迹拟合" [ref=e15]
+      - tab "模拟弹道" [ref=e16]
+      - tab "弹道重定时" [ref=e17]
+    - tabpanel "规划工作台" [ref=e19]:
+      - generic [ref=e20]:
+        - region "卫星与地面站选择" [ref=e21]:
+          - generic [ref=e22]:
+            - generic [ref=e23]: "1"
+            - generic [ref=e24]:
+              - heading "选择卫星与地面站" [level=2] [ref=e25]
+              - paragraph [ref=e26]: 勾选任务卫星并维护对空载荷，再勾选地面站并确认仰角约束。
+          - generic [ref=e27]:
+            - generic [ref=e29]:
+              - heading "任务卫星" [level=2] [ref=e30]
+              - generic [ref=e451]: 0 颗
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - textbox "输入卫星名称、OBJECT_ID、NORAD_CAT_ID 或 SCID" [ref=e35]
+                - button "筛选卫星" [ref=e453] [cursor=pointer]
+              - generic [ref=e38]:
+                - table [ref=e40]:
+                  - rowgroup [ref=e54]:
+                    - row [ref=e55]:
+                      - columnheader "任务选择" [ref=e56]
+                      - columnheader "ID" [ref=e58]
+                      - columnheader "卫星名称" [ref=e60]
+                      - columnheader "OBJECT_ID" [ref=e62]
+                      - columnheader "NORAD_CAT_ID" [ref=e64]
+                      - columnheader "SCID" [ref=e66]
+                      - columnheader "COUNTRY" [ref=e68]
+                      - columnheader "WEIGHT(kg)" [ref=e70]
+                      - columnheader "RCS_SIZE" [ref=e72]
+                      - columnheader "LAUNCH" [ref=e74]
+                      - columnheader "COMMENT" [ref=e76]
+                      - columnheader "轨道模型" [ref=e78]
+                - table [ref=e455]:
+                  - rowgroup [ref=e469]:
+                    - row "1 基准观测星 KEPLER_6" [ref=e470]:
+                      - cell [ref=e471]:
+                        - generic [ref=e474] [cursor=pointer]:
+                          - checkbox
+                      - cell "1" [ref=e476]
+                      - cell "基准观测星" [ref=e478]
+                      - cell [ref=e480]
+                      - cell [ref=e481]
+                      - cell [ref=e482]
+                      - cell [ref=e483]
+                      - cell [ref=e484]
+                      - cell [ref=e485]
+                      - cell [ref=e486]
+                      - cell [ref=e487]
+                      - cell "KEPLER_6" [ref=e488]
+                    - row "3 基准共同观测星 KEPLER_6" [ref=e490]:
+                      - cell [ref=e491]:
+                        - generic [ref=e494] [cursor=pointer]:
+                          - checkbox
+                      - cell "3" [ref=e496]
+                      - cell "基准共同观测星" [ref=e498]
+                      - cell [ref=e500]
+                      - cell [ref=e501]
+                      - cell [ref=e502]
+                      - cell [ref=e503]
+                      - cell [ref=e504]
+                      - cell [ref=e505]
+                      - cell [ref=e506]
+                      - cell [ref=e507]
+                      - cell "KEPLER_6" [ref=e508]
+              - generic [ref=e510]:
+                - generic [ref=e511]: Total 2
+                - button "Go to previous page" [disabled] [ref=e512]
+                - list [ref=e513]:
+                  - listitem "page 1" [ref=e514]: "1"
+                - button "Go to next page" [disabled] [ref=e515]
+              - strong [ref=e87]: 已选任务卫星：0 颗
+          - generic [ref=e88]:
+            - generic [ref=e90]:
+              - heading "卫星载荷" [level=2] [ref=e91]
+              - generic [ref=e516]: 长期配置
+            - paragraph [ref=e112]: 选择任务卫星后配置载荷
+          - generic [ref=e113]:
+            - generic [ref=e115]:
+              - heading "地面站" [level=2] [ref=e116]
+              - generic [ref=e518]: 0 个站点
+            - group "checkbox-group" [ref=e520]:
+              - generic [ref=e521]:
+                - checkbox "演示站（非生产资料）（DEMO-STATION）" [ref=e522]
+                - generic [ref=e523] [cursor=pointer]: 演示站（非生产资料）（DEMO-STATION）
+              - generic [ref=e524]:
+                - checkbox "基准星下站（T04-STATION）" [ref=e525]
+                - generic [ref=e526] [cursor=pointer]: 基准星下站（T04-STATION）
+        - region "下传窗口规划" [ref=e118]:
+          - generic [ref=e119]:
+            - generic [ref=e120]: "2"
+            - generic [ref=e121]:
+              - heading "站星链路与下传窗口" [level=2] [ref=e122]
+              - paragraph [ref=e123]: 互选卫星—地面站链路并计算下传弧段，再选择或校验一个观测计算窗口。
+          - generic [ref=e124]:
+            - generic [ref=e126]:
+              - heading "站星互选" [level=2] [ref=e127]
+              - generic [ref=e527]: 0 条链路
+            - paragraph [ref=e148]: 先在左侧选择卫星和地面站
+          - generic [ref=e149]:
+            - generic [ref=e151]:
+              - heading "下传弧段规划" [level=2] [ref=e152]
+              - button "计算下传窗口" [ref=e153] [cursor=pointer]
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - generic [ref=e158]: 规划时间段
+                - generic [ref=e160]:
+                  - combobox "规划时间段" [ref=e166]: 2026-10-14 07:00:00
+                  - generic [ref=e167]: 至
+                  - combobox "结束" [ref=e168]: 2026-10-14 13:00:00
+              - generic [ref=e169]:
+                - generic [ref=e170]: 粗选步长（秒）
+                - generic [ref=e172]:
+                  - button "decrease number" [ref=e173] [cursor=pointer]
+                  - button "increase number" [ref=e177] [cursor=pointer]
+                  - spinbutton "粗选步长（秒）" [ref=e183]: "60"
+              - generic [ref=e184]:
+                - generic [ref=e185]: 精选步长（秒）
+                - generic [ref=e187]:
+                  - button "decrease number" [ref=e188] [cursor=pointer]
+                  - button "increase number" [ref=e192] [cursor=pointer]
+                  - spinbutton "精选步长（秒）" [ref=e198]: "1"
+              - generic [ref=e199]:
+                - generic [ref=e200]: 卫星光照
+                - generic [ref=e203] [cursor=pointer]:
+                  - generic:
+                    - combobox "卫星光照" [ref=e205]
+                    - generic [ref=e206]: 不限
+              - generic [ref=e211]:
+                - generic [ref=e212]: 前保护（秒）
+                - generic [ref=e214]:
+                  - button "decrease number" [ref=e215] [cursor=pointer]
+                  - button "increase number" [ref=e219] [cursor=pointer]
+                  - spinbutton "前保护（秒）" [ref=e225]: "300"
+              - generic [ref=e226]:
+                - generic [ref=e227]: 后保护（秒）
+                - generic [ref=e229]:
+                  - button "decrease number" [ref=e230]
+                  - button "increase number" [ref=e234] [cursor=pointer]
+                  - spinbutton "后保护（秒）" [ref=e240]: "0"
+              - generic [ref=e241]:
+                - generic [ref=e242]: 允许断链（秒）
+                - generic [ref=e244]:
+                  - button "decrease number" [ref=e245]
+                  - button "increase number" [ref=e249] [cursor=pointer]
+                  - spinbutton "允许断链（秒）" [ref=e255]: "0"
+          - generic [ref=e256]:
+            - heading "下传窗口" [level=2] [ref=e259]
+            - generic [ref=e260]:
+              - generic [ref=e262]:
+                - table [ref=e264]:
+                  - rowgroup [ref=e271]:
+                    - row [ref=e272]:
+                      - columnheader "连续覆盖链路" [ref=e273]
+                      - columnheader "链路数" [ref=e275]
+                      - columnheader "起止时间" [ref=e277]
+                      - columnheader "时长" [ref=e279]
+                      - columnheader "使用" [ref=e281]
+                - generic [ref=e286]:
+                  - table:
+                    - rowgroup
+                  - generic [ref=e287]: 尚未规划下传窗口
+              - generic [ref=e289]:
+                - generic [ref=e290]:
+                  - combobox "开始" [ref=e296]: 2026-10-14 07:00:00
+                  - generic [ref=e297]: 至
+                  - combobox "结束" [ref=e298]: 2026-10-14 13:00:00
+                - button "校验自选" [ref=e299] [cursor=pointer]
+        - region "目标全量观测规划" [ref=e301]:
+          - generic [ref=e302]:
+            - generic [ref=e303]: "3"
+            - generic [ref=e304]:
+              - heading "目标筛选与观测规划" [level=2] [ref=e305]
+              - paragraph [ref=e306]: 设置目标筛选条件与观测约束，在已选下传窗口内提交后台任务并查看实时进度。
+          - generic [ref=e307]:
+            - heading "目标筛选" [level=2] [ref=e310]
+            - generic [ref=e311]:
+              - generic [ref=e312]:
+                - generic [ref=e313]:
+                  - generic [ref=e314]: 国籍（数据字典）
+                  - generic [ref=e317]:
+                    - generic:
+                      - combobox "国籍（数据字典）" [ref=e319]
+                      - generic [ref=e320]: 从目标库实际 BELONG_ 值中选择
+                    - generic [ref=e322] [cursor=pointer]
+                - generic [ref=e325]:
+                  - generic [ref=e326]: 历元约束（YYDDD）
+                  - generic [ref=e327]:
+                    - textbox "历元约束（YYDDD）" [ref=e330]:
+                      - /placeholder: 例如：23340
+                      - text: "23340"
+                    - generic [ref=e331]: 严格保留历元晚于该值的目录目标；23340 表示 2023 年第 340 天。
+                - generic [ref=e332]:
+                  - generic [ref=e333]: 建议近似传播时长（天）
+                  - generic [ref=e334]:
+                    - generic [ref=e335]:
+                      - button "decrease number" [ref=e336] [cursor=pointer]
+                      - button "increase number" [ref=e340] [cursor=pointer]
+                      - spinbutton "建议近似传播时长（天）" [ref=e346]: "14"
+                    - generic [ref=e347]: 超出建议时长的目标仍会尝试计算，并在任务结果中标注星历时效风险。
+                - generic [ref=e348]:
+                  - generic [ref=e349]: 最小质量（kg）
+                  - generic [ref=e351]:
+                    - button "decrease number" [ref=e352] [cursor=pointer]
+                    - button "increase number" [ref=e356] [cursor=pointer]
+                    - spinbutton "最小质量（kg）" [ref=e362]
+                - group "排除名称" [ref=e363]:
+                  - generic [ref=e365]:
+                    - generic [ref=e367] [cursor=pointer]:
+                      - generic:
+                        - combobox [ref=e369]
+                        - generic [ref=e370]: 文本包含
+                    - textbox "输入需排除的名称片段" [ref=e377]
+              - generic [ref=e379]:
+                - button "按当前条件加载目标" [ref=e380] [cursor=pointer]
+                - generic [ref=e382]: 国籍选项和数量由目标库 BELONG_ 实时返回；最小质量表示仅计算质量大于该值的目标。
+              - generic [ref=e384]:
+                - table [ref=e386]:
+                  - rowgroup [ref=e398]:
+                    - row [ref=e399]:
+                      - columnheader "ID" [ref=e400]
+                      - columnheader "目标名称" [ref=e402]
+                      - columnheader "OBJECT_ID" [ref=e404]
+                      - columnheader "NORAD_CAT_ID" [ref=e406]
+                      - columnheader "国籍" [ref=e408]
+                      - columnheader "WEIGHT(kg)" [ref=e410]
+                      - columnheader "RCS_SIZE" [ref=e412]
+                      - columnheader "LAUNCH" [ref=e414]
+                      - columnheader "COMMENT" [ref=e416]
+                      - columnheader "轨道模型" [ref=e418]
+                - generic [ref=e423]:
+                  - table:
+                    - rowgroup
+                  - generic [ref=e424]: 按筛选条件加载目标目录
+          - generic [ref=e426]:
+            - generic [ref=e428]:
+              - heading "目标观测组合" [level=2] [ref=e429]
+              - generic [ref=e529]: 同一目标
+            - alert [ref=e431]:
+              - generic [ref=e435]: 先在左侧选择本次任务卫星
+          - generic [ref=e437]:
+            - generic [ref=e439]:
+              - heading "目标观测规划" [level=2] [ref=e440]
+              - generic [ref=e441]:
+                - generic [ref=e531]: 后台任务（显示进度）
+                - button "开始规划" [ref=e442] [cursor=pointer]
+            - alert [ref=e445]:
+              - generic [ref=e449]: 请先选择或校验一个下传窗口
+```

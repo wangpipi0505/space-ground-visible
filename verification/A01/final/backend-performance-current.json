@@ -1,0 +1,139 @@
+{
+  "scope": "18个原R2有效场景+1个独立下传补测；跨阶段覆盖统计，非一次连续负载/资源测量",
+  "sources": [
+    {
+      "scene": "catalog-satellites",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "payload-preview",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "file-preview",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "file-download-1507045",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "file-upload-1507045",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "window-TWO_BODY-points0",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "window-TWO_BODY-points1",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "window-J2_SECULAR-points0",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "window-J2_SECULAR-points1",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "window-J2_NUMERICAL-points0",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "window-J2_NUMERICAL-points1",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "window-multi-2t-2s-4p",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "window-large-31-offsets",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "fit",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "simulate",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "retime",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "space-single",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "space-common-two-satellites",
+      "path": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc"
+    },
+    {
+      "scene": "space-downlink",
+      "path": "verification/A01/review-fix/downlink-v4/backend-performance.json",
+      "sha256": "1f847835f7d7daa33872b79fcf91fbaec2657cfd4691be06327e3bad6d00f6d7"
+    }
+  ],
+  "performanceMeasured": 2158,
+  "warmup": 38,
+  "prepareRequestsOriginalR2": 5,
+  "prepareRequestsDownlink": 2,
+  "excludedHistorical": {
+    "scene": "space-downlink",
+    "measured": 58,
+    "warmup": 2,
+    "reason": "148B空窗口，已发现并定向替代，不计当前有效测量"
+  },
+  "stages": [
+    {
+      "source": "verification/A01/final/backend-performance.json",
+      "sha256": "fcc34370762bc903a2768a98c44a93caf992fe51974b30f5d09e96434cc733dc",
+      "pid": 21984,
+      "startedAtEpoch": 1791935633.7236755,
+      "finishedAtEpoch": 1791935697.3781784,
+      "observedCpuSec": 266.859375,
+      "measuredExecuted": 2158,
+      "warmupExecuted": 38,
+      "prepareExecuted": 5,
+      "resourceSource": "verification/A01/final/performance-resource-summary.json",
+      "resourceSha256": "b6596e34d47b3244477627b77a15725603037dac65987eab1bf375ce04f35d9d"
+    },
+    {
+      "source": "verification/A01/review-fix/downlink-v4/backend-performance.json",
+      "sha256": "1f847835f7d7daa33872b79fcf91fbaec2657cfd4691be06327e3bad6d00f6d7",
+      "pid": 62732,
+      "startedAtEpoch": 1791937677.4209006,
+      "finishedAtEpoch": 1791937678.4391086,
+      "cpuDeltaSec": 3.828125,
+      "measuredExecuted": 58,
+      "warmupExecuted": 2,
+      "prepareExecuted": 2,
+      "resourceSource": "verification/A01/review-fix/downlink-v4/performance-resource-summary.json",
+      "resourceSha256": "2d6c8bc85d0d9e130f44b95597f81fb7a028b5d4d116bf86380354bee23cde67"
+    }
+  ],
+  "currentCoverageRequestCount": 2203
+}
