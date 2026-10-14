@@ -2846,8 +2846,8 @@
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 12828,
-    "sha256": "2a3e2a02065e710b59c1aac07b5e84f5c5971dc5a883f734bc54f93a593fe9f2"
+    "bytes": 13289,
+    "sha256": "54006036d03b468b5adc40904b5b9b939e46597a4b094e4538c177fe4e03cf36"
   },
   {
     "path": "scripts/freeze_baselines.py",
@@ -4898,6 +4898,11 @@
     "path": "verification/A04/远端同步核验.json",
     "bytes": 6199,
     "sha256": "6b887fd36b6332c8a9dc0224b370c2d40ff5163069894f4b9dcb1c9e94dc6e2e"
+  },
+  {
+    "path": "verification/A04/验收口径确认记录.md",
+    "bytes": 1155,
+    "sha256": "bcdb09e0b92420aabbbcd4bcf6db7002828d975cc1c85ee453958b898e97d640"
   },
   {
     "path": "verification/T04/BallisticBaseline.java",
