@@ -14,6 +14,12 @@ import App from './App.vue'
 import { getApi, postApi } from './api/client'
 
 describe('App', () => {
+  it('A06 弹道仅两个一级入口且拟合下三子页保留空间入口', async () => {
+    const wrapper = mount(App, { global: { plugins: [ElementPlus] } })
+    expect(wrapper.findAll('.workspace-tabs > .el-tabs__header [role=tab]').map(tab => tab.text())).toEqual(['规划工作台','任务结果记录','可视窗口计算','目标弹道拟合'])
+    await wrapper.get('#tab-ballistic-fit').trigger('click'); await flushPromises()
+    expect(wrapper.findAll('.ballistic-fit-tabs [role=tab]').map(tab => tab.text())).toEqual(['102包轨迹拟合','模拟弹道','弹道重定时'])
+  })
   it('does not render health status controls in the page header', () => {
     const wrapper = mount(App, {
       global: { plugins: [ElementPlus] },
@@ -272,9 +278,9 @@ describe('App', () => {
     const candidate = (id: string) => ({ targetId: id, targetName: id, reference: { fileId: id, serverPath: `server/${id}.csv` } })
     await wrapper.get('#tab-ballistic-fit').trigger('click'); await flushPromises()
     wrapper.findComponent({ name: 'BallisticFitView' }).vm.$emit('references', [candidate('拟合')])
-    await wrapper.get('#tab-ballistic-simulation').trigger('click'); await flushPromises()
+    await wrapper.get('#tab-simulation').trigger('click'); await flushPromises()
     wrapper.findComponent({ name: 'BallisticSimulationView' }).vm.$emit('references', [candidate('模拟')])
-    await wrapper.get('#tab-ballistic-retime').trigger('click'); await flushPromises()
+    await wrapper.get('#tab-ballistic-fit').trigger('click'); await wrapper.get('#tab-retime').trigger('click'); await flushPromises()
     const retime = wrapper.findComponent({ name: 'BallisticRetimeView' })
     retime.vm.$emit('references', [candidate('重定时'), candidate('模拟')]); await flushPromises()
     expect(retime.props('generatedResults').map((item: { targetId: string }) => item.targetId)).toEqual(['模拟', '拟合', '重定时'])

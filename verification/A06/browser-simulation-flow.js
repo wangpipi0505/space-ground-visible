@@ -1,0 +1,32 @@
+async page => {
+  const assert=(ok,text)=>{if(!ok)throw new Error(text)}
+  await page.getByRole('tab',{name:'模拟弹道',exact:true}).click()
+  const view=page.locator('.ballistic-simulation-view')
+  assert(await view.locator('[data-simulation-field=taskName]').inputValue()==='defaultSimTask','模拟默认任务不符')
+  assert(await view.locator('[data-simulation-field=taskStartTime]').inputValue()==='2026-06-04 04:00:00.000','模拟默认任务区间不符')
+  await view.screenshot({path:'G:/5-YG/space-ground-visible/verification/A06/simulation-defaults.png'})
+  await view.getByText('高级设置：完整JSON与兼容字段',{exact:true}).click()
+  const draft=JSON.parse(await view.locator('[data-test=simulation-input]').inputValue());draft.compatibilityNote={id:'90071992547409931',enabled:true}
+  await view.locator('[data-test=simulation-input]').fill(JSON.stringify(draft,null,2))
+  await view.locator('[data-simulation-field=impactPointUnit]').fill('meter')
+  const pending=page.waitForResponse(r=>r.url().endsWith('/api/trajectory/simulate')&&r.request().method()==='POST',{timeout:120000})
+  await view.locator('[data-test=simulation-compute]').click()
+  const response=await pending,body=await response.json(),request=response.request().postDataJSON()
+  assert(response.status()===200,`模拟失败${JSON.stringify(body)}`)
+  assert(request.impactPointUnit==='meter'&&request.compatibilityNote.id==='90071992547409931','模拟末格/未知兼容字段丢失')
+  assert(body.files[0].pointCount===2576,'默认模拟点数不符')
+  await view.locator('[data-test=fit-trajectory]').waitFor()
+  const pendingDownload=page.waitForEvent('download');await view.locator('[data-test=fit-download]').click();await(await pendingDownload).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A06/simulation.csv')
+  const resultDownload=page.waitForEvent('download');await view.getByRole('button',{name:'下载原模拟响应 JSON',exact:true}).click();await(await resultDownload).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A06/simulation-response.json')
+  await view.locator('[data-test=simulation-success]').screenshot({path:'G:/5-YG/space-ground-visible/verification/A06/simulation-success.png'})
+  await page.getByRole('tab',{name:'弹道重定时',exact:true}).click()
+  const retime=page.locator('.ballistic-retime-view')
+  await retime.locator('[data-test=retime-source-mode]').selectOption('generated')
+  const options=await retime.locator('[data-test=retime-result-select] option').evaluateAll(items=>items.map(item=>({value:item.value,text:item.textContent})))
+  const selected=options.find(item=>item.text.includes('模拟/defaultSimTask/SIM-001'))
+  assert(selected,'模拟真实登记引用未跨子页复用')
+  await retime.locator('[data-test=retime-result-select]').selectOption(selected.value)
+  await retime.locator('[data-test=retime-source-reference]').waitFor()
+  page.__a06.simulationRun={status:response.status(),request,body,referenceId:selected.value};page.__a06.checks.push('模拟真实2576点/未失焦单位别名/高级字段/真实201登记/原字节下载/引用跨子页供重定时')
+  return {status:response.status(),pointCount:body.files[0].pointCount,referenceId:selected.value,errors:page.__a06.errors}
+}

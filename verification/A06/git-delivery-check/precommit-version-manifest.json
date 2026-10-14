@@ -1,0 +1,29 @@
+{
+  "startedUtc": "2026-10-14T11:15:01.110082+00:00",
+  "finishedUtc": "2026-10-14T11:15:01.808778+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/runtime/audit_version_manifest.py",
+    "715decc7660de0569a93814c6374b86dfeacb6dc",
+    "verification/A06/交付清单.json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A06/git-delivery-check/precommit-version-manifest.stdout.bin",
+    "bytes": 158,
+    "sha256": "0079ca39e7f8b30057f6bc87e158485f811dac9c31f66f35205fb20b1889fa5b"
+  },
+  "stderr": {
+    "path": "verification/A06/git-delivery-check/precommit-version-manifest.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A06/root-gates/precommit-version-manifest.json",
+    "sha256": "813e0ecb9b21e1f1f879a2cc3087e564770289e06c14d59313eeec4870841352"
+  }
+}

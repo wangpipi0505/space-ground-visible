@@ -1,0 +1,418 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 非法种子UTC保持当前星座，合法UTC落表到秒及空值落原J2000可纠正
+Error: Unable to get [role=alert] within: <section class="ballistic-payload-view" aria-label="弹道载荷配置">
+  <div class="el-card is-never-shadow planning-card">
+    <div class="el-card__header">
+      <h2>可视窗口计算</h2>
+    </div>
+    <div class="el-card__body" style="">
+      <p>默认双星及四种星座来自原 Swing 非生产示例。六根数使用米/度、历元为字面 UTC，可直接编辑；空间目录身份首次选择仍为空根数。本页每星多个 SPACE/GROUND 标准载荷与窗口请求共用同一草稿。</p>
+      <fieldset class="ballistic-native-form">
+        <legend>卫星六根数表</legend><label>示例星座<select data-test="constellation-example">
+            <option value="0">默认双星星座 SAT-A/SAT-B</option>
+            <option value="1">太阳同步四星星座</option>
+            <option value="2">MEO导航六星星座</option>
+            <option value="3">Molniya高椭圆三星星座</option>
+          </select></label><button type="button" data-test="load-constellation">加载示例星座（替换当前选择）</button>
+        <div class="ballistic-table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>半长轴（米）</th>
+                <th>偏心率</th>
+                <th>倾角（度）</th>
+                <th>升交点赤经（度）</th>
+                <th>近地点幅角（度）</th>
+                <th>平近点角（度）</th>
+                <th>历元时刻（UTC）</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-satellite-id="MANUAL-3">
+                <td><input aria-label="MANUAL-3 卫星名称"></td>
+                <td><input aria-label="低轨星座-轨道面1-卫星1 半长轴（米）" data-orbit-field="semiMajorAxisM" type="number" step="any" value="7530612"></td>
+                <td><input aria-label="低轨星座-轨道面1-卫星1 偏心率" data-orbit-field="eccentricity" type="number" step="any" value="0.00085"></td>
+                <td><input aria-label="低轨星座-轨道面1-卫星1 倾角（度）" data-orbit-field="inclinationDeg" type="number" step="any" value="64.8"></td>
+                <td><input aria-label="低轨星座-轨道面1-卫星1 升交点赤经（度）" data-orbit-field="raanDeg" type="number" step="any" value="120"></td>
+                <td><input aria-label="低轨星座-轨道面1-卫星1 近地点幅角（度）" data-orbit-field="argumentOfPerigeeDeg" type="number" step="any" value="270"></td>
+                <td><input aria-label="低轨星座-轨道面1-卫星1 平近点角（度）" data-orbit-field="meanAnomalyDeg" type="number" step="any" value="30"></td>
+                <td><input aria-label="低轨星座-轨道面1-卫星1 历元UTC" data-orbit-field="epochUtc"></td>
+                <td><button type="button">删除卫星</button><button type="button" data-test="use-reference-orbit">采用非生产原基准根数</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <details>
+          <summary>按种子卫星生成星座（替换当前选择）</summary>
+          <div class="ballistic-field-grid"><label>星座名<input></label><label>轨道平面数<input data-generator-field="planeCount" type="number"></label><label>每平面卫星数<input data-generator-field="satellitesPerPlane" type="number"></label><label>种子半长轴（米）<input data-generator-field="semiMajorAxisM" type="number" step="any"></label><label>种子偏心率<input data-generator-field="eccentricity" type="number" step="any"></label><label>种子倾角（度）<input data-generator-field="inclinationDeg" type="number" step="any"></label><label>种子升交点赤经（度）<input data-generator-field="raanDeg" type="number" step="any"></label><label>种子近地点幅角（度）<input data-generator-field="argumentOfPerigeeDeg" type="number" step="any"></label><label>种子平近点角（度）<input data-generator-field="meanAnomalyDeg" type="number" step="any"></label><label>历元 UTC<input></label></div><button type="button" data-test="generate-constellation">生成星座</button>
+          <!--v-if-->
+        </details>
+      </fieldset>
+      <form class="el-form el-form--default el-form--label-top">
+        <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-2365-0" for="el-id-2365-35" class="el-form-item__label">配置卫星</label>
+          <div class="el-form-item__content">
+            <div class="el-select">
+              <div class="el-select__wrapper is-filterable el-tooltip__trigger el-tooltip__trigger" tabindex="-1">
+                <!--v-if-->
+                <div class="el-select__selection is-near">
+                  <div class="el-select__selected-item"><span class="el-tag is-closable el-tag--info el-tag--default el-tag--light" style="max-width: -17px;"><span class="el-tag__content"><span class="el-select__tags-text">低轨星座-轨道面1-卫星1</span></span><button aria-label="Close this tag" class="el-tag__close" type="button"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                          <path fill="currentColor" d="M764.288 214.592 512 466.88 259.712 214.592a31.936 31.936 0 0 0-45.12 45.12L466.752 512 214.528 764.224a31.936 31.936 0 1 0 45.12 45.184L512 557.184l252.288 252.288a31.936 31.936 0 0 0 45.12-45.12L557.12 512.064l252.288-252.352a31.936 31.936 0 1 0-45.12-45.184z"></path>
+                        </svg></i></button></span></div>
+                  <!--v-if-->
+                  <div class="el-select__selected-item el-select__input-wrapper is-hidden"><input type="text" class="el-select__input" autocomplete="off" style="min-width: 11px;" tabindex="0" role="combobox" spellcheck="false" aria-activedescendant="" aria-controls="el-id-2365-1" aria-expanded="false" aria-autocomplete="none" aria-haspopup="listbox" value="" id="el-id-2365-35"><span aria-hidden="true" class="el-select__input-calculator"></span></div>
+                  <!--v-if-->
+                </div>
+                <div class="el-select__suffix"><i class="el-icon el-select__caret el-select__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                      <path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path>
+                    </svg></i>
+                  <!--v-if-->
+                  <!--v-if-->
+                </div>
+              </div>
+              <!--teleport start-->
+              <!--teleport end-->
+            </div>
+            <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+              <!--v-if-->
+            </transition-group-stub>
+          </div>
+        </div>
+      </form><button ariadisabled="false" autofocus="false" type="button" class="el-button" data-test="add-manual-satellite">
+        <!--v-if--><span class="">新增手工卫星</span>
+      </button>
+      <!--v-if-->
+    </div>
+    <!--v-if-->
+  </div>
+  <section class="ballistic-window-controls" aria-label="弹道文件与窗口计算">
+    <fieldset class="ballistic-native-form">
+      <legend>1. 弹道目标与源文件</legend>
+      <p>本地文件通过 HTTP 上传；服务器引用与本机路径分离。网络支持 HTTP/HTTPS 直链、minio://host[:port]/bucket/object[?secure=true]（MinIO 按地址中的既有凭据或匿名访问；私有对象可使用预签名 HTTPS 链接）。</p><button type="button">新增弹道目标</button><label>默认基准发射 UTC（目标留空时采用；再留空沿文件历元）<input data-test="default-base-utc" placeholder="2026/07/01 08:24:00.000"></label>
+      <article data-target-id="TGT-1" class="ballistic-target">
+        <fieldset>
+          <legend>目标1 · TGT-1</legend>
+          <div class="ballistic-field-grid"><label>目标ID<input type="text"></label><label>目标名称<input type="text"></label><label>目标基准发射 UTC（优先于默认）<input data-test="target-base-utc" placeholder="2026/07/01 07:57:10.000" type="text"></label><label>文件来源<select data-test="window-source">
+                <option value="file">本地上传</option>
+                <option value="remote">网络地址导入</option>
+                <option value="generated">服务已生成结果</option>
+              </select></label></div><label>选择弹道 CSV / Excel（.csv/.xlsx/.xls/.xlsm）<input type="file" accept=".csv,.xlsx,.xls,.xlsm"></label><button type="button" data-test="upload-default-window">上传原默认演示弹道</button>
+          <!--v-if-->
+          <!--v-if-->
+          <!--v-if-->
+          <div class="ballistic-actions">
+            <!--v-if--><button type="button">删除目标</button>
+          </div>
+        </fieldset>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+      </article>
+    </fieldset>
+    <div class="el-card is-never-shadow planning-card" data-payload-satellite-id="MANUAL-3">
+      <div class="el-card__header">
+        <div class="compact-card-header">
+          <h2>2. 低轨星座-轨道面1-卫星1 · MANUAL-3</h2><button ariadisabled="false" autofocus="false" type="button" class="el-button" data-test="add-ballistic-payload-MANUAL-3">
+            <!--v-if--><span class="">新增载荷</span>
+          </button>
+        </div>
+      </div>
+      <div class="el-card__body" style="">
+        <!--v-if-->
+        <article data-payload-id="MANUAL-3-P3" class="ballistic-payload-item">
+          <div class="payload-identity"><strong>载荷标识：MANUAL-3-P3</strong>
+            <form class="el-form el-form--default el-form--label-top">
+              <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-2365-58" for="el-id-2365-74" class="el-form-item__label">载荷名称</label>
+                <div class="el-form-item__content">
+                  <div class="el-input">
+                    <!-- input -->
+                    <!-- prepend slot -->
+                    <!--v-if-->
+                    <div class="el-input__wrapper" tabindex="-1">
+                      <!-- prefix slot -->
+                      <!--v-if--><input class="el-input__inner" type="text" autocomplete="off" tabindex="0" id="el-id-2365-74"><!-- suffix slot -->
+                      <!--v-if-->
+                    </div><!-- append slot -->
+                    <!--v-if-->
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="standard-payload-editor">
+            <form class="el-form el-form--default el-form--label-top payload-form">
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="payloadType"><label id="el-id-2365-59" for="el-id-2365-75" class="el-form-item__label">载荷类型</label>
+                <div class="el-form-item__content">
+                  <div class="el-select">
+                    <div class="el-select__wrapper el-tooltip__trigger el-tooltip__trigger" tabindex="-1">
+                      <!--v-if-->
+                      <div class="el-select__selection">
+                        <!--v-if-->
+                        <div class="el-select__selected-item el-select__input-wrapper is-hidden"><input type="text" class="el-select__input" autocomplete="off" style="min-width: 11px;" tabindex="0" role="combobox" readonly="" spellcheck="false" aria-activedescendant="" aria-controls="el-id-2365-60" aria-expanded="false" aria-autocomplete="none" aria-haspopup="listbox" value="" id="el-id-2365-75">
+                          <!--v-if-->
+                        </div>
+                        <div class="el-select__selected-item el-select__placeholder"><span>对空载荷</span></div>
+                      </div>
+                      <div class="el-select__suffix"><i class="el-icon el-select__caret el-select__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path>
+                          </svg></i>
+                        <!--v-if-->
+                        <!--v-if-->
+                      </div>
+                    </div>
+                    <!--teleport start-->
+                    <!--teleport end-->
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="minDistanceKm"><label id="el-id-2365-64" for="el-id-2365-76" class="el-form-item__label">距离下限（公里）</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="1" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="1000" aria-disabled="false" id="el-id-2365-76"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="maxDistanceKm"><label id="el-id-2365-65" for="el-id-2365-77" class="el-form-item__label">距离上限（公里）</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="1" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="4000" aria-disabled="false" id="el-id-2365-77"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="azimuthMinDeg"><label id="el-id-2365-66" for="el-id-2365-78" class="el-form-item__label">方位角下限（度，双端留空表示不限）</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="1" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="90" aria-disabled="false" id="el-id-2365-78"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="azimuthMaxDeg"><label id="el-id-2365-67" for="el-id-2365-79" class="el-form-item__label">方位角上限（度，双端留空表示不限）</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="1" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="270" aria-disabled="false" id="el-id-2365-79"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="elevationMinDeg"><label id="el-id-2365-68" for="el-id-2365-80" class="el-form-item__label">俯仰角下限（度）</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="1" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="-4" aria-disabled="false" id="el-id-2365-80"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="elevationMaxDeg"><label id="el-id-2365-69" for="el-id-2365-81" class="el-form-item__label">俯仰角上限（度）</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="1" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="60" aria-disabled="false" id="el-id-2365-81"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="angleRateDegPerSec"><label id="el-id-2365-70" for="el-id-2365-82" class="el-form-item__label">跟踪角速度（度/秒，0 或 -1 表示不限制）</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="0.01" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="0.3" aria-disabled="false" id="el-id-2365-82"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="sunAvoidHalfAngleDeg"><label id="el-id-2365-71" for="el-id-2365-83" class="el-form-item__label">太阳回避半角（度）</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="1" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="90" aria-disabled="false" id="el-id-2365-83"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+              <div class="el-form-item asterisk-left el-form-item--label-top" data-field="startupAngleRateDegPerSec"><label id="el-id-2365-72" for="el-id-2365-84" class="el-form-item__label">启动角速度（度/秒，留空或 -1 表示不启用)</label>
+                <div class="el-form-item__content">
+                  <!-- 锁定版控件只在挂载时设置 aria-disabled；状态切换重建控件使辅助技术与原生禁用一致。
+             取消默认 MAX_SAFE_INTEGER 夹断，保留协议允许的有限 double；是否有效由完整校验决定。 -->
+                  <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                    <div class="el-input">
+                      <!-- input -->
+                      <!-- prepend slot -->
+                      <!--v-if-->
+                      <div class="el-input__wrapper" tabindex="-1">
+                        <!-- prefix slot -->
+                        <!--v-if--><input class="el-input__inner" step="0.01" max="Infinity" min="-Infinity" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuenow="0.07" aria-disabled="false" id="el-id-2365-84"><!-- suffix slot -->
+                        <!--v-if-->
+                      </div><!-- append slot -->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                  <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                    <!--v-if-->
+                  </transition-group-stub>
+                </div>
+              </div>
+            </form>
+            <p class="payload-explanation">距离上限 0 不限；姿态双端留空不限。LVLH 方位 0° 沿速度方向，俯仰正向背离地球；这是矩形姿态窗口。SPACE 俯仰下限 -90°，GROUND 下限 -91°。</p>
+            <p class="payload-explanation">对空跟踪角速度 0/-1 不限；对地 0 为真实零上限，不支持 -1。太阳回避半角 0 关闭；启动角速度留空/-1 禁用，其余非负值仅为元数据，当前不参与计算。</p>
+            <!--v-if-->
+          </div>
+          <div class="payload-action"><button ariadisabled="false" autofocus="false" type="button" class="el-button" data-test="remove-ballistic-payload">
+              <!--v-if--><span class="">删除载荷</span>
+            </button><button ariadisabled="false" autofocus="false" type="button" class="el-button el-button--primary" data-test="preview-ballistic-payload">
+              <!--v-if--><span class="">校验并预览</span>
+            </button></div>
+          <!--v-if-->
+          <!--v-if-->
+        </article>
+      </div>
+      <!--v-if-->
+    </div>
+    <fieldset class="ballistic-native-form">
+      <legend>3. 原窗口扫描条件</legend>
+      <p>UTC 输入仅为 UTC 字面时间，浏览器时区不加减8小时。卫星历元留空使用原服务缺省 2026/07/01 10:00:00；目标基准发射时间留空沿各文件参考历元。</p>
+      <div class="ballistic-field-grid"><label>偏移起点（秒，可负）<input data-option="startOffsetSec" type="number" step="1"></label><label>偏移步长（秒，正整数）<input data-option="stepSizeSec" type="number" step="1"></label><label>计算次数（正整数）<input data-option="numCalculations" type="number" step="1"></label><label>目标采样步长（秒，≤0 自动）<input data-option="targetSampleStepSec" type="number" step="any"></label><label>轨道模型<select>
+            <option>TWO_BODY</option>
+            <option>J2_SECULAR</option>
+            <option>J2_NUMERICAL</option>
+          </select></label><label>轨迹点输出<select data-option="trajectoryPointOutput">
+            <option value="1">1 · 输出真实窗口内点</option>
+            <option value="0">0 · 仅窗口摘要</option>
+          </select></label></div>
+      <p>起点、步长、次数及末次偏移必须在浏览器安全整数范围内；不降低原采样或重新计算服务 best。</p><button type="button" data-test="compute-window">执行弹道窗口计算</button>
+    </fieldset>
+    <!--v-if-->
+    <!--v-if-->
+  </section>
+</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/views/BallisticSwingAlignment.spec.ts:98:20
+     96|     await wrapper.get('details .ballistic-field-grid label:last-child …
+     97|     await wrapper.get('[data-test=generate-constellation]').trigger('c…
+     98|     expect(wrapper.get('[role=alert]').text()).toContain('UTC')
+       |                    ^
+     99|     expect(JSON.stringify(wrapper.findComponent(BallisticWindowControl…
+    100|     for (const [utc, expected] of [['2026-07-01 10:00:00.123', '2026/0…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

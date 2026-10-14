@@ -3,6 +3,8 @@
 *.md whitespace=-blank-at-eol
 # 原参考数据与数值基准保留字节，不参与源码行尾和空白修整
 test-data/** -text -whitespace
+# Swing原默认弹道作为浏览器内置样例，保存原CSV字节和来源校验值。
+frontend/public/samples/trajectory-0.1s-standard.csv -text -whitespace
 backend/orekit-data/** -text -whitespace
 verification/**/*.txt -text whitespace=cr-at-eol
 # 本轮前端原始终端输出保留工具自带空白，保证与已核验的运行日志逐字节相同。
@@ -56,6 +58,12 @@ verification/A04/delivery-fix/history/** -text -whitespace
 verification/A05/** -text whitespace=cr-at-eol
 verification/A05/**/*.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 verification/A05/**/*.bin -text -whitespace
+# A06输入/导航回归证据保存实际双流与截图字节，不格式化历史失败现场。
+verification/A06/** -text whitespace=cr-at-eol
+verification/A06/**/*.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+verification/A06/**/*.bin -text -whitespace
+# A06真实测试/CLI原双流含工具自带的尾空白，保留证据字节而不按源码格式化。
+verification/A06/**/*.txt -text -whitespace
 # 整体审查修复的新证据单独绑定，二进制后缀也可能保存真实 CRLF 终端文本。
 verification/补充验收修复/** -text whitespace=cr-at-eol
 verification/补充验收修复/**/*.bin -text -whitespace

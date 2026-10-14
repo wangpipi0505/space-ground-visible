@@ -1,0 +1,45 @@
+### Page
+- Page URL: http://localhost:5173/
+- Page Title: 空间目标可见窗口规划
+- Console: 1 errors, 0 warnings
+### Snapshot
+```yaml
+- main [ref=e3]:
+  - heading "空间目标可见窗口规划" [level=1] [ref=e5]
+  - generic [ref=e6]:
+    - tablist [ref=e10]:
+      - tab "规划工作台" [ref=e12]
+      - tab "任务结果记录" [selected] [ref=e13]
+      - tab "可视窗口计算" [ref=e14]
+      - tab "目标弹道拟合" [ref=e15]
+    - tabpanel "任务结果记录" [ref=e494]:
+      - generic [ref=e495]:
+        - generic [ref=e497]:
+          - heading "任务结果记录" [level=2] [ref=e498]
+          - generic [ref=e499]: 后台规划任务的历史结果
+        - generic [ref=e501]:
+          - generic [ref=e502]:
+            - generic [ref=e504] [cursor=pointer]:
+              - generic:
+                - combobox [ref=e506]
+                - generic [ref=e507]: 全部状态
+            - textbox "按任务标识或备注搜索" [ref=e514]
+            - button "查询" [ref=e516] [cursor=pointer]
+            - button "刷新" [ref=e518] [cursor=pointer]
+          - generic [ref=e521]:
+            - table [ref=e523]:
+              - rowgroup [ref=e533]:
+                - row [ref=e534]:
+                  - columnheader "任务标识" [ref=e535]
+                  - columnheader "状态" [ref=e537]
+                  - columnheader "进度" [ref=e539]
+                  - columnheader "提交时间" [ref=e541]
+                  - columnheader "完成时间" [ref=e543]
+                  - columnheader "错误信息" [ref=e545]
+                  - columnheader "备注" [ref=e547]
+                  - columnheader "操作" [ref=e549]
+            - generic [ref=e554]:
+              - table:
+                - rowgroup
+              - generic [ref=e555]: 没有符合条件的任务结果记录
+```

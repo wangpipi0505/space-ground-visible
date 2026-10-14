@@ -1,0 +1,30 @@
+{
+  "protectedCount": 2268,
+  "protectedMismatches": [],
+  "backupCount": 6,
+  "backupMismatches": [],
+  "commandsChecked": 16,
+  "commandStreamMismatches": [],
+  "browser": "155.0.8059.40",
+  "browserErrors": [],
+  "browserChecks": [
+    "空RAAN/M保留星座/草稿与焦点；错误UTC保留、空UTC落J2000；七平面Java量化真实HTTP；手工末格未失焦完整精度真实HTTP",
+    "默认八行新增第九行28列原字符串；删除后新增按当前行数；唯一JSON/未知字段保持；补足观测后新行真实HTTP字符串与原响应下载"
+  ],
+  "networkCount": 11,
+  "networkStatuses": [
+    201,
+    200,
+    200,
+    200,
+    200,
+    201,
+    201,
+    200,
+    200,
+    200,
+    200
+  ],
+  "networkSha256": "f8ce6ea204c06948f4532586afe1ba351b6b2f7fb07c9a56ebcf2749382f7f18",
+  "fitResponseDownloadExact": true
+}

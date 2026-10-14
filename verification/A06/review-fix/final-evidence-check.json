@@ -1,0 +1,12 @@
+{
+  "startedUtc": "2026-10-14T10:55:28.417888+00:00",
+  "finishedUtc": "2026-10-14T10:55:28.994813+00:00",
+  "argv": [
+    "C:/Python314/python.exe",
+    "verification/A06/review-fix/verify-evidence.py"
+  ],
+  "cwd": "G:/5-YG/space-ground-visible",
+  "exitCode": 0,
+  "stdoutSha256": "e0233373ceb7d3b6e30d9b6f104b4103563b9da957f940e9e5469a2f6bd7c902",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

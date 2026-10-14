@@ -1,18 +1,20 @@
 import type { BallisticFitRequest, FitCsvPoint, Package102Record } from '../api/ballisticFitTypes'
+import { swing102Columns } from './ballisticSwingDefaults'
 
 /** JSON对象边界，后续逐字段校验避免用无根据类型断言跳过真实输入检查。 */
 function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
 
-/** 102叶值原DTO均为字符串；允许null与原嵌套别名，不解码、不选优先字段、不抹未知原文本。 */
+/** 已知102编码叶值沿原DTO字符串/null；未知兼容扩展保持安全JSON，不解码、不改别名优先级。 */
 function isRecord(value: unknown): value is Package102Record {
   if (!isObject(value)) return false
   return Object.entries(value).every(([key, cell]) => {
     if (['coordinateInfo', 'coordinate', 'coords', 'targetInfo', 'target'].includes(key)) {
-      return cell === null || isObject(cell) && Object.values(cell).every((field) => field === null || typeof field === 'string')
+      // 已知编码字段仍严格为string/null；Jackson忽略的未知兼容扩展可为任意安全JSON，不能在表格编辑时丢弃。
+      return cell === null || isObject(cell) && Object.entries(cell).every(([field, content]) => !swing102Columns.includes(field as typeof swing102Columns[number]) && field !== 'track3d_time_code' || content === null || typeof content === 'string')
     }
-    return cell === null || typeof cell === 'string'
+    return !swing102Columns.includes(key as typeof swing102Columns[number]) && key !== 'track3d_time_code' || cell === null || typeof cell === 'string'
   })
 }
 

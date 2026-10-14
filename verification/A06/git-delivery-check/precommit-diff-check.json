@@ -1,0 +1,26 @@
+{
+  "startedUtc": "2026-10-14T11:14:13.962575+00:00",
+  "finishedUtc": "2026-10-14T11:14:14.088758+00:00",
+  "argv": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A06/git-delivery-check/precommit-diff-check.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "verification/A06/git-delivery-check/precommit-diff-check.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A06/root-gates/precommit-diff-check.json",
+    "sha256": "40255e7fb57c4600ee56b8196d018cc8d5739b78fbc159e9ee63256eb72d53a5"
+  }
+}

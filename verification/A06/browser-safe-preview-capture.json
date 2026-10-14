@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-14T10:21:46.767514+00:00",
+  "finishedUtc": "2026-10-14T10:21:48.028304+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A06preview",
+    "run-code",
+    "async page => {await page.getByRole(\"tab\",{name:\"可视窗口计算\",exact:true}).click();await page.locator(\".ballistic-payload-view\").screenshot({path:\"G:/5-YG/space-ground-visible/verification/A06/window-defaults.png\"});await page.getByRole(\"tab\",{name:\"目标弹道拟合\",exact:true}).click();await page.locator(\".ballistic-fit-view\").screenshot({path:\"G:/5-YG/space-ground-visible/verification/A06/fit-defaults.png\"});await page.screenshot({path:\"G:/5-YG/space-ground-visible/verification/A06/navigation-current.png\",fullPage:true});return {tabNames:await page.locator(\".workspace-tabs > .el-tabs__header [role=tab]\").allTextContents(),fitRows:await page.locator(\"[data-fit-row]\").count()}}"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+  "exitCode": 0,
+  "stdoutSha256": "880b43d181ebb9c84d5b6508b9abe4fb050bb1d550192a125ab201fa297cdaa3",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,9 @@
+{
+  "StartedAt": "2026-10-14T18:10:11.5562621+08:00",
+  "PreviousFrontendPid": 27312,
+  "FrontendPid": 27148,
+  "BackendPid": 23548,
+  "Url": "http://127.0.0.1:5173/",
+  "RuntimeRoot": "G:/5-YG/space-ground-visible/verification/runtime/local-app/20261014-171837",
+  "CauseFixed": "CLI下载和测试运行目录已移出frontend，未修改产品Vite配置"
+}

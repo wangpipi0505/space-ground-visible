@@ -32,7 +32,7 @@ describe('弹道双星多载荷配置生产视图', () => {
     await flushPromises()
     const request = JSON.parse(String(fetchMock.mock.calls[0]![1].body)) as BallisticPayloadDefinition
     expect(Object.keys(request)).toHaveLength(12)
-    expect(request).toMatchObject({ payloadId: payloads[0], payloadName: '载荷1', angleRateDegPerSec: -1, startupAngleRateDegPerSec: -1, azimuthMinDeg: null })
+    expect(request).toMatchObject({ payloadId: payloads[0], payloadName: '载荷3', angleRateDegPerSec: -1, startupAngleRateDegPerSec: -1, azimuthMinDeg: null })
     expect(wrapper.find('[data-test="ballistic-preview"]').text()).toContain(request.payloadId)
     await wrapper.findAll('[data-test="remove-ballistic-payload"]')[0]!.trigger('click')
     editors = wrapper.findAllComponents(StandardPayloadEditor)

@@ -1,0 +1,38 @@
+[
+  {
+    "source": "frontend/src/views/BallisticPayloadConfigurationView.vue",
+    "backup": "verification/A06/review-fix/history/frontend/src/views/BallisticPayloadConfigurationView.vue",
+    "sizeBytes": 15529,
+    "sha256": "62ca78bfefeded1bef008fd24002f0961bb17579a4fa29a1c0c3f5e39c687482"
+  },
+  {
+    "source": "frontend/src/utils/ballisticSwingDefaults.ts",
+    "backup": "verification/A06/review-fix/history/frontend/src/utils/ballisticSwingDefaults.ts",
+    "sizeBytes": 4103,
+    "sha256": "acf0f72b1d25ffce49f1cbdb92a5c0831272af118e3dc46c33a6980bb197368a"
+  },
+  {
+    "source": "frontend/src/views/BallisticFitView.vue",
+    "backup": "verification/A06/review-fix/history/frontend/src/views/BallisticFitView.vue",
+    "sizeBytes": 12485,
+    "sha256": "440120a9e9fd3458affcc79ac533e430190e13b872784c3b18ef24f4ffead51f"
+  },
+  {
+    "source": "frontend/src/views/BallisticSwingAlignment.spec.ts",
+    "backup": "verification/A06/review-fix/history/frontend/src/views/BallisticSwingAlignment.spec.ts",
+    "sizeBytes": 8977,
+    "sha256": "ab774ecb19893f46937b0f01f005d1918f4e6e0163fdfcf23900a5248f358377"
+  },
+  {
+    "source": "docs/软件功能使用说明.md",
+    "backup": "verification/A06/review-fix/history/docs/软件功能使用说明.md",
+    "sizeBytes": 36534,
+    "sha256": "4989347917ea5f1b43568520d96c827b60a3d444b139365a7c90959b9b8bd040"
+  },
+  {
+    "source": "docs/Swing与Web参数对照.md",
+    "backup": "verification/A06/review-fix/history/docs/Swing与Web参数对照.md",
+    "sizeBytes": 8059,
+    "sha256": "739c028436a1a691e67fb04424c38b535a6e9cac320104880de15e06d6c94103"
+  }
+]

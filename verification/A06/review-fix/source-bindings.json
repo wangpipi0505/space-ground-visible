@@ -1,0 +1,67 @@
+[
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\frontend\\src\\views\\BallisticPayloadConfigurationView.vue",
+    "sizeBytes": 17355,
+    "sha256": "09786255994a55aa7a7f1636c458ec9771b26646f74edc3b790993e31d870ffc"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\frontend\\src\\utils\\ballisticSwingDefaults.ts",
+    "sizeBytes": 5174,
+    "sha256": "f9d1f10f5c77e65c388dd38d3de27d88d23f2ea78c6f81abe0b914618f0b6a9b"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\frontend\\src\\views\\BallisticFitView.vue",
+    "sizeBytes": 12520,
+    "sha256": "23658244fe1110eb405709e404eff18f3ffae55a6f3bb4a268d046f1db3bedd9"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\frontend\\src\\views\\BallisticSwingAlignment.spec.ts",
+    "sizeBytes": 16503,
+    "sha256": "968e79916468d7a8bcbd5313edcd03543edd412dec6656eaaa23d0da36366043"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\docs\\软件功能使用说明.md",
+    "sizeBytes": 36732,
+    "sha256": "d62a85f19a5fb98f092df0ee7e1610a0dcfedf8ef2c75f2cb877a26ee3cf0710"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\docs\\Swing与Web参数对照.md",
+    "sizeBytes": 9647,
+    "sha256": "c7756740f3722e3af19036ddaf5780ce99aba2a8eea0d56426e34c82cf640cf7"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\verification\\A06\\独立输入与导航审查报告.md",
+    "sizeBytes": 17467,
+    "sha256": "ebd8841dfb658242be72605f816f1214bd949364ece1331e584548166eb0efa7"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\verification\\A06\\protected-before.json",
+    "sizeBytes": 509475,
+    "sha256": "e1a34beb9ddfcee0acb5005374fb37bb2b2c4b3c90c8c0b78cf8025917c0374f"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\verification\\A06\\implementer-candidate.json",
+    "sizeBytes": 35521,
+    "sha256": "1a4bf88a5f86ba0130c95d541f44522b1283e71c20bf7b6511171f6c5ab30851"
+  },
+  {
+    "path": "G:\\5-YG\\space-ground-visible\\verification\\A06\\source-bindings.json",
+    "sizeBytes": 2886,
+    "sha256": "54fc3396d2535d624d4e4aa82904b9f33123fb4f0586602b114b4e4a11f704a0"
+  },
+  {
+    "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\source\\src\\main\\java\\com\\tx\\alg\\Main.java",
+    "sizeBytes": 130884,
+    "sha256": "65e3fbd3a487e97540d928754fb1209821249826db1b25e6830a4023002934d9"
+  },
+  {
+    "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\source\\src\\main\\java\\com\\tx\\alg\\OrbitCalculator.java",
+    "sizeBytes": 202831,
+    "sha256": "e49bde8a817ff7b0af70144862a2f8d6226060b7e5c0fcb99c909afd59b1e942"
+  },
+  {
+    "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\source\\src\\main\\java\\com\\tx\\alg\\trajectory\\TargetTrajectoryFitPanel.java",
+    "sizeBytes": 55020,
+    "sha256": "be57b2e2cb4813b823e97e49b72a9a4f250798c1ad61999e8725654ef1a3d7dd"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "startedUtc": "2026-10-14T10:48:15.023847+00:00",
+  "finishedUtc": "2026-10-14T10:48:17.332620+00:00",
+  "argv": [
+    "C:/Program Files/nodejs/npm.cmd",
+    "test",
+    "--",
+    "--run",
+    "src/views/BallisticSwingAlignment.spec.ts",
+    "-t",
+    "非法种子UTC"
+  ],
+  "cwd": "G:/5-YG/space-ground-visible/frontend",
+  "exitCode": 1,
+  "stdoutSha256": "139b08ed386cf5b69482bc45d021eec4f310e5542892bed65122d87e3bf20d8e",
+  "stderrSha256": "e8d85629f464d2f77150fa36b7d3ed6a8f1865faefe01d58ba58558dbb90d7c9"
+}

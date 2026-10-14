@@ -1,0 +1,13 @@
+
+> frontend@0.0.0 test
+> vitest run --run src/views/BallisticSwingAlignment.spec.ts src/views/BallisticPayloadConfigurationView.spec.ts src/views/BallisticFitView.spec.ts src/components/BallisticWindowControls.spec.ts src/App.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+
+ Test Files  5 passed (5)
+      Tests  36 passed (36)
+   Start at  18:49:12
+   Duration  45.69s (transform 959ms, setup 0ms, import 3.91s, tests 53.70s, environment 1.07s)
+

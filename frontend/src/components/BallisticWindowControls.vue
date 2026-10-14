@@ -18,6 +18,7 @@ const props = defineProps<{ satellites: BallisticSatelliteDraft[]; generatedResu
 const emit = defineEmits<{ busy: [value: boolean] }>()
 /** 文件引用只在成功HTTP后写入；远程草稿只有显式导入才生效，两者不共享假路径。 */
 interface TargetDraft {
+  identity: number
   targetId: string
   targetName: string
   baseLaunchUTC: string
@@ -37,13 +38,15 @@ const loading = ref(false)
 const errors = ref<string[]>([])
 const result = shallowRef<BallisticWindowHttpResult>()
 const submitted = shallowRef<BallisticWindowRequest>()
-const options = reactive({ startOffsetSec: -500, stepSizeSec: 10, numCalculations: 101, targetSampleStepSec: 1, trajectoryPointOutput: 1 as 0 | 1, orbitModel: 'J2_NUMERICAL' as BallisticWindowRequest['orbitModel'] })
+/** 恢复Swing扫描361；后端HTTP原缺省101不变。默认UTC仅在目标自身未填写时应用。 */
+const defaultBaseLaunchUTC = ref('')
+const options = reactive({ startOffsetSec: -500, stepSizeSec: 10, numCalculations: 361, targetSampleStepSec: 1, trajectoryPointOutput: 1 as 0 | 1, orbitModel: 'J2_NUMERICAL' as BallisticWindowRequest['orbitModel'] })
 const changedSinceSubmission = computed(() => submitted.value && JSON.stringify(currentRequest()) !== JSON.stringify(submitted.value))
 
 /** 单调递增身份：删除/上传失败不复用旧目标，避免并发响应绑定其他目标。 */
 function addTarget(): void {
   targetSequence += 1
-  targets.push({ targetId: `TARGET-${targetSequence}`, targetName: `目标${targetSequence}`, baseLaunchUTC: '', mode: 'file', remoteDraft: '', remoteReference: '', error: '', busy: false, downloadBusy: false })
+  targets.push({ identity: targetSequence, targetId: `TGT-${targetSequence}`, targetName: `目标${targetSequence}`, baseLaunchUTC: '', mode: 'file', remoteDraft: '', remoteReference: '', error: '', busy: false, downloadBusy: false })
 }
 addTarget()
 
@@ -65,6 +68,7 @@ async function selectGenerated(target: TargetDraft, event: Event): Promise<void>
   if (!selected) { target.error = '生成结果选择已失效，请重新登记或选择'; return }
   target.generatedId = id
   target.file = selected.reference
+  target.targetId = selected.targetId
   target.targetName = selected.targetName
   target.baseLaunchUTC = ''
   await loadPreview(target, 1)
@@ -99,6 +103,18 @@ async function chooseFile(target: TargetDraft, event: Event): Promise<void> {
     target.busy = false
     input.value = ''
   }
+}
+
+/** 默认演示CSV亦经真实上传取得服务引用；不把源码路径/本机路径交给窗口接口。 */
+async function uploadDefault(target: TargetDraft): Promise<void> {
+  clearSource(target); target.busy = true
+  try {
+    const response = await fetch('/samples/trajectory-0.1s-standard.csv')
+    if (!response.ok) throw new Error('默认演示弹道读取失败')
+    target.file = await uploadBallisticFile(new File([await response.arrayBuffer()], 'trajectory-0.1s-standard.csv', { type: 'text/csv' }))
+    await loadPreview(target, 1)
+  } catch (error) { target.error = error instanceof Error ? error.message : '默认弹道上传失败' }
+  finally { target.busy = false }
 }
 
 /** 保持服务原表头与文本，不猜未知单位；分页请求不修改当前计算文件引用。 */
@@ -138,7 +154,8 @@ async function downloadOriginal(target: TargetDraft): Promise<void> {
 function currentRequest(): BallisticWindowRequest {
   return { ...options, satellites: props.satellites, ballistics: targets.map((target) => {
     const generated = target.mode === 'generated' ? props.generatedResults?.find(item => item.reference.fileId === target.generatedId) : undefined
-    return { targetId: generated?.targetId || target.targetId, targetName: target.targetName, csvPath: target.mode === 'remote' ? target.remoteReference : target.mode === 'generated' ? generated?.reference.serverPath || '' : target.file?.serverPath || '', ...(target.baseLaunchUTC.trim() ? { baseLaunchUTC: target.baseLaunchUTC.trim() } : {}) }
+    const utc = target.baseLaunchUTC.trim() || defaultBaseLaunchUTC.value.trim()
+    return { targetId: target.targetId, targetName: target.targetName, csvPath: target.mode === 'remote' ? target.remoteReference : target.mode === 'generated' ? generated?.reference.serverPath || '' : target.file?.serverPath || '', ...(utc ? { baseLaunchUTC: utc } : {}) }
   }) }
 }
 
@@ -174,15 +191,18 @@ function downloadJson(): void {
       <legend>1. 弹道目标与源文件</legend>
       <p>本地文件通过 HTTP 上传；服务器引用与本机路径分离。网络支持 HTTP/HTTPS 直链、minio://host[:port]/bucket/object[?secure=true]（MinIO 按地址中的既有凭据或匿名访问；私有对象可使用预签名 HTTPS 链接）。</p>
       <button type="button" @click="addTarget">新增弹道目标</button>
-      <article v-for="target in targets" :key="target.targetId" :data-target-id="target.targetId" class="ballistic-target">
+      <label>默认基准发射 UTC（目标留空时采用；再留空沿文件历元）<input v-model="defaultBaseLaunchUTC" data-test="default-base-utc" placeholder="2026/07/01 08:24:00.000" /></label>
+      <article v-for="target in targets" :key="target.identity" :data-target-id="target.targetId" class="ballistic-target">
         <fieldset :disabled="target.busy">
           <legend>{{ target.targetName }} · {{ target.targetId }}</legend>
           <div class="ballistic-field-grid">
+            <label>目标ID<input v-model="target.targetId" type="text" /></label>
             <label>目标名称<input v-model="target.targetName" type="text" /></label>
-            <label>基准发射 UTC（留空沿文件历元）<input v-model="target.baseLaunchUTC" placeholder="2026/07/01 07:57:10.000" type="text" /></label>
+            <label>目标基准发射 UTC（优先于默认）<input v-model="target.baseLaunchUTC" data-test="target-base-utc" placeholder="2026/07/01 07:57:10.000" type="text" /></label>
             <label>文件来源<select v-model="target.mode" data-test="window-source" @change="clearSource(target)"><option value="file">本地上传</option><option value="remote">网络地址导入</option><option value="generated">服务已生成结果</option></select></label>
           </div>
           <label v-if="target.mode === 'file'">选择弹道 CSV / Excel（.csv/.xlsx/.xls/.xlsm）<input type="file" accept=".csv,.xlsx,.xls,.xlsm" @change="chooseFile(target, $event)" /></label>
+          <button v-if="target.mode === 'file'" type="button" data-test="upload-default-window" @click="uploadDefault(target)">上传原默认演示弹道</button>
           <div v-else-if="target.mode === 'remote'" class="ballistic-field-grid"><label>网络地址<input v-model="target.remoteDraft" type="text" placeholder="https://host/path/trajectory.csv" @input="clearSource(target)" /></label><button type="button" @click="importRemote(target)">导入网络地址</button></div>
           <label v-else>选择真实登记结果<select :value="target.generatedId || ''" data-test="generated-result-select" @change="selectGenerated(target, $event)"><option value="">请选择已成功登记的模拟/拟合/重定时结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · {{ item.targetId }} · {{ item.reference.originalName }}</option></select></label>
           <p v-if="target.mode === 'generated'">仅真实登记201引用可选；选择后目标UTC沿CSV历元，卫星历元需自行明确填写同日时间。</p>

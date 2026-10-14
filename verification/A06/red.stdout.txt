@@ -1,0 +1,21 @@
+
+> frontend@0.0.0 test
+> vitest run src/views/BallisticSwingAlignment.spec.ts src/App.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticSwingAlignment.spec.ts (5 tests | 5 failed) 135ms
+     × 双星初始可编辑，末格input直接进入361扫描请求且目标UTC优先于默认 77ms
+     × 四示例星座及种子生成遵循原平面相位，替换不复用身份 39ms
+     × 102默认表可直接提交；导入别名/未知字段后编辑末格仍保留编码和同一草稿 3ms
+     × 模拟恢复Swing默认且最后input未失焦直接提交，兼容字段保留 12ms
+     × 重定时默认沿Swing而非HTTP缺省 4ms
+ ❯ src/App.spec.ts (11 tests | 1 failed) 41732ms
+     × A06 弹道仅两个一级入口且拟合下三子页保留空间入口 746ms
+
+ Test Files  2 failed (2)
+      Tests  6 failed | 10 passed (16)
+   Start at  17:51:15
+   Duration  43.55s (transform 809ms, setup 0ms, import 2.77s, tests 41.87s, environment 433ms)
+

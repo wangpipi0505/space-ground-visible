@@ -1,0 +1,125 @@
+{
+  "verifiedUtc": "2026-10-14T10:20:07.612858+00:00",
+  "browser": "155.0.8059.40",
+  "timezone": "Asia/Shanghai",
+  "jsErrors": [],
+  "checks": [
+    "真实默认输入/361/四星座/种子相位/星目标载荷增删/原1507045字节CSV上传/二级导航/编码草稿/引用保留/窄屏滚动",
+    "真实HTTP双星361扫描/未失焦M42/个别UTC优先/三扫描非空窗口/原文件与原响应下载",
+    "102真实双目标拟合/嵌套别名未知字段与大整数原文/末格dm/自动201登记/原CSV与响应下载；17位生效时间码原服务拒绝，另存真实400",
+    "模拟真实2576点/未失焦单位别名/高级字段/真实201登记/原字节下载/引用跨子页供重定时",
+    "重定时真实2576点/201登记/原字节下载/四生成引用合并/跨一级菜单复用/双星SPACE+GROUND四载荷真实HTTP/UTC沿新CSV/草稿来源保留",
+    "空间原工作台三列/真实目录选择与目标查询/任务记录真实查询/空间弹道草稿引用独立"
+  ],
+  "networkCount": 22,
+  "allFinalResponsesSuccessful": true,
+  "protectedFileCount": 2268,
+  "protectedChanged": [],
+  "byteComparisons": [
+    {
+      "name": "默认演示下载保留原输入字节",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\default-window-original.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\frontend\\public\\samples\\trajectory-0.1s-standard.csv",
+      "leftSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "rightSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "equal": true
+    },
+    {
+      "name": "默认拟合第一目标数值黄金",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\fit-1.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\test-data\\baseline\\ballistic\\fit\\trajectory-0.csv",
+      "leftSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "rightSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "equal": true
+    },
+    {
+      "name": "默认拟合第二目标数值黄金",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\fit-2.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\test-data\\baseline\\ballistic\\fit\\trajectory-1.csv",
+      "leftSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "rightSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "equal": true
+    },
+    {
+      "name": "默认模拟数值黄金",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\simulation.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\test-data\\baseline\\ballistic\\simulate\\trajectory-0.csv",
+      "leftSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "rightSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "equal": true
+    },
+    {
+      "name": "跨菜单重定时源原字节",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\retime.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\retime-window-reused.csv",
+      "leftSha256": "da98ae575c536655263b88ad2d7cf794d4e29c6d4299263e6ee6384b4ac75a8b",
+      "rightSha256": "da98ae575c536655263b88ad2d7cf794d4e29c6d4299263e6ee6384b4ac75a8b",
+      "equal": true
+    },
+    {
+      "name": "服务生成文件与浏览器原字节下载 fit-1.csv",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\fit-1.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\files\\results\\fit-4048806842856879517\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261014_181847_353.csv",
+      "leftSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "rightSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "equal": true
+    },
+    {
+      "name": "服务生成文件与浏览器原字节下载 fit-2.csv",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\fit-2.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\files\\results\\fit-4048806842856879517\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261014_181847_353.csv",
+      "leftSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "rightSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "equal": true
+    },
+    {
+      "name": "服务生成文件与浏览器原字节下载 simulation.csv",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\simulation.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\files\\results\\fit-5940681479559337699\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261014_181902_392.csv",
+      "leftSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "rightSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "equal": true
+    },
+    {
+      "name": "服务生成文件与浏览器原字节下载 retime.csv",
+      "left": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\retime.csv",
+      "right": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\files\\results\\fit-7856818605703761857\\retimeTrajectory_2026-07-01_09_00_00.000_RET-001_20261014_181904_752.csv",
+      "leftSha256": "da98ae575c536655263b88ad2d7cf794d4e29c6d4299263e6ee6384b4ac75a8b",
+      "rightSha256": "da98ae575c536655263b88ad2d7cf794d4e29c6d4299263e6ee6384b4ac75a8b",
+      "equal": true
+    },
+    {
+      "name": "原HTTP响应下载 window-default361-response.json",
+      "sha256": "222338cdeb850395fc58987e77a506c692dc357f30ccb4f151a83104e0f0769f",
+      "sizeBytes": 387202,
+      "equal": true
+    },
+    {
+      "name": "原HTTP响应下载 window-edited-response.json",
+      "sha256": "335a0b9875e9cffeac65e3812ba406f4eae2d336b2529399d12393140b980869",
+      "sizeBytes": 615544,
+      "equal": true
+    },
+    {
+      "name": "原HTTP响应下载 fit-response.json",
+      "sha256": "72f1fd0e646a1f23086d6cae1520cfc62bded85e861155fc6e7281df9b2faf3f",
+      "sizeBytes": 3195,
+      "equal": true
+    },
+    {
+      "name": "原HTTP响应下载 simulation-response.json",
+      "sha256": "085ffcb985b096ae39799bc0f7fc422fc2a92aa9178c77064bf57c76034a6e1d",
+      "sizeBytes": 641,
+      "equal": true
+    },
+    {
+      "name": "原HTTP响应下载 retime-response.json",
+      "sha256": "f8af47892fa28dab67f070bb99c63b5bc52623bbb0d1f3dbf3d135b8cd92a025",
+      "sizeBytes": 504,
+      "equal": true
+    }
+  ],
+  "retimeEcefRowsPreserved": 2576,
+  "runtimeNetworkSha256": "0b9e6615cfe0efde5f657633d41d6c3ba94df75a7d3d34863f124a02f484e1ae",
+  "runtimeNetworkBytes": 13006643
+}

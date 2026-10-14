@@ -1,0 +1,24 @@
+### Result
+{"browser":"155.0.8059.40","timezone":"Asia/Shanghai","checks":["空RAAN/M保留星座/草稿与焦点；错误UTC保留、空UTC落J2000；七平面Java量化真实HTTP；手工末格未失焦完整精度真实HTTP","默认八行新增第九行28列原字符串；删除后新增按当前行数；唯一JSON/未知字段保持；补足观测后新行真实HTTP字符串与原响应下载"],"networkCount":11,"statuses":[{"url":"http://127.0.0.1:5173/api/v1/ballistic/files","status":201},{"url":"http://127.0.0.1:5173/api/v1/ballistic/files/b2dae14b-57be-4a63-b3ed-cabe9e70a5c0/preview?page=1&limit=50","status":200},{"url":"http://127.0.0.1:5173/api/orbit/visibility/search","status":200},{"url":"http://127.0.0.1:5173/api/orbit/visibility/search","status":200},{"url":"http://127.0.0.1:5173/api/trajectory/fit/package102","status":200},{"url":"http://127.0.0.1:5173/api/v1/ballistic/files/register-result","status":201},{"url":"http://127.0.0.1:5173/api/v1/ballistic/files/register-result","status":201},{"url":"http://127.0.0.1:5173/api/v1/ballistic/files/21501fbe-cc5b-47c0-9995-6249329f542b/download","status":200},{"url":"http://127.0.0.1:5173/api/v1/ballistic/files/21501fbe-cc5b-47c0-9995-6249329f542b/preview?page=1&limit=50","status":200},{"url":"http://127.0.0.1:5173/api/v1/ballistic/files/72d1868b-7191-4e3c-9e22-fe6bd145a8ce/download","status":200},{"url":"http://127.0.0.1:5173/api/v1/ballistic/files/72d1868b-7191-4e3c-9e22-fe6bd145a8ce/preview?page=1&limit=50","status":200}],"errors":[],"completedUtc":"2026-10-14T10:54:08.204Z"}
+### Ran Playwright code
+```js
+await (async page => {
+  await page.waitForLoadState('networkidle')
+  page.__a06fix.finishedUtc = new Date().toISOString()
+  page.__a06fix.browser = await page.context().browser().version()
+  page.__a06fix.timezone = await page.evaluate(() => Intl.DateTimeFormat().resolvedOptions().timeZone)
+  const pending = page.waitForEvent('download')
+  await page.evaluate(text => {
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }))
+    link.download = 'A06-review-fix-browser-network.json'
+    document.body.append(link); link.click(); link.remove()
+  }, JSON.stringify(page.__a06fix, null, 2))
+  await (await pending).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A06/review-fix/browser-network.json')
+  return { browser: page.__a06fix.browser, timezone: page.__a06fix.timezone, checks: page.__a06fix.checks, networkCount: page.__a06fix.network.length, statuses: page.__a06fix.network.map(row => ({ url: row.url, status: row.status })), errors: page.__a06fix.errors, completedUtc: page.__a06fix.finishedUtc }
+}
+)(page);
+```
+### Events
+- Downloading file A06-review-fix-browser-network.json ...
+- Downloaded file A06-review-fix-browser-network.json to ".playwright-cli\A06-review-fix-browser-network.json"

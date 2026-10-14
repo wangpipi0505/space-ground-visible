@@ -1,0 +1,307 @@
+[
+  {
+    "metadata": "verification/A06/review-fix/browser-fix-close.json",
+    "startedUtc": "2026-10-14T10:54:08.841455+00:00",
+    "finishedUtc": "2026-10-14T10:54:09.596409+00:00",
+    "argv": [
+      "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+      "-s=A06fix",
+      "close"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/cli-session",
+    "exitCode": 0,
+    "stdoutSha256": "08fc18e6fc96b3f7c1c32122a89c054718aa8b74a7601060206ab448d5842157",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/browser-fix-collect.json",
+    "startedUtc": "2026-10-14T10:54:07.998004+00:00",
+    "finishedUtc": "2026-10-14T10:54:08.795327+00:00",
+    "argv": [
+      "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+      "-s=A06fix",
+      "run-code",
+      "--filename=G:/5-YG/space-ground-visible/verification/A06/review-fix/browser-collect.js"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/cli-session",
+    "exitCode": 0,
+    "stdoutSha256": "a9f891125345d2ee9ef01cce8dee203e03951a5771d378907d76487f2284ba19",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/browser-fix-new102.json",
+    "startedUtc": "2026-10-14T10:53:47.301841+00:00",
+    "finishedUtc": "2026-10-14T10:53:49.547091+00:00",
+    "argv": [
+      "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+      "-s=A06fix",
+      "run-code",
+      "--filename=G:/5-YG/space-ground-visible/verification/A06/review-fix/browser-new102.js"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/cli-session",
+    "exitCode": 0,
+    "stdoutSha256": "6ccdc8ca01f6a25d6c1dd3ea2da38fd44522a48aef0f187ca7e12af688478066",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/browser-fix-open.json",
+    "startedUtc": "2026-10-14T10:51:47.808023+00:00",
+    "finishedUtc": "2026-10-14T10:51:48.933358+00:00",
+    "argv": [
+      "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+      "-s=A06fix",
+      "open",
+      "http://127.0.0.1:5173",
+      "--config=G:/5-YG/space-ground-visible/verification/A06/playwright-config.json"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/cli-session",
+    "exitCode": 0,
+    "stdoutSha256": "d7a1f83bd901475e6a1a592605a2231e8fe937c56211991bc7cf43ab1a27025f",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/browser-fix-window.json",
+    "startedUtc": "2026-10-14T10:52:59.299262+00:00",
+    "finishedUtc": "2026-10-14T10:53:02.663117+00:00",
+    "argv": [
+      "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+      "-s=A06fix",
+      "run-code",
+      "--filename=G:/5-YG/space-ground-visible/verification/A06/review-fix/browser-counterexamples.js"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/cli-session",
+    "exitCode": 0,
+    "stdoutSha256": "fbf313828e81bd7246b846ca7ee8d48288a7bac835f05e3de6369a49e3ae96c8",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/final-diff-check.json",
+    "startedUtc": "2026-10-14T10:55:29.046212+00:00",
+    "finishedUtc": "2026-10-14T10:55:29.074570+00:00",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible",
+    "exitCode": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/final-evidence-check.json",
+    "startedUtc": "2026-10-14T10:55:28.417888+00:00",
+    "finishedUtc": "2026-10-14T10:55:28.994813+00:00",
+    "argv": [
+      "C:/Python314/python.exe",
+      "verification/A06/review-fix/verify-evidence.py"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible",
+    "exitCode": 0,
+    "stdoutSha256": "e0233373ceb7d3b6e30d9b6f104b4103563b9da957f940e9e5469a2f6bd7c902",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/final-evidence-complete.json",
+    "startedUtc": "2026-10-14T10:56:40.994540+00:00",
+    "finishedUtc": "2026-10-14T10:56:41.394574+00:00",
+    "argv": [
+      "C:/Python314/python.exe",
+      "verification/A06/review-fix/verify-evidence.py"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible",
+    "exitCode": 0,
+    "stdoutSha256": "b581d9c64e0b756c197ca4857302c45602cdc5b99efc8d8e902628e6c6d04db8",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/final-full-frontend.json",
+    "startedUtc": "2026-10-14T10:51:05.503447+00:00",
+    "finishedUtc": "2026-10-14T10:51:55.193155+00:00",
+    "argv": [
+      "C:/Program Files/nodejs/npm.cmd",
+      "test"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/frontend",
+    "exitCode": 0,
+    "stdoutSha256": "fade7a48c59c5034d6a5cdbe3148926c68f8c3c7c52e024f00e46f3f2f5fb2b0",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/final-service-check.json",
+    "startedUtc": "2026-10-14T10:55:29.120452+00:00",
+    "finishedUtc": "2026-10-14T10:55:29.980458+00:00",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-Command",
+      "Get-Process -Id 23548,27148,20116 | Select-Object Id,ProcessName,StartTime"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible",
+    "exitCode": 0,
+    "stdoutSha256": "25619a8544c50c566d30edbdc74118b0162ca1d30403be9fbb0b8d8f5a3eddb6",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/final-type-vite-build.json",
+    "startedUtc": "2026-10-14T10:52:54.899765+00:00",
+    "finishedUtc": "2026-10-14T10:52:58.759797+00:00",
+    "argv": [
+      "C:/Program Files/nodejs/npm.cmd",
+      "run",
+      "build"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/frontend",
+    "exitCode": 0,
+    "stdoutSha256": "151132604df0b73427fa744f505c38c3b075a29fbda27d696e7b9ac12ae80653",
+    "stderrSha256": "351b524197fb492920789369e7f1a271420c757633fbb553b280a181ac4c31a4"
+  },
+  {
+    "metadata": "verification/A06/review-fix/green-directed.json",
+    "startedUtc": "2026-10-14T10:49:12.084233+00:00",
+    "finishedUtc": "2026-10-14T10:49:58.416178+00:00",
+    "argv": [
+      "C:/Program Files/nodejs/npm.cmd",
+      "test",
+      "--",
+      "--run",
+      "src/views/BallisticSwingAlignment.spec.ts",
+      "src/views/BallisticPayloadConfigurationView.spec.ts",
+      "src/views/BallisticFitView.spec.ts",
+      "src/components/BallisticWindowControls.spec.ts",
+      "src/App.spec.ts"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/frontend",
+    "exitCode": 0,
+    "stdoutSha256": "59a88d644b84392007813b07d844cdaec87d80a3819988e3a39370e0d15d0f77",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/java-bits-compile.json",
+    "startedUtc": "2026-10-14T10:50:08.323911+00:00",
+    "finishedUtc": "2026-10-14T10:50:08.627729+00:00",
+    "argv": [
+      "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot/bin/javac.exe",
+      "-encoding",
+      "UTF-8",
+      "A06FixBits.java"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/review-fix",
+    "exitCode": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/java-bits.json",
+    "startedUtc": "2026-10-14T10:50:08.672751+00:00",
+    "finishedUtc": "2026-10-14T10:50:08.761522+00:00",
+    "argv": [
+      "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot/bin/java.exe",
+      "-cp",
+      ".",
+      "A06FixBits"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/review-fix",
+    "exitCode": 0,
+    "stdoutSha256": "741c0433f6bf134efc20e166a005bf29a2c215768a522e099c953925ae642439",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/java-compile.json",
+    "startedUtc": "2026-10-14T10:45:55.318067+00:00",
+    "finishedUtc": "2026-10-14T10:45:55.648867+00:00",
+    "argv": [
+      "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot/bin/javac.exe",
+      "-encoding",
+      "UTF-8",
+      "A06FixFormatter.java"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/review-fix",
+    "exitCode": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/java-formatter.json",
+    "startedUtc": "2026-10-14T10:45:55.695593+00:00",
+    "finishedUtc": "2026-10-14T10:45:55.762728+00:00",
+    "argv": [
+      "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot/bin/java.exe",
+      "-cp",
+      ".",
+      "A06FixFormatter"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/review-fix",
+    "exitCode": 0,
+    "stdoutSha256": "6f2f60325252f35aeaa0b85354f9276857d4d7f8c29ccc1d880207b81fc611ae",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/node-bits.json",
+    "startedUtc": "2026-10-14T10:50:08.806239+00:00",
+    "finishedUtc": "2026-10-14T10:50:08.869910+00:00",
+    "argv": [
+      "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "verification/A06/review-fix/compare-formatter-bits.cjs"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible",
+    "exitCode": 0,
+    "stdoutSha256": "a4fee516ae4a518869fe2b945d37d3479673f2ec6a96ba1404274ed3ea0a1346",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "metadata": "verification/A06/review-fix/red-contract-small.json",
+    "startedUtc": "2026-10-14T10:47:46.568466+00:00",
+    "finishedUtc": "2026-10-14T10:47:56.164534+00:00",
+    "argv": [
+      "C:/Program Files/nodejs/npm.cmd",
+      "test",
+      "--",
+      "--run",
+      "src/views/BallisticSwingAlignment.spec.ts"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/frontend",
+    "exitCode": 1,
+    "stdoutSha256": "beaca83cbd974ddf1d2b749f0d98bb7c28d9637a2b448830e697ff67da4b4c3a",
+    "stderrSha256": "be81c8227bbeb9eef9b5e0de19b31514d2d8c98219ff2b64ac2c0a2609144381"
+  },
+  {
+    "metadata": "verification/A06/review-fix/red-contract.json",
+    "startedUtc": "2026-10-14T10:45:07.184811+00:00",
+    "finishedUtc": "2026-10-14T10:47:45.199270+00:00",
+    "argv": [
+      "C:/Program Files/nodejs/npm.cmd",
+      "test",
+      "--",
+      "--run",
+      "src/views/BallisticSwingAlignment.spec.ts"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/frontend",
+    "exitCode": 1,
+    "stdoutSha256": "5b88a9270d3d4fa0f5f658b877aafdd881ee81d5cd38da4581532d93a14231a1",
+    "stderrSha256": "e7da9fe192e2f3fc3209034f57f0772b57b70692d30d54b177e970945e209e91"
+  },
+  {
+    "metadata": "verification/A06/review-fix/red-utc.json",
+    "startedUtc": "2026-10-14T10:48:15.023847+00:00",
+    "finishedUtc": "2026-10-14T10:48:17.332620+00:00",
+    "argv": [
+      "C:/Program Files/nodejs/npm.cmd",
+      "test",
+      "--",
+      "--run",
+      "src/views/BallisticSwingAlignment.spec.ts",
+      "-t",
+      "非法种子UTC"
+    ],
+    "cwd": "G:/5-YG/space-ground-visible/frontend",
+    "exitCode": 1,
+    "stdoutSha256": "139b08ed386cf5b69482bc45d021eec4f310e5542892bed65122d87e3bf20d8e",
+    "stderrSha256": "e8d85629f464d2f77150fa36b7d3ed6a8f1865faefe01d58ba58558dbb90d7c9"
+  }
+]

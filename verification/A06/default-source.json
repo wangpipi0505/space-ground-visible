@@ -1,0 +1,7 @@
+{
+  "source": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\data\\trajectory-0.1s-standard.csv",
+  "destination": "G:\\5-YG\\space-ground-visible\\frontend\\public\\samples\\trajectory-0.1s-standard.csv",
+  "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+  "sizeBytes": 1507045,
+  "note": "Main.java:89的原窗口默认演示输入；通过HTTP上传取得真实引用，不是生产运行输出。"
+}

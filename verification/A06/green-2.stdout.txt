@@ -1,0 +1,15 @@
+
+> frontend@0.0.0 test
+> vitest run src/views/BallisticSwingAlignment.spec.ts src/App.spec.ts src/components/BallisticWindowControls.spec.ts src/views/BallisticPayloadConfigurationView.spec.ts src/views/BallisticFitView.spec.ts src/views/BallisticSimulationView.spec.ts src/views/BallisticRetimeView.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticRetimeView.spec.ts (6 tests | 1 failed) 165ms
+     × 上传201/预览→四字段原UTC→2576行四图→登记事件/快照，改输入过期失败清旧成功 29ms
+
+ Test Files  1 failed | 6 passed (7)
+      Tests  1 failed | 32 passed (33)
+   Start at  17:58:38
+   Duration  43.03s (transform 1.38s, setup 0ms, import 4.68s, tests 44.63s, environment 1.55s)
+

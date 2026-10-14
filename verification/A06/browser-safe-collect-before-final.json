@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-14T10:18:15.130394+00:00",
+  "finishedUtc": "2026-10-14T10:18:16.438287+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A06safe",
+    "run-code",
+    "async page => { const pending=page.waitForEvent(\"download\");await page.evaluate(text=>{const a=document.createElement(\"a\");a.href=URL.createObjectURL(new Blob([text]));a.download=\"A06-network-before-final.json\";a.click()},JSON.stringify(page.__a06,null,2));await(await pending).saveAs(\"G:/5-YG/space-ground-visible/verification/runtime/A06/browser-network-before-final.json\");return {records:page.__a06.network.length,errors:page.__a06.errors} }"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+  "exitCode": 0,
+  "stdoutSha256": "438d10d6950625f96e8fc4db3c9daa9f0d1e539e225e43c7fdf52b4e9827131e",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

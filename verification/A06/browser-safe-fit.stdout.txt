@@ -1,0 +1,2 @@
+### Error
+Error: 拟合失败{"error":"IllegalArgumentException: taskEndTime必须晚于或等于最后一个package102轨迹点时间。taskEnd=2026-07-01 07:57:10.000, 最后一个package102时间=642038058-05-09 07:46:39.316"}

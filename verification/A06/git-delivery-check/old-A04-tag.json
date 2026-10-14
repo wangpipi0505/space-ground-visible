@@ -1,0 +1,29 @@
+{
+  "startedUtc": "2026-10-14T10:43:19.343405+00:00",
+  "finishedUtc": "2026-10-14T10:43:20.974823+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/runtime/audit_version_manifest.py",
+    "acceptance/2026-10-14/A04",
+    "verification/A04/交付清单.json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A06/git-delivery-check/old-A04-tag.stdout.bin",
+    "bytes": 142,
+    "sha256": "6749f28cf6054cd4b660e3bc9d0b4edf0da22c82e74a42901c2c1899c270c22b"
+  },
+  "stderr": {
+    "path": "verification/A06/git-delivery-check/old-A04-tag.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A06/root-gates/old-A04-tag.json",
+    "sha256": "fe15e2e29abadaae1a8e83b24fc18096bc924573efc154a6aa4ad68343b62d4a"
+  }
+}

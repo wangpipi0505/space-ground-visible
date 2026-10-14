@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-14T10:19:01.958146+00:00",
+  "finishedUtc": "2026-10-14T10:19:03.871695+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A06final",
+    "run-code",
+    "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-simulation-flow.js"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+  "exitCode": 0,
+  "stdoutSha256": "582ac2dd177c7fe1ff836e604377dee4ffdf9324aae87024b8189e43e6c702fe",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

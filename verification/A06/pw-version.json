@@ -1,0 +1,16 @@
+{
+  "startedUtc": "2026-10-14T09:57:44.652144+00:00",
+  "finishedUtc": "2026-10-14T09:57:54.304626+00:00",
+  "argv": [
+    "C:/Program Files/nodejs/npx.cmd",
+    "--yes",
+    "--package",
+    "@playwright/cli",
+    "playwright-cli",
+    "--version"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "exitCode": 3221226505,
+  "stdoutSha256": "b0569383609842116bc78ee560cb5a7aee44bdbe59d85efc7b7316cb72389862",
+  "stderrSha256": "cd97713815dc5ce58c5af19555bbdabeee25780398294de78f11eb9979e99b26"
+}

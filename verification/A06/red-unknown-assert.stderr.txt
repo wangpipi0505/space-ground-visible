@@ -1,0 +1,15 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 102修改已知叶值保留未知JSON兼容字段且非法步长能在原表单纠正
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ src/views/BallisticSwingAlignment.spec.ts:88:21
+     86|     await wrapper.get('[data-fit-field=interpolationStepSec]').setValu…
+     87|     await wrapper.get('[data-test=fit-compute]').trigger('click'); awa…
+     88|     expect(fetcher).toHaveBeenCalledTimes(1)
+       |                     ^
+     89|     const sent = JSON.parse(String(fetcher.mock.calls[0]![1].body))
+     90|     expect(sent.package102[0].future).toEqual(input.package102[0]!.fut…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

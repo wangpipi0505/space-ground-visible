@@ -1,0 +1,13 @@
+
+> frontend@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+
+ Test Files  28 passed (28)
+      Tests  119 passed (119)
+   Start at  18:10:21
+   Duration  49.60s (transform 4.03s, setup 0ms, import 27.98s, tests 57.69s, environment 12.34s)
+

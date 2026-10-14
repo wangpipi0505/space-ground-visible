@@ -82,7 +82,7 @@ describe('T25 重定时页面真实引用', () => {
     await wrapper.get('[data-retime-field=launchTimeUtc]').setValue('2026-07-02 07:57:00.000')
     await wrapper.get('[data-test=retime-compute]').trigger('click'); await flushPromises()
     const request = JSON.parse(String(fetchMock.mock.calls.find(([url]) => url.endsWith('/retime'))?.[1]?.body))
-    expect(request).toEqual({ taskName: 'T04-retime', targetId: 'RETIMED-TGT', trajectoryCsvPath: reference.serverPath, launchTimeUtc: '2026-07-02 07:57:00.000' })
+    expect(request).toEqual({ taskName: 'T04-retime', targetId: 'RET-001', trajectoryCsvPath: reference.serverPath, launchTimeUtc: '2026-07-02 07:57:00.000' })
     expect(wrapper.findAll('svg')).toHaveLength(4); expect(wrapper.text()).toContain('完整CSV 2576 行')
     expect(wrapper.emitted('references')?.at(-1)?.[0]).toEqual([{ targetId: 'RETIMED-TGT', targetName: '重定时/T04-retime/RETIMED-TGT', reference: { ...reference, fileId: '输出1', serverPath: 'server/output.csv' } }])
     await wrapper.get('[data-retime-field=launchTimeUtc]').setValue('原非法UTC')

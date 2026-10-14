@@ -1,0 +1,14 @@
+{
+  "startedUtc": "2026-10-14T10:50:08.672751+00:00",
+  "finishedUtc": "2026-10-14T10:50:08.761522+00:00",
+  "argv": [
+    "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot/bin/java.exe",
+    "-cp",
+    ".",
+    "A06FixBits"
+  ],
+  "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/review-fix",
+  "exitCode": 0,
+  "stdoutSha256": "741c0433f6bf134efc20e166a005bf29a2c215768a522e099c953925ae642439",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

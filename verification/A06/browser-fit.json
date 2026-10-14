@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-14T10:04:00.641728+00:00",
+  "finishedUtc": "2026-10-14T10:06:01.110894+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A06",
+    "run-code",
+    "--filename=../verification/A06/browser-fit-flow.js"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "exitCode": 1,
+  "stdoutSha256": "595a6822d7be260b8ef10b3372f69e3e25bb48e7dd85c823ed63bf72cd3f6045",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

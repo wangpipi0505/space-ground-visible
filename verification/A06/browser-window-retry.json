@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-14T10:02:53.405218+00:00",
+  "finishedUtc": "2026-10-14T10:06:35.734163+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A06",
+    "run-code",
+    "--filename=../verification/A06/browser-window-flow.js"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "exitCode": 1,
+  "stdoutSha256": "3023e034c04e1c494b40be6db4af1dd42e3c65b2ba092afe41bc888e0c1ef184",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

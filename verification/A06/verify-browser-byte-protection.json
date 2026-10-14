@@ -1,0 +1,12 @@
+{
+  "startedUtc": "2026-10-14T10:20:07.133570+00:00",
+  "finishedUtc": "2026-10-14T10:20:07.635449+00:00",
+  "argv": [
+    "python",
+    "G:/5-YG/space-ground-visible/verification/runtime/A06/verify.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "exitCode": 0,
+  "stdoutSha256": "d01f40210801eeb69f416bccea0ae7d94d0b622cd64a82ef1a61490e9242cda1",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

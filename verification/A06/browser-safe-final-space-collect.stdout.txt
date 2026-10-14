@@ -1,0 +1,38 @@
+### Result
+{"browser":"155.0.8059.40","timezone":"Asia/Shanghai","checks":["真实默认输入/361/四星座/种子相位/星目标载荷增删/原1507045字节CSV上传/二级导航/编码草稿/引用保留/窄屏滚动","真实HTTP双星361扫描/未失焦M42/个别UTC优先/三扫描非空窗口/原文件与原响应下载","102真实双目标拟合/嵌套别名未知字段与大整数原文/末格dm/自动201登记/原CSV与响应下载；17位生效时间码原服务拒绝，另存真实400","模拟真实2576点/未失焦单位别名/高级字段/真实201登记/原字节下载/引用跨子页供重定时","重定时真实2576点/201登记/原字节下载/四生成引用合并/跨一级菜单复用/双星SPACE+GROUND四载荷真实HTTP/UTC沿新CSV/草稿来源保留","空间原工作台三列/真实目录选择与目标查询/任务记录真实查询/空间弹道草稿引用独立"],"networkCount":22,"jsErrors":[],"expectedHttp400":[],"completedUtc":"2026-10-14T10:19:09.407Z"}
+### Ran Playwright code
+```js
+await (async page => {
+  const assert=(ok,text)=>{if(!ok)throw new Error(text)}
+  await page.getByRole('tab',{name:'规划工作台',exact:true}).click()
+  const workbench=page.locator('.planning-workbench')
+  assert(await workbench.locator('[data-test=satellite-station-selection]').isVisible()&&await workbench.locator('[data-test=satellite-station-links]').isVisible()&&await workbench.locator('[data-test=target-visibility-planning]').isVisible(),'空间三列正文不在原父页')
+  const query=page.waitForResponse(r=>r.url().endsWith('/api/v1/space/targets/query')&&r.request().method()==='POST')
+  await workbench.locator('[data-test=query-targets]').click();assert((await query).status()===200,'空间目标筛选不能用')
+  const satelliteRows=workbench.locator('[data-test=satellite-station-selection] .el-table tbody tr')
+  assert(await satelliteRows.count()>0,'空间目录不可用')
+  await satelliteRows.first().locator('.el-checkbox').click()
+  await workbench.getByRole('heading',{name:'卫星载荷',exact:true}).waitFor()
+  await workbench.screenshot({path:'G:/5-YG/space-ground-visible/verification/A06/space-workbench.png'})
+  await page.getByRole('tab',{name:'任务结果记录',exact:true}).click()
+  const history=page.locator('[data-test=task-result-records]')
+  await history.waitFor()
+  const records=page.waitForResponse(r=>r.url().includes('/task-results')&&r.request().method()==='GET')
+  await history.locator('[data-test=query-task-results]').click();assert((await records).status()===200,'任务记录不能查询')
+  await history.screenshot({path:'G:/5-YG/space-ground-visible/verification/A06/space-records.png'})
+  await page.getByRole('tab',{name:'可视窗口计算',exact:true}).click()
+  assert((await page.locator('.ballistic-payload-view').innerText()).includes(page.__a06.retimeRun.referenceId),'空间切页丢失弹道来源')
+  assert(await page.locator('[data-test=generated-result-select] option').count()===5,'空间选择污染生成列表')
+  await page.waitForLoadState('networkidle')
+  page.__a06.checks.push('空间原工作台三列/真实目录选择与目标查询/任务记录真实查询/空间弹道草稿引用独立')
+  page.__a06.finishedUtc=new Date().toISOString();page.__a06.browser=await page.context().browser().version();page.__a06.timezone=await page.evaluate(()=>Intl.DateTimeFormat().resolvedOptions().timeZone)
+  const evidence=JSON.stringify(page.__a06,null,2),pending=page.waitForEvent('download')
+  await page.evaluate(text=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'application/json'}));a.download='A06-browser-network.json';document.body.append(a);a.click();a.remove()},evidence)
+  await(await pending).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A06/browser-network.json')
+  return {browser:page.__a06.browser,timezone:page.__a06.timezone,checks:page.__a06.checks,networkCount:page.__a06.network.length,jsErrors:page.__a06.errors,expectedHttp400:page.__a06.network.filter(r=>r.status===400).map(r=>({url:r.url(),response:r.response})),completedUtc:page.__a06.finishedUtc}
+}
+)(page);
+```
+### Events
+- Downloading file A06-browser-network.json ...
+- Downloaded file A06-browser-network.json to ".playwright-cli\A06-browser-network.json"

@@ -1,0 +1,71 @@
+### Result
+{"checks":["真实默认输入/361/四星座/种子相位/星目标载荷增删/原1507045字节CSV上传/二级导航/编码草稿/引用保留/窄屏滚动"],"initial":[["SAT-A","7530612","0.00085","64.8","120","270","30","2026/07/01 10:00:00.000"],["SAT-B","7530612","0.00085","64.8","120","270","0","2026/07/01 10:00:00.000"]],"reference":{"fileId":"37438b21-f060-4760-80b8-b0a818621728","originalName":"trajectory-0.1s-standard.csv","sizeBytes":1507045,"contentType":"text/csv","serverPath":"G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\files\\uploads\\upload-4924782298289509435.csv"},"scroll":{"width":294,"scrollWidth":1565},"errors":[]}
+### Ran Playwright code
+```js
+await (async page => {
+  /** 真Chrome输入验收：仅定位真实控件，无route/mock；完整请求/响应另存ignored运行目录。 */
+  const assert = (ok, text) => { if (!ok) throw new Error(text) }
+  page.__a06 = { startedUtc: new Date().toISOString(), network: [], errors: [], checks: [] }
+  page.on('pageerror', e => page.__a06.errors.push(e.message))
+  page.on('response', async r => { if (r.url().includes('/api/') && !r.url().includes('/download')) page.__a06.network.push({ url: r.url(), status: r.status(), request: r.request().postData(), response: await r.text() }) })
+  const tabs = await page.locator('.workspace-tabs > .el-tabs__header [role=tab]').allTextContents()
+  assert(tabs.join('|') === '规划工作台|任务结果记录|可视窗口计算|目标弹道拟合','一级导航不符')
+  await page.getByRole('tab', { name: '可视窗口计算', exact: true }).click()
+  const view = page.locator('.ballistic-payload-view')
+  assert(await view.locator('[data-satellite-id]').count() === 2,'默认双星缺失')
+  assert(await view.locator('[data-option=numCalculations]').inputValue() === '361','Swing361缺失')
+  const initial = await view.locator('[data-satellite-id]').evaluateAll(rows => rows.map(row => [...row.querySelectorAll('input')].map(i => i.value)))
+  assert(initial[0][0] === 'SAT-A' && initial[0][6] === '30' && initial[1][6] === '0','默认双星参数不符')
+  for (const [index,count] of [['1',4],['2',6],['3',3],['0',2]]) {
+    await view.locator('[data-test=constellation-example]').selectOption(index)
+    await view.locator('[data-test=load-constellation]').click()
+    assert(await view.locator('[data-satellite-id]').count() === count,'示例星座数量不符')
+  }
+  await view.getByText('按种子卫星生成星座（替换当前选择）',{exact:true}).click()
+  await view.locator('[data-generator-field=planeCount]').fill('2')
+  await view.locator('[data-generator-field=satellitesPerPlane]').fill('2')
+  await view.locator('[data-test=generate-constellation]').click()
+  assert(await view.locator('[data-satellite-id]').count() === 4,'生成数量不符')
+  assert(await view.locator('[data-satellite-id]').nth(2).locator('[data-orbit-field=meanAnomalyDeg]').inputValue() === '120','原平面相位不符')
+  await view.locator('[data-test=load-constellation]').click()
+  await view.locator('[data-test=add-manual-satellite]').click()
+  assert(await view.locator('[data-satellite-id]').last().locator('[data-orbit-field=meanAnomalyDeg]').inputValue() === '0','新增卫星M未0')
+  await view.locator('[data-satellite-id]').last().getByRole('button',{name:'删除卫星',exact:true}).click()
+  await view.getByRole('button',{name:'新增弹道目标',exact:true}).click()
+  await view.locator('[data-target-id]').last().getByRole('button',{name:'删除目标',exact:true}).click()
+  const firstStar = view.locator('[data-payload-satellite-id]').first()
+  await firstStar.getByRole('button',{name:'新增载荷',exact:true}).click()
+  const extra = firstStar.locator('[data-payload-id]').last()
+  await extra.getByRole('button',{name:'删除载荷',exact:true}).click()
+  assert(await firstStar.locator('[data-payload-id]').count() === 1,'载荷增删串数据')
+  const defaultUpload = page.waitForResponse(r => r.url().endsWith('/api/v1/ballistic/files') && r.request().method() === 'POST')
+  await view.locator('[data-test=upload-default-window]').click()
+  const upload = await defaultUpload, reference = await upload.json()
+  assert(upload.status() === 201 && reference.sizeBytes === 1507045,'原默认弹道未真实上传')
+  await view.getByText('原数据预览',{exact:false}).waitFor()
+  page.__a06.windowReference = reference
+  await view.screenshot({path:'G:/5-YG/space-ground-visible/verification/A06/window-defaults.png'})
+  await page.getByRole('tab',{name:'目标弹道拟合',exact:true}).click()
+  assert((await page.locator('.ballistic-fit-tabs [role=tab]').allTextContents()).join('|') === '102包轨迹拟合|模拟弹道|弹道重定时','拟合二级入口不符')
+  const fit = page.locator('.ballistic-fit-view')
+  assert(await fit.locator('[data-fit-row]').count() === 8,'默认102行不符')
+  await fit.locator('[data-fit-cell="0/tack3d_time_code"]').fill('20260701075700000')
+  await fit.locator('[data-fit-cell="7/impact_pos_unit"]').fill('0.1m')
+  await fit.screenshot({path:'G:/5-YG/space-ground-visible/verification/A06/fit-defaults.png'})
+  await page.getByRole('tab',{name:'模拟弹道',exact:true}).click()
+  await page.getByRole('tab',{name:'弹道重定时',exact:true}).click()
+  assert(await page.locator('[data-retime-field=targetId]').inputValue() === 'RET-001','重定时默认不符')
+  await page.getByRole('tab',{name:'102包轨迹拟合',exact:true}).click()
+  assert(await fit.locator('[data-fit-cell="0/tack3d_time_code"]').inputValue() === '20260701075700000','子页草稿被重置')
+  await page.getByRole('tab',{name:'可视窗口计算',exact:true}).click()
+  assert((await view.innerText()).includes(reference.fileId),'菜单切换丢失真实引用')
+  await page.setViewportSize({width:390,height:844})
+  const scroll = await view.locator('.ballistic-table-scroll').first().evaluate(e => ({width:e.clientWidth,scrollWidth:e.scrollWidth}))
+  assert(scroll.scrollWidth > scroll.width,'窄屏六根数表不能横向滚动')
+  await view.screenshot({path:'G:/5-YG/space-ground-visible/verification/A06/window-narrow.png'})
+  await page.setViewportSize({width:1440,height:1000})
+  page.__a06.checks.push('真实默认输入/361/四星座/种子相位/星目标载荷增删/原1507045字节CSV上传/二级导航/编码草稿/引用保留/窄屏滚动')
+  return {checks:page.__a06.checks,initial,reference,scroll,errors:page.__a06.errors}
+}
+)(page);
+```

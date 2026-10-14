@@ -1,0 +1,26 @@
+17:21:08 [vite] (client) [Unhandled error] Error: ResizeObserver loop completed with undelivered notifications.
+ > ../../../@vite/client:535:50
+
+node:internal/fs/watchers:321
+    const error = new UVException({
+                  ^
+
+Error: EBUSY: resource busy or locked, watch 'G:\5-YG\space-ground-visible\frontend\.playwright-cli\弹道窗口原始响应.json'
+    at FSWatcher.<computed> (node:internal/fs/watchers:321:19)
+    at Object.watch (node:fs:2548:36)
+    at createFsWatchInstance (file:///G:/5-YG/space-ground-visible/frontend/node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:9408:16)
+    at setFsWatchListener (file:///G:/5-YG/space-ground-visible/frontend/node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:9450:14)
+    at NodeFsHandler._watchWithNodeFs (file:///G:/5-YG/space-ground-visible/frontend/node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:9565:20)
+    at NodeFsHandler._handleFile (file:///G:/5-YG/space-ground-visible/frontend/node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:9609:24)
+    at NodeFsHandler._addToNodeFs (file:///G:/5-YG/space-ground-visible/frontend/node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:9783:26)
+Emitted 'error' event on FSWatcher instance at:
+    at FSWatcher._handleError (file:///G:/5-YG/space-ground-visible/frontend/node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:10582:146)
+    at NodeFsHandler._addToNodeFs (file:///G:/5-YG/space-ground-visible/frontend/node_modules/.pnpm/vite@8.2.1_@types+node@24.13.3/node_modules/vite/dist/node/chunks/node.js:9788:18) {
+  errno: -4082,
+  syscall: 'watch',
+  code: 'EBUSY',
+  path: 'G:\\5-YG\\space-ground-visible\\frontend\\.playwright-cli\\弹道窗口原始响应.json',
+  filename: 'G:\\5-YG\\space-ground-visible\\frontend\\.playwright-cli\\弹道窗口原始响应.json'
+}
+
+Node.js v24.16.0

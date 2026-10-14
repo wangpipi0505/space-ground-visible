@@ -1,0 +1,10 @@
+### Browser `A06final` opened with pid 22280.
+### Ran Playwright code
+```js
+await page.goto('http://localhost:5173');
+```
+### Page
+- Page URL: http://localhost:5173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+- [Snapshot](.playwright-cli\page-2026-10-14T10-18-19-412Z.yml)

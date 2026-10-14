@@ -1,0 +1,14 @@
+{
+  "startedUtc": "2026-10-14T10:45:55.318067+00:00",
+  "finishedUtc": "2026-10-14T10:45:55.648867+00:00",
+  "argv": [
+    "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot/bin/javac.exe",
+    "-encoding",
+    "UTF-8",
+    "A06FixFormatter.java"
+  ],
+  "cwd": "G:/5-YG/space-ground-visible/verification/runtime/A06/review-fix",
+  "exitCode": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

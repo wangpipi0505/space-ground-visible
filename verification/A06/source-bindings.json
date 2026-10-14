@@ -1,0 +1,60 @@
+{
+  "capturedUtc": "2026-10-14T10:08:18.167852+00:00",
+  "files": [
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\source\\src\\main\\java\\com\\tx\\alg\\Main.java",
+      "sha256": "65e3fbd3a487e97540d928754fb1209821249826db1b25e6830a4023002934d9",
+      "sizeBytes": 130884
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\source\\src\\main\\java\\com\\tx\\alg\\trajectory\\TargetTrajectoryFitPanel.java",
+      "sha256": "be57b2e2cb4813b823e97e49b72a9a4f250798c1ad61999e8725654ef1a3d7dd",
+      "sizeBytes": 55020
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\source\\src\\main\\java\\com\\tx\\alg\\trajectory\\TargetTrajectoryFitter.java",
+      "sha256": "73e65766a33776c2273ab040b76c1ea16388c7c47595ebd0529a59113737868d",
+      "sizeBytes": 143159
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\source\\src\\main\\java\\com\\tx\\alg\\OrbitCalculator.java",
+      "sha256": "e49bde8a817ff7b0af70144862a2f8d6226060b7e5c0fcb99c909afd59b1e942",
+      "sizeBytes": 202831
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\source\\src\\main\\java\\com\\tx\\alg\\api\\VisibilityRequest.java",
+      "sha256": "18c6d36515edfdb5fa13387baca0dab502261f8e0e5cb72e3c9c9864e64d8ed0",
+      "sizeBytes": 13258
+    },
+    {
+      "path": "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\data\\trajectory-0.1s-standard.csv",
+      "sha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "sizeBytes": 1507045
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\backend\\src\\main\\java\\com\\tx\\alg\\api\\VisibilityRequest.java",
+      "sha256": "619de18b0e4aec091a6c2a2cbaa2c44f7abf02585430601a3020b8336b67d73f",
+      "sizeBytes": 19189
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\backend\\src\\main\\java\\com\\runisys\\orbit\\spacevisibility\\application\\ballistic\\BallisticVisibilityService.java",
+      "sha256": "d649e65b9affdf2119a17e1a2127217441396a505f14e7d5b48a9c43e2a4e406",
+      "sizeBytes": 5579
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\backend\\src\\main\\java\\com\\runisys\\orbit\\spacevisibility\\application\\ballistic\\BallisticFitService.java",
+      "sha256": "372fe97e0018c106c07266b5be75e9bd3bb5aa9f36fe92ba69fbdfa7859fb0a5",
+      "sizeBytes": 2300
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\frontend\\pnpm-lock.yaml",
+      "sha256": "bf63ad64c42dd1ce18737b0b0c917e4fdd8cde2da005a9a55bae23a174bd7fc8",
+      "sizeBytes": 50535
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\test-data\\reference\\ballistic\\target_trajectory_fit_package102_default.json",
+      "sha256": "a31d93f2baf67467aaf73b4f6cf46c55fedcf59f2e11bf3860e6efb328effab7",
+      "sizeBytes": 8535
+    }
+  ]
+}

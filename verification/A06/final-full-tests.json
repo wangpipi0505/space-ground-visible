@@ -1,0 +1,12 @@
+{
+  "startedUtc": "2026-10-14T10:17:02.918721+00:00",
+  "finishedUtc": "2026-10-14T10:17:50.753716+00:00",
+  "argv": [
+    "C:/Program Files/nodejs/npm.cmd",
+    "test"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "exitCode": 0,
+  "stdoutSha256": "3fca6af7977328049cdee0abc6bffe6752d73dd7e18cc322934c2ed60aa59ecc",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

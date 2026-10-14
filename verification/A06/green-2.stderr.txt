@@ -1,0 +1,22 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 上传201/预览→四字段原UTC→2576行四图→登记事件/快照，改输入过期失败清旧成功
+AssertionError: expected { taskName: 'T04-retime', …(3) } to deeply equal { taskName: 'T04-retime', …(3) }
+
+- Expected
++ Received
+
+  {
+    "launchTimeUtc": "2026-07-02 07:57:00.000",
+-   "targetId": "RETIMED-TGT",
++   "targetId": "RET-001",
+    "taskName": "T04-retime",
+    "trajectoryCsvPath": "server/source.csv",
+  }
+
+ ❯ src/views/BallisticRetimeView.spec.ts:85:21
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

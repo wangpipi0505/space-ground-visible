@@ -1,0 +1,12 @@
+{
+  "startedUtc": "2026-10-14T10:50:08.806239+00:00",
+  "finishedUtc": "2026-10-14T10:50:08.869910+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "verification/A06/review-fix/compare-formatter-bits.cjs"
+  ],
+  "cwd": "G:/5-YG/space-ground-visible",
+  "exitCode": 0,
+  "stdoutSha256": "a4fee516ae4a518869fe2b945d37d3479673f2ec6a96ba1404274ed3ea0a1346",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,15 @@
+
+> frontend@0.0.0 test
+> vitest run src/views/BallisticSwingAlignment.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticSwingAlignment.spec.ts (6 tests | 1 failed) 1849ms
+     × 102修改已知叶值保留未知JSON兼容字段且非法步长能在原表单纠正 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  18:09:47
+   Duration  3.33s (transform 358ms, setup 0ms, import 1.19s, tests 1.85s, environment 195ms)
+

@@ -1,0 +1,8 @@
+### Error
+TimeoutError: page.waitForResponse: Timeout 240000ms exceeded while waiting for event "response"
+
+page.waitForResponse: Timeout 240000ms exceeded while waiting for event "response"
+    at calculate (evalmachine.<anonymous>:6:26)
+    at evalmachine.<anonymous>:30:24
+    at async evalmachine.<anonymous>:3:20
+    at async C:\Users\Administrator\AppData\Local\npm-cache\_npx\31e32ef8478fbf80\node_modules\playwright-core\lib\coreBundle.js:69222:13

@@ -8,7 +8,8 @@ import StandardPayloadEditor from '../components/StandardPayloadEditor.vue'
 import BallisticWindowControls from '../components/BallisticWindowControls.vue'
 import type { BallisticSatelliteDraft, SatelliteOrbitDraft } from '../api/ballisticWindowTypes'
 import type { GeneratedBallisticResult } from '../api/ballisticFiles'
-import { emptySatelliteOrbit, applyReferenceOrbit } from '../utils/ballisticWindow'
+import { emptySatelliteOrbit, applyReferenceOrbit, isValidLiteralUtc } from '../utils/ballisticWindow'
+import { swingConstellation, swingTableNumber } from '../utils/ballisticSwingDefaults'
 import { previewBallisticPayload } from '../api/ballisticPayloads'
 import type { BallisticPayloadDefinition } from '../api/ballisticPayloads'
 import type { PayloadType, Satellite } from '../api/types'
@@ -36,6 +37,61 @@ const previews = reactive<Record<string, BallisticPayloadDefinition | undefined>
 const previewErrors = reactive<Record<string, string | undefined>>({})
 const previewingIds = ref<string[]>([])
 let payloadSequence = 0
+const constellationExample = ref(0)
+const generator = reactive({ name: '低轨星座', planeCount: 6, satellitesPerPlane: 6, ...applyReferenceOrbit() })
+const generatorError = ref('')
+const generatorErrorField = ref('')
+
+/** 示例/生成全部属于弹道手工身份；替换只取消当前选择，不修改目录和过去的独立草稿。 */
+function replaceManualSatellites(rows: Array<SatelliteOrbitDraft & { name: string }>): void {
+  const ids: number[] = []
+  for (const row of rows) {
+    manualSatelliteSequence += 1
+    const id = -manualSatelliteSequence
+    configurations[id] = { ...row, satelliteId: `MANUAL-${manualSatelliteSequence}`, payloads: [] }
+    manualSatelliteOptions.push({ id, name: row.name })
+    addPayload(configurations[id])
+    ids.push(id)
+  }
+  selectedSatelliteIds.value = ids
+}
+/**
+ * 替换前完整校验种子，空number输入在Vue中仍为空串，禁止Number('')静默补零。
+ * 相位沿Main:1379—1383，落表沿addRow的0/6/1位和整秒；只生成输入，不传播轨道。
+ * 空历元沿原utcToJ2000Sec返回0的落表常量；非空只校验/整理字面UTC，不做时区换算。
+ */
+function generateConstellation(event: Event): void {
+  generatorError.value = ''
+  generatorErrorField.value = ''
+  const fail = (field: string, message: string): void => {
+    generatorErrorField.value = field
+    generatorError.value = message
+    const button = event.currentTarget
+    if (button instanceof HTMLElement) button.closest('details')?.querySelector<HTMLInputElement>(`[data-generator-field="${field}"]`)?.focus()
+  }
+  const { planeCount, satellitesPerPlane } = generator
+  for (const field of ['planeCount', 'satellitesPerPlane'] as const) {
+    if (!Number.isSafeInteger(generator[field]) || generator[field] <= 0) { fail(field, '轨道平面数和每平面卫星数必须为正安全整数'); return }
+  }
+  for (const { key, label } of orbitFields) {
+    if (typeof generator[key] !== 'number' || !Number.isFinite(generator[key])) { fail(key, `种子${label}须明确填写有限数`); return }
+  }
+  if (!isValidLiteralUtc(generator.epochUtc)) { fail('epochUtc', '种子历元UTC格式或日期无效'); return }
+  const epochUtc = generator.epochUtc.trim() ? generator.epochUtc.trim().replace(/-/g, '/').split('.')[0]! : '2000/01/01 12:00:00'
+  // 原normalizeDeg只对负余数加360，正半值不能先加360而引入额外浮点抵消。
+  const normalize = (value: number) => { const remainder = value % 360; return remainder < 0 ? remainder + 360 : remainder }
+  const rows = Array.from({ length: planeCount }, (_, plane) => Array.from({ length: satellitesPerPlane }, (_, sat) => ({
+    name: `${generator.name.trim() || '星座'}-轨道面${plane + 1}-卫星${sat + 1}`, epochUtc,
+    semiMajorAxisM: swingTableNumber(generator.semiMajorAxisM!, 0),
+    eccentricity: swingTableNumber(generator.eccentricity!, 6),
+    inclinationDeg: swingTableNumber(generator.inclinationDeg!, 1),
+    argumentOfPerigeeDeg: swingTableNumber(generator.argumentOfPerigeeDeg!, 1),
+    raanDeg: swingTableNumber(normalize(generator.raanDeg! + plane * 360 / planeCount), 1),
+    meanAnomalyDeg: swingTableNumber(normalize(generator.meanAnomalyDeg! + sat * 360 / satellitesPerPlane + plane * 360 / (planeCount * satellitesPerPlane)), 1),
+  }))).flat()
+  replaceManualSatellites(rows)
+}
+replaceManualSatellites(swingConstellation(0))
 
 /** 目录切换页/取消选择不删草稿，重新选择回显原载荷；初次选择创建一个唯一身份默认载荷。 */
 function selectSatellites(ids: number[]): void {
@@ -107,7 +163,7 @@ function addManualSatellite(): void {
   manualSatelliteSequence += 1
   const id = -manualSatelliteSequence
   const name = `手工卫星${manualSatelliteSequence}`
-  configurations[id] = { satelliteId: `MANUAL-${manualSatelliteSequence}`, name, payloads: [], ...emptySatelliteOrbit() }
+  configurations[id] = { satelliteId: `MANUAL-${manualSatelliteSequence}`, name, payloads: [], ...applyReferenceOrbit(), meanAnomalyDeg: 0 }
   manualSatelliteOptions.push({ id, name })
   addPayload(configurations[id])
   selectedSatelliteIds.value.push(id)
@@ -123,8 +179,19 @@ function updateOrbitNumber(satellite: BallisticSatelliteDraft, field: Exclude<ke
 <template>
   <section class="ballistic-payload-view" aria-label="弹道载荷配置">
     <el-card shadow="never" class="planning-card">
-      <template #header><h2>弹道窗口、轨迹与载荷配置</h2></template>
-      <p>选择目录身份或新增手工卫星，明确编辑根数与每星多个标准载荷，再使用同一配置计算弹道窗口。目录响应不含真实根数；本页草稿切页保留、刷新不持久化。</p>
+      <template #header><h2>可视窗口计算</h2></template>
+      <p>默认双星及四种星座来自原 Swing 非生产示例。六根数使用米/度、历元为字面 UTC，可直接编辑；空间目录身份首次选择仍为空根数。本页每星多个 SPACE/GROUND 标准载荷与窗口请求共用同一草稿。</p>
+      <fieldset :disabled="computing" class="ballistic-native-form"><legend>卫星六根数表</legend>
+        <label>示例星座<select v-model.number="constellationExample" data-test="constellation-example"><option :value="0">默认双星星座 SAT-A/SAT-B</option><option :value="1">太阳同步四星星座</option><option :value="2">MEO导航六星星座</option><option :value="3">Molniya高椭圆三星星座</option></select></label>
+        <button type="button" data-test="load-constellation" @click="replaceManualSatellites(swingConstellation(constellationExample))">加载示例星座（替换当前选择）</button>
+        <div class="ballistic-table-scroll"><table><thead><tr><th>名称</th><th v-for="field in orbitFields" :key="field.key">{{ field.label }}</th><th>历元时刻（UTC）</th><th>操作</th></tr></thead><tbody>
+          <tr v-for="satellite in selectedSatellites" :key="satellite.satelliteId" :data-satellite-id="satellite.satelliteId"><td><input v-model="satellite.name" :aria-label="`${satellite.satelliteId} 卫星名称`" /></td><td v-for="field in orbitFields" :key="field.key"><input :value="satellite[field.key]" :aria-label="`${satellite.name} ${field.label}`" :data-orbit-field="field.key" type="number" step="any" @input="updateOrbitNumber(satellite, field.key, $event)" /></td><td><input v-model="satellite.epochUtc" :aria-label="`${satellite.name} 历元UTC`" data-orbit-field="epochUtc" /></td><td><button type="button" @click="selectedSatelliteIds = selectedSatelliteIds.filter(id => configurations[id] !== satellite)">删除卫星</button><button type="button" data-test="use-reference-orbit" @click="Object.assign(satellite, applyReferenceOrbit())">采用非生产原基准根数</button></td></tr>
+        </tbody></table></div>
+        <details><summary>按种子卫星生成星座（替换当前选择）</summary><div class="ballistic-field-grid">
+          <label>星座名<input v-model="generator.name" /></label><label>轨道平面数<input v-model.number="generator.planeCount" data-generator-field="planeCount" :aria-invalid="generatorErrorField === 'planeCount'" type="number" /></label><label>每平面卫星数<input v-model.number="generator.satellitesPerPlane" data-generator-field="satellitesPerPlane" :aria-invalid="generatorErrorField === 'satellitesPerPlane'" type="number" /></label>
+          <label v-for="field in orbitFields" :key="field.key">种子{{ field.label }}<input v-model.number="generator[field.key]" :data-generator-field="field.key" :aria-invalid="generatorErrorField === field.key" type="number" step="any" /></label><label>历元 UTC<input v-model="generator.epochUtc" data-generator-field="epochUtc" :aria-invalid="generatorErrorField === 'epochUtc'" /></label>
+        </div><button type="button" data-test="generate-constellation" @click="generateConstellation">生成星座</button><p v-if="generatorError" role="alert" class="ballistic-error">{{ generatorError }}</p></details>
+      </fieldset>
       <el-form label-position="top"><el-form-item label="配置卫星">
         <el-select :model-value="selectedSatelliteIds" :disabled="computing" multiple filterable placeholder="选择配置卫星" @update:model-value="selectSatellites">
           <el-option v-for="satellite in satelliteOptions" :key="satellite.id" :value="satellite.id" :label="satellite.name" />
@@ -134,13 +201,8 @@ function updateOrbitNumber(satellite: BallisticSatelliteDraft, field: Exclude<ke
       <el-empty v-if="selectedSatellites.length === 0" :image-size="42" description="选择卫星后添加和编辑载荷" />
     </el-card>
     <BallisticWindowControls :satellites="selectedSatellites" :generated-results="generatedResults" @busy="computing = $event">
-    <el-card v-for="satellite in selectedSatellites" :key="satellite.satelliteId" :data-satellite-id="satellite.satelliteId" shadow="never" class="planning-card">
+    <el-card v-for="satellite in selectedSatellites" :key="satellite.satelliteId" :data-payload-satellite-id="satellite.satelliteId" shadow="never" class="planning-card">
       <template #header><div class="compact-card-header"><h2>2. {{ satellite.name }} · {{ satellite.satelliteId }}</h2><el-button :disabled="computing" :data-test="`add-ballistic-payload-${satellite.satelliteId}`" @click="addPayload(satellite)">新增载荷</el-button></div></template>
-      <fieldset :disabled="computing" class="ballistic-native-form"><legend>卫星轨道（目录身份不代表真实根数）</legend>
-        <p>以下基准仅为原回归场景的非生产示例；须显式采用或自行输入，不能作为目录卫星真实轨道。</p>
-        <button type="button" data-test="use-reference-orbit" @click="Object.assign(satellite, applyReferenceOrbit())">采用非生产原基准根数</button>
-        <div class="ballistic-field-grid"><label>卫星名称<input v-model="satellite.name" type="text" /></label><label v-for="field in orbitFields" :key="field.key">{{ field.label }}<input :value="satellite[field.key]" :data-orbit-field="field.key" type="number" step="any" @input="updateOrbitNumber(satellite, field.key, $event)" /></label><label>卫星历元 UTC（留空沿原服务缺省）<input v-model="satellite.epochUtc" data-orbit-field="epochUtc" type="text" placeholder="2026/07/01 10:00:00.000" /></label></div>
-      </fieldset>
       <el-empty v-if="satellite.payloads.length === 0" :image-size="42" description="暂无载荷，可点击新增载荷" />
       <article v-for="payload in satellite.payloads" :key="payload.payloadId" :data-payload-id="payload.payloadId" class="ballistic-payload-item">
         <div class="payload-identity">

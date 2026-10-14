@@ -1,0 +1,22 @@
+{
+  "observedUtc": "2026-10-14T10:07:36.362315+00:00",
+  "originalFrontendPid": 27312,
+  "state": "EXITED_EBUSY_WATCHING_TEST_DOWNLOAD",
+  "cause": "Vite监听frontend/.playwright-cli内的下载JSON时EBUSY (-4082)，错误未捕获，开发进程退出。测试文件应在ignored运行目录；无后端/算法修改。",
+  "files": [
+    {
+      "sourcePath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\logs\\frontend.stdout.log",
+      "copiedPath": "verification/A06/root-vite-r1.stdout.bin",
+      "bytes": 903,
+      "sha256": "8ede457b32b812925670d817e7817d1464efee39ae6255f151dbd65601ba01d9",
+      "sourceLastWriteUtc": "2026-10-14T09:58:37.470091+00:00"
+    },
+    {
+      "sourcePath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\logs\\frontend.stderr.log",
+      "copiedPath": "verification/A06/root-vite-r1.stderr.bin",
+      "bytes": 2082,
+      "sha256": "02c614a1d2e7edac1b84f95ecc852e8a762fa14b7c96657e3dcaa8406c28246c",
+      "sourceLastWriteUtc": "2026-10-14T10:02:35.445960+00:00"
+    }
+  ]
+}

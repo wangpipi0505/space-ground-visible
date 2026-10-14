@@ -10,11 +10,13 @@ import type { BallisticFitRequest } from '../api/ballisticFitTypes'
 import type { BallisticFileReference, GeneratedBallisticResult } from '../api/ballisticFiles'
 import { saveBallisticBlob } from '../api/ballisticHttp'
 import { parseFitInput } from '../utils/ballisticFit'
+import { swingFitDefaults, swingNew102Row, swing102Columns, swing102CellOwner, swing102CellKey } from '../utils/ballisticSwingDefaults'
+import type { Package102Record } from '../api/ballisticFitTypes'
 import BallisticFitFileResult from '../components/BallisticFitFileResult.vue'
 
 const emit = defineEmits<{ references: [value: GeneratedBallisticResult[]] }>()
 const references = shallowRef<Record<number, GeneratedBallisticResult>>({})
-const inputText = ref('{\n  "taskName": "task",\n  "taskStartTime": "",\n  "taskEndTime": "",\n  "interpolationStepSec": 1,\n  "package102": []\n}')
+const inputText = ref(JSON.stringify(swingFitDefaults(), null, 2))
 const inputName = ref('')
 const loadingInput = ref(false)
 const computing = ref(false)
@@ -29,7 +31,46 @@ const parsed = computed(() => {
   try { return { value: parseFitInput(inputText.value), error: '' } }
   catch (failure) { return { value: undefined, error: message(failure) } }
 })
+/** 类型/步长错误与空表仍可在主表单修正；危险数字或损坏JSON仅在高级原文中修正。 */
+const editable = computed(() => {
+  if (parsed.value.error.includes('JSON数字') || parsed.value.error.includes('JSON格式')) return undefined
+  try {
+    const value = JSON.parse(inputText.value)
+    return value && Array.isArray(value.package102) && value.package102.every((row: unknown) => {
+      if (typeof row !== 'object' || row === null || Array.isArray(row)) return false
+      return ['coordinateInfo','coordinate','coords','targetInfo','target'].every(key => {
+        const alias = (row as Record<string, unknown>)[key]
+        return alias == null || typeof alias === 'object' && !Array.isArray(alias)
+      })
+    }) ? value as BallisticFitRequest : undefined
+  } catch { return undefined }
+})
 const changed = computed(() => submitted.value && inputText.value !== submittedText.value)
+const taskFields = [{ key: 'taskName', label: '任务名称' }, { key: 'taskStartTime', label: '任务起始UTC' }, { key: 'taskEndTime', label: '任务结束UTC' }, { key: 'interpolationStepSec', label: '插值步长（秒）' }] as const
+/** 表格只修改唯一JSON草稿的生效字段；旧嵌套别名、17位编码和未知字符串始终原值保留。 */
+function editInput(event: Event, key: string, rowIndex?: number): void {
+  if (!(event.target instanceof HTMLInputElement) || !editable.value) return
+  const draft = JSON.parse(inputText.value)
+  if (rowIndex === undefined) draft[key] = key === 'interpolationStepSec' && event.target.value.trim() && Number.isFinite(Number(event.target.value)) ? Number(event.target.value) : event.target.value
+  else {
+    const owner = swing102CellOwner(draft.package102[rowIndex], key as typeof swing102Columns[number])
+    owner[swing102CellKey(owner, key)] = event.target.value
+  }
+  inputText.value = JSON.stringify(draft, null, 2)
+}
+function cellValue(row: Package102Record, key: typeof swing102Columns[number]): unknown {
+  const owner = swing102CellOwner(row, key)
+  return owner[swing102CellKey(owner, key)] ?? ''
+}
+/** 新行沿原defaultNewRow(rowCount+1)提供字符串默认；既有记录不摊平重建，保留别名/未知JSON。 */
+function changeRows(index?: number): void {
+  if (!editable.value) return
+  const draft = JSON.parse(inputText.value)
+  if (index === undefined) draft.package102.push(swingNew102Row(draft.package102.length + 1))
+  else draft.package102.splice(index, 1)
+  inputText.value = JSON.stringify(draft, null, 2)
+}
+function loadDefault(): void { inputText.value = JSON.stringify(swingFitDefaults(), null, 2); inputName.value = ''; error.value = '' }
 function message(failure: unknown): string { return failure instanceof Error ? failure.message : '请求失败，请检查服务连接' }
 
 /** 原生选择仅在浏览器读UTF8 JSON，不把本机路径当服务输入；失败保留待纠正的原文本。 */
@@ -88,14 +129,24 @@ function exportResult(): void {
 <template>
   <section class="ballistic-fit-view ballistic-window-controls" aria-label="102包轨迹拟合">
     <h2>102包轨迹拟合</h2>
+    <details><summary>高级协议说明（编码、兼容别名与单位）</summary>
     <p>完整 FitRequest JSON 输入：package102 保留原字符串编码、扁平 tack3d 历史拼写 / track3d 时间别名及 coordinateInfo / coordinate / coords、targetInfo / target。位置 0.1 m、速度 0.0001 m/s、加速度 0.01 m/s²；原别名优先级和模型选择由服务执行。</p>
     <p>taskStartTime / taskEndTime 为字面 UTC 任务区间，不是物理起落时刻；浏览器时区不转换。interpolationStepSec 为秒，省略默认 1，至少 0.001。时间码、ID、代码和观测值按原 DTO 加引号，禁止危险数字舍入。</p>
     <p class="ballistic-storage-notice">Web 使用服务管理结果目录，提交始终省略 outputDir；不使用浏览器本机或自填服务目录。</p>
+    </details>
     <fieldset class="ballistic-native-form" :disabled="computing || loadingInput">
       <legend>原102包与任务参数</legend>
+      <button type="button" data-test="load-default-fit" @click="loadDefault">加载原默认102数据</button>
+      <div v-if="editable" class="ballistic-field-grid"><label v-for="field in taskFields" :key="field.key">{{ field.label }}<input :value="editable[field.key] ?? ''" :data-fit-field="field.key" :inputmode="field.key === 'interpolationStepSec' ? 'decimal' : undefined" @input="editInput($event, field.key)" /></label></div>
+      <p>一行即一个目标观测点。位置编码 0.1米，速度编码 0.0001米/秒，加速度编码 0.01米/秒²；时间码、ID和代码直接保留字符串。横向滚动查看全部28列。</p>
+      <button type="button" @click="changeRows()">新增102记录</button>
+      <div v-if="editable" class="ballistic-table-scroll"><table><thead><tr><th>操作</th><th v-for="key in swing102Columns" :key="key">{{ key }}</th></tr></thead><tbody><tr v-for="(row,index) in editable.package102" :key="index" :data-fit-row="index"><td><button type="button" @click="changeRows(index)">删除第{{ index + 1 }}行</button></td><td v-for="key in swing102Columns" :key="key"><input :value="cellValue(row, key)" :aria-label="`第${index + 1}行 ${key}`" :data-fit-cell="`${index}/${key}`" @input="editInput($event, key, index)" /></td></tr></tbody></table></div>
+      <details><summary>高级设置：完整JSON导入与兼容字段</summary>
       <label>选择完整请求 JSON<input type="file" accept=".json,application/json" @change="chooseJson" /></label>
       <p v-if="inputName">已读取 {{ inputName }}（本地原文保留，可在下方编辑）</p>
       <label class="ballistic-json-label">完整 FitRequest JSON<textarea v-model="inputText" data-test="fit-input" rows="18" spellcheck="false" /></label>
+      </details>
+      <p v-if="parsed.error" role="alert" class="ballistic-error">输入待纠正：{{ parsed.error }}；可在高级JSON中修正。</p>
       <p v-if="parsed.value">{{ parsed.value.request.package102.length }} 条原包 · 任务 {{ parsed.value.request.taskName ?? 'task（原缺省）' }} · 步长 {{ parsed.value.request.interpolationStepSec ?? 1 }} 秒</p>
       <p v-if="parsed.value?.omittedOutputDir" data-test="fit-storage-notice">导入含 outputDir：已明确改用服务管理目录，实际请求将省略该字段；其余包与任务参数保持原值。</p>
       <details v-if="parsed.value"><summary>实际提交预览（outputDir 已省略）</summary><pre>{{ JSON.stringify(parsed.value.request, null, 2) }}</pre></details>

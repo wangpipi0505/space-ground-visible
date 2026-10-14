@@ -1,0 +1,19 @@
+
+> frontend@0.0.0 test
+> vitest run src/views/BallisticSwingAlignment.spec.ts src/App.spec.ts src/components/BallisticWindowControls.spec.ts src/views/BallisticPayloadConfigurationView.spec.ts src/views/BallisticFitView.spec.ts src/views/BallisticSimulationView.spec.ts src/views/BallisticRetimeView.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticRetimeView.spec.ts (6 tests | 1 failed) 164ms
+     × 上传201/预览→四字段原UTC→2576行四图→登记事件/快照，改输入过期失败清旧成功 28ms
+ ❯ src/views/BallisticPayloadConfigurationView.spec.ts (2 tests | 1 failed) 652ms
+     × 按星保持数组顺序、载荷唯一身份及删除隔离，编辑和预览保持十二字段 481ms
+ ❯ src/App.spec.ts (11 tests | 1 failed) 40377ms
+     × T25拟合模拟重定时引用隔离并供窗口及再次重定时选择 5745ms
+
+ Test Files  3 failed | 4 passed (7)
+      Tests  3 failed | 30 passed (33)
+   Start at  17:56:48
+   Duration  41.86s (transform 1.27s, setup 0ms, import 4.47s, tests 43.38s, environment 1.59s)
+

@@ -1,0 +1,15 @@
+
+> frontend@0.0.0 test
+> vitest run --run src/views/BallisticSwingAlignment.spec.ts -t 非法种子UTC
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticSwingAlignment.spec.ts (18 tests | 1 failed | 17 skipped) 272ms
+     × 非法种子UTC保持当前星座，合法UTC落表到秒及空值落原J2000可纠正 271ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 skipped (18)
+   Start at  18:48:15
+   Duration  1.70s (transform 354ms, setup 0ms, import 1.13s, tests 272ms, environment 194ms)
+

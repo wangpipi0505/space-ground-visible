@@ -1,0 +1,9 @@
+### Result
+{"records":29,"errors":[]}
+### Ran Playwright code
+```js
+await (async page => { const pending=page.waitForEvent("download");await page.evaluate(text=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text]));a.download="A06-network-before-final.json";a.click()},JSON.stringify(page.__a06,null,2));await(await pending).saveAs("G:/5-YG/space-ground-visible/verification/runtime/A06/browser-network-before-final.json");return {records:page.__a06.network.length,errors:page.__a06.errors} })(page);
+```
+### Events
+- Downloading file A06-network-before-final.json ...
+- Downloaded file A06-network-before-final.json to ".playwright-cli\A06-network-before-final.json"

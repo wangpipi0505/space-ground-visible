@@ -1,0 +1,1619 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/App.spec.ts > App > T25拟合模拟重定时引用隔离并供窗口及再次重定时选择
+Error: Unable to get #tab-ballistic-simulation within: <main class="workspace-shell">
+  <header class="workspace-toolbar">
+    <h1 class="workspace-title">空间目标可见窗口规划</h1>
+  </header>
+  <div class="el-tabs el-tabs--top workspace-tabs">
+    <div class="el-tabs__header is-top">
+      <div class="el-tabs__nav-wrap is-top">
+        <!---->
+        <div class="el-tabs__nav-scroll">
+          <div class="el-tabs__nav is-top" style="transform: translateX(-0px);" role="tablist">
+            <div class="el-tabs__active-bar is-top" style="transform: translateX(NaNpx);"></div>
+            <div class="el-tabs__item is-top" id="tab-workbench" aria-controls="pane-workbench" role="tab" aria-selected="false" tabindex="-1">规划工作台
+              <!---->
+            </div>
+            <div class="el-tabs__item is-top" id="tab-records" aria-controls="pane-records" role="tab" aria-selected="false" tabindex="-1">任务结果记录
+              <!---->
+            </div>
+            <div class="el-tabs__item is-top" id="tab-ballistic-payloads" aria-controls="pane-ballistic-payloads" role="tab" aria-selected="false" tabindex="-1">可视窗口计算
+              <!---->
+            </div>
+            <div class="el-tabs__item is-top is-active" id="tab-ballistic-fit" aria-controls="pane-ballistic-fit" role="tab" aria-selected="true" tabindex="0">目标弹道拟合
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---->
+    </div>
+    <div class="el-tabs__content">
+      <div id="pane-workbench" class="el-tab-pane" role="tabpanel" aria-hidden="true" aria-labelledby="tab-workbench" style="display: none;">
+        <section class="planning-workbench">
+          <section class="workbench-column selection-column" data-test="satellite-station-selection" aria-label="卫星与地面站选择">
+            <div class="column-guide"><span class="column-guide-step">1</span>
+              <div class="column-guide-text">
+                <h2>选择卫星与地面站</h2>
+                <p>勾选任务卫星并维护对空载荷，再勾选地面站并确认仰角约束。</p>
+              </div>
+            </div>
+            <div class="el-card is-never-shadow planning-card">
+              <div class="el-card__header">
+                <div class="compact-card-header">
+                  <h2>任务卫星</h2>
+                  <transition-stub name="el-zoom-in-center" appear="true" persisted="false" css="true"><span class="el-tag el-tag--info el-tag--light"><span class="el-tag__content">0 颗</span>
+                    <!--v-if--></span>
+                  </transition-stub>
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <div class="task-filter-row">
+                  <div class="el-input el-input--suffix">
+                    <!-- input -->
+                    <!-- prepend slot -->
+                    <!--v-if-->
+                    <div class="el-input__wrapper" tabindex="-1">
+                      <!-- prefix slot -->
+                      <!--v-if--><input class="el-input__inner" type="text" autocomplete="off" tabindex="0" placeholder="输入卫星名称、OBJECT_ID、NORAD_CAT_ID 或 SCID" id="el-id-8220-806"><!-- suffix slot --><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-icon el-input__icon el-input__clear" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m466.752 512-90.496-90.496a32 32 0 0 1 45.248-45.248L512 466.752l90.496-90.496a32 32 0 1 1 45.248 45.248L557.248 512l90.496 90.496a32 32 0 1 1-45.248 45.248L512 557.248l-90.496 90.496a32 32 0 0 1-45.248-45.248z"></path><path fill="currentColor" d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768m0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896"></path></svg></i><!--v-if--><!--v-if--><!--v-if--><!--v-if--></span></span>
+                    </div><!-- append slot -->
+                    <!--v-if-->
+                  </div><button ariadisabled="false" autofocus="false" type="button" class="el-button el-button--primary">
+                    <!--v-if--><span class="">筛选卫星</span>
+                  </button>
+                </div>
+                <div class="el-table--fit el-table--fluid-height el-table--scrollable-x el-table--enable-row-hover el-table--small el-table el-table--layout-fixed" data-prefix="el">
+                  <div class="el-table__inner-wrapper">
+                    <div class="hidden-columns">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div class="el-table__header-wrapper">
+                      <table class="el-table__header" border="0" cellpadding="0" cellspacing="0" style="width: 1464px;">
+                        <colgroup>
+                          <col name="el-table_34_column_280" width="94">
+                          <col name="el-table_34_column_281" width="90">
+                          <col name="el-table_34_column_282" width="170">
+                          <col name="el-table_34_column_283" width="135">
+                          <col name="el-table_34_column_284" width="130">
+                          <col name="el-table_34_column_285" width="110">
+                          <col name="el-table_34_column_286" width="100">
+                          <col name="el-table_34_column_287" width="120">
+                          <col name="el-table_34_column_288" width="105">
+                          <col name="el-table_34_column_289" width="120">
+                          <col name="el-table_34_column_290" width="180">
+                          <col name="el-table_34_column_291" width="110">
+                        </colgroup>
+                        <thead class="">
+                          <tr class="">
+                            <th class="el-table_34_column_280 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">任务选择
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_281 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">ID
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_282 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">卫星名称
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_283 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">OBJECT_ID
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_284 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">NORAD_CAT_ID
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_285 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">SCID
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_286 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">COUNTRY
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_287 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">WEIGHT(kg)
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_288 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">RCS_SIZE
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_289 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">LAUNCH
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_290 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">COMMENT
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_34_column_291 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">轨道模型
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div class="el-table__body-wrapper">
+                      <div class="el-scrollbar">
+                        <div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default" style="max-height: 330px;">
+                          <div class="el-scrollbar__view" style="display: inline-block; vertical-align: middle;">
+                            <table class="el-table__body" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed; width: 1464px;">
+                              <colgroup>
+                                <col name="el-table_34_column_280" width="94">
+                                <col name="el-table_34_column_281" width="90">
+                                <col name="el-table_34_column_282" width="170">
+                                <col name="el-table_34_column_283" width="135">
+                                <col name="el-table_34_column_284" width="130">
+                                <col name="el-table_34_column_285" width="110">
+                                <col name="el-table_34_column_286" width="100">
+                                <col name="el-table_34_column_287" width="120">
+                                <col name="el-table_34_column_288" width="105">
+                                <col name="el-table_34_column_289" width="120">
+                                <col name="el-table_34_column_290" width="180">
+                                <col name="el-table_34_column_291" width="110">
+                              </colgroup>
+                              <!--v-if-->
+                              <tbody tabindex="-1"></tbody>
+                              <!--v-if-->
+                            </table>
+                            <div style="height: 100%;" class="el-table__empty-block"><span class="el-table__empty-text">未查询到可选卫星</span></div>
+                            <!--v-if-->
+                          </div>
+                        </div>
+                        <transition-stub name="el-scrollbar-fade" appear="false" persisted="true" css="true">
+                          <div class="el-scrollbar__bar is-horizontal" style="display: none;">
+                            <div class="el-scrollbar__thumb" style="transform: translateX(NaN%);"></div>
+                          </div>
+                        </transition-stub>
+                        <transition-stub name="el-scrollbar-fade" appear="false" persisted="true" css="true">
+                          <div class="el-scrollbar__bar is-vertical" style="display: none;">
+                            <div class="el-scrollbar__thumb" style="transform: translateY(NaN%);"></div>
+                          </div>
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                    <!--v-if-->
+                  </div>
+                  <div class="el-table__column-resize-proxy" style="display: none;"></div>
+                </div>
+                <!--v-if-->
+                <div class="selected-summary"><strong>已选任务卫星：0 颗</strong></div>
+              </div>
+              <!--v-if-->
+            </div>
+            <div class="el-card is-never-shadow planning-card payload-panel">
+              <div class="el-card__header">
+                <div class="compact-card-header">
+                  <h2>卫星载荷</h2>
+                  <transition-stub name="el-zoom-in-center" appear="true" persisted="false" css="true"><span class="el-tag el-tag--info el-tag--light"><span class="el-tag__content">长期配置</span>
+                    <!--v-if--></span>
+                  </transition-stub>
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <div class="el-empty">
+                  <div class="el-empty__image" style="width: 42px;"><svg viewBox="0 0 79 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs>
+                        <linearGradient id="linearGradient-1-el-id-8220-779" x1="38.8503086%" y1="0%" x2="61.1496914%" y2="100%">
+                          <stop stop-color="var(--el-empty-fill-color-1)" offset="0%"></stop>
+                          <stop stop-color="var(--el-empty-fill-color-4)" offset="100%"></stop>
+                        </linearGradient>
+                        <linearGradient id="linearGradient-2-el-id-8220-779" x1="0%" y1="9.5%" x2="100%" y2="90.5%">
+                          <stop stop-color="var(--el-empty-fill-color-1)" offset="0%"></stop>
+                          <stop stop-color="var(--el-empty-fill-color-6)" offset="100%"></stop>
+                        </linearGradient>
+                        <rect id="path-3-el-id-8220-779" x="0" y="0" width="17" height="36"></rect>
+                      </defs>
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g transform="translate(-1268.000000, -535.000000)">
+                          <g transform="translate(1268.000000, 535.000000)">
+                            <path d="M39.5,86 C61.3152476,86 79,83.9106622 79,81.3333333 C79,78.7560045 57.3152476,78 35.5,78 C13.6847524,78 0,78.7560045 0,81.3333333 C0,83.9106622 17.6847524,86 39.5,86 Z" fill="var(--el-empty-fill-color-3)"></path>
+                            <polygon fill="var(--el-empty-fill-color-7)" transform="translate(27.500000, 51.500000) scale(1, -1) translate(-27.500000, -51.500000) " points="13 58 53 58 42 45 2 45"></polygon>
+                            <g transform="translate(34.500000, 31.500000) scale(-1, 1) rotate(-25.000000) translate(-34.500000, -31.500000) translate(7.000000, 10.000000)">
+                              <polygon fill="var(--el-empty-fill-color-7)" transform="translate(11.500000, 5.000000) scale(1, -1) translate(-11.500000, -5.000000) " points="2.84078316e-14 3 18 3 23 7 5 7"></polygon>
+                              <polygon fill="var(--el-empty-fill-color-5)" points="-3.69149156e-15 7 38 7 38 43 -3.69149156e-15 43"></polygon>
+                              <rect fill="url(#linearGradient-1-el-id-8220-779)" transform="translate(46.500000, 25.000000) scale(-1, 1) translate(-46.500000, -25.000000) " x="38" y="7" width="17" height="36"></rect>
+                              <polygon fill="var(--el-empty-fill-color-2)" transform="translate(39.500000, 3.500000) scale(-1, 1) translate(-39.500000, -3.500000) " points="24 7 41 7 55 -3.63806207e-12 38 -3.63806207e-12"></polygon>
+                            </g>
+                            <rect fill="url(#linearGradient-2-el-id-8220-779)" x="13" y="45" width="40" height="36"></rect>
+                            <g transform="translate(53.000000, 45.000000)">
+                              <use fill="var(--el-empty-fill-color-8)" transform="translate(8.500000, 18.000000) scale(-1, 1) translate(-8.500000, -18.000000) " xlink:href="#path-3-el-id-8220-779"></use>
+                              <polygon fill="var(--el-empty-fill-color-9)" mask="url(#mask-4-el-id-8220-779)" transform="translate(12.000000, 9.000000) scale(-1, 1) translate(-12.000000, -9.000000) " points="7 0 24 0 20 18 7 16.5"></polygon>
+                            </g>
+                            <polygon fill="var(--el-empty-fill-color-2)" transform="translate(66.000000, 51.500000) scale(-1, 1) translate(-66.000000, -51.500000) " points="62 45 79 45 70 58 53 58"></polygon>
+                          </g>
+                        </g>
+                      </g>
+                    </svg></div>
+                  <div class="el-empty__description">
+                    <p>选择任务卫星后配置载荷</p>
+                  </div>
+                  <!--v-if-->
+                </div>
+              </div>
+              <!--v-if-->
+            </div>
+            <div class="el-card is-never-shadow planning-card">
+              <div class="el-card__header">
+                <div class="compact-card-header">
+                  <h2>地面站</h2>
+                  <transition-stub name="el-zoom-in-center" appear="true" persisted="false" css="true"><span class="el-tag el-tag--primary el-tag--light"><span class="el-tag__content">0 个站点</span>
+                    <!--v-if--></span>
+                  </transition-stub>
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <div class="el-checkbox-group station-checks" role="group" aria-label="checkbox-group" id="el-id-8220-807"></div>
+                <!--v-if-->
+              </div>
+              <!--v-if-->
+            </div>
+          </section>
+          <section class="workbench-column downlink-column" data-test="satellite-station-links" aria-label="下传窗口规划">
+            <div class="column-guide"><span class="column-guide-step">2</span>
+              <div class="column-guide-text">
+                <h2>站星链路与下传窗口</h2>
+                <p>互选卫星—地面站链路并计算下传弧段，再选择或校验一个观测计算窗口。</p>
+              </div>
+            </div>
+            <div class="el-card is-never-shadow planning-card">
+              <div class="el-card__header">
+                <div class="compact-card-header">
+                  <h2>站星互选</h2>
+                  <transition-stub name="el-zoom-in-center" appear="true" persisted="false" css="true"><span class="el-tag el-tag--primary el-tag--light"><span class="el-tag__content">0 条链路</span>
+                    <!--v-if--></span>
+                  </transition-stub>
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <div class="el-empty">
+                  <div class="el-empty__image" style="width: 54px;"><svg viewBox="0 0 79 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs>
+                        <linearGradient id="linearGradient-1-el-id-8220-780" x1="38.8503086%" y1="0%" x2="61.1496914%" y2="100%">
+                          <stop stop-color="var(--el-empty-fill-color-1)" offset="0%"></stop>
+                          <stop stop-color="var(--el-empty-fill-color-4)" offset="100%"></stop>
+                        </linearGradient>
+                        <linearGradient id="linearGradient-2-el-id-8220-780" x1="0%" y1="9.5%" x2="100%" y2="90.5%">
+                          <stop stop-color="var(--el-empty-fill-color-1)" offset="0%"></stop>
+                          <stop stop-color="var(--el-empty-fill-color-6)" offset="100%"></stop>
+                        </linearGradient>
+                        <rect id="path-3-el-id-8220-780" x="0" y="0" width="17" height="36"></rect>
+                      </defs>
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g transform="translate(-1268.000000, -535.000000)">
+                          <g transform="translate(1268.000000, 535.000000)">
+                            <path d="M39.5,86 C61.3152476,86 79,83.9106622 79,81.3333333 C79,78.7560045 57.3152476,78 35.5,78 C13.6847524,78 0,78.7560045 0,81.3333333 C0,83.9106622 17.6847524,86 39.5,86 Z" fill="var(--el-empty-fill-color-3)"></path>
+                            <polygon fill="var(--el-empty-fill-color-7)" transform="translate(27.500000, 51.500000) scale(1, -1) translate(-27.500000, -51.500000) " points="13 58 53 58 42 45 2 45"></polygon>
+                            <g transform="translate(34.500000, 31.500000) scale(-1, 1) rotate(-25.000000) translate(-34.500000, -31.500000) translate(7.000000, 10.000000)">
+                              <polygon fill="var(--el-empty-fill-color-7)" transform="translate(11.500000, 5.000000) scale(1, -1) translate(-11.500000, -5.000000) " points="2.84078316e-14 3 18 3 23 7 5 7"></polygon>
+                              <polygon fill="var(--el-empty-fill-color-5)" points="-3.69149156e-15 7 38 7 38 43 -3.69149156e-15 43"></polygon>
+                              <rect fill="url(#linearGradient-1-el-id-8220-780)" transform="translate(46.500000, 25.000000) scale(-1, 1) translate(-46.500000, -25.000000) " x="38" y="7" width="17" height="36"></rect>
+                              <polygon fill="var(--el-empty-fill-color-2)" transform="translate(39.500000, 3.500000) scale(-1, 1) translate(-39.500000, -3.500000) " points="24 7 41 7 55 -3.63806207e-12 38 -3.63806207e-12"></polygon>
+                            </g>
+                            <rect fill="url(#linearGradient-2-el-id-8220-780)" x="13" y="45" width="40" height="36"></rect>
+                            <g transform="translate(53.000000, 45.000000)">
+                              <use fill="var(--el-empty-fill-color-8)" transform="translate(8.500000, 18.000000) scale(-1, 1) translate(-8.500000, -18.000000) " xlink:href="#path-3-el-id-8220-780"></use>
+                              <polygon fill="var(--el-empty-fill-color-9)" mask="url(#mask-4-el-id-8220-780)" transform="translate(12.000000, 9.000000) scale(-1, 1) translate(-12.000000, -9.000000) " points="7 0 24 0 20 18 7 16.5"></polygon>
+                            </g>
+                            <polygon fill="var(--el-empty-fill-color-2)" transform="translate(66.000000, 51.500000) scale(-1, 1) translate(-66.000000, -51.500000) " points="62 45 79 45 70 58 53 58"></polygon>
+                          </g>
+                        </g>
+                      </g>
+                    </svg></div>
+                  <div class="el-empty__description">
+                    <p>先在左侧选择卫星和地面站</p>
+                  </div>
+                  <!--v-if-->
+                </div>
+              </div>
+              <!--v-if-->
+            </div>
+            <div class="el-card is-never-shadow planning-card">
+              <div class="el-card__header">
+                <div class="compact-card-header">
+                  <h2>下传弧段规划</h2><button ariadisabled="false" autofocus="false" type="button" class="el-button el-button--primary">
+                    <!--v-if--><span class="">计算下传窗口</span>
+                  </button>
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <form class="el-form el-form--default el-form--label-top planning-form">
+                  <div class="el-form-item asterisk-left el-form-item--label-top time-range-item"><label id="el-id-8220-781" for="el-id-8220-808" class="el-form-item__label">规划时间段</label>
+                    <div class="el-form-item__content">
+                      <div class="el-date-editor el-date-editor--datetimerange el-input__wrapper el-range-editor el-tooltip__trigger el-tooltip__trigger" tabindex="-1"><i class="el-icon el-input__icon el-range__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path fill="currentColor" d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768m0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896"></path>
+                            <path fill="currentColor" d="M480 256a32 32 0 0 1 32 32v256a32 32 0 0 1-64 0V288a32 32 0 0 1 32-32"></path>
+                            <path fill="currentColor" d="M480 512h256q32 0 32 32t-32 32H480q-32 0-32-32t32-32"></path>
+                          </svg></i><input tabindex="0" autocomplete="off" role="combobox" aria-controls="el-id-8220-782" aria-expanded="false" aria-haspopup="dialog" placeholder="开始" class="el-range-input" value="2026-10-14 17:00:00" id="el-id-8220-808"><span class="el-range-separator">至</span><input tabindex="0" autocomplete="off" role="combobox" aria-controls="el-id-8220-782" aria-expanded="false" aria-haspopup="dialog" placeholder="结束" class="el-range-input" value="2026-10-14 23:00:00"><i class="el-icon el-input__icon el-range__close-icon el-range__close-icon--hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path fill="currentColor" d="m466.752 512-90.496-90.496a32 32 0 0 1 45.248-45.248L512 466.752l90.496-90.496a32 32 0 1 1 45.248 45.248L557.248 512l90.496 90.496a32 32 0 1 1-45.248 45.248L512 557.248l-90.496 90.496a32 32 0 0 1-45.248-45.248z"></path>
+                            <path fill="currentColor" d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768m0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896"></path>
+                          </svg></i></div>
+                      <!--teleport start-->
+                      <!--teleport end-->
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-783" for="el-id-8220-813" class="el-form-item__label">粗选步长（秒）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                        <div class="el-input">
+                          <!-- input -->
+                          <!-- prepend slot -->
+                          <!--v-if-->
+                          <div class="el-input__wrapper" tabindex="-1">
+                            <!-- prefix slot -->
+                            <!--v-if--><input class="el-input__inner" step="1" max="9007199254740991" min="1" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuemax="9007199254740991" aria-valuemin="1" aria-valuenow="60" aria-disabled="false" id="el-id-8220-813"><!-- suffix slot -->
+                            <!--v-if-->
+                          </div><!-- append slot -->
+                          <!--v-if-->
+                        </div>
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-784" for="el-id-8220-814" class="el-form-item__label">精选步长（秒）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                        <div class="el-input">
+                          <!-- input -->
+                          <!-- prepend slot -->
+                          <!--v-if-->
+                          <div class="el-input__wrapper" tabindex="-1">
+                            <!-- prefix slot -->
+                            <!--v-if--><input class="el-input__inner" step="0.5" max="60" min="0.1" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuemax="60" aria-valuemin="0.1" aria-valuenow="1" aria-disabled="false" id="el-id-8220-814"><!-- suffix slot -->
+                            <!--v-if-->
+                          </div><!-- append slot -->
+                          <!--v-if-->
+                        </div>
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-785" for="el-id-8220-815" class="el-form-item__label">卫星光照</label>
+                    <div class="el-form-item__content">
+                      <div class="el-select">
+                        <div class="el-select__wrapper el-tooltip__trigger el-tooltip__trigger" tabindex="-1">
+                          <!--v-if-->
+                          <div class="el-select__selection">
+                            <!--v-if-->
+                            <div class="el-select__selected-item el-select__input-wrapper is-hidden"><input type="text" class="el-select__input" autocomplete="off" style="min-width: 11px;" tabindex="0" role="combobox" readonly="" spellcheck="false" aria-activedescendant="" aria-controls="el-id-8220-786" aria-expanded="false" aria-autocomplete="none" aria-haspopup="listbox" value="" id="el-id-8220-815">
+                              <!--v-if-->
+                            </div>
+                            <div class="el-select__selected-item el-select__placeholder"><span>不限</span></div>
+                          </div>
+                          <div class="el-select__suffix"><i class="el-icon el-select__caret el-select__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                                <path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path>
+                              </svg></i>
+                            <!--v-if-->
+                            <!--v-if-->
+                          </div>
+                        </div>
+                        <!--teleport start-->
+                        <!--teleport end-->
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-791" for="el-id-8220-816" class="el-form-item__label">前保护（秒）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                        <div class="el-input">
+                          <!-- input -->
+                          <!-- prepend slot -->
+                          <!--v-if-->
+                          <div class="el-input__wrapper" tabindex="-1">
+                            <!-- prefix slot -->
+                            <!--v-if--><input class="el-input__inner" step="1" max="9007199254740991" min="0" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuemax="9007199254740991" aria-valuemin="0" aria-valuenow="" aria-disabled="false" id="el-id-8220-816"><!-- suffix slot -->
+                            <!--v-if-->
+                          </div><!-- append slot -->
+                          <!--v-if-->
+                        </div>
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-792" for="el-id-8220-817" class="el-form-item__label">后保护（秒）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                        <div class="el-input">
+                          <!-- input -->
+                          <!-- prepend slot -->
+                          <!--v-if-->
+                          <div class="el-input__wrapper" tabindex="-1">
+                            <!-- prefix slot -->
+                            <!--v-if--><input class="el-input__inner" step="1" max="9007199254740991" min="0" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuemax="9007199254740991" aria-valuemin="0" aria-valuenow="" aria-disabled="false" id="el-id-8220-817"><!-- suffix slot -->
+                            <!--v-if-->
+                          </div><!-- append slot -->
+                          <!--v-if-->
+                        </div>
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-793" for="el-id-8220-818" class="el-form-item__label">允许断链（秒）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                        <div class="el-input">
+                          <!-- input -->
+                          <!-- prepend slot -->
+                          <!--v-if-->
+                          <div class="el-input__wrapper" tabindex="-1">
+                            <!-- prefix slot -->
+                            <!--v-if--><input class="el-input__inner" step="1" max="9007199254740991" min="0" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuemax="9007199254740991" aria-valuemin="0" aria-valuenow="" aria-disabled="false" id="el-id-8220-818"><!-- suffix slot -->
+                            <!--v-if-->
+                          </div><!-- append slot -->
+                          <!--v-if-->
+                        </div>
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!--v-if-->
+            </div>
+            <div class="el-card is-never-shadow planning-card">
+              <div class="el-card__header">
+                <div class="compact-card-header">
+                  <h2>下传窗口</h2>
+                  <!--v-if-->
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <!--v-if-->
+                <div class="el-table--fit el-table--fluid-height el-table--scrollable-x el-table--enable-row-hover el-table--small el-table el-table--layout-fixed" data-prefix="el">
+                  <div class="el-table__inner-wrapper">
+                    <div class="hidden-columns">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div class="el-table__header-wrapper">
+                      <table class="el-table__header" border="0" cellpadding="0" cellspacing="0" style="width: 590px;">
+                        <colgroup>
+                          <col name="el-table_35_column_292" width="190">
+                          <col name="el-table_35_column_293" width="70">
+                          <col name="el-table_35_column_294" width="190">
+                          <col name="el-table_35_column_295" width="78">
+                          <col name="el-table_35_column_296" width="62">
+                        </colgroup>
+                        <thead class="">
+                          <tr class="">
+                            <th class="el-table_35_column_292 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">连续覆盖链路
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_35_column_293 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">链路数
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_35_column_294 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">起止时间
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_35_column_295 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">时长
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_35_column_296 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">使用
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div class="el-table__body-wrapper">
+                      <div class="el-scrollbar">
+                        <div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default" style="max-height: 230px;">
+                          <div class="el-scrollbar__view" style="display: inline-block; vertical-align: middle;">
+                            <table class="el-table__body" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed; width: 590px;">
+                              <colgroup>
+                                <col name="el-table_35_column_292" width="190">
+                                <col name="el-table_35_column_293" width="70">
+                                <col name="el-table_35_column_294" width="190">
+                                <col name="el-table_35_column_295" width="78">
+                                <col name="el-table_35_column_296" width="62">
+                              </colgroup>
+                              <!--v-if-->
+                              <tbody tabindex="-1"></tbody>
+                              <!--v-if-->
+                            </table>
+                            <div style="height: 100%;" class="el-table__empty-block"><span class="el-table__empty-text">尚未规划下传窗口</span></div>
+                            <!--v-if-->
+                          </div>
+                        </div>
+                        <transition-stub name="el-scrollbar-fade" appear="false" persisted="true" css="true">
+                          <div class="el-scrollbar__bar is-horizontal" style="display: none;">
+                            <div class="el-scrollbar__thumb" style="transform: translateX(NaN%);"></div>
+                          </div>
+                        </transition-stub>
+                        <transition-stub name="el-scrollbar-fade" appear="false" persisted="true" css="true">
+                          <div class="el-scrollbar__bar is-vertical" style="display: none;">
+                            <div class="el-scrollbar__thumb" style="transform: translateY(NaN%);"></div>
+                          </div>
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                    <!--v-if-->
+                  </div>
+                  <div class="el-table__column-resize-proxy" style="display: none;"></div>
+                </div>
+                <!--v-if-->
+                <!--v-if-->
+                <!--v-if-->
+                <div class="custom-window-editor">
+                  <div class="el-date-editor el-date-editor--datetimerange el-input__wrapper el-range-editor el-tooltip__trigger el-tooltip__trigger" tabindex="-1"><i class="el-icon el-input__icon el-range__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                        <path fill="currentColor" d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768m0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896"></path>
+                        <path fill="currentColor" d="M480 256a32 32 0 0 1 32 32v256a32 32 0 0 1-64 0V288a32 32 0 0 1 32-32"></path>
+                        <path fill="currentColor" d="M480 512h256q32 0 32 32t-32 32H480q-32 0-32-32t32-32"></path>
+                      </svg></i><input tabindex="0" autocomplete="off" role="combobox" aria-controls="el-id-8220-794" aria-expanded="false" aria-haspopup="dialog" placeholder="开始" class="el-range-input" value="2026-10-14 17:00:00" id="el-id-8220-819"><span class="el-range-separator">至</span><input tabindex="0" autocomplete="off" role="combobox" aria-controls="el-id-8220-794" aria-expanded="false" aria-haspopup="dialog" placeholder="结束" class="el-range-input" value="2026-10-14 23:00:00"><i class="el-icon el-input__icon el-range__close-icon el-range__close-icon--hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                        <path fill="currentColor" d="m466.752 512-90.496-90.496a32 32 0 0 1 45.248-45.248L512 466.752l90.496-90.496a32 32 0 1 1 45.248 45.248L557.248 512l90.496 90.496a32 32 0 1 1-45.248 45.248L512 557.248l-90.496 90.496a32 32 0 0 1-45.248-45.248z"></path>
+                        <path fill="currentColor" d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768m0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896"></path>
+                      </svg></i></div>
+                  <!--teleport start-->
+                  <!--teleport end--><button ariadisabled="false" autofocus="false" type="button" class="el-button">
+                    <!--v-if--><span class="">校验自选</span>
+                  </button>
+                </div>
+              </div>
+              <!--v-if-->
+            </div>
+          </section>
+          <section class="workbench-column observation-column" data-test="target-visibility-planning" aria-label="目标全量观测规划">
+            <div class="column-guide"><span class="column-guide-step">3</span>
+              <div class="column-guide-text">
+                <h2>目标筛选与观测规划</h2>
+                <p>设置目标筛选条件与观测约束，在已选下传窗口内提交后台任务并查看实时进度。</p>
+              </div>
+            </div>
+            <div class="el-card is-never-shadow planning-card">
+              <div class="el-card__header">
+                <div class="compact-card-header">
+                  <h2>目标筛选</h2>
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <form class="el-form el-form--default el-form--label-top filter-form target-filter-form">
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-795" for="el-id-8220-824" class="el-form-item__label">国籍（数据字典）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-select">
+                        <div class="el-select__wrapper is-filterable el-tooltip__trigger el-tooltip__trigger" tabindex="-1">
+                          <!--v-if-->
+                          <div class="el-select__selection">
+                            <!--v-if-->
+                            <div class="el-select__selected-item el-select__input-wrapper is-hidden"><input type="text" class="el-select__input" autocomplete="off" style="min-width: 11px;" tabindex="0" role="combobox" spellcheck="false" aria-activedescendant="" aria-controls="el-id-8220-796" aria-expanded="false" aria-autocomplete="none" aria-haspopup="listbox" value="" id="el-id-8220-824"><span aria-hidden="true" class="el-select__input-calculator"></span></div>
+                            <div class="el-select__selected-item el-select__placeholder is-transparent"><span>从目标库实际 BELONG_ 值中选择</span></div>
+                          </div>
+                          <div class="el-select__suffix"><i class="el-icon el-select__caret el-select__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                                <path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path>
+                              </svg></i>
+                            <!--v-if-->
+                            <!--v-if-->
+                          </div>
+                        </div>
+                        <!--teleport start-->
+                        <!--teleport end-->
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-798" for="el-id-8220-825" class="el-form-item__label">历元约束（YYDDD）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input">
+                        <!-- input -->
+                        <!-- prepend slot -->
+                        <!--v-if-->
+                        <div class="el-input__wrapper" tabindex="-1">
+                          <!-- prefix slot -->
+                          <!--v-if--><input class="el-input__inner" maxlength="5" type="text" autocomplete="off" tabindex="0" placeholder="例如：23340" inputmode="numeric" id="el-id-8220-825"><!-- suffix slot -->
+                          <!--v-if-->
+                        </div><!-- append slot -->
+                        <!--v-if-->
+                      </div><small>严格保留历元晚于该值的目录目标；23340 表示 2023 年第 340 天。</small>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-799" for="el-id-8220-826" class="el-form-item__label">建议近似传播时长（天）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                        <div class="el-input">
+                          <!-- input -->
+                          <!-- prepend slot -->
+                          <!--v-if-->
+                          <div class="el-input__wrapper" tabindex="-1">
+                            <!-- prefix slot -->
+                            <!--v-if--><input class="el-input__inner" step="1" max="9007199254740991" min="0" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuemax="9007199254740991" aria-valuemin="0" aria-valuenow="14" aria-disabled="false" id="el-id-8220-826"><!-- suffix slot -->
+                            <!--v-if-->
+                          </div><!-- append slot -->
+                          <!--v-if-->
+                        </div>
+                      </div><small>超出建议时长的目标仍会尝试计算，并在任务结果中标注星历时效风险。</small>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top"><label id="el-id-8220-800" for="el-id-8220-827" class="el-form-item__label">最小质量（kg）</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input-number is-controls-right is-center"><span role="button" aria-label="decrease number" class="el-input-number__decrease"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path></svg></i></span><span role="button" aria-label="increase number" class="el-input-number__increase"><i class="el-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"></path></svg></i></span>
+                        <div class="el-input">
+                          <!-- input -->
+                          <!-- prepend slot -->
+                          <!--v-if-->
+                          <div class="el-input__wrapper" tabindex="-1">
+                            <!-- prefix slot -->
+                            <!--v-if--><input class="el-input__inner" step="1" max="9007199254740991" min="0" type="number" autocomplete="off" tabindex="0" role="spinbutton" aria-valuemax="9007199254740991" aria-valuemin="0" aria-valuenow="" aria-disabled="false" id="el-id-8220-827"><!-- suffix slot -->
+                            <!--v-if-->
+                          </div><!-- append slot -->
+                          <!--v-if-->
+                        </div>
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item asterisk-left el-form-item--label-top" role="group" aria-labelledby="el-id-8220-801">
+                    <div id="el-id-8220-801" class="el-form-item__label">排除名称</div>
+                    <div class="el-form-item__content">
+                      <div class="el-select" data-test="target-name-exclude-mode">
+                        <div class="el-select__wrapper el-tooltip__trigger el-tooltip__trigger" tabindex="-1">
+                          <!--v-if-->
+                          <div class="el-select__selection">
+                            <!--v-if-->
+                            <div class="el-select__selected-item el-select__input-wrapper is-hidden"><input type="text" class="el-select__input" autocomplete="off" style="min-width: 11px;" tabindex="0" role="combobox" readonly="" spellcheck="false" aria-activedescendant="" aria-controls="el-id-8220-802" aria-expanded="false" aria-autocomplete="none" aria-haspopup="listbox" value="" id="el-id-8220-828">
+                              <!--v-if-->
+                            </div>
+                            <div class="el-select__selected-item el-select__placeholder"><span>文本包含</span></div>
+                          </div>
+                          <div class="el-select__suffix"><i class="el-icon el-select__caret el-select__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                                <path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.59 30.59 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.59 30.59 0 0 0-42.752 0z"></path>
+                              </svg></i>
+                            <!--v-if-->
+                            <!--v-if-->
+                          </div>
+                        </div>
+                        <!--teleport start-->
+                        <!--teleport end-->
+                      </div>
+                      <div class="el-input el-input--suffix">
+                        <!-- input -->
+                        <!-- prepend slot -->
+                        <!--v-if-->
+                        <div class="el-input__wrapper" tabindex="-1">
+                          <!-- prefix slot -->
+                          <!--v-if--><input class="el-input__inner" data-test="target-name-exclude" type="text" autocomplete="off" tabindex="0" placeholder="输入需排除的名称片段" id="el-id-8220-829"><!-- suffix slot --><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-icon el-input__icon el-input__clear" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m466.752 512-90.496-90.496a32 32 0 0 1 45.248-45.248L512 466.752l90.496-90.496a32 32 0 1 1 45.248 45.248L557.248 512l90.496 90.496a32 32 0 1 1-45.248 45.248L512 557.248l-90.496 90.496a32 32 0 0 1-45.248-45.248z"></path><path fill="currentColor" d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768m0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896"></path></svg></i><!--v-if--><!--v-if--><!--v-if--><!--v-if--></span></span>
+                        </div><!-- append slot -->
+                        <!--v-if-->
+                      </div>
+                      <transition-group-stub name="el-zoom-in-top" appear="false" persisted="false" css="true">
+                        <!--v-if-->
+                      </transition-group-stub>
+                    </div>
+                  </div>
+                </form>
+                <div class="target-query-action"><button ariadisabled="false" autofocus="false" type="button" class="el-button el-button--primary" data-test="query-targets">
+                    <!--v-if--><span class="">按当前条件加载目标</span>
+                  </button><span>国籍选项和数量由目标库 BELONG_ 实时返回；最小质量表示仅计算质量大于该值的目标。</span></div>
+                <!--v-if-->
+                <div class="el-table--fit el-table--fluid-height el-table--scrollable-x el-table--enable-row-hover el-table--small el-table el-table--layout-fixed" data-prefix="el">
+                  <div class="el-table__inner-wrapper">
+                    <div class="hidden-columns">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div class="el-table__header-wrapper">
+                      <table class="el-table__header" border="0" cellpadding="0" cellspacing="0" style="width: 1160px;">
+                        <colgroup>
+                          <col name="el-table_36_column_297" width="70">
+                          <col name="el-table_36_column_298" width="150">
+                          <col name="el-table_36_column_299" width="125">
+                          <col name="el-table_36_column_300" width="125">
+                          <col name="el-table_36_column_301" width="90">
+                          <col name="el-table_36_column_302" width="112">
+                          <col name="el-table_36_column_303" width="100">
+                          <col name="el-table_36_column_304" width="110">
+                          <col name="el-table_36_column_305" width="170">
+                          <col name="el-table_36_column_306" width="108">
+                        </colgroup>
+                        <thead class="">
+                          <tr class="">
+                            <th class="el-table_36_column_297 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">ID
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_298 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">目标名称
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_299 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">OBJECT_ID
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_300 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">NORAD_CAT_ID
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_301 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">国籍
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_302 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">WEIGHT(kg)
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_303 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">RCS_SIZE
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_304 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">LAUNCH
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_305 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">COMMENT
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                            <th class="el-table_36_column_306 is-leaf el-table__cell" colspan="1" rowspan="1" scope="col">
+                              <div class="cell">轨道模型
+                                <!---->
+                                <!---->
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div class="el-table__body-wrapper">
+                      <div class="el-scrollbar">
+                        <div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default" style="max-height: 280px;">
+                          <div class="el-scrollbar__view" style="display: inline-block; vertical-align: middle;">
+                            <table class="el-table__body" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed; width: 1160px;">
+                              <colgroup>
+                                <col name="el-table_36_column_297" width="70">
+                                <col name="el-table_36_column_298" width="150">
+                                <col name="el-table_36_column_299" width="125">
+                                <col name="el-table_36_column_300" width="125">
+                                <col name="el-table_36_column_301" width="90">
+                                <col name="el-table_36_column_302" width="112">
+                                <col name="el-table_36_column_303" width="100">
+                                <col name="el-table_36_column_304" width="110">
+                                <col name="el-table_36_column_305" width="170">
+                                <col name="el-table_36_column_306" width="108">
+                              </colgroup>
+                              <!--v-if-->
+                              <tbody tabindex="-1"></tbody>
+                              <!--v-if-->
+                            </table>
+                            <div style="height: 100%;" class="el-table__empty-block"><span class="el-table__empty-text">按筛选条件加载目标目录</span></div>
+                            <!--v-if-->
+                          </div>
+                        </div>
+                        <transition-stub name="el-scrollbar-fade" appear="false" persisted="true" css="true">
+                          <div class="el-scrollbar__bar is-horizontal" style="display: none;">
+                            <div class="el-scrollbar__thumb" style="transform: translateX(NaN%);"></div>
+                          </div>
+                        </transition-stub>
+                        <transition-stub name="el-scrollbar-fade" appear="false" persisted="true" css="true">
+                          <div class="el-scrollbar__bar is-vertical" style="display: none;">
+                            <div class="el-scrollbar__thumb" style="transform: translateY(NaN%);"></div>
+                          </div>
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                    <!--v-if-->
+                  </div>
+                  <div class="el-table__column-resize-proxy" style="display: none;"></div>
+                </div>
+                <!--v-if-->
+              </div>
+              <!--v-if-->
+            </div>
+            <div class="el-card is-never-shadow planning-card">
+              <div class="el-card__header">
+                <div class="compact-card-header">
+                  <h2>目标观测组合</h2>
+                  <transition-stub name="el-zoom-in-center" appear="true" persisted="false" css="true"><span class="el-tag el-tag--info el-tag--light"><span class="el-tag__content">同一目标</span>
+                    <!--v-if--></span>
+                  </transition-stub>
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <transition-stub name="el-alert-fade" appear="false" persisted="true" css="true">
+                  <div class="el-alert el-alert--warning is-light" role="alert"><i class="el-icon el-alert__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                        <path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896m0 192a58.43 58.43 0 0 0-58.24 63.744l23.36 256.384a35.072 35.072 0 0 0 69.76 0l23.296-256.384A58.43 58.43 0 0 0 512 256m0 512a51.2 51.2 0 1 0 0-102.4 51.2 51.2 0 0 0 0 102.4"></path>
+                      </svg></i>
+                    <div class="el-alert__content"><span class="el-alert__title">先在左侧选择本次任务卫星</span>
+                      <!--v-if-->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                </transition-stub>
+              </div>
+              <!--v-if-->
+            </div>
+            <div data-v-64803f51="" class="el-card is-never-shadow planning-card">
+              <div class="el-card__header">
+                <div data-v-64803f51="" class="compact-card-header">
+                  <h2 data-v-64803f51="">目标观测规划</h2>
+                  <div data-v-64803f51="" class="planning-actions">
+                    <!-- 全目标扫描始终走后台任务：HTTP 单次同步响应无法可靠推送批次进度。 -->
+                    <transition-stub data-v-64803f51="" name="el-zoom-in-center" appear="true" persisted="false" css="true" data-test="plan-mode"><span class="el-tag el-tag--info el-tag--plain"><span class="el-tag__content">后台任务（显示进度）</span>
+                      <!--v-if--></span>
+                    </transition-stub><button data-v-64803f51="" ariadisabled="false" autofocus="false" type="button" class="el-button el-button--primary">
+                      <!--v-if--><span class="">开始规划</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="el-card__body" style="">
+                <transition-stub data-v-64803f51="" name="el-alert-fade" appear="false" persisted="true" css="true">
+                  <div class="el-alert el-alert--warning is-light" role="alert"><i class="el-icon el-alert__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                        <path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896m0 192a58.43 58.43 0 0 0-58.24 63.744l23.36 256.384a35.072 35.072 0 0 0 69.76 0l23.296-256.384A58.43 58.43 0 0 0 512 256m0 512a51.2 51.2 0 1 0 0-102.4 51.2 51.2 0 0 0 0 102.4"></path>
+                      </svg></i>
+                    <div class="el-alert__content"><span class="el-alert__title">请先选择或校验一个下传窗口</span>
+                      <!--v-if-->
+                      <!--v-if-->
+                    </div>
+                  </div>
+                </transition-stub>
+              </div>
+              <!--v-if-->
+            </div>
+          </section>
+        </section>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+      <div id="pane-ballistic-fit" class="el-tab-pane" role="tabpanel" aria-hidden="false" aria-labelledby="tab-ballistic-fit">
+        <div class="el-tabs el-tabs--top ballistic-fit-tabs">
+          <div class="el-tabs__header is-top">
+            <div class="el-tabs__nav-wrap is-top">
+              <!---->
+              <div class="el-tabs__nav-scroll">
+                <div class="el-tabs__nav is-top" style="transform: translateX(-0px);" role="tablist">
+                  <div class="el-tabs__active-bar is-top" style="transform: translateX(NaNpx);"></div>
+                  <div class="el-tabs__item is-top is-active" id="tab-package102" aria-controls="pane-package102" role="tab" aria-selected="true" tabindex="0">102包轨迹拟合
+                    <!---->
+                  </div>
+                  <div class="el-tabs__item is-top" id="tab-simulation" aria-controls="pane-simulation" role="tab" aria-selected="false" tabindex="-1">模拟弹道
+                    <!---->
+                  </div>
+                  <div class="el-tabs__item is-top" id="tab-retime" aria-controls="pane-retime" role="tab" aria-selected="false" tabindex="-1">弹道重定时
+                    <!---->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+          </div>
+          <div class="el-tabs__content">
+            <div id="pane-package102" class="el-tab-pane" role="tabpanel" aria-hidden="false" aria-labelledby="tab-package102">
+              <section data-v-69a1f04c="" class="ballistic-fit-view ballistic-window-controls" aria-label="102包轨迹拟合">
+                <h2 data-v-69a1f04c="">102包轨迹拟合</h2>
+                <details data-v-69a1f04c="">
+                  <summary data-v-69a1f04c="">高级协议说明（编码、兼容别名与单位）</summary>
+                  <p data-v-69a1f04c="">完整 FitRequest JSON 输入：package102 保留原字符串编码、扁平 tack3d 历史拼写 / track3d 时间别名及 coordinateInfo / coordinate / coords、targetInfo / target。位置 0.1 m、速度 0.0001 m/s、加速度 0.01 m/s²；原别名优先级和模型选择由服务执行。</p>
+                  <p data-v-69a1f04c="">taskStartTime / taskEndTime 为字面 UTC 任务区间，不是物理起落时刻；浏览器时区不转换。interpolationStepSec 为秒，省略默认 1，至少 0.001。时间码、ID、代码和观测值按原 DTO 加引号，禁止危险数字舍入。</p>
+                  <p data-v-69a1f04c="" class="ballistic-storage-notice">Web 使用服务管理结果目录，提交始终省略 outputDir；不使用浏览器本机或自填服务目录。</p>
+                </details>
+                <fieldset data-v-69a1f04c="" class="ballistic-native-form">
+                  <legend data-v-69a1f04c="">原102包与任务参数</legend><button data-v-69a1f04c="" type="button" data-test="load-default-fit">加载原默认102数据</button>
+                  <div data-v-69a1f04c="" class="ballistic-field-grid"><label data-v-69a1f04c="">任务名称<input data-v-69a1f04c="" data-fit-field="taskName" value="defaultFitTask"></label><label data-v-69a1f04c="">任务起始UTC<input data-v-69a1f04c="" data-fit-field="taskStartTime" value="2026-07-01 07:56:55.000"></label><label data-v-69a1f04c="">任务结束UTC<input data-v-69a1f04c="" data-fit-field="taskEndTime" value="2026-07-01 07:57:10.000"></label><label data-v-69a1f04c="">插值步长（秒）<input data-v-69a1f04c="" data-fit-field="interpolationStepSec" inputmode="decimal" value="0.5"></label></div>
+                  <p data-v-69a1f04c="">一行即一个目标观测点。位置编码 0.1米，速度编码 0.0001米/秒，加速度编码 0.01米/秒²；时间码、ID和代码直接保留字符串。横向滚动查看全部28列。</p><button data-v-69a1f04c="" type="button">新增102记录</button>
+                  <div data-v-69a1f04c="" class="ballistic-table-scroll">
+                    <table data-v-69a1f04c="">
+                      <thead data-v-69a1f04c="">
+                        <tr data-v-69a1f04c="">
+                          <th data-v-69a1f04c="">操作</th>
+                          <th data-v-69a1f04c="">track_tgt_id</th>
+                          <th data-v-69a1f04c="">tack3d_time_code</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_pos_x</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_pos_y</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_pos_z</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_vel_x</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_vel_y</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_vel_z</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_acc_x</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_acc_y</th>
+                          <th data-v-69a1f04c="">tack3d_tgt_acc_z</th>
+                          <th data-v-69a1f04c="">prop_tgt_type_8</th>
+                          <th data-v-69a1f04c="">prop_tgt_shape_8</th>
+                          <th data-v-69a1f04c="">prop_tgt_flight_phase_8</th>
+                          <th data-v-69a1f04c="">prob_tgt_critical_incident</th>
+                          <th data-v-69a1f04c="">prob_tgt_critical_incident_time_code</th>
+                          <th data-v-69a1f04c="">launch_time_code</th>
+                          <th data-v-69a1f04c="">launch_coord_frame</th>
+                          <th data-v-69a1f04c="">launch_pos_x</th>
+                          <th data-v-69a1f04c="">launch_pos_y</th>
+                          <th data-v-69a1f04c="">launch_pos_z</th>
+                          <th data-v-69a1f04c="">launch_pos_unit</th>
+                          <th data-v-69a1f04c="">impact_time_code</th>
+                          <th data-v-69a1f04c="">impact_coord_frame</th>
+                          <th data-v-69a1f04c="">impact_pos_x</th>
+                          <th data-v-69a1f04c="">impact_pos_y</th>
+                          <th data-v-69a1f04c="">impact_pos_z</th>
+                          <th data-v-69a1f04c="">impact_pos_unit</th>
+                        </tr>
+                      </thead>
+                      <tbody data-v-69a1f04c="">
+                        <tr data-v-69a1f04c="" data-fit-row="0">
+                          <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第1行</button></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 track_tgt_id" data-fit-cell="0/track_tgt_id" value="TGT-001"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_time_code" data-fit-cell="0/tack3d_time_code" value="2026-07-01 07:57:00.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_pos_x" data-fit-cell="0/tack3d_tgt_pos_x" value="70000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_pos_y" data-fit-cell="0/tack3d_tgt_pos_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_pos_z" data-fit-cell="0/tack3d_tgt_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_vel_x" data-fit-cell="0/tack3d_tgt_vel_x" value="10000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_vel_y" data-fit-cell="0/tack3d_tgt_vel_y" value="1000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_vel_z" data-fit-cell="0/tack3d_tgt_vel_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_acc_x" data-fit-cell="0/tack3d_tgt_acc_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_acc_y" data-fit-cell="0/tack3d_tgt_acc_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_acc_z" data-fit-cell="0/tack3d_tgt_acc_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prop_tgt_type_8" data-fit-cell="0/prop_tgt_type_8" value="0x01"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prop_tgt_shape_8" data-fit-cell="0/prop_tgt_shape_8" value="0x02"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prop_tgt_flight_phase_8" data-fit-cell="0/prop_tgt_flight_phase_8" value="0x01"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prob_tgt_critical_incident" data-fit-cell="0/prob_tgt_critical_incident" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prob_tgt_critical_incident_time_code" data-fit-cell="0/prob_tgt_critical_incident_time_code" value=""></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_time_code" data-fit-cell="0/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_coord_frame" data-fit-cell="0/launch_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_pos_x" data-fit-cell="0/launch_pos_x" value="69950000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_pos_y" data-fit-cell="0/launch_pos_y" value="-5000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_pos_z" data-fit-cell="0/launch_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_pos_unit" data-fit-cell="0/launch_pos_unit" value="0.1m"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_time_code" data-fit-cell="0/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_coord_frame" data-fit-cell="0/impact_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_pos_x" data-fit-cell="0/impact_pos_x" value="70100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_pos_y" data-fit-cell="0/impact_pos_y" value="10000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_pos_z" data-fit-cell="0/impact_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_pos_unit" data-fit-cell="0/impact_pos_unit" value="0.1m"></td>
+                        </tr>
+                        <tr data-v-69a1f04c="" data-fit-row="1">
+                          <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第2行</button></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 track_tgt_id" data-fit-cell="1/track_tgt_id" value="TGT-001"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_time_code" data-fit-cell="1/tack3d_time_code" value="2026-07-01 07:57:01.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_pos_x" data-fit-cell="1/tack3d_tgt_pos_x" value="70010000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_pos_y" data-fit-cell="1/tack3d_tgt_pos_y" value="1000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_pos_z" data-fit-cell="1/tack3d_tgt_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_vel_x" data-fit-cell="1/tack3d_tgt_vel_x" value="10000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_vel_y" data-fit-cell="1/tack3d_tgt_vel_y" value="1000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_vel_z" data-fit-cell="1/tack3d_tgt_vel_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_acc_x" data-fit-cell="1/tack3d_tgt_acc_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_acc_y" data-fit-cell="1/tack3d_tgt_acc_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_acc_z" data-fit-cell="1/tack3d_tgt_acc_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prop_tgt_type_8" data-fit-cell="1/prop_tgt_type_8" value="0x01"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prop_tgt_shape_8" data-fit-cell="1/prop_tgt_shape_8" value="0x02"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prop_tgt_flight_phase_8" data-fit-cell="1/prop_tgt_flight_phase_8" value="0x01"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prob_tgt_critical_incident" data-fit-cell="1/prob_tgt_critical_incident" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prob_tgt_critical_incident_time_code" data-fit-cell="1/prob_tgt_critical_incident_time_code" value=""></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_time_code" data-fit-cell="1/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_coord_frame" data-fit-cell="1/launch_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_pos_x" data-fit-cell="1/launch_pos_x" value="69950000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_pos_y" data-fit-cell="1/launch_pos_y" value="-5000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_pos_z" data-fit-cell="1/launch_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_pos_unit" data-fit-cell="1/launch_pos_unit" value="0.1m"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_time_code" data-fit-cell="1/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_coord_frame" data-fit-cell="1/impact_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_pos_x" data-fit-cell="1/impact_pos_x" value="70100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_pos_y" data-fit-cell="1/impact_pos_y" value="10000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_pos_z" data-fit-cell="1/impact_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_pos_unit" data-fit-cell="1/impact_pos_unit" value="0.1m"></td>
+                        </tr>
+                        <tr data-v-69a1f04c="" data-fit-row="2">
+                          <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第3行</button></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 track_tgt_id" data-fit-cell="2/track_tgt_id" value="TGT-001"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_time_code" data-fit-cell="2/tack3d_time_code" value="2026-07-01 07:57:02.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_pos_x" data-fit-cell="2/tack3d_tgt_pos_x" value="70020000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_pos_y" data-fit-cell="2/tack3d_tgt_pos_y" value="2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_pos_z" data-fit-cell="2/tack3d_tgt_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_vel_x" data-fit-cell="2/tack3d_tgt_vel_x" value="10000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_vel_y" data-fit-cell="2/tack3d_tgt_vel_y" value="1000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_vel_z" data-fit-cell="2/tack3d_tgt_vel_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_acc_x" data-fit-cell="2/tack3d_tgt_acc_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_acc_y" data-fit-cell="2/tack3d_tgt_acc_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_acc_z" data-fit-cell="2/tack3d_tgt_acc_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prop_tgt_type_8" data-fit-cell="2/prop_tgt_type_8" value="0x01"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prop_tgt_shape_8" data-fit-cell="2/prop_tgt_shape_8" value="0x02"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prop_tgt_flight_phase_8" data-fit-cell="2/prop_tgt_flight_phase_8" value="0x01"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prob_tgt_critical_incident" data-fit-cell="2/prob_tgt_critical_incident" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prob_tgt_critical_incident_time_code" data-fit-cell="2/prob_tgt_critical_incident_time_code" value=""></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_time_code" data-fit-cell="2/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_coord_frame" data-fit-cell="2/launch_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_pos_x" data-fit-cell="2/launch_pos_x" value="69950000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_pos_y" data-fit-cell="2/launch_pos_y" value="-5000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_pos_z" data-fit-cell="2/launch_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_pos_unit" data-fit-cell="2/launch_pos_unit" value="0.1m"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_time_code" data-fit-cell="2/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_coord_frame" data-fit-cell="2/impact_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_pos_x" data-fit-cell="2/impact_pos_x" value="70100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_pos_y" data-fit-cell="2/impact_pos_y" value="10000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_pos_z" data-fit-cell="2/impact_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_pos_unit" data-fit-cell="2/impact_pos_unit" value="0.1m"></td>
+                        </tr>
+                        <tr data-v-69a1f04c="" data-fit-row="3">
+                          <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第4行</button></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 track_tgt_id" data-fit-cell="3/track_tgt_id" value="TGT-001"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_time_code" data-fit-cell="3/tack3d_time_code" value="2026-07-01 07:57:03.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_pos_x" data-fit-cell="3/tack3d_tgt_pos_x" value="70030000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_pos_y" data-fit-cell="3/tack3d_tgt_pos_y" value="3000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_pos_z" data-fit-cell="3/tack3d_tgt_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_vel_x" data-fit-cell="3/tack3d_tgt_vel_x" value="10000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_vel_y" data-fit-cell="3/tack3d_tgt_vel_y" value="1000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_vel_z" data-fit-cell="3/tack3d_tgt_vel_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_acc_x" data-fit-cell="3/tack3d_tgt_acc_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_acc_y" data-fit-cell="3/tack3d_tgt_acc_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_acc_z" data-fit-cell="3/tack3d_tgt_acc_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prop_tgt_type_8" data-fit-cell="3/prop_tgt_type_8" value="0x01"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prop_tgt_shape_8" data-fit-cell="3/prop_tgt_shape_8" value="0x02"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prop_tgt_flight_phase_8" data-fit-cell="3/prop_tgt_flight_phase_8" value="0x01"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prob_tgt_critical_incident" data-fit-cell="3/prob_tgt_critical_incident" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prob_tgt_critical_incident_time_code" data-fit-cell="3/prob_tgt_critical_incident_time_code" value=""></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_time_code" data-fit-cell="3/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_coord_frame" data-fit-cell="3/launch_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_pos_x" data-fit-cell="3/launch_pos_x" value="69950000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_pos_y" data-fit-cell="3/launch_pos_y" value="-5000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_pos_z" data-fit-cell="3/launch_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_pos_unit" data-fit-cell="3/launch_pos_unit" value="0.1m"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_time_code" data-fit-cell="3/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_coord_frame" data-fit-cell="3/impact_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_pos_x" data-fit-cell="3/impact_pos_x" value="70100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_pos_y" data-fit-cell="3/impact_pos_y" value="10000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_pos_z" data-fit-cell="3/impact_pos_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_pos_unit" data-fit-cell="3/impact_pos_unit" value="0.1m"></td>
+                        </tr>
+                        <tr data-v-69a1f04c="" data-fit-row="4">
+                          <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第5行</button></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 track_tgt_id" data-fit-cell="4/track_tgt_id" value="TGT-002"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_time_code" data-fit-cell="4/tack3d_time_code" value="2026-07-01 07:57:00.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_pos_x" data-fit-cell="4/tack3d_tgt_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_pos_y" data-fit-cell="4/tack3d_tgt_pos_y" value="100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_pos_z" data-fit-cell="4/tack3d_tgt_pos_z" value="50000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_vel_x" data-fit-cell="4/tack3d_tgt_vel_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_vel_y" data-fit-cell="4/tack3d_tgt_vel_y" value="76000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_vel_z" data-fit-cell="4/tack3d_tgt_vel_z" value="100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_acc_x" data-fit-cell="4/tack3d_tgt_acc_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_acc_y" data-fit-cell="4/tack3d_tgt_acc_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_acc_z" data-fit-cell="4/tack3d_tgt_acc_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prop_tgt_type_8" data-fit-cell="4/prop_tgt_type_8" value="0x02"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prop_tgt_shape_8" data-fit-cell="4/prop_tgt_shape_8" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prop_tgt_flight_phase_8" data-fit-cell="4/prop_tgt_flight_phase_8" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prob_tgt_critical_incident" data-fit-cell="4/prob_tgt_critical_incident" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prob_tgt_critical_incident_time_code" data-fit-cell="4/prob_tgt_critical_incident_time_code" value=""></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_time_code" data-fit-cell="4/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_coord_frame" data-fit-cell="4/launch_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_pos_x" data-fit-cell="4/launch_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_pos_y" data-fit-cell="4/launch_pos_y" value="-280000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_pos_z" data-fit-cell="4/launch_pos_z" value="49500"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_pos_unit" data-fit-cell="4/launch_pos_unit" value="0.1m"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_time_code" data-fit-cell="4/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_coord_frame" data-fit-cell="4/impact_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_pos_x" data-fit-cell="4/impact_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_pos_y" data-fit-cell="4/impact_pos_y" value="860000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_pos_z" data-fit-cell="4/impact_pos_z" value="51000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_pos_unit" data-fit-cell="4/impact_pos_unit" value="0.1m"></td>
+                        </tr>
+                        <tr data-v-69a1f04c="" data-fit-row="5">
+                          <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第6行</button></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 track_tgt_id" data-fit-cell="5/track_tgt_id" value="TGT-002"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_time_code" data-fit-cell="5/tack3d_time_code" value="2026-07-01 07:57:01.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_pos_x" data-fit-cell="5/tack3d_tgt_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_pos_y" data-fit-cell="5/tack3d_tgt_pos_y" value="176000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_pos_z" data-fit-cell="5/tack3d_tgt_pos_z" value="50100"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_vel_x" data-fit-cell="5/tack3d_tgt_vel_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_vel_y" data-fit-cell="5/tack3d_tgt_vel_y" value="76000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_vel_z" data-fit-cell="5/tack3d_tgt_vel_z" value="100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_acc_x" data-fit-cell="5/tack3d_tgt_acc_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_acc_y" data-fit-cell="5/tack3d_tgt_acc_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_acc_z" data-fit-cell="5/tack3d_tgt_acc_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prop_tgt_type_8" data-fit-cell="5/prop_tgt_type_8" value="0x02"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prop_tgt_shape_8" data-fit-cell="5/prop_tgt_shape_8" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prop_tgt_flight_phase_8" data-fit-cell="5/prop_tgt_flight_phase_8" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prob_tgt_critical_incident" data-fit-cell="5/prob_tgt_critical_incident" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prob_tgt_critical_incident_time_code" data-fit-cell="5/prob_tgt_critical_incident_time_code" value=""></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_time_code" data-fit-cell="5/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_coord_frame" data-fit-cell="5/launch_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_pos_x" data-fit-cell="5/launch_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_pos_y" data-fit-cell="5/launch_pos_y" value="-280000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_pos_z" data-fit-cell="5/launch_pos_z" value="49500"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_pos_unit" data-fit-cell="5/launch_pos_unit" value="0.1m"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_time_code" data-fit-cell="5/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_coord_frame" data-fit-cell="5/impact_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_pos_x" data-fit-cell="5/impact_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_pos_y" data-fit-cell="5/impact_pos_y" value="860000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_pos_z" data-fit-cell="5/impact_pos_z" value="51000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_pos_unit" data-fit-cell="5/impact_pos_unit" value="0.1m"></td>
+                        </tr>
+                        <tr data-v-69a1f04c="" data-fit-row="6">
+                          <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第7行</button></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 track_tgt_id" data-fit-cell="6/track_tgt_id" value="TGT-002"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_time_code" data-fit-cell="6/tack3d_time_code" value="2026-07-01 07:57:02.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_pos_x" data-fit-cell="6/tack3d_tgt_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_pos_y" data-fit-cell="6/tack3d_tgt_pos_y" value="252000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_pos_z" data-fit-cell="6/tack3d_tgt_pos_z" value="50200"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_vel_x" data-fit-cell="6/tack3d_tgt_vel_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_vel_y" data-fit-cell="6/tack3d_tgt_vel_y" value="76000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_vel_z" data-fit-cell="6/tack3d_tgt_vel_z" value="100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_acc_x" data-fit-cell="6/tack3d_tgt_acc_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_acc_y" data-fit-cell="6/tack3d_tgt_acc_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_acc_z" data-fit-cell="6/tack3d_tgt_acc_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prop_tgt_type_8" data-fit-cell="6/prop_tgt_type_8" value="0x02"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prop_tgt_shape_8" data-fit-cell="6/prop_tgt_shape_8" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prop_tgt_flight_phase_8" data-fit-cell="6/prop_tgt_flight_phase_8" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prob_tgt_critical_incident" data-fit-cell="6/prob_tgt_critical_incident" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prob_tgt_critical_incident_time_code" data-fit-cell="6/prob_tgt_critical_incident_time_code" value=""></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_time_code" data-fit-cell="6/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_coord_frame" data-fit-cell="6/launch_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_pos_x" data-fit-cell="6/launch_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_pos_y" data-fit-cell="6/launch_pos_y" value="-280000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_pos_z" data-fit-cell="6/launch_pos_z" value="49500"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_pos_unit" data-fit-cell="6/launch_pos_unit" value="0.1m"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_time_code" data-fit-cell="6/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_coord_frame" data-fit-cell="6/impact_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_pos_x" data-fit-cell="6/impact_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_pos_y" data-fit-cell="6/impact_pos_y" value="860000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_pos_z" data-fit-cell="6/impact_pos_z" value="51000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_pos_unit" data-fit-cell="6/impact_pos_unit" value="0.1m"></td>
+                        </tr>
+                        <tr data-v-69a1f04c="" data-fit-row="7">
+                          <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第8行</button></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 track_tgt_id" data-fit-cell="7/track_tgt_id" value="TGT-002"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_time_code" data-fit-cell="7/tack3d_time_code" value="2026-07-01 07:57:03.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_pos_x" data-fit-cell="7/tack3d_tgt_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_pos_y" data-fit-cell="7/tack3d_tgt_pos_y" value="328000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_pos_z" data-fit-cell="7/tack3d_tgt_pos_z" value="50300"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_vel_x" data-fit-cell="7/tack3d_tgt_vel_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_vel_y" data-fit-cell="7/tack3d_tgt_vel_y" value="76000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_vel_z" data-fit-cell="7/tack3d_tgt_vel_z" value="100000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_acc_x" data-fit-cell="7/tack3d_tgt_acc_x" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_acc_y" data-fit-cell="7/tack3d_tgt_acc_y" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_acc_z" data-fit-cell="7/tack3d_tgt_acc_z" value="0"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prop_tgt_type_8" data-fit-cell="7/prop_tgt_type_8" value="0x02"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prop_tgt_shape_8" data-fit-cell="7/prop_tgt_shape_8" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prop_tgt_flight_phase_8" data-fit-cell="7/prop_tgt_flight_phase_8" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prob_tgt_critical_incident" data-fit-cell="7/prob_tgt_critical_incident" value="0xFF"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prob_tgt_critical_incident_time_code" data-fit-cell="7/prob_tgt_critical_incident_time_code" value=""></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_time_code" data-fit-cell="7/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_coord_frame" data-fit-cell="7/launch_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_pos_x" data-fit-cell="7/launch_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_pos_y" data-fit-cell="7/launch_pos_y" value="-280000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_pos_z" data-fit-cell="7/launch_pos_z" value="49500"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_pos_unit" data-fit-cell="7/launch_pos_unit" value="0.1m"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_time_code" data-fit-cell="7/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_coord_frame" data-fit-cell="7/impact_coord_frame" value="J2000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_pos_x" data-fit-cell="7/impact_pos_x" value="68000000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_pos_y" data-fit-cell="7/impact_pos_y" value="860000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_pos_z" data-fit-cell="7/impact_pos_z" value="51000"></td>
+                          <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_pos_unit" data-fit-cell="7/impact_pos_unit" value="0.1m"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <details data-v-69a1f04c="">
+                    <summary data-v-69a1f04c="">高级设置：完整JSON导入与兼容字段</summary><label data-v-69a1f04c="">选择完整请求 JSON<input data-v-69a1f04c="" type="file" accept=".json,application/json"></label>
+                    <!--v-if--><label data-v-69a1f04c="" class="ballistic-json-label">完整 FitRequest JSON<textarea data-v-69a1f04c="" data-test="fit-input" rows="18" spellcheck="false"></textarea></label>
+                  </details>
+                  <!--v-if-->
+                  <p data-v-69a1f04c="">8 条原包 · 任务 defaultFitTask · 步长 0.5 秒</p>
+                  <!--v-if-->
+                  <details data-v-69a1f04c="">
+                    <summary data-v-69a1f04c="">实际提交预览（outputDir 已省略）</summary><pre data-v-69a1f04c="">{
+  "taskName": "defaultFitTask",
+  "taskStartTime": "2026-07-01 07:56:55.000",
+  "taskEndTime": "2026-07-01 07:57:10.000",
+  "interpolationStepSec": 0.5,
+  "package102": [
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:00.000",
+      "tack3d_tgt_pos_x": "70000000",
+      "tack3d_tgt_pos_y": "0",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:01.000",
+      "tack3d_tgt_pos_x": "70010000",
+      "tack3d_tgt_pos_y": "1000",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:02.000",
+      "tack3d_tgt_pos_x": "70020000",
+      "tack3d_tgt_pos_y": "2000",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:03.000",
+      "tack3d_tgt_pos_x": "70030000",
+      "tack3d_tgt_pos_y": "3000",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-002",
+      "tack3d_time_code": "2026-07-01 07:57:00.000",
+      "tack3d_tgt_pos_x": "68000000",
+      "tack3d_tgt_pos_y": "100000",
+      "tack3d_tgt_pos_z": "50000",
+      "tack3d_tgt_vel_x": "0",
+      "tack3d_tgt_vel_y": "76000000",
+      "tack3d_tgt_vel_z": "100000",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x02",
+      "prop_tgt_shape_8": "0xFF",
+      "prop_tgt_flight_phase_8": "0xFF",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "68000000",
+      "launch_pos_y": "-280000",
+      "launch_pos_z": "49500",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "68000000",
+      "impact_pos_y": "860000",
+      "impact_pos_z": "51000",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-002",
+      "tack3d_time_code": "2026-07-01 07:57:01.000",
+      "tack3d_tgt_pos_x": "68000000",
+      "tack3d_tgt_pos_y": "176000",
+      "tack3d_tgt_pos_z": "50100",
+      "tack3d_tgt_vel_x": "0",
+      "tack3d_tgt_vel_y": "76000000",
+      "tack3d_tgt_vel_z": "100000",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x02",
+      "prop_tgt_shape_8": "0xFF",
+      "prop_tgt_flight_phase_8": "0xFF",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "68000000",
+      "launch_pos_y": "-280000",
+      "launch_pos_z": "49500",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "68000000",
+      "impact_pos_y": "860000",
+      "impact_pos_z": "51000",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-002",
+      "tack3d_time_code": "2026-07-01 07:57:02.000",
+      "tack3d_tgt_pos_x": "68000000",
+      "tack3d_tgt_pos_y": "252000",
+      "tack3d_tgt_pos_z": "50200",
+      "tack3d_tgt_vel_x": "0",
+      "tack3d_tgt_vel_y": "76000000",
+      "tack3d_tgt_vel_z": "100000",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x02",
+      "prop_tgt_shape_8": "0xFF",
+      "prop_tgt_flight_phase_8": "0xFF",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "68000000",
+      "launch_pos_y": "-280000",
+      "launch_pos_z": "49500",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "68000000",
+      "impact_pos_y": "860000",
+      "impact_pos_z": "51000",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-002",
+      "tack3d_time_code": "2026-07-01 07:57:03.000",
+      "tack3d_tgt_pos_x": "68000000",
+      "tack3d_tgt_pos_y": "328000",
+      "tack3d_tgt_pos_z": "50300",
+      "tack3d_tgt_vel_x": "0",
+      "tack3d_tgt_vel_y": "76000000",
+      "tack3d_tgt_vel_z": "100000",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x02",
+      "prop_tgt_shape_8": "0xFF",
+      "prop_tgt_flight_phase_8": "0xFF",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "68000000",
+      "launch_pos_y": "-280000",
+      "launch_pos_z": "49500",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "68000000",
+      "impact_pos_y": "860000",
+      "impact_pos_z": "51000",
+      "impact_pos_unit": "0.1m"
+    }
+  ]
+}</pre>
+                  </details>
+                </fieldset>
+                <!--v-if-->
+                <!--v-if-->
+                <!--v-if--><button data-v-69a1f04c="" type="button" data-test="fit-compute">执行原102包拟合</button>
+                <!--v-if-->
+              </section>
+            </div>
+            <!--v-if-->
+            <!--v-if-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/App.spec.ts:281:19
+    279|     await wrapper.get('#tab-ballistic-fit').trigger('click'); await fl…
+    280|     wrapper.findComponent({ name: 'BallisticFitView' }).vm.$emit('refe…
+    281|     await wrapper.get('#tab-ballistic-simulation').trigger('click'); a…
+       |                   ^
+    282|     wrapper.findComponent({ name: 'BallisticSimulationView' }).vm.$emi…
+    283|     await wrapper.get('#tab-ballistic-retime').trigger('click'); await…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/views/BallisticPayloadConfigurationView.spec.ts > 弹道双星多载荷配置生产视图 > 按星保持数组顺序、载荷唯一身份及删除隔离，编辑和预览保持十二字段
+AssertionError: expected { payloadId: '1-P3', …(11) } to match object { payloadId: '1-P3', …(4) }
+(7 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "angleRateDegPerSec": -1,
+    "azimuthMinDeg": null,
+    "payloadId": "1-P3",
+-   "payloadName": "载荷1",
++   "payloadName": "载荷3",
+    "startupAngleRateDegPerSec": -1,
+  }
+
+ ❯ src/views/BallisticPayloadConfigurationView.spec.ts:35:21
+     33|     const request = JSON.parse(String(fetchMock.mock.calls[0]![1].body…
+     34|     expect(Object.keys(request)).toHaveLength(12)
+     35|     expect(request).toMatchObject({ payloadId: payloads[0], payloadNam…
+       |                     ^
+     36|     expect(wrapper.find('[data-test="ballistic-preview"]').text()).toC…
+     37|     await wrapper.findAll('[data-test="remove-ballistic-payload"]')[0]…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 上传201/预览→四字段原UTC→2576行四图→登记事件/快照，改输入过期失败清旧成功
+AssertionError: expected { taskName: 'T04-retime', …(3) } to deeply equal { taskName: 'T04-retime', …(3) }
+
+- Expected
++ Received
+
+  {
+    "launchTimeUtc": "2026-07-02 07:57:00.000",
+-   "targetId": "RETIMED-TGT",
++   "targetId": "RET-001",
+    "taskName": "T04-retime",
+    "trajectoryCsvPath": "server/source.csv",
+  }
+
+ ❯ src/views/BallisticRetimeView.spec.ts:85:21
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+

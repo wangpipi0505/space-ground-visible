@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-14T10:17:17.733600+00:00",
+  "finishedUtc": "2026-10-14T10:17:18.426775+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A06safe",
+    "run-code",
+    "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-space-collect-flow.js"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+  "exitCode": 1,
+  "stdoutSha256": "c00ed1e4fb4554e1e34235332e7a2f9bb47fed43463cdcce807ac62b6f653735",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

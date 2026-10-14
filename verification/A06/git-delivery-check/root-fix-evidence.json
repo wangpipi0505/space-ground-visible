@@ -1,0 +1,27 @@
+{
+  "startedUtc": "2026-10-14T11:06:13.375300+00:00",
+  "finishedUtc": "2026-10-14T11:06:13.700528+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/runtime/verify_a06_fix_evidence.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A06/git-delivery-check/root-fix-evidence.stdout.bin",
+    "bytes": 220,
+    "sha256": "ac821ab48ff501d49911b22a7debbda357863e0a2ed06be6d77cd4ee74509b16"
+  },
+  "stderr": {
+    "path": "verification/A06/git-delivery-check/root-fix-evidence.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A06/root-gates/root-fix-evidence.json",
+    "sha256": "3e12ca189a1688c9f07579bb717b42aee9d128a443a0bb383fb5eca596f2549b"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-14T10:45:07.184811+00:00",
+  "finishedUtc": "2026-10-14T10:47:45.199270+00:00",
+  "argv": [
+    "C:/Program Files/nodejs/npm.cmd",
+    "test",
+    "--",
+    "--run",
+    "src/views/BallisticSwingAlignment.spec.ts"
+  ],
+  "cwd": "G:/5-YG/space-ground-visible/frontend",
+  "exitCode": 1,
+  "stdoutSha256": "5b88a9270d3d4fa0f5f658b877aafdd881ee81d5cd38da4581532d93a14231a1",
+  "stderrSha256": "e7da9fe192e2f3fc3209034f57f0772b57b70692d30d54b177e970945e209e91"
+}

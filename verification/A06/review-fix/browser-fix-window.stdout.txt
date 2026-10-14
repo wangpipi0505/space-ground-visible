@@ -1,0 +1,76 @@
+### Result
+{"failures":[{"field":"raanDeg","alerts":["种子升交点赤经（度）须明确填写有限数"],"selectedUnchanged":true,"focused":true},{"field":"meanAnomalyDeg","alerts":["种子平近点角（度）须明确填写有限数"],"selectedUnchanged":true,"focused":true}],"generatedSecond":{"identity":"MANUAL-5","values":["低轨星座-轨道面2-卫星1","7530612","0.00085","64.9","171.4","1.2","81.4","2026/07/01 10:00:00"]},"uploadStatus":201,"windowStatuses":[200,200],"errors":[]}
+### Ran Playwright code
+```js
+await (async page => {
+  /** 本轮真实Chrome反例与纠正：记录页面及网络；不route/mock，不更改后端。 */
+  const assert = (ok, text) => { if (!ok) throw new Error(text) }
+  page.__a06fix = { startedUtc: new Date().toISOString(), errors: [], checks: [], network: [] }
+  page.on('pageerror', error => page.__a06fix.errors.push(error.message))
+  page.on('response', async response => {
+    if (response.url().includes('/api/')) page.__a06fix.network.push({ url: response.url(), status: response.status(), request: response.request().postData(), response: await response.text() })
+  })
+  await page.getByRole('tab', { name: '可视窗口计算', exact: true }).click()
+  const view = page.locator('.ballistic-payload-view')
+  await view.getByText('按种子卫星生成星座（替换当前选择）', { exact: true }).click()
+  await view.locator('[data-generator-field=planeCount]').fill('1')
+  await view.locator('[data-generator-field=satellitesPerPlane]').fill('1')
+  const rows = () => view.locator('[data-satellite-id]').evaluateAll(elements => elements.map(row => ({ identity: row.dataset.satelliteId, values: [...row.querySelectorAll('input')].map(input => input.value) })))
+  const before = await rows()
+  const failures = []
+  for (const field of ['raanDeg', 'meanAnomalyDeg']) {
+    const input = view.locator(`[data-generator-field=${field}]`), old = await input.inputValue()
+    await input.fill('')
+    await view.locator('[data-test=generate-constellation]').click()
+    const after = await rows()
+    assert(JSON.stringify(after) === JSON.stringify(before), `${field}空值替换了当前星座`)
+    assert(await input.inputValue() === '' && await input.getAttribute('aria-invalid') === 'true', `${field}空值未留在可纠正字段`)
+    assert(await input.evaluate(element => document.activeElement === element), `${field}未定位焦点`)
+    failures.push({ field, alerts: await view.locator('[role=alert]').allTextContents(), selectedUnchanged: true, focused: true })
+    await input.fill(old)
+  }
+  await view.locator('[data-generator-field=epochUtc]').fill('2026/02/30 10:00:00')
+  await view.locator('[data-test=generate-constellation]').click()
+  assert(JSON.stringify(await rows()) === JSON.stringify(before), '非法UTC替换了当前星座')
+  assert((await view.locator('[role=alert]').innerText()).includes('UTC'), '非法UTC未报错')
+  await view.locator('[data-generator-field=epochUtc]').fill('')
+  await view.locator('[data-test=generate-constellation]').click()
+  assert(await view.locator('[data-orbit-field=epochUtc]').inputValue() === '2000/01/01 12:00:00', '空历元未落原J2000')
+  for (const [field, value] of Object.entries({ planeCount: '7', satellitesPerPlane: '1', semiMajorAxisM: '7530612.4', eccentricity: '0.0008504', inclinationDeg: '64.85', raanDeg: '120', argumentOfPerigeeDeg: '1.15', meanAnomalyDeg: '30', epochUtc: '2026-07-01 10:00:00.123' })) await view.locator(`[data-generator-field=${field}]`).fill(value)
+  await view.locator('[data-test=generate-constellation]').click()
+  const generated = await rows()
+  assert(generated.length === 7, '七平面未生成')
+  assert(JSON.stringify(generated[1].values.slice(1)) === JSON.stringify(['7530612', '0.00085', '64.9', '171.4', '1.2', '81.4', '2026/07/01 10:00:00']), '第二平面不等于Java8落表')
+  assert(await view.locator('[data-generator-field=semiMajorAxisM]').inputValue() === '7530612.4', '种子草稿被量化覆盖')
+  await view.locator('details').first().evaluate(element => element.open = false)
+  const uploadPending = page.waitForResponse(response => response.url().endsWith('/api/v1/ballistic/files') && response.request().method() === 'POST')
+  await view.locator('[data-test=upload-default-window]').click()
+  const upload = await uploadPending, reference = await upload.json()
+  assert(upload.status() === 201 && reference.sizeBytes === 1507045, '原默认CSV未真实上传')
+  await view.getByText('原数据预览', { exact: false }).waitFor()
+  for (const [field, value] of Object.entries({ startOffsetSec: '1200', stepSizeSec: '10', numCalculations: '2' })) await view.locator(`[data-option=${field}]`).fill(value)
+  const calculate = async label => {
+    const pending = page.waitForResponse(response => response.url().endsWith('/api/orbit/visibility/search') && response.request().method() === 'POST')
+    // DOM click不改变正在输入控件的焦点，证明input已进入最终快照，无blur补写。
+    await view.locator('[data-test=compute-window]').evaluate(element => element.click())
+    const response = await pending, request = response.request().postDataJSON(), body = await response.json()
+    assert(response.status() === 200 && body.allResults.length === 2, `${label}窗口请求失败`)
+    await view.locator('[data-test=window-success]').waitFor()
+    return { label, status: response.status(), request, allResultsCount: body.allResults.length }
+  }
+  const quantized = await calculate('generated-quantized')
+  assert(quantized.request.satellites[1].raanDeg === 171.4 && quantized.request.satellites[1].meanAnomalyDeg === 81.4 && quantized.request.satellites[0].inclinationDeg === 64.9 && quantized.request.satellites[0].semiMajorAxisM === 7530612 && quantized.request.satellites[0].eccentricity === .00085 && quantized.request.satellites[0].argumentOfPerigeeDeg === 1.2, '实际HTTP根数未量化')
+  await view.locator('[data-satellite-id]').first().locator('[data-orbit-field=epochUtc]').fill('2026/07/01 10:00:00.123')
+  await view.locator('[data-satellite-id]').first().locator('[data-orbit-field=semiMajorAxisM]').fill('7530612.123456789')
+  await view.locator('[data-satellite-id]').first().locator('[data-orbit-field=eccentricity]').fill('0.000850456789')
+  await view.locator('[data-satellite-id]').first().locator('[data-orbit-field=meanAnomalyDeg]').fill('30.123456789')
+  assert(await view.locator('[data-satellite-id]').first().locator('[data-orbit-field=meanAnomalyDeg]').evaluate(element => element === document.activeElement), '末格未在焦点')
+  const manual = await calculate('manual-full-precision')
+  assert(manual.request.satellites[0].semiMajorAxisM === 7530612.123456789 && manual.request.satellites[0].eccentricity === .000850456789 && manual.request.satellites[0].meanAnomalyDeg === 30.123456789 && manual.request.satellites[0].epochUtc === '2026/07/01 10:00:00.123', '手工完整精度被截断')
+  page.__a06fix.window = { failures, before, generated, reference, quantized, manual }
+  page.__a06fix.checks.push('空RAAN/M保留星座/草稿与焦点；错误UTC保留、空UTC落J2000；七平面Java量化真实HTTP；手工末格未失焦完整精度真实HTTP')
+  await view.screenshot({ path: 'G:/5-YG/space-ground-visible/verification/A06/review-fix/window-corrected.png' })
+  return { failures, generatedSecond: generated[1], uploadStatus: upload.status(), windowStatuses: [quantized.status, manual.status], errors: page.__a06fix.errors }
+}
+)(page);
+```

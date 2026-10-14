@@ -1,0 +1,20 @@
+{
+  "startedUtc": "2026-10-14T09:56:47.947710+00:00",
+  "finishedUtc": "2026-10-14T09:57:30.453482+00:00",
+  "argv": [
+    "C:/Program Files/nodejs/npm.cmd",
+    "test",
+    "--",
+    "src/views/BallisticSwingAlignment.spec.ts",
+    "src/App.spec.ts",
+    "src/components/BallisticWindowControls.spec.ts",
+    "src/views/BallisticPayloadConfigurationView.spec.ts",
+    "src/views/BallisticFitView.spec.ts",
+    "src/views/BallisticSimulationView.spec.ts",
+    "src/views/BallisticRetimeView.spec.ts"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "exitCode": 1,
+  "stdoutSha256": "c03fb4eb39b65498bda5e381cfccb1a4299b32bf528b75cc52ec44a4e961c4f1",
+  "stderrSha256": "4a62b5ddede2347420710f108b756cfda84678e330489f77e38a0328fa0e4ebe"
+}

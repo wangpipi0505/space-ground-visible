@@ -1,0 +1,16 @@
+{
+  "startedUtc": "2026-10-14T10:21:45.144345+00:00",
+  "finishedUtc": "2026-10-14T10:21:46.223400+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A06preview",
+    "open",
+    "http://localhost:5173",
+    "--config=G:/5-YG/space-ground-visible/verification/A06/playwright-config.json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+  "exitCode": 0,
+  "stdoutSha256": "cab2ab925dd6b4c31a2dee462fb91b1aa7a307cbd50fe4b12dde022763deb9dc",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

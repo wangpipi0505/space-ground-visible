@@ -1,0 +1,41 @@
+async page => {
+  const assert = (ok,text) => { if (!ok) throw new Error(text) }
+  const view = page.locator('.ballistic-payload-view')
+  /** 首次保持Swing扫描361/双星/原默认源与标准载荷；第二次明确输入三扫描及宽标准载荷验证非空窗口。 */
+  const calculate = async label => {
+    const pending = page.waitForResponse(r => r.url().endsWith('/api/orbit/visibility/search') && r.request().method() === 'POST', {timeout:240000})
+    await view.locator('[data-test=compute-window]').click()
+    // 同步响应可能在click返回前完成；忙态由受控pending单测证明，此处只核对真实响应和最终请求。
+    const response = await pending, body = await response.json(), request = response.request().postDataJSON()
+    assert(response.status() === 200,`窗口失败${JSON.stringify(body)}`)
+    await view.locator('[data-test=window-success]').waitFor()
+    const downloadPromise = page.waitForEvent('download')
+    await view.getByRole('button',{name:'下载原始响应 JSON',exact:true}).click()
+    const download = await downloadPromise
+    await download.saveAs(`G:/5-YG/space-ground-visible/verification/runtime/A06/${label}-response.json`)
+    return {label,status:response.status(),request,offsetCount:body.allResults.length,best:body.best?{offsetSecond:body.best.offsetSecond,visibleArcCount:body.best.visibleArcCount,visiblePointCount:body.best.visiblePointCount}:null}
+  }
+  const first = await calculate('window-default361')
+  assert(first.request.numCalculations === 361 && first.offsetCount === 361,'真实默认361未执行')
+  for (const payload of await view.locator('[data-payload-id]').all()) {
+    for (const [key,value] of [['minDistanceKm','0'],['maxDistanceKm','0'],['azimuthMinDeg',''],['azimuthMaxDeg',''],['elevationMinDeg',''],['elevationMaxDeg',''],['angleRateDegPerSec','-1'],['sunAvoidHalfAngleDeg','0'],['startupAngleRateDegPerSec','-1']]) {
+      const field = payload.locator(`[data-field=${key}] input`)
+      await field.fill(value); await field.press('Tab')
+    }
+  }
+  await view.locator('[data-test=default-base-utc]').fill('2026/07/01 08:24:00.000')
+  await view.locator('[data-test=target-base-utc]').fill('2026/07/01 07:57:00.000')
+  for (const [key,value] of [['startOffsetSec','1200'],['numCalculations','3']]) await view.locator(`[data-option=${key}]`).fill(value)
+  await view.locator('[data-satellite-id]').first().locator('[data-orbit-field=meanAnomalyDeg]').fill('42')
+  const second = await calculate('window-edited')
+  assert(second.request.satellites[0].meanAnomalyDeg === 42,'未失焦末格未进入请求')
+  assert(second.request.ballistics[0].baseLaunchUTC === '2026/07/01 07:57:00.000','个别UTC未优先')
+  assert(second.best && second.best.visibleArcCount > 0,'真实窗口为空')
+  await view.locator('[data-test=window-success]').screenshot({path:'G:/5-YG/space-ground-visible/verification/A06/window-nonempty.png'})
+  const downloadPromise = page.waitForEvent('download')
+  await view.getByRole('button',{name:'HTTP 下载原文件',exact:true}).click()
+  const original = await downloadPromise; await original.saveAs('G:/5-YG/space-ground-visible/verification/runtime/A06/default-window-original.csv')
+  page.__a06.windowRuns = [first,second]
+  page.__a06.checks.push('真实HTTP双星361扫描/未失焦M42/个别UTC优先/三扫描非空窗口/原文件与原响应下载')
+  return {runs:[first,second],errors:page.__a06.errors}
+}

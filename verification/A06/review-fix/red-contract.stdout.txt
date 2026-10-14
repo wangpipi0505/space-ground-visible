@@ -1,0 +1,25 @@
+
+> frontend@0.0.0 test
+> vitest run --run src/views/BallisticSwingAlignment.spec.ts
+
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticSwingAlignment.spec.ts (18 tests | 11 failed) 155735ms
+     × 生成前拒绝空种子 semiMajorAxisM，纠正后才替换 25770ms
+     × 生成前拒绝空种子 eccentricity，纠正后才替换 23991ms
+     × 生成前拒绝空种子 inclinationDeg，纠正后才替换 23999ms
+     × 生成前拒绝空种子 raanDeg，纠正后才替换 24259ms
+     × 生成前拒绝空种子 argumentOfPerigeeDeg，纠正后才替换 28292ms
+     × 生成前拒绝空种子 meanAnomalyDeg，纠正后才替换 23845ms
+     × 非法种子UTC保持当前星座，合法斜线/连字符UTC及空缺省可纠正 163ms
+     × 星座生成复现Java表格量化 a=7530612.4 e=0.0008504 885ms
+     × 星座生成复现Java表格量化 a=7530612.5 e=0.0008505 1086ms
+     × 星座生成复现Java表格量化 a=7530612.49 e=0.0008515 1214ms
+     × 默认八行新增第九行和删除后新增沿原defaultNewRow，字符串直接提交 9ms
+
+ Test Files  1 failed (1)
+      Tests  11 failed | 7 passed (18)
+   Start at  18:45:07
+   Duration  157.21s (transform 379ms, setup 0ms, import 1.18s, tests 155.74s, environment 196ms)
+

@@ -1,0 +1,16 @@
+
+  VITE v8.2.1  ready in 3434 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+  ➜  press h + enter to show help
+17:53:08 [vite] (client) hmr update /src/App.vue
+17:54:02 [vite] (client) hmr update /src/views/BallisticPayloadConfigurationView.vue
+17:54:50 [vite] (client) hmr update /src/components/BallisticWindowControls.vue
+17:56:46 [vite] (client) hmr update /src/views/BallisticFitView.vue
+17:56:47 [vite] (client) hmr update /src/views/BallisticSimulationView.vue
+17:56:47 [vite] (client) hmr update /src/views/BallisticRetimeView.vue
+17:57:44 [vite] (client) hmr update /src/components/BallisticWindowControls.vue
+17:58:36 [vite] (client) hmr update /src/views/BallisticFitView.vue
+17:58:36 [vite] (client) hmr update /src/views/BallisticSimulationView.vue
+17:58:37 [vite] (client) hmr update /src/views/BallisticFitView.vue
+17:58:37 [vite] (client) hmr update /src/views/BallisticSimulationView.vue

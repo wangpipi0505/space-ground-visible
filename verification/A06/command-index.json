@@ -1,0 +1,742 @@
+{
+  "generatedUtc": "2026-10-14T10:25:30.058251+00:00",
+  "commands": [
+    {
+      "metadata": "verification/A06/baseline.json",
+      "startedUtc": "2026-10-14T09:49:40.062251+00:00",
+      "finishedUtc": "2026-10-14T09:50:36.903714+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "1bfe324435fbac97d31d4dcc57083da2fca5b9c9384b8a0b019eb2f24bfde579",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-close-old.json",
+      "startedUtc": "2026-10-14T10:08:51.755641+00:00",
+      "finishedUtc": "2026-10-14T10:08:52.205650+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06",
+        "close"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "e7bcd6387dd1c93e39876fabf9b5cd718b4f74d3b051311c525359404f4e110b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-fit.json",
+      "startedUtc": "2026-10-14T10:04:00.641728+00:00",
+      "finishedUtc": "2026-10-14T10:06:01.110894+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06",
+        "run-code",
+        "--filename=../verification/A06/browser-fit-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 1,
+      "stdoutSha256": "595a6822d7be260b8ef10b3372f69e3e25bb48e7dd85c823ed63bf72cd3f6045",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-help.json",
+      "startedUtc": "2026-10-14T10:00:06.041923+00:00",
+      "finishedUtc": "2026-10-14T10:00:06.253544+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06",
+        "run-code",
+        "--help"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "b615e4dea6cab6ec95ec49fc211ce60c56e58a172d8c173ff1a7fe8bdfcb5f41",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-input.json",
+      "startedUtc": "2026-10-14T10:01:43.182328+00:00",
+      "finishedUtc": "2026-10-14T10:01:46.372174+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06",
+        "run-code",
+        "--filename=../verification/A06/browser-input-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "106ff6fd1e432f71afe5efb2e0918a297076df91f0ad8135876e79c600bff826",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-open.json",
+      "startedUtc": "2026-10-14T09:59:52.217231+00:00",
+      "finishedUtc": "2026-10-14T09:59:53.692089+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06",
+        "open",
+        "http://localhost:5173",
+        "--config=../verification/A06/playwright-config.json"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "dd2574e33cf3aca8f5b76475b2118f3c8e8172dab98f06326fc39847fdeae1d0",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-close-before-final.json",
+      "startedUtc": "2026-10-14T10:18:17.093729+00:00",
+      "finishedUtc": "2026-10-14T10:18:17.548467+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "close"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "9fcb3dcaf8b5d7bed821466af8b272fd83c06b50e64c382d574b8d66f20c922a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-collect-before-final.json",
+      "startedUtc": "2026-10-14T10:18:15.130394+00:00",
+      "finishedUtc": "2026-10-14T10:18:16.438287+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "async page => { const pending=page.waitForEvent(\"download\");await page.evaluate(text=>{const a=document.createElement(\"a\");a.href=URL.createObjectURL(new Blob([text]));a.download=\"A06-network-before-final.json\";a.click()},JSON.stringify(page.__a06,null,2));await(await pending).saveAs(\"G:/5-YG/space-ground-visible/verification/runtime/A06/browser-network-before-final.json\");return {records:page.__a06.network.length,errors:page.__a06.errors} }"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "438d10d6950625f96e8fc4db3c9daa9f0d1e539e225e43c7fdf52b4e9827131e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-diagnose.json",
+      "startedUtc": "2026-10-14T10:17:37.374456+00:00",
+      "finishedUtc": "2026-10-14T10:17:38.116445+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "async page => ({source:await page.locator(\"[data-test=window-source]\").inputValue(),generated:await page.locator(\"[data-test=generated-result-select]\").count(),targets:await page.locator(\"[data-target-id]\").allTextContents(),satellites:await page.locator(\"[data-satellite-id] input\").evaluateAll(items=>items.map(i=>i.value)),runs:Object.keys(page.__a06),network:page.__a06.network.map(item=>({url:item.url,status:item.status}))})"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "02bac1ac82dc69b1db782c75e60b1126161ceb22fb360db220cbfa99bdef09a9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-final-close.json",
+      "startedUtc": "2026-10-14T10:20:34.372684+00:00",
+      "finishedUtc": "2026-10-14T10:20:34.843677+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06final",
+        "close"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "b74b9a2a81ec149aee8bd92b4720d0cd26fde37f63a81c1ec86b1d9843663c53",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-final-fit.json",
+      "startedUtc": "2026-10-14T10:18:46.893019+00:00",
+      "finishedUtc": "2026-10-14T10:18:49.081111+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06final",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-fit-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "b4a9f3f4ed27666e045b247f828baee3be14ff07227803ea1e02c207ed755e30",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-final-input.json",
+      "startedUtc": "2026-10-14T10:18:37.815891+00:00",
+      "finishedUtc": "2026-10-14T10:18:40.772895+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06final",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-input-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "f080c3d4060125c84b06d05e8d2f47065d32e434a63c098e4c19ed14819a6c3c",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-final-open.json",
+      "startedUtc": "2026-10-14T10:18:18.216628+00:00",
+      "finishedUtc": "2026-10-14T10:18:19.424503+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06final",
+        "open",
+        "http://localhost:5173",
+        "--config=G:/5-YG/space-ground-visible/verification/A06/playwright-config.json"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "31ec654311e419b034fc1f4fa6f22dd4ad1a3ebed35b80446619df6352d5a45c",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-final-retime.json",
+      "startedUtc": "2026-10-14T10:19:04.398157+00:00",
+      "finishedUtc": "2026-10-14T10:19:08.107931+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06final",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-retime-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "37d27b9f75c82142a8f423dcf808b3b6f454cae7225d884b4529d8751169a8e7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-final-simulation.json",
+      "startedUtc": "2026-10-14T10:19:01.958146+00:00",
+      "finishedUtc": "2026-10-14T10:19:03.871695+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06final",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-simulation-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "582ac2dd177c7fe1ff836e604377dee4ffdf9324aae87024b8189e43e6c702fe",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-final-space-collect.json",
+      "startedUtc": "2026-10-14T10:19:08.613793+00:00",
+      "finishedUtc": "2026-10-14T10:19:11.042520+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06final",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-space-collect-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "0837af3d66e38b77c3bcccd63b7e5ef06854d71430bbfcd4d588254688fe6407",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-final-window.json",
+      "startedUtc": "2026-10-14T10:18:41.304018+00:00",
+      "finishedUtc": "2026-10-14T10:18:46.362870+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06final",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-window-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "7bea6dca2c350d02b262c1ec572765be4af1a3c8217d68c1a6f179250d597593",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-fit-valid.json",
+      "startedUtc": "2026-10-14T10:11:57.134053+00:00",
+      "finishedUtc": "2026-10-14T10:11:59.390906+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-fit-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "b91f114593d4b5dada61f8e948a82511ea8fb44c3fbfe7d82423e7fd6421339a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-fit.json",
+      "startedUtc": "2026-10-14T10:11:19.395030+00:00",
+      "finishedUtc": "2026-10-14T10:11:20.784028+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-fit-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 1,
+      "stdoutSha256": "08b8261cbe16896645b09c8fc2c67f51ad4c4b26aecc37345636a46099f969ab",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-input.json",
+      "startedUtc": "2026-10-14T10:10:58.100991+00:00",
+      "finishedUtc": "2026-10-14T10:11:01.044694+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-input-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "bac6214bc66c15d45307263b212f88bb6f977fc0a7585553202d73adb581767d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-open.json",
+      "startedUtc": "2026-10-14T10:10:56.261305+00:00",
+      "finishedUtc": "2026-10-14T10:10:57.570216+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "open",
+        "http://localhost:5173",
+        "--config=G:/5-YG/space-ground-visible/verification/A06/playwright-config.json"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "8aa089e1865d2cb6e3ca36bee9e16ce35a22cbc111523898f83739ce09e9897e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-preview-capture.json",
+      "startedUtc": "2026-10-14T10:21:46.767514+00:00",
+      "finishedUtc": "2026-10-14T10:21:48.028304+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06preview",
+        "run-code",
+        "async page => {await page.getByRole(\"tab\",{name:\"可视窗口计算\",exact:true}).click();await page.locator(\".ballistic-payload-view\").screenshot({path:\"G:/5-YG/space-ground-visible/verification/A06/window-defaults.png\"});await page.getByRole(\"tab\",{name:\"目标弹道拟合\",exact:true}).click();await page.locator(\".ballistic-fit-view\").screenshot({path:\"G:/5-YG/space-ground-visible/verification/A06/fit-defaults.png\"});await page.screenshot({path:\"G:/5-YG/space-ground-visible/verification/A06/navigation-current.png\",fullPage:true});return {tabNames:await page.locator(\".workspace-tabs > .el-tabs__header [role=tab]\").allTextContents(),fitRows:await page.locator(\"[data-fit-row]\").count()}}"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "880b43d181ebb9c84d5b6508b9abe4fb050bb1d550192a125ab201fa297cdaa3",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-preview-close.json",
+      "startedUtc": "2026-10-14T10:21:48.715264+00:00",
+      "finishedUtc": "2026-10-14T10:21:49.154688+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06preview",
+        "close"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "7df8ee20b75e6245d040725fdd29ac889d19b50830cedf0fbeda5d6bb3b483a2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-preview-open.json",
+      "startedUtc": "2026-10-14T10:21:45.144345+00:00",
+      "finishedUtc": "2026-10-14T10:21:46.223400+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06preview",
+        "open",
+        "http://localhost:5173",
+        "--config=G:/5-YG/space-ground-visible/verification/A06/playwright-config.json"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "cab2ab925dd6b4c31a2dee462fb91b1aa7a307cbd50fe4b12dde022763deb9dc",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-retime.json",
+      "startedUtc": "2026-10-14T10:14:19.278819+00:00",
+      "finishedUtc": "2026-10-14T10:14:23.113121+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-retime-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "bd4786d758ea9f19944c44dba5f23c864622507ad95630618d2a98e0dd0049a1",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-simulation.json",
+      "startedUtc": "2026-10-14T10:13:12.554498+00:00",
+      "finishedUtc": "2026-10-14T10:13:14.484604+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-simulation-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "6cf88b8203a93e9149b6d1cb715c5f67497041f3f62a162864f97cf803aa3037",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-snapshot.json",
+      "startedUtc": "2026-10-14T10:16:11.093891+00:00",
+      "finishedUtc": "2026-10-14T10:16:11.359997+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "snapshot"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "ddfca2638c57d768a169124f3b4740d62261dd8787f803c080df1a10cd19228b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-space-collect-retry.json",
+      "startedUtc": "2026-10-14T10:17:17.733600+00:00",
+      "finishedUtc": "2026-10-14T10:17:18.426775+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-space-collect-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 1,
+      "stdoutSha256": "c00ed1e4fb4554e1e34235332e7a2f9bb47fed43463cdcce807ac62b6f653735",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-space-collect.json",
+      "startedUtc": "2026-10-14T10:15:12.517232+00:00",
+      "finishedUtc": "2026-10-14T10:15:43.231988+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-space-collect-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 1,
+      "stdoutSha256": "f075ba6a9d5b8c0110d4c7d227ec6be85b985338992fba4a24ea6ad0a7883249",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-safe-window.json",
+      "startedUtc": "2026-10-14T10:11:07.073278+00:00",
+      "finishedUtc": "2026-10-14T10:11:12.342230+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06safe",
+        "run-code",
+        "--filename=G:/5-YG/space-ground-visible/verification/A06/browser-window-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A06\\cli-session",
+      "exitCode": 0,
+      "stdoutSha256": "c0e8625a8f2922d255a10121dab03d660619a9bf04583bb3d4a84f8b17c41376",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-window-retry.json",
+      "startedUtc": "2026-10-14T10:02:53.405218+00:00",
+      "finishedUtc": "2026-10-14T10:06:35.734163+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06",
+        "run-code",
+        "--filename=../verification/A06/browser-window-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 1,
+      "stdoutSha256": "3023e034c04e1c494b40be6db4af1dd42e3c65b2ba092afe41bc888e0c1ef184",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/browser-window.json",
+      "startedUtc": "2026-10-14T10:02:31.466236+00:00",
+      "finishedUtc": "2026-10-14T10:02:35.812303+00:00",
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=A06",
+        "run-code",
+        "--filename=../verification/A06/browser-window-flow.js"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 1,
+      "stdoutSha256": "3b4dec7fcc7ebf14fefd9c3d30362c42211a3b0222a395cb279f338eb80a1219",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/build-1.json",
+      "startedUtc": "2026-10-14T09:57:18.321995+00:00",
+      "finishedUtc": "2026-10-14T09:57:27.122684+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "8f148b51539200b0b1b7d1fcf1c06f80bba73f670b61ae57f5fa7506f45f6f57",
+      "stderrSha256": "351b524197fb492920789369e7f1a271420c757633fbb553b280a181ac4c31a4"
+    },
+    {
+      "metadata": "verification/A06/build-final-unknown.json",
+      "startedUtc": "2026-10-14T10:10:31.014910+00:00",
+      "finishedUtc": "2026-10-14T10:10:34.904908+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "1859a2711f96feb95c3e2f213b6d87ed6b5d81b213288f81c0619387593a32c9",
+      "stderrSha256": "351b524197fb492920789369e7f1a271420c757633fbb553b280a181ac4c31a4"
+    },
+    {
+      "metadata": "verification/A06/final-build.json",
+      "startedUtc": "2026-10-14T10:01:46.914137+00:00",
+      "finishedUtc": "2026-10-14T10:01:50.730766+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "31504c7698a4f23c87e1a9731e9ddbdd65c67e66f41f27b25876ac91c204cb04",
+      "stderrSha256": "351b524197fb492920789369e7f1a271420c757633fbb553b280a181ac4c31a4"
+    },
+    {
+      "metadata": "verification/A06/final-full-tests.json",
+      "startedUtc": "2026-10-14T10:17:02.918721+00:00",
+      "finishedUtc": "2026-10-14T10:17:50.753716+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "3fca6af7977328049cdee0abc6bffe6752d73dd7e18cc322934c2ed60aa59ecc",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/final-type-build.json",
+      "startedUtc": "2026-10-14T10:17:13.336566+00:00",
+      "finishedUtc": "2026-10-14T10:17:17.178381+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "13a0fc01ab1665cd18af49c94de297c0e39066775410eb3bb76657902b7c8f50",
+      "stderrSha256": "351b524197fb492920789369e7f1a271420c757633fbb553b280a181ac4c31a4"
+    },
+    {
+      "metadata": "verification/A06/full-tests-final.json",
+      "startedUtc": "2026-10-14T10:10:20.622355+00:00",
+      "finishedUtc": "2026-10-14T10:11:10.884219+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "44f64b3f2d7b47e0aac898b5c927056a5f2ade82506281c4ea62e2c7ea819b05",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/full-tests.json",
+      "startedUtc": "2026-10-14T09:59:32.901106+00:00",
+      "finishedUtc": "2026-10-14T10:00:21.733974+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "cba17d2f79af3e25794bf514471ad7d74e0d64309aa718a210cd315085e7baea",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/green-1.json",
+      "startedUtc": "2026-10-14T09:56:47.947710+00:00",
+      "finishedUtc": "2026-10-14T09:57:30.453482+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test",
+        "--",
+        "src/views/BallisticSwingAlignment.spec.ts",
+        "src/App.spec.ts",
+        "src/components/BallisticWindowControls.spec.ts",
+        "src/views/BallisticPayloadConfigurationView.spec.ts",
+        "src/views/BallisticFitView.spec.ts",
+        "src/views/BallisticSimulationView.spec.ts",
+        "src/views/BallisticRetimeView.spec.ts"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 1,
+      "stdoutSha256": "c03fb4eb39b65498bda5e381cfccb1a4299b32bf528b75cc52ec44a4e961c4f1",
+      "stderrSha256": "4a62b5ddede2347420710f108b756cfda84678e330489f77e38a0328fa0e4ebe"
+    },
+    {
+      "metadata": "verification/A06/green-2.json",
+      "startedUtc": "2026-10-14T09:58:38.016817+00:00",
+      "finishedUtc": "2026-10-14T09:59:21.696335+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test",
+        "--",
+        "src/views/BallisticSwingAlignment.spec.ts",
+        "src/App.spec.ts",
+        "src/components/BallisticWindowControls.spec.ts",
+        "src/views/BallisticPayloadConfigurationView.spec.ts",
+        "src/views/BallisticFitView.spec.ts",
+        "src/views/BallisticSimulationView.spec.ts",
+        "src/views/BallisticRetimeView.spec.ts"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 1,
+      "stdoutSha256": "5284b2e85cd547c08f2c6f0252ba319d034d58c3e02d36af6fd6b7a30a8c8d48",
+      "stderrSha256": "48427b623570a0125bb1e522cb8c7777ad804f1a83b1aff68b63df25ca4a0c94"
+    },
+    {
+      "metadata": "verification/A06/green-unknown.json",
+      "startedUtc": "2026-10-14T10:10:02.663821+00:00",
+      "finishedUtc": "2026-10-14T10:10:06.649462+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test",
+        "--",
+        "src/views/BallisticSwingAlignment.spec.ts",
+        "src/utils/ballisticFit.spec.ts"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "62a14b50cb457eb29c946d1c1d51a234b96464ba1cbe7ba135a9ebbdfb5a2435",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metadata": "verification/A06/pw-version.json",
+      "startedUtc": "2026-10-14T09:57:44.652144+00:00",
+      "finishedUtc": "2026-10-14T09:57:54.304626+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npx.cmd",
+        "--yes",
+        "--package",
+        "@playwright/cli",
+        "playwright-cli",
+        "--version"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 3221226505,
+      "stdoutSha256": "b0569383609842116bc78ee560cb5a7aee44bdbe59d85efc7b7316cb72389862",
+      "stderrSha256": "cd97713815dc5ce58c5af19555bbdabeee25780398294de78f11eb9979e99b26"
+    },
+    {
+      "metadata": "verification/A06/red-unknown-assert.json",
+      "startedUtc": "2026-10-14T10:09:46.867021+00:00",
+      "finishedUtc": "2026-10-14T10:09:50.811825+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test",
+        "--",
+        "src/views/BallisticSwingAlignment.spec.ts"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 1,
+      "stdoutSha256": "10429cc5294f9265be57e12c0d394faf50cd73447eb10cbcbed12d439377b1f3",
+      "stderrSha256": "673c9a16973fae11203b67a44d08ad0389d6dc8eeb4a47807ce5f2aa102291ef"
+    },
+    {
+      "metadata": "verification/A06/red-unknown.json",
+      "startedUtc": "2026-10-14T10:09:35.746740+00:00",
+      "finishedUtc": "2026-10-14T10:09:39.751576+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test",
+        "--",
+        "src/views/BallisticSwingAlignment.spec.ts"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 1,
+      "stdoutSha256": "ffa8bb5ca2d7762acd8a7c1e3f2c05fbd6160858b5fe1b75a75627dff9c9da26",
+      "stderrSha256": "d90c3ed4e72740982a5dd34feb21292c4d552d05c5c505d748717c5bccbf55ea"
+    },
+    {
+      "metadata": "verification/A06/red.json",
+      "startedUtc": "2026-10-14T09:51:14.755476+00:00",
+      "finishedUtc": "2026-10-14T09:51:58.978292+00:00",
+      "argv": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "test",
+        "--",
+        "src/views/BallisticSwingAlignment.spec.ts",
+        "src/App.spec.ts"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 1,
+      "stdoutSha256": "e47b5757ce112c66428daf21e31db126c4989a674ce3cb6706f0386adc01fcdb",
+      "stderrSha256": "6af5c5a35c6b3b0c70c47e6801db4cfd971a873b4ae52b72c601780945bf2042"
+    },
+    {
+      "metadata": "verification/A06/verify-browser-byte-protection.json",
+      "startedUtc": "2026-10-14T10:20:07.133570+00:00",
+      "finishedUtc": "2026-10-14T10:20:07.635449+00:00",
+      "argv": [
+        "python",
+        "G:/5-YG/space-ground-visible/verification/runtime/A06/verify.py"
+      ],
+      "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+      "exitCode": 0,
+      "stdoutSha256": "d01f40210801eeb69f416bccea0ae7d94d0b622cd64a82ef1a61490e9242cda1",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
