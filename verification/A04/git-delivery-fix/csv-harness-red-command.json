@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/A04/git-delivery-fix/test_git_delivery.py",
+    "csv-crlf-rejected",
+    "--case",
+    "csv-crlf"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:50:42.319203+00:00",
+  "endedUtc": "2026-10-14T04:50:43.134423+00:00",
+  "exitCode": 1,
+  "stdoutFile": "csv-harness-red.stdout.bin",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrFile": "csv-harness-red.stderr.bin",
+  "stderrBytes": 540,
+  "stderrSha256": "8cad5df16cc4f5516833b2b5b49847ab9342ccfdd5c513366fecfe9712185a69"
+}

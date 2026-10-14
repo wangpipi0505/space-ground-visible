@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\ADMINI~1\AppData\Local\Temp\a04-git-lf-80mb1wr9\verification\A04\delivery_check.py", line 212, in <module>
+    print(json.dumps(verify(parser.parse_args().root), ensure_ascii=False, indent=2))
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMINI~1\AppData\Local\Temp\a04-git-lf-80mb1wr9\verification\A04\delivery_check.py", line 87, in verify
+    check_legacy_source(path)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ADMINI~1\AppData\Local\Temp\a04-git-lf-80mb1wr9\verification\A04\delivery_check.py", line 62, in check_legacy_source
+    assert identity in (LEGACY_CRLF, LEGACY_LF), '交付字节不匹配：' + LEGACY_SOURCE
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 交付字节不匹配：verification/T07/SpaceRegression.java

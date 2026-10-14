@@ -46,6 +46,26 @@ def check_observation_report(residuals, report):
     assert str(sum(len(target['samples']) for target in residuals['targets'])) + ' 个原始观测' in report
 
 
+LEGACY_SOURCE = 'verification/T07/SpaceRegression.java'
+LEGACY_CRLF = (15397, '22956f0df0970c5a67942906c1c3ff8e6aed7e204629794670000d2bf5a9ec15')
+LEGACY_LF = (15202, '622687b8150a2795e788876c28b757558f39a351e618ba94370e625b0306ba81')
+
+
+def check_legacy_source(path):
+    """仅允许具名旧T07源的两个固定身份，并证明CRLF→LF转换后完全一致。
+
+    原执行输入保持15397字节CRLF；Git交付保持15202字节LF。双向重建均需
+    同时匹配固定长度和SHA，正文或其他行尾变化不能借此豁免。其他证据不调用此函数。
+    """
+    raw = path.read_bytes()
+    identity = (len(raw), hashlib.sha256(raw).hexdigest())
+    assert identity in (LEGACY_CRLF, LEGACY_LF), '交付字节不匹配：' + LEGACY_SOURCE
+    lf = raw.replace(b'\r\n', b'\n')
+    crlf = lf.replace(b'\n', b'\r\n')
+    assert (len(lf), hashlib.sha256(lf).hexdigest()) == LEGACY_LF
+    assert (len(crlf), hashlib.sha256(crlf).hexdigest()) == LEGACY_CRLF
+
+
 def verify(root):
     """核验具名证据集合，返回作用域计数；不读取manifest内的runtime/绝对资产。"""
     root = root.resolve()
@@ -53,10 +73,37 @@ def verify(root):
     delivery = load(out / 'candidate-delivery-manifest.json')
     assert delivery['fileCount'] == len(delivery['files'])
     assert len({item['path'] for item in delivery['files']}) == delivery['fileCount']
+    # 870项快照不倒填；本次唯一修改的旧checker以新小备份绑定其原始身份。
+    checker_path = 'verification/A04/delivery_check.py'
+    checker_before = load(out / 'git-delivery-fix/history/before-bindings.json')['files']
+    assert len(checker_before) == 1 and checker_before[0]['path'] == checker_path
+    checker_before = checker_before[0]
+    assert checker_before['beforePath'] == 'verification/A04/git-delivery-fix/history/delivery_check.py.before'
     for item in delivery['files']:
-        path = inside(root, item['path'])
+        path = inside(root, checker_before['beforePath'] if item['path'] == checker_path else item['path'])
         assert path.is_file(), '缺少交付证据：' + item['path']
-        assert path.stat().st_size == item['bytes'] and sha(path) == item['sha256'], '交付字节不匹配：' + item['path']
+        if item['path'] == LEGACY_SOURCE:
+            assert (item['bytes'], item['sha256']) == LEGACY_CRLF
+            check_legacy_source(path)
+        else:
+            assert path.stat().st_size == item['bytes'] and sha(path) == item['sha256'], '交付字节不匹配：' + item['path']
+        if item['path'] == checker_path:
+            assert (checker_before['bytes'], checker_before['sha256']) == (item['bytes'], item['sha256'])
+
+    # 根最终交付清单绑定当前checker及所有后续证据；仅旧T07保留上述具名行尾兼容。
+    final_delivery = load(out / '交付清单.json')
+    final_paths = {item['path'] for item in final_delivery}
+    assert len(final_paths) == len(final_delivery), '最终交付清单路径重复'
+    assert {item['path'] for item in delivery['files']} <= final_paths, '最终清单缺少候选路径'
+    assert {checker_before['beforePath'], 'verification/A04/git-delivery-fix/history/before-bindings.json'} <= final_paths
+    for item in final_delivery:
+        path = inside(root, item['path'])
+        assert path.is_file(), '缺少最终交付证据：' + item['path']
+        if item['path'] == LEGACY_SOURCE:
+            assert (item['bytes'], item['sha256']) == LEGACY_LF
+            check_legacy_source(path)
+        else:
+            assert path.stat().st_size == item['bytes'] and sha(path) == item['sha256'], '最终交付字节不匹配：' + item['path']
 
     # 历史本机清单不刷新：四个改动文件用原字节小备份匹配修复前SHA，其余只读核对。
     history = load(out / 'delivery-fix/history/before-bindings.json')
@@ -152,7 +199,7 @@ def verify(root):
         p, v = case['stats']['positionM'], case['stats']['velocityMps']
         row = '| '+str(case['observationIntervalSec'])+' | '+str(case['observations'])+' | '+str(case['holdoutRows'])+' | '+' | '.join(format(float(value), '.9g') for value in (p['rmse'], p['maximum'], p['p95NearestRank'], v['rmse'], v['maximum'], v['p95NearestRank']))+' |'
         assert row in report, '留出报告与指标不匹配'
-    return dict(passed=True, candidateFiles=delivery['fileCount'], currentSourceInputs=len(source['files']),
+    return dict(passed=True, candidateFiles=delivery['fileCount'], finalDeliveryFiles=len(final_delivery), currentSourceInputs=len(source['files']),
                 historicalNonruntimeFiles=len(nonruntime), historicalRuntimeFilesNotRead=len(runtime),
                 historicalInputBindingsNotDereferenced=927, historicalCommands=len(commands), originalStreams=94,
                 junitClasses=23, junit=totals, holdoutCases=len(held['cases']), gridRows=9373,

@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path\nfrom datetime import datetime\nimport ast, hashlib, json\nout = Path('verification/A04')\nfix = out / 'git-delivery-fix'\nsha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()\nrecords = sorted(fix.glob('*-command.json'))\nassert len(records) == 11\nfor path in records:\n    d = json.loads(path.read_bytes())\n    start, end = [datetime.fromisoformat(d[k]) for k in ('startedUtc', 'endedUtc')]\n    assert start.utcoffset().total_seconds() == end.utcoffset().total_seconds() == 0 and end >= start\n    assert d['argv'] and d['cwd']\n    for label in ('stdout', 'stderr'):\n        p = fix / d[label + 'File']\n        assert len(p.read_bytes()) == d[label + 'Bytes'] and sha(p) == d[label + 'Sha256']\nfor path in sorted(fix.glob('*-fingerprints.json')):\n    d = json.loads(path.read_bytes())\n    assert d['before'] == d['after'] and d['byteReadonly'] and not d['runtimePresent']\nassert len(list(fix.glob('*-fingerprints.json'))) == 8\nfor name, expected in [('candidate-delivery-manifest.json','0dc909dcd7abc42220f7d26e130211c7f6c0040527c1ddbce9d2bcc473c9a776'),('artifact-manifest.json','9158db0b688467526e37f4da8aeb46fbac559b046831e4825be9478b2ec1838c'),('input-bindings.json','61d53d9b3e75c05e73debacfcf3900c572cf63aeeef566ef01c21953c9bcfa32'),('独立精度复审报告.md','605d0e0fba19547aa165c0ef2096bf70e51b81a1ae41bf1e6407155d25c7bf48'),('精度测试报告.md','f4f3befa015981e31ab2e273695ed489adc4cae5af20da27dc4a3936fcf113a5')]:\n    assert sha(out / name) == expected, name\nassert sha(out / 'delivery_check.py') == '53ba1f8cf327b270b15816f77ebcf0c04bd2ef20ec252ff6645a646fdfdc7359'\nassert sha(fix / 'history/delivery_check.py.before') == '380ea54ce4c86cecd6c304ebb6176de661c195161ac3209a1761d8a2553d9c24'\nfor p in (out / 'delivery_check.py', fix / 'test_git_delivery.py'):\n    ast.parse(p.read_text(encoding='utf-8'))\nprint(json.dumps(dict(passed=True, commands=11, rawStreams=22, readonlyTrees=8, protectedSnapshots=5, checkerSha256=sha(out / 'delivery_check.py'), scope='仅字节证据与语法；未执行数值计算'),ensure_ascii=False))"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:52:06.215164+00:00",
+  "endedUtc": "2026-10-14T04:52:06.287067+00:00",
+  "exitCode": 0,
+  "stdoutFile": "evidence-integrity-green.stdout.bin",
+  "stdoutBytes": 243,
+  "stdoutSha256": "7896dccd7f76d3822e46ad20291350888448a60f13078598490f559dfcf52f9a",
+  "stderrFile": "evidence-integrity-green.stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

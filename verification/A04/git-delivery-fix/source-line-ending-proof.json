@@ -1,0 +1,13 @@
+{
+  "path": "verification/T07/SpaceRegression.java",
+  "gitCommit": "3dc6285",
+  "gitCommandRecord": "git-t07-source-command.json",
+  "originalBytes": 15397,
+  "originalSha256": "22956f0df0970c5a67942906c1c3ff8e6aed7e204629794670000d2bf5a9ec15",
+  "gitLfBytes": 15202,
+  "gitLfSha256": "622687b8150a2795e788876c28b757558f39a351e618ba94370e625b0306ba81",
+  "originalCrlfCount": 195,
+  "convertedBytes": 15202,
+  "convertedSha256": "622687b8150a2795e788876c28b757558f39a351e618ba94370e625b0306ba81",
+  "conversionByteEqual": true
+}

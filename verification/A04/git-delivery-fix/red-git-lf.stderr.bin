@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\ADMINI~1\AppData\Local\Temp\a04-git-lf-h0tilscg\verification\A04\delivery_check.py", line 165, in <module>
+    print(json.dumps(verify(parser.parse_args().root), ensure_ascii=False, indent=2))
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMINI~1\AppData\Local\Temp\a04-git-lf-h0tilscg\verification\A04\delivery_check.py", line 59, in verify
+    assert path.stat().st_size == item['bytes'] and sha(path) == item['sha256'], '交付字节不匹配：' + item['path']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 交付字节不匹配：verification/T07/SpaceRegression.java

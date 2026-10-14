@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/A04/git-delivery-fix/test_git_delivery.py",
+    "green-worktree-crlf",
+    "--case",
+    "worktree-crlf"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:50:41.492564+00:00",
+  "endedUtc": "2026-10-14T04:50:42.317163+00:00",
+  "exitCode": 1,
+  "stdoutFile": "worktree-harness-red.stdout.bin",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrFile": "worktree-harness-red.stderr.bin",
+  "stderrBytes": 507,
+  "stderrSha256": "2abb2b6a5acb81651b5735665aaa3e4ca8ee3c6790bcf12c5bdcd3820be08b1f"
+}

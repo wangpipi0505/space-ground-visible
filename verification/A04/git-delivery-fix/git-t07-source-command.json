@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "git",
+    "show",
+    "3dc6285:verification/T07/SpaceRegression.java"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:48:45.097835+00:00",
+  "endedUtc": "2026-10-14T04:48:45.119470+00:00",
+  "exitCode": 0,
+  "stdoutFile": "git-t07-source.stdout.bin",
+  "stdoutBytes": 15202,
+  "stdoutSha256": "622687b8150a2795e788876c28b757558f39a351e618ba94370e625b0306ba81",
+  "stderrFile": "git-t07-source.stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

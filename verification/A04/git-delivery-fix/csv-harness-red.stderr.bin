@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A04\git-delivery-fix\test_git_delivery.py", line 125, in <module>
+    main()
+    ~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\A04\git-delivery-fix\test_git_delivery.py", line 102, in main
+    changed = next(item['path'] for item in candidate['files']
+                   if item['path'].startswith('verification/A04/') and item['path'].endswith(suffix)
+                   and b'\n' in (root / item['path']).read_bytes())
+StopIteration

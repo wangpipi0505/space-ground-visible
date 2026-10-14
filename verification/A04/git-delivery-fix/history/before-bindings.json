@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "path": "verification/A04/delivery_check.py",
+      "beforePath": "verification/A04/git-delivery-fix/history/delivery_check.py.before",
+      "bytes": 10725,
+      "sha256": "380ea54ce4c86cecd6c304ebb6176de661c195161ac3209a1761d8a2553d9c24"
+    }
+  ]
+}

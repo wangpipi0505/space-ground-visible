@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\a04-git-lf-b_00ygic\\verification\\A04\\delivery_check.py",
+    "--root",
+    "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\a04-git-lf-b_00ygic"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:52:55.591110+00:00",
+  "endedUtc": "2026-10-14T04:52:56.090086+00:00",
+  "exitCode": 1,
+  "stdoutFile": "raw-crlf-rejected-r2.stdout.bin",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrFile": "raw-crlf-rejected-r2.stderr.bin",
+  "stderrBytes": 726,
+  "stderrSha256": "e5e921db50d340fe3b0db733a4d270880135142f29a0efd52128032d94fd906b"
+}

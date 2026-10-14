@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\a04-git-lf-7wpe_48k\\verification\\A04\\delivery_check.py",
+    "--root",
+    "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\a04-git-lf-7wpe_48k"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:50:55.704981+00:00",
+  "endedUtc": "2026-10-14T04:50:56.168008+00:00",
+  "exitCode": 1,
+  "stdoutFile": "csv-crlf-rejected.stdout.bin",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrFile": "csv-crlf-rejected.stderr.bin",
+  "stderrBytes": 721,
+  "stderrSha256": "173e3143ce2f637a53745fd873edd37e1819e57debde26b6f9511a10b0707501"
+}

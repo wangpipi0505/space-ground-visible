@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "candidateFiles": 870,
+  "finalDeliveryFiles": 950,
+  "currentSourceInputs": 635,
+  "historicalNonruntimeFiles": 220,
+  "historicalRuntimeFilesNotRead": 1206,
+  "historicalInputBindingsNotDereferenced": 927,
+  "historicalCommands": 47,
+  "originalStreams": 94,
+  "junitClasses": 23,
+  "junit": {
+    "tests": 77,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "holdoutCases": 3,
+  "gridRows": 9373,
+  "scope": "只读交付证据核验；没有执行精度计算、Java/Maven、JAR/classes检查或原产物双跑；外部物理真值未测"
+}

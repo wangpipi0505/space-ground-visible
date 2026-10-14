@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A04\git-delivery-fix\test_git_delivery.py", line 125, in <module>
+    main()
+    ~~~~^^
+  File "G:\5-YG\space-ground-visible\verification\A04\git-delivery-fix\test_git_delivery.py", line 101, in main
+    suffix = {'csv-crlf': '.csv', 'json-crlf': '.json', 'raw-crlf': '.stdout.bin'}[args.case]
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'worktree-crlf'

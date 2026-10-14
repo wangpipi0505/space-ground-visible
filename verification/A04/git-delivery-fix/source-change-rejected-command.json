@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\a04-git-lf-80mb1wr9\\verification\\A04\\delivery_check.py",
+    "--root",
+    "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\a04-git-lf-80mb1wr9"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:50:24.305477+00:00",
+  "endedUtc": "2026-10-14T04:50:24.952846+00:00",
+  "exitCode": 1,
+  "stdoutFile": "source-change-rejected.stdout.bin",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrFile": "source-change-rejected.stderr.bin",
+  "stderrBytes": 843,
+  "stderrSha256": "0391ea2fc83a592d5bc131735b62e0f0cae7d43dba5e85f49610004cd1ddeb7f"
+}

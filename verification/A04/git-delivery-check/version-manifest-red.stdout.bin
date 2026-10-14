@@ -1,0 +1,1 @@
+{"revision": "3dc6285", "manifest": "verification/A04/交付清单.json", "files": 906, "passed": false, "differences": [{"path": "verification/T07/SpaceRegression.java", "sha256": "622687b8150a2795e788876c28b757558f39a351e618ba94370e625b0306ba81", "bytes": 15202}]}

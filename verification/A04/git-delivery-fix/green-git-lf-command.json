@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\a04-git-lf-jym2x2mz\\verification\\A04\\delivery_check.py",
+    "--root",
+    "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\a04-git-lf-jym2x2mz"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUtc": "2026-10-14T04:49:45.611278+00:00",
+  "endedUtc": "2026-10-14T04:49:47.284615+00:00",
+  "exitCode": 0,
+  "stdoutFile": "green-git-lf.stdout.bin",
+  "stdoutBytes": 600,
+  "stdoutSha256": "f275b9deb21117200feec438a6425ca396bf8878c03e576a1b56254c957d2c53",
+  "stderrFile": "green-git-lf.stderr.bin",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
