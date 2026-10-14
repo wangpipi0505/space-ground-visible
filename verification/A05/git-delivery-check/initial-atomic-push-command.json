@@ -1,0 +1,25 @@
+{
+  "startedUtc": "2026-10-14T08:26:35.011867+00:00",
+  "endedUtc": "2026-10-14T08:26:43.528557+00:00",
+  "argv": [
+    "git",
+    "push",
+    "--atomic",
+    "origin",
+    "HEAD:refs/heads/main",
+    "HEAD:refs/heads/feat/comprehensive-acceptance-docs",
+    "refs/tags/acceptance/2026-10-14/A05"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A05/git-delivery-check/initial-atomic-push.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "verification/A05/git-delivery-check/initial-atomic-push.stderr.bin",
+    "bytes": 234,
+    "sha256": "c781137b43894e2743e6b3d3eeadab96e112ae9f6acce6539fe3f461b3f57ce8"
+  }
+}

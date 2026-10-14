@@ -1,0 +1,18 @@
+{
+  "startedUtc": "2026-10-14T08:28:45.594694+00:00",
+  "endedUtc": "2026-10-14T08:28:46.212445+00:00",
+  "scope": "根元数据收口后重新核对原STK、原目录、产品及旧证据；仅允许计划具名根元数据变更",
+  "sourceManifestSha256": "ead4f13da029a24d1c37e6b532328d9caa154b3124abdf22d44de6ed285ecb59",
+  "protectedFiles": 3917,
+  "unchangedFiles": 3916,
+  "allowedRootMetadataChanges": [
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\A04\\交付清单.json",
+      "beforeSha256": "7080e7137a46d1e3046afd501aaac8a2a1b03cd065a6b6bee71c87d5d0c93dfa",
+      "afterSha256": "20cd1b98e0be9404c1cbf9fc59bd257a512eca817317524fdf1faac6f7433a12",
+      "allowedRootMetadata": "verification/A04/交付清单.json"
+    }
+  ],
+  "unexpectedChanges": [],
+  "passed": true
+}

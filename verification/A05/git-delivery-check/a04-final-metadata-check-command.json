@@ -1,0 +1,23 @@
+{
+  "startedUtc": "2026-10-14T08:29:28.602067+00:00",
+  "endedUtc": "2026-10-14T08:29:29.531087+00:00",
+  "argv": [
+    "C:/Python314/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "verification/A04/delivery_check.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A05/git-delivery-check/a04-final-metadata-check.stdout.bin",
+    "bytes": 600,
+    "sha256": "d339708c89d8a6b40add46e9486ee515925fad72d4f3c26c3cdd45d5f8296753"
+  },
+  "stderr": {
+    "path": "verification/A05/git-delivery-check/a04-final-metadata-check.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

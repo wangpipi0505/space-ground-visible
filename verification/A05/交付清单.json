@@ -2842,12 +2842,12 @@
   {
     "path": "docs/superpowers/plans/2026-10-14-stk-precision-supplement.md",
     "bytes": 7436,
-    "sha256": "c48ac0aa41276d337851a6402e1d9744ad7f5bdb20a13b9074e834cc872a61b6"
+    "sha256": "9df5226469e925f763b3e66b608a97732e39eb174f3e0a84f2c200de1ad518ed"
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 15311,
-    "sha256": "bf4d9092dc857d916a8fb7facf6395e5eac68cc2bc649e03bdd815b16672b593"
+    "bytes": 16225,
+    "sha256": "1ed96e2bc09199613658bda04618de76e030a62bbac3be683884d74c2bbb20aa"
   },
   {
     "path": "scripts/freeze_baselines.py",
@@ -3217,7 +3217,7 @@
   {
     "path": "verification/A04/交付清单.json",
     "bytes": 182064,
-    "sha256": "0eb8b227faf23f22e56afc7165a3874f6b8a14f0d9e5c57e1b5165ecd29c3827"
+    "sha256": "20cd1b98e0be9404c1cbf9fc59bd257a512eca817317524fdf1faac6f7433a12"
   },
   {
     "path": "verification/A05/STK原始数据精度补充测试报告.md",
@@ -3525,6 +3525,21 @@
     "sha256": "d339708c89d8a6b40add46e9486ee515925fad72d4f3c26c3cdd45d5f8296753"
   },
   {
+    "path": "verification/A05/git-delivery-check/a04-final-metadata-check-command.json",
+    "bytes": 694,
+    "sha256": "50021e52f84ac8df0ab9035da2d366bd441502b51726f30310215dda805f9282"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/a04-final-metadata-check.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/a04-final-metadata-check.stdout.bin",
+    "bytes": 600,
+    "sha256": "d339708c89d8a6b40add46e9486ee515925fad72d4f3c26c3cdd45d5f8296753"
+  },
+  {
     "path": "verification/A05/git-delivery-check/a05-root-read-only-command.json",
     "bytes": 682,
     "sha256": "ed88d09a9844e0c0ba52727c3d5bb6823433530a7d7a705a2edc50a4a9a0a53b"
@@ -3538,6 +3553,66 @@
     "path": "verification/A05/git-delivery-check/a05-root-read-only.stdout.bin",
     "bytes": 325,
     "sha256": "937bb7af7c43a3fc93099bace8a51cea46d80f04df1bd3cc2c8352e8beba5142"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/committed-version-blob-check-command.json",
+    "bytes": 768,
+    "sha256": "d6a08b01ef73cb72003dfbb9d7af636fbd39d4dfbfa00153c1f22e22ce201a1d"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/committed-version-blob-check.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/committed-version-blob-check.stdout.bin",
+    "bytes": 121,
+    "sha256": "13467e2b035a690dfe6e1dd836b5ac00f8e21f65de58bdbdbf45c602a9c137a0"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/fetch-main-before-sync-command.json",
+    "bytes": 635,
+    "sha256": "394114f329c4e5672618225dbe0ad4c9b97d92e847028892fece369cd4f1ac8e"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/fetch-main-before-sync.stderr.bin",
+    "bytes": 104,
+    "sha256": "8e8d5f7f773fd2d1f991a6bbf95ddd891b6edd83ed7121da4297f458d05ff8b7"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/fetch-main-before-sync.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/initial-atomic-push-command.json",
+    "bytes": 761,
+    "sha256": "f41c9c61bb9cbb0724bb597f932deb082810eb16409e5f325bab745097590db6"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/initial-atomic-push.stderr.bin",
+    "bytes": 234,
+    "sha256": "c781137b43894e2743e6b3d3eeadab96e112ae9f6acce6539fe3f461b3f57ce8"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/initial-atomic-push.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/save-acceptance-tag-command.json",
+    "bytes": 644,
+    "sha256": "46eacb59ba2f39869ad5c5c7b166947723ca9ffb56fb3193ece086121436415d"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/save-acceptance-tag.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A05/git-delivery-check/save-acceptance-tag.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   {
     "path": "verification/A05/git-delivery-check/staged-byte-audit-command.json",
@@ -4015,6 +4090,11 @@
     "sha256": "3ef1861cb4b3229ac5190ca3b8e2813acdb54edc7fd8bb8825ba388dc7a1ed13"
   },
   {
+    "path": "verification/A05/root-metadata-protection.json",
+    "bytes": 807,
+    "sha256": "8686429cd7c20fca702e1d94f91af3e6d565dfa0de9d8a7fe1da7b73458dbc61"
+  },
+  {
     "path": "verification/A05/run_stk_validation.py",
     "bytes": 29038,
     "sha256": "2b11d2cc7457bc79e9a1dfeed4e48b36b558bec73095cb6704f39913d2a8d687"
@@ -4111,8 +4191,8 @@
   },
   {
     "path": "verification/A05/交付核对记录.md",
-    "bytes": 4187,
-    "sha256": "93bf3593362ed7887b038e027d70e1bb169eaf7c8eeeecc4052a53ab5015998c"
+    "bytes": 5572,
+    "sha256": "ef9820802fcba43c8f6ef0e6519cfb9103e9af2a81d201d124aeec0e1531ae02"
   },
   {
     "path": "verification/A05/实现与执行报告.md",
@@ -4123,5 +4203,20 @@
     "path": "verification/A05/独立STK精度审查报告.md",
     "bytes": 10672,
     "sha256": "8f5059e7775b2fcc48909c21fffaa5dff362c257f72c5e630b04066340d82ed2"
+  },
+  {
+    "path": "verification/A05/远端同步核验-stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A05/远端同步核验-stdout.txt",
+    "bytes": 2488,
+    "sha256": "81d5f3d29c387e4e9e9a3e9b7c85068e2ea815e93fc65e901e1ad52bfb554168"
+  },
+  {
+    "path": "verification/A05/远端同步核验.json",
+    "bytes": 6373,
+    "sha256": "9b743223136f8576e8c8ebbf69f9a508991a9ce1ad77b9a656a8c6d2c043b1f8"
   }
 ]
