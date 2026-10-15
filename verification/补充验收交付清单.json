@@ -76,8 +76,8 @@
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 26208,
-    "sha256": "1ba6f29f9d77fd28a636fff8e7697241f3c134ef9f728e55b58f32d6d0dfe16c"
+    "bytes": 26922,
+    "sha256": "f2ad343f44a59920b31388dab0e56517b5e2c316b418dbbd59721be28b9d34a5"
   },
   {
     "path": "docs/软件功能使用说明.md",
@@ -5857,7 +5857,7 @@
   {
     "path": "verification/A04/交付清单.json",
     "bytes": 182064,
-    "sha256": "7a92b16f0c55fe19f2669ee53326547506779e86996c4991cfa491c10a15922f"
+    "sha256": "b0046501ce4b65c265bdca84e0cf6dbb2f138a1b23dc56e78bf95bb0ba7c7d36"
   },
   {
     "path": "verification/A04/独立交付字节复审报告.md",
@@ -6877,7 +6877,7 @@
   {
     "path": "verification/A05/交付清单.json",
     "bytes": 154127,
-    "sha256": "d2f6710f7e83ffe82008a2607779764ce2e3fb7dcc08d0baa633aa0dd44cfcba"
+    "sha256": "25b235c0d74767a113ceeebd8bf1f16375ab1a17030029f1c2d130ba201525f9"
   },
   {
     "path": "verification/A05/实现与执行报告.md",
@@ -8392,7 +8392,7 @@
   {
     "path": "verification/A06/交付清单.json",
     "bytes": 186368,
-    "sha256": "ae9404ee6cc61722215310d8407aa10d19d235401ded0c25752460253664123b"
+    "sha256": "cb2693729bff3399831f2d14345b2397abf1a424586f7d265829a092f14abb30"
   },
   {
     "path": "verification/A06/参数对照与验证报告.md",
@@ -10227,7 +10227,7 @@
   {
     "path": "verification/A07/交付清单.json",
     "bytes": 199609,
-    "sha256": "f190f803570b91ab61640259fef8270fdeb0da8f31fab7631284774a50e8f355"
+    "sha256": "29d5570e0a1d583689e1a1fbae2452b010e27d88f1b12b1db4ccf2f662ef6621"
   },
   {
     "path": "verification/A07/审查修复与复测报告.md",
@@ -10690,9 +10690,24 @@
     "sha256": "2543befc17522954361639dd2e99d95e04f5ccfaf70b4b0cf58d9056054c08ea"
   },
   {
+    "path": "verification/A09/远端同步核验-stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/A09/远端同步核验-stdout.txt",
+    "bytes": 215,
+    "sha256": "4e729df60ab4d4d01eac18aa63bc2834d11b2754ddb0380a4d32d21002c98152"
+  },
+  {
+    "path": "verification/A09/远端同步核验.json",
+    "bytes": 1115,
+    "sha256": "1a5ea9d990aeb715e527f5f5cfb6db95f764a8335b4215cf9c451d8b5e289320"
+  },
+  {
     "path": "verification/A09/验证报告.md",
-    "bytes": 9934,
-    "sha256": "51e5f0e8e74bd27002c2bc25eb19974346382b1e02fa5bcff68a4613f72d063a"
+    "bytes": 10384,
+    "sha256": "f7f7c3dc1e4a7ed6e14b3454a4fbb05f6db2366f0af3386ff279c7f80cf1b8ef"
   },
   {
     "path": "verification/补充验收交付记录.md",

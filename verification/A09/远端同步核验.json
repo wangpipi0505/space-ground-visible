@@ -1,0 +1,29 @@
+{
+  "checkedAtUtc": "2026-10-15T04:13:05.195416+00:00",
+  "startedAtUtc": "2026-10-15T04:13:03.841780+00:00",
+  "command": [
+    "git",
+    "ls-remote",
+    "origin",
+    "refs/heads/main",
+    "refs/heads/codex/ballistic-workbench-ui",
+    "refs/tags/acceptance/2026-10-15/A09"
+  ],
+  "cwd": ".",
+  "exitCode": 0,
+  "expectedRefs": {
+    "refs/heads/main": "92b17ef735d1ab17092d720fa2720eaf6971bd0f",
+    "refs/heads/codex/ballistic-workbench-ui": "92b17ef735d1ab17092d720fa2720eaf6971bd0f",
+    "refs/tags/acceptance/2026-10-15/A09": "92b17ef735d1ab17092d720fa2720eaf6971bd0f"
+  },
+  "actualRefs": {
+    "refs/heads/codex/ballistic-workbench-ui": "92b17ef735d1ab17092d720fa2720eaf6971bd0f",
+    "refs/heads/main": "92b17ef735d1ab17092d720fa2720eaf6971bd0f",
+    "refs/tags/acceptance/2026-10-15/A09": "92b17ef735d1ab17092d720fa2720eaf6971bd0f"
+  },
+  "verified": true,
+  "stdoutBytes": 215,
+  "stdoutSha256": "4e729df60ab4d4d01eac18aa63bc2834d11b2754ddb0380a4d32d21002c98152",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

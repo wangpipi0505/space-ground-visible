@@ -2851,8 +2851,8 @@
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 26208,
-    "sha256": "1ba6f29f9d77fd28a636fff8e7697241f3c134ef9f728e55b58f32d6d0dfe16c"
+    "bytes": 26922,
+    "sha256": "f2ad343f44a59920b31388dab0e56517b5e2c316b418dbbd59721be28b9d34a5"
   },
   {
     "path": "docs/软件功能使用说明.md",
@@ -3652,12 +3652,12 @@
   {
     "path": "verification/A04/交付清单.json",
     "bytes": 182064,
-    "sha256": "7a92b16f0c55fe19f2669ee53326547506779e86996c4991cfa491c10a15922f"
+    "sha256": "b0046501ce4b65c265bdca84e0cf6dbb2f138a1b23dc56e78bf95bb0ba7c7d36"
   },
   {
     "path": "verification/A05/交付清单.json",
     "bytes": 154127,
-    "sha256": "d2f6710f7e83ffe82008a2607779764ce2e3fb7dcc08d0baa633aa0dd44cfcba"
+    "sha256": "25b235c0d74767a113ceeebd8bf1f16375ab1a17030029f1c2d130ba201525f9"
   },
   {
     "path": "verification/A06/baseline.json",
