@@ -1,0 +1,1 @@
+{"revision": "293927a4415e83cf85f7af4cb884897d2ae3563c", "manifest": "verification/A06/交付清单.json", "files": 1037, "passed": true, "differences": []}

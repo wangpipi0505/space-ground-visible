@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-15T03:04:06.750094+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "G:/5-YG/space-ground-visible/verification/runtime/audit_staged_bytes.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A08",
+  "finishedUtc": "2026-10-15T03:04:06.928581+00:00",
+  "exitCode": 0,
+  "stdoutSha256": "24f6112c47cf80e25a1194b3ba40d699d45f02fa322e5e73b7a38afd560db054",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,8 +1,8 @@
 [
   {
     "path": ".gitattributes",
-    "bytes": 5610,
-    "sha256": "1595e4d8752f1391315588c48dd452fb08fd8f5ab703f0d0840b91978021937e"
+    "bytes": 5765,
+    "sha256": "9e8189d5e7f99d4d3d93cd2f8c287db747abb98c0de15fbeb67899e02b030699"
   },
   {
     "path": "README.md",
@@ -2846,8 +2846,8 @@
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 23329,
-    "sha256": "a378ae29b6436fa88ded2b832486d50434ff263c5f34a1830d21c9a39333f2cb"
+    "bytes": 24186,
+    "sha256": "2c9f07be6168e1892a42d69338f12bcd9cdfb237caa87da8b90608a602d1892b"
   },
   {
     "path": "scripts/freeze_baselines.py",
@@ -3217,7 +3217,7 @@
   {
     "path": "verification/A04/交付清单.json",
     "bytes": 182064,
-    "sha256": "c1438c3e320e77cd152681e17116e9f577c90c900339d6fb9e647c106ee0624b"
+    "sha256": "331c76e48856b3ae00a28a5b32dc470ea8327690ae2d992067812f5bb9f07390"
   },
   {
     "path": "verification/A05/STK原始数据精度补充测试报告.md",

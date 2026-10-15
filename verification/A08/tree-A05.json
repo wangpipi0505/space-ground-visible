@@ -1,0 +1,17 @@
+{
+  "startedUtc": "2026-10-15T03:04:07.874302+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "G:/5-YG/space-ground-visible/verification/runtime/audit_version_manifest.py",
+    "293927a4415e83cf85f7af4cb884897d2ae3563c",
+    "verification/A05/交付清单.json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A08",
+  "finishedUtc": "2026-10-15T03:04:08.685926+00:00",
+  "exitCode": 0,
+  "stdoutSha256": "f1d6042fc58c9a0d976e6f78fcbb4d3de3d428e547ce52cfd9aecfffcd3922c7",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

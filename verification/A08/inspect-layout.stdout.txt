@@ -1,0 +1,6 @@
+### Result
+{"injected":[{"title":"卫星六根数表","top":164,"ownTop":164,"cardTop":151,"inset":13,"ownPadding":"0px","float":"left"},{"title":"弹道目标","top":478.5,"ownTop":465.5,"cardTop":465.5,"inset":13,"ownPadding":"12px","float":"left"},{"title":"发射时间搜索","top":855,"ownTop":842,"cardTop":842,"inset":13,"ownPadding":"12px","float":"left"}],"before":[{"title":"卫星六根数表","top":164,"ownTop":164,"cardTop":151,"inset":13,"ownPadding":"0px","float":"none"},{"title":"弹道目标","top":453.5,"ownTop":453.5,"cardTop":453.5,"inset":0,"ownPadding":"12px","float":"none"},{"title":"发射时间搜索","top":817,"ownTop":817,"cardTop":817,"inset":0,"ownPadding":"12px","float":"none"}]}
+### Ran Playwright code
+```js
+await (async page => { const metrics = () => page.locator(".ballistic-workspace .ballistic-native-form > legend:visible").evaluateAll(nodes => nodes.map(node => { const parent=node.parentElement, card=parent.closest(".ballistic-panel"), a=node.getBoundingClientRect(), b=parent.getBoundingClientRect(), c=card.getBoundingClientRect(); return { title:node.textContent, top:a.top, ownTop:b.top, cardTop:c.top, inset:a.top-c.top, ownPadding:getComputedStyle(parent).paddingTop, float:getComputedStyle(node).cssFloat } })); const injected=await metrics(); await page.reload(); await page.getByRole("tab",{name:"可视窗口计算",exact:true}).click(); return {injected, before: await metrics()} })(page);
+```

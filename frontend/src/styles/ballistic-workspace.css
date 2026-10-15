@@ -14,6 +14,9 @@
 .ballistic-workspace :is(.ballistic-panel,.ballistic-native-form) { min-width: 0; margin: 0; padding: 12px 16px; border: 1px solid #dce5ef; border-radius: 6px; background: #fff; }
 .ballistic-workspace .ballistic-panel > .ballistic-native-form { padding: 0; border: 0; }
 .ballistic-workspace legend { font-size: 15px; font-weight: 650; padding: 0 6px; }
+/* 分组卡片的原生legend默认跨在边框上；改为卡片内部标题并让后续表单从标题下方开始。 */
+.ballistic-workspace fieldset.ballistic-panel > legend { float: left; width: 100%; margin-bottom: 12px; }
+.ballistic-workspace fieldset.ballistic-panel > legend + * { clear: both; }
 .ballistic-workspace .ballistic-results-column { max-height: calc(100dvh - 170px); overflow-y: auto; min-height: 450px; padding: 16px; position: sticky; top: 12px; }
 .ballistic-workspace .ballistic-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .ballistic-workspace .ballistic-section-heading label { display: flex; align-items: center; gap: 8px; }

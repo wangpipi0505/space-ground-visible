@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-15T03:01:23.966069+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A08",
+    "run-code",
+    "async page => { const metrics = () => page.locator(\".ballistic-workspace .ballistic-native-form > legend:visible\").evaluateAll(nodes => nodes.map(node => { const parent=node.parentElement, card=parent.closest(\".ballistic-panel\"), a=node.getBoundingClientRect(), b=parent.getBoundingClientRect(), c=card.getBoundingClientRect(); return { title:node.textContent, top:a.top, ownTop:b.top, cardTop:c.top, inset:a.top-c.top, ownPadding:getComputedStyle(parent).paddingTop, float:getComputedStyle(node).cssFloat } })); const injected=await metrics(); await page.reload(); await page.getByRole(\"tab\",{name:\"可视窗口计算\",exact:true}).click(); return {injected, before: await metrics()} }"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A08",
+  "finishedUtc": "2026-10-15T03:01:24.981794+00:00",
+  "exitCode": 0,
+  "stdoutSha256": "25c69bdcd621d2b9f2635a41d219968af585018b47a8b6be61fd764269c87cbe",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
