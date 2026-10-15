@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "git",
+    "ls-remote",
+    "origin",
+    "refs/heads/main",
+    "refs/heads/codex/ballistic-workbench-ui",
+    "refs/tags/acceptance/2026-10-15/A11"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUnix": 1792047592.6075084,
+  "durationSec": 1.3250524997711182,
+  "exitCode": 0,
+  "stdoutSha256": "66123308e9c90631d38424749f6f55051bae2a933973f5eaec658f6757f8dc52",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

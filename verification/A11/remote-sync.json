@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "acceptanceCommit": "b44f0c243b6692c87232bc6f7ab99bac6ae75cce",
+  "tag": "acceptance/2026-10-15/A11",
+  "references": {
+    "refs/heads/codex/ballistic-workbench-ui": "b44f0c243b6692c87232bc6f7ab99bac6ae75cce",
+    "refs/heads/main": "b44f0c243b6692c87232bc6f7ab99bac6ae75cce",
+    "refs/tags/acceptance/2026-10-15/A11": "b44f0c243b6692c87232bc6f7ab99bac6ae75cce"
+  }
+}
