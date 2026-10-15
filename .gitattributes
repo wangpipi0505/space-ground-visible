@@ -91,3 +91,5 @@ output/playwright/** -text -whitespace
 verification/A11/**/*.log -text -whitespace
 # A12文档DTO核验命令输出按原字节保存。
 verification/A12/**/*.txt -text -whitespace
+# A13保留解压源码构建命令的原始双流字节。
+verification/A13/**/*.txt -text -whitespace

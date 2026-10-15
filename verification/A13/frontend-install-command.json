@@ -1,0 +1,14 @@
+{
+  "args": [
+    "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\pnpm.cmd",
+    "install",
+    "--offline",
+    "--frozen-lockfile"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A13\\extracted-20261015-160622\\space-ground-visible-source\\frontend",
+  "exitCode": 0,
+  "startedAtUtc": "2026-10-15T08:07:04.825301+00:00",
+  "durationSec": 15.741395,
+  "stdoutSha256": "4723221ffc271f2c02b04e4196c71ab2de2dbd04b46233400e28331002430139",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

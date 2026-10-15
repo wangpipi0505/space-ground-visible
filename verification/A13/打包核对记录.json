@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "sourceCommit": "daa56fac3655ae9a62f79b761572687411a13da3",
+  "archive": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261015-160622\\space-ground-visible-source-20261015-160622.zip",
+  "archiveBytes": 26989610,
+  "archiveSha256": "5e81054943387c39e657cc81dc9c9fb2feaa25ecd0a93de0d15cf18099cd8f6a",
+  "entries": 545,
+  "originalFiles": 543,
+  "groups": {
+    ".editorconfig": 1,
+    "backend": 475,
+    "docs": 7,
+    "frontend": 60,
+    "源码包说明.md": 1,
+    "manifest.json": 1
+  },
+  "crcPassed": true,
+  "allEntryBytesEqual": true,
+  "forbiddenEntries": [],
+  "extraction": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A13\\extracted-20261015-160622\\space-ground-visible-source"
+}

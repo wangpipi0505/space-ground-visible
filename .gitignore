@@ -6,6 +6,7 @@
 backend/storage/
 backend/logs/
 /logs/
+/output/deliverables/
 backend/maven-repository/
 backend/src/main/resources/static/
 verification/baseline-copies/

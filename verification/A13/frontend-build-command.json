@@ -1,0 +1,12 @@
+{
+  "args": [
+    "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\pnpm.cmd",
+    "build"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A13\\extracted-20261015-160622\\space-ground-visible-source\\frontend",
+  "exitCode": 0,
+  "startedAtUtc": "2026-10-15T08:07:20.567065+00:00",
+  "durationSec": 10.083579,
+  "stdoutSha256": "966ba0be0d84ce3b05d66ebc60b06da58a800e0c28a41afbe8f7c43ed55cc047",
+  "stderrSha256": "a60239ed1d5bdfb537cdf821a7f8d4e3e4df581fba828235c4b1f7428c9f1d1d"
+}

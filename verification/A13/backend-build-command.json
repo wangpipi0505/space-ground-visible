@@ -1,0 +1,15 @@
+{
+  "args": [
+    "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    "-o",
+    "-B",
+    "-Dmaven.test.skip=true",
+    "package"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A13\\extracted-20261015-160622\\space-ground-visible-source\\backend",
+  "exitCode": 0,
+  "startedAtUtc": "2026-10-15T08:07:04.813093+00:00",
+  "durationSec": 7.392355,
+  "stdoutSha256": "e5bc572be7e328493b584b135dda20b5d7e7ecb316186d93d51cec7b21e2dcdc",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
