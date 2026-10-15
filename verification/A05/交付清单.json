@@ -1,13 +1,13 @@
 [
   {
     "path": ".gitattributes",
-    "bytes": 5245,
-    "sha256": "19eabbc296e014ff8fb12859c6c75563c7951b9b0997c8482fa7e3c4bb1aed90"
+    "bytes": 5610,
+    "sha256": "1595e4d8752f1391315588c48dd452fb08fd8f5ab703f0d0840b91978021937e"
   },
   {
     "path": "README.md",
-    "bytes": 7792,
-    "sha256": "a4e70a0841255187c6eab8c75efba2226ce141063b64b6d04d5b8357cdec8c6b"
+    "bytes": 8405,
+    "sha256": "b184618d9a743fd00ca38b6a588862088874e390f657bde17b8e0a21e6a35a92"
   },
   {
     "path": "backend/db/dameng/data.sql",
@@ -2846,8 +2846,8 @@
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 20005,
-    "sha256": "3efccf68771ff67ab88a25511579f4cc2f033ea2a03c8c62c717f05b9f6d9bb5"
+    "bytes": 22716,
+    "sha256": "314db2cab6453feaad3557ab962ab4d3d2cfa8c9430464e67d4c55bfad2e1a83"
   },
   {
     "path": "scripts/freeze_baselines.py",
@@ -3217,7 +3217,7 @@
   {
     "path": "verification/A04/交付清单.json",
     "bytes": 182064,
-    "sha256": "740cfd388f9c7b0bdab7a757196b78b32ca5d5980e2c4e957a0dbb8d28ad3134"
+    "sha256": "e29ee794811a7e13d3e262b9f3b4c31571bc7074d8cd421a322c0c58fc23ebd5"
   },
   {
     "path": "verification/A05/STK原始数据精度补充测试报告.md",

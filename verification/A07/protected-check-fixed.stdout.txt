@@ -1,0 +1,19 @@
+{
+  "base": "7b7752c21b5de54512f7ecfcf4ed5f3ca668de64",
+  "protectedCount": 3070,
+  "strictUnchanged": 3068,
+  "presentationExceptions": [
+    {
+      "path": "frontend/src/components/BallisticFitTrajectory.vue",
+      "scriptIdentical": true,
+      "currentSha256": "ea80dd9e2ed4adfa64a31a9081aa2b3317a7df290dc2604a31aea4873b7536fb"
+    },
+    {
+      "path": "frontend/src/components/BallisticTrajectoryView.vue",
+      "scriptIdentical": true,
+      "currentSha256": "629eb15196cda40b0af459bbe275005ba4bc694b1cd44bde1f1fed765a1fa44b"
+    }
+  ],
+  "spaceMetricsIdentical": true,
+  "differences": []
+}

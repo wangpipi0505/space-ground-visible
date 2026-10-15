@@ -1,0 +1,90 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/BallisticWindowResults.spec.ts > T22 原结果层级与真实点展示 > 全部偏移可选、两弧层级及点表保持服务累计，跨180度不画贯穿假线
+Error: Unable to get [data-test=edit-payloads] within: <section class="ballistic-window-results" aria-label="真实窗口结果">
+  <p>参考UTC：UTC · 根载荷类型：SPACE</p>
+  <p data-test="best-summary">服务 best：偏移 30 秒 · 2 弧 · 4 点 · 累计 4 秒（逐星逐载荷累计，不去重）</p>
+  <!--v-if--><label>查看全部候选偏移<select data-test="offset-select">
+      <option value="0">10 秒 · 2 弧 · 4 秒</option>
+      <option value="1">20 秒 · 0 弧 · 0 秒</option>
+      <option value="2">30 秒 · 2 弧 · 4 秒 · 服务best</option>
+    </select></label>
+  <h3>偏移 20 秒的真实层级</h3>
+  <p>0 弧 · 0 点 · 累计 0 秒 · 首目标发射UTC 2026/07/01 00:00:00.000 · J2000 1 秒</p>
+  <p>总窗口为空。</p>
+  <p>该偏移没有可见卫星或弧段。</p>
+  <!--v-if-->
+</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/components/BallisticWindowResults.spec.ts:30:19
+     28|     expect(wrapper.text()).toContain('该偏移没有可见卫星或弧段')
+     29|     expect(wrapper.find('[data-test=trajectory-view]').exists()).toBe(…
+     30|     await wrapper.get('[data-test=edit-payloads]').trigger('click')
+       |                   ^
+     31|     expect(wrapper.emitted('edit')?.at(-1)).toEqual(['payloads'])
+     32|     await wrapper.get('[data-test=edit-search]').trigger('click')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/views/BallisticPayloadConfigurationView.spec.ts > 弹道双星多载荷配置生产视图 > 示例朝地球俯仰与空间标准、新增和目录默认隔离
+AssertionError: expected [ -4, -4 ] to deeply equal [ -90, -90 ]
+
+- Expected
++ Received
+
+  [
+-   -90,
+-   -90,
++   -4,
++   -4,
+  ]
+
+ ❯ src/views/BallisticPayloadConfigurationView.spec.ts:17:62
+     15|     const wrapper = mount(BallisticPayloadConfigurationView, { props: …
+     16|     const draft = () => wrapper.findComponent(BallisticWindowControls)…
+     17|     expect(draft().map(s => s.payloads[0]?.elevationMinDeg)).toEqual([…
+       |                                                              ^
+     18|     expect(draft().map(s => s.payloads[0]?.elevationMaxDeg)).toEqual([…
+     19|     expect(createDefaultPayload()).toMatchObject({ elevationMinDeg: -4…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/views/BallisticPayloadConfigurationView.spec.ts > 弹道双星多载荷配置生产视图 > 不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/views/BallisticPayloadConfigurationView.spec.ts:31:76
+     29|     vi.stubGlobal('fetch', fetcher)
+     30|     const wrapper = mount(BallisticPayloadConfigurationView, { props: …
+     31|     expect(wrapper.find('[data-test=preview-ballistic-payload]').exist…
+       |                                                                            ^
+     32|     await wrapper.get('[data-test=window-source]').setValue('remote')
+     33|     await wrapper.get('input[placeholder="https://host/path/trajectory…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/views/BallisticPayloadConfigurationView.spec.ts > 弹道双星多载荷配置生产视图 > 当前星切换保持原草稿身份且初始就有结果位置
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/views/BallisticPayloadConfigurationView.spec.ts:51:70
+     49|   it('当前星切换保持原草稿身份且初始就有结果位置', async () => {
+     50|     const wrapper = mount(BallisticPayloadConfigurationView, { props: …
+     51|     expect(wrapper.find('[data-test=window-result-panel]').exists()).t…
+       |                                                                      ^
+     52|     const ids = wrapper.findAll('[data-payload-id]').map(p => p.attrib…
+     53|     await wrapper.get('[data-test=current-payload-satellite]').setValu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+

@@ -5,6 +5,17 @@ import StandardPayloadEditor from './StandardPayloadEditor.vue'
 import { createDefaultPayload } from '../utils/standardPayload'
 
 describe('共用标准载荷编辑器', () => {
+  it('弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明', async () => {
+    const wrapper = mount(StandardPayloadEditor, { props: { modelValue: createDefaultPayload(), compact: true }, global: { plugins: [ElementPlus] } })
+    const input = wrapper.get('[data-field="elevationMinDeg"] input')
+    ;(input.element as HTMLInputElement).value = '-90'
+    await input.trigger('input')
+    expect(wrapper.emitted('update:modelValue')?.at(-1)?.[0]).toMatchObject({ elevationMinDeg: -90 })
+    expect(wrapper.find('.ballistic-help').exists()).toBe(true)
+    await wrapper.setProps({ compact: false })
+    expect(wrapper.findAllComponents({ name: 'ElInputNumber' })).toHaveLength(9)
+    expect(wrapper.findAll('.payload-explanation')).toHaveLength(2)
+  })
   /** 使用真正 ElementPlus 控件，验证清空后派发 null 而非默认 0/NaN。 */
   it('九个数字字段清空为null并展示成对校验与LVLH说明', async () => {
     const wrapper = mount(StandardPayloadEditor, { props: { modelValue: createDefaultPayload() }, global: { plugins: [ElementPlus] } })

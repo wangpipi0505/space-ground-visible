@@ -11,7 +11,7 @@ import { saveBallisticBlob } from '../api/ballisticHttp'
 import { ApiRequestError } from '../api/client'
 import { parseFitCsv } from '../utils/ballisticFit'
 import BallisticFitTrajectory from './BallisticFitTrajectory.vue'
-const props = withDefaults(defineProps<{ file: BallisticFitFile; taskName: string; resultLabel?: string }>(), { resultLabel: '原拟合' })
+const props = withDefaults(defineProps<{ file: BallisticFitFile; taskName: string; resultLabel?: string }>(), { resultLabel: '拟合' })
 /** 共享文件能力只在真实登记201后告知父级引用，重新登记开始先撤销旧引用以防失效路径被继续选择。 */
 const emit = defineEmits<{ reference: [value: BallisticFileReference | undefined] }>()
 const reference = shallowRef<BallisticFileReference>()
@@ -82,30 +82,30 @@ onMounted(register)
 
 <template>
   <article class="ballistic-result-target" :data-fit-target="file.targetId">
-    <h3>目标 {{ file.targetId }} · {{ file.model }} · 原结果 {{ file.pointCount }} 点</h3>
-    <p>原结果服务文件：{{ file.csvPath }}</p>
-    <ol v-if="file.warnings.length" aria-label="原服务全部告警"><li v-for="(warning, index) in file.warnings" :key="index">{{ warning }}</li></ol>
-    <p v-else>原服务未返回告警。</p>
-    <p v-if="registering" role="status">正在登记原CSV并读取文件…</p>
+    <h3>目标 {{ file.targetId }} · {{ file.pointCount }} 点</h3>
+    <details><summary>模型与文件详情</summary><p>模型 {{ file.model }}</p><p>服务文件 {{ file.csvPath }}</p><p v-if="reference">引用 {{ reference.fileId }} · {{ reference.sizeBytes }} 字节</p></details>
+    <!-- 告警默认收起以优先呈现下载和轨迹；原生折叠入口保留数量提示、键盘操作及服务原文顺序。 -->
+    <details v-if="file.warnings.length"><summary>计算告警（{{ file.warnings.length }}条）</summary><ol aria-label="计算告警"><li v-for="(warning, index) in file.warnings" :key="index">{{ warning }}</li></ol></details>
+    <p v-if="registering" role="status">正在准备结果文件…</p>
     <p v-if="registerError" class="ballistic-error" role="alert">{{ resultLabel }}已成功，文件登记失败：{{ registerError }}</p>
-    <button v-if="!reference" data-test="fit-register" type="button" :disabled="registering" @click="register">重试结果文件登记</button>
+    <button v-if="!reference" data-test="fit-register" type="button" :disabled="registering" @click="register">重试准备结果文件</button>
     <template v-if="reference">
-      <p>已登记 {{ reference.originalName }} · 引用 {{ reference.fileId }} · {{ reference.sizeBytes }} 字节</p>
-      <button type="button" data-test="fit-download" :disabled="downloading" @click="download">{{ downloading ? '正在下载原CSV…' : 'HTTP 下载原CSV' }}</button>
-      <p v-if="previewError || trajectoryError || downloadError">文件辅助读取失败时可独立重试；若服务已注销旧引用、原CSV已恢复，可重新登记本次结果，计算不重跑。</p>
-      <button v-if="previewError || trajectoryError || downloadError" type="button" data-test="fit-reregister" :disabled="registering || previewing || trajectoryLoading || downloading" @click="register">重新登记结果文件</button>
+      <p>{{ reference.originalName }} · {{ reference.sizeBytes }} 字节</p>
+      <button type="button" data-test="fit-download" :disabled="downloading" @click="download">{{ downloading ? '正在下载CSV…' : '下载CSV' }}</button>
+      <p v-if="previewError || trajectoryError || downloadError">文件读取失败可重试；文件恢复后可重新获取结果文件。</p>
+      <button v-if="previewError || trajectoryError || downloadError" type="button" data-test="fit-reregister" :disabled="registering || previewing || trajectoryLoading || downloading" @click="register">重新获取结果文件</button>
       <p v-if="downloadError" class="ballistic-error" role="alert">下载失败：{{ downloadError }}（可重试下载）</p>
       <p v-if="previewing" role="status">正在读取第 {{ requestedPage }} 页预览…</p>
       <p v-if="previewError" class="ballistic-error" role="alert">预览失败：{{ previewError }}；已显示内容仍为此前成功页。</p>
       <button v-if="previewError" type="button" data-test="fit-preview-retry" :disabled="previewing" @click="loadPreview(requestedPage)">重试文件预览</button>
-      <details v-if="preview" open><summary>服务原文本预览 · 共 {{ preview.totalRows }} 行 · 第 {{ preview.page }} 页</summary>
-        <pre>{{ JSON.stringify(preview.metadata, null, 2) }}</pre>
+      <details v-if="preview"><summary>数据预览 · 共 {{ preview.totalRows }} 行 · 第 {{ preview.page }} 页</summary>
+        <details><summary>文件元数据</summary><pre>{{ JSON.stringify(preview.metadata, null, 2) }}</pre></details>
         <div class="ballistic-table-scroll"><table><thead><tr><th v-for="(cell, index) in preview.header" :key="index">{{ cell }}</th></tr></thead><tbody><tr v-for="(row, index) in preview.rows" :key="index"><td v-for="(cell, column) in row" :key="column">{{ cell }}</td></tr></tbody></table></div>
         <div class="ballistic-actions"><button type="button" :disabled="previewing || preview.page <= 1" @click="loadPreview(preview.page - 1)">预览上一页</button><button type="button" data-test="fit-preview-next" :disabled="previewing || preview.page * preview.limit >= preview.totalRows" @click="loadPreview(preview.page + 1)">预览下一页</button></div>
       </details>
-      <p v-if="trajectoryLoading" role="status">正在通过 HTTP 读取完整CSV轨迹…</p>
-      <p v-if="trajectoryError" role="alert" class="ballistic-error">完整轨迹读取失败：{{ trajectoryError }}</p>
-      <button v-if="trajectoryError" type="button" :disabled="trajectoryLoading" @click="loadTrajectory">重试完整CSV轨迹</button>
+      <p v-if="trajectoryLoading" role="status">正在读取轨迹…</p>
+      <p v-if="trajectoryError" role="alert" class="ballistic-error">轨迹读取失败：{{ trajectoryError }}</p>
+      <button v-if="trajectoryError" type="button" :disabled="trajectoryLoading" @click="loadTrajectory">重试读取轨迹</button>
       <BallisticFitTrajectory v-if="points.length" :points="points" :identity="file.targetId" :retimed="file.model === 'RETIMED_TRAJECTORY'" />
     </template>
   </article>

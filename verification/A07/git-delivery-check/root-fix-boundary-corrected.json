@@ -1,0 +1,27 @@
+{
+  "startedUtc": "2026-10-15T02:39:23.228178+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "G:/5-YG/space-ground-visible/verification/A07/verify-fix-boundary.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07",
+  "finishedUtc": "2026-10-15T02:39:23.338516+00:00",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A07/git-delivery-check/root-fix-boundary-corrected.stdout.bin",
+    "bytes": 208,
+    "sha256": "181dbd4202a907eb01e0c83880b66259039e7a4d4b4ecc7d654db43339572470"
+  },
+  "stderr": {
+    "path": "verification/A07/git-delivery-check/root-fix-boundary-corrected.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A07/root-gates/root-fix-boundary-corrected.json",
+    "sha256": "45f5cef2022e933b306ab095d36d30ff870435eb96484516b07206b6e9bdcffe"
+  }
+}

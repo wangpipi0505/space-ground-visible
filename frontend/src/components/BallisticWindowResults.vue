@@ -4,6 +4,7 @@ import { computed, ref, shallowRef, watch } from 'vue'
 import type { BallisticVisibleArc, BallisticWindowResponse } from '../api/ballisticWindowTypes'
 import BallisticTrajectoryView from './BallisticTrajectoryView.vue'
 const props = defineProps<{ result: BallisticWindowResponse; pointOutput: 0 | 1 }>()
+const emit = defineEmits<{ edit: [section: 'payloads' | 'search'] }>()
 const selectedIndex = ref(0)
 const selectedArc = shallowRef<{ arc: BallisticVisibleArc; identity: string }>()
 const offsets = computed(() => props.result.allResults.length ? props.result.allResults : props.result.best ? [props.result.best] : [])
@@ -23,31 +24,23 @@ function showArc(arc: BallisticVisibleArc, identity: string): void {
 
 <template>
   <section class="ballistic-window-results" aria-label="真实窗口结果">
-    <p>参考UTC：{{ result.referenceUtc }} · 根载荷类型：{{ result.payloadType }}</p>
-    <p v-if="result.best" data-test="best-summary">服务 best：偏移 {{ result.best.offsetSecond }} 秒 · {{ result.best.visibleArcCount }} 弧 · {{ result.best.visiblePointCount }} 点 · 累计 {{ result.best.visibleDurationSec }} 秒（逐星逐载荷累计，不去重）</p>
-    <p v-else>服务未返回 best。</p>
+    <div v-if="result.best" class="ballistic-result-metrics" data-test="best-summary">
+      <div><strong>{{ result.best.visibleArcCount }}</strong><span>可见弧段</span></div><div><strong>{{ result.best.visibleDurationSec }}<small> s</small></strong><span>累计可见时长</span></div><div><strong>{{ result.best.offsetSecond }}<small> s</small></strong><span>最优发射偏移</span></div>
+    </div>
+    <p class="ballistic-muted">参考 UTC {{ result.referenceUtc }}</p>
     <p v-if="!offsets.length">服务未返回候选偏移。</p>
     <template v-if="selectedOffset">
-      <label>查看全部候选偏移<select v-model="selectedIndex" data-test="offset-select"><option v-for="(offset, index) in offsets" :key="index" :value="index">{{ offset.offsetSecond }} 秒 · {{ offset.visibleArcCount }} 弧 · {{ offset.visibleDurationSec }} 秒{{ offset.offsetSecond === result.best?.offsetSecond ? ' · 服务best' : '' }}</option></select></label>
-      <h3>偏移 {{ selectedOffset.offsetSecond }} 秒的真实层级</h3>
-      <p>{{ selectedOffset.visibleArcCount }} 弧 · {{ selectedOffset.visiblePointCount }} 点 · 累计 {{ selectedOffset.visibleDurationSec }} 秒 · 首目标发射UTC {{ selectedOffset.launchTimeUtc }} · J2000 {{ selectedOffset.launchTimeJ2000Sec }} 秒</p>
-      <p v-if="selectedOffset.finalVisibleWindow">总窗口：{{ selectedOffset.finalVisibleWindow.startTime }} → {{ selectedOffset.finalVisibleWindow.endTime }} UTC（{{ selectedOffset.finalVisibleWindow.durationSeconds }} 秒）</p><p v-else>总窗口为空。</p>
-      <details v-for="target in selectedOffset.targets" :key="target.targetId" class="ballistic-result-target"><summary>目标 {{ target.targetName }} · {{ target.targetId }} · {{ target.visibleWindows.length }} 窗口</summary><p>源 {{ target.csvPath }} · 基准UTC {{ target.baseLaunchUTC }} · 本次发射UTC {{ target.launchUTC }}</p>
-        <div class="ballistic-table-scroll"><table><thead><tr><th>星/载荷/弧段</th><th>开始UTC</th><th>结束UTC</th><th>时长 s</th><th>点数</th></tr></thead><tbody><tr v-for="(window, index) in target.visibleWindows" :key="index"><td>{{ window.satelliteName }} / {{ window.payloadName }} / {{ window.arcIndex }}</td><td>{{ window.startTime }}</td><td>{{ window.endTime }}</td><td>{{ window.durationSeconds }}</td><td>{{ window.pointCount }}</td></tr></tbody></table></div>
-      </details>
-      <p v-if="!selectedOffset.visibleSatellites.length">该偏移没有可见卫星或弧段。</p>
-      <article v-for="satellite in selectedOffset.visibleSatellites" :key="satellite.satelliteIndex" class="ballistic-result-satellite">
-        <h3>卫星 {{ satellite.satelliteName }} · {{ satellite.satelliteId }} · 原索引 {{ satellite.satelliteIndex }}</h3>
-        <section v-for="payload in satellite.payloadResults" :key="payload.payloadId" class="ballistic-result-payload">
-          <h4>载荷 {{ payload.payloadName }} · {{ payload.payloadId }} · {{ payload.payloadType }}</h4>
-          <details><summary>原服务约束摘要（标准完整配置见提交快照）</summary><pre>{{ JSON.stringify(payload.visibilityConstraint, null, 2) }}</pre></details>
-          <section v-for="target in payload.targets" :key="target.targetId">
-            <h4>目标 {{ target.targetName }} · {{ target.targetId }}</h4>
-            <div class="ballistic-table-scroll"><table><thead><tr><th>弧段</th><th>开始UTC</th><th>结束UTC</th><th>开始/结束 J2000 s</th><th>时长 s</th><th>真实点数</th><th>轨迹</th></tr></thead><tbody><tr v-for="arc in target.visibleArcs" :key="arc.arcIndex"><td>{{ arc.arcIndex }}</td><td>{{ arc.startTime }}</td><td>{{ arc.endTime }}</td><td>{{ arc.startJ2000Sec }} / {{ arc.endJ2000Sec }}</td><td>{{ arc.durationSeconds }}</td><td>{{ arc.pointCount }}</td><td><button data-test="show-trajectory" type="button" @click="showArc(arc, `${satellite.satelliteName}(${satellite.satelliteId}) / ${payload.payloadName}(${payload.payloadId}) / ${target.targetName}(${target.targetId})`)">查看轨迹</button></td></tr></tbody></table></div>
-          </section>
-        </section>
-      </article>
+      <label>候选发射偏移<select v-model="selectedIndex" data-test="offset-select"><option v-for="(offset, index) in offsets" :key="index" :value="index">{{ offset.offsetSecond }} 秒 · {{ offset.visibleArcCount }} 弧 · {{ offset.visibleDurationSec }} 秒{{ offset.offsetSecond === result.best?.offsetSecond ? ' · 最优' : '' }}</option></select></label>
+      <p class="ballistic-muted">{{ selectedOffset.visiblePointCount }} 个轨迹点 · 累计 {{ selectedOffset.visibleDurationSec }} 秒</p>
+      <p v-if="selectedOffset.finalVisibleWindow" class="ballistic-window-range">{{ selectedOffset.finalVisibleWindow.startTime }}<br /><span>至 {{ selectedOffset.finalVisibleWindow.endTime }} UTC</span></p>
+      <div class="ballistic-table-scroll" v-if="selectedOffset.visibleSatellites.length"><table class="ballistic-arc-table"><thead><tr><th>卫星 / 载荷</th><th>目标 / 时段 (UTC)</th><th>时长</th><th></th></tr></thead><tbody>
+        <template v-for="satellite in selectedOffset.visibleSatellites" :key="satellite.satelliteIndex"><template v-for="payload in satellite.payloadResults" :key="payload.payloadId"><template v-for="target in payload.targets" :key="target.targetId">
+          <tr v-for="arc in target.visibleArcs" :key="arc.arcIndex"><td><strong>{{ satellite.satelliteName }}</strong><br /><span>{{ payload.payloadName }} · 弧 {{ arc.arcIndex }}</span></td><td><strong>{{ target.targetName }}</strong><br />{{ arc.startTime }}<br />{{ arc.endTime }}</td><td>{{ arc.durationSeconds }} s<br /><span>{{ arc.pointCount }} 点</span></td><td><button data-test="show-trajectory" type="button" @click="showArc(arc, `${satellite.satelliteName}(${satellite.satelliteId}) / ${payload.payloadName}(${payload.payloadId}) / ${target.targetName}(${target.targetId})`)">轨迹</button></td></tr>
+        </template></template></template>
+      </tbody></table></div>
       <BallisticTrajectoryView v-if="selectedArc" :points="selectedArc.arc.trajectoryPoints" :identity="selectedArc.identity" :point-output="pointOutput" />
+      <details v-if="selectedOffset.visibleSatellites.length"><summary>时刻、目标与约束详情</summary><p>首目标发射 UTC {{ selectedOffset.launchTimeUtc }} · J2000 {{ selectedOffset.launchTimeJ2000Sec }} 秒</p><p>累计时长按卫星与载荷相加，不对重叠时段去重。</p><pre>{{ JSON.stringify({ targets: selectedOffset.targets, constraints: selectedOffset.visibleSatellites.map(s => ({ satelliteId: s.satelliteId, payloads: s.payloadResults.map(p => ({ payloadId: p.payloadId, constraint: p.visibilityConstraint })) })) }, null, 2) }}</pre></details>
     </template>
+    <div v-if="!selectedOffset || !selectedOffset.visibleArcCount" class="ballistic-empty-state" data-test="window-empty"><span class="ballistic-state-mark">∅</span><h3>未找到可见窗口</h3><p>该偏移没有可见卫星或弧段。</p><p class="ballistic-muted">可检查载荷约束与发射时间范围后重新计算；当前结果未提供逐项淘汰原因。</p><div class="ballistic-actions"><button type="button" data-test="edit-payloads" @click="emit('edit', 'payloads')">调整载荷约束</button><button type="button" data-test="edit-search" @click="emit('edit', 'search')">调整搜索时间</button></div></div>
   </section>
 </template>

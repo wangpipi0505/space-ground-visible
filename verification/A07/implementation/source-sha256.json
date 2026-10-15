@@ -1,0 +1,377 @@
+[
+  {
+    "path": "frontend/src/api/ballisticFiles.ts",
+    "sha256": "1060156d6643a04913d0735d2770b668955886bbfe43d0c8d587e5e5d6f69a47",
+    "bytes": 3411
+  },
+  {
+    "path": "frontend/src/api/ballisticFit.spec.ts",
+    "sha256": "192fe6000b151ca6f9be92e3b5b0015c655d78887eb7fed47f6a80ae3dee3929",
+    "bytes": 2074
+  },
+  {
+    "path": "frontend/src/api/ballisticFit.ts",
+    "sha256": "aec1ebe3912d570f412e45a9e6fa9a29de9f070faa297c3a6a26ddc368e12ae5",
+    "bytes": 1021
+  },
+  {
+    "path": "frontend/src/api/ballisticFitTypes.ts",
+    "sha256": "34f8093162de0fa86eb7a51f209d36b23707586f1828bcc8da8ff588a0b76e19",
+    "bytes": 2798
+  },
+  {
+    "path": "frontend/src/api/ballisticHttp.ts",
+    "sha256": "603c8b18a0840691d53347ece3c07840ccef6d893a169aa10f0394a65ab4696f",
+    "bytes": 1673
+  },
+  {
+    "path": "frontend/src/api/ballisticPayloads.spec.ts",
+    "sha256": "0021c326b8dbaf77ac1058bd7e39dfa61ed89d1bf7933f1a8c75b283c01f2b7e",
+    "bytes": 1686
+  },
+  {
+    "path": "frontend/src/api/ballisticPayloads.ts",
+    "sha256": "f96b8a5888433beb7abcd6dc939b8aed8a18da0015592cae70641436f48f6bbf",
+    "bytes": 1031
+  },
+  {
+    "path": "frontend/src/api/ballisticRetime.spec.ts",
+    "sha256": "c8b03df40bc12505f5e385c6e089f364ea976c49360c33e4157a73b928114da9",
+    "bytes": 1957
+  },
+  {
+    "path": "frontend/src/api/ballisticRetime.ts",
+    "sha256": "3c8a4be35cd4a5af3d3547dfaf61180930e3528b670d83044a125cb7a5ef539e",
+    "bytes": 1241
+  },
+  {
+    "path": "frontend/src/api/ballisticSimulation.spec.ts",
+    "sha256": "d4f6722ca22c1ecbd7ae0e57107516d281d2434cf28d2a29f1fda51a5b745ec7",
+    "bytes": 1665
+  },
+  {
+    "path": "frontend/src/api/ballisticSimulation.ts",
+    "sha256": "d070615e51b267aa571d2101940f352d808b57c09a1632fc00cbc0b12570e8c2",
+    "bytes": 3141
+  },
+  {
+    "path": "frontend/src/api/ballisticWindow.spec.ts",
+    "sha256": "4efc49671649297e11f2756fe47d2350b76e29c1736a6d781bec25f432b5a141",
+    "bytes": 6187
+  },
+  {
+    "path": "frontend/src/api/ballisticWindow.ts",
+    "sha256": "98b118f9a4525b4854d69565485cb236d9850b2e70c273c894e1c6eaf9dac407",
+    "bytes": 1190
+  },
+  {
+    "path": "frontend/src/api/ballisticWindowTypes.ts",
+    "sha256": "6b1a94b1632ed162c3f44666b61d7c62ef7d209f524b28533932d7f29a70541e",
+    "bytes": 4305
+  },
+  {
+    "path": "frontend/src/api/client.ts",
+    "sha256": "97c1a003af34b03256fdc8bc52179ba94258f1c7c2152af13cbe13abba20a2f3",
+    "bytes": 2946
+  },
+  {
+    "path": "frontend/src/api/types.ts",
+    "sha256": "c8353bc7a2dfe9900ae23b4c5f60ac9bf935c89f6d8f4a6700161548c75dcde5",
+    "bytes": 17029
+  },
+  {
+    "path": "frontend/src/api/visibilityTaskResults.ts",
+    "sha256": "c305bb2e3d6518667c4a272138b4494d34ccf0bcc6c09cf1c59e0e92f357fcd0",
+    "bytes": 3021
+  },
+  {
+    "path": "frontend/src/api/visibilityTasks.ts",
+    "sha256": "5b7af4ec4ef721be02a2646001d8fb63a1357cf61c3aa2a1d4ef5bce8bb830d1",
+    "bytes": 1850
+  },
+  {
+    "path": "frontend/src/App.spec.ts",
+    "sha256": "5ec872ea53f889ad48ba9cc60309595674feea5a10958eeea0ddb1fbeedea2a7",
+    "bytes": 15411
+  },
+  {
+    "path": "frontend/src/App.vue",
+    "sha256": "d74089d75ff00d660668fcbc8a58825c4b1395845553bffe8c9b158316456a48",
+    "bytes": 10711
+  },
+  {
+    "path": "frontend/src/components/BallisticFitFileResult.vue",
+    "sha256": "1219f76492917597c33d547ce651444f0c7287628153b3474964efcdb9eb1f86",
+    "bytes": 8282
+  },
+  {
+    "path": "frontend/src/components/BallisticFitTrajectory.vue",
+    "sha256": "ea80dd9e2ed4adfa64a31a9081aa2b3317a7df290dc2604a31aea4873b7536fb",
+    "bytes": 3957
+  },
+  {
+    "path": "frontend/src/components/BallisticTrajectoryView.vue",
+    "sha256": "629eb15196cda40b0af459bbe275005ba4bc694b1cd44bde1f1fed765a1fa44b",
+    "bytes": 4490
+  },
+  {
+    "path": "frontend/src/components/BallisticWindowControls.spec.ts",
+    "sha256": "fafb892617a4f654b1df2a06f6eea862c6c238ed3a76b1c89e841d0cff1bc840",
+    "bytes": 5579
+  },
+  {
+    "path": "frontend/src/components/BallisticWindowControls.vue",
+    "sha256": "8d7b57b4a927fe8a14b732dbef953d83a317d490cfda821d92c51ee8db92f8ad",
+    "bytes": 19830
+  },
+  {
+    "path": "frontend/src/components/BallisticWindowResults.spec.ts",
+    "sha256": "469f12ea1750ab26c79f4488665e63311d415f57518106cbb1b499b7a581e9db",
+    "bytes": 4308
+  },
+  {
+    "path": "frontend/src/components/BallisticWindowResults.vue",
+    "sha256": "f09a86fa7bf62eee5d90fea69236363b8bbf2c742966fd5f9bb67a24989a857c",
+    "bytes": 5447
+  },
+  {
+    "path": "frontend/src/components/DownlinkPlanningStep.vue",
+    "sha256": "ad6bc8e43ed2750e33bccb41aefc35cc1583f42927e5e4e55dc7cd0a846a89bf",
+    "bytes": 2278
+  },
+  {
+    "path": "frontend/src/components/ObservationConstraintPanel.spec.ts",
+    "sha256": "1a5926cf72f4348390a1aa257912eff5037db742d7c1fe8713b74dfd80f8a6ec",
+    "bytes": 1051
+  },
+  {
+    "path": "frontend/src/components/ObservationConstraintPanel.vue",
+    "sha256": "79751b322f24739398545eb1bca743734b74e2937ec227482dff9f93b41d2e42",
+    "bytes": 2773
+  },
+  {
+    "path": "frontend/src/components/SatellitePayloadPanel.spec.ts",
+    "sha256": "3bf17938c5378a4980e33eda3233bbb31da6459a3ce46cc2b9ef1792e5cecfb4",
+    "bytes": 3080
+  },
+  {
+    "path": "frontend/src/components/SatellitePayloadPanel.vue",
+    "sha256": "87ac21817c18ad5ce97dc9cd35b76ae4d5903ba22dd095c2cf92355886164432",
+    "bytes": 4832
+  },
+  {
+    "path": "frontend/src/components/SatelliteStationLinkPanel.vue",
+    "sha256": "9989d3a113e74ea11e73d38c685ce9bde344de05a1430a09ded93ac519d9e29a",
+    "bytes": 2694
+  },
+  {
+    "path": "frontend/src/components/StandardPayloadEditor.spec.ts",
+    "sha256": "2f136628dadf73fdb7c47a354bf7686f86a8e4cb946318eda782232a8b4a39fd",
+    "bytes": 3385
+  },
+  {
+    "path": "frontend/src/components/StandardPayloadEditor.vue",
+    "sha256": "7c4e212f5e2bc88a324f5d08451b105b9c35f63ca3790347b676fa9103b234fc",
+    "bytes": 5172
+  },
+  {
+    "path": "frontend/src/components/StationConstraintStep.vue",
+    "sha256": "9812ec17fc6fcecf40aee65fc6fe6a356de99323004e41c3854519bfbc3775b1",
+    "bytes": 2354
+  },
+  {
+    "path": "frontend/src/components/TargetSelectionStep.spec.ts",
+    "sha256": "e720d439d197031c1a3c143bcce93630b2cc1cc8317e7dfffe4348a307e181ac",
+    "bytes": 1814
+  },
+  {
+    "path": "frontend/src/components/TargetSelectionStep.vue",
+    "sha256": "263a16081453344b4e0a9e0913bb288bce3ab961170b1a3f114a0cbc72dfa416",
+    "bytes": 4596
+  },
+  {
+    "path": "frontend/src/components/TaskResultDetailDrawer.spec.ts",
+    "sha256": "e45df52d68fea612f8ecab11b1020cab45ef69d85b987b1ca23570c5b2c49790",
+    "bytes": 1135
+  },
+  {
+    "path": "frontend/src/components/TaskResultDetailDrawer.vue",
+    "sha256": "246d735231ea00a446d622fd1a201a94fc3051f32552b629c0b8ac3d48251559",
+    "bytes": 3604
+  },
+  {
+    "path": "frontend/src/components/TaskResultRecordsPanel.spec.ts",
+    "sha256": "abadd7cba392d84f9f485a199cb934b955c9fc8004f0e1703009fe3fe9d9f244",
+    "bytes": 4687
+  },
+  {
+    "path": "frontend/src/components/TaskResultRecordsPanel.vue",
+    "sha256": "643c42a5d2af818fa58ecc5b6350a99f32e607ac9fdb402bc9451f54ef3f74da",
+    "bytes": 5310
+  },
+  {
+    "path": "frontend/src/components/TaskSatelliteSelectionStep.spec.ts",
+    "sha256": "a3ebb2cedaadf8c8e175e48079232227ca0a5475fcbe6fe19c691eaed1d18192",
+    "bytes": 1252
+  },
+  {
+    "path": "frontend/src/components/TaskSatelliteSelectionStep.vue",
+    "sha256": "e61f39a72558e4df15dec39380a6866a2b1ac2b1928533809392ae05016346da",
+    "bytes": 3370
+  },
+  {
+    "path": "frontend/src/components/VisibilityPlanningStep.spec.ts",
+    "sha256": "edebb115f9479b27f2c253c3503141648c2fabb85e2f9b1067fd62c0c0ba8bc7",
+    "bytes": 19168
+  },
+  {
+    "path": "frontend/src/components/VisibilityPlanningStep.vue",
+    "sha256": "c00cfa92ec248c1f27a04fcebc827d8e17ec46e5dc00bb1a0353ea4b60e757cc",
+    "bytes": 31858
+  },
+  {
+    "path": "frontend/src/components/WindowSelectionPanel.spec.ts",
+    "sha256": "7f3544a660c5448db7d8c88ac3e5005d9e1aa1e3e1f9b9b0d25126eb6d32b2a7",
+    "bytes": 1664
+  },
+  {
+    "path": "frontend/src/components/WindowSelectionPanel.vue",
+    "sha256": "325f6772d5d9180482df56d7bbd0458550ea41f32deabbf627f31fd5471a485b",
+    "bytes": 4748
+  },
+  {
+    "path": "frontend/src/composables/useSelectionConfirm.ts",
+    "sha256": "9a088ad4d78923144bb0abf777e7ed85112c00c425afd6d27067da22aafaca7b",
+    "bytes": 4705
+  },
+  {
+    "path": "frontend/src/composables/useVisibilityTaskRecords.ts",
+    "sha256": "19db437fbff518ed85859f72e22f243d4a5eb7566d19e3b3823a099ec70170be",
+    "bytes": 5287
+  },
+  {
+    "path": "frontend/src/composables/useVisibilityWorkbench.spec.ts",
+    "sha256": "1df518ef91affd2966afc8dc00710627527751a19d3113eb066a178a4dd35717",
+    "bytes": 19537
+  },
+  {
+    "path": "frontend/src/composables/useVisibilityWorkbench.ts",
+    "sha256": "4b756653e2c709317060ddf9120330b9b73b8e97ec09e68436dc93eedd91bce9",
+    "bytes": 38076
+  },
+  {
+    "path": "frontend/src/main.ts",
+    "sha256": "d9c2470b0803727a1843ab63496b41f32630063fa4c1e6b63a8dd9cb38d2e813",
+    "bytes": 313
+  },
+  {
+    "path": "frontend/src/style.css",
+    "sha256": "e2fc2311bb78e7cf0c89a0cc8b4a3929bf78de0cfc59664c2b3c0b4c149ef149",
+    "bytes": 15405
+  },
+  {
+    "path": "frontend/src/styles/ballistic-workspace.css",
+    "sha256": "4b02101feeff476bc9f9df3165f1397525dc568d658eda2b0ad6cff12ec7bce4",
+    "bytes": 11855
+  },
+  {
+    "path": "frontend/src/utils/ballisticFit.spec.ts",
+    "sha256": "424b1e8039b3fc5d0b9142688302be76cddb4d76bfe9293a948059e246969ef3",
+    "bytes": 2987
+  },
+  {
+    "path": "frontend/src/utils/ballisticFit.ts",
+    "sha256": "0df773df8f1e78cc2de39af38a88187e88a6a6581d7976b2d4948506c0d2843c",
+    "bytes": 6780
+  },
+  {
+    "path": "frontend/src/utils/ballisticRetime.spec.ts",
+    "sha256": "49f289d5bc8706e5b8f3f0de702b015561fc70fe6fc5613bab9b515e2a277a10",
+    "bytes": 3255
+  },
+  {
+    "path": "frontend/src/utils/ballisticSimulation.spec.ts",
+    "sha256": "7629de0849dee5705b4b65aebd7b9b660ac423f4e11c7349a62ac0a6ff9897ef",
+    "bytes": 2328
+  },
+  {
+    "path": "frontend/src/utils/ballisticSimulation.ts",
+    "sha256": "25fe79387a36dac6a1db91a6f132b0b28a85a09486e4ede25e2173d4d8c9e642",
+    "bytes": 3825
+  },
+  {
+    "path": "frontend/src/utils/ballisticSwingDefaults.ts",
+    "sha256": "f9d1f10f5c77e65c388dd38d3de27d88d23f2ea78c6f81abe0b914618f0b6a9b",
+    "bytes": 5174
+  },
+  {
+    "path": "frontend/src/utils/ballisticWindow.ts",
+    "sha256": "66ee10d8c318a39b0c8f5f4d2925c7969449f8c9c46748fc49e55eab2937fd15",
+    "bytes": 5187
+  },
+  {
+    "path": "frontend/src/utils/standardPayload.spec.ts",
+    "sha256": "258c6b35a88c7827b96c4882ae4f3cec26ead2949d5f201f1715496d7eb0b07f",
+    "bytes": 2823
+  },
+  {
+    "path": "frontend/src/utils/standardPayload.ts",
+    "sha256": "a84701a299278843e4ba0b8f01ef8a1f38c6bb10784706e354ea1e26b45cb19a",
+    "bytes": 5359
+  },
+  {
+    "path": "frontend/src/utils/winToolSummary.spec.ts",
+    "sha256": "8a44e64dcfaa14bb061da62f215af317888a1fe013d98310018467688462e017",
+    "bytes": 3393
+  },
+  {
+    "path": "frontend/src/utils/winToolSummary.ts",
+    "sha256": "f7434e27e64dfbdecc972d5141cee251ac796f385738e921cc20846d64d5ceeb",
+    "bytes": 7382
+  },
+  {
+    "path": "frontend/src/views/BallisticFitView.spec.ts",
+    "sha256": "d7ee6a5934d005f6391df27981c255e18f25de97ff1c8053868be1d4b0732937",
+    "bytes": 10168
+  },
+  {
+    "path": "frontend/src/views/BallisticFitView.vue",
+    "sha256": "e702bda5e1b758644e0020da92ee78c80d17270227394f59f7fe111e57f98232",
+    "bytes": 14009
+  },
+  {
+    "path": "frontend/src/views/BallisticPayloadConfigurationView.spec.ts",
+    "sha256": "bb70178c0fe4483218a54a561e5a260d81905fe8d67d5b51a36fdb1b15d2c200",
+    "bytes": 3894
+  },
+  {
+    "path": "frontend/src/views/BallisticPayloadConfigurationView.vue",
+    "sha256": "b7100a7d384c7dc4d0182264420bfef850f1b7585caca6cc22b1933b61ea4e4c",
+    "bytes": 17051
+  },
+  {
+    "path": "frontend/src/views/BallisticRetimeView.spec.ts",
+    "sha256": "b46133c39b14708b84b499a54d7aef1947cae9ef087646f6556ec1d3904c8ea9",
+    "bytes": 12568
+  },
+  {
+    "path": "frontend/src/views/BallisticRetimeView.vue",
+    "sha256": "5f79a1507b4366575fb552a7d361c48b7ac3ffb420941cf263fa8280f9461fa6",
+    "bytes": 13193
+  },
+  {
+    "path": "frontend/src/views/BallisticSimulationView.spec.ts",
+    "sha256": "3e038e154d55a6196f15adafdade8d39d6e46610bc59d8d4b4226c5b2c84a536",
+    "bytes": 7848
+  },
+  {
+    "path": "frontend/src/views/BallisticSimulationView.vue",
+    "sha256": "e520ca9c617c504b5f8c6418c13e878c23effaad675be48575f91fa31ea5eb4d",
+    "bytes": 12405
+  },
+  {
+    "path": "frontend/src/views/BallisticSwingAlignment.spec.ts",
+    "sha256": "968e79916468d7a8bcbd5313edcd03543edd412dec6656eaaa23d0da36366043",
+    "bytes": 16503
+  }
+]

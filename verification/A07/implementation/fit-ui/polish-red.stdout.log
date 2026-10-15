@@ -1,0 +1,19 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticSimulationView.spec.ts (5 tests | 2 failed) 76ms
+     × A07 初始结果区说明下一步且主动作可直接使用 17ms
+     × 原JSON导入、核心编辑保留高级字段、原结果全文、201引用、完整四曲线、快照与失败恢复 44ms
+ ❯ src/views/BallisticFitView.spec.ts (5 tests | 3 failed) 122ms
+     × A07 初始结果区说明下一步且主动作可直接使用 28ms
+     × A07 观测表以中文和单位呈现，协议列名可在提示查看且时间不截短 25ms
+     × 原生JSON导入只省略outputDir，双目标登记隔离、重试不重算、全点曲线原点、分页与失败恢复 29ms
+ ❯ src/views/BallisticRetimeView.spec.ts (7 tests | 2 failed) 157ms
+     × A07 初始结果区说明下一步且主动作可直接使用 18ms
+     × 上传201/预览→四字段原UTC→2576行四图→登记事件/快照，改输入过期失败清旧成功 25ms
+
+ Test Files  3 failed (3)
+      Tests  7 failed | 10 passed (17)
+   Start at  10:20:48
+   Duration  798ms (transform 779ms, setup 0ms, import 998ms, tests 354ms, environment 595ms)
+

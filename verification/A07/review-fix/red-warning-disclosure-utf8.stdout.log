@@ -1,0 +1,17 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 初始结果区说明下一步且主动作可直接使用 28ms
+ × src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 计算告警默认折叠且可展开全部原文，下载和轨迹位于折叠区之外 11ms
+   → expected null not to be null
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 无计算告警时不显示告警折叠入口 4ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 观测表以中文和单位呈现，协议列名可在提示查看且时间不截短 12ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 原生JSON导入只省略outputDir，双目标登记隔离、重试不重算、全点曲线原点、分页与失败恢复 50ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 非法JSON与危险数字无HTTP，计算忙时避免重复提交 19ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 缺文件后原服务注销旧引用，恢复只重新登记并用新ID读文件 6ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  10:35:58
+   Duration  795ms (transform 237ms, setup 0ms, import 372ms, tests 132ms, environment 194ms)
+

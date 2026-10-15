@@ -1,0 +1,15 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticSimulationView.spec.ts (5 tests | 1 failed) 72ms
+     × A07 初始结果区说明下一步且主动作可直接使用 20ms
+ ❯ src/views/BallisticFitView.spec.ts (4 tests | 1 failed) 121ms
+     × A07 初始结果区说明下一步且主动作可直接使用 37ms
+ ❯ src/views/BallisticRetimeView.spec.ts (7 tests | 1 failed) 155ms
+     × A07 初始结果区说明下一步且主动作可直接使用 20ms
+
+ Test Files  3 failed (3)
+      Tests  3 failed | 13 passed (16)
+   Start at  10:13:53
+   Duration  784ms (transform 692ms, setup 0ms, import 981ms, tests 349ms, environment 590ms)
+

@@ -1,0 +1,11 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/components/BallisticWindowControls.spec.ts (3 tests | 1 failed) 45ms
+     × 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口 18ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  10:23:10
+   Duration  721ms (transform 245ms, setup 0ms, import 377ms, tests 45ms, environment 190ms)
+

@@ -8,6 +8,12 @@ import { createDefaultPayload } from '../utils/standardPayload'
 describe('T22 单一草稿文件与计算状态', () => {
   afterEach(() => vi.unstubAllGlobals())
   const satellites = [{ satelliteId: 'S1', name: '星甲', ...applyReferenceOrbit(), payloads: [{ payloadId: 'P1', payloadName: '甲', ...createDefaultPayload() }] }]
+  it('固定操作栏显示草稿载荷计数并提供真实载荷编辑入口', async () => {
+    const wrapper = mount(BallisticWindowControls, { props: { satellites } })
+    expect(wrapper.get('.ballistic-compute-bar').text()).toContain('1 颗卫星 · 1 个载荷 · 1 个目标')
+    await wrapper.get('[data-test=open-payload-settings]').trigger('click')
+    expect(wrapper.emitted('editPayloads')).toEqual([[]])
+  })
   it('T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退', async () => {
     const reference = { fileId: 'generated-1', originalName: '模拟.csv', serverPath: 'G:\\服务运行根\\模拟.csv', sizeBytes: 561736, contentType: 'text/csv' }
     const generatedResults = [{ targetId: 'SIM-001', targetName: '默认模拟/SIM-001', reference }]

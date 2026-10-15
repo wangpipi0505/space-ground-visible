@@ -1,0 +1,27 @@
+{
+  "startedUtc": "2026-10-15T02:44:56.988480+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "G:/5-YG/space-ground-visible/verification/runtime/audit_staged_bytes.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07",
+  "finishedUtc": "2026-10-15T02:44:57.209909+00:00",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A07/git-delivery-check/stage-two-bytes.stdout.bin",
+    "bytes": 57,
+    "sha256": "09466984790b0d1827868db60827c81df7a7ed1eb6ee22fa85187623a56ad093"
+  },
+  "stderr": {
+    "path": "verification/A07/git-delivery-check/stage-two-bytes.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A07/root-gates/stage-two-bytes.json",
+    "sha256": "15db89c088044fba658997539af36a0d5fc4cf1fd2f1b3039fc7342350e2b5d6"
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "path": "frontend/src/components/BallisticFitTrajectory.vue",
+    "baselineSha256": "d1009a9968c335e062a42861e888c7955ec78822358d7d8611b6e3dfc12757d3",
+    "allowedChange": "仅模板文案/说明折叠及呈现样式；script计算及点处理必须逐字节不变",
+    "scriptMustRemainIdentical": true
+  },
+  {
+    "path": "frontend/src/components/BallisticTrajectoryView.vue",
+    "baselineSha256": "20ea0d34f402c9eeb95c015b6385700545e312e4679cc27a951e6d7e384036bd",
+    "allowedChange": "仅模板文案/说明折叠及呈现样式；script计算及点处理必须逐字节不变",
+    "scriptMustRemainIdentical": true
+  }
+]

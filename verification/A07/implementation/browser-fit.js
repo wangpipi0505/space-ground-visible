@@ -1,0 +1,43 @@
+async page => {
+  const assert = (ok, message) => { if (!ok) throw Error(message) }
+  await page.getByRole('tab', { name: '目标弹道拟合', exact: true }).click()
+  await page.getByRole('tab', { name: '102包轨迹拟合', exact: true }).click()
+  const view = page.locator('.ballistic-fit-view')
+  const sizes = []
+  for (const [width,height] of [[1440,1000],[1920,1080],[390,844]]) {
+    await page.setViewportSize({ width,height })
+    await page.evaluate(() => window.scrollTo(0,0))
+    const dimensions = await page.evaluate(() => ({ viewport: innerWidth, document: document.documentElement.scrollWidth }))
+    assert(dimensions.document <= width, '拟合页横向溢出')
+    sizes.push(dimensions)
+    await page.waitForTimeout(400)
+    await page.screenshot({ path: `G:/5-YG/space-ground-visible/verification/A07/implementation/final-fit-${width}.png` })
+  }
+  await page.setViewportSize({ width:1440,height:1000 })
+  await view.getByText('高级设置 · JSON导入与编辑', { exact:true }).click()
+  const draft = JSON.parse(await view.locator('[data-test=fit-input]').inputValue()), row = draft.package102[0]
+  row.coordinateInfo = Object.fromEntries(Object.entries(row).filter(([key]) => key.startsWith('tack3d_')))
+  row.coords = { tack3d_time_code: '备用不改' }
+  row.future = { originalCode: '20260701075700000', identifier: '90071992547409931' }
+  draft.compatibilityNote = '顶层保留'
+  await view.locator('[data-test=fit-input]').fill(JSON.stringify(draft))
+  await view.locator('[data-fit-cell="7/impact_pos_unit"]').fill('dm')
+  const pending = page.waitForResponse(r => r.url().endsWith('/api/trajectory/fit/package102'), { timeout:120000 })
+  await view.locator('[data-test=fit-compute]').click()
+  const response = await pending, request = response.request().postDataJSON(), raw = await response.text(), result = JSON.parse(raw)
+  assert(response.status() === 200 && result.targetCount === 2, '双目标拟合失败')
+  assert(request.package102[0].future.identifier === '90071992547409931' && request.package102[0].coords.tack3d_time_code === '备用不改' && request.package102[7].impact_pos_unit === 'dm', '别名、未知字段或末格丢失')
+  await view.locator('[data-test=fit-trajectory]').last().waitFor()
+  for (const [index,button] of (await view.locator('[data-test=fit-download]').all()).entries()) {
+    const download = page.waitForEvent('download'); await button.click()
+    await (await download).saveAs(`G:/5-YG/space-ground-visible/verification/runtime/A07/implementation/fit-${index+1}.csv`)
+  }
+  const jsonDownload = page.waitForEvent('download')
+  await view.getByRole('button', { name:'下载结果 JSON', exact:true }).click()
+  await (await jsonDownload).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A07/implementation/fit-response.json')
+  await view.locator('[data-test=fit-input]').evaluate(el => { el.closest('details').open = false })
+  await page.waitForTimeout(400)
+  await page.screenshot({ path:'G:/5-YG/space-ground-visible/verification/A07/implementation/final-fit-result.png' })
+  page.__a07.runs.fit = { request,result,raw,status:response.status(),sizes }
+  return { status:response.status(), targetCount:result.targetCount, pointCounts:result.files.map(f => f.pointCount), sizes }
+}

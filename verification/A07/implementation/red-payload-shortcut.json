@@ -1,0 +1,16 @@
+{
+  "startedUtc": "2026-10-15T02:23:10.708196+00:00",
+  "finishedUtc": "2026-10-15T02:23:11.742220+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "G:/5-YG/space-ground-visible/frontend/node_modules/vitest/vitest.mjs",
+    "run",
+    "--root",
+    "G:/5-YG/space-ground-visible/frontend",
+    "src/components/BallisticWindowControls.spec.ts"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\implementation",
+  "exitCode": 1,
+  "stdoutSha256": "28c886095504e9c475962911e122e2353e6dd82602e8275f18d91a4e483fb6c2",
+  "stderrSha256": "8bad85dfa4913d50f711eba3bfbfd47b855f7dfd2123a57f4ab2e73d5d3a9526"
+}

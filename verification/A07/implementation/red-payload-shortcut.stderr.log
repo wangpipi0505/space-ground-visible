@@ -1,0 +1,19 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/BallisticWindowControls.spec.ts > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口
+AssertionError: expected '1 颗卫星 · 1 个目标计算可见窗口' to contain '1 颗卫星 · 1 个载荷 · 1 个目标'
+
+Expected: "1 颗卫星 · 1 个载荷 · 1 个目标"
+Received: "1 颗卫星 · 1 个目标计算可见窗口"
+
+ ❯ src/components/BallisticWindowControls.spec.ts:13:58
+     11|   it('固定操作栏显示草稿载荷计数并提供真实载荷编辑入口', async () => {
+     12|     const wrapper = mount(BallisticWindowControls, { props: { satellit…
+     13|     expect(wrapper.get('.ballistic-compute-bar').text()).toContain('1 …
+       |                                                          ^
+     14|     await wrapper.get('[data-test=open-payload-settings]').trigger('cl…
+     15|     expect(wrapper.emitted('editPayloads')).toEqual([[]])
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

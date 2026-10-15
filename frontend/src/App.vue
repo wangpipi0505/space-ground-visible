@@ -1,6 +1,7 @@
 <script setup lang="ts">
 /** 空间规划入口：连接卫星、载荷、站星链路、目录与后台任务状态，并切换历史结果视图。 */
 import { computed, onMounted, ref } from 'vue'
+import './styles/ballistic-workspace.css'
 import BallisticPayloadConfigurationView from './views/BallisticPayloadConfigurationView.vue'
 import BallisticFitView from './views/BallisticFitView.vue'
 import BallisticSimulationView from './views/BallisticSimulationView.vue'

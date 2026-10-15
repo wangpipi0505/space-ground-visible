@@ -1,0 +1,1 @@
+async page => ({ status: page.__a07fix.status, task: page.__a07fix.result.taskName, files: page.__a07fix.result.files.map(file => ({ targetId: file.targetId, pointCount: file.pointCount, warningCount: file.warnings.length, warnings: file.warnings })), visibleSummaries: await page.locator('.ballistic-fit-view [data-fit-target] summary').allTextContents() })

@@ -1,0 +1,160 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 初始结果区说明下一步且主动作可直接使用
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/views/BallisticFitView.spec.ts:19:66
+     17|     const wrapper = mount(BallisticFitView)
+     18|     const panel = wrapper.get('[aria-label="拟合结果"]')
+     19|     expect(panel.find('.ballistic-empty-state strong').exists()).toBe(…
+       |                                                                  ^
+     20|     expect(panel.text()).toContain('完成左侧')
+     21|     expect(wrapper.get('[data-test=fit-compute]').text()).toBe('开始拟合')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 观测表以中文和单位呈现，协议列名可在提示查看且时间不截短
+AssertionError: expected '操作track_tgt_idtack3d_time_codetack3d_…' to contain '位置 X（0.1米）'
+
+Expected: "位置 X（0.1米）"
+Received: "操作track_tgt_idtack3d_time_codetack3d_tgt_pos_xtack3d_tgt_pos_ytack3d_tgt_pos_ztack3d_tgt_vel_xtack3d_tgt_vel_ytack3d_tgt_vel_ztack3d_tgt_acc_xtack3d_tgt_acc_ytack3d_tgt_acc_zprop_tgt_type_8prop_tgt_shape_8prop_tgt_flight_phase_8prob_tgt_critical_incidentprob_tgt_critical_incident_time_codelaunch_time_codelaunch_coord_framelaunch_pos_xlaunch_pos_ylaunch_pos_zlaunch_pos_unitimpact_time_codeimpact_coord_frameimpact_pos_ximpact_pos_yimpact_pos_zimpact_pos_unit"
+
+ ❯ src/views/BallisticFitView.spec.ts:45:41
+     43|   it('A07 观测表以中文和单位呈现，协议列名可在提示查看且时间不截短', () => {
+     44|     const wrapper = mount(BallisticFitView)
+     45|     expect(wrapper.get('thead').text()).toContain('位置 X（0.1米）')
+       |                                         ^
+     46|     expect(wrapper.get('th[title="tack3d_time_code"]').text()).toBe('观…
+     47|     expect(wrapper.findAll('thead th[title]')).toHaveLength(28)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 原生JSON导入只省略outputDir，双目标登记隔离、重试不重算、全点曲线原点、分页与失败恢复
+AssertionError: expected '目标 乙 · 31 点模型与文件详情模型 ORBITAL_TWO_BODY…' to contain '完整CSV 31 行'
+
+Expected: "完整CSV 31 行"
+Received: "目标 乙 · 31 点模型与文件详情模型 ORBITAL_TWO_BODY服务文件 server/乙.csv引用 乙 ·  字节警告第一条警告第二条乙.csv ·  字节下载CSV数据预览 · 共 100 行 · 第 1 页文件元数据{}原头原值预览上一页预览下一页目标 乙 · 31 点 · 4 个原始约束点坐标、时间与精度说明ECI位置为米，速度为m/s，拟合/模拟 dt 为相邻步长毫秒；曲线横轴为原分列UTC相对首行的秒数，UTC显示保持原文本。图形仅显示原导出位置3位小数、速度9位小数精度，不重拟合、不再坐标转换。红点为原始约束标记。完整输出 UTC：2026-07-01 07:56:55.000 → 2026-07-01 07:57:10.000ECI XY投影 · X m / Y mX m / Y mECI X / 相对UTC时间 · 相对UTC s / X m相对UTC s / X mECI Y / 相对UTC时间 · 相对UTC s / Y m相对UTC s / Y mECI Z / 相对UTC时间 · 相对UTC s / Z m相对UTC s / Z m原始约束点（isOriginal=1）UTCdt 相邻 msECI_X mECI_Y mECI_Z mECI_VX m/sECI_VY m/sECI_VZ m/sisOriginal2026-07-01 07:57:00.000500.0006800000.00010000.0005000.0000.0000000007600.00000000010.00000000012026-07-01 07:57:01.000500.0006800000.00017600.0005010.0000.0000000007600.00000000010.00000000012026-07-01 07:57:02.000500.0006800000.00025200.0005020.0000.0000000007600.00000000010.00000000012026-07-01 07:57:03.000500.0006800000.00032800.0005030.0000.0000000007600.00000000010.0000000001"
+
+ ❯ src/views/BallisticFitView.spec.ts:72:32
+     70|     expect(results[1]!.text()).toContain('警告第二条')
+     71|     expect(results[1]!.findAll('[data-test=fit-original-marker]')).toH…
+     72|     expect(results[1]!.text()).toContain('完整CSV 31 行')
+       |                                ^
+     73|     state.restoreRegister()
+     74|     await results[0]!.get('[data-test=fit-register]').trigger('click')…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > A07 初始结果区说明下一步且主动作可直接使用
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/views/BallisticRetimeView.spec.ts:16:66
+     14|     const wrapper = mount(BallisticRetimeView)
+     15|     const panel = wrapper.get('[aria-label="重定时结果"]')
+     16|     expect(panel.find('.ballistic-empty-state strong').exists()).toBe(…
+       |                                                                  ^
+     17|     expect(panel.text()).toContain('完成左侧')
+     18|     expect(wrapper.get('[data-test=retime-compute]').text()).toBe('开始重…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 上传201/预览→四字段原UTC→2576行四图→登记事件/快照，改输入过期失败清旧成功
+AssertionError: expected '弹道重定时调整发射时间轨迹来源来源上传CSV已生成结果选择轨迹CSV源.c…' to contain '完整CSV 2576 行'
+
+- Expected
++ Received
+
+- 完整CSV 2576 行
++ 弹道重定时调整发射时间轨迹来源来源上传CSV已生成结果选择轨迹CSV源.csv · 561736 字节 · 2576 行数据预览 · 共 2576 行原头原文文件详情引用 源1服务路径 server/source.csv任务与新发射时间加载默认参数任务名称目标ID新发射 UTC保持地固轨迹，按新UTC更新惯性系位置与速度。时间不转换本地时区。高级设置 · 空值与输入快照 任务名称使用 null 目标ID使用 null{
++   "taskName": "T04-retime",
++   "targetId": "RET-001",
++   "trajectoryCsvPath": "server/source.csv",
++   "launchTimeUtc": "2026-07-02 07:57:00.000"
++ }CSV格式与时间说明支持 YYYY/MM/dd/HH/mm/ss.SSS 及 ECEF_X/Y/Z、ECEF_Vx/Vy/Vz、ECI_X/Y/Z、ECI_VX/VY/VZ 命名列。20列 ECEF_X(m) 格式不支持重定时；HTTP、MinIO及Excel来源用于窗口计算。dt 为相对首行累计毫秒，timeIntervalMs 为相邻间隔毫秒。结果用于窗口计算时沿新CSV时间，不再次平移，请核对卫星历元日期。已生成结果仅保留当前会话登记的文件，刷新后需重新上传。outputDir由服务管理。开始重定时重定时结果T04-retime · 1 个目标结果可再次重定时，或用于可视窗口计算。下载输入 JSON下载结果 JSON计算输入快照{
++   "taskName": "T04-retime",
++   "targetId": "RET-001",
++   "trajectoryCsvPath": "server/source.csv",
++   "launchTimeUtc": "2026-07-02 07:57:00.000"
++ }目标 RETIMED-TGT · 2576 点模型与文件详情模型 RETIMED_TRAJECTORY服务文件 server/output.csv引用 输出1 · 561736 字节源.csv · 561736 字节下载CSV数据预览 · 共 2576 行 · 第 1 页文件元数据{}原头原文预览上一页预览下一页目标 RETIMED-TGT · 2576 点 · 0 个原始约束点坐标、时间与精度说明ECI位置为米，速度为m/s，重定时 dt 为累计相对首行毫秒，timeIntervalMs 为相邻步长毫秒（dt可缺省）；曲线横轴为原分列UTC相对首行的秒数，UTC显示保持原文本。图形仅显示原导出位置3位小数、速度9位小数精度，不重拟合、不再坐标转换。红点为原始约束标记。完整输出 UTC：2026-07-02 07:57:00.000 → 2026-07-02 08:39:55.000ECI XY投影 · X m / Y mX m / Y mECI X / 相对UTC时间 · 相对UTC s / X m相对UTC s / X mECI Y / 相对UTC时间 · 相对UTC s / Y m相对UTC s / Y mECI Z / 相对UTC时间 · 相对UTC s / Z m相对UTC s / Z m原始约束点（isOriginal=1）UTCdt 累计 ms（可缺）ECI_X mECI_Y mECI_Z mECI_VX m/sECI_VY m/sECI_VZ m/sisOriginal
+
+ ❯ src/views/BallisticRetimeView.spec.ts:99:76
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > A07 初始结果区说明下一步且主动作可直接使用
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/views/BallisticSimulationView.spec.ts:16:66
+     14|     const wrapper = mount(BallisticSimulationView)
+     15|     const panel = wrapper.get('[aria-label="模拟结果"]')
+     16|     expect(panel.find('.ballistic-empty-state strong').exists()).toBe(…
+       |                                                                  ^
+     17|     expect(panel.text()).toContain('完成左侧')
+     18|     expect(wrapper.get('[data-test=simulation-compute]').text()).toBe(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > 原JSON导入、核心编辑保留高级字段、原结果全文、201引用、完整四曲线、快照与失败恢复
+AssertionError: expected '模拟弹道端点约束模拟任务与端点加载默认数据已读取 原.json任务名称目标…' to contain '完整CSV 2576 行'
+
+- Expected
++ Received
+
+- 完整CSV 2576 行
++ 模拟弹道端点约束模拟任务与端点加载默认数据已读取 原.json任务名称目标标识发射 UTC落点 UTC（可空）任务起始UTC任务结束UTC输出间隔（秒）发射点 X发射点 Y发射点 Z发射点坐标系发射点单位落点 X落点 Y落点 Z落点坐标系落点单位时间均为UTC。落点时间留空时自动估计；坐标值按各端点单位输入。高级设置 · JSON导入与编辑导入请求 JSON完整请求 JSON导入的 outputDir 将省略，结果保存到服务管理目录。坐标、时间与模型说明端点约束 Lambert 射击法 / 二体 RK4 模型。发射和落点坐标分别指定坐标系与单位；所有时间按字面UTC提交，不转换本地时区。任务起止时间仅为任务信息。坐标系支持 J2000 / ECI / ECIJ2000、ECEF / ITRF / WGS84ECEF、LLA / LLH / BLH / GEODETIC / WGS84 / WGS84LLA；大小写、空格、连字符和下划线按服务规则归一。WGS84下 X=经度（度）、Y=纬度（度）、Z=高度（米），忽略单位字段。笛卡尔单位支持 m / meter / meters、km / kilometer / kilometers、0.1m / dm / package102 / 102（0.1米）及数值比例。impactTimeUtc 优先于 impactTime；均为空时估计落点时间。outputPointDurationSec 的正数优先于 outputStepSec，否则回退1秒；最小间隔0.001秒。任务名称为null或省略时使用默认名称。高级JSON保留全部35字段及 PhaseEvent。初速度、integrationStepSec、boost、drag 等兼容字段不参与当前模型；phaseEvents仅返回预留警告，不启用分段动力学。outputDir由服务管理。开始模拟模拟结果defaultSimTask · 1 个目标结果可用于可视窗口计算，目标时间沿用CSV历元。下载输入 JSON下载结果 JSON计算输入快照{
++   "taskName": "defaultSimTask",
++   "targetId": "SIM-001",
++   "launchTimeUtc": "2026-06-04 04:00:00.000",
++   "impactTimeUtc": "2026-06-04 04:42:55.000",
++   "taskStartTime": "2026-06-04 04:00:00.000",
++   "taskEndTime": "2026-06-04 04:42:55.000",
++   "launchPointX": 2167790.227,
++   "launchPointY": 4775481.109,
++   "launchPointZ": 3618557.253,
++   "launchPointCoordFrame": "J2000",
++   "launchPointUnit": "m",
++   "impactPointX": 3578635.76,
++   "impactPointY": 3522525.227,
++   "impactPointZ": 3919735.591,
++   "impactPointCoordFrame": "J2000",
++   "impactPointUnit": "m",
++   "outputPointDurationSec": 1,
++   "phaseEvents": [
++     {
++       "deltaVms": 6,
++       "phaseType": "预留"
++     }
++   ],
++   "initialSpeedMs": 1800
++ }目标 SIM-001 · 2576 点模型与文件详情模型 SYSTEM_SIMULATED_LAMBERT服务文件 G:\运行\原.csv引用 真实f1 · 561736 字节第一条第二条原.csv · 561736 字节下载CSV数据预览 · 共 2576 行 · 第 1 页文件元数据{}原头原值预览上一页预览下一页目标 SIM-001 · 2576 点 · 0 个原始约束点坐标、时间与精度说明ECI位置为米，速度为m/s，拟合/模拟 dt 为相邻步长毫秒；曲线横轴为原分列UTC相对首行的秒数，UTC显示保持原文本。图形仅显示原导出位置3位小数、速度9位小数精度，不重拟合、不再坐标转换。红点为原始约束标记。完整输出 UTC：2026-06-04 04:00:00.000 → 2026-06-04 04:42:55.000ECI XY投影 · X m / Y mX m / Y mECI X / 相对UTC时间 · 相对UTC s / X m相对UTC s / X mECI Y / 相对UTC时间 · 相对UTC s / Y m相对UTC s / Y mECI Z / 相对UTC时间 · 相对UTC s / Z m相对UTC s / Z m原始约束点（isOriginal=1）UTCdt 相邻 msECI_X mECI_Y mECI_Z mECI_VX m/sECI_VY m/sECI_VZ m/sisOriginal
+
+ ❯ src/views/BallisticSimulationView.spec.ts:50:28
+     48|     const references = wrapper.emitted('references')?.at(-1)?.[0] as A…
+     49|     expect(references[0]?.targetId).toBe('SIM-001'); expect(references…
+     50|     expect(wrapper.text()).toContain('完整CSV 2576 行')
+       |                            ^
+     51|     expect(wrapper.findAll('svg')).toHaveLength(4)
+     52|     expect(wrapper.findAll('ol li').map(node => node.text())).toEqual(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+

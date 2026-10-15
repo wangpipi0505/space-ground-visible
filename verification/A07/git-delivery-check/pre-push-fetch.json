@@ -1,0 +1,26 @@
+{
+  "startedUtc": "2026-10-15T02:42:42.238341+00:00",
+  "argv": [
+    "git",
+    "fetch",
+    "origin",
+    "main"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07",
+  "finishedUtc": "2026-10-15T02:42:43.812485+00:00",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A07/git-delivery-check/pre-push-fetch.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "verification/A07/git-delivery-check/pre-push-fetch.stderr.bin",
+    "bytes": 104,
+    "sha256": "8e8d5f7f773fd2d1f991a6bbf95ddd891b6edd83ed7121da4297f458d05ff8b7"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A07/root-gates/pre-push-fetch.json",
+    "sha256": "5d60ca0d14df972a3f74984b42f7e19712a1f46193aabae0590d997150f64f1f"
+  }
+}

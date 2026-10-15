@@ -1,0 +1,39 @@
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts [ src/views/BallisticFitView.spec.ts ]
+TypeError: The URL must be of scheme file
+ ❯ src/views/BallisticFitView.spec.ts:10:20
+      8| /** 组件真实输入事件与HTTP封装；一次失败仅影响所属目标，重新计算清除旧结果。 */
+      9| describe('T23 拟合页面状态', () => {
+     10|   const original = readFileSync(new URL('../../../test-data/reference/…
+       |                    ^
+     11|   const csv = readFileSync(new URL('../../../test-data/baseline/ballis…
+     12|   /** A07：未计算时结果位置可发现，主动作与高级输入分离，初始挂载不发送请求。 */
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts [ src/views/BallisticRetimeView.spec.ts ]
+TypeError: The URL must be of scheme file
+ ❯ src/views/BallisticRetimeView.spec.ts:22:15
+     20|   })
+     21|   afterEach(() => vi.unstubAllGlobals())
+     22|   const csv = readFileSync(new URL('../../../test-data/baseline/ballis…
+       |               ^
+     23|   const reference = { fileId: '源1', serverPath: 'server/source.csv', o…
+     24|   const candidate = { targetId: 'SIM-001', targetName: '模拟/default/SIM…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/views/BallisticSimulationView.spec.ts [ src/views/BallisticSimulationView.spec.ts ]
+TypeError: The URL must be of scheme file
+ ❯ src/views/BallisticSimulationView.spec.ts:22:20
+     20|   })
+     21|   afterEach(() => vi.unstubAllGlobals())
+     22|   const original = readFileSync(new URL('../../../test-data/reference/…
+       |                    ^
+     23|   const csv = readFileSync(new URL('../../../test-data/baseline/ballis…
+     24|   it('原JSON导入、核心编辑保留高级字段、原结果全文、201引用、完整四曲线、快照与失败恢复', async () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+

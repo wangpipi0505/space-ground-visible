@@ -1,0 +1,26 @@
+{
+  "startedUtc": "2026-10-15T02:44:56.989746+00:00",
+  "argv": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07",
+  "finishedUtc": "2026-10-15T02:44:57.034232+00:00",
+  "exitCode": 2,
+  "stdout": {
+    "path": "verification/A07/git-delivery-check/stage-two-whitespace.stdout.bin",
+    "bytes": 59,
+    "sha256": "726fc5ea7cb015eb57a95f0a1ed00979e862b54999d51d6cf83290450d60fa98"
+  },
+  "stderr": {
+    "path": "verification/A07/git-delivery-check/stage-two-whitespace.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A07/root-gates/stage-two-whitespace.json",
+    "sha256": "32cd1b4a8982ddab4078fd21e00997a8fad9c3949393d2344f1950b74e805ec1"
+  }
+}

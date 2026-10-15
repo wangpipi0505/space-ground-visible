@@ -47,6 +47,19 @@ const editable = computed(() => {
 })
 const changed = computed(() => submitted.value && inputText.value !== submittedText.value)
 const taskFields = [{ key: 'taskName', label: '任务名称' }, { key: 'taskStartTime', label: '任务起始UTC' }, { key: 'taskEndTime', label: '任务结束UTC' }, { key: 'interpolationStepSec', label: '插值步长（秒）' }] as const
+/** 仅用于表头与辅助标签；保留28列原协议键及编码单位，单元格读写仍使用原键。 */
+const columnLabels: Record<typeof swing102Columns[number], string> = {
+  track_tgt_id: '目标ID', tack3d_time_code: '观测时间码',
+  tack3d_tgt_pos_x: '位置 X（0.1米）', tack3d_tgt_pos_y: '位置 Y（0.1米）', tack3d_tgt_pos_z: '位置 Z（0.1米）',
+  tack3d_tgt_vel_x: '速度 X（0.0001米/秒）', tack3d_tgt_vel_y: '速度 Y（0.0001米/秒）', tack3d_tgt_vel_z: '速度 Z（0.0001米/秒）',
+  tack3d_tgt_acc_x: '加速度 X（0.01米/秒²）', tack3d_tgt_acc_y: '加速度 Y（0.01米/秒²）', tack3d_tgt_acc_z: '加速度 Z（0.01米/秒²）',
+  prop_tgt_type_8: '目标类型码', prop_tgt_shape_8: '目标形状码', prop_tgt_flight_phase_8: '飞行阶段码',
+  prob_tgt_critical_incident: '关键事件码', prob_tgt_critical_incident_time_code: '事件时间码',
+  launch_time_code: '发射时间码', launch_coord_frame: '发射坐标系',
+  launch_pos_x: '发射位置 X', launch_pos_y: '发射位置 Y', launch_pos_z: '发射位置 Z', launch_pos_unit: '发射位置单位',
+  impact_time_code: '落点时间码', impact_coord_frame: '落点坐标系',
+  impact_pos_x: '落点位置 X', impact_pos_y: '落点位置 Y', impact_pos_z: '落点位置 Z', impact_pos_unit: '落点位置单位',
+}
 /** 表格只修改唯一JSON草稿的生效字段；旧嵌套别名、17位编码和未知字符串始终原值保留。 */
 function editInput(event: Event, key: string, rowIndex?: number): void {
   if (!(event.target instanceof HTMLInputElement) || !editable.value) return
@@ -127,42 +140,51 @@ function exportResult(): void {
 </script>
 
 <template>
-  <section class="ballistic-fit-view ballistic-window-controls" aria-label="102包轨迹拟合">
-    <h2>102包轨迹拟合</h2>
-    <details><summary>高级协议说明（编码、兼容别名与单位）</summary>
-    <p>完整 FitRequest JSON 输入：package102 保留原字符串编码、扁平 tack3d 历史拼写 / track3d 时间别名及 coordinateInfo / coordinate / coords、targetInfo / target。位置 0.1 m、速度 0.0001 m/s、加速度 0.01 m/s²；原别名优先级和模型选择由服务执行。</p>
-    <p>taskStartTime / taskEndTime 为字面 UTC 任务区间，不是物理起落时刻；浏览器时区不转换。interpolationStepSec 为秒，省略默认 1，至少 0.001。时间码、ID、代码和观测值按原 DTO 加引号，禁止危险数字舍入。</p>
-    <p class="ballistic-storage-notice">Web 使用服务管理结果目录，提交始终省略 outputDir；不使用浏览器本机或自填服务目录。</p>
-    </details>
-    <fieldset class="ballistic-native-form" :disabled="computing || loadingInput">
-      <legend>原102包与任务参数</legend>
-      <button type="button" data-test="load-default-fit" @click="loadDefault">加载原默认102数据</button>
-      <div v-if="editable" class="ballistic-field-grid"><label v-for="field in taskFields" :key="field.key">{{ field.label }}<input :value="editable[field.key] ?? ''" :data-fit-field="field.key" :inputmode="field.key === 'interpolationStepSec' ? 'decimal' : undefined" @input="editInput($event, field.key)" /></label></div>
-      <p>一行即一个目标观测点。位置编码 0.1米，速度编码 0.0001米/秒，加速度编码 0.01米/秒²；时间码、ID和代码直接保留字符串。横向滚动查看全部28列。</p>
-      <button type="button" @click="changeRows()">新增102记录</button>
-      <div v-if="editable" class="ballistic-table-scroll"><table><thead><tr><th>操作</th><th v-for="key in swing102Columns" :key="key">{{ key }}</th></tr></thead><tbody><tr v-for="(row,index) in editable.package102" :key="index" :data-fit-row="index"><td><button type="button" @click="changeRows(index)">删除第{{ index + 1 }}行</button></td><td v-for="key in swing102Columns" :key="key"><input :value="cellValue(row, key)" :aria-label="`第${index + 1}行 ${key}`" :data-fit-cell="`${index}/${key}`" @input="editInput($event, key, index)" /></td></tr></tbody></table></div>
-      <details><summary>高级设置：完整JSON导入与兼容字段</summary>
-      <label>选择完整请求 JSON<input type="file" accept=".json,application/json" @change="chooseJson" /></label>
-      <p v-if="inputName">已读取 {{ inputName }}（本地原文保留，可在下方编辑）</p>
-      <label class="ballistic-json-label">完整 FitRequest JSON<textarea v-model="inputText" data-test="fit-input" rows="18" spellcheck="false" /></label>
-      </details>
-      <p v-if="parsed.error" role="alert" class="ballistic-error">输入待纠正：{{ parsed.error }}；可在高级JSON中修正。</p>
-      <p v-if="parsed.value">{{ parsed.value.request.package102.length }} 条原包 · 任务 {{ parsed.value.request.taskName ?? 'task（原缺省）' }} · 步长 {{ parsed.value.request.interpolationStepSec ?? 1 }} 秒</p>
-      <p v-if="parsed.value?.omittedOutputDir" data-test="fit-storage-notice">导入含 outputDir：已明确改用服务管理目录，实际请求将省略该字段；其余包与任务参数保持原值。</p>
-      <details v-if="parsed.value"><summary>实际提交预览（outputDir 已省略）</summary><pre>{{ JSON.stringify(parsed.value.request, null, 2) }}</pre></details>
-    </fieldset>
-    <p v-if="loadingInput" role="status">正在读取本地 JSON…</p>
-    <p v-if="computing" role="status">正在执行原102包拟合，请等待服务响应…</p>
-    <p v-if="error" role="alert" class="ballistic-error">{{ error }}</p>
-    <button type="button" data-test="fit-compute" :disabled="computing || loadingInput" @click="calculate">{{ computing ? '拟合请求进行中…' : '执行原102包拟合' }}</button>
-    <section v-if="result && submitted" data-test="fit-success" aria-label="本次原拟合结果">
-      <h3>原拟合已成功 · {{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
-      <p v-if="changed" role="status">输入已修改：下面结果仍绑定上次实际提交快照，请重新拟合以获得新输入结果。</p>
-      <div class="ballistic-actions"><button type="button" @click="exportInput">下载实际提交 JSON</button><button type="button" @click="exportResult">下载原拟合响应 JSON</button></div>
-      <details><summary>不可变实际提交快照（outputDir 省略）</summary><pre data-test="fit-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
-      <details><summary>本次全部原102包（原字符串/别名/单位保留）</summary><pre>{{ JSON.stringify(submitted.package102, null, 2) }}</pre></details>
-      <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}/${file.targetId}`" :file="file" :task-name="result.response.taskName" @reference="updateReference(index, $event)" />
-    </section>
+  <section class="ballistic-fit-view ballistic-workspace" aria-label="102包轨迹拟合">
+    <header class="ballistic-workspace-header"><h2>102包轨迹拟合</h2><span v-if="inputName" class="ballistic-source-badge">{{ inputName }}</span></header>
+    <div class="ballistic-workbench-grid">
+      <div class="ballistic-input-column">
+        <div class="ballistic-input-scroll">
+        <fieldset class="ballistic-native-form ballistic-panel" :disabled="computing || loadingInput">
+          <legend>任务与观测</legend>
+          <div class="ballistic-actions"><button type="button" data-test="load-default-fit" @click="loadDefault">加载默认数据</button><button type="button" @click="changeRows()">新增102记录</button></div>
+          <div v-if="editable" class="ballistic-field-grid"><label v-for="field in taskFields" :key="field.key">{{ field.label }}<input :value="editable[field.key] ?? ''" :data-fit-field="field.key" :inputmode="field.key === 'interpolationStepSec' ? 'decimal' : undefined" @input="editInput($event, field.key)" /></label></div>
+          <p class="ballistic-field-hint">每行一个观测点 · 共28列，可横向滚动。UTC不转换本地时区。</p>
+          <div v-if="editable" class="ballistic-table-scroll"><table><thead><tr><th>操作</th><th v-for="key in swing102Columns" :key="key" :title="key">{{ columnLabels[key] }}</th></tr></thead><tbody><tr v-for="(row,index) in editable.package102" :key="index" :data-fit-row="index"><td><button type="button" @click="changeRows(index)">删除第{{ index + 1 }}行</button></td><td v-for="key in swing102Columns" :key="key"><input :value="cellValue(row, key)" :aria-label="`第${index + 1}行 ${columnLabels[key]}`" :title="key" :style="key.endsWith('time_code') ? { minWidth: '220px', width: '220px' } : undefined" :data-fit-cell="`${index}/${key}`" @input="editInput($event, key, index)" /></td></tr></tbody></table></div>
+          <details><summary>高级设置 · JSON导入与编辑</summary>
+            <label>导入请求 JSON<input type="file" accept=".json,application/json" @change="chooseJson" /></label>
+            <p v-if="inputName">已读取 {{ inputName }}</p>
+            <label class="ballistic-json-label">完整请求 JSON<textarea v-model="inputText" data-test="fit-input" rows="18" spellcheck="false" /></label>
+            <p v-if="parsed.value?.omittedOutputDir" data-test="fit-storage-notice">导入的 outputDir 将省略，结果保存到服务管理目录。</p>
+          </details>
+          <details><summary>编码、单位与兼容字段</summary>
+            <p>位置编码为0.1米，速度为0.0001米/秒，加速度为0.01米/秒²。时间码、ID、代码和观测值须加引号，避免长数字精度丢失。</p>
+            <p>任务起止时间按字面UTC提交，仅用于任务区间；插值步长单位为秒，省略时为1，最小0.001。</p>
+            <p>JSON保留 tack3d / track3d 时间别名及 coordinateInfo / coordinate / coords、targetInfo / target。别名优先级和模型选择由服务处理；结果目录统一管理，不使用 outputDir。</p>
+          </details>
+          <p v-if="parsed.error" role="alert" class="ballistic-error">输入待纠正：{{ parsed.error }}；可在高级JSON中修正。</p>
+          <p v-if="parsed.value" class="ballistic-field-hint">{{ parsed.value.request.package102.length }} 条观测 · 步长 {{ parsed.value.request.interpolationStepSec ?? 1 }} 秒</p>
+        </fieldset>
+        </div>
+        <div class="ballistic-compute-bar">
+          <p v-if="loadingInput" role="status">正在读取 JSON…</p>
+          <p v-if="error" role="alert" class="ballistic-error">{{ error }}</p>
+          <button type="button" class="ballistic-primary-action" data-test="fit-compute" :disabled="computing || loadingInput" @click="calculate">{{ computing ? '正在拟合…' : '开始拟合' }}</button>
+        </div>
+      </div>
+      <aside class="ballistic-results-column ballistic-panel" aria-label="拟合结果" :aria-busy="computing">
+        <h3>拟合结果</h3>
+        <div v-if="!result" class="ballistic-empty-state" role="status"><p>{{ computing ? '正在拟合，请等待结果。' : '完成左侧任务与观测设置，点击“开始拟合”。' }}</p></div>
+        <section v-if="result && submitted" data-test="fit-success" aria-label="本次拟合结果">
+          <h3>{{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
+          <p v-if="changed" role="status">输入已修改，当前结果来自上次计算。重新拟合以更新结果。</p>
+          <div class="ballistic-actions"><button type="button" @click="exportInput">下载输入 JSON</button><button type="button" @click="exportResult">下载结果 JSON</button></div>
+          <details><summary>计算输入快照</summary><pre data-test="fit-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
+          <details><summary>全部102观测数据</summary><pre>{{ JSON.stringify(submitted.package102, null, 2) }}</pre></details>
+          <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}/${file.targetId}`" :file="file" :task-name="result.response.taskName" @reference="updateReference(index, $event)" />
+        </section>
+      </aside>
+    </div>
   </section>
 </template>
 

@@ -1,0 +1,14 @@
+{
+  "startedUtc": "2026-10-15T02:32:41.213402+00:00",
+  "finishedUtc": "2026-10-15T02:32:41.716807+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "G:/5-YG/space-ground-visible/verification/A07/implementation/verify-bytes.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\implementation",
+  "exitCode": 0,
+  "stdoutSha256": "fdbd381586ff96bbf0838f79eb7bf7c703c28debcacb7c7b4edfaa8830007a8e",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

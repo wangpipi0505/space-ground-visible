@@ -1,13 +1,13 @@
 [
   {
     "path": ".gitattributes",
-    "bytes": 5245,
-    "sha256": "19eabbc296e014ff8fb12859c6c75563c7951b9b0997c8482fa7e3c4bb1aed90"
+    "bytes": 5610,
+    "sha256": "1595e4d8752f1391315588c48dd452fb08fd8f5ab703f0d0840b91978021937e"
   },
   {
     "path": "README.md",
-    "bytes": 7792,
-    "sha256": "a4e70a0841255187c6eab8c75efba2226ce141063b64b6d04d5b8357cdec8c6b"
+    "bytes": 8405,
+    "sha256": "b184618d9a743fd00ca38b6a588862088874e390f657bde17b8e0a21e6a35a92"
   },
   {
     "path": "backend/db/dameng/data.sql",
@@ -2841,8 +2841,8 @@
   },
   {
     "path": "docs/Swing与Web参数对照.md",
-    "bytes": 9647,
-    "sha256": "c7756740f3722e3af19036ddaf5780ce99aba2a8eea0d56426e34c82cf640cf7"
+    "bytes": 10936,
+    "sha256": "f0f8189b2fc7d7963353336cae18bcbfed474653b962204f2502ab4713c6cf5c"
   },
   {
     "path": "docs/superpowers/plans/2026-10-14-swing-input-web-alignment.md",
@@ -2851,13 +2851,13 @@
   },
   {
     "path": "docs/补充验收台账.md",
-    "bytes": 20005,
-    "sha256": "3efccf68771ff67ab88a25511579f4cc2f033ea2a03c8c62c717f05b9f6d9bb5"
+    "bytes": 22716,
+    "sha256": "314db2cab6453feaad3557ab962ab4d3d2cfa8c9430464e67d4c55bfad2e1a83"
   },
   {
     "path": "docs/软件功能使用说明.md",
-    "bytes": 36732,
-    "sha256": "d62a85f19a5fb98f092df0ee7e1610a0dcfedf8ef2c75f2cb877a26ee3cf0710"
+    "bytes": 38053,
+    "sha256": "e519ed8cc15e01831f17d0f383743ba12b9c2772e7166ff06e520cbdb95bd3a2"
   },
   {
     "path": "frontend/index.html",
@@ -2896,8 +2896,8 @@
   },
   {
     "path": "frontend/src/App.vue",
-    "bytes": 10669,
-    "sha256": "0b8c62ed1eb46d6d921c3b05bcb043b4948c57c415134260b207ab84c9babbd8"
+    "bytes": 10711,
+    "sha256": "d74089d75ff00d660668fcbc8a58825c4b1395845553bffe8c9b158316456a48"
   },
   {
     "path": "frontend/src/api/ballisticFiles.ts",
@@ -3006,38 +3006,38 @@
   },
   {
     "path": "frontend/src/components/BallisticFitFileResult.vue",
-    "bytes": 8323,
-    "sha256": "fa22b8f1ca4a0bfd1a6f463b36481597c5416effb29a01d11f63a19036f3e9c1"
+    "bytes": 8507,
+    "sha256": "a20b9e588525d59ea306ee6acdd65c67005215eee5ca5cbb4553133789a7bb4b"
   },
   {
     "path": "frontend/src/components/BallisticFitTrajectory.vue",
-    "bytes": 3859,
-    "sha256": "d1009a9968c335e062a42861e888c7955ec78822358d7d8611b6e3dfc12757d3"
+    "bytes": 3957,
+    "sha256": "ea80dd9e2ed4adfa64a31a9081aa2b3317a7df290dc2604a31aea4873b7536fb"
   },
   {
     "path": "frontend/src/components/BallisticTrajectoryView.vue",
-    "bytes": 4393,
-    "sha256": "20ea0d34f402c9eeb95c015b6385700545e312e4679cc27a951e6d7e384036bd"
+    "bytes": 4490,
+    "sha256": "629eb15196cda40b0af459bbe275005ba4bc694b1cd44bde1f1fed765a1fa44b"
   },
   {
     "path": "frontend/src/components/BallisticWindowControls.spec.ts",
-    "bytes": 5155,
-    "sha256": "045cb378bb4507bcf53d50d349bc183bb2f1cbbdb7a36aec150e4c664cc0f127"
+    "bytes": 5579,
+    "sha256": "fafb892617a4f654b1df2a06f6eea862c6c238ed3a76b1c89e841d0cff1bc840"
   },
   {
     "path": "frontend/src/components/BallisticWindowControls.vue",
-    "bytes": 17045,
-    "sha256": "61f03c6391ba53926f66a5cbceacbfdd82593fbc9dc205373d4c245f32c59c0c"
+    "bytes": 19830,
+    "sha256": "8d7b57b4a927fe8a14b732dbef953d83a317d490cfda821d92c51ee8db92f8ad"
   },
   {
     "path": "frontend/src/components/BallisticWindowResults.spec.ts",
-    "bytes": 4044,
-    "sha256": "9c5b0ae5c61ba0ef168d991b6dac6733faecad521d04e23d472a9a3e48d2e368"
+    "bytes": 4308,
+    "sha256": "469f12ea1750ab26c79f4488665e63311d415f57518106cbb1b499b7a581e9db"
   },
   {
     "path": "frontend/src/components/BallisticWindowResults.vue",
-    "bytes": 5782,
-    "sha256": "7b1025adb3e8b9bd14cb9771e402170175c9f8e54b005a0d24e7f37ca962c3f8"
+    "bytes": 5447,
+    "sha256": "f09a86fa7bf62eee5d90fea69236363b8bbf2c742966fd5f9bb67a24989a857c"
   },
   {
     "path": "frontend/src/components/DownlinkPlanningStep.vue",
@@ -3071,13 +3071,13 @@
   },
   {
     "path": "frontend/src/components/StandardPayloadEditor.spec.ts",
-    "bytes": 2597,
-    "sha256": "830aaf1583bbeca585ee46d1249c31475ef139a51b13ebc961d7fd64fd73cd80"
+    "bytes": 3385,
+    "sha256": "2f136628dadf73fdb7c47a354bf7686f86a8e4cb946318eda782232a8b4a39fd"
   },
   {
     "path": "frontend/src/components/StandardPayloadEditor.vue",
-    "bytes": 4474,
-    "sha256": "0a7f77360b47f1bcc51368536b183d8a98a557520151c7d0fecb6e6f6a5ce0c6"
+    "bytes": 5172,
+    "sha256": "7c4e212f5e2bc88a324f5d08451b105b9c35f63ca3790347b676fa9103b234fc"
   },
   {
     "path": "frontend/src/components/StationConstraintStep.vue",
@@ -3175,6 +3175,11 @@
     "sha256": "e2fc2311bb78e7cf0c89a0cc8b4a3929bf78de0cfc59664c2b3c0b4c149ef149"
   },
   {
+    "path": "frontend/src/styles/ballistic-workspace.css",
+    "bytes": 11855,
+    "sha256": "4b02101feeff476bc9f9df3165f1397525dc568d658eda2b0ad6cff12ec7bce4"
+  },
+  {
     "path": "frontend/src/utils/ballisticFit.spec.ts",
     "bytes": 2987,
     "sha256": "424b1e8039b3fc5d0b9142688302be76cddb4d76bfe9293a948059e246969ef3"
@@ -3231,43 +3236,43 @@
   },
   {
     "path": "frontend/src/views/BallisticFitView.spec.ts",
-    "bytes": 8168,
-    "sha256": "4bc3ad62028f2c54a46736cc64d0ba3774ff7b7a7d816f615e64c3380511bd18"
+    "bytes": 12001,
+    "sha256": "a1304e47169688e2155ca43bfb275d24ea66ef134a851bd281ab5c5215a645c3"
   },
   {
     "path": "frontend/src/views/BallisticFitView.vue",
-    "bytes": 12520,
-    "sha256": "23658244fe1110eb405709e404eff18f3ffae55a6f3bb4a268d046f1db3bedd9"
+    "bytes": 14009,
+    "sha256": "e702bda5e1b758644e0020da92ee78c80d17270227394f59f7fe111e57f98232"
   },
   {
     "path": "frontend/src/views/BallisticPayloadConfigurationView.spec.ts",
-    "bytes": 4644,
-    "sha256": "3573eeec19dc22e30fa8b36ef74bf741d20b284dd93095da78e2f98ac2161022"
+    "bytes": 3894,
+    "sha256": "bb70178c0fe4483218a54a561e5a260d81905fe8d67d5b51a36fdb1b15d2c200"
   },
   {
     "path": "frontend/src/views/BallisticPayloadConfigurationView.vue",
-    "bytes": 17355,
-    "sha256": "09786255994a55aa7a7f1636c458ec9771b26646f74edc3b790993e31d870ffc"
+    "bytes": 17051,
+    "sha256": "b7100a7d384c7dc4d0182264420bfef850f1b7585caca6cc22b1933b61ea4e4c"
   },
   {
     "path": "frontend/src/views/BallisticRetimeView.spec.ts",
-    "bytes": 11792,
-    "sha256": "9b1aae710c76d5a8b5f281084b67b7373b4c6080eed9f047a986a488f07d5a72"
+    "bytes": 12568,
+    "sha256": "b46133c39b14708b84b499a54d7aef1947cae9ef087646f6556ec1d3904c8ea9"
   },
   {
     "path": "frontend/src/views/BallisticRetimeView.vue",
-    "bytes": 12676,
-    "sha256": "8a298f2a7fa3a5dd3ce20b85de7fa4e807f9b281f12863c90d68fd1f278d1cd5"
+    "bytes": 13193,
+    "sha256": "5f79a1507b4366575fb552a7d361c48b7ac3ffb420941cf263fa8280f9461fa6"
   },
   {
     "path": "frontend/src/views/BallisticSimulationView.spec.ts",
-    "bytes": 7044,
-    "sha256": "eac44d43cdcd5a3c1ba0a4b53194bcff5f9ea2cb6d1eec3785b4c9757403dc53"
+    "bytes": 7848,
+    "sha256": "3e038e154d55a6196f15adafdade8d39d6e46610bc59d8d4b4226c5b2c84a536"
   },
   {
     "path": "frontend/src/views/BallisticSimulationView.vue",
-    "bytes": 12253,
-    "sha256": "c478d6a90579d78e1bd27269b0ee9e6d729e853ffc43987589bd822123114c74"
+    "bytes": 12405,
+    "sha256": "e520ca9c617c504b5f8c6418c13e878c23effaad675be48575f91fa31ea5eb4d"
   },
   {
     "path": "frontend/src/views/BallisticSwingAlignment.spec.ts",
@@ -3647,12 +3652,12 @@
   {
     "path": "verification/A04/交付清单.json",
     "bytes": 182064,
-    "sha256": "740cfd388f9c7b0bdab7a757196b78b32ca5d5980e2c4e957a0dbb8d28ad3134"
+    "sha256": "e29ee794811a7e13d3e262b9f3b4c31571bc7074d8cd421a322c0c58fc23ebd5"
   },
   {
     "path": "verification/A05/交付清单.json",
     "bytes": 154127,
-    "sha256": "1a9edf028f3452ef0a31e48f9f13bf87b2927f27d8558c769a840852e0212c13"
+    "sha256": "295b62e43792cbb5fad68b23e4702289d2f531309ca7fea517a20db0fc3700cc"
   },
   {
     "path": "verification/A06/baseline.json",

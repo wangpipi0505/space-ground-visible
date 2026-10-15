@@ -1,0 +1,15 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 计算告警默认折叠且可展开全部原文，下载和轨迹位于折叠区之外
+AssertionError: expected null not to be null
+ ❯ src/views/BallisticFitView.spec.ts:51:28
+     49|     const warningList = wrapper.get('ol[aria-label="计算告警"]')
+     50|     const disclosure = warningList.element.closest('details')
+     51|     expect(disclosure).not.toBeNull()
+       |                            ^
+     52|     expect(disclosure!.open).toBe(false)
+     53|     expect(disclosure!.querySelector('summary')?.textContent).toBe('计算…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

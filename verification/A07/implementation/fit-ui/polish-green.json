@@ -1,0 +1,29 @@
+{
+  "startUtc": "2026-10-15T02:21:35.218094+00:00",
+  "endUtc": "2026-10-15T02:21:36.335988+00:00",
+  "argv": [
+    "C:/Program Files/nodejs/node.exe",
+    "G:\\5-YG\\space-ground-visible\\frontend\\node_modules\\vitest\\vitest.mjs",
+    "run",
+    "--root",
+    "G:\\5-YG\\space-ground-visible\\frontend",
+    "--config",
+    "G:\\5-YG\\space-ground-visible\\frontend\\vitest.config.ts",
+    "src/views/BallisticFitView.spec.ts",
+    "src/views/BallisticSimulationView.spec.ts",
+    "src/views/BallisticRetimeView.spec.ts"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\fit-ui",
+  "exitCode": 0,
+  "sha256": {
+    "frontend\\src\\views\\BallisticFitView.spec.ts": "c13eb7ba5382f4c0a8301dc59e1c3f6154be50130fb51b8763243f548d63ab67",
+    "frontend\\src\\views\\BallisticFitView.vue": "fe4721abe1f0c2f7ebd42633591f10578cccd3fd26d81b25a68de829b00736f0",
+    "frontend\\src\\views\\BallisticSimulationView.spec.ts": "67ead137bdad1fee9d44c0c0daf856a0e6a7479fd50604fbf94d14f58c07ea0a",
+    "frontend\\src\\views\\BallisticSimulationView.vue": "bfae78859ba270575cd901bbbaf3ca2355ad5acbce426c9bb0b3c0cda3fcf7ba",
+    "frontend\\src\\views\\BallisticRetimeView.spec.ts": "d4578842948ec26c662896f0ebdd12db5de0c82172129b7becf2ad98d196d9a5",
+    "frontend\\src\\views\\BallisticRetimeView.vue": "1c8adc21b8ef436073526d6eb8f05183ad5514f8e0f199b187b8c148d99c81c3",
+    "frontend\\src\\components\\BallisticFitFileResult.vue": "89259fe1f8d14cd4a89e144236c6736ddd6fa42ef7287506656e37b3d1545e24"
+  },
+  "stdoutSha256": "412cfad99591d9f0f23c32e9db553bd2b6c7ad2e9253b1b1c4b45d7d5eeeeefe",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

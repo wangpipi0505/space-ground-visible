@@ -1,0 +1,10 @@
+### Browser `A07` opened with pid 34272.
+### Ran Playwright code
+```js
+await page.goto('http://127.0.0.1:5173/');
+```
+### Page
+- Page URL: http://127.0.0.1:5173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+- [Snapshot](.playwright-cli\page-2026-10-15T02-05-07-729Z.yml)

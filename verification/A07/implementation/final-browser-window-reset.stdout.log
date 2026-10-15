@@ -1,0 +1,51 @@
+### Result
+{"status":200,"best":{"offset":2880,"arcs":2,"points":246,"duration":244},"candidates":361,"busyDisabled":true,"metadata":{"timeScale":"UTC","positionUnit":"m","velocityUnit":"m/s","frames":"ECI,ECEF","dtUnit":"ms"},"errors":[]}
+### Ran Playwright code
+```js
+await (async page => {
+  await page.reload()
+  const state = { startedUtc: new Date().toISOString(), errors: [] }
+  page.on('pageerror', e => state.errors.push(e.message))
+  await page.getByRole('tab', { name: '可视窗口计算', exact: true }).click()
+  const view = page.locator('.ballistic-payload-view')
+  const upload = page.waitForResponse(r => r.url().endsWith('/api/v1/ballistic/files') && r.request().method() === 'POST')
+  const preview = page.waitForResponse(r => r.url().includes('/preview?'))
+  await view.locator('[data-test=upload-default-window]').click()
+  state.file = await (await upload).json()
+  state.preview = await (await preview).json()
+  const responsePromise = page.waitForResponse(r => r.url().endsWith('/api/orbit/visibility/search') && r.request().method() === 'POST', { timeout: 240000 })
+  await view.locator('[data-test=compute-window]').click()
+  state.busyDisabled = await view.locator('[data-test=compute-window]').isDisabled()
+  const response = await responsePromise
+  state.status = response.status()
+  state.request = response.request().postDataJSON()
+  state.rawResponseText = await response.text()
+  state.response = JSON.parse(state.rawResponseText)
+  page.__a07 = { window: state, runs: {}, network: [] }
+  page.on('response', r => { if (r.url().includes('/api/')) page.__a07.network.push({ url: r.url(), status: r.status(), method: r.request().method(), body: r.request().postData() }) })
+  if (state.response.best?.visibleArcCount !== 2 || state.response.best?.visiblePointCount !== 246 || state.request.numCalculations !== 361) throw Error('默认示例不符合诊断基准')
+  await view.locator('[data-test=window-success]').waitFor()
+  await view.locator('.ballistic-input-scroll').evaluate(el => { el.scrollTop = 0 })
+  await page.screenshot({ path: 'G:/5-YG/space-ground-visible/verification/A07/implementation/final-window-1440.png' })
+  const download = page.waitForEvent('download')
+  await view.getByRole('button', { name: '下载原始文件', exact: true }).click()
+  await (await download).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A07/implementation/default-original.csv')
+  await view.locator('.ballistic-result-details summary').click()
+  const jsonDownload = page.waitForEvent('download')
+  await view.getByRole('button', { name: '下载原始响应 JSON' }).click()
+  await (await jsonDownload).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A07/implementation/default-response.json')
+  await view.locator('.ballistic-result-details summary').click()
+  const downloadState = page.waitForEvent('download')
+  await page.evaluate(text => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text])); a.download = 'state.json'; a.click() }, JSON.stringify(state))
+  await (await downloadState).saveAs('G:/5-YG/space-ground-visible/verification/runtime/A07/implementation/default-state.json')
+  return { status: state.status, best: { offset: state.response.best.offsetSecond, arcs: state.response.best.visibleArcCount, points: state.response.best.visiblePointCount, duration: state.response.best.visibleDurationSec }, candidates: state.response.allResults.length, busyDisabled: state.busyDisabled, metadata: state.preview.metadata, errors: state.errors }
+}
+)(page);
+```
+### Events
+- Downloading file trajectory-0.1s-standard.csv ...
+- Downloaded file trajectory-0.1s-standard.csv to ".playwright-cli\trajectory-0-1s-standard.csv"
+- Downloading file 弹道窗口原始响应.json ...
+- Downloaded file 弹道窗口原始响应.json to ".playwright-cli\弹道窗口原始响应.json"
+- Downloading file state.json ...
+- Downloaded file state.json to ".playwright-cli\state.json"

@@ -2,64 +2,55 @@ import { flushPromises, mount } from '@vue/test-utils'
 import ElementPlus from 'element-plus'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import BallisticPayloadConfigurationView from './BallisticPayloadConfigurationView.vue'
+import BallisticWindowControls from '../components/BallisticWindowControls.vue'
 import StandardPayloadEditor from '../components/StandardPayloadEditor.vue'
 import { createDefaultPayload } from '../utils/standardPayload'
-import type { BallisticPayloadDefinition } from '../api/ballisticPayloads'
 
 /** 真实组件与真实 typed API；仅 HTTP 传输使用 mock，浏览器验收另接独立 Spring 服务。 */
 describe('弹道双星多载荷配置生产视图', () => {
   afterEach(() => vi.unstubAllGlobals())
   const satellites = [{ id: 1, name: '星甲', modelType: 'TLE_SGP4' }, { id: 2, name: '星乙', modelType: 'TLE_SGP4' }]
 
-  it('按星保持数组顺序、载荷唯一身份及删除隔离，编辑和预览保持十二字段', async () => {
-    const fetchMock = vi.fn().mockImplementation((_url, options: RequestInit) => Promise.resolve(new Response(String(options.body))))
-    vi.stubGlobal('fetch', fetchMock)
+  it('示例朝地球俯仰与空间标准、新增和目录默认隔离', async () => {
     const wrapper = mount(BallisticPayloadConfigurationView, { props: { satellites }, global: { plugins: [ElementPlus] } })
-    wrapper.findComponent({ name: 'ElSelect' }).vm.$emit('update:modelValue', [1, 2])
-    await flushPromises()
-    await wrapper.get('[data-test="add-ballistic-payload-1"]').trigger('click')
-    await wrapper.get('[data-test="add-ballistic-payload-2"]').trigger('click')
-    let editors = wrapper.findAllComponents(StandardPayloadEditor)
-    expect(editors).toHaveLength(4)
-    const payloads = wrapper.findAll('[data-payload-id]').map((item) => item.attributes('data-payload-id'))
-    expect(new Set(payloads).size).toBe(4)
-    editors[0]!.vm.$emit('update:modelValue', { ...createDefaultPayload(), angleRateDegPerSec: -1, startupAngleRateDegPerSec: -1, azimuthMinDeg: null, azimuthMaxDeg: null })
-    editors[1]!.vm.$emit('selectType', 'GROUND')
-    await flushPromises()
-    expect(wrapper.findAllComponents(StandardPayloadEditor)[1]!.props('modelValue').payloadType).toBe('GROUND')
-    expect(wrapper.findAllComponents(StandardPayloadEditor)[2]!.props('modelValue').payloadType).toBe('SPACE')
-    await wrapper.findAll('[data-test="preview-ballistic-payload"]')[0]!.trigger('click')
-    await flushPromises()
-    const request = JSON.parse(String(fetchMock.mock.calls[0]![1].body)) as BallisticPayloadDefinition
-    expect(Object.keys(request)).toHaveLength(12)
-    expect(request).toMatchObject({ payloadId: payloads[0], payloadName: '载荷3', angleRateDegPerSec: -1, startupAngleRateDegPerSec: -1, azimuthMinDeg: null })
-    expect(wrapper.find('[data-test="ballistic-preview"]').text()).toContain(request.payloadId)
-    await wrapper.findAll('[data-test="remove-ballistic-payload"]')[0]!.trigger('click')
-    editors = wrapper.findAllComponents(StandardPayloadEditor)
-    expect(editors).toHaveLength(3)
-    expect(wrapper.findAll('[data-payload-id]').map((item) => item.attributes('data-payload-id'))).toEqual(payloads.slice(1))
-    await wrapper.get('[data-test="add-ballistic-payload-1"]').trigger('click')
-    const newIds = wrapper.findAll('[data-payload-id]').map((item) => item.attributes('data-payload-id'))
-    expect(new Set(newIds).size).toBe(4)
-    expect(newIds).not.toContain(payloads[0])
-  })
-
-  it('非法边界阻止HTTP并显示中文；服务400显示错误且不伪造成功回显', async () => {
-    const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({ code: 'INVALID_ARGUMENT', error: '测试：载荷参数被服务拒绝' }), { status: 400 }))
-    vi.stubGlobal('fetch', fetchMock)
-    const wrapper = mount(BallisticPayloadConfigurationView, { props: { satellites }, global: { plugins: [ElementPlus] } })
+    const draft = () => wrapper.findComponent(BallisticWindowControls).props('satellites')
+    expect(draft().map(s => s.payloads[0]?.elevationMinDeg)).toEqual([-90, -90])
+    expect(draft().map(s => s.payloads[0]?.elevationMaxDeg)).toEqual([0, 0])
+    expect(createDefaultPayload()).toMatchObject({ elevationMinDeg: -4, elevationMaxDeg: 60 })
+    await wrapper.get('[data-test=add-ballistic-payload-MANUAL-1]').trigger('click')
+    expect(draft()[0]!.payloads[1]).toMatchObject({ elevationMinDeg: -4, elevationMaxDeg: 60 })
     wrapper.findComponent({ name: 'ElSelect' }).vm.$emit('update:modelValue', [1])
     await flushPromises()
+    expect(draft()[0]!.payloads[0]).toMatchObject({ elevationMinDeg: -4, elevationMaxDeg: 60 })
+  })
+
+  it('不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功', async () => {
+    const fetcher = vi.fn().mockResolvedValue(new Response('{"error":"测试：服务拒绝"}', { status: 400 }))
+    vi.stubGlobal('fetch', fetcher)
+    const wrapper = mount(BallisticPayloadConfigurationView, { props: { satellites }, global: { plugins: [ElementPlus] } })
+    expect(wrapper.find('[data-test=preview-ballistic-payload]').exists()).toBe(false)
+    await wrapper.get('[data-test=window-source]').setValue('remote')
+    await wrapper.get('input[placeholder="https://host/path/trajectory.csv"]').setValue('https://host/path/trajectory.csv')
+    await wrapper.findAll('button').find(b => b.text() === '导入网络地址')!.trigger('click')
     wrapper.findComponent(StandardPayloadEditor).vm.$emit('update:modelValue', { ...createDefaultPayload('GROUND'), angleRateDegPerSec: -1 })
     await flushPromises()
     expect(wrapper.text()).toContain('不能使用 -1')
-    await wrapper.get('[data-test="preview-ballistic-payload"]').trigger('click')
-    expect(fetchMock).not.toHaveBeenCalled()
-    wrapper.findComponent(StandardPayloadEditor).vm.$emit('update:modelValue', createDefaultPayload('GROUND'))
+    await wrapper.get('[data-test=compute-window]').trigger('click')
+    expect(fetcher).not.toHaveBeenCalled()
+    wrapper.findComponent(StandardPayloadEditor).vm.$emit('update:modelValue', createDefaultPayload())
     await flushPromises()
-    await wrapper.get('[data-test="preview-ballistic-payload"]').trigger('click')
-    await flushPromises()
-    expect(wrapper.text()).toContain('测试：载荷参数被服务拒绝')
-    expect(wrapper.find('[data-test="ballistic-preview"]').exists()).toBe(false)
+    await wrapper.get('[data-test=compute-window]').trigger('click'); await flushPromises()
+    expect(fetcher).toHaveBeenCalledTimes(1)
+    expect(fetcher.mock.calls[0]![0]).toMatch(/\/search$/)
+    expect(wrapper.text()).toContain('测试：服务拒绝')
+    expect(wrapper.find('[data-test=window-success]').exists()).toBe(false)
+  })
+
+  it('当前星切换保持原草稿身份且初始就有结果位置', async () => {
+    const wrapper = mount(BallisticPayloadConfigurationView, { props: { satellites }, global: { plugins: [ElementPlus] } })
+    expect(wrapper.find('[data-test=window-result-panel]').exists()).toBe(true)
+    const ids = wrapper.findAll('[data-payload-id]').map(p => p.attributes('data-payload-id'))
+    await wrapper.get('[data-test=current-payload-satellite]').setValue('MANUAL-2')
+    expect(wrapper.findAll('[data-payload-id]').map(p => p.attributes('data-payload-id'))).toEqual(ids)
   })
 })

@@ -96,45 +96,62 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
 </script>
 
 <template>
-  <section class="ballistic-retime-view ballistic-window-controls" aria-label="弹道重定时">
-    <h2>弹道重定时 · RETIMED_TRAJECTORY</h2>
-    <details><summary>高级协议说明（CSV字段与时间含义）</summary>
-    <p>原CSV轨迹在ECEF地固系保持不变，新发射UTC改变后由原服务重新计算J2000 ECI位置和速度。UTC按原字符串提交，不加减北京时间。dt为累计相对首行毫秒，timeIntervalMs为相邻间隔毫秒。</p>
-    <p>本接口仅支持原CSV：YYYY/MM/dd/HH/mm/ss.SSS 与 ECEF_X/Y/Z、ECEF_Vx/Vy/Vz、ECI_X/Y/Z、ECI_VX/VY/VZ 命名列。原20列 ECEF_X(m) 格式不能用于重定时。HTTP/MinIO/Excel输入能力仅属于窗口计算。</p>
-    <p class="ballistic-storage-notice">Web 始终省略 outputDir，输出使用服务管理目录。已有结果为当前会话真实登记的模拟/拟合/重定时文件，刷新不持久化；不扫描服务目录。</p>
-    </details>
-    <fieldset class="ballistic-native-form" :disabled="computing || uploading">
-      <legend>1. 选择原CSV服务引用</legend>
-      <label>来源<select v-model="sourceMode" data-test="retime-source-mode"><option value="upload">原生上传CSV</option><option value="generated">服务已生成结果</option></select></label>
-      <label v-if="sourceMode === 'upload'">选择原CSV<input type="file" accept=".csv,text/csv" @change="chooseFile" /></label>
-      <label v-else>选择真实登记结果<select :value="generatedId" data-test="retime-result-select" @change="chooseGenerated"><option value="">请选择真实登记的模拟/拟合/重定时结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · 原目标 {{ item.targetId }} · {{ item.reference.originalName }}</option></select></label>
-      <p v-if="source" data-test="retime-source-reference">真实引用 {{ source.fileId }} · {{ source.originalName }} · {{ source.sizeBytes }} 字节<br />服务路径 {{ source.serverPath }}</p>
-      <p v-if="uploading" role="status">正在原生上传CSV并读取服务预览…</p>
-      <p v-if="previewing" role="status">正在读取来源预览…</p>
-      <p v-if="previewError" role="alert">来源预览失败（独立辅助错误，不代表原计算失败）：{{ previewError }}</p>
-      <button v-if="previewError && source" type="button" :disabled="previewing" @click="loadSourcePreview(source, sourceIdentity)">重试来源预览</button>
-      <details v-if="preview"><summary>来源服务原文本预览 · 共 {{ preview.totalRows }} 行</summary><div class="ballistic-table-scroll"><table><thead><tr><th v-for="(cell, index) in preview.header" :key="index">{{ cell }}</th></tr></thead><tbody><tr v-for="(row, index) in preview.rows" :key="index"><td v-for="(cell, column) in row" :key="column">{{ cell }}</td></tr></tbody></table></div></details>
-    </fieldset>
-    <fieldset class="ballistic-native-form" :disabled="computing || uploading"><legend>2. 原重定时参数</legend>
-      <button type="button" data-test="load-default-retime" @click="taskName = 'retimeTrajectory'; targetId = 'RET-001'; launchTimeUtc = '2026-07-01 09:00:00.000'; nullTask = false; nullTarget = false">加载原默认重定时参数</button>
-      <div class="ballistic-field-grid">
-        <label>任务名称（原默认 retimeTrajectory）<input v-model="taskName" data-retime-field="taskName" :disabled="nullTask" /><span><input v-model="nullTask" type="checkbox" data-retime-null="taskName" /> 原 null</span></label>
-        <label>目标ID（Swing默认 RET-001）<input v-model="targetId" data-retime-field="targetId" :disabled="nullTarget" /><span><input v-model="nullTarget" type="checkbox" data-retime-null="targetId" /> 原 null</span></label>
-        <label>新发射 UTC（原字面，不转换本地时区）<input v-model="launchTimeUtc" data-retime-field="launchTimeUtc" placeholder="2026-07-02 07:57:00.000" /></label>
+  <section class="ballistic-retime-view ballistic-workspace" aria-label="弹道重定时">
+    <header class="ballistic-workspace-header"><h2>弹道重定时</h2><span class="ballistic-source-badge">调整发射时间</span></header>
+    <div class="ballistic-workbench-grid">
+      <div class="ballistic-input-column">
+        <div class="ballistic-input-scroll">
+        <fieldset class="ballistic-native-form ballistic-panel" :disabled="computing || uploading">
+          <legend>轨迹来源</legend>
+          <label>来源<select v-model="sourceMode" data-test="retime-source-mode"><option value="upload">上传CSV</option><option value="generated">已生成结果</option></select></label>
+          <label v-if="sourceMode === 'upload'">选择轨迹CSV<input type="file" accept=".csv,text/csv" @change="chooseFile" /></label>
+          <label v-else>选择结果<select :value="generatedId" data-test="retime-result-select" @change="chooseGenerated"><option value="">请选择拟合、模拟或重定时结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · {{ item.reference.originalName }}</option></select></label>
+          <p v-if="source" data-test="retime-source-reference">{{ source.originalName }} · {{ source.sizeBytes }} 字节<span v-if="preview"> · {{ preview.totalRows }} 行</span></p>
+          <p v-if="uploading" role="status">正在上传CSV…</p>
+          <p v-if="previewing" role="status">正在读取来源预览…</p>
+          <p v-if="previewError" role="alert" class="ballistic-error">来源预览失败，可重试或继续计算：{{ previewError }}</p>
+          <button v-if="previewError && source" type="button" :disabled="previewing" @click="loadSourcePreview(source, sourceIdentity)">重试来源预览</button>
+          <details v-if="preview"><summary>数据预览 · 共 {{ preview.totalRows }} 行</summary><div class="ballistic-table-scroll"><table><thead><tr><th v-for="(cell, index) in preview.header" :key="index">{{ cell }}</th></tr></thead><tbody><tr v-for="(row, index) in preview.rows" :key="index"><td v-for="(cell, column) in row" :key="column">{{ cell }}</td></tr></tbody></table></div></details>
+          <details v-if="source"><summary>文件详情</summary><p>引用 {{ source.fileId }}</p><p>服务路径 {{ source.serverPath }}</p></details>
+        </fieldset>
+        <fieldset class="ballistic-native-form ballistic-panel" :disabled="computing || uploading"><legend>任务与新发射时间</legend>
+          <button type="button" data-test="load-default-retime" @click="taskName = 'retimeTrajectory'; targetId = 'RET-001'; launchTimeUtc = '2026-07-01 09:00:00.000'; nullTask = false; nullTarget = false">加载默认参数</button>
+          <div class="ballistic-field-grid">
+            <label>任务名称<input v-model="taskName" data-retime-field="taskName" :disabled="nullTask" /></label>
+            <label>目标ID<input v-model="targetId" data-retime-field="targetId" :disabled="nullTarget" /></label>
+            <label>新发射 UTC<input v-model="launchTimeUtc" data-retime-field="launchTimeUtc" placeholder="2026-07-02 07:57:00.000" /></label>
+          </div>
+          <p class="ballistic-field-hint">保持地固轨迹，按新UTC更新惯性系位置与速度。时间不转换本地时区。</p>
+          <details><summary>高级设置 · 空值与输入快照</summary>
+            <label><input v-model="nullTask" type="checkbox" data-retime-null="taskName" /> 任务名称使用 null</label>
+            <label><input v-model="nullTarget" type="checkbox" data-retime-null="targetId" /> 目标ID使用 null</label>
+            <pre>{{ JSON.stringify(draft(), null, 2) }}</pre>
+          </details>
+          <details><summary>CSV格式与时间说明</summary>
+            <p>支持 YYYY/MM/dd/HH/mm/ss.SSS 及 ECEF_X/Y/Z、ECEF_Vx/Vy/Vz、ECI_X/Y/Z、ECI_VX/VY/VZ 命名列。20列 ECEF_X(m) 格式不支持重定时；HTTP、MinIO及Excel来源用于窗口计算。</p>
+            <p>dt 为相对首行累计毫秒，timeIntervalMs 为相邻间隔毫秒。结果用于窗口计算时沿新CSV时间，不再次平移，请核对卫星历元日期。</p>
+            <p>已生成结果仅保留当前会话登记的文件，刷新后需重新上传。outputDir由服务管理。</p>
+          </details>
+        </fieldset>
+        </div>
+        <div class="ballistic-compute-bar">
+          <p v-if="error" class="ballistic-error" role="alert">{{ error }}</p>
+          <button type="button" class="ballistic-primary-action" data-test="retime-compute" :disabled="computing || uploading" @click="calculate">{{ computing ? '正在重定时…' : '开始重定时' }}</button>
+        </div>
       </div>
-      <details><summary>实际提交预览（四原字段，outputDir省略）</summary><pre>{{ JSON.stringify(draft(), null, 2) }}</pre></details>
-    </fieldset>
-    <p v-if="computing" role="status">正在执行原弹道重定时，请等待服务响应…</p>
-    <p v-if="error" class="ballistic-error" role="alert">{{ error }}</p>
-    <button type="button" data-test="retime-compute" :disabled="computing || uploading" @click="calculate">{{ computing ? '重定时请求进行中…' : '执行原弹道重定时' }}</button>
-    <section v-if="result && submitted" data-test="retime-success" aria-label="本次原重定时结果">
-      <h3>原重定时已成功 · {{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
-      <p v-if="changed" role="status">输入已修改：结果与可选引用仍绑定上次实际提交快照，请重新重定时获得新输入结果。</p>
-      <p>登记成功后可在本页再次选择，或到“可视窗口计算”显式选入窗口计算；目标沿新CSV UTC，不再次平移。卫星epochUtc需明确同日。</p>
-      <div class="ballistic-actions"><button type="button" @click="exportInput">下载实际提交 JSON</button><button type="button" @click="exportResult">下载原重定时响应 JSON</button></div>
-      <details><summary>不可变实际提交快照</summary><pre data-test="retime-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
-      <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}`" :file="file" :task-name="result.response.taskName" result-label="原重定时" @reference="updateReference(index, $event)" />
-    </section>
+      <aside class="ballistic-results-column ballistic-panel" aria-label="重定时结果" :aria-busy="computing">
+        <h3>重定时结果</h3>
+        <div v-if="!result" class="ballistic-empty-state" role="status"><p>{{ computing ? '正在重定时，请等待结果。' : '完成左侧轨迹选择与新发射时间设置，点击“开始重定时”。' }}</p></div>
+        <section v-if="result && submitted" data-test="retime-success" aria-label="本次重定时结果">
+          <h3>{{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
+          <p v-if="changed" role="status">输入已修改，当前结果来自上次计算。重新重定时以更新结果。</p>
+          <p class="ballistic-field-hint">结果可再次重定时，或用于可视窗口计算。</p>
+          <div class="ballistic-actions"><button type="button" @click="exportInput">下载输入 JSON</button><button type="button" @click="exportResult">下载结果 JSON</button></div>
+          <details><summary>计算输入快照</summary><pre data-test="retime-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
+          <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}`" :file="file" :task-name="result.response.taskName" result-label="重定时" @reference="updateReference(index, $event)" />
+        </section>
+      </aside>
+    </div>
   </section>
 </template>
 

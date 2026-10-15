@@ -3,7 +3,7 @@
  * 文件→原计算→快照结果的实际工作流。父级传入 T21 唯一卫星/载荷草稿，slot 在文件和扫描之间编辑它。
  * busy 只表示真实计算请求进行中，父级据此冻结编辑；无伪进度、无未实现取消。
  */
-import { computed, reactive, ref, shallowRef, watch } from 'vue'
+import { computed, nextTick, reactive, ref, shallowRef, watch } from 'vue'
 import type { GeneratedBallisticResult } from '../api/ballisticFiles'
 import type { BallisticSatelliteDraft, BallisticWindowRequest } from '../api/ballisticWindowTypes'
 import { uploadBallisticFile, previewBallisticFile, downloadBallisticFile } from '../api/ballisticFiles'
@@ -15,7 +15,14 @@ import { isRemoteBallisticSource, validateWindowRequest } from '../utils/ballist
 import BallisticWindowResults from './BallisticWindowResults.vue'
 
 const props = defineProps<{ satellites: BallisticSatelliteDraft[]; generatedResults?: GeneratedBallisticResult[] }>()
-const emit = defineEmits<{ busy: [value: boolean] }>()
+const emit = defineEmits<{ busy: [value: boolean]; editPayloads: [] }>()
+const searchSection = ref<HTMLElement>()
+const errorSummary = ref<HTMLElement>()
+/** 空态动作把焦点送回真实输入，不复制草稿或自动放宽约束。 */
+function editConfiguration(section: 'payloads' | 'search'): void {
+  if (section === 'payloads') emit('editPayloads')
+  else { searchSection.value?.scrollIntoView({ block: 'center', behavior: 'smooth' }); searchSection.value?.querySelector('input')?.focus() }
+}
 /** 文件引用只在成功HTTP后写入；远程草稿只有显式导入才生效，两者不共享假路径。 */
 interface TargetDraft {
   identity: number
@@ -31,6 +38,7 @@ interface TargetDraft {
   error: string
   busy: boolean
   downloadBusy: boolean
+  epochUtc?: string
 }
 const targets = reactive<TargetDraft[]>([])
 let targetSequence = 0
@@ -54,6 +62,7 @@ addTarget()
 function clearSource(target: TargetDraft): void {
   target.file = undefined
   target.preview = undefined
+  target.epochUtc = undefined
   target.remoteReference = ''
   target.generatedId = undefined
   target.error = ''
@@ -125,7 +134,14 @@ async function loadPreview(target: TargetDraft, page: number): Promise<void> {
   target.busy = true
   try {
     const preview = await previewBallisticFile(reference.fileId, page)
-    if (target.file === reference && targets.includes(target)) target.preview = preview
+    if (target.file === reference && targets.includes(target)) {
+      target.preview = preview
+      // 仅从首页原始分列UTC展示文件首行时间；未知表头不猜测历元，翻页不改首行摘要。
+      if (page === 1 && ['YYYY', 'MM', 'dd', 'HH', 'mm', 'ss.SSS'].every((key, index) => preview.header[index] === key)) {
+        const row = preview.rows[0]
+        if (row) target.epochUtc = `${row[0]}/${row[1]}/${row[2]} ${row[3]}:${row[4]}:${row[5]}`
+      }
+    }
   } catch (error) {
     target.error = error instanceof Error ? error.message : '文件预览失败'
   } finally { target.busy = false }
@@ -167,7 +183,7 @@ async function calculate(): Promise<void> {
   const request = currentRequest()
   // Windows服务路径可能与本机路径同形；本页上传和父级已登记结果都只信任真实HTTP返回的精确引用。
   errors.value = validateWindowRequest(request, new Set(targets.flatMap((target) => target.file ? [target.file.serverPath] : [])))
-  if (errors.value.length) return
+  if (errors.value.length) { await nextTick(); errorSummary.value?.focus(); return }
   const snapshot = JSON.parse(JSON.stringify(request)) as BallisticWindowRequest
   loading.value = true
   emit('busy', true)
@@ -186,61 +202,64 @@ function downloadJson(): void {
 </script>
 
 <template>
-  <section class="ballistic-window-controls" aria-label="弹道文件与窗口计算">
-    <fieldset :disabled="loading" class="ballistic-native-form">
-      <legend>1. 弹道目标与源文件</legend>
-      <p>本地文件通过 HTTP 上传；服务器引用与本机路径分离。网络支持 HTTP/HTTPS 直链、minio://host[:port]/bucket/object[?secure=true]（MinIO 按地址中的既有凭据或匿名访问；私有对象可使用预签名 HTTPS 链接）。</p>
-      <button type="button" @click="addTarget">新增弹道目标</button>
-      <label>默认基准发射 UTC（目标留空时采用；再留空沿文件历元）<input v-model="defaultBaseLaunchUTC" data-test="default-base-utc" placeholder="2026/07/01 08:24:00.000" /></label>
+  <section class="ballistic-window-controls ballistic-workbench-grid" aria-label="弹道文件与窗口计算">
+    <div class="ballistic-input-column">
+      <div class="ballistic-input-scroll">
+    <slot name="satellites" />
+    <fieldset :disabled="loading" class="ballistic-native-form ballistic-panel">
+      <legend>弹道目标</legend>
+      <div class="ballistic-section-heading"><span class="ballistic-muted">CSV / Excel</span><button type="button" @click="addTarget">新增目标</button></div>
       <article v-for="target in targets" :key="target.identity" :data-target-id="target.targetId" class="ballistic-target">
         <fieldset :disabled="target.busy">
-          <legend>{{ target.targetName }} · {{ target.targetId }}</legend>
           <div class="ballistic-field-grid">
-            <label>目标ID<input v-model="target.targetId" type="text" /></label>
             <label>目标名称<input v-model="target.targetName" type="text" /></label>
-            <label>目标基准发射 UTC（优先于默认）<input v-model="target.baseLaunchUTC" data-test="target-base-utc" placeholder="2026/07/01 07:57:10.000" type="text" /></label>
-            <label>文件来源<select v-model="target.mode" data-test="window-source" @change="clearSource(target)"><option value="file">本地上传</option><option value="remote">网络地址导入</option><option value="generated">服务已生成结果</option></select></label>
+            <label>文件来源<select v-model="target.mode" data-test="window-source" @change="clearSource(target)"><option value="file">本地上传</option><option value="remote">网络地址</option><option value="generated">已生成弹道</option></select></label>
           </div>
-          <label v-if="target.mode === 'file'">选择弹道 CSV / Excel（.csv/.xlsx/.xls/.xlsm）<input type="file" accept=".csv,.xlsx,.xls,.xlsm" @change="chooseFile(target, $event)" /></label>
-          <button v-if="target.mode === 'file'" type="button" data-test="upload-default-window" @click="uploadDefault(target)">上传原默认演示弹道</button>
+          <div v-if="target.mode === 'file'" class="ballistic-file-picker"><label>选择文件<input type="file" accept=".csv,.xlsx,.xls,.xlsm" @change="chooseFile(target, $event)" /></label><button type="button" data-test="upload-default-window" @click="uploadDefault(target)">使用示例弹道</button></div>
           <div v-else-if="target.mode === 'remote'" class="ballistic-field-grid"><label>网络地址<input v-model="target.remoteDraft" type="text" placeholder="https://host/path/trajectory.csv" @input="clearSource(target)" /></label><button type="button" @click="importRemote(target)">导入网络地址</button></div>
-          <label v-else>选择真实登记结果<select :value="target.generatedId || ''" data-test="generated-result-select" @change="selectGenerated(target, $event)"><option value="">请选择已成功登记的模拟/拟合/重定时结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · {{ item.targetId }} · {{ item.reference.originalName }}</option></select></label>
-          <p v-if="target.mode === 'generated'">仅真实登记201引用可选；选择后目标UTC沿CSV历元，卫星历元需自行明确填写同日时间。</p>
-          <p v-if="target.file">{{ target.mode === 'generated' ? '已选择服务生成结果' : '已上传' }}：{{ target.file.originalName }} · {{ target.file.sizeBytes }} 字节 · 引用 {{ target.file.fileId }}</p>
-          <p v-if="target.remoteReference">已导入：{{ target.remoteReference }}（待计算时由服务下载并解析）</p>
-          <div class="ballistic-actions"><button v-if="target.file" type="button" :disabled="target.downloadBusy" @click="downloadOriginal(target)">{{ target.downloadBusy ? '正在下载…' : 'HTTP 下载原文件' }}</button><button type="button" @click="targets.splice(targets.indexOf(target), 1)">删除目标</button></div>
+          <label v-else>已生成弹道<select :value="target.generatedId || ''" data-test="generated-result-select" @change="selectGenerated(target, $event)"><option value="">请选择拟合、模拟或重定时结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · {{ item.reference.originalName }}</option></select></label>
+          <div v-if="target.file" class="ballistic-file-summary"><strong>{{ target.file.originalName }}</strong><span>{{ target.preview ? `${target.preview.totalRows} 行` : '正在读取' }} · {{ target.file.sizeBytes }} 字节</span><span v-if="target.epochUtc">历元 {{ target.epochUtc }} UTC</span></div>
+          <p v-if="target.remoteReference" class="ballistic-muted">已导入：{{ target.remoteReference }}</p>
+          <div class="ballistic-actions"><button v-if="target.file" type="button" :disabled="target.downloadBusy" @click="downloadOriginal(target)">{{ target.downloadBusy ? '正在下载…' : '下载原始文件' }}</button><button type="button" @click="targets.splice(targets.indexOf(target), 1)">删除目标</button></div>
+          <details><summary>目标时间与来源详情</summary><div class="ballistic-field-grid"><label>目标 ID<input v-model="target.targetId" type="text" /></label><label>基准发射 UTC<input v-model="target.baseLaunchUTC" data-test="target-base-utc" placeholder="留空沿文件历元" type="text" /></label></div><p class="ballistic-muted">目标时间优先于默认时间；均留空时采用文件历元。输入按 UTC 字面值处理。</p><p v-if="target.mode === 'remote'">支持 HTTP/HTTPS 直链与 minio://host[:port]/bucket/object[?secure=true]；私有文件可用预签名 HTTPS 地址。</p><pre v-if="target.file">{{ JSON.stringify(target.file, null, 2) }}</pre><pre v-if="target.preview">{{ JSON.stringify(target.preview.metadata, null, 2) }}</pre></details>
         </fieldset>
-        <p v-if="target.busy" role="status">正在上传或读取原文件预览…</p>
+        <p v-if="target.busy" role="status">正在上传或读取文件…</p>
         <p v-if="target.error" class="ballistic-error" role="alert">{{ target.targetName }}：{{ target.error }}</p>
-        <details v-if="target.preview" open><summary>原数据预览 · 共 {{ target.preview.totalRows }} 行 · 第 {{ target.preview.page }} 页</summary>
-          <pre>{{ JSON.stringify(target.preview.metadata, null, 2) }}</pre>
+        <details v-if="target.preview"><summary>数据预览 · {{ target.preview.totalRows }} 行 · 第 {{ target.preview.page }} 页</summary>
           <div class="ballistic-table-scroll"><table><thead><tr><th v-for="(header, index) in target.preview.header" :key="index">{{ header }}</th></tr></thead><tbody><tr v-for="(row, index) in target.preview.rows" :key="index"><td v-for="(cell, column) in row" :key="column">{{ cell }}</td></tr></tbody></table></div>
           <div class="ballistic-actions"><button type="button" :disabled="target.busy || target.preview.page <= 1" @click="loadPreview(target, target.preview.page - 1)">预览上一页</button><button type="button" :disabled="target.busy || target.preview.page * target.preview.limit >= target.preview.totalRows" @click="loadPreview(target, target.preview.page + 1)">预览下一页</button></div>
         </details>
       </article>
+      <details><summary>多目标默认时间</summary><label>默认基准发射 UTC<input v-model="defaultBaseLaunchUTC" data-test="default-base-utc" placeholder="目标留空时采用；再留空沿文件历元" /></label></details>
+    </fieldset>
+    <fieldset ref="searchSection" :disabled="loading" class="ballistic-native-form ballistic-panel">
+      <legend>发射时间搜索</legend>
+      <div class="ballistic-field-grid ballistic-search-fields">
+        <label>起始偏移 (s)<input v-model.number="options.startOffsetSec" data-option="startOffsetSec" type="number" step="1" /></label>
+        <label>步长 (s)<input v-model.number="options.stepSizeSec" data-option="stepSizeSec" type="number" step="1" /></label>
+        <label>搜索次数<input v-model.number="options.numCalculations" data-option="numCalculations" type="number" step="1" /></label>
+      </div>
+      <p class="ballistic-search-summary">{{ options.startOffsetSec }} → {{ options.startOffsetSec + options.stepSizeSec * (options.numCalculations - 1) }} 秒 · 每 {{ options.stepSizeSec }} 秒一次 · 共 {{ options.numCalculations }} 次</p>
+      <details><summary>模型与采样</summary><div class="ballistic-field-grid">
+        <label>目标采样步长 (s，≤0 自动)<input v-model.number="options.targetSampleStepSec" data-option="targetSampleStepSec" type="number" step="any" /></label>
+        <label>轨道模型<select v-model="options.orbitModel"><option>TWO_BODY</option><option>J2_SECULAR</option><option>J2_NUMERICAL</option></select></label>
+        <label>轨迹点输出<select v-model="options.trajectoryPointOutput" data-option="trajectoryPointOutput"><option :value="1">输出窗口内轨迹点</option><option :value="0">仅窗口摘要</option></select></label>
+      </div><p class="ballistic-muted">偏移相对于各目标基准发射时间；起点、步长、次数与末次偏移须为安全整数。卫星历元留空采用 2026/07/01 10:00:00 UTC。</p></details>
     </fieldset>
     <slot />
-    <fieldset :disabled="loading" class="ballistic-native-form">
-      <legend>3. 原窗口扫描条件</legend>
-      <p>UTC 输入仅为 UTC 字面时间，浏览器时区不加减8小时。卫星历元留空使用原服务缺省 2026/07/01 10:00:00；目标基准发射时间留空沿各文件参考历元。</p>
-      <div class="ballistic-field-grid">
-        <label>偏移起点（秒，可负）<input v-model.number="options.startOffsetSec" data-option="startOffsetSec" type="number" step="1" /></label>
-        <label>偏移步长（秒，正整数）<input v-model.number="options.stepSizeSec" data-option="stepSizeSec" type="number" step="1" /></label>
-        <label>计算次数（正整数）<input v-model.number="options.numCalculations" data-option="numCalculations" type="number" step="1" /></label>
-        <label>目标采样步长（秒，≤0 自动）<input v-model.number="options.targetSampleStepSec" data-option="targetSampleStepSec" type="number" step="any" /></label>
-        <label>轨道模型<select v-model="options.orbitModel"><option>TWO_BODY</option><option>J2_SECULAR</option><option>J2_NUMERICAL</option></select></label>
-        <label>轨迹点输出<select v-model="options.trajectoryPointOutput" data-option="trajectoryPointOutput"><option :value="1">1 · 输出真实窗口内点</option><option :value="0">0 · 仅窗口摘要</option></select></label>
       </div>
-      <p>起点、步长、次数及末次偏移必须在浏览器安全整数范围内；不降低原采样或重新计算服务 best。</p>
-      <button type="button" data-test="compute-window" :disabled="targets.some((target) => target.busy)" @click="calculate">{{ loading ? '正在计算真实窗口…' : '执行弹道窗口计算' }}</button>
-    </fieldset>
-    <ul v-if="errors.length" class="ballistic-error" role="alert"><li v-for="error in errors" :key="error">{{ error }}</li></ul>
-    <section v-if="result && submitted" data-test="window-success">
-      <h2>本次实际提交的计算结果</h2>
-      <p v-if="changedSinceSubmission" role="status">输入已修改。以下结果仍属于上一次实际提交快照；重新计算后才更新。</p>
-      <button type="button" @click="downloadJson">下载原始响应 JSON</button>
-      <details><summary>本次提交快照（完整轨道、目标、标准载荷）</summary><pre>{{ JSON.stringify(submitted, null, 2) }}</pre></details>
-      <BallisticWindowResults :result="result.response" :point-output="submitted.trajectoryPointOutput" />
-    </section>
+      <div class="ballistic-compute-bar"><span>{{ loading ? '计算中，请稍候' : `${satellites.length} 颗卫星 · ${satellites.reduce((sum, satellite) => sum + satellite.payloads.length, 0)} 个载荷 · ${targets.length} 个目标` }}</span><div class="ballistic-compute-actions"><button type="button" data-test="open-payload-settings" :disabled="loading" @click="editConfiguration('payloads')">载荷设置</button><button type="button" class="ballistic-primary-action" data-test="compute-window" :disabled="loading || targets.some((target) => target.busy)" @click="calculate">{{ loading ? '正在计算…' : '计算可见窗口' }}</button></div></div>
+    </div>
+    <aside class="ballistic-results-column ballistic-panel" data-test="window-result-panel" aria-label="窗口计算结果" :aria-busy="loading">
+      <div class="ballistic-section-heading"><h3>窗口结果</h3><span class="ballistic-badge">{{ loading ? '计算中' : result ? '已完成' : '待计算' }}</span></div>
+      <div v-if="errors.length" ref="errorSummary" tabindex="-1" class="ballistic-error" role="alert"><strong>请检查输入</strong><ul><li v-for="error in errors" :key="error">{{ error }}</li></ul><div class="ballistic-actions"><button type="button" @click="editConfiguration('payloads')">检查载荷</button><button type="button" @click="editConfiguration('search')">检查搜索时间</button></div></div>
+      <div v-if="loading" class="ballistic-empty-state" role="status"><span class="ballistic-state-mark">…</span><h3>正在搜索可见窗口</h3><p>{{ options.numCalculations }} 个发射时刻 · {{ satellites.length }} 颗卫星</p></div>
+      <section v-else-if="result && submitted" data-test="window-success">
+        <p v-if="changedSinceSubmission" role="status" class="ballistic-change-notice">参数已修改，当前仍显示上次计算结果。</p>
+        <BallisticWindowResults :result="result.response" :point-output="submitted.trajectoryPointOutput" @edit="editConfiguration" />
+        <details class="ballistic-result-details"><summary>计算记录与导出</summary><button type="button" @click="downloadJson">下载原始响应 JSON</button><pre>{{ JSON.stringify(submitted, null, 2) }}</pre></details>
+      </section>
+      <div v-else-if="!errors.length" class="ballistic-empty-state"><span class="ballistic-state-mark">↗</span><h3>等待计算</h3><p>选择弹道文件后，点击“计算可见窗口”。</p></div>
+    </aside>
   </section>
 </template>

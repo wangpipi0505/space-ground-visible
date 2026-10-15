@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-15T02:12:08.552271+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "G:/5-YG/space-ground-visible/verification/runtime/A07/check-default-time.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "finishedUtc": "2026-10-15T02:12:11.645040+00:00",
+  "exitCode": 0,
+  "stdoutSha256": "b3261b41fca312950204cf48e61395e07268b8d27c350513a750a998e0df1351",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

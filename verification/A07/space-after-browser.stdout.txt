@@ -1,0 +1,27 @@
+### Result
+{"width":1416,"grid":"436.359px 449.453px 506.172px","fields":[{"selector":".standard-payload-editor","present":true,"width":376.359375,"height":567.125,"display":"block","fontSize":"13px","color":"rgb(48, 49, 51)","grid":"none"},{"selector":".standard-payload-editor .payload-form","present":true,"width":376.359375,"height":452,"display":"grid","fontSize":"13px","color":"rgb(48, 49, 51)","grid":"117.453px 117.453px 117.453px"},{"selector":".standard-payload-editor .el-form-item__label","present":true,"width":56,"height":22,"display":"block","fontSize":"14px","color":"rgb(96, 98, 102)","grid":"none"},{"selector":".standard-payload-editor .el-input-number","present":true,"width":117.453125,"height":32,"display":"flex","fontSize":"14px","color":"rgb(48, 49, 51)","grid":"none"},{"selector":".standard-payload-editor .payload-explanation","present":true,"width":376.359375,"height":57.5625,"display":"block","fontSize":"12px","color":"rgb(144, 147, 153)","grid":"none"}]}
+### Ran Playwright code
+```js
+await (async page => {
+  await page.getByRole('tab',{name:'规划工作台',exact:true}).click()
+  const workbench=page.locator('.planning-workbench')
+  const checkbox=workbench.locator('[data-test=satellite-station-selection] .el-table tbody tr .el-checkbox').first()
+  await checkbox.waitFor()
+  await checkbox.click()
+  await workbench.locator('.standard-payload-editor').first().waitFor()
+  await page.screenshot({path:'G:/5-YG/space-ground-visible/verification/runtime/A07/space-after.png',fullPage:true})
+  const metrics=await workbench.evaluate(element=>{
+    const selected=['.standard-payload-editor','.standard-payload-editor .payload-form','.standard-payload-editor .el-form-item__label','.standard-payload-editor .el-input-number','.standard-payload-editor .payload-explanation']
+    return {width:element.getBoundingClientRect().width,grid:getComputedStyle(element).gridTemplateColumns,fields:selected.map(selector=>{
+      const node=element.querySelector(selector),style=node&&getComputedStyle(node)
+      return {selector,present:!!node,width:node?.getBoundingClientRect().width,height:node?.getBoundingClientRect().height,display:style?.display,fontSize:style?.fontSize,color:style?.color,grid:style?.gridTemplateColumns}
+    })}
+  })
+  const pending=page.waitForEvent('download')
+  await page.evaluate(text=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'application/json'}));a.download='space-after-metrics.json';a.click()},JSON.stringify(metrics,null,2))
+  await(await pending).saveAs('G:/5-YG/space-ground-visible/verification/A07/space-after-metrics.json')
+  return metrics
+}
+
+)(page);
+```

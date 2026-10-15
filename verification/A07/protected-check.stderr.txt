@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A07\verify-protected.py", line 40, in <module>
+    assert not differences and before == after
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

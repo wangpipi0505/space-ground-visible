@@ -1,0 +1,16 @@
+{
+  "startedUtc": "2026-10-15T02:18:27.806764+00:00",
+  "finishedUtc": "2026-10-15T02:18:29.421367+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "G:/5-YG/space-ground-visible/frontend/node_modules/vitest/vitest.mjs",
+    "run",
+    "--root",
+    "G:/5-YG/space-ground-visible/frontend",
+    "src/components/StandardPayloadEditor.spec.ts"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\implementation",
+  "exitCode": 0,
+  "stdoutSha256": "91143b81f00cf810673a89b7ab9966a408aa0e17b8891a5dfec113288b569747",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,9 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+
+ Test Files  28 passed (28)
+      Tests  138 passed (138)
+   Start at  10:28:58
+   Duration  50.73s (transform 4.33s, setup 0ms, import 26.28s, tests 68.57s, environment 12.61s)
+

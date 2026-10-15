@@ -1,0 +1,27 @@
+{
+  "startedUtc": "2026-10-15T02:41:38.394121+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "G:/5-YG/space-ground-visible/verification/A07/verify-command-streams.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07",
+  "finishedUtc": "2026-10-15T02:41:38.514699+00:00",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A07/git-delivery-check/final-original-stream-audit.stdout.bin",
+    "bytes": 2814,
+    "sha256": "9c9b3e4a8e88a7fe5ebe894b70d0c38ba09ff7f14090c70f1e5b9f06e32df6eb"
+  },
+  "stderr": {
+    "path": "verification/A07/git-delivery-check/final-original-stream-audit.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A07/root-gates/final-original-stream-audit.json",
+    "sha256": "234cef641ed94f84d0820ab04d5acf2ba82523a56680d9d38635f37c10b89749"
+  }
+}

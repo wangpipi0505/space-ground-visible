@@ -1,0 +1,157 @@
+{
+  "verifiedUtc": "2026-10-15T02:34:26.300146+00:00",
+  "comparisons": [
+    {
+      "name": "默认文件下载原字节",
+      "left": "verification\\runtime\\A07\\implementation\\default-original.csv",
+      "right": "frontend\\public\\samples\\trajectory-0.1s-standard.csv",
+      "leftSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "rightSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+      "equal": true
+    },
+    {
+      "name": "拟合目标1既有黄金",
+      "left": "verification\\runtime\\A07\\implementation\\fit-1.csv",
+      "right": "test-data\\baseline\\ballistic\\fit\\trajectory-0.csv",
+      "leftSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "rightSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "equal": true
+    },
+    {
+      "name": "拟合目标2既有黄金",
+      "left": "verification\\runtime\\A07\\implementation\\fit-2.csv",
+      "right": "test-data\\baseline\\ballistic\\fit\\trajectory-1.csv",
+      "leftSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "rightSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "equal": true
+    },
+    {
+      "name": "模拟既有黄金",
+      "left": "verification\\runtime\\A07\\implementation\\simulation.csv",
+      "right": "test-data\\baseline\\ballistic\\simulate\\trajectory-0.csv",
+      "leftSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "rightSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "equal": true
+    },
+    {
+      "name": "跨页复用重定时原字节",
+      "left": "verification\\runtime\\A07\\implementation\\retime.csv",
+      "right": "verification\\runtime\\A07\\implementation\\retime-reused.csv",
+      "leftSha256": "da98ae575c536655263b88ad2d7cf794d4e29c6d4299263e6ee6384b4ac75a8b",
+      "rightSha256": "da98ae575c536655263b88ad2d7cf794d4e29c6d4299263e6ee6384b4ac75a8b",
+      "equal": true
+    },
+    {
+      "name": "fit-1.csv服务文件与浏览器下载",
+      "left": "verification\\runtime\\A07\\implementation\\fit-1.csv",
+      "right": "verification\\runtime\\local-app\\20261014-171837\\files\\results\\fit-7453362802070382938\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-001_20261015_103314_188.csv",
+      "leftSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "rightSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "equal": true
+    },
+    {
+      "name": "fit-2.csv服务文件与浏览器下载",
+      "left": "verification\\runtime\\A07\\implementation\\fit-2.csv",
+      "right": "verification\\runtime\\local-app\\20261014-171837\\files\\results\\fit-7453362802070382938\\defaultFitTask_2026-07-01_07_56_55.000_2026-07-01_07_57_10.000_TGT-002_20261015_103314_188.csv",
+      "leftSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "rightSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "equal": true
+    },
+    {
+      "name": "fit响应原字节",
+      "sha256": "9555e94f8630df49808c711f902d223452372052dcb69cd82d63b2d2e13edc7e",
+      "bytes": 3195,
+      "equal": true
+    },
+    {
+      "name": "simulation.csv服务文件与浏览器下载",
+      "left": "verification\\runtime\\A07\\implementation\\simulation.csv",
+      "right": "verification\\runtime\\local-app\\20261014-171837\\files\\results\\fit-191379421901947079\\defaultSimTask_2026-06-04_04_00_00.000_2026-06-04_04_42_55.000_SIM-001_20261015_103316_975.csv",
+      "leftSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "rightSha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4",
+      "equal": true
+    },
+    {
+      "name": "simulation响应原字节",
+      "sha256": "831cdcc7fecdd6863e5e6292ced56f74e52e32d697a17477ad11b9eb1149b332",
+      "bytes": 640,
+      "equal": true
+    },
+    {
+      "name": "retime.csv服务文件与浏览器下载",
+      "left": "verification\\runtime\\A07\\implementation\\retime.csv",
+      "right": "verification\\runtime\\local-app\\20261014-171837\\files\\results\\fit-1149966772396782865\\retimeTrajectory_2026-07-01_09_00_00.000_RET-001_20261015_103318_239.csv",
+      "leftSha256": "da98ae575c536655263b88ad2d7cf794d4e29c6d4299263e6ee6384b4ac75a8b",
+      "rightSha256": "da98ae575c536655263b88ad2d7cf794d4e29c6d4299263e6ee6384b4ac75a8b",
+      "equal": true
+    },
+    {
+      "name": "retime响应原字节",
+      "sha256": "ec42c0fe721f1d348fe6e35075608576c19f6b0e6e2e0bd23293e673b8183205",
+      "bytes": 504,
+      "equal": true
+    },
+    {
+      "name": "窗口响应原字节",
+      "sha256": "a3ba7de1b66751cd6d0e669b9a8a942342fe2bd756bc5701b76f71cf081f54dc",
+      "bytes": 3513936,
+      "equal": true
+    }
+  ],
+  "retimeEcefColumns": [
+    "ECEF_X",
+    "ECEF_Y",
+    "ECEF_Z",
+    "ECEF_Vx",
+    "ECEF_Vy",
+    "ECEF_Vz"
+  ],
+  "retimeEcefRows": 2576,
+  "retimeEcefStringsPreserved": true,
+  "protectedCount": 3070,
+  "protectedChanged": [
+    "frontend/src/components/BallisticFitTrajectory.vue",
+    "frontend/src/components/BallisticTrajectoryView.vue"
+  ],
+  "declaredPresentationExceptions": [
+    "frontend/src/components/BallisticFitTrajectory.vue",
+    "frontend/src/components/BallisticTrajectoryView.vue"
+  ],
+  "protectedOnlyDeclaredExceptions": true,
+  "sourceCount": 75,
+  "sourceManifestSha256": "1c637eb43d15a8427df6ca8b4131c6213cb9e529c2bc61b218d4ebabac7fa89f",
+  "browserStateSha256": "6feda1222f1d44310b1209243692667ed33467fe99a2579be50b08bc9e9b93e2",
+  "browserErrors": [],
+  "interactions": {
+    "metrics": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "viewport": 1920,
+        "body": 1920,
+        "document": 1920
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "viewport": 390,
+        "body": 390,
+        "document": 390
+      }
+    ],
+    "zeroStatus": 200,
+    "zeroArcs": 0,
+    "lastCell": 42.123456789,
+    "payloadShortcut": true,
+    "emptyEditActions": true,
+    "invalidBlocked": true
+  },
+  "recovery": {
+    "invalidComputeStatus": 400,
+    "recoveredUpload": true,
+    "previewPage": 2,
+    "customPayloadUnchanged": true,
+    "finalStatus": 200,
+    "finalArcs": 2
+  }
+}

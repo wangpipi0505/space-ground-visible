@@ -1,0 +1,683 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 初始结果区说明下一步且主动作可直接使用
+Error: Unable to get [aria-label="拟合结果"] within: <section data-v-69a1f04c="" class="ballistic-fit-view ballistic-window-controls" aria-label="102包轨迹拟合">
+  <h2 data-v-69a1f04c="">102包轨迹拟合</h2>
+  <details data-v-69a1f04c="">
+    <summary data-v-69a1f04c="">高级协议说明（编码、兼容别名与单位）</summary>
+    <p data-v-69a1f04c="">完整 FitRequest JSON 输入：package102 保留原字符串编码、扁平 tack3d 历史拼写 / track3d 时间别名及 coordinateInfo / coordinate / coords、targetInfo / target。位置 0.1 m、速度 0.0001 m/s、加速度 0.01 m/s²；原别名优先级和模型选择由服务执行。</p>
+    <p data-v-69a1f04c="">taskStartTime / taskEndTime 为字面 UTC 任务区间，不是物理起落时刻；浏览器时区不转换。interpolationStepSec 为秒，省略默认 1，至少 0.001。时间码、ID、代码和观测值按原 DTO 加引号，禁止危险数字舍入。</p>
+    <p data-v-69a1f04c="" class="ballistic-storage-notice">Web 使用服务管理结果目录，提交始终省略 outputDir；不使用浏览器本机或自填服务目录。</p>
+  </details>
+  <fieldset data-v-69a1f04c="" class="ballistic-native-form">
+    <legend data-v-69a1f04c="">原102包与任务参数</legend><button data-v-69a1f04c="" type="button" data-test="load-default-fit">加载原默认102数据</button>
+    <div data-v-69a1f04c="" class="ballistic-field-grid"><label data-v-69a1f04c="">任务名称<input data-v-69a1f04c="" data-fit-field="taskName" value="defaultFitTask"></label><label data-v-69a1f04c="">任务起始UTC<input data-v-69a1f04c="" data-fit-field="taskStartTime" value="2026-07-01 07:56:55.000"></label><label data-v-69a1f04c="">任务结束UTC<input data-v-69a1f04c="" data-fit-field="taskEndTime" value="2026-07-01 07:57:10.000"></label><label data-v-69a1f04c="">插值步长（秒）<input data-v-69a1f04c="" data-fit-field="interpolationStepSec" inputmode="decimal" value="0.5"></label></div>
+    <p data-v-69a1f04c="">一行即一个目标观测点。位置编码 0.1米，速度编码 0.0001米/秒，加速度编码 0.01米/秒²；时间码、ID和代码直接保留字符串。横向滚动查看全部28列。</p><button data-v-69a1f04c="" type="button">新增102记录</button>
+    <div data-v-69a1f04c="" class="ballistic-table-scroll">
+      <table data-v-69a1f04c="">
+        <thead data-v-69a1f04c="">
+          <tr data-v-69a1f04c="">
+            <th data-v-69a1f04c="">操作</th>
+            <th data-v-69a1f04c="">track_tgt_id</th>
+            <th data-v-69a1f04c="">tack3d_time_code</th>
+            <th data-v-69a1f04c="">tack3d_tgt_pos_x</th>
+            <th data-v-69a1f04c="">tack3d_tgt_pos_y</th>
+            <th data-v-69a1f04c="">tack3d_tgt_pos_z</th>
+            <th data-v-69a1f04c="">tack3d_tgt_vel_x</th>
+            <th data-v-69a1f04c="">tack3d_tgt_vel_y</th>
+            <th data-v-69a1f04c="">tack3d_tgt_vel_z</th>
+            <th data-v-69a1f04c="">tack3d_tgt_acc_x</th>
+            <th data-v-69a1f04c="">tack3d_tgt_acc_y</th>
+            <th data-v-69a1f04c="">tack3d_tgt_acc_z</th>
+            <th data-v-69a1f04c="">prop_tgt_type_8</th>
+            <th data-v-69a1f04c="">prop_tgt_shape_8</th>
+            <th data-v-69a1f04c="">prop_tgt_flight_phase_8</th>
+            <th data-v-69a1f04c="">prob_tgt_critical_incident</th>
+            <th data-v-69a1f04c="">prob_tgt_critical_incident_time_code</th>
+            <th data-v-69a1f04c="">launch_time_code</th>
+            <th data-v-69a1f04c="">launch_coord_frame</th>
+            <th data-v-69a1f04c="">launch_pos_x</th>
+            <th data-v-69a1f04c="">launch_pos_y</th>
+            <th data-v-69a1f04c="">launch_pos_z</th>
+            <th data-v-69a1f04c="">launch_pos_unit</th>
+            <th data-v-69a1f04c="">impact_time_code</th>
+            <th data-v-69a1f04c="">impact_coord_frame</th>
+            <th data-v-69a1f04c="">impact_pos_x</th>
+            <th data-v-69a1f04c="">impact_pos_y</th>
+            <th data-v-69a1f04c="">impact_pos_z</th>
+            <th data-v-69a1f04c="">impact_pos_unit</th>
+          </tr>
+        </thead>
+        <tbody data-v-69a1f04c="">
+          <tr data-v-69a1f04c="" data-fit-row="0">
+            <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第1行</button></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 track_tgt_id" data-fit-cell="0/track_tgt_id" value="TGT-001"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_time_code" data-fit-cell="0/tack3d_time_code" value="2026-07-01 07:57:00.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_pos_x" data-fit-cell="0/tack3d_tgt_pos_x" value="70000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_pos_y" data-fit-cell="0/tack3d_tgt_pos_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_pos_z" data-fit-cell="0/tack3d_tgt_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_vel_x" data-fit-cell="0/tack3d_tgt_vel_x" value="10000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_vel_y" data-fit-cell="0/tack3d_tgt_vel_y" value="1000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_vel_z" data-fit-cell="0/tack3d_tgt_vel_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_acc_x" data-fit-cell="0/tack3d_tgt_acc_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_acc_y" data-fit-cell="0/tack3d_tgt_acc_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 tack3d_tgt_acc_z" data-fit-cell="0/tack3d_tgt_acc_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prop_tgt_type_8" data-fit-cell="0/prop_tgt_type_8" value="0x01"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prop_tgt_shape_8" data-fit-cell="0/prop_tgt_shape_8" value="0x02"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prop_tgt_flight_phase_8" data-fit-cell="0/prop_tgt_flight_phase_8" value="0x01"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prob_tgt_critical_incident" data-fit-cell="0/prob_tgt_critical_incident" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 prob_tgt_critical_incident_time_code" data-fit-cell="0/prob_tgt_critical_incident_time_code" value=""></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_time_code" data-fit-cell="0/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_coord_frame" data-fit-cell="0/launch_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_pos_x" data-fit-cell="0/launch_pos_x" value="69950000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_pos_y" data-fit-cell="0/launch_pos_y" value="-5000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_pos_z" data-fit-cell="0/launch_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 launch_pos_unit" data-fit-cell="0/launch_pos_unit" value="0.1m"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_time_code" data-fit-cell="0/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_coord_frame" data-fit-cell="0/impact_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_pos_x" data-fit-cell="0/impact_pos_x" value="70100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_pos_y" data-fit-cell="0/impact_pos_y" value="10000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_pos_z" data-fit-cell="0/impact_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第1行 impact_pos_unit" data-fit-cell="0/impact_pos_unit" value="0.1m"></td>
+          </tr>
+          <tr data-v-69a1f04c="" data-fit-row="1">
+            <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第2行</button></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 track_tgt_id" data-fit-cell="1/track_tgt_id" value="TGT-001"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_time_code" data-fit-cell="1/tack3d_time_code" value="2026-07-01 07:57:01.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_pos_x" data-fit-cell="1/tack3d_tgt_pos_x" value="70010000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_pos_y" data-fit-cell="1/tack3d_tgt_pos_y" value="1000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_pos_z" data-fit-cell="1/tack3d_tgt_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_vel_x" data-fit-cell="1/tack3d_tgt_vel_x" value="10000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_vel_y" data-fit-cell="1/tack3d_tgt_vel_y" value="1000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_vel_z" data-fit-cell="1/tack3d_tgt_vel_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_acc_x" data-fit-cell="1/tack3d_tgt_acc_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_acc_y" data-fit-cell="1/tack3d_tgt_acc_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 tack3d_tgt_acc_z" data-fit-cell="1/tack3d_tgt_acc_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prop_tgt_type_8" data-fit-cell="1/prop_tgt_type_8" value="0x01"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prop_tgt_shape_8" data-fit-cell="1/prop_tgt_shape_8" value="0x02"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prop_tgt_flight_phase_8" data-fit-cell="1/prop_tgt_flight_phase_8" value="0x01"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prob_tgt_critical_incident" data-fit-cell="1/prob_tgt_critical_incident" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 prob_tgt_critical_incident_time_code" data-fit-cell="1/prob_tgt_critical_incident_time_code" value=""></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_time_code" data-fit-cell="1/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_coord_frame" data-fit-cell="1/launch_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_pos_x" data-fit-cell="1/launch_pos_x" value="69950000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_pos_y" data-fit-cell="1/launch_pos_y" value="-5000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_pos_z" data-fit-cell="1/launch_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 launch_pos_unit" data-fit-cell="1/launch_pos_unit" value="0.1m"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_time_code" data-fit-cell="1/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_coord_frame" data-fit-cell="1/impact_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_pos_x" data-fit-cell="1/impact_pos_x" value="70100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_pos_y" data-fit-cell="1/impact_pos_y" value="10000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_pos_z" data-fit-cell="1/impact_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第2行 impact_pos_unit" data-fit-cell="1/impact_pos_unit" value="0.1m"></td>
+          </tr>
+          <tr data-v-69a1f04c="" data-fit-row="2">
+            <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第3行</button></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 track_tgt_id" data-fit-cell="2/track_tgt_id" value="TGT-001"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_time_code" data-fit-cell="2/tack3d_time_code" value="2026-07-01 07:57:02.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_pos_x" data-fit-cell="2/tack3d_tgt_pos_x" value="70020000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_pos_y" data-fit-cell="2/tack3d_tgt_pos_y" value="2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_pos_z" data-fit-cell="2/tack3d_tgt_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_vel_x" data-fit-cell="2/tack3d_tgt_vel_x" value="10000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_vel_y" data-fit-cell="2/tack3d_tgt_vel_y" value="1000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_vel_z" data-fit-cell="2/tack3d_tgt_vel_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_acc_x" data-fit-cell="2/tack3d_tgt_acc_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_acc_y" data-fit-cell="2/tack3d_tgt_acc_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 tack3d_tgt_acc_z" data-fit-cell="2/tack3d_tgt_acc_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prop_tgt_type_8" data-fit-cell="2/prop_tgt_type_8" value="0x01"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prop_tgt_shape_8" data-fit-cell="2/prop_tgt_shape_8" value="0x02"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prop_tgt_flight_phase_8" data-fit-cell="2/prop_tgt_flight_phase_8" value="0x01"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prob_tgt_critical_incident" data-fit-cell="2/prob_tgt_critical_incident" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 prob_tgt_critical_incident_time_code" data-fit-cell="2/prob_tgt_critical_incident_time_code" value=""></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_time_code" data-fit-cell="2/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_coord_frame" data-fit-cell="2/launch_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_pos_x" data-fit-cell="2/launch_pos_x" value="69950000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_pos_y" data-fit-cell="2/launch_pos_y" value="-5000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_pos_z" data-fit-cell="2/launch_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 launch_pos_unit" data-fit-cell="2/launch_pos_unit" value="0.1m"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_time_code" data-fit-cell="2/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_coord_frame" data-fit-cell="2/impact_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_pos_x" data-fit-cell="2/impact_pos_x" value="70100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_pos_y" data-fit-cell="2/impact_pos_y" value="10000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_pos_z" data-fit-cell="2/impact_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第3行 impact_pos_unit" data-fit-cell="2/impact_pos_unit" value="0.1m"></td>
+          </tr>
+          <tr data-v-69a1f04c="" data-fit-row="3">
+            <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第4行</button></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 track_tgt_id" data-fit-cell="3/track_tgt_id" value="TGT-001"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_time_code" data-fit-cell="3/tack3d_time_code" value="2026-07-01 07:57:03.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_pos_x" data-fit-cell="3/tack3d_tgt_pos_x" value="70030000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_pos_y" data-fit-cell="3/tack3d_tgt_pos_y" value="3000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_pos_z" data-fit-cell="3/tack3d_tgt_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_vel_x" data-fit-cell="3/tack3d_tgt_vel_x" value="10000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_vel_y" data-fit-cell="3/tack3d_tgt_vel_y" value="1000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_vel_z" data-fit-cell="3/tack3d_tgt_vel_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_acc_x" data-fit-cell="3/tack3d_tgt_acc_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_acc_y" data-fit-cell="3/tack3d_tgt_acc_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 tack3d_tgt_acc_z" data-fit-cell="3/tack3d_tgt_acc_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prop_tgt_type_8" data-fit-cell="3/prop_tgt_type_8" value="0x01"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prop_tgt_shape_8" data-fit-cell="3/prop_tgt_shape_8" value="0x02"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prop_tgt_flight_phase_8" data-fit-cell="3/prop_tgt_flight_phase_8" value="0x01"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prob_tgt_critical_incident" data-fit-cell="3/prob_tgt_critical_incident" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 prob_tgt_critical_incident_time_code" data-fit-cell="3/prob_tgt_critical_incident_time_code" value=""></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_time_code" data-fit-cell="3/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_coord_frame" data-fit-cell="3/launch_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_pos_x" data-fit-cell="3/launch_pos_x" value="69950000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_pos_y" data-fit-cell="3/launch_pos_y" value="-5000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_pos_z" data-fit-cell="3/launch_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 launch_pos_unit" data-fit-cell="3/launch_pos_unit" value="0.1m"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_time_code" data-fit-cell="3/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_coord_frame" data-fit-cell="3/impact_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_pos_x" data-fit-cell="3/impact_pos_x" value="70100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_pos_y" data-fit-cell="3/impact_pos_y" value="10000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_pos_z" data-fit-cell="3/impact_pos_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第4行 impact_pos_unit" data-fit-cell="3/impact_pos_unit" value="0.1m"></td>
+          </tr>
+          <tr data-v-69a1f04c="" data-fit-row="4">
+            <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第5行</button></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 track_tgt_id" data-fit-cell="4/track_tgt_id" value="TGT-002"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_time_code" data-fit-cell="4/tack3d_time_code" value="2026-07-01 07:57:00.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_pos_x" data-fit-cell="4/tack3d_tgt_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_pos_y" data-fit-cell="4/tack3d_tgt_pos_y" value="100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_pos_z" data-fit-cell="4/tack3d_tgt_pos_z" value="50000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_vel_x" data-fit-cell="4/tack3d_tgt_vel_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_vel_y" data-fit-cell="4/tack3d_tgt_vel_y" value="76000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_vel_z" data-fit-cell="4/tack3d_tgt_vel_z" value="100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_acc_x" data-fit-cell="4/tack3d_tgt_acc_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_acc_y" data-fit-cell="4/tack3d_tgt_acc_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 tack3d_tgt_acc_z" data-fit-cell="4/tack3d_tgt_acc_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prop_tgt_type_8" data-fit-cell="4/prop_tgt_type_8" value="0x02"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prop_tgt_shape_8" data-fit-cell="4/prop_tgt_shape_8" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prop_tgt_flight_phase_8" data-fit-cell="4/prop_tgt_flight_phase_8" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prob_tgt_critical_incident" data-fit-cell="4/prob_tgt_critical_incident" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 prob_tgt_critical_incident_time_code" data-fit-cell="4/prob_tgt_critical_incident_time_code" value=""></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_time_code" data-fit-cell="4/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_coord_frame" data-fit-cell="4/launch_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_pos_x" data-fit-cell="4/launch_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_pos_y" data-fit-cell="4/launch_pos_y" value="-280000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_pos_z" data-fit-cell="4/launch_pos_z" value="49500"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 launch_pos_unit" data-fit-cell="4/launch_pos_unit" value="0.1m"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_time_code" data-fit-cell="4/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_coord_frame" data-fit-cell="4/impact_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_pos_x" data-fit-cell="4/impact_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_pos_y" data-fit-cell="4/impact_pos_y" value="860000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_pos_z" data-fit-cell="4/impact_pos_z" value="51000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第5行 impact_pos_unit" data-fit-cell="4/impact_pos_unit" value="0.1m"></td>
+          </tr>
+          <tr data-v-69a1f04c="" data-fit-row="5">
+            <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第6行</button></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 track_tgt_id" data-fit-cell="5/track_tgt_id" value="TGT-002"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_time_code" data-fit-cell="5/tack3d_time_code" value="2026-07-01 07:57:01.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_pos_x" data-fit-cell="5/tack3d_tgt_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_pos_y" data-fit-cell="5/tack3d_tgt_pos_y" value="176000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_pos_z" data-fit-cell="5/tack3d_tgt_pos_z" value="50100"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_vel_x" data-fit-cell="5/tack3d_tgt_vel_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_vel_y" data-fit-cell="5/tack3d_tgt_vel_y" value="76000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_vel_z" data-fit-cell="5/tack3d_tgt_vel_z" value="100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_acc_x" data-fit-cell="5/tack3d_tgt_acc_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_acc_y" data-fit-cell="5/tack3d_tgt_acc_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 tack3d_tgt_acc_z" data-fit-cell="5/tack3d_tgt_acc_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prop_tgt_type_8" data-fit-cell="5/prop_tgt_type_8" value="0x02"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prop_tgt_shape_8" data-fit-cell="5/prop_tgt_shape_8" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prop_tgt_flight_phase_8" data-fit-cell="5/prop_tgt_flight_phase_8" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prob_tgt_critical_incident" data-fit-cell="5/prob_tgt_critical_incident" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 prob_tgt_critical_incident_time_code" data-fit-cell="5/prob_tgt_critical_incident_time_code" value=""></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_time_code" data-fit-cell="5/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_coord_frame" data-fit-cell="5/launch_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_pos_x" data-fit-cell="5/launch_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_pos_y" data-fit-cell="5/launch_pos_y" value="-280000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_pos_z" data-fit-cell="5/launch_pos_z" value="49500"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 launch_pos_unit" data-fit-cell="5/launch_pos_unit" value="0.1m"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_time_code" data-fit-cell="5/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_coord_frame" data-fit-cell="5/impact_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_pos_x" data-fit-cell="5/impact_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_pos_y" data-fit-cell="5/impact_pos_y" value="860000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_pos_z" data-fit-cell="5/impact_pos_z" value="51000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第6行 impact_pos_unit" data-fit-cell="5/impact_pos_unit" value="0.1m"></td>
+          </tr>
+          <tr data-v-69a1f04c="" data-fit-row="6">
+            <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第7行</button></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 track_tgt_id" data-fit-cell="6/track_tgt_id" value="TGT-002"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_time_code" data-fit-cell="6/tack3d_time_code" value="2026-07-01 07:57:02.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_pos_x" data-fit-cell="6/tack3d_tgt_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_pos_y" data-fit-cell="6/tack3d_tgt_pos_y" value="252000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_pos_z" data-fit-cell="6/tack3d_tgt_pos_z" value="50200"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_vel_x" data-fit-cell="6/tack3d_tgt_vel_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_vel_y" data-fit-cell="6/tack3d_tgt_vel_y" value="76000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_vel_z" data-fit-cell="6/tack3d_tgt_vel_z" value="100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_acc_x" data-fit-cell="6/tack3d_tgt_acc_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_acc_y" data-fit-cell="6/tack3d_tgt_acc_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 tack3d_tgt_acc_z" data-fit-cell="6/tack3d_tgt_acc_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prop_tgt_type_8" data-fit-cell="6/prop_tgt_type_8" value="0x02"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prop_tgt_shape_8" data-fit-cell="6/prop_tgt_shape_8" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prop_tgt_flight_phase_8" data-fit-cell="6/prop_tgt_flight_phase_8" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prob_tgt_critical_incident" data-fit-cell="6/prob_tgt_critical_incident" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 prob_tgt_critical_incident_time_code" data-fit-cell="6/prob_tgt_critical_incident_time_code" value=""></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_time_code" data-fit-cell="6/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_coord_frame" data-fit-cell="6/launch_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_pos_x" data-fit-cell="6/launch_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_pos_y" data-fit-cell="6/launch_pos_y" value="-280000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_pos_z" data-fit-cell="6/launch_pos_z" value="49500"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 launch_pos_unit" data-fit-cell="6/launch_pos_unit" value="0.1m"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_time_code" data-fit-cell="6/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_coord_frame" data-fit-cell="6/impact_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_pos_x" data-fit-cell="6/impact_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_pos_y" data-fit-cell="6/impact_pos_y" value="860000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_pos_z" data-fit-cell="6/impact_pos_z" value="51000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第7行 impact_pos_unit" data-fit-cell="6/impact_pos_unit" value="0.1m"></td>
+          </tr>
+          <tr data-v-69a1f04c="" data-fit-row="7">
+            <td data-v-69a1f04c=""><button data-v-69a1f04c="" type="button">删除第8行</button></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 track_tgt_id" data-fit-cell="7/track_tgt_id" value="TGT-002"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_time_code" data-fit-cell="7/tack3d_time_code" value="2026-07-01 07:57:03.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_pos_x" data-fit-cell="7/tack3d_tgt_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_pos_y" data-fit-cell="7/tack3d_tgt_pos_y" value="328000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_pos_z" data-fit-cell="7/tack3d_tgt_pos_z" value="50300"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_vel_x" data-fit-cell="7/tack3d_tgt_vel_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_vel_y" data-fit-cell="7/tack3d_tgt_vel_y" value="76000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_vel_z" data-fit-cell="7/tack3d_tgt_vel_z" value="100000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_acc_x" data-fit-cell="7/tack3d_tgt_acc_x" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_acc_y" data-fit-cell="7/tack3d_tgt_acc_y" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 tack3d_tgt_acc_z" data-fit-cell="7/tack3d_tgt_acc_z" value="0"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prop_tgt_type_8" data-fit-cell="7/prop_tgt_type_8" value="0x02"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prop_tgt_shape_8" data-fit-cell="7/prop_tgt_shape_8" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prop_tgt_flight_phase_8" data-fit-cell="7/prop_tgt_flight_phase_8" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prob_tgt_critical_incident" data-fit-cell="7/prob_tgt_critical_incident" value="0xFF"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 prob_tgt_critical_incident_time_code" data-fit-cell="7/prob_tgt_critical_incident_time_code" value=""></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_time_code" data-fit-cell="7/launch_time_code" value="2026-07-01 07:56:55.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_coord_frame" data-fit-cell="7/launch_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_pos_x" data-fit-cell="7/launch_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_pos_y" data-fit-cell="7/launch_pos_y" value="-280000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_pos_z" data-fit-cell="7/launch_pos_z" value="49500"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 launch_pos_unit" data-fit-cell="7/launch_pos_unit" value="0.1m"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_time_code" data-fit-cell="7/impact_time_code" value="2026-07-01 07:57:10.000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_coord_frame" data-fit-cell="7/impact_coord_frame" value="J2000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_pos_x" data-fit-cell="7/impact_pos_x" value="68000000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_pos_y" data-fit-cell="7/impact_pos_y" value="860000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_pos_z" data-fit-cell="7/impact_pos_z" value="51000"></td>
+            <td data-v-69a1f04c=""><input data-v-69a1f04c="" aria-label="第8行 impact_pos_unit" data-fit-cell="7/impact_pos_unit" value="0.1m"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <details data-v-69a1f04c="">
+      <summary data-v-69a1f04c="">高级设置：完整JSON导入与兼容字段</summary><label data-v-69a1f04c="">选择完整请求 JSON<input data-v-69a1f04c="" type="file" accept=".json,application/json"></label>
+      <!--v-if--><label data-v-69a1f04c="" class="ballistic-json-label">完整 FitRequest JSON<textarea data-v-69a1f04c="" data-test="fit-input" rows="18" spellcheck="false"></textarea></label>
+    </details>
+    <!--v-if-->
+    <p data-v-69a1f04c="">8 条原包 · 任务 defaultFitTask · 步长 0.5 秒</p>
+    <!--v-if-->
+    <details data-v-69a1f04c="">
+      <summary data-v-69a1f04c="">实际提交预览（outputDir 已省略）</summary><pre data-v-69a1f04c="">{
+  "taskName": "defaultFitTask",
+  "taskStartTime": "2026-07-01 07:56:55.000",
+  "taskEndTime": "2026-07-01 07:57:10.000",
+  "interpolationStepSec": 0.5,
+  "package102": [
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:00.000",
+      "tack3d_tgt_pos_x": "70000000",
+      "tack3d_tgt_pos_y": "0",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:01.000",
+      "tack3d_tgt_pos_x": "70010000",
+      "tack3d_tgt_pos_y": "1000",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:02.000",
+      "tack3d_tgt_pos_x": "70020000",
+      "tack3d_tgt_pos_y": "2000",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-001",
+      "tack3d_time_code": "2026-07-01 07:57:03.000",
+      "tack3d_tgt_pos_x": "70030000",
+      "tack3d_tgt_pos_y": "3000",
+      "tack3d_tgt_pos_z": "0",
+      "tack3d_tgt_vel_x": "10000000",
+      "tack3d_tgt_vel_y": "1000000",
+      "tack3d_tgt_vel_z": "0",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x01",
+      "prop_tgt_shape_8": "0x02",
+      "prop_tgt_flight_phase_8": "0x01",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "69950000",
+      "launch_pos_y": "-5000",
+      "launch_pos_z": "0",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "70100000",
+      "impact_pos_y": "10000",
+      "impact_pos_z": "0",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-002",
+      "tack3d_time_code": "2026-07-01 07:57:00.000",
+      "tack3d_tgt_pos_x": "68000000",
+      "tack3d_tgt_pos_y": "100000",
+      "tack3d_tgt_pos_z": "50000",
+      "tack3d_tgt_vel_x": "0",
+      "tack3d_tgt_vel_y": "76000000",
+      "tack3d_tgt_vel_z": "100000",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x02",
+      "prop_tgt_shape_8": "0xFF",
+      "prop_tgt_flight_phase_8": "0xFF",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "68000000",
+      "launch_pos_y": "-280000",
+      "launch_pos_z": "49500",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "68000000",
+      "impact_pos_y": "860000",
+      "impact_pos_z": "51000",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-002",
+      "tack3d_time_code": "2026-07-01 07:57:01.000",
+      "tack3d_tgt_pos_x": "68000000",
+      "tack3d_tgt_pos_y": "176000",
+      "tack3d_tgt_pos_z": "50100",
+      "tack3d_tgt_vel_x": "0",
+      "tack3d_tgt_vel_y": "76000000",
+      "tack3d_tgt_vel_z": "100000",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x02",
+      "prop_tgt_shape_8": "0xFF",
+      "prop_tgt_flight_phase_8": "0xFF",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "68000000",
+      "launch_pos_y": "-280000",
+      "launch_pos_z": "49500",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "68000000",
+      "impact_pos_y": "860000",
+      "impact_pos_z": "51000",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-002",
+      "tack3d_time_code": "2026-07-01 07:57:02.000",
+      "tack3d_tgt_pos_x": "68000000",
+      "tack3d_tgt_pos_y": "252000",
+      "tack3d_tgt_pos_z": "50200",
+      "tack3d_tgt_vel_x": "0",
+      "tack3d_tgt_vel_y": "76000000",
+      "tack3d_tgt_vel_z": "100000",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x02",
+      "prop_tgt_shape_8": "0xFF",
+      "prop_tgt_flight_phase_8": "0xFF",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "68000000",
+      "launch_pos_y": "-280000",
+      "launch_pos_z": "49500",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "68000000",
+      "impact_pos_y": "860000",
+      "impact_pos_z": "51000",
+      "impact_pos_unit": "0.1m"
+    },
+    {
+      "track_tgt_id": "TGT-002",
+      "tack3d_time_code": "2026-07-01 07:57:03.000",
+      "tack3d_tgt_pos_x": "68000000",
+      "tack3d_tgt_pos_y": "328000",
+      "tack3d_tgt_pos_z": "50300",
+      "tack3d_tgt_vel_x": "0",
+      "tack3d_tgt_vel_y": "76000000",
+      "tack3d_tgt_vel_z": "100000",
+      "tack3d_tgt_acc_x": "0",
+      "tack3d_tgt_acc_y": "0",
+      "tack3d_tgt_acc_z": "0",
+      "prop_tgt_type_8": "0x02",
+      "prop_tgt_shape_8": "0xFF",
+      "prop_tgt_flight_phase_8": "0xFF",
+      "prob_tgt_critical_incident": "0xFF",
+      "prob_tgt_critical_incident_time_code": "",
+      "launch_time_code": "2026-07-01 07:56:55.000",
+      "launch_coord_frame": "J2000",
+      "launch_pos_x": "68000000",
+      "launch_pos_y": "-280000",
+      "launch_pos_z": "49500",
+      "launch_pos_unit": "0.1m",
+      "impact_time_code": "2026-07-01 07:57:10.000",
+      "impact_coord_frame": "J2000",
+      "impact_pos_x": "68000000",
+      "impact_pos_y": "860000",
+      "impact_pos_z": "51000",
+      "impact_pos_unit": "0.1m"
+    }
+  ]
+}</pre>
+    </details>
+  </fieldset>
+  <!--v-if-->
+  <!--v-if-->
+  <!--v-if--><button data-v-69a1f04c="" type="button" data-test="fit-compute">执行原102包拟合</button>
+  <!--v-if-->
+</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/views/BallisticFitView.spec.ts:18:27
+     16|     vi.stubGlobal('fetch', network)
+     17|     const wrapper = mount(BallisticFitView)
+     18|     const panel = wrapper.get('[aria-label="拟合结果"]')
+       |                           ^
+     19|     expect(panel.text()).toContain('等待计算')
+     20|     expect(panel.text()).toContain('完成左侧')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > A07 初始结果区说明下一步且主动作可直接使用
+Error: Unable to get [aria-label="重定时结果"] within: <section data-v-8016663e="" class="ballistic-retime-view ballistic-window-controls" aria-label="弹道重定时">
+  <h2 data-v-8016663e="">弹道重定时 · RETIMED_TRAJECTORY</h2>
+  <details data-v-8016663e="">
+    <summary data-v-8016663e="">高级协议说明（CSV字段与时间含义）</summary>
+    <p data-v-8016663e="">原CSV轨迹在ECEF地固系保持不变，新发射UTC改变后由原服务重新计算J2000 ECI位置和速度。UTC按原字符串提交，不加减北京时间。dt为累计相对首行毫秒，timeIntervalMs为相邻间隔毫秒。</p>
+    <p data-v-8016663e="">本接口仅支持原CSV：YYYY/MM/dd/HH/mm/ss.SSS 与 ECEF_X/Y/Z、ECEF_Vx/Vy/Vz、ECI_X/Y/Z、ECI_VX/VY/VZ 命名列。原20列 ECEF_X(m) 格式不能用于重定时。HTTP/MinIO/Excel输入能力仅属于窗口计算。</p>
+    <p data-v-8016663e="" class="ballistic-storage-notice">Web 始终省略 outputDir，输出使用服务管理目录。已有结果为当前会话真实登记的模拟/拟合/重定时文件，刷新不持久化；不扫描服务目录。</p>
+  </details>
+  <fieldset data-v-8016663e="" class="ballistic-native-form">
+    <legend data-v-8016663e="">1. 选择原CSV服务引用</legend><label data-v-8016663e="">来源<select data-v-8016663e="" data-test="retime-source-mode">
+        <option data-v-8016663e="" value="upload">原生上传CSV</option>
+        <option data-v-8016663e="" value="generated">服务已生成结果</option>
+      </select></label><label data-v-8016663e="">选择原CSV<input data-v-8016663e="" type="file" accept=".csv,text/csv"></label>
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+  </fieldset>
+  <fieldset data-v-8016663e="" class="ballistic-native-form">
+    <legend data-v-8016663e="">2. 原重定时参数</legend><button data-v-8016663e="" type="button" data-test="load-default-retime">加载原默认重定时参数</button>
+    <div data-v-8016663e="" class="ballistic-field-grid"><label data-v-8016663e="">任务名称（原默认 retimeTrajectory）<input data-v-8016663e="" data-retime-field="taskName"><span data-v-8016663e=""><input data-v-8016663e="" type="checkbox" data-retime-null="taskName"> 原 null</span></label><label data-v-8016663e="">目标ID（Swing默认 RET-001）<input data-v-8016663e="" data-retime-field="targetId"><span data-v-8016663e=""><input data-v-8016663e="" type="checkbox" data-retime-null="targetId"> 原 null</span></label><label data-v-8016663e="">新发射 UTC（原字面，不转换本地时区）<input data-v-8016663e="" data-retime-field="launchTimeUtc" placeholder="2026-07-02 07:57:00.000"></label></div>
+    <details data-v-8016663e="">
+      <summary data-v-8016663e="">实际提交预览（四原字段，outputDir省略）</summary><pre data-v-8016663e="">{
+  "taskName": "retimeTrajectory",
+  "targetId": "RET-001",
+  "trajectoryCsvPath": "",
+  "launchTimeUtc": "2026-07-01 09:00:00.000"
+}</pre>
+    </details>
+  </fieldset>
+  <!--v-if-->
+  <!--v-if--><button data-v-8016663e="" type="button" data-test="retime-compute">执行原弹道重定时</button>
+  <!--v-if-->
+</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/views/BallisticRetimeView.spec.ts:15:27
+     13|     vi.stubGlobal('fetch', network)
+     14|     const wrapper = mount(BallisticRetimeView)
+     15|     const panel = wrapper.get('[aria-label="重定时结果"]')
+       |                           ^
+     16|     expect(panel.text()).toContain('等待计算')
+     17|     expect(panel.text()).toContain('完成左侧')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > A07 初始结果区说明下一步且主动作可直接使用
+Error: Unable to get [aria-label="模拟结果"] within: <section data-v-1ba2f795="" class="ballistic-simulation-view ballistic-window-controls" aria-label="模拟弹道">
+  <h2 data-v-1ba2f795="">模拟弹道 · SYSTEM_SIMULATED_LAMBERT</h2>
+  <details data-v-1ba2f795="">
+    <summary data-v-1ba2f795="">高级协议说明（坐标、别名与动力学边界）</summary>
+    <p data-v-1ba2f795="">当前唯一正式模型：端点约束 Lambert 射击法 / 二体 RK4。起落点与物理发射 UTC 决定轨迹；不是窗口卫星的 orbitModel。impactTimeUtc 优先 impactTime；两者空/省略时由原系统估计落点时间。</p>
+    <p data-v-1ba2f795="">端点独立坐标口径：J2000 / ECI / ECIJ2000；ECEF / ITRF / WGS84ECEF；LLA / LLH / BLH / GEODETIC / WGS84 / WGS84LLA。大小写、空格、连字符、下划线按原Java规范化。WGS84 的 X=经度度，Y=纬度度，Z=高度米，unit 被原服务忽略；笛卡尔单位 m / meter / meters、km / kilometer / kilometers、0.1m / dm / package102 / 102（均0.1米），或原数值比例。</p>
+    <p data-v-1ba2f795="">所有时间为原 UTC 字符串，不转换北京时间。outputPointDurationSec 首个正数优先 outputStepSec，否则回退1秒，再由原服务要求至少0.001秒。taskStartTime / taskEndTime 仅任务元数据；初速度、integrationStepSec、boost、drag 等旧字段兼容保留但当前模型不用。phaseEvents 原值保留，当前只产生预留警告，不启用分段动力学。</p>
+    <p data-v-1ba2f795="" class="ballistic-storage-notice">Web 始终省略 outputDir，使用服务管理目录；不要求客户端输出目录。</p>
+  </details>
+  <fieldset data-v-1ba2f795="" class="ballistic-native-form">
+    <legend data-v-1ba2f795="">原 SimulationRequest 任务与端点</legend><button data-v-1ba2f795="" type="button" data-test="load-default-simulation">加载原默认模拟数据</button>
+    <!--v-if-->
+    <div data-v-1ba2f795="" class="ballistic-field-grid"><label data-v-1ba2f795="">任务名称（null/省略沿原缺省）<input data-v-1ba2f795="" data-simulation-field="taskName" type="text" value="defaultSimTask"></label><label data-v-1ba2f795="">目标标识<input data-v-1ba2f795="" data-simulation-field="targetId" type="text" value="SIM-001"></label><label data-v-1ba2f795="">发射 UTC（原字符串，必填）<input data-v-1ba2f795="" data-simulation-field="launchTimeUtc" type="text" value="2026-06-04 04:00:00.000"></label><label data-v-1ba2f795="">落点 UTC（可空，优先于impactTime）<input data-v-1ba2f795="" data-simulation-field="impactTimeUtc" type="text" value="2026-06-04 04:42:55.000"></label><label data-v-1ba2f795="">任务起始UTC<input data-v-1ba2f795="" data-simulation-field="taskStartTime" type="text" value="2026-06-04 04:00:00.000"></label><label data-v-1ba2f795="">任务结束UTC<input data-v-1ba2f795="" data-simulation-field="taskEndTime" type="text" value="2026-06-04 04:42:55.000"></label><label data-v-1ba2f795="">输出间隔（秒，非正沿原回退）<input data-v-1ba2f795="" data-simulation-field="outputPointDurationSec" type="text" inputmode="decimal" value="1"></label><label data-v-1ba2f795="">发射点 X<input data-v-1ba2f795="" data-simulation-field="launchPointX" type="text" inputmode="decimal" value="2167790.227"></label><label data-v-1ba2f795="">发射点 Y<input data-v-1ba2f795="" data-simulation-field="launchPointY" type="text" inputmode="decimal" value="4775481.109"></label><label data-v-1ba2f795="">发射点 Z<input data-v-1ba2f795="" data-simulation-field="launchPointZ" type="text" inputmode="decimal" value="3618557.253"></label><label data-v-1ba2f795="">发射点坐标系（原别名可输入）<input data-v-1ba2f795="" data-simulation-field="launchPointCoordFrame" type="text" value="J2000"></label><label data-v-1ba2f795="">发射点单位（原别名/比例）<input data-v-1ba2f795="" data-simulation-field="launchPointUnit" type="text" value="m"></label><label data-v-1ba2f795="">落点 X<input data-v-1ba2f795="" data-simulation-field="impactPointX" type="text" inputmode="decimal" value="3578635.76"></label><label data-v-1ba2f795="">落点 Y<input data-v-1ba2f795="" data-simulation-field="impactPointY" type="text" inputmode="decimal" value="3522525.227"></label><label data-v-1ba2f795="">落点 Z<input data-v-1ba2f795="" data-simulation-field="impactPointZ" type="text" inputmode="decimal" value="3919735.591"></label><label data-v-1ba2f795="">落点坐标系（原别名可输入）<input data-v-1ba2f795="" data-simulation-field="impactPointCoordFrame" type="text" value="J2000"></label><label data-v-1ba2f795="">落点单位（原别名/比例）<input data-v-1ba2f795="" data-simulation-field="impactPointUnit" type="text" value="m"></label></div>
+    <details data-v-1ba2f795="">
+      <summary data-v-1ba2f795="">高级设置：完整JSON与兼容字段</summary><label data-v-1ba2f795="">原生选择完整请求 JSON<input data-v-1ba2f795="" type="file" accept=".json,application/json"></label><label data-v-1ba2f795="" class="ballistic-json-label">完整原JSON（全部35字段与嵌套PhaseEvent，单一真实草稿）<textarea data-v-1ba2f795="" rows="16" data-test="simulation-input" spellcheck="false"></textarea></label>
+    </details>
+    <!--v-if-->
+    <!--v-if-->
+    <details data-v-1ba2f795="">
+      <summary data-v-1ba2f795="">实际提交预览（outputDir省略）</summary><pre data-v-1ba2f795="">{
+  "taskName": "defaultSimTask",
+  "targetId": "SIM-001",
+  "launchTimeUtc": "2026-06-04 04:00:00.000",
+  "impactTimeUtc": "2026-06-04 04:42:55.000",
+  "taskStartTime": "2026-06-04 04:00:00.000",
+  "taskEndTime": "2026-06-04 04:42:55.000",
+  "launchPointX": 2167790.227,
+  "launchPointY": 4775481.109,
+  "launchPointZ": 3618557.253,
+  "launchPointCoordFrame": "J2000",
+  "launchPointUnit": "m",
+  "impactPointX": 3578635.76,
+  "impactPointY": 3522525.227,
+  "impactPointZ": 3919735.591,
+  "impactPointCoordFrame": "J2000",
+  "impactPointUnit": "m",
+  "outputPointDurationSec": 1,
+  "outputStepSec": 1,
+  "phaseEvents": []
+}</pre>
+    </details>
+  </fieldset>
+  <!--v-if-->
+  <!--v-if--><button data-v-1ba2f795="" type="button" data-test="simulation-compute">执行原模拟弹道</button>
+  <!--v-if-->
+</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@2.4.11_@vue_d885477812f7b34afa27943426dce9da/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js:7182:15
+ ❯ src/views/BallisticSimulationView.spec.ts:15:27
+     13|     vi.stubGlobal('fetch', network)
+     14|     const wrapper = mount(BallisticSimulationView)
+     15|     const panel = wrapper.get('[aria-label="模拟结果"]')
+       |                           ^
+     16|     expect(panel.text()).toContain('等待计算')
+     17|     expect(panel.text()).toContain('完成左侧')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+

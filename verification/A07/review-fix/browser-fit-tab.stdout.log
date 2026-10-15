@@ -1,0 +1,9 @@
+### Ran Playwright code
+```js
+await page.getByRole('tab', { name: '目标弹道拟合' }).click();
+```
+### Page
+- Page URL: http://localhost:5173/
+- Page Title: 空间目标可见窗口规划
+### Snapshot
+- [Snapshot](.playwright-cli\page-2026-10-15T02-37-02-583Z.yml)

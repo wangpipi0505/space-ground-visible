@@ -1,0 +1,12 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/views/BallisticFitView.spec.ts (0 test)
+ ❯ src/views/BallisticSimulationView.spec.ts (0 test)
+ ❯ src/views/BallisticRetimeView.spec.ts (0 test)
+
+ Test Files  3 failed (3)
+      Tests  no tests
+   Start at  10:13:15
+   Duration  1.05s (transform 878ms, setup 0ms, import 0ms, tests 0ms, environment 1.52s)
+

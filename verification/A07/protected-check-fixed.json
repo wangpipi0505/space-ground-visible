@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-15T02:29:03.420784+00:00",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "G:/5-YG/space-ground-visible/verification/A07/verify-protected.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "finishedUtc": "2026-10-15T02:29:03.783401+00:00",
+  "exitCode": 0,
+  "stdoutSha256": "76ef702e95e1c7fcedfd1cd8879e1f9803bfe692d5ee9689f79af4c930a21fa6",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

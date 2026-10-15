@@ -27,6 +27,10 @@ describe('T22 原结果层级与真实点展示', () => {
     await wrapper.get('[data-test=offset-select]').setValue('1')
     expect(wrapper.text()).toContain('该偏移没有可见卫星或弧段')
     expect(wrapper.find('[data-test=trajectory-view]').exists()).toBe(false)
+    await wrapper.get('[data-test=edit-payloads]').trigger('click')
+    expect(wrapper.emitted('edit')?.at(-1)).toEqual(['payloads'])
+    await wrapper.get('[data-test=edit-search]').trigger('click')
+    expect(wrapper.emitted('edit')?.at(-1)).toEqual(['search'])
   })
   it('point0和全空如实说明，不生成人工轨迹', async () => {
     const value = offset(10)

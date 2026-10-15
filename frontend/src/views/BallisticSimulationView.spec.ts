@@ -1,14 +1,27 @@
 /// <reference types="node" />
 import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { flushPromises, mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import BallisticSimulationView from './BallisticSimulationView.vue'
 
 /** 页面真实原生输入→typed HTTP→共享文件流→引用事件；服务仍决定UTC/端点物理有效性。 */
 describe('T24 模拟页面与实际结果引用', () => {
+  /** A07：未计算时结果位置可发现，主动作与高级输入分离，初始挂载不发送请求。 */
+  it('A07 初始结果区说明下一步且主动作可直接使用', () => {
+    const network = vi.fn()
+    vi.stubGlobal('fetch', network)
+    const wrapper = mount(BallisticSimulationView)
+    const panel = wrapper.get('[aria-label="模拟结果"]')
+    expect(panel.find('.ballistic-empty-state strong').exists()).toBe(false)
+    expect(panel.text()).toContain('完成左侧')
+    expect(wrapper.get('[data-test=simulation-compute]').text()).toBe('开始模拟')
+    expect(wrapper.findAll('details[open]')).toHaveLength(0)
+    expect(network).not.toHaveBeenCalled()
+  })
   afterEach(() => vi.unstubAllGlobals())
-  const original = readFileSync('../test-data/reference/ballistic/target_trajectory_simulate_default.json', 'utf8')
-  const csv = readFileSync('../test-data/baseline/ballistic/simulate/trajectory-0.csv', 'utf8')
+  const original = readFileSync(resolve(__dirname, '../../../test-data/reference/ballistic/target_trajectory_simulate_default.json'), 'utf8')
+  const csv = readFileSync(resolve(__dirname, '../../../test-data/baseline/ballistic/simulate/trajectory-0.csv'), 'utf8')
   it('原JSON导入、核心编辑保留高级字段、原结果全文、201引用、完整四曲线、快照与失败恢复', async () => {
     let failure = false, registerFailure = true
     const fetchMock = vi.fn().mockImplementation((url: string) => {
@@ -34,7 +47,7 @@ describe('T24 模拟页面与实际结果引用', () => {
     await wrapper.get('[data-test=fit-register]').trigger('click'); await flushPromises()
     const references = wrapper.emitted('references')?.at(-1)?.[0] as Array<{ targetId: string; reference: { fileId: string } }>
     expect(references[0]?.targetId).toBe('SIM-001'); expect(references[0]?.reference.fileId).toBe('真实f1')
-    expect(wrapper.text()).toContain('完整CSV 2576 行')
+    expect(wrapper.get('[data-test=fit-trajectory]').text()).toContain('2576 点')
     expect(wrapper.findAll('svg')).toHaveLength(4)
     expect(wrapper.findAll('ol li').map(node => node.text())).toEqual(['第一条', '第二条'])
     expect(fetchMock.mock.calls.filter(([url]) => String(url).endsWith('/simulate'))).toHaveLength(1)

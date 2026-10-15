@@ -1,0 +1,19 @@
+{
+  "startedUtc": "2026-10-15T02:36:07.869025+00:00",
+  "finishedUtc": "2026-10-15T02:36:09.008124+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "G:/5-YG/space-ground-visible/frontend/node_modules/vitest/vitest.mjs",
+    "run",
+    "--root",
+    "G:/5-YG/space-ground-visible/frontend",
+    "src/views/BallisticFitView.spec.ts",
+    "src/views/BallisticSimulationView.spec.ts",
+    "src/views/BallisticRetimeView.spec.ts",
+    "--reporter=verbose"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\review-fix",
+  "exitCode": 0,
+  "stdoutSha256": "6a6d63c9b7e26b3acdd2cf66ce4b3ce50359f5835d18c213f82a71ec9bc14cfe",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

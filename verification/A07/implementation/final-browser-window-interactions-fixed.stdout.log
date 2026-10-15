@@ -1,0 +1,60 @@
+### Result
+{"metrics":[{"width":1920,"height":1080,"viewport":1920,"body":1920,"document":1920},{"width":390,"height":844,"viewport":390,"body":390,"document":390}],"zeroStatus":200,"zeroArcs":0,"lastCell":42.123456789,"payloadShortcut":true,"emptyEditActions":true,"invalidBlocked":true}
+### Ran Playwright code
+```js
+await (async page => {
+  const assert = (value, message) => { if (!value) throw Error(message) }
+  const view = page.locator('.ballistic-payload-view')
+  const metrics = []
+  for (const [width, height] of [[1920,1080],[390,844]]) {
+    await page.setViewportSize({ width, height })
+    await page.evaluate(() => window.scrollTo(0,0))
+    const metric = await page.evaluate(() => ({ viewport: innerWidth, body: document.body.scrollWidth, document: document.documentElement.scrollWidth }))
+    assert(metric.document <= width, `横向溢出 ${width}: ${JSON.stringify(metric)}`)
+    metrics.push({ width, height, ...metric })
+    await page.screenshot({ path: `G:/5-YG/space-ground-visible/verification/A07/implementation/final-window-${width}.png` })
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  const select = view.locator('[data-test=offset-select]')
+  const best = await select.inputValue()
+  await select.selectOption('0')
+  assert(await view.locator('[data-test=window-empty]').isVisible(), '零弧候选无空态')
+  await select.selectOption(best)
+  await view.locator('[data-test=show-trajectory]').first().click()
+  assert(await view.locator('[data-test=longitude-path]').count() === 1, '轨迹未展示')
+  await page.screenshot({ path: 'G:/5-YG/space-ground-visible/verification/A07/implementation/final-window-trajectory.png' })
+  await view.locator('[data-test=open-payload-settings]').click()
+  assert(await view.locator('[data-payload-satellite-id=MANUAL-1] details.ballistic-payload-item').getAttribute('open') !== null, '快捷入口未展开载荷')
+  for (const id of ['MANUAL-1','MANUAL-2']) {
+    await view.locator('[data-test=current-payload-satellite]').selectOption(id)
+    const payload = view.locator(`[data-payload-satellite-id=${id}] details.ballistic-payload-item`)
+    if (await payload.getAttribute('open') === null) await payload.locator('summary').first().click()
+    await payload.locator('[data-field=minDistanceKm] input').fill('1')
+    await payload.locator('[data-field=maxDistanceKm] input').fill('2')
+  }
+  // 六根数末格只发input，直接点击计算，以真实请求核对末格精度未被旧值覆盖。
+  await view.locator('[data-satellite-id=MANUAL-1] [data-orbit-field=meanAnomalyDeg]').fill('42.123456789')
+  const pending = page.waitForResponse(r => r.url().endsWith('/api/orbit/visibility/search'), { timeout: 240000 })
+  await view.locator('[data-test=compute-window]').click()
+  const r = await pending, request = r.request().postDataJSON(), response = await r.json()
+  assert(r.status() === 200 && response.best.visibleArcCount === 0, '严约束应返回零弧')
+  assert(request.satellites[0].meanAnomalyDeg === 42.123456789, '未失焦末格丢失')
+  await view.locator('[data-test=edit-search]').click()
+  assert(await view.locator('[data-option=startOffsetSec]').evaluate(el => document.activeElement === el), '空态未定位搜索输入')
+  await view.locator('[data-test=edit-payloads]').click()
+  assert(await view.locator('[data-test=current-payload-satellite]').evaluate(el => document.activeElement === el), '空态未定位载荷')
+  await view.locator('.ballistic-results-column').evaluate(el => { el.scrollTop = 0 })
+  await page.screenshot({ path: 'G:/5-YG/space-ground-visible/verification/A07/implementation/final-window-empty.png' })
+  const current = view.locator('[data-payload-satellite-id=MANUAL-2]')
+  await current.locator('[data-field=maxDistanceKm] input').fill('-2')
+  const searchesBefore = page.__a07.network.filter(r => r.url.endsWith('/search')).length
+  await view.locator('[data-test=compute-window]').click()
+  assert(await view.locator('[role=alert]').count() > 0, '非法载荷无错误')
+  assert(page.__a07.network.filter(r => r.url.endsWith('/search')).length === searchesBefore, '非法载荷发出请求')
+  assert(await view.locator('.ballistic-results-column [role=alert]').evaluate(el => document.activeElement === el), '错误摘要未聚焦')
+  await current.locator('[data-field=maxDistanceKm] input').fill('2')
+  page.__a07.interactions = { metrics, zeroStatus: r.status(), zeroArcs: response.best.visibleArcCount, lastCell: request.satellites[0].meanAnomalyDeg, payloadShortcut: true, emptyEditActions: true, invalidBlocked: true }
+  return page.__a07.interactions
+}
+)(page);
+```

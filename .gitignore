@@ -21,3 +21,6 @@ backend/orekit-data/.git/
 application-local.yml
 *.zip
 /.playwright-cli/
+## A07仅允许实际命令的原始双流证据；运行服务日志仍按原规则忽略。
+!verification/A07/**/*.stdout.log
+!verification/A07/**/*.stderr.log

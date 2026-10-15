@@ -18,14 +18,14 @@ const result = shallowRef<BallisticFitHttpResult>(), submitted = shallowRef<Ball
 const references = shallowRef<Record<number, GeneratedBallisticResult>>({})
 const runIdentity = ref(0)
 const fields: Array<{ key: keyof BallisticSimulationRequest; label: string; numeric?: boolean }> = [
-  { key: 'taskName', label: '任务名称（null/省略沿原缺省）' }, { key: 'targetId', label: '目标标识' },
-  { key: 'launchTimeUtc', label: '发射 UTC（原字符串，必填）' }, { key: 'impactTimeUtc', label: '落点 UTC（可空，优先于impactTime）' },
+  { key: 'taskName', label: '任务名称' }, { key: 'targetId', label: '目标标识' },
+  { key: 'launchTimeUtc', label: '发射 UTC' }, { key: 'impactTimeUtc', label: '落点 UTC（可空）' },
   { key: 'taskStartTime', label: '任务起始UTC' }, { key: 'taskEndTime', label: '任务结束UTC' },
-  { key: 'outputPointDurationSec', label: '输出间隔（秒，非正沿原回退）', numeric: true },
+  { key: 'outputPointDurationSec', label: '输出间隔（秒）', numeric: true },
   ...(['launch', 'impact'] as const).flatMap(prefix => [
     ...(['X', 'Y', 'Z'] as const).map(axis => ({ key: `${prefix}Point${axis}` as keyof BallisticSimulationRequest, label: `${prefix === 'launch' ? '发射' : '落'}点 ${axis}`, numeric: true })),
-    { key: `${prefix}PointCoordFrame` as keyof BallisticSimulationRequest, label: `${prefix === 'launch' ? '发射' : '落'}点坐标系（原别名可输入）` },
-    { key: `${prefix}PointUnit` as keyof BallisticSimulationRequest, label: `${prefix === 'launch' ? '发射' : '落'}点单位（原别名/比例）` },
+    { key: `${prefix}PointCoordFrame` as keyof BallisticSimulationRequest, label: `${prefix === 'launch' ? '发射' : '落'}点坐标系` },
+    { key: `${prefix}PointUnit` as keyof BallisticSimulationRequest, label: `${prefix === 'launch' ? '发射' : '落'}点单位` },
   ]),
 ]
 function message(failure: unknown): string { return failure instanceof Error ? failure.message : '请求失败，请检查服务连接' }
@@ -92,36 +92,50 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
 </script>
 
 <template>
-  <section class="ballistic-simulation-view ballistic-window-controls" aria-label="模拟弹道">
-    <h2>模拟弹道 · SYSTEM_SIMULATED_LAMBERT</h2>
-    <details><summary>高级协议说明（坐标、别名与动力学边界）</summary>
-    <p>当前唯一正式模型：端点约束 Lambert 射击法 / 二体 RK4。起落点与物理发射 UTC 决定轨迹；不是窗口卫星的 orbitModel。impactTimeUtc 优先 impactTime；两者空/省略时由原系统估计落点时间。</p>
-    <p>端点独立坐标口径：J2000 / ECI / ECIJ2000；ECEF / ITRF / WGS84ECEF；LLA / LLH / BLH / GEODETIC / WGS84 / WGS84LLA。大小写、空格、连字符、下划线按原Java规范化。WGS84 的 X=经度度，Y=纬度度，Z=高度米，unit 被原服务忽略；笛卡尔单位 m / meter / meters、km / kilometer / kilometers、0.1m / dm / package102 / 102（均0.1米），或原数值比例。</p>
-    <p>所有时间为原 UTC 字符串，不转换北京时间。outputPointDurationSec 首个正数优先 outputStepSec，否则回退1秒，再由原服务要求至少0.001秒。taskStartTime / taskEndTime 仅任务元数据；初速度、integrationStepSec、boost、drag 等旧字段兼容保留但当前模型不用。phaseEvents 原值保留，当前只产生预留警告，不启用分段动力学。</p>
-    <p class="ballistic-storage-notice">Web 始终省略 outputDir，使用服务管理目录；不要求客户端输出目录。</p>
-    </details>
-    <fieldset :disabled="computing || loadingInput" class="ballistic-native-form"><legend>原 SimulationRequest 任务与端点</legend>
-      <button type="button" data-test="load-default-simulation" @click="inputText = JSON.stringify(defaultInput, null, 2); inputName = ''; error = ''">加载原默认模拟数据</button>
-      <p v-if="inputName">已读取 {{ inputName }}（完整原文可编辑）</p>
-      <div v-if="editable" class="ballistic-field-grid"><label v-for="field in fields" :key="field.key">{{ field.label }}<input :value="editable[field.key] ?? ''" :data-simulation-field="field.key" type="text" :inputmode="field.numeric ? 'decimal' : undefined" @input="editField(field.key, field.numeric, $event)" /></label></div>
-      <details><summary>高级设置：完整JSON与兼容字段</summary><label>原生选择完整请求 JSON<input type="file" accept=".json,application/json" @change="chooseJson" /></label>
-      <label class="ballistic-json-label">完整原JSON（全部35字段与嵌套PhaseEvent，单一真实草稿）<textarea v-model="inputText" rows="16" data-test="simulation-input" spellcheck="false" /></label>
-      </details>
-      <p v-if="parsed.error" role="status">输入待纠正：{{ parsed.error }}</p>
-      <p v-if="parsed.value?.omittedOutputDir" data-test="simulation-storage-notice">导入含 outputDir：已明确改用服务管理目录，实际提交仅省略该字段，其余原值不变。</p>
-      <details v-if="parsed.value"><summary>实际提交预览（outputDir省略）</summary><pre>{{ JSON.stringify(parsed.value.request, null, 2) }}</pre></details>
-    </fieldset>
-    <p v-if="computing || loadingInput" role="status">{{ computing ? '正在执行原端点模拟，请等待服务响应…' : '正在读取本地JSON…' }}</p>
-    <p v-if="error" class="ballistic-error" role="alert">{{ error }}</p>
-    <button type="button" data-test="simulation-compute" :disabled="computing || loadingInput" @click="calculate">{{ computing ? '模拟请求进行中…' : '执行原模拟弹道' }}</button>
-    <section v-if="result && submitted" data-test="simulation-success" aria-label="本次原模拟结果">
-      <h3>原模拟已成功 · {{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
-      <p v-if="changed" role="status">输入已修改：结果和可选服务引用仍属于上次实际提交快照，请重新模拟获取新输入结果。</p>
-      <p>真实登记成功的结果可在“可视窗口计算”的窗口文件来源中显式选择；目标时间沿CSV历元，不自动平移。</p>
-      <div class="ballistic-actions"><button type="button" @click="exportInput">下载实际提交 JSON</button><button type="button" @click="exportResult">下载原模拟响应 JSON</button></div>
-      <details><summary>不可变实际提交快照（outputDir省略）</summary><pre data-test="simulation-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
-      <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}`" :file="file" :task-name="result.response.taskName" result-label="原模拟" @reference="updateReference(index, $event)" />
-    </section>
+  <section class="ballistic-simulation-view ballistic-workspace" aria-label="模拟弹道">
+    <header class="ballistic-workspace-header"><h2>模拟弹道</h2><span class="ballistic-source-badge">端点约束模拟</span></header>
+    <div class="ballistic-workbench-grid">
+      <div class="ballistic-input-column">
+        <div class="ballistic-input-scroll">
+        <fieldset :disabled="computing || loadingInput" class="ballistic-native-form ballistic-panel"><legend>任务与端点</legend>
+          <button type="button" data-test="load-default-simulation" @click="inputText = JSON.stringify(defaultInput, null, 2); inputName = ''; error = ''">加载默认数据</button>
+          <p v-if="inputName">已读取 {{ inputName }}</p>
+          <div v-if="editable" class="ballistic-field-grid"><label v-for="field in fields" :key="field.key">{{ field.label }}<input :value="editable[field.key] ?? ''" :data-simulation-field="field.key" type="text" :inputmode="field.numeric ? 'decimal' : undefined" @input="editField(field.key, field.numeric, $event)" /></label></div>
+          <p class="ballistic-field-hint">时间均为UTC。落点时间留空时自动估计；坐标值按各端点单位输入。</p>
+          <details><summary>高级设置 · JSON导入与编辑</summary>
+            <label>导入请求 JSON<input type="file" accept=".json,application/json" @change="chooseJson" /></label>
+            <label class="ballistic-json-label">完整请求 JSON<textarea v-model="inputText" rows="16" data-test="simulation-input" spellcheck="false" /></label>
+            <p v-if="parsed.value?.omittedOutputDir" data-test="simulation-storage-notice">导入的 outputDir 将省略，结果保存到服务管理目录。</p>
+          </details>
+          <details><summary>坐标、时间与模型说明</summary>
+            <p>端点约束 Lambert 射击法 / 二体 RK4 模型。发射和落点坐标分别指定坐标系与单位；所有时间按字面UTC提交，不转换本地时区。任务起止时间仅为任务信息。</p>
+            <p>坐标系支持 J2000 / ECI / ECIJ2000、ECEF / ITRF / WGS84ECEF、LLA / LLH / BLH / GEODETIC / WGS84 / WGS84LLA；大小写、空格、连字符和下划线按服务规则归一。WGS84下 X=经度（度）、Y=纬度（度）、Z=高度（米），忽略单位字段。</p>
+            <p>笛卡尔单位支持 m / meter / meters、km / kilometer / kilometers、0.1m / dm / package102 / 102（0.1米）及数值比例。</p>
+            <p>impactTimeUtc 优先于 impactTime；均为空时估计落点时间。outputPointDurationSec 的正数优先于 outputStepSec，否则回退1秒；最小间隔0.001秒。任务名称为null或省略时使用默认名称。</p>
+            <p>高级JSON保留全部35字段及 PhaseEvent。初速度、integrationStepSec、boost、drag 等兼容字段不参与当前模型；phaseEvents仅返回预留警告，不启用分段动力学。outputDir由服务管理。</p>
+          </details>
+          <p v-if="parsed.error" role="alert" class="ballistic-error">输入待纠正：{{ parsed.error }}</p>
+        </fieldset>
+        </div>
+        <div class="ballistic-compute-bar">
+          <p v-if="loadingInput" role="status">正在读取 JSON…</p>
+          <p v-if="error" class="ballistic-error" role="alert">{{ error }}</p>
+          <button type="button" class="ballistic-primary-action" data-test="simulation-compute" :disabled="computing || loadingInput" @click="calculate">{{ computing ? '正在模拟…' : '开始模拟' }}</button>
+        </div>
+      </div>
+      <aside class="ballistic-results-column ballistic-panel" aria-label="模拟结果" :aria-busy="computing">
+        <h3>模拟结果</h3>
+        <div v-if="!result" class="ballistic-empty-state" role="status"><p>{{ computing ? '正在模拟，请等待结果。' : '完成左侧任务与端点设置，点击“开始模拟”。' }}</p></div>
+        <section v-if="result && submitted" data-test="simulation-success" aria-label="本次模拟结果">
+          <h3>{{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
+          <p v-if="changed" role="status">输入已修改，当前结果来自上次计算。重新模拟以更新结果。</p>
+          <p class="ballistic-field-hint">结果可用于可视窗口计算，目标时间沿用CSV历元。</p>
+          <div class="ballistic-actions"><button type="button" @click="exportInput">下载输入 JSON</button><button type="button" @click="exportResult">下载结果 JSON</button></div>
+          <details><summary>计算输入快照</summary><pre data-test="simulation-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
+          <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}`" :file="file" :task-name="result.response.taskName" result-label="模拟" @reference="updateReference(index, $event)" />
+        </section>
+      </aside>
+    </div>
   </section>
 </template>
 

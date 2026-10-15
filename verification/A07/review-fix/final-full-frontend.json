@@ -1,0 +1,16 @@
+{
+  "startedUtc": "2026-10-15T02:36:18.256333+00:00",
+  "finishedUtc": "2026-10-15T02:37:06.311548+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "G:/5-YG/space-ground-visible/frontend/node_modules/vitest/vitest.mjs",
+    "run",
+    "--root",
+    "G:/5-YG/space-ground-visible/frontend",
+    "--reporter=verbose"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\review-fix",
+  "exitCode": 0,
+  "stdoutSha256": "ef995bd10c254a92b43ed6f31633ddf6d80e9b09ad54a4f8bc7f6537b4377dbc",
+  "stderrSha256": "d9f955cdc8ce67458047e565e0e6f84a119319b713a394867a78918a1b2a5c91"
+}

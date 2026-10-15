@@ -1,0 +1,17 @@
+{
+  "startedUtc": "2026-10-15T02:35:58.536441+00:00",
+  "finishedUtc": "2026-10-15T02:35:59.645368+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "G:/5-YG/space-ground-visible/frontend/node_modules/vitest/vitest.mjs",
+    "run",
+    "--root",
+    "G:/5-YG/space-ground-visible/frontend",
+    "src/views/BallisticFitView.spec.ts",
+    "--reporter=verbose"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\review-fix",
+  "exitCode": 1,
+  "stdoutSha256": "2785c0e671afa284a4fa20c540af770b6ab38cdf0eba4e402fb57a544d1fb500",
+  "stderrSha256": "c8c2b985a4995461a29652958ee173b5b9fd37fe771f4c93de3cf04bfc250c6b"
+}

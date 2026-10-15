@@ -1,0 +1,100 @@
+{
+  "verifiedUtc": "2026-10-15T02:39:25.808988+00:00",
+  "sourceFiles": 89,
+  "changedFiles": [
+    "frontend/src/components/BallisticFitFileResult.vue",
+    "frontend/src/views/BallisticFitView.spec.ts"
+  ],
+  "sourceManifestSha256": "fc7a485db5dd1e6e095003217a33fb32c0d3dfc596ed09855901615bc5404312",
+  "browserStateSha256": "1b80b7f8119a30b56fc9aecbad73ba5f23dff201713a2731b783e1aeae4fcc4b",
+  "comparisons": [
+    {
+      "name": "fit-1.csv",
+      "bytes": 327928,
+      "downloadedSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "serviceSha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2",
+      "equal": true
+    },
+    {
+      "name": "fit-2.csv",
+      "bytes": 6475,
+      "downloadedSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "serviceSha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18",
+      "equal": true
+    },
+    {
+      "name": "原响应JSON下载",
+      "bytes": 3195,
+      "downloadedSha256": "d71a0a51187b51dbfc87e2950742d86c717823ff3e21a167930073c89729e10a",
+      "responseSha256": "d71a0a51187b51dbfc87e2950742d86c717823ff3e21a167930073c89729e10a",
+      "equal": true
+    }
+  ],
+  "status": 200,
+  "pointCounts": [
+    1633,
+    31
+  ],
+  "warningCounts": [
+    8,
+    6
+  ],
+  "screens": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "documentWidth": 1440,
+      "download": {
+        "top": 506.5,
+        "bottom": 539.5,
+        "left": 885,
+        "right": 959.8125
+      },
+      "firstCurve": {
+        "top": 703.5,
+        "bottom": 897.28125,
+        "left": 885,
+        "right": 1411
+      },
+      "warningsClosed": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "download": {
+        "top": 506.5,
+        "bottom": 539.5,
+        "left": 1173,
+        "right": 1247.8125
+      },
+      "firstCurve": {
+        "top": 703.5,
+        "bottom": 968.015625,
+        "left": 1173,
+        "right": 1891
+      },
+      "warningsClosed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "download": {
+        "top": 342,
+        "bottom": 375,
+        "left": 21,
+        "right": 95.8125
+      },
+      "firstCurve": {
+        "top": 560,
+        "bottom": 688.203125,
+        "left": 21,
+        "right": 369
+      },
+      "warningsClosed": true
+    }
+  ],
+  "keyboardExpandedWarningCount": 8,
+  "browserErrors": []
+}

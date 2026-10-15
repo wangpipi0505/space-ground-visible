@@ -1,0 +1,12 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/utils/ballisticRetime.spec.ts (0 test)
+ ❯ src/utils/ballisticFit.spec.ts (0 test)
+ ❯ src/utils/ballisticSimulation.spec.ts (0 test)
+
+ Test Files  3 failed | 25 passed (28)
+      Tests  119 passed (119)
+   Start at  10:22:17
+   Duration  46.82s (transform 4.76s, setup 0ms, import 25.04s, tests 63.35s, environment 13.13s)
+

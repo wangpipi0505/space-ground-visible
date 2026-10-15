@@ -1,0 +1,34 @@
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/utils/ballisticFit.spec.ts [ src/utils/ballisticFit.spec.ts ]
+Error: ENOENT: no such file or directory, open 'G:\5-YG\space-ground-visible\verification\runtime\A07\test-data\reference\ballistic\target_trajectory_fit_package102_default.json'
+ ❯ src/utils/ballisticFit.spec.ts:8:20
+      6| /** 原输入和原黄金来自冻结回归数据；不使用当前算法输出生成测试期望。 */
+      7| describe('T23 原102输入与CSV', () => {
+      8|   const original = readFileSync('../test-data/reference/ballistic/targ…
+       |                    ^
+      9|   const golden0 = readFileSync('../test-data/baseline/ballistic/fit/tr…
+     10|   const golden1 = readFileSync('../test-data/baseline/ballistic/fit/tr…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/utils/ballisticRetime.spec.ts [ src/utils/ballisticRetime.spec.ts ]
+Error: ENOENT: no such file or directory, open 'G:\5-YG\space-ground-visible\verification\runtime\A07\test-data\baseline\ballistic\retime\trajectory-0.csv'
+ ❯ src/utils/ballisticRetime.spec.ts:10:18
+      8| /** 原黄金22列；变体只改输入排布/未知文本以验证显示，不作为任何算法数值基准。 */
+      9| describe('T25 重定时完整CSV命名列', () => {
+     10|   const golden = readFileSync('../test-data/baseline/ballistic/retime/…
+       |                  ^
+     11|   it('22列2576行全部解析，横轴由UTC差，dt累计且interval相邻，拟合模式仍拒绝22列', () => {
+     12|     const points = parseFitCsv(golden, 'retime')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/utils/ballisticSimulation.spec.ts [ src/utils/ballisticSimulation.spec.ts ]
+Error: ENOENT: no such file or directory, open 'G:\5-YG\space-ground-visible\verification\runtime\A07\test-data\reference\ballistic\target_trajectory_simulate_default.json'
+ ❯ src/utils/ballisticSimulation.spec.ts:8:29
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+

@@ -1,0 +1,27 @@
+{
+  "startedUtc": "2026-10-15T02:42:43.859733+00:00",
+  "argv": [
+    "git",
+    "merge-base",
+    "--is-ancestor",
+    "origin/main",
+    "HEAD"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07",
+  "finishedUtc": "2026-10-15T02:42:43.882646+00:00",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A07/git-delivery-check/pre-push-ancestor.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "verification/A07/git-delivery-check/pre-push-ancestor.stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A07/root-gates/pre-push-ancestor.json",
+    "sha256": "a8187a3b4f808c665a204da9c1e4c432248f870afa6b4c7e8c380a98864185b1"
+  }
+}

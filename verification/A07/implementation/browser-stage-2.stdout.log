@@ -1,0 +1,8 @@
+### Error
+Error: locator.evaluate: Error: strict mode violation: locator('.ballistic-workspace') resolved to 2 elements:
+    1) <section aria-label="弹道载荷配置" class="ballistic-payload-view ballistic-workspace">…</section> aka getByRole('region', { name: '弹道载荷配置' })
+    2) <section data-v-69a1f04c="" aria-label="102包轨迹拟合" class="ballistic-fit-view ballistic-workspace">…</section> aka getByText('102包轨迹拟合任务与观测加载默认数据新增102')
+
+Call log:
+[2m  - waiting for locator('.ballistic-workspace')[22m
+

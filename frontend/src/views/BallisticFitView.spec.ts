@@ -1,14 +1,27 @@
 /// <reference types="node" />
 import { flushPromises, mount } from '@vue/test-utils'
 import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import BallisticFitView from './BallisticFitView.vue'
 import BallisticFitFileResult from '../components/BallisticFitFileResult.vue'
 
 /** 组件真实输入事件与HTTP封装；一次失败仅影响所属目标，重新计算清除旧结果。 */
 describe('T23 拟合页面状态', () => {
-  const original = readFileSync('../test-data/reference/ballistic/target_trajectory_fit_package102_default.json', 'utf8')
-  const csv = readFileSync('../test-data/baseline/ballistic/fit/trajectory-1.csv', 'utf8')
+  const original = readFileSync(resolve(__dirname, '../../../test-data/reference/ballistic/target_trajectory_fit_package102_default.json'), 'utf8')
+  const csv = readFileSync(resolve(__dirname, '../../../test-data/baseline/ballistic/fit/trajectory-1.csv'), 'utf8')
+  /** A07：未计算时结果位置可发现，主动作与高级输入分离，初始挂载不发送请求。 */
+  it('A07 初始结果区说明下一步且主动作可直接使用', () => {
+    const network = vi.fn()
+    vi.stubGlobal('fetch', network)
+    const wrapper = mount(BallisticFitView)
+    const panel = wrapper.get('[aria-label="拟合结果"]')
+    expect(panel.find('.ballistic-empty-state strong').exists()).toBe(false)
+    expect(panel.text()).toContain('完成左侧')
+    expect(wrapper.get('[data-test=fit-compute]').text()).toBe('开始拟合')
+    expect(wrapper.findAll('details[open]')).toHaveLength(0)
+    expect(network).not.toHaveBeenCalled()
+  })
   afterEach(() => vi.unstubAllGlobals())
   function setup() {
     let failedCompute = false
@@ -27,6 +40,39 @@ describe('T23 拟合页面状态', () => {
     vi.stubGlobal('fetch', requests)
     return { requests, failCompute: () => { failedCompute = true }, restoreRegister: () => { failedRegister = false }, preview: (failed: boolean) => { failedPreview = failed }, download: (failed: boolean) => { failedDownload = failed } }
   }
+  /** A07审查修复：长告警默认收起，数量可发现；原文、顺序及独立下载/完整轨迹入口保留。 */
+  it('A07 计算告警默认折叠且可展开全部原文，下载和轨迹位于折叠区之外', async () => {
+    setup()
+    const warnings = Array.from({ length: 8 }, (_, index) => `原告警第${index + 1}条：保留服务返回的完整说明与标点。`)
+    const wrapper = mount(BallisticFitFileResult, { props: { taskName: 'task', file: { targetId: '乙', model: 'ORBITAL_TWO_BODY', csvPath: 'server/乙.csv', pointCount: 31, warnings } } })
+    await flushPromises()
+    const warningList = wrapper.get('ol[aria-label="计算告警"]')
+    const disclosure = warningList.element.closest('details')
+    expect(disclosure).not.toBeNull()
+    expect(disclosure!.open).toBe(false)
+    expect(disclosure!.querySelector('summary')?.textContent).toBe('计算告警（8条）')
+    expect(warningList.findAll('li').map((item) => item.text())).toEqual(warnings)
+    disclosure!.open = true
+    await wrapper.vm.$nextTick()
+    expect(warningList.findAll('li').map((item) => item.text())).toEqual(warnings)
+    expect(disclosure!.contains(wrapper.get('[data-test=fit-download]').element)).toBe(false)
+    expect(disclosure!.contains(wrapper.get('[data-test=fit-trajectory]').element)).toBe(false)
+  })
+  it('A07 无计算告警时不显示告警折叠入口', async () => {
+    setup()
+    const wrapper = mount(BallisticFitFileResult, { props: { taskName: 'task', file: { targetId: '乙', model: 'ORBITAL_TWO_BODY', csvPath: 'server/乙.csv', pointCount: 31, warnings: [] } } })
+    await flushPromises()
+    expect(wrapper.find('ol[aria-label="计算告警"]').exists()).toBe(false)
+    expect(wrapper.findAll('summary').some((summary) => summary.text().includes('计算告警'))).toBe(false)
+  })
+  it('A07 观测表以中文和单位呈现，协议列名可在提示查看且时间不截短', () => {
+    const wrapper = mount(BallisticFitView)
+    expect(wrapper.get('thead').text()).toContain('位置 X（0.1米）')
+    expect(wrapper.get('th[title="tack3d_time_code"]').text()).toBe('观测时间码')
+    expect(wrapper.findAll('thead th[title]')).toHaveLength(28)
+    expect(wrapper.get('[data-fit-cell="0/tack3d_time_code"]').attributes('style')).toContain('min-width: 220px')
+    expect(wrapper.get('.ballistic-workspace-header').text()).toBe('102包轨迹拟合')
+  })
   it('原生JSON导入只省略outputDir，双目标登记隔离、重试不重算、全点曲线原点、分页与失败恢复', async () => {
     const state = setup()
     const wrapper = mount(BallisticFitView)
@@ -38,14 +84,17 @@ describe('T23 拟合页面状态', () => {
     const submitted = JSON.parse(String(state.requests.mock.calls.find(([url]) => String(url).endsWith('/package102'))?.[1]?.body))
     const expected = JSON.parse(original); delete expected.outputDir
     expect(submitted).toEqual(expected)
+    expect(wrapper.get('[aria-label=拟合结果]').find('[data-test=fit-success]').exists()).toBe(true)
+    expect(wrapper.get('[aria-label=拟合结果]').find('.ballistic-empty-state').exists()).toBe(false)
     const results = wrapper.findAllComponents(BallisticFitFileResult)
     expect(results).toHaveLength(2)
     expect(results[0]!.text()).toContain('甲登记暂时失败')
     expect(results[0]!.find('[data-test=fit-download]').exists()).toBe(false)
+    expect(results[1]!.findAll('details[open]')).toHaveLength(0)
     expect(results[1]!.text()).toContain('警告第一条')
     expect(results[1]!.text()).toContain('警告第二条')
     expect(results[1]!.findAll('[data-test=fit-original-marker]')).toHaveLength(16)
-    expect(results[1]!.text()).toContain('完整CSV 31 行')
+    expect(results[1]!.get('[data-test=fit-trajectory]').text()).toContain('31 点')
     state.restoreRegister()
     await results[0]!.get('[data-test=fit-register]').trigger('click'); await flushPromises()
     expect(results[0]!.text()).not.toContain('甲登记暂时失败')
@@ -82,11 +131,15 @@ describe('T23 拟合页面状态', () => {
     await wrapper.get('textarea').setValue(original)
     await wrapper.get('[data-test=fit-compute]').trigger('click')
     expect(wrapper.get('[data-test=fit-compute]').attributes('disabled')).toBeDefined()
+    expect(wrapper.get('[aria-label=拟合结果]').attributes('aria-busy')).toBe('true')
+    expect(wrapper.get('[aria-label=拟合结果]').text()).toContain('正在拟合')
     await wrapper.get('[data-test=fit-compute]').trigger('click')
     expect(state.requests).toHaveBeenCalledTimes(1)
     finish?.(new Response('{"error":"原失败"}', { status: 400 }))
     await flushPromises()
     expect(wrapper.text()).toContain('原失败')
+    expect(wrapper.get('[aria-label=拟合结果]').attributes('aria-busy')).toBe('false')
+    expect(wrapper.get('[aria-label=拟合结果]').text()).toContain('完成左侧')
   })
   it('缺文件后原服务注销旧引用，恢复只重新登记并用新ID读文件', async () => {
     let expired = false

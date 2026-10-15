@@ -1,13 +1,26 @@
 /// <reference types="node" />
 import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { flushPromises, mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import BallisticRetimeView from './BallisticRetimeView.vue'
 
 /** 完整页面输入与生命周期；原后端才验证UTC和CSV，组件测试HTTP mock仅隔离网络。 */
 describe('T25 重定时页面真实引用', () => {
+  /** A07：未计算时结果位置可发现，主动作与高级输入分离，初始挂载不发送请求。 */
+  it('A07 初始结果区说明下一步且主动作可直接使用', () => {
+    const network = vi.fn()
+    vi.stubGlobal('fetch', network)
+    const wrapper = mount(BallisticRetimeView)
+    const panel = wrapper.get('[aria-label="重定时结果"]')
+    expect(panel.find('.ballistic-empty-state strong').exists()).toBe(false)
+    expect(panel.text()).toContain('完成左侧')
+    expect(wrapper.get('[data-test=retime-compute]').text()).toBe('开始重定时')
+    expect(wrapper.findAll('details[open]')).toHaveLength(0)
+    expect(network).not.toHaveBeenCalled()
+  })
   afterEach(() => vi.unstubAllGlobals())
-  const csv = readFileSync('../test-data/baseline/ballistic/retime/trajectory-0.csv', 'utf8')
+  const csv = readFileSync(resolve(__dirname, '../../../test-data/baseline/ballistic/retime/trajectory-0.csv'), 'utf8')
   const reference = { fileId: '源1', serverPath: 'server/source.csv', originalName: '源.csv', sizeBytes: 561736, contentType: 'text/csv' }
   const candidate = { targetId: 'SIM-001', targetName: '模拟/default/SIM-001', reference }
   const response = { taskName: 'T04-retime', targetCount: 1, files: [{ targetId: 'RETIMED-TGT', model: 'RETIMED_TRAJECTORY', csvPath: 'server/output.csv', pointCount: 2576, warnings: [] }] }
@@ -83,7 +96,7 @@ describe('T25 重定时页面真实引用', () => {
     await wrapper.get('[data-test=retime-compute]').trigger('click'); await flushPromises()
     const request = JSON.parse(String(fetchMock.mock.calls.find(([url]) => url.endsWith('/retime'))?.[1]?.body))
     expect(request).toEqual({ taskName: 'T04-retime', targetId: 'RET-001', trajectoryCsvPath: reference.serverPath, launchTimeUtc: '2026-07-02 07:57:00.000' })
-    expect(wrapper.findAll('svg')).toHaveLength(4); expect(wrapper.text()).toContain('完整CSV 2576 行')
+    expect(wrapper.findAll('svg')).toHaveLength(4); expect(wrapper.get('[data-test=fit-trajectory]').text()).toContain('2576 点')
     expect(wrapper.emitted('references')?.at(-1)?.[0]).toEqual([{ targetId: 'RETIMED-TGT', targetName: '重定时/T04-retime/RETIMED-TGT', reference: { ...reference, fileId: '输出1', serverPath: 'server/output.csv' } }])
     await wrapper.get('[data-retime-field=launchTimeUtc]').setValue('原非法UTC')
     expect(wrapper.text()).toContain('输入已修改'); expect(wrapper.get('[data-test=retime-submitted]').text()).toContain('2026-07-02 07:57:00.000')

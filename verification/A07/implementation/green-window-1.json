@@ -1,0 +1,20 @@
+{
+  "startedUtc": "2026-10-15T02:17:10.178969+00:00",
+  "finishedUtc": "2026-10-15T02:17:22.092700+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "G:/5-YG/space-ground-visible/frontend/node_modules/vitest/vitest.mjs",
+    "run",
+    "--root",
+    "G:/5-YG/space-ground-visible/frontend",
+    "src/views/BallisticPayloadConfigurationView.spec.ts",
+    "src/components/BallisticWindowResults.spec.ts",
+    "src/components/BallisticWindowControls.spec.ts",
+    "src/components/StandardPayloadEditor.spec.ts",
+    "src/views/BallisticSwingAlignment.spec.ts"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\implementation",
+  "exitCode": 0,
+  "stdoutSha256": "11d671b5f6238fc3f0b60b8e691e84bccb1e06149c0c38e2cb55370e48c7e1d5",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

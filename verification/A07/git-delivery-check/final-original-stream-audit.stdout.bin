@@ -1,0 +1,99 @@
+{
+  "verifiedCommands": 78,
+  "originalStreams": 156,
+  "nonzeroExits": [
+    {
+      "path": "verification/A07/git-delivery-check/root-fix-boundary.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/implementation/browser-stage-2.json",
+      "exitCode": 1,
+      "cliReportedError": true
+    },
+    {
+      "path": "verification/A07/implementation/final-browser-window-interactions.json",
+      "exitCode": 1,
+      "cliReportedError": true
+    },
+    {
+      "path": "verification/A07/implementation/fit-ui/polish-red.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/implementation/fit-ui/red.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/implementation/fit-ui/setup-failure.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/implementation/full-frontend.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/implementation/red-payload-shortcut.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/implementation/red-window.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/implementation/stable-browser-recovery-collect.json",
+      "exitCode": 1,
+      "cliReportedError": true
+    },
+    {
+      "path": "verification/A07/protected-check.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/review-fix/browser-default-fit.json",
+      "exitCode": 1,
+      "cliReportedError": true
+    },
+    {
+      "path": "verification/A07/review-fix/red-warning-disclosure-utf8.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    },
+    {
+      "path": "verification/A07/review-fix/red-warning-disclosure.json",
+      "exitCode": 1,
+      "cliReportedError": false
+    }
+  ],
+  "cliSemanticErrors": [
+    {
+      "path": "verification/A07/implementation/browser-stage-2.json",
+      "exitCode": 1,
+      "cliReportedError": true
+    },
+    {
+      "path": "verification/A07/implementation/final-browser-window-interactions.json",
+      "exitCode": 1,
+      "cliReportedError": true
+    },
+    {
+      "path": "verification/A07/implementation/stable-browser-recovery-collect.json",
+      "exitCode": 1,
+      "cliReportedError": true
+    },
+    {
+      "path": "verification/A07/review-fix/browser-default-fit.json",
+      "exitCode": 1,
+      "cliReportedError": true
+    }
+  ],
+  "scope": "原双流SHA核对，不把已保留的失败或CLI退出0冒称产品验证通过"
+}

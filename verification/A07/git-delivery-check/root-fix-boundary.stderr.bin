@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "G:\5-YG\space-ground-visible\verification\A07\verify-fix-boundary.py", line 27, in <module>
+    assert script(before) == script(current)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

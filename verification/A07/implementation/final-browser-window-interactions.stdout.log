@@ -1,0 +1,8 @@
+### Error
+Error: locator.click: Error: strict mode violation: locator('.ballistic-payload-view').locator('[data-payload-satellite-id=MANUAL-2] details.ballistic-payload-item').locator('summary') resolved to 2 elements:
+    1) <summary>…</summary> aka getByText('载荷2 · SPACE距离 1000–4000 km')
+    2) <summary>单位与约束说明</summary> aka getByText('单位与约束说明').nth(1)
+
+Call log:
+[2m  - waiting for locator('.ballistic-payload-view').locator('[data-payload-satellite-id=MANUAL-2] details.ballistic-payload-item').locator('summary')[22m
+

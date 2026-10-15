@@ -1,0 +1,15 @@
+{
+  "startedUtc": "2026-10-15T02:21:45.515509+00:00",
+  "finishedUtc": "2026-10-15T02:21:46.401957+00:00",
+  "argv": [
+    "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:/Users/Administrator/AppData/Local/npm-cache/_npx/31e32ef8478fbf80/node_modules/@playwright/cli/playwright-cli.js",
+    "-s=A07impl",
+    "run-code",
+    "async page => {\n  await page.getByRole('tab', { name: '可视窗口计算', exact: true }).click()\n  await page.screenshot({ path: 'G:/5-YG/space-ground-visible/verification/A07/implementation/stage2-window-1440.png' })\n  const window = await page.locator('.ballistic-payload-view').evaluate(el => ({ width: el.clientWidth, scrollWidth: el.scrollWidth }))\n  await page.getByRole('tab', { name: '目标弹道拟合', exact: true }).click()\n  await page.screenshot({ path: 'G:/5-YG/space-ground-visible/verification/A07/implementation/stage2-fit-1440.png' })\n  return { window, bodyWidth: await page.evaluate(() => document.body.scrollWidth) }\n}\n"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\implementation",
+  "exitCode": 0,
+  "stdoutSha256": "a6204a7eee42f385949cac50beece5c82493cccf05852fba3b4f4bd10f3cec93",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

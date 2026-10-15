@@ -1,0 +1,25 @@
+{
+  "startUtc": "2026-10-15T02:13:14.818171+00:00",
+  "endUtc": "2026-10-15T02:13:16.363150+00:00",
+  "argv": [
+    "C:/Program Files/nodejs/node.exe",
+    "G:\\5-YG\\space-ground-visible\\frontend\\node_modules\\vitest\\vitest.mjs",
+    "run",
+    "--root",
+    "G:\\5-YG\\space-ground-visible\\frontend",
+    "--config",
+    "G:\\5-YG\\space-ground-visible\\frontend\\vitest.config.ts",
+    "src/views/BallisticFitView.spec.ts",
+    "src/views/BallisticSimulationView.spec.ts",
+    "src/views/BallisticRetimeView.spec.ts"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07\\fit-ui",
+  "exitCode": 1,
+  "sha256": {
+    "frontend\\src\\views\\BallisticFitView.spec.ts": "86c0469110e3945edfb3b86592f164dfe0799e584e404639e6851b976fc3908f",
+    "frontend\\src\\views\\BallisticRetimeView.spec.ts": "447d486232dff14f3c3c612ecdea1363db957dcef2db6266fe85f2474466c31e",
+    "frontend\\src\\views\\BallisticSimulationView.spec.ts": "0e702407fee2cf6a3b32bcb5eae16ad23f73a83f2cf545d4c091ad005fdaba54"
+  },
+  "stdoutSha256": "5f015096bb8b1db3855d7c23f98fb0916c35393cd06238adfa34c47509965019",
+  "stderrSha256": "0a26fda37e1e4ae31db7011b1b8cf1223e65cb2f868e235f23bf6c374bb01f36"
+}

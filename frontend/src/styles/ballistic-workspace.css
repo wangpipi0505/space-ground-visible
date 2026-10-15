@@ -1,0 +1,113 @@
+/* A07 弹道工程工作台专用主题。所有选择器均限定弹道根，空间工作台保留原层叠和控件尺寸。 */
+.ballistic-workspace { color: #20354c; font: 14px/1.5 'Segoe UI', 'Microsoft YaHei', sans-serif; min-width: 0; }
+.ballistic-workspace *, .ballistic-workspace *::before, .ballistic-workspace *::after { box-sizing: border-box; }
+.ballistic-workspace :is(h2,h3,h4,p) { margin: 0; }
+.ballistic-workspace :is(p,h3,h4) { overflow-wrap: anywhere; }
+.ballistic-workspace h2 { font-size: 18px; font-weight: 650; }
+.ballistic-workspace h3 { font-size: 15px; font-weight: 650; }
+.ballistic-workspace h4 { font-size: 14px; }
+.ballistic-workspace :is(.ballistic-page-header,.ballistic-workspace-header) { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.ballistic-workspace .ballistic-workbench-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 16px; align-items: start; min-width: 0; }
+.ballistic-workspace .ballistic-input-column { min-width: 0; }
+.ballistic-workspace .ballistic-input-scroll { max-height: calc(100dvh - 225px); min-height: 440px; overflow-y: auto; scrollbar-gutter: stable; padding-right: 4px; display: grid; gap: 12px; }
+.ballistic-workspace:is(.ballistic-fit-view,.ballistic-simulation-view,.ballistic-retime-view) .ballistic-input-scroll { max-height: calc(100dvh - 270px); min-height: 0; }
+.ballistic-workspace :is(.ballistic-panel,.ballistic-native-form) { min-width: 0; margin: 0; padding: 12px 16px; border: 1px solid #dce5ef; border-radius: 6px; background: #fff; }
+.ballistic-workspace .ballistic-panel > .ballistic-native-form { padding: 0; border: 0; }
+.ballistic-workspace legend { font-size: 15px; font-weight: 650; padding: 0 6px; }
+.ballistic-workspace .ballistic-results-column { max-height: calc(100dvh - 170px); overflow-y: auto; min-height: 450px; padding: 16px; position: sticky; top: 12px; }
+.ballistic-workspace .ballistic-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.ballistic-workspace .ballistic-section-heading label { display: flex; align-items: center; gap: 8px; }
+.ballistic-workspace .ballistic-section-heading label { white-space: nowrap; }
+.ballistic-workspace .ballistic-orbit-toolbar { display: flex; gap: 8px; align-items: end; }
+.ballistic-workspace .ballistic-orbit-toolbar label { flex: 1; }
+.ballistic-workspace :is(.ballistic-generator,.ballistic-catalog) { margin-right: 12px; }
+.ballistic-workspace :is(.ballistic-generator,.ballistic-catalog):not([open]) { display: inline-block; }
+.ballistic-workspace .ballistic-muted { color: #64748b; font-size: 13px; }
+.ballistic-workspace .ballistic-badge { display: inline-flex; padding: 3px 8px; border: 1px solid #dce5ef; border-radius: 4px; background: #f4f7fa; color: #52677d; font-size: 12px; white-space: nowrap; }
+.ballistic-workspace label { display: grid; gap: 4px; font-size: 13px; color: #40566e; min-width: 0; }
+.ballistic-workspace :is(input,select,textarea,button) { max-width: 100%; min-width: 0; font: inherit; }
+.ballistic-workspace :is(input:not(.el-input__inner),select,textarea) { width: 100%; border: 1px solid #c6d3e0; border-radius: 4px; padding: 6px 9px; color: #20354c; background: #fff; }
+.ballistic-workspace :is(input:not(.el-input__inner),select) { height: 34px; }
+.ballistic-workspace input[type=file] { padding: 4px; }
+.ballistic-workspace button:not(.el-button) { min-height: 32px; padding: 5px 10px; border: 1px solid #c6d3e0; border-radius: 4px; background: #fff; color: #2f689b; cursor: pointer; white-space: nowrap; }
+.ballistic-workspace button:not(.el-button):hover:enabled { background: #edf4fa; border-color: #2f689b; }
+.ballistic-workspace :is(input,select,button,summary,textarea):focus-visible { outline: 2px solid #2f689b; outline-offset: 2px; }
+.ballistic-workspace :disabled { opacity: .65; cursor: default; }
+.ballistic-workspace .ballistic-field-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 12px; margin: 8px 0; }
+.ballistic-workspace .ballistic-search-fields { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.ballistic-workspace .ballistic-search-summary { padding: 8px 10px; background: #f4f7fa; border-radius: 4px; font-variant-numeric: tabular-nums; }
+.ballistic-workspace details { min-width: 0; }
+.ballistic-workspace summary { cursor: pointer; color: #52677d; font-size: 13px; padding: 8px 0; }
+.ballistic-workspace .ballistic-table-scroll { max-width: 100%; overflow: auto; max-height: 320px; margin: 8px 0; border: 1px solid #dce5ef; border-radius: 4px; }
+.ballistic-workspace table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+.ballistic-workspace :is(th,td) { text-align: left; padding: 7px 8px; border: 0; border-bottom: 1px solid #e4ebf2; }
+.ballistic-workspace th { background: #f4f7fa; font-size: 12px; font-weight: 600; position: sticky; top: 0; z-index: 1; }
+.ballistic-workspace td input { min-width: 110px; font-family: Consolas, monospace; }
+.ballistic-workspace td input[data-orbit-field=epochUtc] { min-width: 205px; }
+.ballistic-workspace .ballistic-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.ballistic-workspace .ballistic-compute-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; position: sticky; bottom: 0; z-index: 2; padding: 12px 16px; margin-top: 8px; background: #fff; border: 1px solid #dce5ef; border-radius: 6px; box-shadow: 0 -4px 16px #20354c08; }
+.ballistic-workspace .ballistic-compute-bar > span { color: #64748b; font-size: 13px; }
+.ballistic-workspace button.ballistic-primary-action { min-height: 36px; padding: 6px 20px; background: #2f689b; color: #fff; border-color: #2f689b; font-weight: 600; }
+.ballistic-workspace button.ballistic-primary-action:hover:enabled { background: #24547f; color: #fff; }
+.ballistic-workspace .ballistic-empty-state { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; min-height: 300px; text-align: center; padding: 24px; }
+.ballistic-workspace .ballistic-results-column > .ballistic-empty-state { min-height: 340px; }
+.ballistic-workspace .ballistic-state-mark { display: grid; place-items: center; width: 52px; height: 52px; background: #eef4f9; color: #6786a4; border: 1px solid #dce5ef; border-radius: 50%; font-size: 26px; }
+.ballistic-workspace .ballistic-result-metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; border-bottom: 1px solid #dce5ef; margin-bottom: 12px; padding: 12px 0 16px; }
+.ballistic-workspace .ballistic-result-metrics div { display: grid; gap: 4px; }
+.ballistic-workspace .ballistic-result-metrics strong { font: 600 26px/1.2 Consolas,monospace; color: #20354c; }
+.ballistic-workspace .ballistic-result-metrics small { font-size: 13px; font-weight: 400; }
+.ballistic-workspace .ballistic-result-metrics span { font-size: 12px; color: #64748b; }
+.ballistic-workspace .ballistic-window-results > p { margin: 10px 0; }
+.ballistic-workspace .ballistic-window-range { border-left: 3px solid #2f689b; padding-left: 12px; font: 13px/1.7 Consolas,monospace; }
+.ballistic-workspace .ballistic-arc-table { white-space: nowrap; font-size: 12px; }
+.ballistic-workspace .ballistic-arc-table span { color: #64748b; }
+.ballistic-workspace .ballistic-result-details { margin-top: 16px; border-top: 1px solid #dce5ef; }
+.ballistic-workspace .ballistic-file-picker { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: end; gap: 8px; }
+.ballistic-workspace .ballistic-file-summary { display: grid; gap: 2px; margin-top: 8px; padding: 8px 10px; background: #f4f7fa; overflow-wrap: anywhere; }
+.ballistic-workspace .ballistic-file-summary span { color: #64748b; font-size: 12px; }
+.ballistic-workspace .ballistic-target { margin: 8px 0; }
+.ballistic-workspace .ballistic-target fieldset { padding: 8px 12px; border: 1px solid #dce5ef; border-radius: 4px; }
+.ballistic-workspace .ballistic-target fieldset { border: 0; padding: 0; }
+.ballistic-workspace .ballistic-payload-summary { display: block; margin: 4px 0 0 14px; font-size: 12px; color: #40566e; }
+.ballistic-workspace .ballistic-payload-item summary > .ballistic-muted { margin-left: 14px; font-size: 12px; }
+.ballistic-workspace .ballistic-target .ballistic-file-summary { padding: 6px 10px; }
+.ballistic-workspace .ballistic-target .ballistic-file-summary strong { font-size: 13px; }
+.ballistic-workspace pre { max-height: 300px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.5 Consolas,monospace; background: #f4f7fa; padding: 12px; }
+.ballistic-workspace .ballistic-error { background: #fff3f2; color: #9f3434; padding: 12px; border-radius: 4px; margin: 8px 0; }
+.ballistic-workspace .ballistic-change-notice { padding: 8px; background: #fff8e9; color: #755617; }
+.ballistic-workspace .ballistic-invalid-indicator { color: #9f3434; font-size: 12px; }
+.ballistic-workspace .planning-card { border: 0; box-shadow: none; }
+.ballistic-workspace .planning-card .el-card__header { padding: 0 0 8px; background: transparent; border: 0; }
+.ballistic-workspace .planning-card .el-card__body { padding: 0; }
+.ballistic-workspace .payload-identity { display: block; }
+.ballistic-workspace .payload-identity .el-form { max-width: 280px; }
+.ballistic-workspace .el-form-item { margin-bottom: 8px; }
+.ballistic-workspace .el-form-item__label { font-size: 13px; line-height: 20px; margin-bottom: 4px; height: auto; }
+.ballistic-workspace .payload-compact .payload-form { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0 12px; }
+.ballistic-workspace .payload-compact .el-input-number { width: 100%; }
+.ballistic-workspace .payload-compact .el-input__inner { font-family: Consolas,monospace; }
+.ballistic-workspace .ballistic-payload-item + .ballistic-payload-item { margin-top: 8px; padding-top: 0; border-top: 1px solid #dce5ef; }
+.ballistic-workspace .ballistic-help p { margin: 6px 0; font-size: 12px; color: #64748b; }
+.ballistic-workspace .payload-action { margin: 8px 0 0; }
+@media (max-width: 1000px) {
+  .ballistic-workspace { padding-bottom: 100px; }
+  .ballistic-workspace .ballistic-workbench-grid { grid-template-columns: minmax(0,1fr); }
+  .ballistic-workspace .ballistic-input-scroll { max-height: none; min-height: 0; overflow: visible; padding: 0; }
+  .ballistic-workspace:is(.ballistic-fit-view,.ballistic-simulation-view,.ballistic-retime-view) .ballistic-input-scroll { max-height: none; }
+  .ballistic-workspace .ballistic-results-column { max-height: none; position: static; min-height: 300px; }
+  .ballistic-workspace .ballistic-compute-bar { position: fixed; left: 8px; right: 8px; bottom: 8px; }
+}
+@media (max-width: 550px) {
+  .ballistic-workspace :is(.ballistic-panel,.ballistic-native-form) { padding: 12px; }
+  .ballistic-workspace .ballistic-section-heading { flex-wrap: wrap; }
+  .ballistic-workspace .ballistic-section-heading label { width: 100%; }
+  .ballistic-workspace .payload-compact .payload-form { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 8px; }
+  .ballistic-workspace .ballistic-field-grid { grid-template-columns: minmax(0,1fr); }
+  .ballistic-workspace .ballistic-search-fields { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; }
+  .ballistic-workspace .ballistic-file-picker { grid-template-columns: minmax(0,1fr); }
+  .ballistic-workspace .ballistic-result-metrics strong { font-size: 22px; }
+  .ballistic-workspace .ballistic-empty-state { padding: 16px 8px; }
+}
+
+.ballistic-workspace .ballistic-compute-actions { display: flex; gap: 8px; align-items: center; }
+@media (max-width: 550px) { .ballistic-workspace .ballistic-compute-bar { flex-wrap: wrap; gap: 8px; } .ballistic-workspace .ballistic-compute-actions { width: 100%; justify-content: flex-end; } }

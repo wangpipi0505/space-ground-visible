@@ -1,0 +1,15 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ❯ src/components/BallisticWindowResults.spec.ts (2 tests | 1 failed) 32ms
+     × 全部偏移可选、两弧层级及点表保持服务累计，跨180度不画贯穿假线 27ms
+ ❯ src/views/BallisticPayloadConfigurationView.spec.ts (3 tests | 3 failed) 535ms
+     × 示例朝地球俯仰与空间标准、新增和目录默认隔离 209ms
+     × 不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功 165ms
+     × 当前星切换保持原草稿身份且初始就有结果位置 161ms
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 1 passed (5)
+   Start at  10:13:21
+   Duration  2.69s (transform 301ms, setup 0ms, import 2.15s, tests 567ms, environment 391ms)
+

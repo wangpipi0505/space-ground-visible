@@ -1,0 +1,149 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/frontend
+
+ ✓ src/components/BallisticWindowResults.spec.ts > T22 原结果层级与真实点展示 > 全部偏移可选、两弧层级及点表保持服务累计，跨180度不画贯穿假线 40ms
+ ✓ src/components/BallisticWindowResults.spec.ts > T22 原结果层级与真实点展示 > point0和全空如实说明，不生成人工轨迹 8ms
+ ✓ src/utils/ballisticRetime.spec.ts > T25 重定时完整CSV命名列 > 22列2576行全部解析，横轴由UTC差，dt累计且interval相邻，拟合模式仍拒绝22列 23ms
+ ✓ src/utils/ballisticRetime.spec.ts > T25 重定时完整CSV命名列 > 未知文本/列重排/缺dt/负标记保留，跨日非整秒UTC及原点表按列名显示 22ms
+ ✓ src/utils/ballisticRetime.spec.ts > T25 重定时完整CSV命名列 > 缺isOriginal不造原点，必要ECI缺失/重复列明确独立不能绘图 24ms
+ ✓ src/components/BallisticWindowControls.spec.ts > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口 31ms
+ ✓ src/components/BallisticWindowControls.spec.ts > T22 单一草稿文件与计算状态 > T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退 35ms
+ ✓ src/components/BallisticWindowControls.spec.ts > T22 单一草稿文件与计算状态 > 原生选择上传/预览后提交同一载荷UTC，计算失败清旧结果，替换失败清文件引用 19ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 初始结果区说明下一步且主动作可直接使用 56ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 计算告警默认折叠且可展开全部原文，下载和轨迹位于折叠区之外 20ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 无计算告警时不显示告警折叠入口 7ms
+ ✓ src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > A07 初始结果区说明下一步且主动作可直接使用 31ms
+ ✓ src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > A07 初始结果区说明下一步且主动作可直接使用 27ms
+ ✓ src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > 原JSON导入、核心编辑保留高级字段、原结果全文、201引用、完整四曲线、快照与失败恢复 73ms
+ ✓ src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > 本地非法JSON不发送HTTP，忙时防重复 9ms
+ ✓ src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > 旧计算的慢登记返回不能污染新计算同索引结果候选 17ms
+ ✓ src/views/BallisticSimulationView.spec.ts > T24 模拟页面与实际结果引用 > 核心数值框非法/舍入文本不能默默沿用旧合法JSON发起计算 8ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > A07 观测表以中文和单位呈现，协议列名可在提示查看且时间不截短 25ms
+ ✓ src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 辅助404注销仅撤本次候选仍保留计算成功与错误，原文件恢复可重新201登记 113ms
+ ✓ src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 旧慢预览在来源切换或候选撤销后撤销busy，且旧finally不能清新来源busy 10ms
+ ✓ src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 来源预览失败与计算独立，保留201引用可执行原计算且忙时防重复 35ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 原生JSON导入只省略outputDir，双目标登记隔离、重试不重算、全点曲线原点、分页与失败恢复 107ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 非法JSON与危险数字无HTTP，计算忙时避免重复提交 68ms
+ ✓ src/views/BallisticFitView.spec.ts > T23 拟合页面状态 > 缺文件后原服务注销旧引用，恢复只重新登记并用新ID读文件 13ms
+ ✓ src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 上传201/预览→四字段原UTC→2576行四图→登记事件/快照，改输入过期失败清旧成功 60ms
+ ✓ src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 已有引用切换/失效清旧路径，null同值提交，上传失败不能沿用旧引用 47ms
+ ✓ src/views/BallisticRetimeView.spec.ts > T25 重定时页面真实引用 > 自身上次结果再次输入先截真实路径再撤自身候选，忙时防重复，旧慢登记不能污染新身份 11ms
+ ✓ src/api/ballisticWindow.spec.ts > T22 原文件与窗口 HTTP/协议 > 上传真实FormData不写JSON头；预览分页及下载中文原名/字节 4ms
+ ✓ src/api/ballisticWindow.spec.ts > T22 原文件与窗口 HTTP/协议 > 原计算路径独立且原响应空白/数值/字节不重新序列化，失败下载不返回错误文件 2ms
+ ✓ src/api/ballisticWindow.spec.ts > T22 原文件与窗口 HTTP/协议 > 空根数不伪造，负起点合法；有限参数/安全整数/UTC/本机路径/标准载荷中文定位 1ms
+ ✓ src/api/ballisticWindow.spec.ts > T22 原文件与窗口 HTTP/协议 > Windows上传返回精确路径可信且不猜storage目录，末偏移BigInt边界不舍入 1ms
+ ✓ src/api/ballisticWindow.spec.ts > T22 原文件与窗口 HTTP/协议 > 空间/辅助/计算独立部署根保持各自完整含义 2ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 包字符串、UTC、全部别名保持同值，仅显式省略旧输出目录 4ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 一条记录允许进入原服务，不在浏览器擅自限制为三点 0ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > taskName:null按原DTO同值提交，原缺省任务名由后端回退 1ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 拒绝格式、空包、非法步长或危险数值：{ 1ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 拒绝格式、空包、非法步长或危险数值：{"package102":[]} 0ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 拒绝格式、空包、非法步长或危险数值：{"package102":[{}],"interpolationStepSec":0.0009} 0ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 拒绝格式、空包、非法步长或危险数值：{"package102":[{}],"interpolationStepSec":1e400} 0ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 拒绝格式、空包、非法步长或危险数值：{"package102":[{"tack3d_time_code":20260701075700001}]} 0ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 拒绝格式、空包、非法步长或危险数值：{"package102":[{"tack3d_tgt_pos_x":9007199254740993}]} 0ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 完整解析1633/31行原21列CSV，原点各4个，ECI米/dt毫秒且不混入ECEF 13ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 未知或非有限CSV拒绝猜测坐标 0ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 未知或非有限CSV拒绝猜测坐标 0ms
+ ✓ src/utils/ballisticFit.spec.ts > T23 原102输入与CSV > 未知或非有限CSV拒绝猜测坐标 0ms
+ ✓ src/api/ballisticFit.spec.ts > T23 原拟合与登记HTTP > 原字段原值发送，原响应字节保留，201登记返回独立引用 5ms
+ ✓ src/api/ballisticFit.spec.ts > T23 原拟合与登记HTTP > 原400错误中文转呈 2ms
+ ✓ src/api/ballisticPayloads.spec.ts > 弹道载荷独立API > 默认目标为完整ballistic路径且保留身份与原值 5ms
+ ✓ src/api/ballisticPayloads.spec.ts > 弹道载荷独立API > 独立部署base不受空间base影响并显示400中文错误 3ms
+ ✓ src/components/TaskResultDetailDrawer.spec.ts > TaskResultDetailDrawer > shows the persisted full skipped-pair list separately from result JSON 38ms
+ ✓ src/api/ballisticRetime.spec.ts > T25 重定时原HTTP合同 > 上传200不能冒充201真实引用 4ms
+ ✓ src/api/ballisticRetime.spec.ts > T25 重定时原HTTP合同 > 四字段同值且原响应字节不包装 1ms
+ ✓ src/api/ballisticRetime.spec.ts > T25 重定时原HTTP合同 > 原400与500全文保留 1ms
+ ✓ src/utils/ballisticSimulation.spec.ts > T24 原模拟输入合同 > 完整原字段、事件、null、别名、字面UTC、回退步长不转换不丢失 5ms
+ ✓ src/utils/ballisticSimulation.spec.ts > T24 原模拟输入合同 > 非法JSON、非有限数、精度丢失、字段类型错误在HTTP前阻止 1ms
+ ✓ src/components/ObservationConstraintPanel.spec.ts > ObservationConstraintPanel > allows direct editing of an existing combination duration 92ms
+ ✓ src/components/TargetSelectionStep.spec.ts > TargetSelectionStep > collects a minimum mass and plain-text target exclusion condition 234ms
+ ✓ src/components/StandardPayloadEditor.spec.ts > 共用标准载荷编辑器 > 弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明 181ms
+ ✓ src/components/TaskSatelliteSelectionStep.spec.ts > TaskSatelliteSelectionStep > shows selected satellites by name without appending internal IDs 96ms
+ ✓ src/components/TaskSatelliteSelectionStep.spec.ts > TaskSatelliteSelectionStep > uses the shared compact card header for task satellites 31ms
+ ✓ src/components/SatellitePayloadPanel.spec.ts > SatellitePayloadPanel > provides a persistent space payload save action for every selected satellite 222ms
+ ✓ src/components/StandardPayloadEditor.spec.ts > 共用标准载荷编辑器 > 九个数字字段清空为null并展示成对校验与LVLH说明 112ms
+ ✓ src/components/TaskResultRecordsPanel.spec.ts > TaskResultRecordsPanel > loads persisted task result records on mount 203ms
+ ✓ src/components/WindowSelectionPanel.spec.ts > WindowSelectionPanel > binds merged coverage windows to their contributing link summary 375ms
+ ✓ src/components/SatellitePayloadPanel.spec.ts > SatellitePayloadPanel > renders the same unified parameter fields for a ground payload 130ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 按UTC解析无后缀历史时刻，保留Z与显式偏移的原时刻 22ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > maps the new payload fields into the editable form 3ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 阻止非法载荷保存并保护已保存配置 22ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 两类独立保存后切换回显原零负一与姿态空值 8ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > maps the document ground profile into the same editable fields without persisting its legacy marker 1ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 旧米profile读取换算且保存只发送标准公里字段 5ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > submits the selected target IDs without repeating target filters during planning 5ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > submits a background task, polls progress and loads the result 14ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > stops polling and surfaces the error message when the task fails 12ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 真实CANCELLED取消响应停止轮询 11ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 接受取消仍RUNNING时不伪造终态并轮询到真实CANCELLED 14ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 取消返回既有SUCCEEDED时保留成功并读取结果 8ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 迟到取消响应不能回退已确认成功 6ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 迟到轮询响应不能回退取消终态 12ms
+ ✓ src/composables/useVisibilityWorkbench.spec.ts > useVisibilityWorkbench > 旧取消回填不能污染新任务 10ms
+ ✓ src/components/StandardPayloadEditor.spec.ts > 共用标准载荷编辑器 > 切换类型事件交由业务包装处理且标准事件不带身份 86ms
+ ✓ src/components/StandardPayloadEditor.spec.ts > 共用标准载荷编辑器 > 加载结束恢复数字框ARIA启用状态并保留大有限数原值 116ms
+ ✓ src/components/SatellitePayloadPanel.spec.ts > SatellitePayloadPanel > warns before a legacy ground cone profile is replaced by unified fields 116ms
+ ✓ src/components/TaskResultRecordsPanel.spec.ts > TaskResultRecordsPanel > passes status filter and keyword to the paged query 140ms
+ ✓ src/components/TaskResultRecordsPanel.spec.ts > TaskResultRecordsPanel > opens the detail drawer with formatted request and result JSON 99ms
+ ✓ src/api/ballisticSimulation.spec.ts > T24 原模拟HTTP与登记边界 > 原路径、原值和完整HTTP字节保留，无包装/model字段 2ms
+ ✓ src/api/ballisticSimulation.spec.ts > T24 原模拟HTTP与登记边界 > 原400中文不包新错误，200登记不能冒充201引用 1ms
+ ✓ src/utils/winToolSummary.spec.ts > satelliteLetter > extracts the trailing uppercase letter from the last parenthetical 1ms
+ ✓ src/utils/winToolSummary.spec.ts > satelliteLetter > returns null when the name has no trailing letter 0ms
+ ✓ src/utils/winToolSummary.spec.ts > toWinToolAzimuth > converts A with +180 normalized to [-180,180) and B/C with mirror 0ms
+ ✓ src/utils/winToolSummary.spec.ts > formatAzimuthRange > keeps ascending order after conversion 0ms
+ ✓ src/utils/winToolSummary.spec.ts > mergeTimeSegments > merges overlapping and adjacent segments by union 1ms
+ ✓ src/utils/winToolSummary.spec.ts > collectSatelliteObservationStats > aggregates per satellite and dedupes identical arcs across constraints 1ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > groups one target once, nests its observation combinations, and renders a separate summary block 464ms
+ ✓ src/utils/standardPayload.spec.ts > 统一标准载荷边界 > 保留十字段、双null、SPACE零负一及startup负一原值 2ms
+ ✓ src/utils/standardPayload.spec.ts > 统一标准载荷边界 > 拒绝所有非有限、缺必填、单端空和倒置跨字段 1ms
+ ✓ src/components/TaskResultRecordsPanel.spec.ts > TaskResultRecordsPanel > saves the edited remark and refreshes the row 88ms
+ ✓ src/components/TaskResultRecordsPanel.spec.ts > TaskResultRecordsPanel > deletes a record after confirmation and reloads the list 75ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > filters grouped results by target name without changing the contained combinations 204ms
+ ✓ src/views/BallisticPayloadConfigurationView.spec.ts > 弹道双星多载荷配置生产视图 > 示例朝地球俯仰与空间标准、新增和目录默认隔离 714ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > uses configured filters, paginates ten targets per page, and opens skipped pairs in a dialog 480ms
+ ✓ src/views/BallisticPayloadConfigurationView.spec.ts > 弹道双星多载荷配置生产视图 > 不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功 349ms
+ ✓ src/views/BallisticPayloadConfigurationView.spec.ts > 弹道双星多载荷配置生产视图 > 当前星切换保持原草稿身份且初始就有结果位置 245ms
+ ✓ src/App.spec.ts > App > A06 弹道仅两个一级入口且拟合下三子页保留空间入口 1187ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > shows a qualified parent window without rendering its illumination fragments 230ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > binds result columns to readable names and observation type 254ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > locks full-target planning to a background task with progress 285ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > shows background task progress and emits cancellation 313ms
+ ✓ src/App.spec.ts > App > does not render health status controls in the page header 993ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > hides the cancel button once the background task has finished 341ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > keeps skipped pair details out of the main result area until the dialog is opened 263ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 双星初始可编辑，末格input直接进入361扫描请求且目标UTC优先于默认 703ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > marks combination arcs expandable and single arcs not expandable 414ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 四示例星座及种子生成遵循原平面相位，替换不复用身份 2292ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 102默认表可直接提交；导入别名/未知字段后编辑末格仍保留编码和同一草稿 22ms
+ ✓ src/App.spec.ts > App > lays out satellite selection, link planning, and target planning side by side 1347ms
+ ✓ src/components/VisibilityPlanningStep.spec.ts > VisibilityPlanningStep > expands a combination arc into per-satellite observation segments 451ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 生成前拒绝空种子 semiMajorAxisM，纠正后才替换 428ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 生成前拒绝空种子 eccentricity，纠正后才替换 412ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 生成前拒绝空种子 inclinationDeg，纠正后才替换 365ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 生成前拒绝空种子 raanDeg，纠正后才替换 386ms
+ ✓ src/App.spec.ts > App > uses dedicated panels for station links and observation constraints 1640ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 生成前拒绝空种子 argumentOfPerigeeDeg，纠正后才替换 415ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 生成前拒绝空种子 meanAnomalyDeg，纠正后才替换 400ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 非法种子UTC保持当前星座，合法UTC落表到秒及空值落原J2000可纠正 417ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.4 e=0.0008504 1358ms
+ ✓ src/App.spec.ts > App > 导航弹道配置后返回仍保留独立草稿与空间工作台 4117ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.5 e=0.0008505 1593ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.49 e=0.0008515 1722ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 默认八行新增第九行和删除后新增沿原defaultNewRow，字符串直接提交 21ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 模拟恢复Swing默认且最后input未失焦直接提交，兼容字段保留 3ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 重定时默认沿Swing而非HTTP缺省 2ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 102修改已知叶值保留未知JSON兼容字段且非法步长能在原表单纠正 9ms
+ ✓ src/views/BallisticSwingAlignment.spec.ts > A06 Swing输入恢复 > 受控未完成窗口HTTP冻结六根数与目标扫描，跨页忙态由原父级busy维持 430ms
+ ✓ src/App.spec.ts > App > loads only the first satellite catalog page and sends target pagination parameters 2597ms
+ ✓ src/App.spec.ts > App > shows imported catalog fields and mass for satellites and targets 2620ms
+ ✓ src/App.spec.ts > App > uses the selected downlink window as the only visibility planning time range 6652ms
+ ✓ src/App.spec.ts > App > sends recommended illumination constraint with millisecond fine step 7063ms
+ ✓ src/App.spec.ts > App > runs visibility planning as a background task and loads the finished result 8413ms
+ ✓ src/App.spec.ts > App > T25拟合模拟重定时引用隔离并供窗口及再次重定时选择 8708ms
+
+ Test Files  28 passed (28)
+      Tests  140 passed (140)
+   Start at  10:36:18
+   Duration  47.70s (transform 4.75s, setup 0ms, import 24.10s, tests 64.96s, environment 11.86s)
+
