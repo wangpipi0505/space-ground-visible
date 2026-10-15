@@ -3,8 +3,8 @@ package com.runisys.orbit.spacevisibility.api;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.tx.alg.api.TargetTrajectoryFitController;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.RetimeTrajectoryRequest;
+import com.runisys.orbit.spacevisibility.testsupport.TrajectoryEngineReference;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.RetimeInput;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -200,7 +200,7 @@ class BallisticRetimeHttpTest {
     void MockMvc空请求与不合法绑定沿用实际MVC规则() throws Exception {
         JsonNode error = mapper.readTree(mvc.perform(post("/api/trajectory/retime").contentType("application/json").content("null"))
                 .andExpect(status().isBadRequest()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8));
-        assertEquals(mapper.valueToTree(new TargetTrajectoryFitController().retime(null).getBody()), error);
+        assertEquals(mapper.valueToTree(new TrajectoryEngineReference().retime(null).getBody()), error);
         JsonNode binding = mapper.readTree(mvc.perform(post("/api/trajectory/retime").contentType("application/json")
                 .content("{\"trajectoryCsvPath\":{\"invalid\":1}}"))
                 .andExpect(status().isInternalServerError()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8));
@@ -233,7 +233,7 @@ class BallisticRetimeHttpTest {
     private void assertOriginal(ObjectNode request, JsonNode actual, int status) throws Exception {
         ObjectNode reference = request.deepCopy();
         if (status == 200 || !reference.has("outputDir")) reference.put("outputDir", root.resolve("java-reference").toString());
-        ResponseEntity<?> legacy = new TargetTrajectoryFitController().retime(mapper.treeToValue(reference, RetimeTrajectoryRequest.class));
+        ResponseEntity<?> legacy = new TrajectoryEngineReference().retime(mapper.treeToValue(reference, RetimeInput.class));
         assertEquals(status, legacy.getStatusCodeValue());
         assertSameResult(actual, mapper.valueToTree(legacy.getBody()), status);
         if (!Boolean.getBoolean("ballistic.frozenReference")) return;

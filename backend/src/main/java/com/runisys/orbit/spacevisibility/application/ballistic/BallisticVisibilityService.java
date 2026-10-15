@@ -1,7 +1,7 @@
 package com.runisys.orbit.spacevisibility.application.ballistic;
 
-import com.tx.alg.OrbitCalculator;
-import com.tx.alg.api.VisibilityRequest;
+import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 弹道可见窗口唯一应用编排：保持旧请求转换、默认两星、单/多目标分支及原 V2 搜索顺序。
- * Web 构造器经 T13 解析服务持有上传租约或远程作用域，输入完整加载后立即释放，计算只访问内存。
- * 原 Java 兼容构造器仍使用原文件解析入口；数值算法、手写 JSON 及 HTTP 响应由各自层负责。
+ * 弹道窗口应用编排：按输入视图转换参数，保留默认双星、单/多目标分支和 V2 搜索顺序。
+ * Web 构造器经文件解析服务持有上传租约或远程作用域，输入完整加载后立即释放，计算只访问内存。
+ * 无参构造器支持独立 Java 调用，通过文件设施解析地址；数值算法、JSON 写出和 HTTP 响应由各自层负责。
  */
 @Service
 public class BallisticVisibilityService {
@@ -32,17 +32,17 @@ public class BallisticVisibilityService {
 
     /** 保留直接 Java 调用的原解析策略，不要求启动 Spring 容器。 */
     public BallisticVisibilityService() {
-        this.loader = OrbitCalculator::parseBallisticCsvWithReference;
+        this.loader = TrajectoryFileResolver::parseBallisticCsvWithReference;
     }
 
     /**
      * 按原控制器顺序转换、加载与搜索；每份源数据携带自身参考历元，绝不写静态 referenceEpochSec。
      * utcOffsetSec按HTTP的UTC约定置零；直接Java调用若主动改写该兼容字段，需避免与Web计算并发。
-     * @param request 原兼容 DTO，单位、缺省值及别名保持原定义
+     * @param request 应用输入视图，单位、缺省值及别名由输入适配器保留
      * @return 原 V2 结果，由控制器调用 writeJsonTo 流式输出
      * @throws IOException 原源文件读取错误，控制器保持原 500 语义
      */
-    public OrbitCalculator.LaunchSearchResultV2 search(VisibilityRequest request) throws IOException {
+    public OrbitCalculator.LaunchSearchResultV2 search(BallisticVisibilityInput request) throws IOException {
         OrbitCalculator.utcOffsetSec = 0.0;
 
         // 1. 解析卫星列表（空则用默认星座）

@@ -1,9 +1,9 @@
 package com.runisys.orbit.spacevisibility.application.ballistic;
 
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.tx.alg.trajectory.TargetTrajectoryFitter;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.FitRunResult;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.SimulationRequest;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitRunResult;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.SimulationInput;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -22,9 +22,9 @@ public class BallisticSimulationService {
      * 未提交 outputDir 时只修改执行副本，输出进入配置 results 独占目录；显式 null/空白/点目录仍按原语义。
      * 完成时自动登记实际 CSV；失败仅由 T15 工作区回滚自己拥有的结果，显式目录按原行为保留。
      */
-    public FitRunResult simulate(SimulationRequest request, boolean outputDirSpecified) throws IOException {
+    public FitRunResult simulate(SimulationInput request, boolean outputDirSpecified) throws IOException {
         TargetTrajectoryFitter.validateSimulationRequest(request);
-        SimulationRequest execution = copyRequest(request);
+        SimulationInput execution = copyRequest(request);
         try (BallisticFileStorage.ResultWorkspace workspace = storage.resultWorkspace(request.outputDir, outputDirSpecified)) {
             if (!outputDirSpecified) execution.outputDir = workspace.directory.toString();
             FitRunResult result = TargetTrajectoryFitter.simulateToCsv(execution);
@@ -37,8 +37,8 @@ public class BallisticSimulationService {
     }
 
     /** 原 DTO 使用公开字段而没有 Bean getter，明确复制全部字段；算法只读 phaseEvents，保留原列表与 null 语义。 */
-    private SimulationRequest copyRequest(SimulationRequest request) {
-        SimulationRequest execution = new SimulationRequest();
+    private SimulationInput copyRequest(SimulationInput request) {
+        SimulationInput execution = new SimulationInput();
         execution.taskName = request.taskName;
         execution.targetId = request.targetId;
         execution.taskStartTime = request.taskStartTime;

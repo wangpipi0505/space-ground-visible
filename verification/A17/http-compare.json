@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "records": 28,
+  "differences": [],
+  "normalization": "仅生成路径/文件标识/时间戳/requestId，数值与数组顺序不变；CSV以原字节SHA比较"
+}

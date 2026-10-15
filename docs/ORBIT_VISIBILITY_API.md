@@ -3,7 +3,7 @@
 本文档描述轨道推演与目标可见窗口计算模块的算法口径、Java 调用方式和 Spring Boot 接口示例。核心计算类为：
 
 ```text
-com.tx.alg.OrbitCalculator
+com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator
 ```
 
 正式 Spring Boot HTTP 控制器：
@@ -251,16 +251,17 @@ OrbitCalculator.ParsedBallisticCsv parsed =
         OrbitCalculator.parseBallisticCsvWithReference(inputStream);
 ```
 
-可用入口：
+领域计算类OrbitCalculator提供以下入口：
 
 ```java
-parseBallisticCsvWithReference(String location)  // 本地路径、http(s)://、minio://
 parseBallisticCsvWithReference(Path path)
 parseBallisticCsvWithReference(InputStream inputStream)
 parseBallisticCsvWithReference(Reader reader)
 ```
 
-旧入口 `parseBallisticCsv(...)` 仍保留，用于兼容既有调用。
+同类的`parseBallisticCsv(Path/InputStream/Reader)`入口保留。字符串地址（本地路径、HTTP/HTTPS、MinIO）由`infrastructure.files.TrajectoryFileResolver.parseBallisticCsvWithReference(String location)`或`parseBallisticCsv(String location)`加载后委托领域解析；正式Web通过BallisticTrajectoryService管理文件租约与临时文件作用域。
+
+多目标Java搜索使用带显式`BallisticCsvLoader`的重载，调用方提供加载策略；例如将`TrajectoryFileResolver::parseBallisticCsvWithReference`作为最后一个参数。正式Web的应用服务已注入带资源管理的加载器。
 
 ## 五、输出结构
 
@@ -373,7 +374,7 @@ visibleSatellites[]（卫星平台）
 
 ## 八、Java 调用示例
 
-以下演示保留的历史分类Java调用，签名和数值口径与合并前一致；正式浏览器应用使用前述HTTP及标准载荷JSON。该代码中的本地路径必须是调用JVM可访问的路径。
+以下演示保留的历史分类单目标Java调用，该单目标重载的参数与数值口径保持；Java import使用本版domain.ballistic包。正式浏览器应用使用前述HTTP及标准载荷JSON。该代码中的本地路径必须是调用JVM可访问的路径。
 
 ```java
 OrbitCalculator.ParsedBallisticCsv parsed =

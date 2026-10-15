@@ -50,8 +50,12 @@ def capture(backend, output, runtime=None, evidence=None):
     run([mvn, 'dependency:build-classpath', '-Dmdep.outputFile=' + str(cp_file)], backend,
         evidence / 'runner-classpath.log')
     classpath = str(backend / 'target/classes') + os.pathsep + cp_file.read_text().strip()
+    # A17 之后产品不再提供旧包。原版仍编译冻结探针，新版编译仅调整 Java 绑定的同条件探针。
+    unified = (backend / 'target/classes/com/runisys/orbit/spacevisibility/domain/ballistic/OrbitCalculator.class').exists()
+    runner_source = ROOT / ('verification/A17/BallisticBaseline.java' if unified else 'verification/T04/BallisticBaseline.java')
+    runner_class = ('com.runisys.orbit.spacevisibility.api.ballistic.' if unified else 'com.tx.alg.api.') + 'BallisticBaseline'
     run([str(JAVA_HOME / 'bin/javac.exe'), '-encoding', 'UTF-8', '-cp', classpath,
-         '-d', str(runtime), str(ROOT / 'verification/T04/BallisticBaseline.java')], ROOT, evidence / 'runner-compile.log')
+         '-d', str(runtime), str(runner_source)], ROOT, evidence / 'runner-compile.log')
     cases = []
     base = json.loads((reference / 'orbit_visibility_multi_payload_default.json').read_text(encoding='utf-8-sig'))
     # 保留真实轨迹全部原始点和 1s 可见性采样，仅缩小偏移个数，避免巨大 JSON。
@@ -85,7 +89,7 @@ def capture(backend, output, runtime=None, evidence=None):
         request_file.write_text(json.dumps(request, ensure_ascii=False, indent=2), encoding='utf-8')
         destination = output / name
         run([str(JAVA_HOME / 'bin/java.exe'), '-Djava.awt.headless=true', '-Dfile.encoding=UTF-8',
-             '-cp', str(runtime) + os.pathsep + classpath, 'com.tx.alg.api.BallisticBaseline', operation,
+             '-cp', str(runtime) + os.pathsep + classpath, runner_class, operation,
              str(request_file), str(destination)], ROOT, evidence / (name + '.log'))
         # 仅绝对工作根替换；数字、数组顺序、窗口和所有偏移不改。
         for file in destination.glob('*.json'):

@@ -3,8 +3,8 @@ package com.runisys.orbit.spacevisibility.api;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.tx.alg.api.OrbitVisibilityController;
-import com.tx.alg.api.VisibilityRequest;
+import com.runisys.orbit.spacevisibility.testsupport.WindowEngineReference;
+import com.runisys.orbit.spacevisibility.api.ballistic.VisibilityRequest;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -75,7 +75,7 @@ class BallisticVisibilityHttpTest {
         assertEquals(200, response.getStatusCodeValue());
         assertTrue(response.getHeaders().getContentType().isCompatibleWith(MediaType.APPLICATION_JSON));
         ByteArrayOutputStream expected = new ByteArrayOutputStream();
-        ((StreamingResponseBody) new OrbitVisibilityController().search(
+        ((StreamingResponseBody) new WindowEngineReference().search(
                 mapper.treeToValue(request, VisibilityRequest.class)).getBody()).writeTo(expected);
         assertEquals(STRICT_JSON.readTree(expected.toByteArray()), STRICT_JSON.readTree(response.getBody()));
         assertTrue(STRICT_JSON.readTree(response.getBody()).path("best").path("visibleArcCount").asInt() > 0);

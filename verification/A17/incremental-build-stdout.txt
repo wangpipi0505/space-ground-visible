@@ -1,0 +1,135 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------< integration.verification:ballistic-integration-probe >--------
+[INFO] Building ballistic-integration-probe 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ ballistic-integration-probe ---
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ballistic-integration-probe ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory G:\5-YG\space-ground-visible\verification\runtime\A17\integration-probe\src\main\resources
+[INFO] skip non existing resourceDirectory G:\5-YG\space-ground-visible\verification\runtime\A17\integration-probe\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ ballistic-integration-probe ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 47 source files to G:\5-YG\space-ground-visible\verification\runtime\A17\integration-probe\target\classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.java:[77,12] 找不到符号
+  符号:   类 OrbitState
+  位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticOrbitPropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java:[60,12] 找不到符号
+  符号:   类 OrbitState
+  位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java:[21,17] 找不到符号
+  符号:   类 OrbitState
+  位置: 接口 com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool.NativePropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[17,53] 找不到符号
+  符号:   类 TimeInterval
+  位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[17,78] 找不到符号
+  符号:   类 TimeInterval
+  位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[17,24] 找不到符号
+  符号:   类 TimeInterval
+  位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java:[66,12] 找不到符号
+  符号:   类 OrbitState
+  位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticCartesianPropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.java:[80,24] 找不到符号
+  符号:   类 OrbitState
+  位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticOrbitPropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java:[22,24] 找不到符号
+  符号:   类 OrbitState
+  位置: 接口 com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool.NativePropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[18,14] 找不到符号
+  符号:   类 TimeInterval
+  位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[18,51] 找不到符号
+  符号:   类 TimeInterval
+  位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[19,14] 找不到符号
+  符号:   类 TimeInterval
+  位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[20,18] 找不到符号
+  符号:   类 TimeInterval
+  位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[21,17] 找不到符号
+  符号:   类 TimeInterval
+  位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java:[48,9] 找不到符号
+  符号:   类 OrbitState
+  位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticCartesianPropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java:[68,20] 找不到符号
+  符号:   类 OrbitState
+  位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticCartesianPropagation
+[INFO] 16 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.053 s
+[INFO] Finished at: 2026-10-15T17:45:52+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project ballistic-integration-probe: Compilation failure: Compilation failure: 
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.java:[77,12] 找不到符号
+[ERROR]   符号:   类 OrbitState
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticOrbitPropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java:[60,12] 找不到符号
+[ERROR]   符号:   类 OrbitState
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java:[21,17] 找不到符号
+[ERROR]   符号:   类 OrbitState
+[ERROR]   位置: 接口 com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool.NativePropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[17,53] 找不到符号
+[ERROR]   符号:   类 TimeInterval
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[17,78] 找不到符号
+[ERROR]   符号:   类 TimeInterval
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[17,24] 找不到符号
+[ERROR]   符号:   类 TimeInterval
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java:[66,12] 找不到符号
+[ERROR]   符号:   类 OrbitState
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticCartesianPropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.java:[80,24] 找不到符号
+[ERROR]   符号:   类 OrbitState
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticOrbitPropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java:[22,24] 找不到符号
+[ERROR]   符号:   类 OrbitState
+[ERROR]   位置: 接口 com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool.NativePropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[18,14] 找不到符号
+[ERROR]   符号:   类 TimeInterval
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[18,51] 找不到符号
+[ERROR]   符号:   类 TimeInterval
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[19,14] 找不到符号
+[ERROR]   符号:   类 TimeInterval
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[20,18] 找不到符号
+[ERROR]   符号:   类 TimeInterval
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java:[21,17] 找不到符号
+[ERROR]   符号:   类 TimeInterval
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.window.WindowIntervals
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java:[48,9] 找不到符号
+[ERROR]   符号:   类 OrbitState
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticCartesianPropagation
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/integration-probe/src/main/java/com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java:[68,20] 找不到符号
+[ERROR]   符号:   类 OrbitState
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.domain.orbit.BallisticCartesianPropagation
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,260 @@
+{
+  "roots": [
+    "com/runisys/orbit/spacevisibility/api/ballistic/",
+    "com/runisys/orbit/spacevisibility/application/ballistic/",
+    "com/runisys/orbit/spacevisibility/domain/ballistic/",
+    "com/runisys/orbit/spacevisibility/infrastructure/files/"
+  ],
+  "directFiles": 31,
+  "sharedFiles": 17,
+  "totalFiles": 48,
+  "newFiles": 44,
+  "reusedFiles": [
+    "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraint.java",
+    "com/runisys/orbit/spacevisibility/domain/payload/PayloadType.java",
+    "com/runisys/orbit/spacevisibility/domain/geometry/Vector3.java",
+    "com/runisys/orbit/spacevisibility/domain/window/TimeInterval.java"
+  ],
+  "files": [
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticErrorResponse.java",
+      "reusedOriginal": false,
+      "sha256": "5bb2fbff9895562d08d7437c59b096e8eb7410741f708aba02a37e2f43d9b9a8"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+      "reusedOriginal": false,
+      "sha256": "c2cc858ca3ee7c4635d5c2a2f6bf35a0330bfcb09bf908d2467c373e8c1e8362"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileExceptionHandler.java",
+      "reusedOriginal": false,
+      "sha256": "5904d2ddfe3281c7bf6be46ab9ee71ee148066eb347a08483244a4065d3ded7b"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "reusedOriginal": false,
+      "sha256": "a9b789229680e5f59705ca91820ff41de969c38157de58bb1a949e5b0571d1dc"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.java",
+      "reusedOriginal": false,
+      "sha256": "f163faf9eff3dff8a8af9843766d20c94bce1809a6d0cfc4c9fffb9bdc062dd2"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticMultipartExceptionResolver.java",
+      "reusedOriginal": false,
+      "sha256": "833bcc89d207fbc0708c2260b2ce97c2bb4e69435ad066dc23e41dc2e2fbe2a8"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticPayloadController.java",
+      "reusedOriginal": false,
+      "sha256": "e6fbacf90e6b1b916e7ccca985135232e6435db64bc5762223d084ba4e2e46d9"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java",
+      "reusedOriginal": false,
+      "sha256": "84a2a6aeea7fb2be312759632c9828cd77735199e926167c659a6d3e9684e884"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java",
+      "reusedOriginal": false,
+      "sha256": "285eca89d4da62e50f3d0c692e5fe5731ebefbe23cb34ed36c472397716aa9d1"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticTrajectoryRequests.java",
+      "reusedOriginal": false,
+      "sha256": "c8c9f908a3bad20e8423e35d8bd407bfe3ff0dd913960992c40c453cc10d002d"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.java",
+      "reusedOriginal": false,
+      "sha256": "55751458b0baa552a633acb74d63de380d48565199da174d12029304750fdca3"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java",
+      "reusedOriginal": false,
+      "sha256": "403188bad4d0db7e87a9c733c811e76515ff8f5b2f6c2bb83a7a8d6467256287"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticFileService.java",
+      "reusedOriginal": false,
+      "sha256": "f0ab80b0026e6118ffb6c0bf9778631572f5709d26e51d37d144782a29a6e512"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticFitService.java",
+      "reusedOriginal": false,
+      "sha256": "22f85292b2aa6bacf6af4da40a964484cce8c8254a6570bde6f6de80a62f8e89"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticRetimeService.java",
+      "reusedOriginal": false,
+      "sha256": "d605b01dfa57bf568ce10cee6bcbfae3660182a16a063cdbe04c2ce3428ea63c"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticSimulationService.java",
+      "reusedOriginal": false,
+      "sha256": "aff6fe6eda95d5799f347502c7cf5435d6afe57e5c05098e2571e38f1a05090b"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService.java",
+      "reusedOriginal": false,
+      "sha256": "d39ce11126682b99887862fea544d29cdd7cc73c978a6a4549f9eb6bd6efee25"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityInput.java",
+      "reusedOriginal": false,
+      "sha256": "e1635f2927b881a6f028fe57cbabadab8e8f1591b7b9b4b8589dafd72399e128"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityService.java",
+      "reusedOriginal": false,
+      "sha256": "77b3607508dacb8c435cbcdf794c08f77754bd910b7bb4e54bee42b2e939536a"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticArcSupport.java",
+      "reusedOriginal": false,
+      "sha256": "c6958d1ac113f81c6adca196be8c5ec50a5f10f1e240921cefc88ca56c2912d9"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticLaunchSearch.java",
+      "reusedOriginal": false,
+      "sha256": "47f68c6bef2f90a39444e153e2df81c20634027fe6ebd64440cc8038260afcd9"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticResultWriter.java",
+      "reusedOriginal": false,
+      "sha256": "e9f83cf8e88a21c261f35b9a2e6a68b7390966b143577d7078cf759f3836495a"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticSampledWindows.java",
+      "reusedOriginal": false,
+      "sha256": "85260ef012c2f806bf4d9ea734879acc1a8839ddc810b5703571cf1ad75c5284"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticTrajectoryReader.java",
+      "reusedOriginal": false,
+      "sha256": "d1e49c2e5775397e250f11a8e1c9103b9a8842dd7972e4c0779b23bbc6f2803f"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticVisibilityGeometry.java",
+      "reusedOriginal": false,
+      "sha256": "90a39202c04ca095713cc8bdfc1752ca9ab7d81edd2550a6fd37be7c217b8e80"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/ballistic/OrbitCalculator.java",
+      "reusedOriginal": false,
+      "sha256": "28150afc5e1cd099d2285be7adf6c48083a61bff25c40db7e85134bbeb01ca36"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java",
+      "reusedOriginal": false,
+      "sha256": "8ed484f87c3a80ff09de6b5868c79a49af0a4bf81ccf6dd9cdf033aefb77c025"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/geometry/GeometryMath.java",
+      "reusedOriginal": false,
+      "sha256": "475e091aea6aa79bd122474b375ca3755fcfdb68bec05eb940fb19c151a55a0f"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/geometry/LegacyJ2000Frames.java",
+      "reusedOriginal": false,
+      "sha256": "53a7c8633405e992bb8b6e383df2eccde6d310a4049528d0526e0040fc84d8ad"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/geometry/Vector3.java",
+      "reusedOriginal": true,
+      "sha256": "c62013eef8a29b34e64d78cdb2cd3f3be657702d8e3e454f25e9c33a1f8565dc"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java",
+      "reusedOriginal": false,
+      "sha256": "802f3cf690482e277e2f6df9e90f8bbb2bf11c36ec3d420f55d35ec45fee87a9"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.java",
+      "reusedOriginal": false,
+      "sha256": "40ba3cdfeec2425cf1497c5df9c4495469cd391b76f28e0e15ef1df8e54ecfe4"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition.java",
+      "reusedOriginal": false,
+      "sha256": "1babd4e78dbf3801a7f37b38d72f0446ad83ff1e6803eb6d921d6466652d9f48"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java",
+      "reusedOriginal": false,
+      "sha256": "395ae8900952ac6d5a9ab93a393b896562bc3a355125b17c0821bb53d6e1ff85"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitState.java",
+      "reusedOriginal": false,
+      "sha256": "6bb44c6c824eee826e9bd9d24ee415024eda07e71b36247e022ca03aa79a1ca6"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitTime.java",
+      "reusedOriginal": false,
+      "sha256": "67782ca1f60117b61a170eef511da482de17926eac18cb57d654350cdf8e1f8f"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraint.java",
+      "reusedOriginal": true,
+      "sha256": "078530029705ed6b144ba97803f1485bf30486c7b41e7a814a9c8ad5f637c7a1"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraintMath.java",
+      "reusedOriginal": false,
+      "sha256": "dce798fc16eb0265aca0a43bb774d8154b82769470b401a03d95a3eead8de010"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/payload/PayloadType.java",
+      "reusedOriginal": true,
+      "sha256": "65e1204cfc00a5450aec1099d8785b57c7629c816d359480aaf61d79b66be4de"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/payload/StandardPayloads.java",
+      "reusedOriginal": false,
+      "sha256": "2fcee3df270ffb6ca335b7c3dd4421274798f601fd142e8e4b235ab5253280c2"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/time/LegacyJ2000Time.java",
+      "reusedOriginal": false,
+      "sha256": "fdacb204e744006b846402f2f9d5e9ceac0de547d2c8341637f75ba63017f489"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/window/SampledStateRuns.java",
+      "reusedOriginal": false,
+      "sha256": "37de464ddc0e425c3ca4ba293fb009bf79a3b211ba20264ca2db682957d13c14"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/window/TimeInterval.java",
+      "reusedOriginal": true,
+      "sha256": "44101e131ec5d15e6cd6b53c66826c399d315c200dfac4891848c5f02ad0eb35"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java",
+      "reusedOriginal": false,
+      "sha256": "a1913749e69293cde7ed1723c104d4c0e96550d00badde1498dbe340c9ac8710"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileConfiguration.java",
+      "reusedOriginal": false,
+      "sha256": "f003df14c57fcdfc9cacad3460ba376ac87eac0e992026e6d984456b626563ad"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage.java",
+      "reusedOriginal": false,
+      "sha256": "f744c9fff13ef59a0e7642d12d80c20b11e678e0b2412df43137385866a67195"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/infrastructure/files/ManagedFileException.java",
+      "reusedOriginal": false,
+      "sha256": "ac89a9a897393b592f360a49bc119ed1d4283353d002f3edbf1a8738d6e4c426"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolver.java",
+      "reusedOriginal": false,
+      "sha256": "223ac1da7d3a80380ca9b802fd729a5941c8a1b7fbf32c419f2e2bd6affffeb9"
+    }
+  ]
+}

@@ -5,8 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileConfiguration;
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
 import com.runisys.orbit.spacevisibility.infrastructure.files.ManagedFileException;
-import com.tx.alg.trajectory.TargetTrajectoryFitter;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.SimulationRequest;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.SimulationInput;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -27,7 +27,7 @@ class BallisticSimulationServiceTest {
     void 全部原请求字段和事件保持不变且Java默认仍为点目录() throws Exception {
         BallisticFileConfiguration config = config(10000000);
         BallisticSimulationService service = new BallisticSimulationService(new BallisticFileStorage(config, mapper));
-        SimulationRequest request = fixture();
+        SimulationInput request = fixture();
         request.taskName = "完整请求";
         request.targetId = "完整目标";
         request.targetTypeCode = "0x03";
@@ -55,7 +55,7 @@ class BallisticSimulationServiceTest {
         TargetTrajectoryFitter.FitRunResult result = service.simulate(request, false);
         assertEquals(before, mapper.valueToTree(request));
         assertSame(event, request.phaseEvents.get(0));
-        assertEquals(".", new SimulationRequest().outputDir);
+        assertEquals(".", new SimulationInput().outputDir);
         assertTrue(Paths.get(result.files.get(0).csvPath).toRealPath().startsWith(config.results.toRealPath()));
         assertEquals("完整请求", result.taskName);
         assertEquals("完整目标", result.files.get(0).targetId);
@@ -66,14 +66,14 @@ class BallisticSimulationServiceTest {
     void null以及步长发射目录组合错误均保持原先后且不创建工作区() throws Exception {
         BallisticFileConfiguration config = config(10000000);
         BallisticSimulationService service = new BallisticSimulationService(new BallisticFileStorage(config, mapper));
-        SimulationRequest missing = fixture();
+        SimulationInput missing = fixture();
         missing.launchTimeUtc = null;
         missing.outputDir = "invalid\u0000directory";
-        SimulationRequest tiny = fixture();
+        SimulationInput tiny = fixture();
         tiny.outputPointDurationSec = 0.0001;
         tiny.launchTimeUtc = null;
         tiny.outputDir = missing.outputDir;
-        for (SimulationRequest request : new SimulationRequest[]{null, missing, tiny}) {
+        for (SimulationInput request : new SimulationInput[]{null, missing, tiny}) {
             Exception original = assertThrows(Exception.class, () -> TargetTrajectoryFitter.simulateToCsv(request));
             Exception actual = assertThrows(Exception.class, () -> service.simulate(request, true));
             assertEquals(original.getClass(), actual.getClass());
@@ -88,7 +88,7 @@ class BallisticSimulationServiceTest {
         BallisticFileConfiguration config = config(10000000);
         BallisticFileStorage storage = new BallisticFileStorage(config, mapper);
         BallisticSimulationService service = new BallisticSimulationService(storage);
-        SimulationRequest invalid = fixture();
+        SimulationInput invalid = fixture();
         invalid.impactTimeUtc = invalid.launchTimeUtc;
         JsonNode before = mapper.valueToTree(invalid);
         assertThrows(IllegalArgumentException.class, () -> service.simulate(invalid, false));
@@ -118,8 +118,8 @@ class BallisticSimulationServiceTest {
         return new BallisticFileConfiguration(root.toString(), "", "", "", "", limit, 60000, 500);
     }
 
-    private SimulationRequest fixture() throws Exception {
-        return mapper.readValue(Files.readAllBytes(Paths.get("../test-data/reference/ballistic/target_trajectory_simulate_default.json")), SimulationRequest.class);
+    private SimulationInput fixture() throws Exception {
+        return mapper.readValue(Files.readAllBytes(Paths.get("../test-data/reference/ballistic/target_trajectory_simulate_default.json")), SimulationInput.class);
     }
 
     private void assertEmpty(Path path) throws Exception {

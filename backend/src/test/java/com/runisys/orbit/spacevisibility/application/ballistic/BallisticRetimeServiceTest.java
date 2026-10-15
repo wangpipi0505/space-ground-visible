@@ -8,8 +8,8 @@ import com.runisys.orbit.spacevisibility.api.ballistic.BallisticRetimeController
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileConfiguration;
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
 import com.runisys.orbit.spacevisibility.infrastructure.files.ManagedFileException;
-import com.tx.alg.trajectory.TargetTrajectoryFitter;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.RetimeTrajectoryRequest;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.RetimeInput;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.springframework.http.ResponseEntity;
@@ -38,14 +38,14 @@ class BallisticRetimeServiceTest {
     void 五字段调用者请求不变且Java默认仍为点目录() throws Exception {
         BallisticFileConfiguration config = config(10000000, 60000);
         BallisticRetimeService service = new BallisticRetimeService(new BallisticFileStorage(config, mapper));
-        RetimeTrajectoryRequest request = fixture(source());
+        RetimeInput request = fixture(source());
         request.taskName = "五字段任务";
         request.targetId = "五字段目标";
         request.trajectoryCsvPath = "  " + request.trajectoryCsvPath + "  ";
         JsonNode before = mapper.valueToTree(request);
         TargetTrajectoryFitter.FitRunResult result = service.retime(request, false);
         assertEquals(before, mapper.valueToTree(request));
-        assertEquals(".", new RetimeTrajectoryRequest().outputDir);
+        assertEquals(".", new RetimeInput().outputDir);
         assertEquals("五字段任务", result.taskName);
         assertEquals("五字段目标", result.files.get(0).targetId);
         assertTrue(Paths.get(result.files.get(0).csvPath).toRealPath().startsWith(config.results.toRealPath()));
@@ -55,15 +55,15 @@ class BallisticRetimeServiceTest {
     void 请求源路径存在性与目录错误先后均保持原入口() throws Exception {
         BallisticFileConfiguration config = config(10000000, 60000);
         BallisticRetimeService service = new BallisticRetimeService(new BallisticFileStorage(config, mapper));
-        RetimeTrajectoryRequest missingPath = fixture(source());
+        RetimeInput missingPath = fixture(source());
         missingPath.trajectoryCsvPath = " "; missingPath.launchTimeUtc = " "; missingPath.outputDir = "bad\u0000dir";
-        RetimeTrajectoryRequest missingLaunch = fixture(source());
+        RetimeInput missingLaunch = fixture(source());
         missingLaunch.launchTimeUtc = null; missingLaunch.trajectoryCsvPath = "bad\u0000source";
-        RetimeTrajectoryRequest missingSource = fixture(root.resolve("not-found.csv"));
+        RetimeInput missingSource = fixture(root.resolve("not-found.csv"));
         missingSource.outputDir = "bad\u0000dir";
-        RetimeTrajectoryRequest invalidDirectory = fixture(source());
+        RetimeInput invalidDirectory = fixture(source());
         invalidDirectory.outputDir = "bad\u0000dir";
-        for (RetimeTrajectoryRequest request : new RetimeTrajectoryRequest[]{null, missingPath, missingLaunch, missingSource, invalidDirectory}) {
+        for (RetimeInput request : new RetimeInput[]{null, missingPath, missingLaunch, missingSource, invalidDirectory}) {
             Exception expected = assertThrows(Exception.class, () -> TargetTrajectoryFitter.retimeTrajectoryToCsv(request));
             Exception actual = assertThrows(Exception.class, () -> service.retime(request, true));
             assertEquals(expected.getClass(), actual.getClass());
@@ -81,7 +81,7 @@ class BallisticRetimeServiceTest {
         // 头和时刻均有效，第二行 ECEF 非数字令原 writer 已写部分输出后失败，确保检验实际部分 CSV 回滚。
         String[] badRow = lines.get(2).split(",", -1); badRow[6] = "invalid-position";
         Path bad = Files.write(root.resolve("bad.csv"), java.util.Arrays.asList(lines.get(0), lines.get(1), String.join(",", badRow)), java.nio.charset.StandardCharsets.UTF_8);
-        RetimeTrajectoryRequest request = fixture(bad);
+        RetimeInput request = fixture(bad);
         JsonNode before = mapper.valueToTree(request);
         assertThrows(IllegalArgumentException.class, () -> service.retime(request, false));
         assertEquals(before, mapper.valueToTree(request));
@@ -167,7 +167,7 @@ class BallisticRetimeServiceTest {
         Files.write(Paths.get(uploaded.serverPath), Files.readAllBytes(source()));
         BallisticRetimeService service = new BallisticRetimeService(storage);
         BallisticRetimeController controller = new BallisticRetimeController(service, mapper);
-        RetimeTrajectoryRequest request = fixture(Paths.get(uploaded.serverPath));
+        RetimeInput request = fixture(Paths.get(uploaded.serverPath));
         ResponseEntity<?> response = controller.retime(mapper.valueToTree(request));
         assertEquals(500, response.getStatusCodeValue());
         assertEquals(mapper.readTree("{\"error\":\"ManagedFileException: 文件超过配置字节上限\"}"), mapper.valueToTree(response.getBody()));
@@ -226,7 +226,7 @@ class BallisticRetimeServiceTest {
         try (Stream<Path> files = Files.list(config.results)) { originalResults = files.collect(java.util.stream.Collectors.toSet()); }
         Path explicitDirectory = explicit ? Files.createDirectory(config.results.resolve("explicit")) : null;
         Path kept = explicit ? Files.write(explicitDirectory.resolve("keep.csv"), new byte[]{9}) : null;
-        RetimeTrajectoryRequest request = fixture(Paths.get(input.serverPath));
+        RetimeInput request = fixture(Paths.get(input.serverPath));
         if (explicit) request.outputDir = explicitDirectory.toString();
         ObjectNode body = failureMapper.valueToTree(request);
         if (!explicit) body.remove("outputDir");
@@ -275,8 +275,8 @@ class BallisticRetimeServiceTest {
         return new BallisticFileConfiguration(root.toString(), "", "", "", "", bytes, ttl, 500);
     }
     private Path source() throws IOException { return Paths.get("../test-data/baseline/ballistic/simulate/trajectory-0.csv").toRealPath(); }
-    private RetimeTrajectoryRequest fixture(Path source) {
-        RetimeTrajectoryRequest request = new RetimeTrajectoryRequest(); request.trajectoryCsvPath = source.toString();
+    private RetimeInput fixture(Path source) {
+        RetimeInput request = new RetimeInput(); request.trajectoryCsvPath = source.toString();
         request.taskName = "T04-retime"; request.launchTimeUtc = "2026-07-02 07:57:00.000"; return request;
     }
     private void assertEmpty(Path directory) throws IOException { try (Stream<Path> files = Files.list(directory)) { assertEquals(0, files.count()); } }

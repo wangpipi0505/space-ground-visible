@@ -1,9 +1,9 @@
 package com.runisys.orbit.spacevisibility.application.ballistic;
 
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.tx.alg.trajectory.TargetTrajectoryFitter;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.FitRequest;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.FitRunResult;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitInput;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitRunResult;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -22,9 +22,9 @@ public class BallisticFitService {
      * 未提交时在配置 results 下分配独占目录。只复制请求顶层字段，拟合器只读的观测列表保持原样，
      * 绝不写回调用方请求；观测硬约束、时间单位及完整 ECI/ECEF 输出完全由原算法执行。
      */
-    public FitRunResult fitPackage102(FitRequest request, boolean outputDirSpecified) throws IOException {
+    public FitRunResult fitPackage102(FitInput request, boolean outputDirSpecified) throws IOException {
         TargetTrajectoryFitter.validateFitRequest(request);
-        FitRequest execution = new FitRequest();
+        FitInput execution = new FitInput();
         execution.taskName = request.taskName;
         execution.package102 = request.package102;
         execution.taskStartTime = request.taskStartTime;

@@ -1,6 +1,6 @@
 package com.runisys.orbit.spacevisibility.api.ballistic;
 
-import com.tx.alg.api.VisibilityRequest;
+import com.runisys.orbit.spacevisibility.api.ballistic.VisibilityRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileConfiguration;
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
 import com.sun.net.httpserver.HttpServer;
-import com.tx.alg.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;

@@ -1,50 +1,60 @@
 package com.runisys.orbit.spacevisibility.api.ballistic;
 
 import com.runisys.orbit.spacevisibility.application.ballistic.BallisticVisibilityService;
-import com.tx.alg.api.OrbitVisibilityController;
-import com.tx.alg.api.VisibilityRequest;
+import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
 import org.springframework.http.MediaType;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
-
+import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 
-/**
- * 统一 Spring Boot 扫描范围内的正式弹道窗口端点。
- * 继承原健康检查及 search 薄适配，保留原 DTO、400/500 手写 error 对象和 StreamingResponseBody；
- * 仅注入 Web 文件生命周期的应用服务。原 com.tx.alg.api 包不扫描，故两个路由只登记一次。
- */
+/** 窗口搜索 HTTP 边界：绑定请求、调用应用服务、输出既有 JSON；计算及文件下载由各自层负责。 */
 @RestController
 @RequestMapping("/api/orbit")
-public class BallisticVisibilityController extends OrbitVisibilityController {
-    /** 由 Spring 注入唯一应用编排，业务和数值逻辑不放入控制器。 */
+public class BallisticVisibilityController {
+    private final BallisticVisibilityService service;
+
     public BallisticVisibilityController(BallisticVisibilityService service) {
-        super(service);
+        this.service = service;
+    }
+
+    /** 健康检查沿用纯文本 OK。 */
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
     }
 
     /**
-     * MVC 依据声明的泛型选择流式处理器，原 ResponseEntity<?> 会将成功 lambda 当作普通对象序列化。
-     * 因此正式 HTTP 明确声明 StreamingResponseBody；原 Java 方法的签名保持不变。
-     * 成功直接透传原 writeJsonTo 流；失败只将原 error 字符串按 UTF-8 写出，不增加错误包装或更改状态。
+     * 明确声明流式泛型，使 MVC 使用流式处理器，避免将成功回调作为普通对象序列化。
+     * 成功直接输出领域结果；参数错误为 400，其余执行错误为 500，沿用单字段 error JSON。
      */
-    @Override
     @PostMapping(value = "/visibility/search", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StreamingResponseBody> search(@RequestBody VisibilityRequest request) {
-        ResponseEntity<?> response = super.search(request);
-        Object value = response.getBody();
-        StreamingResponseBody body = value instanceof StreamingResponseBody
-                ? (StreamingResponseBody) value
-                : output -> output.write(((String) value).getBytes(StandardCharsets.UTF_8));
-        // 流式处理器不会像原字符串消息转换器那样推断 produces；错误流也必须保持原 JSON 媒体类型。
-        HttpHeaders headers = new HttpHeaders();
-        headers.putAll(response.getHeaders());
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity<>(body, headers, response.getStatusCode());
+        try {
+            OrbitCalculator.LaunchSearchResultV2 result = service.search(request);
+            StreamingResponseBody body = output -> {
+                OutputStreamWriter writer = new OutputStreamWriter(output, StandardCharsets.UTF_8);
+                result.writeJsonTo(writer, true);
+                writer.flush();
+            };
+            return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(body);
+        } catch (IllegalArgumentException ex) {
+            return error(400, ex.getMessage());
+        } catch (Exception ex) {
+            return error(500, ex.getMessage());
+        }
+    }
+
+    /** 保留既有转义规则和 UTF-8 字节，不增加错误包装或字段。 */
+    private static ResponseEntity<StreamingResponseBody> error(int status, String message) {
+        String escaped = message == null ? "" : message.replace("\\", "\\\\").replace("\"", "\\\"");
+        byte[] json = ("{\"error\":\"" + escaped + "\"}").getBytes(StandardCharsets.UTF_8);
+        return ResponseEntity.status(status).contentType(MediaType.APPLICATION_JSON).body(output -> output.write(json));
     }
 }

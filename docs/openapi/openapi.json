@@ -6288,14 +6288,14 @@
           "ballisticCsvPath": {
             "type": "string",
             "description": "旧单目标服务端CSV/Excel或原HTTP/HTTPS/MinIO地址；ballistics非空时忽略。 源注释：弹道文件路径，支持CSV和Excel，默认 \"trajectory-0.1s-standard.csv\"",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:22",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:22",
             "nullable": true,
             "default": "trajectory-0.1s-standard.csv"
           },
           "baseLaunchUtc": {
             "type": "string",
             "description": "字面UTC文本；单目标缺省用文件历元，多目标用本目标别名优先级。 源注释：基准发射UTC时间字符串（yyyy/MM/dd HH:mm:ss 或 yyyy-MM-dd HH:mm:ss），为空则使用弹道文件参考历元",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:25",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:25",
             "nullable": true
           },
           "ballistics": {
@@ -6304,7 +6304,7 @@
               "$ref": "#/components/schemas/BallisticDef"
             },
             "description": "非空时按数组顺序多目标输入，否则旧单目标字段生效；各目标独立文件历元。 源注释：多目标弹道输入数组。为空时兼容旧的 ballisticCsvPath/baseLaunchUtc 单目标输入。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:28",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:28",
             "nullable": true,
             "default": []
           },
@@ -6312,14 +6312,14 @@
             "type": "integer",
             "format": "int64",
             "description": "扫描起点 s，可为负。 源注释：发射偏移起点（秒），默认 -500",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:31",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:31",
             "default": -500
           },
           "stepSizeSec": {
             "type": "integer",
             "format": "int64",
             "description": "偏移步长 s，整数>0。 源注释：发射偏移步长（秒），默认 10",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:34",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:34",
             "default": 10,
             "minimum": 1
           },
@@ -6327,7 +6327,7 @@
             "type": "integer",
             "format": "int64",
             "description": "计算次数，整数>0。 源注释：计算次数，默认 101（覆盖 T-500 到 T+500）",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:37",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:37",
             "default": 101,
             "minimum": 1
           },
@@ -6335,13 +6335,13 @@
             "type": "number",
             "format": "double",
             "description": "旧顶层视场全锥角 °，冻结兼容字段；实际载荷判定仍按原中文类型配置分支。 源注释：传感器视场全锥角（度），默认 140",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:40",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:40",
             "default": 140.0
           },
           "payloadType": {
             "type": "string",
             "description": "载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。 源注释：载荷分类：对地监视、对空监视、对地跟踪、对空跟踪。 旧版单载荷兼容字段，仅当 satellites[].payloads 为空时生效； 平台内嵌载荷后，每颗卫星可携带多台不同类型载荷，分别计算可见窗口。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:47",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:47",
             "nullable": true,
             "default": "对地监视"
           },
@@ -6349,28 +6349,28 @@
             "type": "number",
             "format": "double",
             "description": "旧最远探测距离 km，≤0不限；标准摘要仅映射maxDistanceKm。 源注释：最远探测距离，单位km；小于等于0表示不限制",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:50",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:50",
             "default": 0.0
           },
           "sunExclusionAngleDeg": {
             "type": "number",
             "format": "double",
             "description": "旧太阳回避最小夹角 °；标准摘要仅映射sunAvoidHalfAngleDeg。 源注释：视线方向与太阳方向最小夹角，单位度；默认45，小于该值判为不可见",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:53",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:53",
             "default": 45
           },
           "targetSampleStepSec": {
             "type": "number",
             "format": "double",
             "description": "目标轨迹采样步长 s，≤0按旧自动步长。 源注释：目标轨迹可见性采样步长（秒），默认 1；小于等于0时使用算法自动步长",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:56",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:56",
             "default": 1.0
           },
           "trajectoryPointOutput": {
             "type": "integer",
             "format": "int32",
             "description": "1含完整轨迹点，0保留摘要与统计但轨迹数组为空。 源注释：1 输出窗口内轨迹点明细；0 仅输出窗口摘要。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:59",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:59",
             "default": 1,
             "enum": [
               0,
@@ -6380,7 +6380,7 @@
           "orbitModel": {
             "type": "string",
             "description": "TWO_BODY/J2_SECULAR/J2_NUMERICAL及原中文显示名；字段缺省J2_NUMERICAL，显式null/空白回退TWO_BODY。 源注释：轨道模型：TWO_BODY / J2_SECULAR / J2_NUMERICAL，默认 J2_NUMERICAL 原中文显示名为二体Kepler/J2长期摄动/J2数值积分RK4；含RK4/NUMERICAL/J2_NUM→J2_NUMERICAL，含SECULAR/J2_SEC→J2_SECULAR，含TWO/KEPLER/2BODY及其余未知文本→TWO_BODY。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:62",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:62",
             "nullable": true,
             "default": "J2_NUMERICAL"
           },
@@ -6390,12 +6390,12 @@
               "$ref": "#/components/schemas/SatelliteDef"
             },
             "description": "显式平台列表；null/空列表用SAT-A/B内置双星，平近点角30/0。 源注释：卫星列表，为空时使用内置2星LEO星座",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:65",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:65",
             "nullable": true,
             "default": []
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java"
       },
       "BallisticDef": {
         "type": "object",
@@ -6403,43 +6403,43 @@
           "csvPath": {
             "type": "string",
             "description": "服务端现有CSV路径；register-result必须位于管理results根且现存，计算支持其各自旧路径语义。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:119"
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:119"
           },
           "baseLaunchUTC": {
             "type": "string",
             "description": "多目标第一优先非空发射UTC。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:120",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:120",
             "nullable": true
           },
           "baseLaunchUtc": {
             "type": "string",
             "description": "字面UTC文本；单目标缺省用文件历元，多目标用本目标别名优先级。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:121",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:121",
             "nullable": true
           },
           "baselaunchUTC": {
             "type": "string",
             "description": "多目标第三优先非空发射UTC。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:122",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:122",
             "nullable": true
           },
           "targetId": {
             "type": "string",
             "description": "目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:123",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:123",
             "nullable": true
           },
           "targetName": {
             "type": "string",
             "description": "目标显示名称。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:124",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:124",
             "nullable": true
           }
         },
         "required": [
           "csvPath"
         ],
-        "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java"
       },
       "SatelliteDef": {
         "type": "object",
@@ -6447,61 +6447,61 @@
           "satelliteId": {
             "type": "string",
             "description": "卫星身份；空间下传为 Long 数字，观测及弹道为字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:164",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:164",
             "nullable": true
           },
           "name": {
             "type": "string",
             "description": "目录或平台名称，空值沿原序列化规则处理。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:165",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:165",
             "nullable": true
           },
           "semiMajorAxisM": {
             "type": "number",
             "format": "double",
             "description": "轨道半长轴 m。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:166",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:166",
             "default": 7530612.0
           },
           "eccentricity": {
             "type": "number",
             "format": "double",
             "description": "偏心率，无量纲。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:167",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:167",
             "default": 0.00085
           },
           "inclinationDeg": {
             "type": "number",
             "format": "double",
             "description": "轨道倾角 °。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:168",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:168",
             "default": 64.8
           },
           "raanDeg": {
             "type": "number",
             "format": "double",
             "description": "升交点赤经 °。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:169",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:169",
             "default": 120.0
           },
           "argumentOfPerigeeDeg": {
             "type": "number",
             "format": "double",
             "description": "近地点幅角 °。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:170",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:170",
             "default": 270.0
           },
           "meanAnomalyDeg": {
             "type": "number",
             "format": "double",
             "description": "平近点角 °；显式单星缺省0。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:171",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:171",
             "default": 0
           },
           "epochUtc": {
             "type": "string",
             "description": "字面UTC历元，空白/缺失使用2026/07/01 10:00:00；无epochSec请求字段。 HTTP没有epochSec字段。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:172",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:172",
             "nullable": true
           },
           "payloads": {
@@ -6510,12 +6510,12 @@
               "$ref": "#/components/schemas/PayloadDef"
             },
             "description": "平台多载荷列表，缺失/null/空时使用旧顶层配置；每项不可为null。 源注释：卫星平台内嵌载荷；为空时使用顶层旧版单载荷参数。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:174",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:174",
             "nullable": true,
             "default": []
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java"
       },
       "PayloadDef": {
         "type": "object",
@@ -6523,19 +6523,19 @@
           "payloadId": {
             "type": "string",
             "description": "弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:239",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:239",
             "nullable": true
           },
           "payloadName": {
             "type": "string",
             "description": "载荷显示名；计算入口缺省回退payloadId，preview只回显原值。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:240",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:240",
             "nullable": true
           },
           "payloadType": {
             "type": "string",
             "description": "载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:241",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:241",
             "nullable": true,
             "default": "对地监视"
           },
@@ -6543,81 +6543,81 @@
             "type": "number",
             "format": "double",
             "description": "旧最远探测距离 km，≤0不限；标准摘要仅映射maxDistanceKm。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:242",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:242",
             "default": 0.0
           },
           "sunExclusionAngleDeg": {
             "type": "number",
             "format": "double",
             "description": "旧太阳回避最小夹角 °；标准摘要仅映射sunAvoidHalfAngleDeg。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:243",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:243",
             "default": 45
           },
           "minDistanceKm": {
             "type": "number",
             "format": "double",
             "description": "最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 源注释：标准最近距离（公里），必填有限且非负。 范围仅对 SPACE/GROUND 标准分支生效；旧中文分支不读取该字段，兼容 DTO 不无条件声明此范围。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:246",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:246",
             "nullable": true
           },
           "maxDistanceKm": {
             "type": "number",
             "format": "double",
             "description": "最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 源注释：标准最远距离（公里），必填；0不限，否则须大于最近距离。 范围仅对 SPACE/GROUND 标准分支生效；旧中文分支不读取该字段，兼容 DTO 不无条件声明此范围。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:251",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:251",
             "nullable": true
           },
           "azimuthMinDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 源注释：LVLH方位下限（度），与上限同时null表示不限，范围0到360。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:256",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:256",
             "nullable": true
           },
           "azimuthMaxDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 源注释：LVLH方位上限（度），须严格大于下限。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:261",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:261",
             "nullable": true
           },
           "elevationMinDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 源注释：LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:266",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:266",
             "nullable": true
           },
           "elevationMaxDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH俯仰上限 °，与下限成对且min<max≤90。 源注释：LVLH俯仰上限（度），最大90且严格大于下限。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:271",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:271",
             "nullable": true
           },
           "angleRateDegPerSec": {
             "type": "number",
             "format": "double",
             "description": "跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 源注释：跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:276",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:276",
             "nullable": true
           },
           "sunAvoidHalfAngleDeg": {
             "type": "number",
             "format": "double",
             "description": "太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 源注释：太阳回避半角（度），必填有限0到180；0关闭。 范围仅对 SPACE/GROUND 标准分支生效；旧中文分支不读取该字段，兼容 DTO 不无条件声明此范围。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:281",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:281",
             "nullable": true
           },
           "startupAngleRateDegPerSec": {
             "type": "number",
             "format": "double",
             "description": "启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 源注释：启动角速度元数据（度/秒）；null/-1禁用，0/正值仅回显不参与判定。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:286",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:286",
             "nullable": true
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java",
         "description": "兼容宽 DTO：payloadType 去空白忽略大小写为 SPACE/GROUND 时才进入标准分支，标准必填、范围及跨字段校验由 toStandardConstraint 执行；旧中文四类走原 forPayload，仅读取 payloadType/maxDetectRangeKm/sunExclusionAngleDeg，标准字段的无关负值可绑定但被忽略。本共享 schema 不能自动覆盖按类型的全部标准分支约束；严格标准入口另见 StandardPayloadRequest。"
       },
       "FitRequest": {
@@ -6626,7 +6626,7 @@
           "taskName": {
             "type": "string",
             "description": "任务名；不同计算缺省见default，null/空白由原算法回退。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:131",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:131",
             "nullable": true,
             "default": "task"
           },
@@ -6636,32 +6636,32 @@
               "$ref": "#/components/schemas/Package102Record"
             },
             "description": "原102记录数组，至少两个有效三维观测点；不同目标分别拟合。 DTO初始化为空数组，但业务强制非空，省略会失败，不把空数组声明为有效默认请求。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:132",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:132",
             "minItems": 2
           },
           "taskStartTime": {
             "type": "string",
             "description": "字面UTC输出开始时刻；拟合须覆盖首观测，模拟与物理起落区间分开。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:133",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:133",
             "nullable": true
           },
           "taskEndTime": {
             "type": "string",
             "description": "字面UTC输出结束时刻；拟合须覆盖末观测，模拟与物理起落区间分开。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:134",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:134",
             "nullable": true
           },
           "interpolationStepSec": {
             "type": "number",
             "format": "double",
             "description": "输出步长 s，原normalizeStep最小0.001。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:135",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:135",
             "default": 1.0
           },
           "outputDir": {
             "type": "string",
             "description": "HTTP未出现字段时分配管理results独占目录；显式值/null/空白/点目录按旧语义，DTO默认点不代表HTTP省略后写源码目录。 以原 JSON 字段存在性切换分支，Java 内部初始化为点目录，不声明为 HTTP 默认值。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:136",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:136",
             "nullable": true,
             "x-java-initial-value": ".",
             "x-http-omission-behavior": "缺失时分配管理 results 独占目录；显式传值按旧语义。"
@@ -6670,14 +6670,14 @@
         "required": [
           "package102"
         ],
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "Package102Record": {
         "type": "object",
         "properties": {
           "coordinateInfo": {
             "description": "102嵌套坐标第一优先入口；优先于coordinate/coords/扁平同名字段。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:141",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:141",
             "anyOf": [
               {
                 "allOf": [
@@ -6697,7 +6697,7 @@
           },
           "coordinate": {
             "description": "102嵌套坐标第二优先入口。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:142",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:142",
             "anyOf": [
               {
                 "allOf": [
@@ -6717,7 +6717,7 @@
           },
           "coords": {
             "description": "102嵌套坐标第三优先入口。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:143",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:143",
             "anyOf": [
               {
                 "allOf": [
@@ -6737,7 +6737,7 @@
           },
           "targetInfo": {
             "description": "102嵌套目标第一优先入口。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:144",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:144",
             "anyOf": [
               {
                 "allOf": [
@@ -6757,7 +6757,7 @@
           },
           "target": {
             "description": "102嵌套目标第二优先入口，否则取扁平字段。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:145",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:145",
             "anyOf": [
               {
                 "allOf": [
@@ -6778,179 +6778,179 @@
           "tack3d_time_code": {
             "type": "string",
             "description": "历史拼写时间码字符串，UTC时间；支持原文本/17位毫秒码，避免JS数字丢精度。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:147",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:147",
             "nullable": true
           },
           "track3d_time_code": {
             "type": "string",
             "description": "正确拼写的时间码别名，tack3d非空优先。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:148",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:148",
             "nullable": true
           },
           "tack3d_tgt_pos_x": {
             "type": "string",
             "description": "原102位置编码字符串，每单位0.1 m。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:149",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:149",
             "nullable": true
           },
           "tack3d_tgt_pos_y": {
             "type": "string",
             "description": "原102位置编码字符串，每单位0.1 m。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:150",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:150",
             "nullable": true
           },
           "tack3d_tgt_pos_z": {
             "type": "string",
             "description": "原102位置编码字符串，每单位0.1 m。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:151",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:151",
             "nullable": true
           },
           "tack3d_tgt_vel_x": {
             "type": "string",
             "description": "原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:152",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:152",
             "nullable": true
           },
           "tack3d_tgt_vel_y": {
             "type": "string",
             "description": "原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:153",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:153",
             "nullable": true
           },
           "tack3d_tgt_vel_z": {
             "type": "string",
             "description": "原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:154",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:154",
             "nullable": true
           },
           "tack3d_tgt_acc_x": {
             "type": "string",
             "description": "原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:155",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:155",
             "nullable": true
           },
           "tack3d_tgt_acc_y": {
             "type": "string",
             "description": "原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:156",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:156",
             "nullable": true
           },
           "tack3d_tgt_acc_z": {
             "type": "string",
             "description": "原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:157",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:157",
             "nullable": true
           },
           "prop_tgt_type_8": {
             "type": "string",
             "description": "原目标类型码字符串，参与模型选择。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:158",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:158",
             "nullable": true
           },
           "prop_tgt_shape_8": {
             "type": "string",
             "description": "原目标形状码字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:159",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:159",
             "nullable": true
           },
           "prop_tgt_flight_phase_8": {
             "type": "string",
             "description": "原飞行阶段码字符串，参与拟合策略。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:160",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:160",
             "nullable": true
           },
           "prob_tgt_critical_incident": {
             "type": "string",
             "description": "原关键事件码字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:161",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:161",
             "nullable": true
           },
           "prob_tgt_critical_incident_time_code": {
             "type": "string",
             "description": "关键事件UTC时间码字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:162",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:162",
             "nullable": true
           },
           "track_tgt_id": {
             "type": "string",
             "description": "102目标字符串身份；未提供按原UNKNOWN等默认路径处理。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:163",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:163",
             "nullable": true
           },
           "launch_time_code": {
             "type": "string",
             "description": "102物理发射UTC时间码，非输出窗口端点。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:164",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:164",
             "nullable": true
           },
           "launch_coord_frame": {
             "type": "string",
             "description": "发射点原坐标框架J2000/ECI/ECEF等按原解析。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:165",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:165",
             "nullable": true
           },
           "launch_pos_x": {
             "type": "string",
             "description": "原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:166",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:166",
             "nullable": true
           },
           "launch_pos_y": {
             "type": "string",
             "description": "原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:167",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:167",
             "nullable": true
           },
           "launch_pos_z": {
             "type": "string",
             "description": "原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:168",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:168",
             "nullable": true
           },
           "launch_pos_unit": {
             "type": "string",
             "description": "发射点位置单位原m/km/0.1m解析。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:169",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:169",
             "nullable": true
           },
           "impact_time_code": {
             "type": "string",
             "description": "102物理落点UTC时间码，非输出窗口端点。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:170",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:170",
             "nullable": true
           },
           "impact_coord_frame": {
             "type": "string",
             "description": "落点原坐标框架按原解析。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:171",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:171",
             "nullable": true
           },
           "impact_pos_x": {
             "type": "string",
             "description": "原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:172",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:172",
             "nullable": true
           },
           "impact_pos_y": {
             "type": "string",
             "description": "原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:173",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:173",
             "nullable": true
           },
           "impact_pos_z": {
             "type": "string",
             "description": "原物理端点坐标分量字符串，按对应pos_unit及coord_frame转换。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:174",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:174",
             "nullable": true
           },
           "impact_pos_unit": {
             "type": "string",
             "description": "落点位置单位原m/km/0.1m解析。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:175",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:175",
             "nullable": true
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "CoordinateInfo": {
         "type": "object",
@@ -6958,71 +6958,71 @@
           "tack3d_time_code": {
             "type": "string",
             "description": "历史拼写时间码字符串，UTC时间；支持原文本/17位毫秒码，避免JS数字丢精度。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:212",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:212",
             "nullable": true
           },
           "track3d_time_code": {
             "type": "string",
             "description": "正确拼写的时间码别名，tack3d非空优先。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:213",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:213",
             "nullable": true
           },
           "tack3d_tgt_pos_x": {
             "type": "string",
             "description": "原102位置编码字符串，每单位0.1 m。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:214",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:214",
             "nullable": true
           },
           "tack3d_tgt_pos_y": {
             "type": "string",
             "description": "原102位置编码字符串，每单位0.1 m。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:215",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:215",
             "nullable": true
           },
           "tack3d_tgt_pos_z": {
             "type": "string",
             "description": "原102位置编码字符串，每单位0.1 m。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:216",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:216",
             "nullable": true
           },
           "tack3d_tgt_vel_x": {
             "type": "string",
             "description": "原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:217",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:217",
             "nullable": true
           },
           "tack3d_tgt_vel_y": {
             "type": "string",
             "description": "原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:218",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:218",
             "nullable": true
           },
           "tack3d_tgt_vel_z": {
             "type": "string",
             "description": "原102速度编码字符串，每单位0.0001 m/s；缺失沿原零值/估计规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:219",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:219",
             "nullable": true
           },
           "tack3d_tgt_acc_x": {
             "type": "string",
             "description": "原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:220",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:220",
             "nullable": true
           },
           "tack3d_tgt_acc_y": {
             "type": "string",
             "description": "原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:221",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:221",
             "nullable": true
           },
           "tack3d_tgt_acc_z": {
             "type": "string",
             "description": "原102加速度编码字符串，每单位0.01 m/s²；缺失沿原零值规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:222",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:222",
             "nullable": true
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "TargetInfo": {
         "type": "object",
@@ -7030,41 +7030,41 @@
           "prop_tgt_type_8": {
             "type": "string",
             "description": "原目标类型码字符串，参与模型选择。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:227",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:227",
             "nullable": true
           },
           "prop_tgt_shape_8": {
             "type": "string",
             "description": "原目标形状码字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:228",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:228",
             "nullable": true
           },
           "prop_tgt_flight_phase_8": {
             "type": "string",
             "description": "原飞行阶段码字符串，参与拟合策略。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:229",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:229",
             "nullable": true
           },
           "prob_tgt_critical_incident": {
             "type": "string",
             "description": "原关键事件码字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:230",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:230",
             "nullable": true
           },
           "prob_tgt_critical_incident_time_code": {
             "type": "string",
             "description": "关键事件UTC时间码字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:231",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:231",
             "nullable": true
           },
           "track_tgt_id": {
             "type": "string",
             "description": "102目标字符串身份；未提供按原UNKNOWN等默认路径处理。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:232",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:232",
             "nullable": true
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "FileResult": {
         "type": "object",
@@ -7072,26 +7072,26 @@
           "targetId": {
             "type": "string",
             "description": "目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:271",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:271",
             "nullable": true
           },
           "model": {
             "type": "string",
             "description": "原拟合/模拟/重定时模型名称字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:272",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:272",
             "nullable": true
           },
           "csvPath": {
             "type": "string",
             "description": "服务端现有CSV路径；register-result必须位于管理results根且现存，计算支持其各自旧路径语义。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:273",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:273",
             "nullable": true
           },
           "pointCount": {
             "type": "integer",
             "format": "int32",
             "description": "文件完整数据点数，非预览页长度。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:274"
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:274"
           },
           "warnings": {
             "type": "array",
@@ -7099,7 +7099,7 @@
               "type": "string"
             },
             "description": "未截断原算法告警文本数组。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:275",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:275",
             "nullable": true
           }
         },
@@ -7110,7 +7110,7 @@
           "pointCount",
           "warnings"
         ],
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "FitRunResult": {
         "type": "object",
@@ -7118,14 +7118,14 @@
           "taskName": {
             "type": "string",
             "description": "任务名；不同计算缺省见default，null/空白由原算法回退。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:280",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:280",
             "nullable": true
           },
           "targetCount": {
             "type": "integer",
             "format": "int32",
             "description": "结果目标数量。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:281"
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:281"
           },
           "files": {
             "type": "array",
@@ -7133,7 +7133,7 @@
               "$ref": "#/components/schemas/FileResult"
             },
             "description": "每目标CSV摘要，所有路径均取本次真实响应，不猜文件名。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:282",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:282",
             "nullable": true
           }
         },
@@ -7142,7 +7142,7 @@
           "targetCount",
           "files"
         ],
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "SimulationRequest": {
         "type": "object",
@@ -7150,78 +7150,78 @@
           "taskName": {
             "type": "string",
             "description": "任务名；不同计算缺省见default，null/空白由原算法回退。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:287",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:287",
             "nullable": true,
             "default": "simulation"
           },
           "targetId": {
             "type": "string",
             "description": "目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:288",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:288",
             "nullable": true,
             "default": "SIM-TGT"
           },
           "taskStartTime": {
             "type": "string",
             "description": "可空/空白的任务/文件元数据；非空仍按原时间解析，参与告警及文件命名，不裁剪或扩展模拟CSV时域；物理时域由launchTimeUtc及端点模型确定的落点时间决定。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:289",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:289",
             "nullable": true
           },
           "taskEndTime": {
             "type": "string",
             "description": "可空/空白的任务/文件元数据；非空仍按原时间解析，参与告警及文件命名，不裁剪或扩展模拟CSV时域；不要求它晚于taskStartTime，物理时域仍由端点模型决定。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:290",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:290",
             "nullable": true
           },
           "launchTimeUtc": {
             "type": "string",
             "description": "必填字面发射UTC文本。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:291"
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:291"
           },
           "impactTimeUtc": {
             "type": "string",
             "description": "物理落点UTC，优先于impactTime；须晚于发射，未给则原自动求解。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:292",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:292",
             "nullable": true
           },
           "impactTime": {
             "type": "string",
             "description": "旧落点UTC别名，impactTimeUtc非空优先。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:293",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:293",
             "nullable": true
           },
           "launchPointX": {
             "type": "number",
             "format": "double",
             "description": "物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:294",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:294",
             "default": 2167790.227
           },
           "launchPointY": {
             "type": "number",
             "format": "double",
             "description": "物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:295",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:295",
             "default": 4775481.109
           },
           "launchPointZ": {
             "type": "number",
             "format": "double",
             "description": "物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:296",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:296",
             "default": 3618557.253
           },
           "launchPointCoordFrame": {
             "type": "string",
             "description": "发射端点原框架；缺失/null/空串/空白均回退J2000；支持J2000/ECI/ECIJ2000、ECEF/ITRF/WGS84ECEF、LLA/LLH/BLH/GEODETIC/WGS84/WGS84LLA，归一去空白/横杠/下划线。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:297",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:297",
             "nullable": true,
             "default": "J2000"
           },
           "launchPointUnit": {
             "type": "string",
             "description": "发射端点坐标单位；缺失/null/空串/空白均回退m；非空保留原m/km/0.1m及数值倍率。地理框架x=经度°、y=纬度°、z=高度m，忽略单位。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:298",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:298",
             "nullable": true,
             "default": "m"
           },
@@ -7229,34 +7229,34 @@
             "type": "number",
             "format": "double",
             "description": "物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:299",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:299",
             "default": 3578635.76
           },
           "impactPointY": {
             "type": "number",
             "format": "double",
             "description": "物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:300",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:300",
             "default": 3522525.227
           },
           "impactPointZ": {
             "type": "number",
             "format": "double",
             "description": "物理端点坐标分量，单位和框架由同前缀Unit/CoordFrame声明；有限数、半径0.75..20倍地球半径。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:301",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:301",
             "default": 3919735.591
           },
           "impactPointCoordFrame": {
             "type": "string",
             "description": "落点端点原框架；缺失/null/空串/空白均回退J2000；支持与launchPointCoordFrame相同的框架及归一规则。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:302",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:302",
             "nullable": true,
             "default": "J2000"
           },
           "impactPointUnit": {
             "type": "string",
             "description": "落点端点坐标单位；缺失/null/空串/空白均回退m；非空保留原m/km/0.1m及数值倍率。地理框架x=经度°、y=纬度°、z=高度m，忽略单位。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:303",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:303",
             "nullable": true,
             "default": "m"
           },
@@ -7264,7 +7264,7 @@
             "type": "number",
             "format": "double",
             "description": "输出间隔 s，优先取正值，否则outputStepSec/1；最终最小0.001。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:304",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:304",
             "default": 1.0
           },
           "phaseEvents": {
@@ -7273,28 +7273,28 @@
               "$ref": "#/components/schemas/PhaseEvent"
             },
             "description": "保留的分段事件DTO数组；当前端点求解路径只读取数量并生成预留告警，不参与事件动力学。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:305",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:305",
             "nullable": true,
             "default": []
           },
           "targetTypeCode": {
             "type": "string",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:311",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:311",
             "nullable": true,
             "default": "0x01"
           },
           "targetShapeCode": {
             "type": "string",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:312",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:312",
             "nullable": true,
             "default": "0x02"
           },
           "flightPhaseCode": {
             "type": "string",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:313",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:313",
             "nullable": true,
             "default": "0x01"
           },
@@ -7302,90 +7302,90 @@
             "type": "number",
             "format": "double",
             "description": "旧兼容角字段 °；当前端点约束路径不以此字段替代端点求解。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:314",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:314",
             "default": 0
           },
           "launchLonDeg": {
             "type": "number",
             "format": "double",
             "description": "旧兼容角字段 °；当前端点约束路径不以此字段替代端点求解。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:315",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:315",
             "default": 0
           },
           "launchHeightM": {
             "type": "number",
             "format": "double",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:316",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:316",
             "default": 0
           },
           "initialSpeedMs": {
             "type": "number",
             "format": "double",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:317",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:317",
             "default": 1500.0
           },
           "azimuthDeg": {
             "type": "number",
             "format": "double",
             "description": "旧兼容角字段 °；当前端点约束路径不以此字段替代端点求解。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:318",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:318",
             "default": 90.0
           },
           "elevationDeg": {
             "type": "number",
             "format": "double",
             "description": "旧兼容角字段 °；当前端点约束路径不以此字段替代端点求解。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:319",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:319",
             "default": 45.0
           },
           "durationSec": {
             "type": "number",
             "format": "double",
             "description": "默认600秒的旧兼容数值；当前端点模型不读取，不用于控制模拟CSV时域或共同观测窗口。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:320",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:320",
             "default": 600.0
           },
           "integrationStepSec": {
             "type": "number",
             "format": "double",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:321",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:321",
             "default": 0.1
           },
           "outputStepSec": {
             "type": "number",
             "format": "double",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:322",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:322",
             "default": 1.0
           },
           "boostDurationSec": {
             "type": "number",
             "format": "double",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:323",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:323",
             "default": 80.0
           },
           "boostAccelerationMs2": {
             "type": "number",
             "format": "double",
             "description": "旧兼容字段；默认及类型见本行，当前端点求解路径不替代物理端点；outputStepSec是输出间隔的后备。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:324",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:324",
             "default": 18.0
           },
           "dragCdAreaOverMass": {
             "type": "number",
             "format": "double",
             "description": "阻力系数面积质量比，兼容字段，端点路径未读取。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:325",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:325",
             "default": 0.0
           },
           "outputDir": {
             "type": "string",
             "description": "HTTP未出现字段时分配管理results独占目录；显式值/null/空白/点目录按旧语义，DTO默认点不代表HTTP省略后写源码目录。 以原 JSON 字段存在性切换分支，Java 内部初始化为点目录，不声明为 HTTP 默认值。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:326",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:326",
             "nullable": true,
             "x-java-initial-value": ".",
             "x-http-omission-behavior": "缺失时分配管理 results 独占目录；显式传值按旧语义。"
@@ -7394,7 +7394,7 @@
         "required": [
           "launchTimeUtc"
         ],
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "RetimeTrajectoryRequest": {
         "type": "object",
@@ -7402,31 +7402,31 @@
           "taskName": {
             "type": "string",
             "description": "任务名；不同计算缺省见default，null/空白由原算法回退。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:331",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:331",
             "nullable": true,
             "default": "retimeTrajectory"
           },
           "targetId": {
             "type": "string",
             "description": "目标身份；空间请求为 Long 数字，观测及弹道响应为字符串。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:332",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:332",
             "nullable": true,
             "default": "RETIMED-TGT"
           },
           "trajectoryCsvPath": {
             "type": "string",
             "description": "重定时本地服务器CSV路径，要求原UTC分列/ECEF列；不直接支持远程URL。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:333"
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:333"
           },
           "launchTimeUtc": {
             "type": "string",
             "description": "必填字面发射UTC文本。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:334"
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:334"
           },
           "outputDir": {
             "type": "string",
             "description": "HTTP未出现字段时分配管理results独占目录；显式值/null/空白/点目录按旧语义，DTO默认点不代表HTTP省略后写源码目录。 以原 JSON 字段存在性切换分支，Java 内部初始化为点目录，不声明为 HTTP 默认值。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:335",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:335",
             "nullable": true,
             "x-java-initial-value": ".",
             "x-http-omission-behavior": "缺失时分配管理 results 独占目录；显式传值按旧语义。"
@@ -7436,7 +7436,7 @@
           "trajectoryCsvPath",
           "launchTimeUtc"
         ],
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "PhaseEvent": {
         "type": "object",
@@ -7444,75 +7444,75 @@
           "phaseType": {
             "type": "string",
             "description": "原阶段类型字符串，端点求解路径未读取。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:340",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:340",
             "nullable": true
           },
           "eventType": {
             "type": "string",
             "description": "原事件类型字符串，端点求解路径未读取。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:341",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:341",
             "nullable": true
           },
           "startTime": {
             "type": "string",
             "description": "原兼容文本，可空/空白；当前端点模型不读取，不做事件起止顺序业务校验；仅接收phaseEvents并在告警中读取事件数量。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:342",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:342",
             "nullable": true
           },
           "endTime": {
             "type": "string",
             "description": "原兼容文本，可空/空白；当前端点模型不读取，不做事件起止顺序业务校验；仅接收phaseEvents并在告警中读取事件数量。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:343",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:343",
             "nullable": true
           },
           "eventTime": {
             "type": "string",
             "description": "原事件字面UTC文本，端点求解路径未读取。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:344",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:344",
             "nullable": true
           },
           "dynamics": {
             "type": "string",
             "description": "原动力学字符串，端点求解路径未读取。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:345",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:345",
             "nullable": true
           },
           "directionMode": {
             "type": "string",
             "description": "原方向模式字符串，端点求解路径未读取。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:346",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:346",
             "nullable": true
           },
           "accelerationMs2": {
             "type": "number",
             "format": "double",
             "description": "加速度 m/s²，兼容元数据。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:347",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:347",
             "default": 0
           },
           "deltaVms": {
             "type": "number",
             "format": "double",
             "description": "速度增量 m/s，兼容元数据。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:348",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:348",
             "default": 0
           },
           "liftDragRatio": {
             "type": "number",
             "format": "double",
             "description": "升阻比，无量纲，兼容字段。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:349",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:349",
             "default": 0
           },
           "dragCdAreaOverMass": {
             "type": "number",
             "format": "double",
             "description": "阻力系数面积质量比，兼容字段，端点路径未读取。",
-            "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java:350",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java:350",
             "default": 0
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/trajectory/TargetTrajectoryFitter.java"
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java"
       },
       "VisibilityObservationResult": {
         "type": "object",
@@ -8837,19 +8837,19 @@
           "payloadId": {
             "type": "string",
             "description": "弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:239",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:239",
             "nullable": true
           },
           "payloadName": {
             "type": "string",
             "description": "载荷显示名；计算入口缺省回退payloadId，preview只回显原值。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:240",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:240",
             "nullable": true
           },
           "payloadType": {
             "type": "string",
             "description": "载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:241",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:241",
             "pattern": "^\\s*([Ss][Pp][Aa][Cc][Ee]|[Gg][Rr][Oo][Uu][Nn][Dd])\\s*$",
             "x-canonical-values": [
               "SPACE",
@@ -8860,69 +8860,69 @@
             "type": "number",
             "format": "double",
             "description": "旧最远探测距离 km，≤0不限；标准摘要仅映射maxDistanceKm。 此preview入口仍绑定完整PayloadDef，允许发送该旧兼容字段，但标准校验及12字段回显不读取它。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:242",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:242",
             "default": 0.0
           },
           "sunExclusionAngleDeg": {
             "type": "number",
             "format": "double",
             "description": "旧太阳回避最小夹角 °；标准摘要仅映射sunAvoidHalfAngleDeg。 此preview入口仍绑定完整PayloadDef，允许发送该旧兼容字段，但标准校验及12字段回显不读取它。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:243",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:243",
             "default": 45
           },
           "minDistanceKm": {
             "type": "number",
             "format": "double",
             "description": "最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 源注释：标准最近距离（公里），必填有限且非负。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:246",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:246",
             "minimum": 0
           },
           "maxDistanceKm": {
             "type": "number",
             "format": "double",
             "description": "最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 源注释：标准最远距离（公里），必填；0不限，否则须大于最近距离。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:251",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:251",
             "minimum": 0
           },
           "azimuthMinDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 源注释：LVLH方位下限（度），与上限同时null表示不限，范围0到360。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:256",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:256",
             "nullable": true
           },
           "azimuthMaxDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 源注释：LVLH方位上限（度），须严格大于下限。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:261",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:261",
             "nullable": true
           },
           "elevationMinDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 源注释：LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:266",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:266",
             "nullable": true
           },
           "elevationMaxDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH俯仰上限 °，与下限成对且min<max≤90。 源注释：LVLH俯仰上限（度），最大90且严格大于下限。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:271",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:271",
             "nullable": true
           },
           "angleRateDegPerSec": {
             "type": "number",
             "format": "double",
             "description": "跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 源注释：跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:276"
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:276"
           },
           "sunAvoidHalfAngleDeg": {
             "type": "number",
             "format": "double",
             "description": "太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 源注释：太阳回避半角（度），必填有限0到180；0关闭。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:281",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:281",
             "minimum": 0,
             "maximum": 180
           },
@@ -8930,11 +8930,11 @@
             "type": "number",
             "format": "double",
             "description": "启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 源注释：启动角速度元数据（度/秒）；null/-1禁用，0/正值仅回显不参与判定。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:286",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:286",
             "nullable": true
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java",
         "required": [
           "payloadType",
           "minDistanceKm",
@@ -8949,19 +8949,19 @@
           "payloadId": {
             "type": "string",
             "description": "弹道载荷字符串身份；未给时计算入口生成卫星ID-PAYLOAD-序号，preview只回显原值。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:239",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:239",
             "nullable": true
           },
           "payloadName": {
             "type": "string",
             "description": "载荷显示名；计算入口缺省回退payloadId，preview只回显原值。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:240",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:240",
             "nullable": true
           },
           "payloadType": {
             "type": "string",
             "description": "载荷类别；标准SPACE/GROUND按去空白且忽略大小写归一；旧中文四类保持原分支。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:241",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:241",
             "nullable": true,
             "enum": [
               "SPACE",
@@ -8973,7 +8973,7 @@
             "type": "number",
             "format": "double",
             "description": "最近距离 km，标准载荷必填有限且≥0；统计响应表示实际最小距离。 源注释：标准最近距离（公里），必填有限且非负。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:246",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:246",
             "nullable": true,
             "minimum": 0
           },
@@ -8981,7 +8981,7 @@
             "type": "number",
             "format": "double",
             "description": "最远距离 km，标准载荷必填；0不限，非零须>minDistanceKm；统计响应表示实际最大距离。 源注释：标准最远距离（公里），必填；0不限，否则须大于最近距离。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:251",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:251",
             "nullable": true,
             "minimum": 0
           },
@@ -8989,42 +8989,42 @@
             "type": "number",
             "format": "double",
             "description": "LVLH方位下限 °，双null不限，否则0≤min<max≤360；0沿速度方向。 源注释：LVLH方位下限（度），与上限同时null表示不限，范围0到360。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:256",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:256",
             "nullable": true
           },
           "azimuthMaxDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH方位上限 °，与下限成对；倒置端点不表示跨0窗口。 源注释：LVLH方位上限（度），须严格大于下限。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:261",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:261",
             "nullable": true
           },
           "elevationMinDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH俯仰下限 °，双null不限；SPACE≥-90、GROUND≥-91。 源注释：LVLH俯仰下限（度），SPACE最低-90、GROUND最低-91；成对可空。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:266",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:266",
             "nullable": true
           },
           "elevationMaxDeg": {
             "type": "number",
             "format": "double",
             "description": "LVLH俯仰上限 °，与下限成对且min<max≤90。 源注释：LVLH俯仰上限（度），最大90且严格大于下限。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:271",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:271",
             "nullable": true
           },
           "angleRateDegPerSec": {
             "type": "number",
             "format": "double",
             "description": "跟踪视线角速度 °/s，标准必填；SPACE 0/-1不限，GROUND 0是真零上限且-1拒绝。 源注释：跟踪角速度（度/秒），必填；SPACE的0/-1不限，GROUND的0是真零。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:276",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:276",
             "nullable": true
           },
           "sunAvoidHalfAngleDeg": {
             "type": "number",
             "format": "double",
             "description": "太阳回避半角 °，标准必填有限0..180；0关闭，等于边界允许。 源注释：太阳回避半角（度），必填有限0到180；0关闭。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:281",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:281",
             "nullable": true,
             "minimum": 0,
             "maximum": 180
@@ -9033,11 +9033,11 @@
             "type": "number",
             "format": "double",
             "description": "启动角速度 °/s；null/-1禁用，其它非负有限；只作元数据，不参与窗口判定。 源注释：启动角速度元数据（度/秒）；null/-1禁用，0/正值仅回显不参与判定。",
-            "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java:286",
+            "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java:286",
             "nullable": true
           }
         },
-        "x-source": "backend/src/main/java/com/tx/alg/api/VisibilityRequest.java",
+        "x-source": "backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java",
         "required": [
           "payloadId",
           "payloadName",

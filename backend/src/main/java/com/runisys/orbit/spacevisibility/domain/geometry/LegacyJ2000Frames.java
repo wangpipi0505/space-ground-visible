@@ -3,7 +3,7 @@ package com.runisys.orbit.spacevisibility.domain.geometry;
 /**
  * 原弹道J2000与ECEF坐标转换，采用原IAU1976岁差、简化IAU1980章动和GAST。
  * 输入时间为原UTC日历J2000绝对秒（不是相对发射秒或TT），原有offset已包含在输入中，不再扣除。
- * 不依赖Orekit、Spring或旧com.tx兼容核心；不替换空间TEME/GMST转换，也不改变太阳源。
+ * 只承担既有 J2000 坐标变换；不替换空间 TEME/GMST 转换，也不改变太阳源。
  * 位置单位米，速度单位米/秒；真地固导数与STK Fixed惯性分量通过不同方法显式区分。
  */
 public final class LegacyJ2000Frames {

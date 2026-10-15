@@ -2,8 +2,8 @@ package com.runisys.orbit.spacevisibility.application.ballistic;
 
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileConfiguration;
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.tx.alg.OrbitCalculator;
-import com.tx.alg.TrajectoryFileResolver;
+import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolver;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

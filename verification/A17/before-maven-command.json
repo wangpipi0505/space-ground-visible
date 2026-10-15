@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    "-B",
+    "-Dstyle.color=never",
+    "package"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A17\\before\\backend",
+  "startedUnix": 1792057101.6291175,
+  "durationSec": 48.956928730010986,
+  "exitCode": 0,
+  "stdoutSha256": "36dc2ee3b92a8198b5c061328c99048e6b620d6afebed42822f8ccc5c2cc21c0",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

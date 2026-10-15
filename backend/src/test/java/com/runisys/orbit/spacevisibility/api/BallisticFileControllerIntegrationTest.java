@@ -131,23 +131,23 @@ class BallisticFileControllerIntegrationTest {
         Path source = java.nio.file.Paths.get("../test-data/reference/ballistic/trajectory-0.1s-standard.csv");
         byte[] bytes = Files.readAllBytes(source);
         JsonNode reference = upload("参考弹道.csv", bytes);
-        com.tx.alg.OrbitCalculator.ParsedBallisticCsv expected = com.tx.alg.OrbitCalculator.parseBallisticCsvWithReference(source);
-        double originalEpoch = com.tx.alg.OrbitCalculator.referenceEpochSec;
-        double originalOffset = com.tx.alg.OrbitCalculator.utcOffsetSec;
+        com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.ParsedBallisticCsv expected = com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.parseBallisticCsvWithReference(source);
+        double originalEpoch = com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.referenceEpochSec;
+        double originalOffset = com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.utcOffsetSec;
         try {
-            com.tx.alg.OrbitCalculator.referenceEpochSec = -12345;
-            com.tx.alg.OrbitCalculator.utcOffsetSec = 28800;
+            com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.referenceEpochSec = -12345;
+            com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.utcOffsetSec = 28800;
             com.runisys.orbit.spacevisibility.application.ballistic.BallisticTrajectoryService.ParsedTrajectory actual =
                     parser.parse(reference.path("serverPath").asText());
             assertEquals(reference.path("serverPath").asText(), actual.sourceLocation);
-            assertEquals(-12345, com.tx.alg.OrbitCalculator.referenceEpochSec);
+            assertEquals(-12345, com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.referenceEpochSec);
             assertEquals(Double.doubleToLongBits(expected.referenceEpochSec), Double.doubleToLongBits(actual.parsed.referenceEpochSec));
             assertEquals(expected.points.size(), actual.parsed.points.size());
             for (int i = 0; i < expected.points.size(); i++) {
                 // 逐位核验时间及文件原始十二个位置/速度分量；派生大地坐标由既有业务黄金独立核验。
                 for (String name : new String[]{"tSec", "ecefX", "ecefY", "ecefZ", "eciX", "eciY", "eciZ",
                         "eciVx", "eciVy", "eciVz", "ecefVx", "ecefVy", "ecefVz"}) {
-                    java.lang.reflect.Field field = com.tx.alg.OrbitCalculator.BallisticPoint.class.getField(name);
+                    java.lang.reflect.Field field = com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.BallisticPoint.class.getField(name);
                     assertEquals(Double.doubleToLongBits(field.getDouble(expected.points.get(i))),
                             Double.doubleToLongBits(field.getDouble(actual.parsed.points.get(i))), "点 " + i + " 字段 " + name);
                 }
@@ -157,8 +157,8 @@ class BallisticFileControllerIntegrationTest {
                     .andExpect(jsonPath("$.metadata.positionUnit").value("m"))
                     .andExpect(jsonPath("$.rows.length()").value(2));
         } finally {
-            com.tx.alg.OrbitCalculator.referenceEpochSec = originalEpoch;
-            com.tx.alg.OrbitCalculator.utcOffsetSec = originalOffset;
+            com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.referenceEpochSec = originalEpoch;
+            com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.utcOffsetSec = originalOffset;
         }
     }
 

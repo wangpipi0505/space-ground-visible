@@ -2,10 +2,12 @@
 
 本文档描述目标轨迹拟合模块的接口结构和输入输出约束。算法设计沿用原交付说明；当前HTTP完整字段另见[完整接口文档](接口文档.md)。
 
+请求Java类型位于`api.ballistic.BallisticTrajectoryRequests`：FitRequest、SimulationRequest、RetimeRequest，分别继承领域FitInput、SimulationInput、RetimeInput。以下Java DTO块展开字段供阅读；JSON字段和原章节表格保持，OpenAPI仍使用既有schema名称。
+
 核心算法类：
 
 ```text
-com.tx.alg.trajectory.TargetTrajectoryFitter
+com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter
 ```
 
 正式Spring Boot HTTP控制器：
@@ -65,7 +67,7 @@ POST /api/trajectory/fit/package102
 Content-Type: application/json
 ```
 
-Java 调用：
+Java 调用（request使用对应领域输入，或继承它的API请求）：
 
 ```java
 TargetTrajectoryFitter.FitRunResult result =

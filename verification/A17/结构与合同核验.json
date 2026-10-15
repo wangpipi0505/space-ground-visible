@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "domainBodies": [
+    {
+      "file": "BallisticArcSupport.java",
+      "unchanged": true
+    },
+    {
+      "file": "BallisticLaunchSearch.java",
+      "unchanged": true
+    },
+    {
+      "file": "BallisticResultWriter.java",
+      "unchanged": true
+    },
+    {
+      "file": "BallisticSampledWindows.java",
+      "unchanged": true
+    },
+    {
+      "file": "BallisticTrajectoryReader.java",
+      "unchanged": true
+    },
+    {
+      "file": "BallisticVisibilityGeometry.java",
+      "unchanged": true
+    },
+    {
+      "file": "OrbitCalculator.java",
+      "unchanged": true
+    },
+    {
+      "file": "TargetTrajectoryFitter.java",
+      "unchanged": true
+    }
+  ],
+  "unchangedOrbitFiles": [
+    "BallisticCartesianPropagation.java",
+    "BallisticOrbitPropagation.java",
+    "KeplerOrbitStateProvider.java",
+    "OrbitDefinition.java",
+    "OrbitPropagationTool.java",
+    "OrbitState.java",
+    "OrbitStateProvider.java",
+    "OrbitTime.java",
+    "OrekitDataInitializer.java",
+    "SpaceOrbitStateProvider.java",
+    "SpaceTimeFrames.java",
+    "TleOrbitStateProvider.java"
+  ],
+  "noOldProductPackage": true,
+  "noBallisticDomainOrVisibilityApplicationToApiDependency": true,
+  "boundaryScope": "本轮领域计算与窗口应用输入/服务；既有文件预览DTO依赖及空间应用代码不在此断言范围",
+  "openApiOnlySourceLocationsChanged": true,
+  "openApiOperations": 35,
+  "originalDirectories": [
+    {
+      "name": "space",
+      "files": 526,
+      "differences": []
+    },
+    {
+      "name": "ballistic",
+      "files": 171,
+      "differences": []
+    }
+  ]
+}

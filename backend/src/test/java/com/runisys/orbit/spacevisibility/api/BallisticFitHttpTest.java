@@ -4,9 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.runisys.orbit.spacevisibility.application.ballistic.BallisticFitService;
-import com.tx.alg.api.TargetTrajectoryFitController;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.FitRequest;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.FitRunResult;
+import com.runisys.orbit.spacevisibility.testsupport.TrajectoryEngineReference;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitInput;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitRunResult;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +71,7 @@ class BallisticFitHttpTest {
         // 同请求再走旧 Java 入口；数值、警告、顺序和文件字节全部保留，只映射生成目录及时间戳文件名。
         ObjectNode originalRequest = request.deepCopy();
         originalRequest.put("outputDir", root.resolve("java-reference").toString());
-        ResponseEntity<?> legacy = new TargetTrajectoryFitController().fitPackage102(mapper.treeToValue(originalRequest, FitRequest.class));
+        ResponseEntity<?> legacy = new TrajectoryEngineReference().fitPackage102(mapper.treeToValue(originalRequest, FitInput.class));
         assertEquals(200, legacy.getStatusCodeValue());
         assertSameResult(result, mapper.valueToTree(legacy.getBody()));
         assertFrozen(originalRequest, result, 200);
@@ -127,12 +127,12 @@ class BallisticFitHttpTest {
 
     @Test
     void 应用编排不修改原请求且普通Java默认仍为点目录() throws Exception {
-        FitRequest request = mapper.treeToValue(fixture(), FitRequest.class);
+        FitInput request = mapper.treeToValue(fixture(), FitInput.class);
         request.outputDir = ".";
         JsonNode before = mapper.valueToTree(request);
         FitRunResult result = service.fitPackage102(request, false);
         assertEquals(before, mapper.valueToTree(request));
-        assertEquals(".", new FitRequest().outputDir);
+        assertEquals(".", new FitInput().outputDir);
         assertTrue(Paths.get(result.files.get(0).csvPath).toRealPath().startsWith(root.resolve("results").toRealPath()));
     }
 
@@ -141,15 +141,15 @@ class BallisticFitHttpTest {
         ObjectNode invalid = fixture();
         invalid.putArray("package102");
         ObjectNode explicit = invalid.deepCopy().put("outputDir", root.resolve("error-reference").toString());
-        JsonNode expected = mapper.valueToTree(new TargetTrajectoryFitController().fitPackage102(
-                mapper.treeToValue(explicit, FitRequest.class)).getBody());
+        JsonNode expected = mapper.valueToTree(new TrajectoryEngineReference().fitPackage102(
+                mapper.treeToValue(explicit, FitInput.class)).getBody());
         ResponseEntity<JsonNode> response = http.postForEntity("/api/trajectory/fit/package102", invalid, JsonNode.class);
         assertEquals(400, response.getStatusCodeValue());
         assertEquals(expected, response.getBody());
         assertFrozen(explicit, response.getBody(), 400);
         Path blocked = Files.write(root.resolve("cannot-be-directory"), new byte[]{7});
         ObjectNode failure = fixture().put("outputDir", blocked.toString());
-        ResponseEntity<?> original = new TargetTrajectoryFitController().fitPackage102(mapper.treeToValue(failure, FitRequest.class));
+        ResponseEntity<?> original = new TrajectoryEngineReference().fitPackage102(mapper.treeToValue(failure, FitInput.class));
         response = http.postForEntity("/api/trajectory/fit/package102", failure, JsonNode.class);
         assertEquals(500, original.getStatusCodeValue());
         assertEquals(500, response.getStatusCodeValue());

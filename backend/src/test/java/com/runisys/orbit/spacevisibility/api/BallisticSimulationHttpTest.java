@@ -3,8 +3,8 @@ package com.runisys.orbit.spacevisibility.api;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.tx.alg.api.TargetTrajectoryFitController;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.SimulationRequest;
+import com.runisys.orbit.spacevisibility.testsupport.TrajectoryEngineReference;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.SimulationInput;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +46,7 @@ class BallisticSimulationHttpTest {
     void MockMvc空请求原400及字段绑定失败沿用既有MVC语义() throws Exception {
         JsonNode error = mapper.readTree(mvc.perform(post("/api/trajectory/simulate").contentType("application/json").content("null"))
                 .andExpect(status().isBadRequest()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8));
-        assertEquals(mapper.valueToTree(new TargetTrajectoryFitController().simulate(null).getBody()), error);
+        assertEquals(mapper.valueToTree(new TrajectoryEngineReference().simulate(null).getBody()), error);
         // 项目现有 ApiExceptionHandler 的 Exception 兜底将消息转换错误返回 500；T03 未约定它必须是算法 400。
         JsonNode binding = mapper.readTree(mvc.perform(post("/api/trajectory/simulate").contentType("application/json")
                 .content("{\"launchPointX\":\"invalid\"}")).andExpect(status().isInternalServerError())
@@ -238,7 +238,7 @@ class BallisticSimulationHttpTest {
     private void assertOriginal(ObjectNode request, JsonNode actual, int status) throws Exception {
         ObjectNode reference = request.deepCopy();
         if (status == 200 || !reference.has("outputDir")) reference.put("outputDir", root.resolve("java-reference").toString());
-        ResponseEntity<?> legacy = new TargetTrajectoryFitController().simulate(mapper.treeToValue(reference, SimulationRequest.class));
+        ResponseEntity<?> legacy = new TrajectoryEngineReference().simulate(mapper.treeToValue(reference, SimulationInput.class));
         assertEquals(status, legacy.getStatusCodeValue());
         assertSameResult(actual, mapper.valueToTree(legacy.getBody()), status);
         if (!Boolean.getBoolean("ballistic.frozenReference")) return;

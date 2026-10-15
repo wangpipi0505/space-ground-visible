@@ -2,8 +2,8 @@ package com.runisys.orbit.spacevisibility.infrastructure.files;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.runisys.orbit.spacevisibility.application.ballistic.BallisticFitService;
-import com.tx.alg.trajectory.TargetTrajectoryFitter;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.FitRequest;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitInput;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -30,13 +30,13 @@ class BallisticResultWorkspaceTest {
     @Test
     void 同时非法的观测和目录保持原校验优先级() throws Exception {
         BallisticFitService service = new BallisticFitService(new BallisticFileStorage(config(1000000, 60000), mapper));
-        FitRequest invalid = new FitRequest();
+        FitInput invalid = new FitInput();
         invalid.outputDir = "invalid\u0000directory";
         Exception original = assertThrows(Exception.class, () -> TargetTrajectoryFitter.fitPackage102ToCsv(invalid));
         Exception actual = assertThrows(Exception.class, () -> service.fitPackage102(invalid, true));
         assertEquals(original.getClass(), actual.getClass());
         assertEquals(TargetTrajectoryFitter.describeFailure(original), TargetTrajectoryFitter.describeFailure(actual));
-        FitRequest invalidStep = fixture();
+        FitInput invalidStep = fixture();
         invalidStep.interpolationStepSec = 0;
         invalidStep.outputDir = invalid.outputDir;
         Exception originalStep = assertThrows(Exception.class, () -> TargetTrajectoryFitter.fitPackage102ToCsv(invalidStep));
@@ -167,7 +167,7 @@ class BallisticResultWorkspaceTest {
     void 默认目录部分拟合失败和登记超限均回滚而显式目录保留() throws Exception {
         BallisticFileConfiguration config = config(10000000, 60000);
         BallisticFileStorage storage = new BallisticFileStorage(config, mapper);
-        FitRequest partial = fixture();
+        FitInput partial = fixture();
         // 保留第一目标四点使其先成功写出，第二目标只留一点，原拟合器在第二目标才失败。
         partial.package102 = new java.util.ArrayList<>(partial.package102.subList(0, 5));
         BallisticFitService service = new BallisticFitService(storage);
@@ -229,9 +229,9 @@ class BallisticResultWorkspaceTest {
         assertArrayEquals(new byte[]{7}, Files.readAllBytes(preserved));
     }
 
-    private FitRequest fixture() throws IOException {
+    private FitInput fixture() throws IOException {
         return mapper.readValue(Files.readAllBytes(Paths.get(
-                "../test-data/reference/ballistic/target_trajectory_fit_package102_default.json")), FitRequest.class);
+                "../test-data/reference/ballistic/target_trajectory_fit_package102_default.json")), FitInput.class);
     }
 
     private BallisticFileStorage.Record expireRecord(BallisticFileConfiguration config, String id) throws IOException {

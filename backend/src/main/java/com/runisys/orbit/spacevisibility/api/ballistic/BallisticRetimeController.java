@@ -3,8 +3,8 @@ package com.runisys.orbit.spacevisibility.api.ballistic;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.runisys.orbit.spacevisibility.application.ballistic.BallisticRetimeService;
-import com.tx.alg.api.TargetTrajectoryFitController.ErrorResponse;
-import com.tx.alg.trajectory.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.api.ballistic.BallisticErrorResponse;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,18 +28,18 @@ public class BallisticRetimeController {
     @PostMapping(value = "/retime", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> retime(@RequestBody JsonNode body) throws java.io.IOException {
-        TargetTrajectoryFitter.RetimeTrajectoryRequest request;
+        BallisticTrajectoryRequests.RetimeRequest request;
         try {
-            request = mapper.treeToValue(body, TargetTrajectoryFitter.RetimeTrajectoryRequest.class);
+            request = mapper.treeToValue(body, BallisticTrajectoryRequests.RetimeRequest.class);
         } catch (com.fasterxml.jackson.core.JsonProcessingException ex) {
             throw new org.springframework.http.converter.HttpMessageNotReadableException("重定时请求字段无法解析", ex);
         }
         try {
             return ResponseEntity.ok(service.retime(request, body.has("outputDir")));
         } catch (IllegalArgumentException ex) {
-            return ResponseEntity.badRequest().body(new ErrorResponse(TargetTrajectoryFitter.describeFailure(ex)));
+            return ResponseEntity.badRequest().body(new BallisticErrorResponse(TargetTrajectoryFitter.describeFailure(ex)));
         } catch (Exception ex) {
-            return ResponseEntity.internalServerError().body(new ErrorResponse(TargetTrajectoryFitter.describeFailure(ex)));
+            return ResponseEntity.internalServerError().body(new BallisticErrorResponse(TargetTrajectoryFitter.describeFailure(ex)));
         }
     }
 }

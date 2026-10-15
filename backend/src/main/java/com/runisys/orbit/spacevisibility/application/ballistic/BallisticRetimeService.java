@@ -1,9 +1,9 @@
 package com.runisys.orbit.spacevisibility.application.ballistic;
 
 import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.tx.alg.trajectory.TargetTrajectoryFitter;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.FitRunResult;
-import com.tx.alg.trajectory.TargetTrajectoryFitter.RetimeTrajectoryRequest;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitRunResult;
+import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.RetimeInput;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -24,9 +24,9 @@ public class BallisticRetimeService {
      * 租约关闭还需持久化输入最后使用时间，必须关闭成功后才提交工作区；关闭失败也回滚本次独占结果。
      * 缺省失败回滚自己拥有的结果，显式目录保留调用者文件，成功响应仍为原 FitRunResult，不附加 fileId。
      */
-    public FitRunResult retime(RetimeTrajectoryRequest request, boolean outputDirSpecified) throws IOException {
+    public FitRunResult retime(RetimeInput request, boolean outputDirSpecified) throws IOException {
         TargetTrajectoryFitter.validateRetimeRequest(request);
-        RetimeTrajectoryRequest execution = new RetimeTrajectoryRequest();
+        RetimeInput execution = new RetimeInput();
         execution.taskName = request.taskName;
         execution.targetId = request.targetId;
         execution.trajectoryCsvPath = request.trajectoryCsvPath;

@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.sun.net.httpserver.HttpServer;
-import com.tx.alg.api.OrbitVisibilityController;
-import com.tx.alg.api.VisibilityRequest;
+import com.runisys.orbit.spacevisibility.testsupport.WindowEngineReference;
+import com.runisys.orbit.spacevisibility.api.ballistic.VisibilityRequest;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -270,7 +270,7 @@ class BallisticVisibilityWebTest {
     }
 
     JsonNode legacy(JsonNode request, int status) throws Exception {
-        ResponseEntity<?> response = new OrbitVisibilityController().search(mapper.treeToValue(request, VisibilityRequest.class));
+        ResponseEntity<?> response = new WindowEngineReference().search(mapper.treeToValue(request, VisibilityRequest.class));
         assertEquals(status, response.getStatusCodeValue());
         if (response.getBody() instanceof String) return STRICT_JSON.readTree((String) response.getBody());
         ByteArrayOutputStream output = new ByteArrayOutputStream();

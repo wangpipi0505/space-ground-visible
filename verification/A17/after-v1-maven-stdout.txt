@@ -1,0 +1,70 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 121 source files to G:\5-YG\space-ground-visible\verification\runtime\A17\after-v1\backend\target\classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 85 source files to G:\5-YG\space-ground-visible\verification\runtime\A17\after-v1\backend\target\test-classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: G:\5-YG\space-ground-visible\verification\runtime\A17\after-v1\backend\src\test\java\com\runisys\orbit\spacevisibility\infrastructure\web\Nio2ShutdownRaceTest.java使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/web/Nio2ShutdownRaceTest.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[78,33] 程序包OrbitCalculator不存在
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[78,59] 找不到符号
+  符号:   变量 OrbitCalculator
+  位置: 类 com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolverTest
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[166,29] 程序包OrbitCalculator不存在
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[166,55] 找不到符号
+  符号:   变量 OrbitCalculator
+  位置: 类 com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolverTest
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[168,30] 找不到符号
+  符号:   变量 OrbitCalculator
+  位置: 类 com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolverTest
+[INFO] 5 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.689 s
+[INFO] Finished at: 2026-10-15T17:41:17+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:testCompile (default-testCompile) on project space-target-visible: Compilation failure: Compilation failure: 
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[78,33] 程序包OrbitCalculator不存在
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[78,59] 找不到符号
+[ERROR]   符号:   变量 OrbitCalculator
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolverTest
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[166,29] 程序包OrbitCalculator不存在
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[166,55] 找不到符号
+[ERROR]   符号:   变量 OrbitCalculator
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolverTest
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A17/after-v1/backend/src/test/java/com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolverTest.java:[168,30] 找不到符号
+[ERROR]   符号:   变量 OrbitCalculator
+[ERROR]   位置: 类 com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolverTest
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

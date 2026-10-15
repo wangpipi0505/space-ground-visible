@@ -2,7 +2,7 @@ package com.runisys.orbit.spacevisibility.domain.geometry;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tx.alg.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
 import org.junit.jupiter.api.Test;
 import java.lang.reflect.Method;
 import java.nio.file.Paths;
@@ -75,7 +75,7 @@ class SharedGeometryTest {
     }
 
     private static Method legacyMethod(String name, boolean time) throws Exception {
-        Class<?> geometry = Class.forName("com.tx.alg.BallisticVisibilityGeometry");
+        Class<?> geometry = Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.BallisticVisibilityGeometry");
         Method method = time ? geometry.getDeclaredMethod(name, OrbitCalculator.Vector3.class, OrbitCalculator.Vector3.class, double.class)
                 : geometry.getDeclaredMethod(name, OrbitCalculator.Vector3.class, OrbitCalculator.Vector3.class);
         method.setAccessible(true);
