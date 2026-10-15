@@ -1,0 +1,29 @@
+{
+  "startedUtc": "2026-10-15T02:46:26.501567+00:00",
+  "argv": [
+    "git",
+    "push",
+    "--atomic",
+    "origin",
+    "HEAD:refs/heads/main",
+    "HEAD:refs/heads/codex/ballistic-workbench-ui",
+    "refs/tags/acceptance/2026-10-15/A07"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A07",
+  "finishedUtc": "2026-10-15T02:46:31.426224+00:00",
+  "exitCode": 0,
+  "stdout": {
+    "path": "verification/A07/git-delivery-check/feature-atomic-push.stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "verification/A07/git-delivery-check/feature-atomic-push.stderr.bin",
+    "bytes": 228,
+    "sha256": "8174ced6cb41f9d5720e4b7f1ef9d274103f035231da89eed450a9f6add0614c"
+  },
+  "captureSource": {
+    "path": "verification/runtime/A07/root-gates/feature-atomic-push.json",
+    "sha256": "efdab6194e069c824c5755239aa838d3a8a47d5dd59a136d58dfaa342dfa8549"
+  }
+}
