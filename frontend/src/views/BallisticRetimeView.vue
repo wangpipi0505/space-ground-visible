@@ -1,9 +1,10 @@
 <script setup lang="ts">
-/** 正式重定时页：原生CSV上传或当前会话已登记结果→原请求→共享分页/完整曲线/原字节下载。
+/** 正式重定时页：Element Plus CSV 上传或当前会话已登记结果→原请求→共享分页/完整曲线/原字节下载。
  * ECEF保持原轨迹，原服务按新UTC重算J2000 ECI；不在浏览器重拟合、转换时间或拼本机路径。
  * props为App三来源合并候选，references仅上报本页本次真实201结果，撤销不影响其它来源。
  */
 import { computed, ref, shallowRef, watch } from 'vue'
+import type { UploadFile } from 'element-plus'
 import { retimeBallisticTrajectory } from '../api/ballisticRetime'
 import type { BallisticRetimeRequest } from '../api/ballisticRetime'
 import type { BallisticFitHttpResult } from '../api/ballisticFit'
@@ -46,9 +47,9 @@ async function loadSourcePreview(reference: BallisticFileReference, identity: nu
   catch (failure) { if (identity === sourceIdentity) previewError.value = message(failure) }
   finally { if (identity === sourceIdentity) previewing.value = false }
 }
-async function chooseFile(event: Event): Promise<void> {
-  if (!(event.target instanceof HTMLInputElement) || uploading.value || computing.value) return
-  const input = event.target, file = input.files?.[0]
+async function chooseFile(uploadFile: UploadFile): Promise<void> {
+  if (uploading.value || computing.value) return
+  const file = uploadFile.raw
   clearSource(); error.value = ''
   if (!file) return
   const identity = sourceIdentity; uploading.value = true
@@ -58,12 +59,12 @@ async function chooseFile(event: Event): Promise<void> {
     source.value = reference
     await loadSourcePreview(reference, identity)
   } catch (failure) { if (identity === sourceIdentity) error.value = message(failure) }
-  finally { uploading.value = false; input.value = '' }
+  finally { uploading.value = false }
 }
 /** 使用原目标身份的实际登记引用，不重上传，不由响应路径伪造fileId。 */
-async function chooseGenerated(event: Event): Promise<void> {
-  if (!(event.target instanceof HTMLSelectElement) || computing.value) return
-  const id = event.target.value; clearSource(); error.value = ''
+async function chooseGenerated(id: string): Promise<void> {
+  if (computing.value) return
+  clearSource(); error.value = ''
   const selected = props.generatedResults?.find(item => item.reference.fileId === id)
   if (!selected) return
   generatedId.value = id; source.value = selected.reference
@@ -103,28 +104,28 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
         <div class="ballistic-input-scroll">
         <fieldset class="ballistic-native-form ballistic-panel" :disabled="computing || uploading">
           <legend>轨迹来源</legend>
-          <label>来源<select v-model="sourceMode" data-test="retime-source-mode"><option value="upload">上传CSV</option><option value="generated">已生成结果</option></select></label>
-          <label v-if="sourceMode === 'upload'">选择轨迹CSV<input type="file" accept=".csv,text/csv" @change="chooseFile" /></label>
-          <label v-else>选择结果<select :value="generatedId" data-test="retime-result-select" @change="chooseGenerated"><option value="">请选择拟合、模拟或重定时结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · {{ item.reference.originalName }}</option></select></label>
+          <el-form label-position="top"><el-form-item label="来源"><el-select v-model="sourceMode" data-test="retime-source-mode"><el-option value="upload" label="上传CSV" /><el-option value="generated" label="已生成结果" /></el-select></el-form-item></el-form>
+          <el-form v-if="sourceMode === 'upload'" label-position="top"><el-form-item label="选择轨迹CSV"><el-upload :auto-upload="false" :show-file-list="false" accept=".csv,text/csv" :disabled="computing || uploading" :on-change="chooseFile"><el-button>选择 CSV 文件</el-button></el-upload></el-form-item></el-form>
+          <el-form v-else label-position="top"><el-form-item label="选择结果"><el-select :model-value="generatedId" data-test="retime-result-select" @update:model-value="chooseGenerated"><el-option value="" label="请选择拟合、模拟或重定时结果" /><el-option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId" :label="`${item.targetName} · ${item.reference.originalName}`" /></el-select></el-form-item></el-form>
           <p v-if="source" data-test="retime-source-reference">{{ source.originalName }} · {{ source.sizeBytes }} 字节<span v-if="preview"> · {{ preview.totalRows }} 行</span></p>
           <p v-if="uploading" role="status">正在上传CSV…</p>
           <p v-if="previewing" role="status">正在读取来源预览…</p>
           <p v-if="previewError" role="alert" class="ballistic-error">来源预览失败，可重试或继续计算：{{ previewError }}</p>
-          <button v-if="previewError && source" type="button" :disabled="previewing" @click="loadSourcePreview(source, sourceIdentity)">重试来源预览</button>
-          <details v-if="preview"><summary>数据预览 · 共 {{ preview.totalRows }} 行</summary><div class="ballistic-table-scroll"><table><thead><tr><th v-for="(cell, index) in preview.header" :key="index">{{ cell }}</th></tr></thead><tbody><tr v-for="(row, index) in preview.rows" :key="index"><td v-for="(cell, column) in row" :key="column">{{ cell }}</td></tr></tbody></table></div></details>
+          <el-button v-if="previewError && source" :disabled="previewing" @click="loadSourcePreview(source, sourceIdentity)">重试来源预览</el-button>
+          <details v-if="preview"><summary>数据预览 · 共 {{ preview.totalRows }} 行</summary><div class="ballistic-table-scroll"><el-table :data="preview.rows.map((row, rowIndex) => ({ rowIndex, cells: row }))" border size="small" table-layout="auto"><el-table-column v-for="(cell, index) in preview.header" :key="index" :label="cell" :min-width="130"><template #default="{ row }">{{ row.cells[index] }}</template></el-table-column></el-table></div></details>
           <details v-if="source"><summary>文件详情</summary><p>引用 {{ source.fileId }}</p><p>服务路径 {{ source.serverPath }}</p></details>
         </fieldset>
         <fieldset class="ballistic-native-form ballistic-panel" :disabled="computing || uploading"><legend>任务与新发射时间</legend>
-          <button type="button" data-test="load-default-retime" @click="taskName = 'retimeTrajectory'; targetId = 'RET-001'; launchTimeUtc = '2026-07-01 09:00:00.000'; nullTask = false; nullTarget = false">加载默认参数</button>
-          <div class="ballistic-field-grid">
-            <label>任务名称<input v-model="taskName" data-retime-field="taskName" :disabled="nullTask" /></label>
-            <label>目标ID<input v-model="targetId" data-retime-field="targetId" :disabled="nullTarget" /></label>
-            <label>新发射 UTC<input v-model="launchTimeUtc" data-retime-field="launchTimeUtc" placeholder="2026-07-02 07:57:00.000" /></label>
-          </div>
+          <el-button data-test="load-default-retime" @click="taskName = 'retimeTrajectory'; targetId = 'RET-001'; launchTimeUtc = '2026-07-01 09:00:00.000'; nullTask = false; nullTarget = false">加载默认参数</el-button>
+          <el-form label-position="top" class="ballistic-field-grid">
+            <el-form-item label="任务名称"><el-input v-model="taskName" data-retime-field="taskName" :disabled="nullTask" /></el-form-item>
+            <el-form-item label="目标ID"><el-input v-model="targetId" data-retime-field="targetId" :disabled="nullTarget" /></el-form-item>
+            <el-form-item label="新发射 UTC"><el-input v-model="launchTimeUtc" data-retime-field="launchTimeUtc" placeholder="2026-07-02 07:57:00.000" /></el-form-item>
+          </el-form>
           <p class="ballistic-field-hint">保持地固轨迹，按新UTC更新惯性系位置与速度。时间不转换本地时区。</p>
           <details><summary>高级设置 · 空值与输入快照</summary>
-            <label><input v-model="nullTask" type="checkbox" data-retime-null="taskName" /> 任务名称使用 null</label>
-            <label><input v-model="nullTarget" type="checkbox" data-retime-null="targetId" /> 目标ID使用 null</label>
+            <el-checkbox v-model="nullTask" data-retime-null="taskName">任务名称使用 null</el-checkbox>
+            <el-checkbox v-model="nullTarget" data-retime-null="targetId">目标ID使用 null</el-checkbox>
             <pre>{{ JSON.stringify(draft(), null, 2) }}</pre>
           </details>
           <details><summary>CSV格式与时间说明</summary>
@@ -136,7 +137,7 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
         </div>
         <div class="ballistic-compute-bar">
           <p v-if="error" class="ballistic-error" role="alert">{{ error }}</p>
-          <button type="button" class="ballistic-primary-action" data-test="retime-compute" :disabled="computing || uploading" @click="calculate">{{ computing ? '正在重定时…' : '开始重定时' }}</button>
+          <el-button type="primary" class="ballistic-primary-action" data-test="retime-compute" :disabled="computing || uploading" @click="calculate">{{ computing ? '正在重定时…' : '开始重定时' }}</el-button>
         </div>
       </div>
       <aside class="ballistic-results-column ballistic-panel" aria-label="重定时结果" :aria-busy="computing">
@@ -146,7 +147,7 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
           <h3>{{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
           <p v-if="changed" role="status">输入已修改，当前结果来自上次计算。重新重定时以更新结果。</p>
           <p class="ballistic-field-hint">结果可再次重定时，或用于可视窗口计算。</p>
-          <div class="ballistic-actions"><button type="button" @click="exportInput">下载输入 JSON</button><button type="button" @click="exportResult">下载结果 JSON</button></div>
+          <div class="ballistic-actions"><el-button @click="exportInput">下载输入 JSON</el-button><el-button @click="exportResult">下载结果 JSON</el-button></div>
           <details><summary>计算输入快照</summary><pre data-test="retime-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
           <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}`" :file="file" :task-name="result.response.taskName" result-label="重定时" @reference="updateReference(index, $event)" />
         </section>

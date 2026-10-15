@@ -4,6 +4,8 @@ import { resolve } from 'node:path'
 import { flushPromises, mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import BallisticSimulationView from './BallisticSimulationView.vue'
+import { setElementInput } from '../test/elementPlusTestHelpers'
+import '../test/installElementPlus'
 
 /** 页面真实原生输入→typed HTTP→共享文件流→引用事件；服务仍决定UTC/端点物理有效性。 */
 describe('T24 模拟页面与实际结果引用', () => {
@@ -36,7 +38,7 @@ describe('T24 模拟页面与实际结果引用', () => {
     const full = { ...JSON.parse(original), initialSpeedMs: 1800, phaseEvents: [{ deltaVms: 6, phaseType: '预留' }] }
     Object.defineProperty(input.element, 'files', { configurable: true, value: [{ name: '原.json', text: async () => JSON.stringify(full) }] })
     await input.trigger('change'); await flushPromises()
-    await wrapper.get('[data-simulation-field=targetId]').setValue('SIM-001')
+    await setElementInput(wrapper, '[data-simulation-field=targetId]', 'SIM-001')
     expect(JSON.parse(String(wrapper.get('textarea').element.value))).toEqual(full)
     await wrapper.get('[data-test=simulation-compute]').trigger('click'); await flushPromises()
     const expected = { ...full }; delete expected.outputDir
@@ -48,10 +50,10 @@ describe('T24 模拟页面与实际结果引用', () => {
     const references = wrapper.emitted('references')?.at(-1)?.[0] as Array<{ targetId: string; reference: { fileId: string } }>
     expect(references[0]?.targetId).toBe('SIM-001'); expect(references[0]?.reference.fileId).toBe('真实f1')
     expect(wrapper.get('[data-test=fit-trajectory]').text()).toContain('2576 点')
-    expect(wrapper.findAll('svg')).toHaveLength(4)
+    expect(wrapper.findAll('svg[role=img]')).toHaveLength(4)
     expect(wrapper.findAll('ol li').map(node => node.text())).toEqual(['第一条', '第二条'])
     expect(fetchMock.mock.calls.filter(([url]) => String(url).endsWith('/simulate'))).toHaveLength(1)
-    await wrapper.get('[data-simulation-field=launchTimeUtc]').setValue('非法UTC')
+    await setElementInput(wrapper, '[data-simulation-field=launchTimeUtc]', '非法UTC')
     expect(wrapper.text()).toContain('输入已修改')
     expect(wrapper.get('[data-test=simulation-submitted]').text()).toContain('2026-06-04 04:00:00.000')
     failure = true
@@ -95,7 +97,7 @@ describe('T24 模拟页面与实际结果引用', () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response('{"error":"不应发送"}', { status: 400 })); vi.stubGlobal('fetch', fetchMock)
     const wrapper = mount(BallisticSimulationView)
     await wrapper.get('textarea').setValue(original)
-    await wrapper.get('[data-simulation-field=launchPointX]').setValue('9007199254740993')
+    await setElementInput(wrapper, '[data-simulation-field=launchPointX]', '9007199254740993')
     await wrapper.get('[data-test=simulation-compute]').trigger('click'); await flushPromises()
     expect(fetchMock).not.toHaveBeenCalled()
     expect(wrapper.text()).toContain('launchPointX')

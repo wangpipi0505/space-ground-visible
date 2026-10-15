@@ -1,0 +1,6 @@
+### Result
+"{\"windowTargetInputs\":3,\"windowPayloadInputs\":20,\"windowOrbitTables\":1,\"ballisticElementInputs\":302}"
+### Ran Playwright code
+```js
+await page.evaluate('() => (JSON.stringify({windowTargetInputs: document.querySelectorAll(\'.ballistic-payload-view .ballistic-target .el-input\').length, windowPayloadInputs: document.querySelectorAll(\'.ballistic-payload-view .ballistic-payload-panel .el-input\').length, windowOrbitTables: document.querySelectorAll(\'.ballistic-payload-view .el-table\').length, ballisticElementInputs: document.querySelectorAll(\'.ballistic-workspace .el-input\').length}))');
+```

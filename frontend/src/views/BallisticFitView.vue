@@ -4,6 +4,7 @@
  * 提交快照与结果绑定；切换tab保留输入，失败清旧结果，忙时冻结编辑，无虚假进度。
  */
 import { computed, ref, shallowRef } from 'vue'
+import type { UploadFile } from 'element-plus'
 import { fitBallisticPackage102 } from '../api/ballisticFit'
 import type { BallisticFitHttpResult } from '../api/ballisticFit'
 import type { BallisticFitRequest } from '../api/ballisticFitTypes'
@@ -61,13 +62,14 @@ const columnLabels: Record<typeof swing102Columns[number], string> = {
   impact_pos_x: '落点位置 X', impact_pos_y: '落点位置 Y', impact_pos_z: '落点位置 Z', impact_pos_unit: '落点位置单位',
 }
 /** 表格只修改唯一JSON草稿的生效字段；旧嵌套别名、17位编码和未知字符串始终原值保留。 */
-function editInput(event: Event, key: string, rowIndex?: number): void {
-  if (!(event.target instanceof HTMLInputElement) || !editable.value) return
+function editInput(value: string | number, key: string, rowIndex?: number): void {
+  if (!editable.value) return
+  const text = String(value)
   const draft = JSON.parse(inputText.value)
-  if (rowIndex === undefined) draft[key] = key === 'interpolationStepSec' && event.target.value.trim() && Number.isFinite(Number(event.target.value)) ? Number(event.target.value) : event.target.value
+  if (rowIndex === undefined) draft[key] = key === 'interpolationStepSec' && text.trim() && Number.isFinite(Number(text)) ? Number(text) : text
   else {
     const owner = swing102CellOwner(draft.package102[rowIndex], key as typeof swing102Columns[number])
-    owner[swing102CellKey(owner, key)] = event.target.value
+    owner[swing102CellKey(owner, key)] = text
   }
   inputText.value = JSON.stringify(draft, null, 2)
 }
@@ -86,11 +88,9 @@ function changeRows(index?: number): void {
 function loadDefault(): void { inputText.value = JSON.stringify(swingFitDefaults(), null, 2); inputName.value = ''; error.value = '' }
 function message(failure: unknown): string { return failure instanceof Error ? failure.message : '请求失败，请检查服务连接' }
 
-/** 原生选择仅在浏览器读UTF8 JSON，不把本机路径当服务输入；失败保留待纠正的原文本。 */
-async function chooseJson(event: Event): Promise<void> {
-  const element = event.target
-  if (!(element instanceof HTMLInputElement)) return
-  const file = element.files?.[0]
+/** Element Plus 上传组件仅在浏览器读取 UTF-8 JSON，不把本机路径当服务输入；失败时保留待纠正的原文本。 */
+async function chooseJson(uploadFile: UploadFile): Promise<void> {
+  const file = uploadFile.raw
   if (!file) return
   loadingInput.value = true
   error.value = ''
@@ -99,7 +99,7 @@ async function chooseJson(event: Event): Promise<void> {
     inputName.value = file.name
     parseFitInput(inputText.value)
   } catch (failure) { error.value = message(failure) }
-  finally { loadingInput.value = false; element.value = '' }
+  finally { loadingInput.value = false }
 }
 
 /** 提交JSON经过边界校验且独立于编辑文本；开始新尝试立即清旧成功，响应只绑定本次快照。 */
@@ -147,14 +147,17 @@ function exportResult(): void {
         <div class="ballistic-input-scroll">
         <fieldset class="ballistic-native-form ballistic-panel" :disabled="computing || loadingInput">
           <legend>任务与观测</legend>
-          <div class="ballistic-actions"><button type="button" data-test="load-default-fit" @click="loadDefault">加载默认数据</button><button type="button" @click="changeRows()">新增102记录</button></div>
-          <div v-if="editable" class="ballistic-field-grid"><label v-for="field in taskFields" :key="field.key">{{ field.label }}<input :value="editable[field.key] ?? ''" :data-fit-field="field.key" :inputmode="field.key === 'interpolationStepSec' ? 'decimal' : undefined" @input="editInput($event, field.key)" /></label></div>
+          <div class="ballistic-actions"><el-button data-test="load-default-fit" @click="loadDefault">加载默认数据</el-button><el-button @click="changeRows()">新增102记录</el-button></div>
+          <el-form v-if="editable" label-position="top" class="ballistic-field-grid"><el-form-item v-for="field in taskFields" :key="field.key" :label="field.label"><el-input :model-value="editable[field.key] ?? ''" :data-fit-field="field.key" :inputmode="field.key === 'interpolationStepSec' ? 'decimal' : undefined" @update:model-value="editInput($event, field.key)" /></el-form-item></el-form>
           <p class="ballistic-field-hint">每行一个观测点 · 共28列，可横向滚动。UTC不转换本地时区。</p>
-          <div v-if="editable" class="ballistic-table-scroll"><table><thead><tr><th>操作</th><th v-for="key in swing102Columns" :key="key" :title="key">{{ columnLabels[key] }}</th></tr></thead><tbody><tr v-for="(row,index) in editable.package102" :key="index" :data-fit-row="index"><td><button type="button" @click="changeRows(index)">删除第{{ index + 1 }}行</button></td><td v-for="key in swing102Columns" :key="key"><input :value="cellValue(row, key)" :aria-label="`第${index + 1}行 ${columnLabels[key]}`" :title="key" :style="key.endsWith('time_code') ? { minWidth: '220px', width: '220px' } : undefined" :data-fit-cell="`${index}/${key}`" @input="editInput($event, key, index)" /></td></tr></tbody></table></div>
+          <div v-if="editable" class="ballistic-table-scroll"><el-table :data="editable.package102" border size="small" table-layout="auto">
+            <el-table-column label="操作" width="128" fixed="left"><template #default="{ $index }"><el-button size="small" @click="changeRows($index)">删除第{{ $index + 1 }}行</el-button></template></el-table-column>
+            <el-table-column v-for="key in swing102Columns" :key="key" :label="columnLabels[key]" :prop="key" :min-width="key.endsWith('time_code') ? 220 : 150"><template #header><span :title="key">{{ columnLabels[key] }}</span></template><template #default="{ row, $index }"><el-input :model-value="cellValue(row, key)" :aria-label="`第${$index + 1}行 ${columnLabels[key]}`" :title="key" :style="key.endsWith('time_code') ? { minWidth: '220px' } : undefined" :data-fit-cell="`${$index}/${key}`" @update:model-value="editInput($event, key, $index)" /></template></el-table-column>
+          </el-table></div>
           <details><summary>高级设置 · JSON导入与编辑</summary>
-            <label>导入请求 JSON<input type="file" accept=".json,application/json" @change="chooseJson" /></label>
+            <el-form label-position="top"><el-form-item label="导入请求 JSON"><el-upload :auto-upload="false" :show-file-list="false" accept=".json,application/json" :disabled="computing || loadingInput" :on-change="chooseJson"><el-button>选择 JSON 文件</el-button></el-upload></el-form-item></el-form>
             <p v-if="inputName">已读取 {{ inputName }}</p>
-            <label class="ballistic-json-label">完整请求 JSON<textarea v-model="inputText" data-test="fit-input" rows="18" spellcheck="false" /></label>
+            <el-form label-position="top" class="ballistic-json-label"><el-form-item label="完整请求 JSON"><el-input v-model="inputText" data-test="fit-input" type="textarea" :rows="18" spellcheck="false" /></el-form-item></el-form>
             <p v-if="parsed.value?.omittedOutputDir" data-test="fit-storage-notice">导入的 outputDir 将省略，结果保存到服务管理目录。</p>
           </details>
           <details><summary>编码、单位与兼容字段</summary>
@@ -169,7 +172,7 @@ function exportResult(): void {
         <div class="ballistic-compute-bar">
           <p v-if="loadingInput" role="status">正在读取 JSON…</p>
           <p v-if="error" role="alert" class="ballistic-error">{{ error }}</p>
-          <button type="button" class="ballistic-primary-action" data-test="fit-compute" :disabled="computing || loadingInput" @click="calculate">{{ computing ? '正在拟合…' : '开始拟合' }}</button>
+          <el-button type="primary" class="ballistic-primary-action" data-test="fit-compute" :disabled="computing || loadingInput" @click="calculate">{{ computing ? '正在拟合…' : '开始拟合' }}</el-button>
         </div>
       </div>
       <aside class="ballistic-results-column ballistic-panel" aria-label="拟合结果" :aria-busy="computing">
@@ -178,7 +181,7 @@ function exportResult(): void {
         <section v-if="result && submitted" data-test="fit-success" aria-label="本次拟合结果">
           <h3>{{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
           <p v-if="changed" role="status">输入已修改，当前结果来自上次计算。重新拟合以更新结果。</p>
-          <div class="ballistic-actions"><button type="button" @click="exportInput">下载输入 JSON</button><button type="button" @click="exportResult">下载结果 JSON</button></div>
+          <div class="ballistic-actions"><el-button @click="exportInput">下载输入 JSON</el-button><el-button @click="exportResult">下载结果 JSON</el-button></div>
           <details><summary>计算输入快照</summary><pre data-test="fit-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
           <details><summary>全部102观测数据</summary><pre>{{ JSON.stringify(submitted.package102, null, 2) }}</pre></details>
           <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}/${file.targetId}`" :file="file" :task-name="result.response.taskName" @reference="updateReference(index, $event)" />
@@ -190,6 +193,6 @@ function exportResult(): void {
 
 <style scoped>
 .ballistic-json-label { display: grid; gap: 8px; margin: 12px 0; }
-textarea { box-sizing: border-box; width: 100%; font-family: monospace; line-height: 1.5; }
+.ballistic-json-label :deep(.el-textarea__inner) { font-family: Consolas, monospace; line-height: 1.5; }
 pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 380px; overflow: auto; }
 </style>

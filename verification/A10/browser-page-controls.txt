@@ -1,0 +1,14 @@
+      - tab "可视窗口计算" [selected] [ref=e14]
+                - table [ref=e2492]:
+                  - generic "按种子生成星座" [active] [ref=e2620] [cursor=pointer]
+                      - spinbutton "轨道平面数" [ref=e2766]: "6"
+                      - spinbutton "每平面卫星数" [ref=e2772]: "6"
+                      - spinbutton "种子半长轴（米）" [ref=e2778]: "7530612"
+                  - button "生成星座" [ref=e2815] [cursor=pointer]
+              - group "弹道目标" [ref=e2625]:
+                            - combobox "文件来源" [ref=e2646]
+                        - textbox "网络地址" [ref=e2751]:
+                      - button "导入网络地址" [ref=e2752] [cursor=pointer]
+                    - spinbutton "起始偏移 (s)" [ref=e2678]: "-500"
+                  - heading "载荷约束" [level=3] [ref=e2696]
+                - button "计算可见窗口" [ref=e2726] [cursor=pointer]

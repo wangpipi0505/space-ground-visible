@@ -22,36 +22,33 @@
 .ballistic-workspace .ballistic-section-heading label { display: flex; align-items: center; gap: 8px; }
 .ballistic-workspace .ballistic-section-heading label { white-space: nowrap; }
 .ballistic-workspace .ballistic-orbit-toolbar { display: flex; gap: 8px; align-items: end; }
-.ballistic-workspace .ballistic-orbit-toolbar label { flex: 1; }
+.ballistic-workspace .ballistic-orbit-toolbar .el-form { flex: 1; }
 .ballistic-workspace :is(.ballistic-generator,.ballistic-catalog) { margin-right: 12px; }
 .ballistic-workspace :is(.ballistic-generator,.ballistic-catalog):not([open]) { display: inline-block; }
 .ballistic-workspace .ballistic-muted { color: #64748b; font-size: 13px; }
 .ballistic-workspace .ballistic-badge { display: inline-flex; padding: 3px 8px; border: 1px solid #dce5ef; border-radius: 4px; background: #f4f7fa; color: #52677d; font-size: 12px; white-space: nowrap; }
 .ballistic-workspace label { display: grid; gap: 4px; font-size: 13px; color: #40566e; min-width: 0; }
-.ballistic-workspace :is(input,select,textarea,button) { max-width: 100%; min-width: 0; font: inherit; }
-.ballistic-workspace :is(input:not(.el-input__inner),select,textarea) { width: 100%; border: 1px solid #c6d3e0; border-radius: 4px; padding: 6px 9px; color: #20354c; background: #fff; }
-.ballistic-workspace :is(input:not(.el-input__inner),select) { height: 34px; }
-.ballistic-workspace input[type=file] { padding: 4px; }
-.ballistic-workspace button:not(.el-button) { min-height: 32px; padding: 5px 10px; border: 1px solid #c6d3e0; border-radius: 4px; background: #fff; color: #2f689b; cursor: pointer; white-space: nowrap; }
-.ballistic-workspace button:not(.el-button):hover:enabled { background: #edf4fa; border-color: #2f689b; }
-.ballistic-workspace :is(input,select,button,summary,textarea):focus-visible { outline: 2px solid #2f689b; outline-offset: 2px; }
-.ballistic-workspace :disabled { opacity: .65; cursor: default; }
+.ballistic-workspace :is(.el-input,.el-select,.el-textarea) { width: 100%; max-width: 100%; min-width: 0; font: inherit; }
+.ballistic-workspace .el-form-item { min-width: 0; }
+.ballistic-workspace :is(.el-input__wrapper,.el-select__wrapper):focus-within,
+.ballistic-workspace .el-button:focus-visible,
+.ballistic-workspace summary:focus-visible { outline: 2px solid #2f689b; outline-offset: 2px; }
+.ballistic-workspace .el-button { white-space: nowrap; }
 .ballistic-workspace .ballistic-field-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 12px; margin: 8px 0; }
 .ballistic-workspace .ballistic-search-fields { grid-template-columns: repeat(3,minmax(0,1fr)); }
 .ballistic-workspace .ballistic-search-summary { padding: 8px 10px; background: #f4f7fa; border-radius: 4px; font-variant-numeric: tabular-nums; }
 .ballistic-workspace details { min-width: 0; }
 .ballistic-workspace summary { cursor: pointer; color: #52677d; font-size: 13px; padding: 8px 0; }
-.ballistic-workspace .ballistic-table-scroll { max-width: 100%; overflow: auto; max-height: 320px; margin: 8px 0; border: 1px solid #dce5ef; border-radius: 4px; }
-.ballistic-workspace table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
-.ballistic-workspace :is(th,td) { text-align: left; padding: 7px 8px; border: 0; border-bottom: 1px solid #e4ebf2; }
-.ballistic-workspace th { background: #f4f7fa; font-size: 12px; font-weight: 600; position: sticky; top: 0; z-index: 1; }
-.ballistic-workspace td input { min-width: 110px; font-family: Consolas, monospace; }
-.ballistic-workspace td input[data-orbit-field=epochUtc] { min-width: 205px; }
+.ballistic-workspace .ballistic-table-scroll { max-width: 100%; overflow: auto; max-height: 320px; margin: 8px 0; border-radius: 4px; }
+.ballistic-workspace .el-table { width: 100%; font-variant-numeric: tabular-nums; }
+.ballistic-workspace .el-table .el-input { min-width: 110px; font-family: Consolas, monospace; }
+.ballistic-workspace .el-table .el-input__inner { min-width: 110px; font-family: Consolas, monospace; }
+.ballistic-workspace .el-table .el-input__inner[data-orbit-field=epochUtc] { min-width: 205px; }
 .ballistic-workspace .ballistic-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .ballistic-workspace .ballistic-compute-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; position: sticky; bottom: 0; z-index: 2; padding: 12px 16px; margin-top: 8px; background: #fff; border: 1px solid #dce5ef; border-radius: 6px; box-shadow: 0 -4px 16px #20354c08; }
 .ballistic-workspace .ballistic-compute-bar > span { color: #64748b; font-size: 13px; }
-.ballistic-workspace button.ballistic-primary-action { min-height: 36px; padding: 6px 20px; background: #2f689b; color: #fff; border-color: #2f689b; font-weight: 600; }
-.ballistic-workspace button.ballistic-primary-action:hover:enabled { background: #24547f; color: #fff; }
+.ballistic-workspace .el-button.ballistic-primary-action { min-height: 36px; padding: 6px 20px; background: #2f689b; color: #fff; border-color: #2f689b; font-weight: 600; }
+.ballistic-workspace .el-button.ballistic-primary-action:hover:not(.is-disabled) { background: #24547f; color: #fff; }
 .ballistic-workspace .ballistic-empty-state { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; min-height: 300px; text-align: center; padding: 24px; }
 .ballistic-workspace .ballistic-results-column > .ballistic-empty-state { min-height: 340px; }
 .ballistic-workspace .ballistic-state-mark { display: grid; place-items: center; width: 52px; height: 52px; background: #eef4f9; color: #6786a4; border: 1px solid #dce5ef; border-radius: 50%; font-size: 26px; }

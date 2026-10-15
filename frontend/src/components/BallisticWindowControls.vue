@@ -4,6 +4,7 @@
  * busy 只表示真实计算请求进行中，父级据此冻结编辑；无伪进度、无未实现取消。
  */
 import { computed, nextTick, reactive, ref, shallowRef, watch } from 'vue'
+import type { UploadFile } from 'element-plus'
 import type { GeneratedBallisticResult } from '../api/ballisticFiles'
 import type { BallisticSatelliteDraft, BallisticWindowRequest } from '../api/ballisticWindowTypes'
 import { uploadBallisticFile, previewBallisticFile, downloadBallisticFile } from '../api/ballisticFiles'
@@ -69,9 +70,7 @@ function clearSource(target: TargetDraft): void {
 }
 
 /** 服务生成来源只允许显式选择父级真实201引用；清旧文件/预览，时间沿CSV历元避免自动重定时。 */
-async function selectGenerated(target: TargetDraft, event: Event): Promise<void> {
-  if (!(event.target instanceof HTMLSelectElement)) return
-  const id = event.target.value
+async function selectGenerated(target: TargetDraft, id: string): Promise<void> {
   clearSource(target)
   const selected = props.generatedResults?.find(item => item.reference.fileId === id)
   if (!selected) { target.error = '生成结果选择已失效，请重新登记或选择'; return }
@@ -93,11 +92,9 @@ watch(() => props.generatedResults, () => {
   }
 })
 
-/** 原生文件选择事件仅用于取File；上传/预览错误独立显示，serverPath仅来自真实引用。 */
-async function chooseFile(target: TargetDraft, event: Event): Promise<void> {
-  const input = event.target
-  if (!(input instanceof HTMLInputElement)) return
-  const file = input.files?.[0]
+/** Element Plus 上传回调仅取浏览器 File；上传/预览错误独立显示，serverPath 仅来自真实服务端引用。 */
+async function chooseFile(target: TargetDraft, uploadFile: UploadFile): Promise<void> {
+  const file = uploadFile.raw
   if (!file) return
   clearSource(target)
   target.busy = true
@@ -110,8 +107,11 @@ async function chooseFile(target: TargetDraft, event: Event): Promise<void> {
     target.error = error instanceof Error ? error.message : '文件上传失败，请检查服务连接'
   } finally {
     target.busy = false
-    input.value = ''
   }
+}
+/** 为每个目标提供独立上传回调，避免不同卡片上传时串用目标身份。 */
+function targetFileChange(target: TargetDraft): (file: UploadFile) => void {
+  return (file) => { void chooseFile(target, file) }
 }
 
 /** 默认演示CSV亦经真实上传取得服务引用；不把源码路径/本机路径交给窗口接口。 */
@@ -208,56 +208,56 @@ function downloadJson(): void {
     <slot name="satellites" />
     <fieldset :disabled="loading" class="ballistic-native-form ballistic-panel">
       <legend>弹道目标</legend>
-      <div class="ballistic-section-heading"><span class="ballistic-muted">CSV / Excel</span><button type="button" @click="addTarget">新增目标</button></div>
+      <div class="ballistic-section-heading"><span class="ballistic-muted">CSV / Excel</span><el-button @click="addTarget">新增目标</el-button></div>
       <article v-for="target in targets" :key="target.identity" :data-target-id="target.targetId" class="ballistic-target">
         <fieldset :disabled="target.busy">
-          <div class="ballistic-field-grid">
-            <label>目标名称<input v-model="target.targetName" type="text" /></label>
-            <label>文件来源<select v-model="target.mode" data-test="window-source" @change="clearSource(target)"><option value="file">本地上传</option><option value="remote">网络地址</option><option value="generated">已生成弹道</option></select></label>
-          </div>
-          <div v-if="target.mode === 'file'" class="ballistic-file-picker"><label>选择文件<input type="file" accept=".csv,.xlsx,.xls,.xlsm" @change="chooseFile(target, $event)" /></label><button type="button" data-test="upload-default-window" @click="uploadDefault(target)">使用示例弹道</button></div>
-          <div v-else-if="target.mode === 'remote'" class="ballistic-field-grid"><label>网络地址<input v-model="target.remoteDraft" type="text" placeholder="https://host/path/trajectory.csv" @input="clearSource(target)" /></label><button type="button" @click="importRemote(target)">导入网络地址</button></div>
-          <label v-else>已生成弹道<select :value="target.generatedId || ''" data-test="generated-result-select" @change="selectGenerated(target, $event)"><option value="">请选择拟合、模拟或重定时结果</option><option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId">{{ item.targetName }} · {{ item.reference.originalName }}</option></select></label>
+          <el-form label-position="top" class="ballistic-field-grid">
+            <el-form-item label="目标名称"><el-input v-model="target.targetName" /></el-form-item>
+            <el-form-item label="文件来源"><el-select v-model="target.mode" data-test="window-source" @update:model-value="clearSource(target)"><el-option value="file" label="本地上传" /><el-option value="remote" label="网络地址" /><el-option value="generated" label="已生成弹道" /></el-select></el-form-item>
+          </el-form>
+          <div v-if="target.mode === 'file'" class="ballistic-file-picker"><el-form label-position="top"><el-form-item label="选择文件"><el-upload :auto-upload="false" :show-file-list="false" accept=".csv,.xlsx,.xls,.xlsm" :disabled="target.busy" :on-change="targetFileChange(target)"><el-button>选择弹道文件</el-button></el-upload></el-form-item></el-form><el-button data-test="upload-default-window" @click="uploadDefault(target)">使用示例弹道</el-button></div>
+          <el-form v-else-if="target.mode === 'remote'" label-position="top" class="ballistic-field-grid"><el-form-item label="网络地址"><el-input v-model="target.remoteDraft" placeholder="https://host/path/trajectory.csv" @update:model-value="clearSource(target)" /></el-form-item><el-button class="remote-import" @click="importRemote(target)">导入网络地址</el-button></el-form>
+          <el-form v-else label-position="top"><el-form-item label="已生成弹道"><el-select :model-value="target.generatedId || ''" data-test="generated-result-select" @update:model-value="selectGenerated(target, $event)"><el-option value="" label="请选择拟合、模拟或重定时结果" /><el-option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId" :label="`${item.targetName} · ${item.reference.originalName}`" /></el-select></el-form-item></el-form>
           <div v-if="target.file" class="ballistic-file-summary"><strong>{{ target.file.originalName }}</strong><span>{{ target.preview ? `${target.preview.totalRows} 行` : '正在读取' }} · {{ target.file.sizeBytes }} 字节</span><span v-if="target.epochUtc">历元 {{ target.epochUtc }} UTC</span></div>
           <p v-if="target.remoteReference" class="ballistic-muted">已导入：{{ target.remoteReference }}</p>
-          <div class="ballistic-actions"><button v-if="target.file" type="button" :disabled="target.downloadBusy" @click="downloadOriginal(target)">{{ target.downloadBusy ? '正在下载…' : '下载原始文件' }}</button><button type="button" @click="targets.splice(targets.indexOf(target), 1)">删除目标</button></div>
-          <details><summary>目标时间与来源详情</summary><div class="ballistic-field-grid"><label>目标 ID<input v-model="target.targetId" type="text" /></label><label>基准发射 UTC<input v-model="target.baseLaunchUTC" data-test="target-base-utc" placeholder="留空沿文件历元" type="text" /></label></div><p class="ballistic-muted">目标时间优先于默认时间；均留空时采用文件历元。输入按 UTC 字面值处理。</p><p v-if="target.mode === 'remote'">支持 HTTP/HTTPS 直链与 minio://host[:port]/bucket/object[?secure=true]；私有文件可用预签名 HTTPS 地址。</p><pre v-if="target.file">{{ JSON.stringify(target.file, null, 2) }}</pre><pre v-if="target.preview">{{ JSON.stringify(target.preview.metadata, null, 2) }}</pre></details>
+          <div class="ballistic-actions"><el-button v-if="target.file" :disabled="target.downloadBusy" @click="downloadOriginal(target)">{{ target.downloadBusy ? '正在下载…' : '下载原始文件' }}</el-button><el-button @click="targets.splice(targets.indexOf(target), 1)">删除目标</el-button></div>
+          <details><summary>目标时间与来源详情</summary><el-form label-position="top" class="ballistic-field-grid"><el-form-item label="目标 ID"><el-input v-model="target.targetId" /></el-form-item><el-form-item label="基准发射 UTC"><el-input v-model="target.baseLaunchUTC" data-test="target-base-utc" placeholder="留空沿文件历元" /></el-form-item></el-form><p class="ballistic-muted">目标时间优先于默认时间；均留空时采用文件历元。输入按 UTC 字面值处理。</p><p v-if="target.mode === 'remote'">支持 HTTP/HTTPS 直链与 minio://host[:port]/bucket/object[?secure=true]；私有文件可用预签名 HTTPS 地址。</p><pre v-if="target.file">{{ JSON.stringify(target.file, null, 2) }}</pre><pre v-if="target.preview">{{ JSON.stringify(target.preview.metadata, null, 2) }}</pre></details>
         </fieldset>
         <p v-if="target.busy" role="status">正在上传或读取文件…</p>
         <p v-if="target.error" class="ballistic-error" role="alert">{{ target.targetName }}：{{ target.error }}</p>
         <details v-if="target.preview"><summary>数据预览 · {{ target.preview.totalRows }} 行 · 第 {{ target.preview.page }} 页</summary>
-          <div class="ballistic-table-scroll"><table><thead><tr><th v-for="(header, index) in target.preview.header" :key="index">{{ header }}</th></tr></thead><tbody><tr v-for="(row, index) in target.preview.rows" :key="index"><td v-for="(cell, column) in row" :key="column">{{ cell }}</td></tr></tbody></table></div>
-          <div class="ballistic-actions"><button type="button" :disabled="target.busy || target.preview.page <= 1" @click="loadPreview(target, target.preview.page - 1)">预览上一页</button><button type="button" :disabled="target.busy || target.preview.page * target.preview.limit >= target.preview.totalRows" @click="loadPreview(target, target.preview.page + 1)">预览下一页</button></div>
+          <div class="ballistic-table-scroll"><el-table :data="target.preview.rows.map((row, rowIndex) => ({ rowIndex, cells: row }))" border size="small" table-layout="auto"><el-table-column v-for="(header, index) in target.preview.header" :key="index" :label="header" :min-width="130"><template #default="{ row }">{{ row.cells[index] }}</template></el-table-column></el-table></div>
+          <div class="ballistic-actions"><el-button :disabled="target.busy || target.preview.page <= 1" @click="loadPreview(target, target.preview.page - 1)">预览上一页</el-button><el-button :disabled="target.busy || target.preview.page * target.preview.limit >= target.preview.totalRows" @click="loadPreview(target, target.preview.page + 1)">预览下一页</el-button></div>
         </details>
       </article>
-      <details><summary>多目标默认时间</summary><label>默认基准发射 UTC<input v-model="defaultBaseLaunchUTC" data-test="default-base-utc" placeholder="目标留空时采用；再留空沿文件历元" /></label></details>
+      <details><summary>多目标默认时间</summary><el-form label-position="top"><el-form-item label="默认基准发射 UTC"><el-input v-model="defaultBaseLaunchUTC" data-test="default-base-utc" placeholder="目标留空时采用；再留空沿文件历元" /></el-form-item></el-form></details>
     </fieldset>
     <fieldset ref="searchSection" :disabled="loading" class="ballistic-native-form ballistic-panel">
       <legend>发射时间搜索</legend>
       <div class="ballistic-field-grid ballistic-search-fields">
-        <label>起始偏移 (s)<input v-model.number="options.startOffsetSec" data-option="startOffsetSec" type="number" step="1" /></label>
-        <label>步长 (s)<input v-model.number="options.stepSizeSec" data-option="stepSizeSec" type="number" step="1" /></label>
-        <label>搜索次数<input v-model.number="options.numCalculations" data-option="numCalculations" type="number" step="1" /></label>
+        <el-form-item label="起始偏移 (s)"><el-input v-model.number="options.startOffsetSec" data-option="startOffsetSec" type="number" step="1" /></el-form-item>
+        <el-form-item label="步长 (s)"><el-input v-model.number="options.stepSizeSec" data-option="stepSizeSec" type="number" step="1" /></el-form-item>
+        <el-form-item label="搜索次数"><el-input v-model.number="options.numCalculations" data-option="numCalculations" type="number" step="1" /></el-form-item>
       </div>
       <p class="ballistic-search-summary">{{ options.startOffsetSec }} → {{ options.startOffsetSec + options.stepSizeSec * (options.numCalculations - 1) }} 秒 · 每 {{ options.stepSizeSec }} 秒一次 · 共 {{ options.numCalculations }} 次</p>
-      <details><summary>模型与采样</summary><div class="ballistic-field-grid">
-        <label>目标采样步长 (s，≤0 自动)<input v-model.number="options.targetSampleStepSec" data-option="targetSampleStepSec" type="number" step="any" /></label>
-        <label>轨道模型<select v-model="options.orbitModel"><option>TWO_BODY</option><option>J2_SECULAR</option><option>J2_NUMERICAL</option></select></label>
-        <label>轨迹点输出<select v-model="options.trajectoryPointOutput" data-option="trajectoryPointOutput"><option :value="1">输出窗口内轨迹点</option><option :value="0">仅窗口摘要</option></select></label>
-      </div><p class="ballistic-muted">偏移相对于各目标基准发射时间；起点、步长、次数与末次偏移须为安全整数。卫星历元留空采用 2026/07/01 10:00:00 UTC。</p></details>
+      <details><summary>模型与采样</summary><el-form label-position="top" class="ballistic-field-grid">
+        <el-form-item label="目标采样步长 (s，≤0 自动)"><el-input v-model.number="options.targetSampleStepSec" data-option="targetSampleStepSec" type="number" step="any" /></el-form-item>
+        <el-form-item label="轨道模型"><el-select v-model="options.orbitModel"><el-option label="TWO_BODY" value="TWO_BODY" /><el-option label="J2_SECULAR" value="J2_SECULAR" /><el-option label="J2_NUMERICAL" value="J2_NUMERICAL" /></el-select></el-form-item>
+        <el-form-item label="轨迹点输出"><el-select v-model="options.trajectoryPointOutput" data-option="trajectoryPointOutput"><el-option :value="1" label="输出窗口内轨迹点" /><el-option :value="0" label="仅窗口摘要" /></el-select></el-form-item>
+      </el-form><p class="ballistic-muted">偏移相对于各目标基准发射时间；起点、步长、次数与末次偏移须为安全整数。卫星历元留空采用 2026/07/01 10:00:00 UTC。</p></details>
     </fieldset>
     <slot />
       </div>
-      <div class="ballistic-compute-bar"><span>{{ loading ? '计算中，请稍候' : `${satellites.length} 颗卫星 · ${satellites.reduce((sum, satellite) => sum + satellite.payloads.length, 0)} 个载荷 · ${targets.length} 个目标` }}</span><div class="ballistic-compute-actions"><button type="button" data-test="open-payload-settings" :disabled="loading" @click="editConfiguration('payloads')">载荷设置</button><button type="button" class="ballistic-primary-action" data-test="compute-window" :disabled="loading || targets.some((target) => target.busy)" @click="calculate">{{ loading ? '正在计算…' : '计算可见窗口' }}</button></div></div>
+      <div class="ballistic-compute-bar"><span>{{ loading ? '计算中，请稍候' : `${satellites.length} 颗卫星 · ${satellites.reduce((sum, satellite) => sum + satellite.payloads.length, 0)} 个载荷 · ${targets.length} 个目标` }}</span><div class="ballistic-compute-actions"><el-button data-test="open-payload-settings" :disabled="loading" @click="editConfiguration('payloads')">载荷设置</el-button><el-button type="primary" class="ballistic-primary-action" data-test="compute-window" :disabled="loading || targets.some((target) => target.busy)" @click="calculate">{{ loading ? '正在计算…' : '计算可见窗口' }}</el-button></div></div>
     </div>
     <aside class="ballistic-results-column ballistic-panel" data-test="window-result-panel" aria-label="窗口计算结果" :aria-busy="loading">
       <div class="ballistic-section-heading"><h3>窗口结果</h3><span class="ballistic-badge">{{ loading ? '计算中' : result ? '已完成' : '待计算' }}</span></div>
-      <div v-if="errors.length" ref="errorSummary" tabindex="-1" class="ballistic-error" role="alert"><strong>请检查输入</strong><ul><li v-for="error in errors" :key="error">{{ error }}</li></ul><div class="ballistic-actions"><button type="button" @click="editConfiguration('payloads')">检查载荷</button><button type="button" @click="editConfiguration('search')">检查搜索时间</button></div></div>
+      <div v-if="errors.length" ref="errorSummary" tabindex="-1" class="ballistic-error" role="alert"><strong>请检查输入</strong><ul><li v-for="error in errors" :key="error">{{ error }}</li></ul><div class="ballistic-actions"><el-button @click="editConfiguration('payloads')">检查载荷</el-button><el-button @click="editConfiguration('search')">检查搜索时间</el-button></div></div>
       <div v-if="loading" class="ballistic-empty-state" role="status"><span class="ballistic-state-mark">…</span><h3>正在搜索可见窗口</h3><p>{{ options.numCalculations }} 个发射时刻 · {{ satellites.length }} 颗卫星</p></div>
       <section v-else-if="result && submitted" data-test="window-success">
         <p v-if="changedSinceSubmission" role="status" class="ballistic-change-notice">参数已修改，当前仍显示上次计算结果。</p>
         <BallisticWindowResults :result="result.response" :point-output="submitted.trajectoryPointOutput" @edit="editConfiguration" />
-        <details class="ballistic-result-details"><summary>计算记录与导出</summary><button type="button" @click="downloadJson">下载原始响应 JSON</button><pre>{{ JSON.stringify(submitted, null, 2) }}</pre></details>
+        <details class="ballistic-result-details"><summary>计算记录与导出</summary><el-button @click="downloadJson">下载原始响应 JSON</el-button><pre>{{ JSON.stringify(submitted, null, 2) }}</pre></details>
       </section>
       <div v-else-if="!errors.length" class="ballistic-empty-state"><span class="ballistic-state-mark">↗</span><h3>等待计算</h3><p>选择弹道文件后，点击“计算可见窗口”。</p></div>
     </aside>

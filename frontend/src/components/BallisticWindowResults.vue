@@ -9,6 +9,18 @@ const selectedIndex = ref(0)
 const selectedArc = shallowRef<{ arc: BallisticVisibleArc; identity: string }>()
 const offsets = computed(() => props.result.allResults.length ? props.result.allResults : props.result.best ? [props.result.best] : [])
 const selectedOffset = computed(() => offsets.value[selectedIndex.value])
+/** 将服务原有层级摊平成展示行，行内保留实际弧段引用以打开原轨迹。 */
+const arcRows = computed(() => {
+  const offset = selectedOffset.value
+  if (!offset) return []
+  return offset.visibleSatellites.flatMap((satellite) => satellite.payloadResults.flatMap((payload) => payload.targets.flatMap((target) => target.visibleArcs.map((arc) => ({
+    key: `${satellite.satelliteIndex}/${payload.payloadId}/${target.targetId}/${arc.arcIndex}`,
+    satellite,
+    payload,
+    target,
+    arc,
+  })))))
+})
 watch(() => props.result, () => {
   const index = offsets.value.findIndex((offset) => offset.offsetSecond === props.result.best?.offsetSecond)
   selectedIndex.value = index < 0 ? 0 : index
@@ -30,17 +42,18 @@ function showArc(arc: BallisticVisibleArc, identity: string): void {
     <p class="ballistic-muted">参考 UTC {{ result.referenceUtc }}</p>
     <p v-if="!offsets.length">服务未返回候选偏移。</p>
     <template v-if="selectedOffset">
-      <label>候选发射偏移<select v-model="selectedIndex" data-test="offset-select"><option v-for="(offset, index) in offsets" :key="index" :value="index">{{ offset.offsetSecond }} 秒 · {{ offset.visibleArcCount }} 弧 · {{ offset.visibleDurationSec }} 秒{{ offset.offsetSecond === result.best?.offsetSecond ? ' · 最优' : '' }}</option></select></label>
+      <el-form label-position="top"><el-form-item label="候选发射偏移"><el-select v-model="selectedIndex" data-test="offset-select"><el-option v-for="(offset, index) in offsets" :key="index" :value="index" :label="`${offset.offsetSecond} 秒 · ${offset.visibleArcCount} 弧 · ${offset.visibleDurationSec} 秒${offset.offsetSecond === result.best?.offsetSecond ? ' · 最优' : ''}`" /></el-select></el-form-item></el-form>
       <p class="ballistic-muted">{{ selectedOffset.visiblePointCount }} 个轨迹点 · 累计 {{ selectedOffset.visibleDurationSec }} 秒</p>
       <p v-if="selectedOffset.finalVisibleWindow" class="ballistic-window-range">{{ selectedOffset.finalVisibleWindow.startTime }}<br /><span>至 {{ selectedOffset.finalVisibleWindow.endTime }} UTC</span></p>
-      <div class="ballistic-table-scroll" v-if="selectedOffset.visibleSatellites.length"><table class="ballistic-arc-table"><thead><tr><th>卫星 / 载荷</th><th>目标 / 时段 (UTC)</th><th>时长</th><th></th></tr></thead><tbody>
-        <template v-for="satellite in selectedOffset.visibleSatellites" :key="satellite.satelliteIndex"><template v-for="payload in satellite.payloadResults" :key="payload.payloadId"><template v-for="target in payload.targets" :key="target.targetId">
-          <tr v-for="arc in target.visibleArcs" :key="arc.arcIndex"><td><strong>{{ satellite.satelliteName }}</strong><br /><span>{{ payload.payloadName }} · 弧 {{ arc.arcIndex }}</span></td><td><strong>{{ target.targetName }}</strong><br />{{ arc.startTime }}<br />{{ arc.endTime }}</td><td>{{ arc.durationSeconds }} s<br /><span>{{ arc.pointCount }} 点</span></td><td><button data-test="show-trajectory" type="button" @click="showArc(arc, `${satellite.satelliteName}(${satellite.satelliteId}) / ${payload.payloadName}(${payload.payloadId}) / ${target.targetName}(${target.targetId})`)">轨迹</button></td></tr>
-        </template></template></template>
-      </tbody></table></div>
+      <div class="ballistic-table-scroll" v-if="arcRows.length"><el-table :data="arcRows" border size="small" class="ballistic-arc-table" table-layout="auto">
+        <el-table-column label="卫星 / 载荷" min-width="180"><template #default="{ row }"><strong>{{ row.satellite.satelliteName }}</strong><br /><span>{{ row.payload.payloadName }} · 弧 {{ row.arc.arcIndex }}</span></template></el-table-column>
+        <el-table-column label="目标 / 时段 (UTC)" min-width="220"><template #default="{ row }"><strong>{{ row.target.targetName }}</strong><br />{{ row.arc.startTime }}<br />{{ row.arc.endTime }}</template></el-table-column>
+        <el-table-column label="时长" width="100"><template #default="{ row }">{{ row.arc.durationSeconds }} s<br /><span>{{ row.arc.pointCount }} 点</span></template></el-table-column>
+        <el-table-column label="轨迹" width="90"><template #default="{ row }"><el-button size="small" data-test="show-trajectory" @click="showArc(row.arc, `${row.satellite.satelliteName}(${row.satellite.satelliteId}) / ${row.payload.payloadName}(${row.payload.payloadId}) / ${row.target.targetName}(${row.target.targetId})`)">轨迹</el-button></template></el-table-column>
+      </el-table></div>
       <BallisticTrajectoryView v-if="selectedArc" :points="selectedArc.arc.trajectoryPoints" :identity="selectedArc.identity" :point-output="pointOutput" />
       <details v-if="selectedOffset.visibleSatellites.length"><summary>时刻、目标与约束详情</summary><p>首目标发射 UTC {{ selectedOffset.launchTimeUtc }} · J2000 {{ selectedOffset.launchTimeJ2000Sec }} 秒</p><p>累计时长按卫星与载荷相加，不对重叠时段去重。</p><pre>{{ JSON.stringify({ targets: selectedOffset.targets, constraints: selectedOffset.visibleSatellites.map(s => ({ satelliteId: s.satelliteId, payloads: s.payloadResults.map(p => ({ payloadId: p.payloadId, constraint: p.visibilityConstraint })) })) }, null, 2) }}</pre></details>
     </template>
-    <div v-if="!selectedOffset || !selectedOffset.visibleArcCount" class="ballistic-empty-state" data-test="window-empty"><span class="ballistic-state-mark">∅</span><h3>未找到可见窗口</h3><p>该偏移没有可见卫星或弧段。</p><p class="ballistic-muted">可检查载荷约束与发射时间范围后重新计算；当前结果未提供逐项淘汰原因。</p><div class="ballistic-actions"><button type="button" data-test="edit-payloads" @click="emit('edit', 'payloads')">调整载荷约束</button><button type="button" data-test="edit-search" @click="emit('edit', 'search')">调整搜索时间</button></div></div>
+    <div v-if="!selectedOffset || !selectedOffset.visibleArcCount" class="ballistic-empty-state" data-test="window-empty"><span class="ballistic-state-mark">∅</span><h3>未找到可见窗口</h3><p>该偏移没有可见卫星或弧段。</p><p class="ballistic-muted">可检查载荷约束与发射时间范围后重新计算；当前结果未提供逐项淘汰原因。</p><div class="ballistic-actions"><el-button data-test="edit-payloads" @click="emit('edit', 'payloads')">调整载荷约束</el-button><el-button data-test="edit-search" @click="emit('edit', 'search')">调整搜索时间</el-button></div></div>
   </section>
 </template>

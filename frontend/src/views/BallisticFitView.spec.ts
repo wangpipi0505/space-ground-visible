@@ -5,6 +5,7 @@ import { resolve } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import BallisticFitView from './BallisticFitView.vue'
 import BallisticFitFileResult from '../components/BallisticFitFileResult.vue'
+import '../test/installElementPlus'
 
 /** 组件真实输入事件与HTTP封装；一次失败仅影响所属目标，重新计算清除旧结果。 */
 describe('T23 拟合页面状态', () => {
@@ -65,12 +66,13 @@ describe('T23 拟合页面状态', () => {
     expect(wrapper.find('ol[aria-label="计算告警"]').exists()).toBe(false)
     expect(wrapper.findAll('summary').some((summary) => summary.text().includes('计算告警'))).toBe(false)
   })
-  it('A07 观测表以中文和单位呈现，协议列名可在提示查看且时间不截短', () => {
+  it('A07 观测表以中文和单位呈现，协议列名可在提示查看且时间不截短', async () => {
     const wrapper = mount(BallisticFitView)
-    expect(wrapper.get('thead').text()).toContain('位置 X（0.1米）')
-    expect(wrapper.get('th[title="tack3d_time_code"]').text()).toBe('观测时间码')
-    expect(wrapper.findAll('thead th[title]')).toHaveLength(28)
-    expect(wrapper.get('[data-fit-cell="0/tack3d_time_code"]').attributes('style')).toContain('min-width: 220px')
+    await flushPromises()
+    expect(wrapper.get('.el-table__body-header').text()).toContain('位置 X（0.1米）')
+    expect(wrapper.get('.el-table__body-header span[title="tack3d_time_code"]').text()).toBe('观测时间码')
+    expect(wrapper.findAll('.el-table__body-header span[title]')).toHaveLength(28)
+    expect(wrapper.get('[data-fit-cell="0/tack3d_time_code"]').element.closest('.el-input')?.getAttribute('style')).toContain('min-width: 220px')
     expect(wrapper.get('.ballistic-workspace-header').text()).toBe('102包轨迹拟合')
   })
   it('原生JSON导入只省略outputDir，双目标登记隔离、重试不重算、全点曲线原点、分页与失败恢复', async () => {
@@ -110,7 +112,7 @@ describe('T23 拟合页面状态', () => {
     await results[1]!.get('[data-test=fit-download]').trigger('click'); await flushPromises()
     expect(results[1]!.text()).toContain('下载暂时失败')
     expect(results[1]!.find('[data-test=fit-trajectory]').exists()).toBe(true)
-    await wrapper.get('textarea').setValue(original.replace('07:56:55.000', '07:56:56.000'))
+    await wrapper.get('[data-test=fit-input]').setValue(original.replace('07:56:55.000', '07:56:56.000'))
     expect(wrapper.text()).toContain('输入已修改')
     expect(wrapper.get('[data-test=fit-submitted]').text()).toContain('07:56:55.000')
     state.failCompute()
@@ -122,13 +124,13 @@ describe('T23 拟合页面状态', () => {
     const state = setup()
     const wrapper = mount(BallisticFitView)
     for (const bad of ['{', '{"package102":[{"tack3d_time_code":20260701075700001}]}']) {
-      await wrapper.get('textarea').setValue(bad)
+      await wrapper.get('[data-test=fit-input]').setValue(bad)
       await wrapper.get('[data-test=fit-compute]').trigger('click')
       expect(state.requests).not.toHaveBeenCalled()
     }
     let finish: ((value: Response) => void) | undefined
     state.requests.mockImplementationOnce(() => new Promise<Response>((resolve) => { finish = resolve }))
-    await wrapper.get('textarea').setValue(original)
+    await wrapper.get('[data-test=fit-input]').setValue(original)
     await wrapper.get('[data-test=fit-compute]').trigger('click')
     expect(wrapper.get('[data-test=fit-compute]').attributes('disabled')).toBeDefined()
     expect(wrapper.get('[aria-label=拟合结果]').attributes('aria-busy')).toBe('true')

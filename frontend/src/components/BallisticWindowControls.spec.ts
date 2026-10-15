@@ -1,8 +1,10 @@
 import { flushPromises, mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import BallisticWindowControls from './BallisticWindowControls.vue'
+import { setElementSelect } from '../test/elementPlusTestHelpers'
 import { applyReferenceOrbit } from '../utils/ballisticWindow'
 import { createDefaultPayload } from '../utils/standardPayload'
+import '../test/installElementPlus'
 
 /** 组件真实事件→HTTP封装→结果：失败换文件不得沿用旧成功引用，输入错误不得发送计算。 */
 describe('T22 单一草稿文件与计算状态', () => {
@@ -20,8 +22,8 @@ describe('T22 单一草稿文件与计算状态', () => {
     const fetchMock = vi.fn().mockImplementation((url: string) => Promise.resolve(url.includes('/preview') ? new Response('{"header":["原头"],"rows":[["原值"]],"page":1,"limit":50,"totalRows":2576,"metadata":{}}') : new Response('{"referenceUtc":"2026-06-04 04:00:00.000","best":null,"allResults":[]}')))
     vi.stubGlobal('fetch', fetchMock)
     const wrapper = mount(BallisticWindowControls, { props: { satellites, generatedResults } })
-    await wrapper.get('[data-test=window-source]').setValue('generated')
-    await wrapper.get('[data-test=generated-result-select]').setValue('generated-1'); await flushPromises()
+    await setElementSelect(wrapper, '[data-test=window-source]', 'generated')
+    await setElementSelect(wrapper, '[data-test=generated-result-select]', 'generated-1'); await flushPromises()
     expect(wrapper.text()).toContain('模拟.csv')
     await wrapper.get('[data-test=compute-window]').trigger('click'); await flushPromises()
     const body = JSON.parse(String(fetchMock.mock.calls.find(([url]) => String(url).endsWith('/search'))![1].body))

@@ -1,7 +1,9 @@
-import { mount } from '@vue/test-utils'
+import { flushPromises, mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import BallisticWindowResults from './BallisticWindowResults.vue'
 import type { BallisticOffsetResult, BallisticWindowResponse } from '../api/ballisticWindowTypes'
+import { setElementSelect } from '../test/elementPlusTestHelpers'
+import '../test/installElementPlus'
 
 /** 固定人工HTTP结构夹具仅验证呈现，不当作数值黄金；真实数值另由Chrome接原Java验证。 */
 describe('T22 原结果层级与真实点展示', () => {
@@ -15,7 +17,8 @@ describe('T22 原结果层级与真实点展示', () => {
     const allResults = [offset(10), offset(20, false), offset(30)]
     const result: BallisticWindowResponse = { referenceUtc: 'UTC', payloadType: 'SPACE', visibilityConstraint: constraint, best: allResults[2]!, allResults }
     const wrapper = mount(BallisticWindowResults, { props: { result, pointOutput: 1 } })
-    expect(wrapper.get('[data-test=offset-select]').findAll('option')).toHaveLength(3)
+    await flushPromises()
+    expect(wrapper.findAllComponents({ name: 'ElOption' })).toHaveLength(3)
     expect(wrapper.text()).toContain('星甲')
     expect(wrapper.text()).toContain('独立载荷')
     expect(wrapper.text()).toContain('目标甲')
@@ -24,7 +27,7 @@ describe('T22 原结果层级与真实点展示', () => {
     expect(wrapper.text()).toContain('12000')
     expect(wrapper.get('[data-test=longitude-path]').attributes('d')?.match(/M/g)).toHaveLength(2)
     expect(wrapper.text()).toContain('4 秒')
-    await wrapper.get('[data-test=offset-select]').setValue('1')
+    await setElementSelect(wrapper, '[data-test=offset-select]', 1)
     expect(wrapper.text()).toContain('该偏移没有可见卫星或弧段')
     expect(wrapper.find('[data-test=trajectory-view]').exists()).toBe(false)
     await wrapper.get('[data-test=edit-payloads]').trigger('click')
@@ -36,9 +39,10 @@ describe('T22 原结果层级与真实点展示', () => {
     const value = offset(10)
     value.visibleSatellites[0]!.payloadResults[0]!.targets[0]!.visibleArcs.forEach((arc) => { arc.trajectoryPoints = [] })
     const wrapper = mount(BallisticWindowResults, { props: { result: { referenceUtc: 'UTC', payloadType: 'SPACE', visibilityConstraint: constraint, best: value, allResults: [value] }, pointOutput: 0 } })
+    await flushPromises()
     await wrapper.findAll('[data-test=show-trajectory]')[0]!.trigger('click')
     expect(wrapper.text()).toContain('本次轨迹点输出为0')
-    expect(wrapper.find('svg').exists()).toBe(false)
+    expect(wrapper.find('svg[role=img]').exists()).toBe(false)
     await wrapper.setProps({ result: { referenceUtc: 'UTC', payloadType: 'SPACE', visibilityConstraint: constraint, best: null, allResults: [] } })
     expect(wrapper.text()).toContain('服务未返回候选偏移')
   })

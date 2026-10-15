@@ -1,6 +1,7 @@
 <script setup lang="ts">
 /** 正式模拟页：完整原JSON为唯一草稿；核心编辑不覆盖高级事件/别名。快照与真实201引用分离，由App供窗口显式选择。 */
 import { computed, ref, shallowRef } from 'vue'
+import type { UploadFile } from 'element-plus'
 import { simulateBallisticTrajectory } from '../api/ballisticSimulation'
 import type { BallisticSimulationRequest } from '../api/ballisticSimulation'
 import type { BallisticFitHttpResult } from '../api/ballisticFit'
@@ -37,9 +38,9 @@ const editable = computed(() => {
 })
 const changed = computed(() => submitted.value && inputText.value !== submittedText.value)
 /** 更新唯一JSON中一个字段；非法数值原文保留为明确待纠正字符串，不能偷偷沿用旧合法值；空数值明确null。 */
-function editField(key: keyof BallisticSimulationRequest, numeric: boolean | undefined, event: Event): void {
-  if (!editable.value || !(event.target instanceof HTMLInputElement)) return
-  const value: unknown = JSON.parse(inputText.value), text = event.target.value
+function editField(key: keyof BallisticSimulationRequest, numeric: boolean | undefined, textValue: string | number): void {
+  if (!editable.value) return
+  const value: unknown = JSON.parse(inputText.value), text = String(textValue)
   if (typeof value !== 'object' || value === null) return
   let edited: string | number | null = text
   error.value = ''
@@ -57,14 +58,13 @@ function editField(key: keyof BallisticSimulationRequest, numeric: boolean | und
   inputText.value = JSON.stringify(value, null, 2)
 }
 /** 浏览器本地File仅UTF8文本，非法输入不发HTTP、不提交本机路径。 */
-async function chooseJson(event: Event): Promise<void> {
-  if (!(event.target instanceof HTMLInputElement)) return
-  const input = event.target, file = input.files?.[0]
+async function chooseJson(uploadFile: UploadFile): Promise<void> {
+  const file = uploadFile.raw
   if (!file) return
   loadingInput.value = true; error.value = ''
   try { inputText.value = await file.text(); inputName.value = file.name; parseSimulationInput(inputText.value) }
   catch (failure) { error.value = message(failure) }
-  finally { loadingInput.value = false; input.value = '' }
+  finally { loadingInput.value = false }
 }
 /** 新尝试清旧成功/引用；服务结果只绑定本次独立解析快照，后续编辑只标过期。 */
 async function calculate(): Promise<void> {
@@ -98,13 +98,13 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
       <div class="ballistic-input-column">
         <div class="ballistic-input-scroll">
         <fieldset :disabled="computing || loadingInput" class="ballistic-native-form ballistic-panel"><legend>任务与端点</legend>
-          <button type="button" data-test="load-default-simulation" @click="inputText = JSON.stringify(defaultInput, null, 2); inputName = ''; error = ''">加载默认数据</button>
+          <el-button data-test="load-default-simulation" @click="inputText = JSON.stringify(defaultInput, null, 2); inputName = ''; error = ''">加载默认数据</el-button>
           <p v-if="inputName">已读取 {{ inputName }}</p>
-          <div v-if="editable" class="ballistic-field-grid"><label v-for="field in fields" :key="field.key">{{ field.label }}<input :value="editable[field.key] ?? ''" :data-simulation-field="field.key" type="text" :inputmode="field.numeric ? 'decimal' : undefined" @input="editField(field.key, field.numeric, $event)" /></label></div>
+          <el-form v-if="editable" label-position="top" class="ballistic-field-grid"><el-form-item v-for="field in fields" :key="field.key" :label="field.label"><el-input :model-value="editable[field.key] ?? ''" :data-simulation-field="field.key" :inputmode="field.numeric ? 'decimal' : undefined" @update:model-value="editField(field.key, field.numeric, $event)" /></el-form-item></el-form>
           <p class="ballistic-field-hint">时间均为UTC。落点时间留空时自动估计；坐标值按各端点单位输入。</p>
           <details><summary>高级设置 · JSON导入与编辑</summary>
-            <label>导入请求 JSON<input type="file" accept=".json,application/json" @change="chooseJson" /></label>
-            <label class="ballistic-json-label">完整请求 JSON<textarea v-model="inputText" rows="16" data-test="simulation-input" spellcheck="false" /></label>
+            <el-form label-position="top"><el-form-item label="导入请求 JSON"><el-upload :auto-upload="false" :show-file-list="false" accept=".json,application/json" :disabled="computing || loadingInput" :on-change="chooseJson"><el-button>选择 JSON 文件</el-button></el-upload></el-form-item></el-form>
+            <el-form label-position="top" class="ballistic-json-label"><el-form-item label="完整请求 JSON"><el-input v-model="inputText" type="textarea" :rows="16" data-test="simulation-input" spellcheck="false" /></el-form-item></el-form>
             <p v-if="parsed.value?.omittedOutputDir" data-test="simulation-storage-notice">导入的 outputDir 将省略，结果保存到服务管理目录。</p>
           </details>
           <details><summary>坐标、时间与模型说明</summary>
@@ -120,7 +120,7 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
         <div class="ballistic-compute-bar">
           <p v-if="loadingInput" role="status">正在读取 JSON…</p>
           <p v-if="error" class="ballistic-error" role="alert">{{ error }}</p>
-          <button type="button" class="ballistic-primary-action" data-test="simulation-compute" :disabled="computing || loadingInput" @click="calculate">{{ computing ? '正在模拟…' : '开始模拟' }}</button>
+          <el-button type="primary" class="ballistic-primary-action" data-test="simulation-compute" :disabled="computing || loadingInput" @click="calculate">{{ computing ? '正在模拟…' : '开始模拟' }}</el-button>
         </div>
       </div>
       <aside class="ballistic-results-column ballistic-panel" aria-label="模拟结果" :aria-busy="computing">
@@ -130,7 +130,7 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
           <h3>{{ result.response.taskName }} · {{ result.response.targetCount }} 个目标</h3>
           <p v-if="changed" role="status">输入已修改，当前结果来自上次计算。重新模拟以更新结果。</p>
           <p class="ballistic-field-hint">结果可用于可视窗口计算，目标时间沿用CSV历元。</p>
-          <div class="ballistic-actions"><button type="button" @click="exportInput">下载输入 JSON</button><button type="button" @click="exportResult">下载结果 JSON</button></div>
+          <div class="ballistic-actions"><el-button @click="exportInput">下载输入 JSON</el-button><el-button @click="exportResult">下载结果 JSON</el-button></div>
           <details><summary>计算输入快照</summary><pre data-test="simulation-submitted">{{ JSON.stringify(submitted, null, 2) }}</pre></details>
           <BallisticFitFileResult v-for="(file, index) in result.response.files" :key="`${runIdentity}/${index}`" :file="file" :task-name="result.response.taskName" result-label="模拟" @reference="updateReference(index, $event)" />
         </section>
@@ -141,6 +141,6 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
 
 <style scoped>
 .ballistic-json-label { display: grid; gap: 8px; margin: 12px 0; }
-textarea { box-sizing: border-box; width: 100%; font-family: monospace; line-height: 1.5; }
+.ballistic-json-label :deep(.el-textarea__inner) { font-family: Consolas, monospace; line-height: 1.5; }
 pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 380px; overflow: auto; }
 </style>

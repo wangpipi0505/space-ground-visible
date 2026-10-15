@@ -41,7 +41,7 @@ watch(selectedSatellites, rows => {
 }, { immediate: true })
 function focusPayloads(): void {
   payloadSection.value?.scrollIntoView({ block: 'start', behavior: 'smooth' })
-  payloadSection.value?.querySelector<HTMLSelectElement>('select')?.focus()
+  payloadSection.value?.querySelector<HTMLInputElement>('.el-select input')?.focus()
   const current = payloadSection.value?.querySelector<HTMLElement>(`[data-payload-satellite-id="${currentSatelliteId.value}"]`)
   const editor = current?.querySelector<HTMLDetailsElement>('details.ballistic-payload-item')
   if (editor) editor.open = true
@@ -157,10 +157,10 @@ function addManualSatellite(): void {
   selectedSatelliteIds.value.push(id)
 }
 
-/** 原生根数框明确清空null，所有其它数值保留原输入，由有限/物理校验定位。 */
-function updateOrbitNumber(satellite: BallisticSatelliteDraft, field: Exclude<keyof SatelliteOrbitDraft, 'epochUtc'>, event: Event): void {
-  const input = event.target
-  if (input instanceof HTMLInputElement) satellite[field] = input.value.trim() ? Number(input.value) : null
+/** Element Plus 数值输入框明确清空 null，其它数值原样写回草稿，由有限数和轨道物理校验定位。 */
+function updateOrbitNumber(satellite: BallisticSatelliteDraft, field: Exclude<keyof SatelliteOrbitDraft, 'epochUtc'>, value: string | number): void {
+  const text = String(value)
+  satellite[field] = text.trim() ? Number(text) : null
 }
 </script>
 
@@ -171,17 +171,20 @@ function updateOrbitNumber(satellite: BallisticSatelliteDraft, field: Exclude<ke
     <template #satellites>
     <section class="ballistic-panel">
       <fieldset :disabled="computing" class="ballistic-native-form"><legend>卫星六根数表</legend>
-        <div class="ballistic-orbit-toolbar"><label>示例星座<select v-model.number="constellationExample" data-test="constellation-example"><option :value="0">默认双星星座 SAT-A/SAT-B</option><option :value="1">太阳同步四星星座</option><option :value="2">MEO导航六星星座</option><option :value="3">Molniya高椭圆三星星座</option></select></label>
-        <button type="button" data-test="load-constellation" @click="replaceManualSatellites(swingConstellation(constellationExample), true)">载入示例</button></div>
-        <div class="ballistic-table-scroll"><table><thead><tr><th>名称</th><th v-for="field in orbitFields" :key="field.key">{{ field.label }}</th><th>历元时刻（UTC）</th><th>操作</th></tr></thead><tbody>
-          <tr v-for="satellite in selectedSatellites" :key="satellite.satelliteId" :data-satellite-id="satellite.satelliteId"><td><input v-model="satellite.name" :aria-label="`${satellite.satelliteId} 卫星名称`" /></td><td v-for="field in orbitFields" :key="field.key"><input :value="satellite[field.key]" :aria-label="`${satellite.name} ${field.label}`" :data-orbit-field="field.key" type="number" step="any" @input="updateOrbitNumber(satellite, field.key, $event)" /></td><td><input v-model="satellite.epochUtc" :aria-label="`${satellite.name} 历元UTC`" data-orbit-field="epochUtc" /></td><td><button type="button" @click="selectedSatelliteIds = selectedSatelliteIds.filter(id => configurations[id] !== satellite)">删除卫星</button><button type="button" data-test="use-reference-orbit" @click="Object.assign(satellite, applyReferenceOrbit())">恢复基准</button></td></tr>
-        </tbody></table></div>
-        <details class="ballistic-generator"><summary>按种子生成星座</summary><div class="ballistic-field-grid">
-          <label>星座名<input v-model="generator.name" /></label><label>轨道平面数<input v-model.number="generator.planeCount" data-generator-field="planeCount" :aria-invalid="generatorErrorField === 'planeCount'" type="number" /></label><label>每平面卫星数<input v-model.number="generator.satellitesPerPlane" data-generator-field="satellitesPerPlane" :aria-invalid="generatorErrorField === 'satellitesPerPlane'" type="number" /></label>
-          <label v-for="field in orbitFields" :key="field.key">种子{{ field.label }}<input v-model.number="generator[field.key]" :data-generator-field="field.key" :aria-invalid="generatorErrorField === field.key" type="number" step="any" /></label><label>历元 UTC<input v-model="generator.epochUtc" data-generator-field="epochUtc" :aria-invalid="generatorErrorField === 'epochUtc'" /></label>
-        </div><button type="button" data-test="generate-constellation" @click="generateConstellation">生成星座</button><p v-if="generatorError" role="alert" class="ballistic-error">{{ generatorError }}</p></details>
+        <div class="ballistic-orbit-toolbar"><el-form label-position="top"><el-form-item label="示例星座"><el-select v-model="constellationExample" data-test="constellation-example"><el-option :value="0" label="默认双星星座 SAT-A/SAT-B" /><el-option :value="1" label="太阳同步四星星座" /><el-option :value="2" label="MEO导航六星星座" /><el-option :value="3" label="Molniya高椭圆三星星座" /></el-select></el-form-item></el-form>
+        <el-button type="primary" data-test="load-constellation" @click="replaceManualSatellites(swingConstellation(constellationExample), true)">载入示例</el-button></div>
+        <div class="ballistic-table-scroll"><el-table :data="selectedSatellites" row-key="satelliteId" border size="small" table-layout="auto">
+          <el-table-column label="名称" min-width="150"><template #default="{ row: satellite }"><el-input v-model="satellite.name" :aria-label="`${satellite.satelliteId} 卫星名称`" /></template></el-table-column>
+          <el-table-column v-for="field in orbitFields" :key="field.key" :label="field.label" min-width="150"><template #default="{ row: satellite }"><el-input :model-value="satellite[field.key] ?? ''" :aria-label="`${satellite.name} ${field.label}`" :data-orbit-field="field.key" type="number" step="any" @update:model-value="updateOrbitNumber(satellite, field.key, $event)" /></template></el-table-column>
+          <el-table-column label="历元时刻（UTC）" min-width="210"><template #default="{ row: satellite }"><el-input v-model="satellite.epochUtc" :aria-label="`${satellite.name} 历元UTC`" data-orbit-field="epochUtc" /></template></el-table-column>
+          <el-table-column label="操作" width="190" fixed="right"><template #default="{ row: satellite }"><el-button size="small" @click="selectedSatelliteIds = selectedSatelliteIds.filter(id => configurations[id] !== satellite)">删除卫星</el-button><el-button size="small" data-test="use-reference-orbit" @click="Object.assign(satellite, applyReferenceOrbit())">恢复基准</el-button></template></el-table-column>
+        </el-table></div>
+        <details class="ballistic-generator"><summary>按种子生成星座</summary><el-form label-position="top" class="ballistic-field-grid">
+          <el-form-item label="星座名"><el-input v-model="generator.name" /></el-form-item><el-form-item label="轨道平面数"><el-input v-model.number="generator.planeCount" data-generator-field="planeCount" :aria-invalid="generatorErrorField === 'planeCount'" type="number" /></el-form-item><el-form-item label="每平面卫星数"><el-input v-model.number="generator.satellitesPerPlane" data-generator-field="satellitesPerPlane" :aria-invalid="generatorErrorField === 'satellitesPerPlane'" type="number" /></el-form-item>
+          <el-form-item v-for="field in orbitFields" :key="field.key" :label="`种子${field.label}`"><el-input v-model.number="generator[field.key]" :data-generator-field="field.key" :aria-invalid="generatorErrorField === field.key" type="number" step="any" /></el-form-item><el-form-item label="历元 UTC"><el-input v-model="generator.epochUtc" data-generator-field="epochUtc" :aria-invalid="generatorErrorField === 'epochUtc'" /></el-form-item>
+        </el-form><el-button type="primary" data-test="generate-constellation" @click="generateConstellation">生成星座</el-button><p v-if="generatorError" role="alert" class="ballistic-error">{{ generatorError }}</p></details>
       <details class="ballistic-catalog"><summary>从目录选择卫星</summary><el-form label-position="top"><el-form-item label="配置卫星">
-        <el-select :model-value="selectedSatelliteIds" :disabled="computing" multiple filterable placeholder="选择配置卫星" @update:model-value="selectSatellites">
+        <el-select :model-value="selectedSatelliteIds" :disabled="computing" multiple filterable placeholder="选择配置卫星" data-test="catalog-satellite-select" @update:model-value="selectSatellites">
           <el-option v-for="satellite in satelliteOptions" :key="satellite.id" :value="satellite.id" :label="satellite.name" />
         </el-select>
       </el-form-item></el-form></details>
@@ -191,7 +194,7 @@ function updateOrbitNumber(satellite: BallisticSatelliteDraft, field: Exclude<ke
     </section>
     </template>
     <section ref="payloadSection" class="ballistic-panel ballistic-payload-panel" tabindex="-1">
-      <div class="ballistic-section-heading"><h3>载荷约束</h3><label>当前卫星<select v-model="currentSatelliteId" :disabled="computing" data-test="current-payload-satellite"><option v-for="satellite in selectedSatellites" :key="satellite.satelliteId" :value="satellite.satelliteId">{{ satellite.name }} · {{ satellite.payloads.length }} 个载荷</option></select></label></div>
+      <div class="ballistic-section-heading"><h3>载荷约束</h3><el-form label-position="top"><el-form-item label="当前卫星"><el-select v-model="currentSatelliteId" :disabled="computing" data-test="current-payload-satellite"><el-option v-for="satellite in selectedSatellites" :key="satellite.satelliteId" :value="satellite.satelliteId" :label="`${satellite.name} · ${satellite.payloads.length} 个载荷`" /></el-select></el-form-item></el-form></div>
     <el-card v-for="satellite in selectedSatellites" v-show="satellite.satelliteId === currentSatelliteId" :key="satellite.satelliteId" :data-payload-satellite-id="satellite.satelliteId" shadow="never" class="planning-card">
       <template #header><div class="compact-card-header"><span class="ballistic-muted">{{ satellite.payloads.length }} 个载荷</span><el-button :disabled="computing" :data-test="`add-ballistic-payload-${satellite.satelliteId}`" @click="addPayload(satellite)">新增载荷</el-button></div></template>
       <el-empty v-if="satellite.payloads.length === 0" :image-size="42" description="暂无载荷，可点击新增载荷" />

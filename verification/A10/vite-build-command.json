@@ -1,0 +1,8 @@
+{
+  "exitCode": 0,
+  "stdout": "verification/A10/vite-build-stdout.txt",
+  "stderr": "verification/A10/vite-build-stderr.txt",
+  "finishedUtc": "2026-10-15T06:03:16Z",
+  "startedUtc": "2026-10-15T06:03:13Z",
+  "command": "pnpm --dir frontend build"
+}

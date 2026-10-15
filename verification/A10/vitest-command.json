@@ -1,0 +1,8 @@
+{
+  "command": "pnpm --dir frontend test -- --reporter=dot",
+  "finishedUtc": "2026-10-15T06:02:15Z",
+  "stdout": "verification/A10/vitest-stdout.txt",
+  "exitCode": 0,
+  "startedUtc": "2026-10-15T06:01:11Z",
+  "stderr": "verification/A10/vitest-stderr.txt"
+}

@@ -88,24 +88,24 @@ onMounted(register)
     <details v-if="file.warnings.length"><summary>计算告警（{{ file.warnings.length }}条）</summary><ol aria-label="计算告警"><li v-for="(warning, index) in file.warnings" :key="index">{{ warning }}</li></ol></details>
     <p v-if="registering" role="status">正在准备结果文件…</p>
     <p v-if="registerError" class="ballistic-error" role="alert">{{ resultLabel }}已成功，文件登记失败：{{ registerError }}</p>
-    <button v-if="!reference" data-test="fit-register" type="button" :disabled="registering" @click="register">重试准备结果文件</button>
+    <el-button v-if="!reference" data-test="fit-register" :disabled="registering" @click="register">重试准备结果文件</el-button>
     <template v-if="reference">
       <p>{{ reference.originalName }} · {{ reference.sizeBytes }} 字节</p>
-      <button type="button" data-test="fit-download" :disabled="downloading" @click="download">{{ downloading ? '正在下载CSV…' : '下载CSV' }}</button>
+      <el-button data-test="fit-download" :disabled="downloading" @click="download">{{ downloading ? '正在下载CSV…' : '下载CSV' }}</el-button>
       <p v-if="previewError || trajectoryError || downloadError">文件读取失败可重试；文件恢复后可重新获取结果文件。</p>
-      <button v-if="previewError || trajectoryError || downloadError" type="button" data-test="fit-reregister" :disabled="registering || previewing || trajectoryLoading || downloading" @click="register">重新获取结果文件</button>
+      <el-button v-if="previewError || trajectoryError || downloadError" data-test="fit-reregister" :disabled="registering || previewing || trajectoryLoading || downloading" @click="register">重新获取结果文件</el-button>
       <p v-if="downloadError" class="ballistic-error" role="alert">下载失败：{{ downloadError }}（可重试下载）</p>
       <p v-if="previewing" role="status">正在读取第 {{ requestedPage }} 页预览…</p>
       <p v-if="previewError" class="ballistic-error" role="alert">预览失败：{{ previewError }}；已显示内容仍为此前成功页。</p>
-      <button v-if="previewError" type="button" data-test="fit-preview-retry" :disabled="previewing" @click="loadPreview(requestedPage)">重试文件预览</button>
+      <el-button v-if="previewError" data-test="fit-preview-retry" :disabled="previewing" @click="loadPreview(requestedPage)">重试文件预览</el-button>
       <details v-if="preview"><summary>数据预览 · 共 {{ preview.totalRows }} 行 · 第 {{ preview.page }} 页</summary>
         <details><summary>文件元数据</summary><pre>{{ JSON.stringify(preview.metadata, null, 2) }}</pre></details>
-        <div class="ballistic-table-scroll"><table><thead><tr><th v-for="(cell, index) in preview.header" :key="index">{{ cell }}</th></tr></thead><tbody><tr v-for="(row, index) in preview.rows" :key="index"><td v-for="(cell, column) in row" :key="column">{{ cell }}</td></tr></tbody></table></div>
-        <div class="ballistic-actions"><button type="button" :disabled="previewing || preview.page <= 1" @click="loadPreview(preview.page - 1)">预览上一页</button><button type="button" data-test="fit-preview-next" :disabled="previewing || preview.page * preview.limit >= preview.totalRows" @click="loadPreview(preview.page + 1)">预览下一页</button></div>
+        <div class="ballistic-table-scroll"><el-table :data="preview.rows.map((row, rowIndex) => ({ rowIndex, cells: row }))" border size="small" table-layout="auto"><el-table-column v-for="(cell, index) in preview.header" :key="index" :label="cell" :min-width="130"><template #default="{ row }">{{ row.cells[index] }}</template></el-table-column></el-table></div>
+        <div class="ballistic-actions"><el-button :disabled="previewing || preview.page <= 1" @click="loadPreview(preview.page - 1)">预览上一页</el-button><el-button data-test="fit-preview-next" :disabled="previewing || preview.page * preview.limit >= preview.totalRows" @click="loadPreview(preview.page + 1)">预览下一页</el-button></div>
       </details>
       <p v-if="trajectoryLoading" role="status">正在读取轨迹…</p>
       <p v-if="trajectoryError" role="alert" class="ballistic-error">轨迹读取失败：{{ trajectoryError }}</p>
-      <button v-if="trajectoryError" type="button" :disabled="trajectoryLoading" @click="loadTrajectory">重试读取轨迹</button>
+      <el-button v-if="trajectoryError" :disabled="trajectoryLoading" @click="loadTrajectory">重试读取轨迹</el-button>
       <BallisticFitTrajectory v-if="points.length" :points="points" :identity="file.targetId" :retimed="file.model === 'RETIMED_TRAJECTORY'" />
     </template>
   </article>
