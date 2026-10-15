@@ -1,0 +1,25 @@
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-10-15 14:55:16.786  INFO 30032 --- [           main] c.r.o.s.d.orbit.OrekitDataInitializer    : 已挂载 Orekit 数据目录：G:\5-YG\space-ground-visible\verification\runtime\A11\reviewed\candidate\backend\orekit-data
+2026-10-15 14:55:16.885  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标筛选完成：显式目标数=0，国籍条件数=1，最小质量=100，最大质量=150，历元约束=null，兼容历元上限=null，已设置名称排除规则=false，页码=1，每页记录数=50，命中目标数=1
+2026-10-15 14:55:16.900  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=1，地面站数=1，站星关系数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-15 14:55:16.932  INFO 30032 --- [ce-visibility-1] c.r.o.s.d.orbit.OrekitDataInitializer    : 已确认 WinTool 太阳星历：JPL DE405，文件=G:\5-YG\space-ground-visible\verification\runtime\A11\reviewed\candidate\backend\orekit-data\DE-405-ephemerides\unxp2000.405，大小=4666512字节，SHA-256前缀=83EB7159D065
+2026-10-15 14:55:16.985  INFO 30032 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=1，跳过链路数=0，跳过分类={}，扫描次数=1，采样次数=80，递归探针=9，精选区间=1，耗时=85ms
+2026-10-15 14:55:16.989  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=1，原始窗口数=1，连续覆盖窗口数=1，跳过链路数=0，耗时=93ms
+2026-10-15 14:55:16.993  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=1，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-15 14:55:17.036  INFO 30032 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=1，批次数=1，有效组合数=1，跳过组合数=0，跳过分类={}，扫描次数=1，采样次数=81，递归探针=70，精选区间=0，耗时=41ms
+2026-10-15 14:55:17.043  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=1，筛选目标数=1，有效单星组合数=1，输出观测结果数=1，跳过组合数=0，耗时=54ms
+2026-10-15 14:55:17.055  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划开始：卫星数=1，地面站数=1，站星关系数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，卫星光照约束=ANY
+2026-10-15 14:55:17.061  INFO 30032 --- [           main] c.r.o.s.a.DownlinkPlanningService        : 同步下传规划完成：组合数=1，批次数=1，正常链路数=1，跳过链路数=0，跳过分类={}，扫描次数=1，采样次数=80，递归探针=9，精选区间=1，耗时=5ms
+2026-10-15 14:55:17.061  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传规划完成：站星关系数=1，原始窗口数=1，连续覆盖窗口数=1，跳过链路数=0，耗时=7ms
+2026-10-15 14:55:17.062  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 下传时段校验完成：时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，覆盖满足=false
+2026-10-15 14:55:17.084  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-15 14:55:17.102  INFO 30032 --- [           main] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=162，递归探针=140，精选区间=0，耗时=17ms
+2026-10-15 14:55:17.103  INFO 30032 --- [           main] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=22ms
+2026-10-15 14:55:17.329  INFO 30032 --- [           main] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务已提交：taskId=b58b46da-cc11-41c2-824e-3669df022521
+2026-10-15 14:55:17.334  INFO 30032 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划开始：目标来源=前端筛选结果，观测星数=2，筛选后目标数=1，星历时效风险数=0，建议近似时长=14天，组合约束数=1，时段=2026-07-01T10:00:00Z~2026-07-01T10:10:00Z，粗选步长=60.0s，精选步长=1.0s，光照模式=ANY
+2026-10-15 14:55:17.344  INFO 30032 --- [planning-task-1] c.r.o.s.a.VisibilityPlanningService      : 同步目标观测规划完成：组合数=2，批次数=1，有效组合数=2，跳过组合数=0，跳过分类={}，扫描次数=2，采样次数=162，递归探针=140，精选区间=0，耗时=9ms
+2026-10-15 14:55:17.345  INFO 30032 --- [planning-task-1] c.r.o.s.a.PlanningFacadeService          : 目标观测规划完成：观测星数=2，筛选目标数=1，有效单星组合数=2，输出观测结果数=1，跳过组合数=0，耗时=14ms
+2026-10-15 14:55:17.345  INFO 30032 --- [planning-task-1] c.r.o.s.application.PlanningTaskService  : 异步可见性规划任务完成：taskId=b58b46da-cc11-41c2-824e-3669df022521

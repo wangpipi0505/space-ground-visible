@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "comparisons": [
+    {
+      "baseline": "original",
+      "publicTypes": 50,
+      "declarationLinesIncludingDescriptors": 1174,
+      "differences": []
+    },
+    {
+      "baseline": "before",
+      "publicTypes": 52,
+      "declarationLinesIncludingDescriptors": 1248,
+      "differences": []
+    }
+  ]
+}

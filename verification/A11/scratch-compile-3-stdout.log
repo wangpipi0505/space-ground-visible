@@ -1,0 +1,57 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 120 source files to G:\5-YG\space-ground-visible\verification\runtime\A11\scratch\backend\target\classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/OrbitCalculator.java:[1563,39] 找不到符号
+  符号:   方法 sortedBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>)
+  位置: 类 com.tx.alg.OrbitCalculator
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/OrbitCalculator.java:[1568,16] 找不到符号
+  符号:   方法 interpolateAt(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double)
+  位置: 类 com.tx.alg.OrbitCalculator
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/BallisticLaunchSearch.java:[182,40] 对interpolateBallistic的引用不明确
+  com.tx.alg.BallisticSampledWindows 中的方法 interpolateBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double) 和 com.tx.alg.OrbitCalculator 中的方法 interpolateBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double) 都匹配
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/BallisticLaunchSearch.java:[270,31] 对interpolateBallistic的引用不明确
+  com.tx.alg.BallisticSampledWindows 中的方法 interpolateBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double) 和 com.tx.alg.OrbitCalculator 中的方法 interpolateBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double) 都匹配
+[INFO] 4 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.200 s
+[INFO] Finished at: 2026-10-15T14:40:26+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project space-target-visible: Compilation failure: Compilation failure: 
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/OrbitCalculator.java:[1563,39] 找不到符号
+[ERROR]   符号:   方法 sortedBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>)
+[ERROR]   位置: 类 com.tx.alg.OrbitCalculator
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/OrbitCalculator.java:[1568,16] 找不到符号
+[ERROR]   符号:   方法 interpolateAt(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double)
+[ERROR]   位置: 类 com.tx.alg.OrbitCalculator
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/BallisticLaunchSearch.java:[182,40] 对interpolateBallistic的引用不明确
+[ERROR]   com.tx.alg.BallisticSampledWindows 中的方法 interpolateBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double) 和 com.tx.alg.OrbitCalculator 中的方法 interpolateBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double) 都匹配
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/BallisticLaunchSearch.java:[270,31] 对interpolateBallistic的引用不明确
+[ERROR]   com.tx.alg.BallisticSampledWindows 中的方法 interpolateBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double) 和 com.tx.alg.OrbitCalculator 中的方法 interpolateBallistic(java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double) 都匹配
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

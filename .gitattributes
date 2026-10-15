@@ -87,3 +87,5 @@ output/playwright/** -text -whitespace
 *.jar binary
 *.png binary
 *.xlsx binary
+# A11保留编译和数值回归命令的原始日志字节，摘要不受Git行尾转换影响。
+verification/A11/**/*.log -text -whitespace

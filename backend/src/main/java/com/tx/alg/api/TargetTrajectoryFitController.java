@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 原轨迹控制器 Java 兼容入口，保留原公开签名、注解及错误 DTO。此包不被主程序扫描；正式 Web 仅通过独立控制器按事项逐条接入。
+ * 轨迹拟合的Java兼容入口，保留既有公开签名、注解及错误DTO。
+ * 此包不被主程序扫描；正式Web由api.ballistic下的拟合、模拟和重定时控制器提供。
  */
 @RestController
 @RequestMapping("/api/trajectory")

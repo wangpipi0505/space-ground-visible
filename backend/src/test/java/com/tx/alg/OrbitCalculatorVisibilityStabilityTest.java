@@ -36,7 +36,7 @@ class OrbitCalculatorVisibilityStabilityTest {
         arcs.add(stableArc);
 
         List<OrbitCalculator.SatelliteVisibilityResult> filtered =
-                OrbitCalculator.stableVisibleArcs(arcs, 2, 0.001);
+                BallisticArcSupport.stableVisibleArcs(arcs, 2, 0.001);
 
         assertEquals(1, filtered.size());
         assertEquals(2, filtered.get(0).arcIndex);

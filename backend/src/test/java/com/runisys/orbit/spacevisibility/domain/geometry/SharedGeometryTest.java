@@ -75,8 +75,9 @@ class SharedGeometryTest {
     }
 
     private static Method legacyMethod(String name, boolean time) throws Exception {
-        Method method = time ? OrbitCalculator.class.getDeclaredMethod(name, OrbitCalculator.Vector3.class, OrbitCalculator.Vector3.class, double.class)
-                : OrbitCalculator.class.getDeclaredMethod(name, OrbitCalculator.Vector3.class, OrbitCalculator.Vector3.class);
+        Class<?> geometry = Class.forName("com.tx.alg.BallisticVisibilityGeometry");
+        Method method = time ? geometry.getDeclaredMethod(name, OrbitCalculator.Vector3.class, OrbitCalculator.Vector3.class, double.class)
+                : geometry.getDeclaredMethod(name, OrbitCalculator.Vector3.class, OrbitCalculator.Vector3.class);
         method.setAccessible(true);
         return method;
     }

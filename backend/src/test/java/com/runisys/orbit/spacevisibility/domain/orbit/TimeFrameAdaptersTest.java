@@ -205,7 +205,7 @@ class TimeFrameAdaptersTest {
                 bits(expected, LegacyJ2000Time.utcPartsToJ2000Sec(2026, 7, 1, 10, 0, 0.125, false, offset));
                 bits(expected + offset, LegacyJ2000Time.utcToJ2000Sec("2026/07/01 10:00:00.125", offset));
             }
-            java.lang.reflect.Method csvTime = OrbitCalculator.class.getDeclaredMethod("utcPartsToJ2000Sec",
+            java.lang.reflect.Method csvTime = Class.forName("com.tx.alg.BallisticTrajectoryReader").getDeclaredMethod("utcPartsToJ2000Sec",
                     int.class, int.class, int.class, int.class, int.class, double.class, boolean.class);
             csvTime.setAccessible(true);
             bits(expected, (Double) csvTime.invoke(null, 2026, 7, 1, 10, 0, 0.125, false));

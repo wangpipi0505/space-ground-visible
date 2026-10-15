@@ -1,0 +1,45 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 120 source files to G:\5-YG\space-ground-visible\verification\runtime\A11\scratch\backend\target\classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/BallisticSampledWindows.java:[243,43] 无法将类 com.tx.alg.BallisticSampledWindows中的方法 searchLaunchOffsets应用到给定类型;
+  需要: long,long,long,java.util.List<com.tx.alg.OrbitCalculator.OrbitElements>,java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double,com.tx.alg.OrbitCalculator.GeodeticDatum,com.tx.alg.OrbitCalculator.OrbitModel,com.tx.alg.OrbitCalculator.ProgressCallback
+  找到: long,long,long,java.util.List<com.tx.alg.OrbitCalculator.OrbitElements>,java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double,com.tx.alg.OrbitCalculator.GeodeticDatum
+  原因: 实际参数列表和形式参数列表长度不同
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.166 s
+[INFO] Finished at: 2026-10-15T14:53:44+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project space-target-visible: Compilation failure
+[ERROR] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/tx/alg/BallisticSampledWindows.java:[243,43] 无法将类 com.tx.alg.BallisticSampledWindows中的方法 searchLaunchOffsets应用到给定类型;
+[ERROR]   需要: long,long,long,java.util.List<com.tx.alg.OrbitCalculator.OrbitElements>,java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double,com.tx.alg.OrbitCalculator.GeodeticDatum,com.tx.alg.OrbitCalculator.OrbitModel,com.tx.alg.OrbitCalculator.ProgressCallback
+[ERROR]   找到: long,long,long,java.util.List<com.tx.alg.OrbitCalculator.OrbitElements>,java.util.List<com.tx.alg.OrbitCalculator.BallisticPoint>,double,com.tx.alg.OrbitCalculator.GeodeticDatum
+[ERROR]   原因: 实际参数列表和形式参数列表长度不同
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

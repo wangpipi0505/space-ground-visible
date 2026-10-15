@@ -22,11 +22,11 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * 原目标轨迹拟合与模拟兼容入口，保留全部公开嵌套请求、样本和结果类型。
+ * 目标轨迹拟合、模拟与重定时的数值入口，包含公开请求、样本和结果类型。
  *
- * <p>package102 点作为硬状态约束，以原二体RK4外推重建请求任务区间；
- * 精确观测时刻回填原样本，确保输出严格经过观测点。传播主体已抽入纯领域工具，
- * 插值、端点、事件求根及模拟专用动力学的原调用顺序保持。</p>
+ * <p>package102点作为硬状态约束，以二体RK4外推重建请求任务区间；
+ * 精确观测时刻回填源样本，确保输出严格经过观测点。传播主体调用独立领域工具，
+ * 插值、端点、事件求根及模拟专用动力学沿用已验证的Swing版计算口径。</p>
  */
 public final class TargetTrajectoryFitter {
     public static final double PACKAGE102_POSITION_UNIT_M = 0.1;

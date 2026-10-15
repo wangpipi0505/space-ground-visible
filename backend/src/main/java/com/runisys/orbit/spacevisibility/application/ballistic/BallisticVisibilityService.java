@@ -37,7 +37,7 @@ public class BallisticVisibilityService {
 
     /**
      * 按原控制器顺序转换、加载与搜索；每份源数据携带自身参考历元，绝不写静态 referenceEpochSec。
-     * utcOffsetSec 仍按原 HTTP 合同置零；并发的外部 Java 调用若主动修改它，仍有原全局状态风险，留待 T26。
+     * utcOffsetSec按HTTP的UTC约定置零；直接Java调用若主动改写该兼容字段，需避免与Web计算并发。
      * @param request 原兼容 DTO，单位、缺省值及别名保持原定义
      * @return 原 V2 结果，由控制器调用 writeJsonTo 流式输出
      * @throws IOException 原源文件读取错误，控制器保持原 500 语义

@@ -1,0 +1,39 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.runisys.orbit:space-target-visible >---------------
+[INFO] Building space-target-visible 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ space-target-visible ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ space-target-visible ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 119 source files to G:\5-YG\space-ground-visible\verification\runtime\A11\scratch\backend\target\classes
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /G:/5-YG/space-ground-visible/verification/runtime/A11/scratch/backend/src/main/java/com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ space-target-visible ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ space-target-visible ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ space-target-visible ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ space-target-visible ---
+[INFO] Building jar: G:\5-YG\space-ground-visible\verification\runtime\A11\scratch\backend\target\space-target-visible-1.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:2.7.18:repackage (repackage) @ space-target-visible ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.962 s
+[INFO] Finished at: 2026-10-15T14:39:42+08:00
+[INFO] ------------------------------------------------------------------------

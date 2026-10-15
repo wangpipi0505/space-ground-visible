@@ -1,0 +1,42 @@
+{
+  "beforeLines": 4069,
+  "afterFacadeLines": 1706,
+  "afterAllSplitFilesLines": 4060,
+  "files": [
+    {
+      "path": "backend/src/main/java/com/tx/alg/OrbitCalculator.java",
+      "lines": 1706,
+      "sha256": "147bbb86993f66aefe6e03ee96ef4174111810d4303fe01ebbd21047757789ba"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/BallisticArcSupport.java",
+      "lines": 181,
+      "sha256": "accdc3171f44b6f3bbed3890126d69f434a5baf2c4abc4942aa664eb174dbb51"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/BallisticLaunchSearch.java",
+      "lines": 757,
+      "sha256": "33aac7da0a47728d807cec85cfedbcb857b5c61e91b2da7b6c84aa28fbc766b9"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/BallisticResultWriter.java",
+      "lines": 412,
+      "sha256": "bd7ce35be29bfc72cd934bde8748ba705dc83bbdc353b8ff0f797fbad5d4b027"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/BallisticSampledWindows.java",
+      "lines": 422,
+      "sha256": "5051361c8b559e3d0cdde4c86be33ae0be95e7bc36c53434366e788fbf48f6e4"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/BallisticTrajectoryReader.java",
+      "lines": 366,
+      "sha256": "d0e517406a9c287e8e0dea4962cd78fe6168bc75e6f104b6f9cfadd5ea6f2b50"
+    },
+    {
+      "path": "backend/src/main/java/com/tx/alg/BallisticVisibilityGeometry.java",
+      "lines": 216,
+      "sha256": "5019c548dc6edc1787d7744129f5430c0580917902861b3862e62b3fc9c5f995"
+    }
+  ]
+}
