@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "finalArchiveSha256": "4238e426aa5dd1efe274de617ede9cc91fe5b8ec6f9e1f9ec033d0614f8267bd",
+  "entries": 2510,
+  "mavenFiles": 1964,
+  "unchangedA14Files": 542,
+  "deliveredGuideSha256": {
+    "源码包说明.md": "82d8768151248c103ef6ccbd87083bf29f9f3b06e7575f695a7833acc73b731f",
+    "frontend/代码说明.md": "efb2c81425c5838cca3395e58bffd49d51197420225039049ed811bffc5ca7ec",
+    "backend/代码说明.md": "c4c307a96a48118756b1295becfd50c660eec6d0ea77510994dece2e222571bc",
+    "backend/maven-settings.xml": "da1de8dcef6e168984123003f07bf7843865b087c296391aefebc53594d98ef1"
+  },
+  "openApiOperations": 35,
+  "openApiLocalRefs": 184,
+  "allCommandStreamHashesMatched": true,
+  "smokePassed": true,
+  "businessSourceChanged": false
+}

@@ -1,0 +1,21 @@
+{
+  "args": [
+    "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot/bin/java.exe",
+    "-Dorekit.data.path=./orekit-data",
+    "-jar",
+    "target/space-target-visible-1.0.0-SNAPSHOT.jar",
+    "--spring.profiles.active=demo",
+    "--server.port=55896"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A15\\extracted-20261015-163728\\backend",
+  "port": 55896,
+  "jarSha256": "4e0ce97740d0fc32b2555cf51f79899d14c937110241f9117511843e2de69fb4",
+  "passed": true,
+  "status": 200,
+  "body": "OK",
+  "readySec": 3.3901164999988396,
+  "stoppedOwnProcess": true,
+  "processId": 35300,
+  "stdoutSha256": "dce23d33cca8fca1f7b236239a1185dfb79956399839658983002d789717d32f",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

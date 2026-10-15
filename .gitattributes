@@ -93,3 +93,5 @@ verification/A11/**/*.log -text -whitespace
 verification/A12/**/*.txt -text -whitespace
 # A13保留解压源码构建命令的原始双流字节。
 verification/A13/**/*.txt -text -whitespace
+# A15离线Maven构建及隔离启动日志保留实际命令双流字节。
+verification/A15/**/*.txt -text -whitespace

@@ -1,0 +1,22 @@
+{
+  "args": [
+    "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    "-B",
+    "-s",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A15\\prepare-settings.xml",
+    "-gs",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A15\\empty-settings.xml",
+    "-Dmaven.repo.local=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A15\\prepare-source\\backend\\maven-repository",
+    "-Dmaven.test.skip=true",
+    "-Dstyle.color=never",
+    "clean",
+    "package"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A15\\prepare-source\\backend",
+  "javaHome": "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot",
+  "exitCode": 0,
+  "startedAtUtc": "2026-10-15T08:29:55.372144+00:00",
+  "durationSec": 27.467663,
+  "stdoutSha256": "27b8418e29395ec383dd6d22ab5ea66ebefb0fcbecf9d2876a2fd0077055c840",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

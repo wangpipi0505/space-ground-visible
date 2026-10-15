@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "archive": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261015-163728\\space-ground-visible-source-with-maven-20261015-163728.zip",
+  "bytes": 128012648,
+  "sha256": "4238e426aa5dd1efe274de617ede9cc91fe5b8ec6f9e1f9ec033d0614f8267bd",
+  "entries": 2510,
+  "groups": {
+    "backend": 2441,
+    "docs": 7,
+    "frontend": 61,
+    "源码包说明.md": 1
+  },
+  "mavenFiles": 1964,
+  "mavenBytes": 116153283,
+  "extraction": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A15\\extracted-20261015-163728",
+  "crcPassed": true,
+  "allSourceBytesMatched": true,
+  "noManifest": true,
+  "forbiddenEntries": [],
+  "added": [
+    "源码包说明.md",
+    "frontend/代码说明.md",
+    "backend/代码说明.md",
+    "backend/maven-settings.xml",
+    "backend/maven-repository/"
+  ]
+}
