@@ -1,13 +1,16 @@
 package com.runisys.orbit.spacevisibility.domain.orbit;
 
+import com.runisys.orbit.spacevisibility.domain.space.orbit.OrekitDataInitializer;
+import com.runisys.orbit.spacevisibility.domain.space.orbit.SpaceTimeFrames;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometry;
+import com.runisys.orbit.spacevisibility.domain.space.geometry.GroundStationGeometry;
 import com.runisys.orbit.spacevisibility.domain.geometry.LegacyJ2000Frames;
-import com.runisys.orbit.spacevisibility.domain.geometry.TemeEarthFixedFrames;
+import com.runisys.orbit.spacevisibility.domain.space.geometry.TemeEarthFixedFrames;
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
 import com.runisys.orbit.spacevisibility.domain.time.LegacyJ2000Time;
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
 import org.hipparchus.geometry.euclidean.threed.Vector3D;
 import org.junit.jupiter.api.Test;
 import org.orekit.data.DataContext;
@@ -205,7 +208,7 @@ class TimeFrameAdaptersTest {
                 bits(expected, LegacyJ2000Time.utcPartsToJ2000Sec(2026, 7, 1, 10, 0, 0.125, false, offset));
                 bits(expected + offset, LegacyJ2000Time.utcToJ2000Sec("2026/07/01 10:00:00.125", offset));
             }
-            java.lang.reflect.Method csvTime = Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.BallisticTrajectoryReader").getDeclaredMethod("utcPartsToJ2000Sec",
+            java.lang.reflect.Method csvTime = Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticTrajectoryReader").getDeclaredMethod("utcPartsToJ2000Sec",
                     int.class, int.class, int.class, int.class, int.class, double.class, boolean.class);
             csvTime.setAccessible(true);
             bits(expected, (Double) csvTime.invoke(null, 2026, 7, 1, 10, 0, 0.125, false));

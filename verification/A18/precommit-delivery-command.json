@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "G:\\5-YG\\space-ground-visible\\verification\\A18\\verify_delivery.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUnix": 1792060739.4785619,
+  "durationSec": 2.366809844970703,
+  "exitCode": 0,
+  "stdoutSha256": "49a93de6b5a52b416eb30bfa8f66db82071c9476b9a54524241b3f162a2653a8",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

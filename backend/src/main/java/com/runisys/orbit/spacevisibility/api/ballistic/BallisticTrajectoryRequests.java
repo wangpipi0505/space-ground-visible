@@ -1,6 +1,6 @@
 package com.runisys.orbit.spacevisibility.api.ballistic;
 
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter;
 
 /**
  * 拟合、模拟及重定时 HTTP 请求。继承领域输入的公开字段和默认值，Jackson 直接绑定继承字段，

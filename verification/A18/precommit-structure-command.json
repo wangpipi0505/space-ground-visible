@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "G:\\5-YG\\space-ground-visible\\verification\\A18\\verify_structure.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUnix": 1792060739.2917948,
+  "durationSec": 0.18644380569458008,
+  "exitCode": 0,
+  "stdoutSha256": "1a53e221bd87812fe7ad591b86b8cc7f3d169468d913f33e2f13932791efa653",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

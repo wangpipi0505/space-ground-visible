@@ -1,7 +1,12 @@
 package com.runisys.orbit.spacevisibility.domain.payload;
 
+import com.runisys.orbit.spacevisibility.domain.space.illumination.IlluminationState;
+import com.runisys.orbit.spacevisibility.domain.space.illumination.SolarGeometry;
+import com.runisys.orbit.spacevisibility.domain.space.visibility.PayloadVisibilityEvaluator;
+import com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilitySample;
+
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
 import org.junit.jupiter.api.Test;
 import java.lang.reflect.Method;
 import java.time.Instant;
@@ -24,7 +29,7 @@ class StandardPayloadSolarContextTest {
 
         // 反射读取冻结保留的原解析太阳入口，仅用于构造几何，不计算期望；同向夹角必为0。
         double time=OrbitCalculator.utcToJ2000Sec("2026/07/01 10:00:00.000");
-        Method sunMethod=Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.BallisticVisibilityGeometry").getDeclaredMethod("sunDirectionEci",double.class);
+        Method sunMethod=Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticVisibilityGeometry").getDeclaredMethod("sunDirectionEci",double.class);
         sunMethod.setAccessible(true);
         OrbitCalculator.Vector3 sun=(OrbitCalculator.Vector3)sunMethod.invoke(null,time);
         OrbitCalculator.Vector3 sat=sun.scale(-7000000), end=sat.add(sun.scale(1000));

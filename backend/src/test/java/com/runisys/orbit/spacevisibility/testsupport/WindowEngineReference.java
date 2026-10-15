@@ -1,6 +1,6 @@
 package com.runisys.orbit.spacevisibility.testsupport;
 
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
 import com.runisys.orbit.spacevisibility.api.ballistic.VisibilityRequest;
 import com.runisys.orbit.spacevisibility.application.ballistic.BallisticVisibilityService;
 import org.springframework.http.MediaType;

@@ -1,7 +1,6 @@
 package com.runisys.orbit.spacevisibility.domain.orbit;
 
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
-
 import java.util.Objects;
 
 /**

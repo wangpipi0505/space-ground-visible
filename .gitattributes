@@ -101,3 +101,6 @@ verification/A16/**/*.txt -text -whitespace
 # A17 构建、数值及 HTTP 命令日志保留原字节。
 verification/A17/**/*.txt -text -whitespace
 verification/A17/**/*.log -text -whitespace
+# A18 构建、契约、数值和交付验证日志保留实际字节。
+verification/A18/**/*.txt -text -whitespace
+verification/A18/**/*.log -text -whitespace

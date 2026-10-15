@@ -1,0 +1,16 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/verification/runtime/A18/frontend
+
+ ❯ src/views/BallisticFitView.spec.ts (0 test)
+ ❯ src/views/BallisticSimulationView.spec.ts (0 test)
+ ❯ src/views/BallisticRetimeView.spec.ts (0 test)
+ ❯ src/utils/ballisticRetime.spec.ts (0 test)
+ ❯ src/utils/ballisticFit.spec.ts (0 test)
+ ❯ src/utils/ballisticSimulation.spec.ts (0 test)
+
+ Test Files  6 failed | 23 passed (29)
+      Tests  104 passed (104)
+   Start at  18:25:34
+   Duration  63.27s (transform 6.34s, setup 0ms, import 52.20s, tests 95.26s, environment 36.38s)
+
+[ELIFECYCLE] Test failed. See above for more details.

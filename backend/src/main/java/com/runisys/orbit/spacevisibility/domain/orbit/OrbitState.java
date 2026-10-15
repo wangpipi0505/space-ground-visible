@@ -13,8 +13,8 @@ public final class OrbitState {
     /** 速度，米/秒；空间默认仍由原 provider 的 ±1秒中心差分产生。 */
     public final Vector3 velocityMps;
 
-    /** 只由工具在时间/frame 校验后包装原传播器返回值。 */
-    OrbitState(OrbitTime time, OrbitDefinition.Frame frame, Vector3 positionM, Vector3 velocityMps) {
+    /** 公共工具和各业务传播适配器在时间/frame校验后包装原返回值，不执行数值转换。 */
+    public OrbitState(OrbitTime time, OrbitDefinition.Frame frame, Vector3 positionM, Vector3 velocityMps) {
         this.time = time;
         this.frame = frame;
         this.positionM = positionM;

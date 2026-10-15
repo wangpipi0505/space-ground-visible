@@ -1,0 +1,9 @@
+
+ RUN  v4.1.10 G:/5-YG/space-ground-visible/verification/runtime/A18/frontend
+
+
+ Test Files  29 passed (29)
+      Tests  141 passed (141)
+   Start at  18:27:35
+   Duration  60.08s (transform 5.09s, setup 0ms, import 32.04s, tests 98.80s, environment 12.90s)
+

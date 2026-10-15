@@ -1,7 +1,7 @@
 package com.runisys.orbit.spacevisibility.api.ballistic;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.runisys.orbit.spacevisibility.application.PayloadConstraintFactory;
+import com.runisys.orbit.spacevisibility.application.space.PayloadConstraintFactory;
 import com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraint;
 import org.junit.jupiter.api.Test;
 import java.util.Map;

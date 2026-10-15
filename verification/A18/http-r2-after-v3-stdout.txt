@@ -1,0 +1,294 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-15 18:24:12.032  INFO 40092 --- [           main] c.r.o.s.SpaceTargetVisibleApplication    : Starting SpaceTargetVisibleApplication v1.0.0-SNAPSHOT using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 40092 (G:\5-YG\space-ground-visible\verification\runtime\A18\after-v3\backend\target\space-target-visible-1.0.0-SNAPSHOT.jar started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\A18\after-v3\backend)
+2026-10-15 18:24:12.034  INFO 40092 --- [           main] c.r.o.s.SpaceTargetVisibleApplication    : The following 1 profile is active: "demo"
+2026-10-15 18:24:12.904  INFO 40092 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 56620 (http)
+2026-10-15 18:24:12.908  INFO 40092 --- [           main] o.a.coyote.http11.Http11Nio2Protocol     : Initializing ProtocolHandler ["http-nio2-127.0.0.1-56620"]
+2026-10-15 18:24:12.910  INFO 40092 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15 18:24:12.910  INFO 40092 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-15 18:24:12.953  INFO 40092 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-15 18:24:12.954  INFO 40092 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 892 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-10-15 18:24:13.449  INFO 40092 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-15 18:24:13.550  INFO 40092 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-15 18:24:13.567  INFO 40092 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.15.0 by Redgate
+2026-10-15 18:24:13.567  INFO 40092 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:a17 (H2 1.4)
+2026-10-15 18:24:13.607  INFO 40092 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 10 migrations (execution time 00:00.013s)
+2026-10-15 18:24:13.614  INFO 40092 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-15 18:24:13.636  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-15 18:24:13.640  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - create space visibility tables"
+2026-10-15 18:24:13.655  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - ReplaceNameUniqueKeys"
+2026-10-15 18:24:13.675  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - AddSpaceTrackCatalogFields"
+2026-10-15 18:24:13.722  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "4 - AddSatelliteWeight"
+2026-10-15 18:24:13.726  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - create visibility task result"
+2026-10-15 18:24:13.731  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "6 - normalize space payload distance unit"
+2026-10-15 18:24:13.736  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "7 - add skipped pairs to visibility task result"
+2026-10-15 18:24:13.747  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "8 - align wintool space payload rate markers"
+2026-10-15 18:24:13.753  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "9 - add selection json to visibility task result"
+2026-10-15 18:24:13.758  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "10 - align station max elevation with wintool"
+2026-10-15 18:24:13.764  INFO 40092 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 10 migrations to schema "public", now at version v10 (execution time 00:00.132s)
+2026-10-15 18:24:14.257  INFO 40092 --- [           main] o.a.coyote.http11.Http11Nio2Protocol     : Starting ProtocolHandler ["http-nio2-127.0.0.1-56620"]
+2026-10-15 18:24:14.270  INFO 40092 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 56620 (http) with context path ''
+2026-10-15 18:24:14.282  INFO 40092 --- [           main] c.r.o.s.SpaceTargetVisibleApplication    : Started SpaceTargetVisibleApplication in 2.506 seconds (JVM running for 2.758)
+2026-10-15 18:24:14.326  INFO 40092 --- [.1-56620-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-15 18:24:14.326  INFO 40092 --- [.1-56620-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-15 18:24:14.326  INFO 40092 --- [.1-56620-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-15 18:24:14.801 ERROR 40092 --- [.1-56620-exec-1] c.r.o.s.api.common.ApiExceptionHandler   : 请求处理失败，requestId=f48b19fc-8aad-442c-a02c-ec1e60646174
+
+org.springframework.http.converter.HttpMessageNotReadableException: 拟合请求字段无法解析; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `double` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.runisys.orbit.spacevisibility.api.ballistic.BallisticTrajectoryRequests$FitRequest["interpolationStepSec"])
+	at com.runisys.orbit.spacevisibility.api.ballistic.BallisticFitController.fitPackage102(BallisticFitController.java:47) ~[classes!/:1.0.0-SNAPSHOT]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_472]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_472]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_472]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_472]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$SocketProcessor.doRun(Nio2Endpoint.java:1732) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.AbstractEndpoint.processSocket(AbstractEndpoint.java:1295) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$2.completed(Nio2Endpoint.java:643) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$2.completed(Nio2Endpoint.java:619) [tomcat-embed-core-9.0.83.jar!/:na]
+	at sun.nio.ch.Invoker.invokeUnchecked(Invoker.java:126) [na:1.8.0_472]
+	at sun.nio.ch.Invoker$2.run(Invoker.java:218) [na:1.8.0_472]
+	at sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112) [na:1.8.0_472]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.83.jar!/:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_472]
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `double` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.runisys.orbit.spacevisibility.api.ballistic.BallisticTrajectoryRequests$FitRequest["interpolationStepSec"])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1741) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1515) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1420) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.extractScalarFromObject(DeserializationContext.java:932) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseDoublePrimitive(StdDeserializer.java:1109) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$DoubleDeserializer.deserialize(NumberDeserializers.java:674) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$DoubleDeserializer.deserialize(NumberDeserializers.java:655) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper._readValue(ObjectMapper.java:4650) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2831) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.treeToValue(ObjectMapper.java:3295) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.runisys.orbit.spacevisibility.api.ballistic.BallisticFitController.fitPackage102(BallisticFitController.java:45) ~[classes!/:1.0.0-SNAPSHOT]
+	... 56 common frames omitted
+
+2026-10-15 18:24:14.857 ERROR 40092 --- [.1-56620-exec-9] c.r.o.s.api.common.ApiExceptionHandler   : 请求处理失败，requestId=ed40fdbe-a451-47a8-a9d6-54e3bbe9c0cd
+
+org.springframework.http.converter.HttpMessageNotReadableException: 模拟请求字段无法解析; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `double` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.runisys.orbit.spacevisibility.api.ballistic.BallisticTrajectoryRequests$SimulationRequest["durationSec"])
+	at com.runisys.orbit.spacevisibility.api.ballistic.BallisticSimulationController.simulate(BallisticSimulationController.java:35) ~[classes!/:1.0.0-SNAPSHOT]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_472]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_472]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_472]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_472]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$SocketProcessor.doRun(Nio2Endpoint.java:1732) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.AbstractEndpoint.processSocket(AbstractEndpoint.java:1295) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$2.completed(Nio2Endpoint.java:643) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$2.completed(Nio2Endpoint.java:619) [tomcat-embed-core-9.0.83.jar!/:na]
+	at sun.nio.ch.Invoker.invokeUnchecked(Invoker.java:126) [na:1.8.0_472]
+	at sun.nio.ch.Invoker$2.run(Invoker.java:218) [na:1.8.0_472]
+	at sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112) [na:1.8.0_472]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.83.jar!/:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_472]
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `double` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.runisys.orbit.spacevisibility.api.ballistic.BallisticTrajectoryRequests$SimulationRequest["durationSec"])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1741) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1515) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1420) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.extractScalarFromObject(DeserializationContext.java:932) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseDoublePrimitive(StdDeserializer.java:1109) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$DoubleDeserializer.deserialize(NumberDeserializers.java:674) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$DoubleDeserializer.deserialize(NumberDeserializers.java:655) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper._readValue(ObjectMapper.java:4650) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2831) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.treeToValue(ObjectMapper.java:3295) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.runisys.orbit.spacevisibility.api.ballistic.BallisticSimulationController.simulate(BallisticSimulationController.java:33) ~[classes!/:1.0.0-SNAPSHOT]
+	... 56 common frames omitted
+
+2026-10-15 18:24:14.906 ERROR 40092 --- [.1-56620-exec-6] c.r.o.s.api.common.ApiExceptionHandler   : 请求处理失败，requestId=352bf6f7-5ce2-4b25-8389-7fe2473bf988
+
+org.springframework.http.converter.HttpMessageNotReadableException: 重定时请求字段无法解析; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Array value (token `JsonToken.START_ARRAY`)
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.runisys.orbit.spacevisibility.api.ballistic.BallisticTrajectoryRequests$RetimeRequest["launchTimeUtc"])
+	at com.runisys.orbit.spacevisibility.api.ballistic.BallisticRetimeController.retime(BallisticRetimeController.java:35) ~[classes!/:1.0.0-SNAPSHOT]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_472]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_472]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_472]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_472]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.31.jar!/:5.3.31]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.31.jar!/:5.3.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$SocketProcessor.doRun(Nio2Endpoint.java:1732) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.AbstractEndpoint.processSocket(AbstractEndpoint.java:1295) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$2.completed(Nio2Endpoint.java:643) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$2.completed(Nio2Endpoint.java:619) [tomcat-embed-core-9.0.83.jar!/:na]
+	at sun.nio.ch.Invoker.invokeUnchecked(Invoker.java:126) [na:1.8.0_472]
+	at sun.nio.ch.Invoker$2.run(Invoker.java:218) [na:1.8.0_472]
+	at sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112) [na:1.8.0_472]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.83.jar!/:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_472]
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Array value (token `JsonToken.START_ARRAY`)
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.runisys.orbit.spacevisibility.api.ballistic.BallisticTrajectoryRequests$RetimeRequest["launchTimeUtc"])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1741) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1515) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._deserializeFromArray(StdDeserializer.java:222) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:46) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:11) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper._readValue(ObjectMapper.java:4650) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2831) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.treeToValue(ObjectMapper.java:3295) ~[jackson-databind-2.13.5.jar!/:2.13.5]
+	at com.runisys.orbit.spacevisibility.api.ballistic.BallisticRetimeController.retime(BallisticRetimeController.java:33) ~[classes!/:1.0.0-SNAPSHOT]
+	... 56 common frames omitted
+
+2026-10-15 18:24:15.038  WARN 40092 --- [.1-56620-exec-9] o.s.w.c.request.async.WebAsyncManager    : 
+!!!
+An Executor is required to handle java.util.concurrent.Callable return values.
+Please, configure a TaskExecutor in the MVC config under "async support".
+The SimpleAsyncTaskExecutor currently in use is not suitable under load.
+-------------------------------
+Request URI: '/api/orbit/visibility/search'
+!!!

@@ -1,12 +1,11 @@
 package com.runisys.orbit.spacevisibility.application.ballistic;
 
-import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitRunResult;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.SimulationInput;
-import org.springframework.stereotype.Service;
-
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter.FitRunResult;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter.SimulationInput;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileStorage;
 import java.io.IOException;
+import org.springframework.stereotype.Service;
 
 /** 模拟唯一 Web 应用编排：原端点 Lambert/RK4 数值主体不变，结果复用既有工作区及自动登记生命周期。 */
 @Service

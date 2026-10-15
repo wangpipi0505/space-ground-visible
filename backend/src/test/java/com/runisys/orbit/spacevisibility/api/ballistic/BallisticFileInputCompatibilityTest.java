@@ -1,6 +1,6 @@
 package com.runisys.orbit.spacevisibility.api.ballistic;
 
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;

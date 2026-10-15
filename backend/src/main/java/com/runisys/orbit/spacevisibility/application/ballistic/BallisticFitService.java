@@ -1,12 +1,11 @@
 package com.runisys.orbit.spacevisibility.application.ballistic;
 
-import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitInput;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.FitRunResult;
-import org.springframework.stereotype.Service;
-
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter.FitInput;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter.FitRunResult;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileStorage;
 import java.io.IOException;
+import org.springframework.stereotype.Service;
 
 /** 102 拟合唯一 Web 应用编排：调用既有数值主体、管理结果作用域并自动登记，不改变 CSV 或原结果 DTO。 */
 @Service

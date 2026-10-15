@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "comparisons": {
+    "routes.json": {
+      "equal": true,
+      "entries": 35
+    },
+    "jackson.json": {
+      "equal": true,
+      "entries": 61
+    }
+  },
+  "normalization": "仅逐类Java名称映射；HTTP路由、JSON字段、类型、读写方向与日期格式严格相等"
+}

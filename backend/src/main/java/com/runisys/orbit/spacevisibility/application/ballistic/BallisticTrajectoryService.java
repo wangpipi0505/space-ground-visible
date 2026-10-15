@@ -1,12 +1,11 @@
 package com.runisys.orbit.spacevisibility.application.ballistic;
 
-import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileConfiguration;
-import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
-import com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolver;
-import org.springframework.stereotype.Service;
-
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileConfiguration;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileStorage;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.TrajectoryFileResolver;
 import java.io.IOException;
+import org.springframework.stereotype.Service;
 
 /**
  * Web 弹道文件解析应用入口：接受上传 serverPath 或原本地/HTTP/HTTPS/MinIO 地址。

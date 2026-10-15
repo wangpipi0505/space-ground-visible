@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    "-B",
+    "-o",
+    "-s",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A18\\extracted-20261015-183404\\backend\\maven-settings.xml",
+    "-gs",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A18\\extracted-20261015-183404\\backend\\maven-settings.xml",
+    "-Dmaven.repo.local=./maven-repository",
+    "-Dmaven.test.skip=true",
+    "-Dstyle.color=never",
+    "clean",
+    "package"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A18\\extracted-20261015-183404\\backend",
+  "startedUnix": 1792060450.6483102,
+  "durationSec": 10.439990043640137,
+  "exitCode": 0,
+  "stdoutSha256": "7943f740c0d38f7246b2b4ea9a347e46d646813c2d3a5e9e2471d2fd22025e41",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

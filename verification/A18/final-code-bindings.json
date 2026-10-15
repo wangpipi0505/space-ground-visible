@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "classFiles": 298,
+  "comparison": "ASM仅排除调试行号/局部变量信息；其余实际class指令、字段、签名及注解保持"
+}

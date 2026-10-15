@@ -1,6 +1,6 @@
 package com.runisys.orbit.spacevisibility.application.ballistic;
 
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
 import java.util.List;
 
 /**

@@ -2,11 +2,11 @@ package com.runisys.orbit.spacevisibility.application.ballistic;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileConfiguration;
-import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.runisys.orbit.spacevisibility.infrastructure.files.ManagedFileException;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.SimulationInput;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileConfiguration;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileStorage;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.ManagedFileException;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter.SimulationInput;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 

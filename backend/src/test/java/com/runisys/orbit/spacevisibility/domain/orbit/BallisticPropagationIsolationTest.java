@@ -1,7 +1,10 @@
 package com.runisys.orbit.spacevisibility.domain.orbit;
 
+import com.runisys.orbit.spacevisibility.domain.ballistic.propagation.BallisticCartesianPropagation;
+import com.runisys.orbit.spacevisibility.domain.ballistic.propagation.BallisticOrbitPropagation;
+
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
 import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;

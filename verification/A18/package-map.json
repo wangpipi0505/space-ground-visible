@@ -1,0 +1,728 @@
+[
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ApiCorsConfiguration",
+    "new": "com.runisys.orbit.spacevisibility.api.common.ApiCorsConfiguration",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ApiCorsConfiguration.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/common/ApiCorsConfiguration.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ApiExceptionHandler",
+    "new": "com.runisys.orbit.spacevisibility.api.common.ApiExceptionHandler",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ApiExceptionHandler.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/common/ApiExceptionHandler.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticErrorResponse",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticErrorResponse",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticErrorResponse.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticErrorResponse.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileController",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileExceptionHandler",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileExceptionHandler",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileExceptionHandler.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileExceptionHandler.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileModels",
+    "new": "com.runisys.orbit.spacevisibility.application.ballistic.contract.BallisticFileModels",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/ballistic/contract/BallisticFileModels.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticFitController",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticFitController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticMultipartExceptionResolver",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticMultipartExceptionResolver",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticMultipartExceptionResolver.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticMultipartExceptionResolver.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticPayloadController",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticPayloadController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticPayloadController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticPayloadController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticRetimeController",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticRetimeController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticSimulationController",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticSimulationController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticTrajectoryRequests",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticTrajectoryRequests",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticTrajectoryRequests.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticTrajectoryRequests.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticVisibilityController",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.BallisticVisibilityController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.ballistic.VisibilityRequest",
+    "new": "com.runisys.orbit.spacevisibility.api.ballistic.VisibilityRequest",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/ballistic/VisibilityRequest.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.PlanningTaskController",
+    "new": "com.runisys.orbit.spacevisibility.api.space.PlanningTaskController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/PlanningTaskController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/space/PlanningTaskController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.SpaceApiModels",
+    "new": "com.runisys.orbit.spacevisibility.application.space.contract.SpacePlanningModels",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/SpaceApiModels.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/contract/SpacePlanningModels.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.SpaceVisibilityController",
+    "new": "com.runisys.orbit.spacevisibility.api.space.SpaceVisibilityController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/SpaceVisibilityController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/space/SpaceVisibilityController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.api.VisibilityTaskResultController",
+    "new": "com.runisys.orbit.spacevisibility.api.space.VisibilityTaskResultController",
+    "oldPath": "com/runisys/orbit/spacevisibility/api/VisibilityTaskResultController.java",
+    "newPath": "com/runisys/orbit/spacevisibility/api/space/VisibilityTaskResultController.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticFileService",
+    "new": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticFileService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticFileService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticFileService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticFitService",
+    "new": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticFitService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticFitService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticFitService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticRetimeService",
+    "new": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticRetimeService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticRetimeService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticRetimeService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticSimulationService",
+    "new": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticSimulationService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticSimulationService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticSimulationService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticTrajectoryService",
+    "new": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticTrajectoryService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticVisibilityInput",
+    "new": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticVisibilityInput",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityInput.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityInput.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticVisibilityService",
+    "new": "com.runisys.orbit.spacevisibility.application.ballistic.BallisticVisibilityService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.DownlinkCoverageWindowMerger",
+    "new": "com.runisys.orbit.spacevisibility.application.space.DownlinkCoverageWindowMerger",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/DownlinkCoverageWindowMerger.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/DownlinkCoverageWindowMerger.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.DownlinkPair",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.downlink.DownlinkPair",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/DownlinkPair.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/downlink/DownlinkPair.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.DownlinkPairResult",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.downlink.DownlinkPairResult",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/DownlinkPairResult.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/downlink/DownlinkPairResult.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.DownlinkPlanningOutcome",
+    "new": "com.runisys.orbit.spacevisibility.application.space.DownlinkPlanningOutcome",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/DownlinkPlanningOutcome.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/DownlinkPlanningOutcome.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.DownlinkPlanningService",
+    "new": "com.runisys.orbit.spacevisibility.application.space.DownlinkPlanningService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/DownlinkPlanningService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/DownlinkPlanningService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.DownlinkSkippedLink",
+    "new": "com.runisys.orbit.spacevisibility.application.space.DownlinkSkippedLink",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/DownlinkSkippedLink.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/DownlinkSkippedLink.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.DownlinkWindowValidator",
+    "new": "com.runisys.orbit.spacevisibility.application.space.DownlinkWindowValidator",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/DownlinkWindowValidator.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/DownlinkWindowValidator.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ObservationSampleEvaluator",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.ObservationSampleEvaluator",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ObservationSampleEvaluator.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/ObservationSampleEvaluator.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.OrbitPositionCache",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.OrbitPositionCache",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/OrbitPositionCache.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/OrbitPositionCache.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.OrbitStateProviderFactory",
+    "new": "com.runisys.orbit.spacevisibility.application.space.OrbitStateProviderFactory",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/OrbitStateProviderFactory.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/OrbitStateProviderFactory.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.PayloadConstraintFactory",
+    "new": "com.runisys.orbit.spacevisibility.application.space.PayloadConstraintFactory",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/PayloadConstraintFactory.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/PayloadConstraintFactory.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.PlanningFacadeService",
+    "new": "com.runisys.orbit.spacevisibility.application.space.PlanningFacadeService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/PlanningFacadeService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/PlanningFacadeService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.PlanningFailureReasonFormatter",
+    "new": "com.runisys.orbit.spacevisibility.application.space.PlanningFailureReasonFormatter",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/PlanningFailureReasonFormatter.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/PlanningFailureReasonFormatter.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.PlanningTask",
+    "new": "com.runisys.orbit.spacevisibility.application.space.PlanningTask",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/PlanningTask.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/PlanningTask.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.PlanningTaskService",
+    "new": "com.runisys.orbit.spacevisibility.application.space.PlanningTaskService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/PlanningTaskService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/PlanningTaskService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.ReferenceDataService",
+    "new": "com.runisys.orbit.spacevisibility.application.space.ReferenceDataService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/ReferenceDataService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/ReferenceDataService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityArc",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityArc",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityArc.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/VisibilityArc.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityConstraintPlanner",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityConstraintPlanner",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityConstraintPlanner.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/VisibilityConstraintPlanner.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityExecutorConfiguration",
+    "new": "com.runisys.orbit.spacevisibility.application.space.VisibilityExecutorConfiguration",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityExecutorConfiguration.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/VisibilityExecutorConfiguration.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityObservationResult",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityObservationResult",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityObservationResult.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/VisibilityObservationResult.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityObserver",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityObserver",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityObserver.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/VisibilityObserver.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityPairResult",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityPairResult",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityPairResult.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/VisibilityPairResult.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityPairStatistics",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityPairStatistics",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityPairStatistics.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/VisibilityPairStatistics.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityPlanningOutcome",
+    "new": "com.runisys.orbit.spacevisibility.application.space.VisibilityPlanningOutcome",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityPlanningOutcome.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/VisibilityPlanningOutcome.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityPlanningService",
+    "new": "com.runisys.orbit.spacevisibility.application.space.VisibilityPlanningService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityPlanningService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/VisibilityPlanningService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilitySkippedPair",
+    "new": "com.runisys.orbit.spacevisibility.application.space.VisibilitySkippedPair",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilitySkippedPair.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/VisibilitySkippedPair.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityTarget",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityTarget",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityTarget.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/VisibilityTarget.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.VisibilityTaskResultService",
+    "new": "com.runisys.orbit.spacevisibility.application.space.VisibilityTaskResultService",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/VisibilityTaskResultService.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/VisibilityTaskResultService.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.application.WinToolReportFormatter",
+    "new": "com.runisys.orbit.spacevisibility.application.space.WinToolReportFormatter",
+    "oldPath": "com/runisys/orbit/spacevisibility/application/WinToolReportFormatter.java",
+    "newPath": "com/runisys/orbit/spacevisibility/application/space/WinToolReportFormatter.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.ballistic.BallisticArcSupport",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticArcSupport",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticArcSupport.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/visibility/BallisticArcSupport.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.ballistic.BallisticLaunchSearch",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticLaunchSearch",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticLaunchSearch.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/visibility/BallisticLaunchSearch.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.ballistic.BallisticResultWriter",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticResultWriter",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticResultWriter.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/visibility/BallisticResultWriter.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.ballistic.BallisticSampledWindows",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticSampledWindows",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticSampledWindows.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/visibility/BallisticSampledWindows.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.ballistic.BallisticTrajectoryReader",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticTrajectoryReader",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticTrajectoryReader.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/visibility/BallisticTrajectoryReader.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.ballistic.BallisticVisibilityGeometry",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticVisibilityGeometry",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/ballistic/BallisticVisibilityGeometry.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/visibility/BallisticVisibilityGeometry.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/ballistic/OrbitCalculator.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/visibility/OrbitCalculator.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/ballistic/TargetTrajectoryFitter.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/trajectory/TargetTrajectoryFitter.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.downlink.DownlinkPlanner",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.downlink.DownlinkPlanner",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/downlink/DownlinkPlanner.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/downlink/DownlinkPlanner.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.downlink.IlluminationRequirement",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.downlink.IlluminationRequirement",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/downlink/IlluminationRequirement.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/downlink/IlluminationRequirement.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.geometry.GeometryMath",
+    "new": "com.runisys.orbit.spacevisibility.domain.geometry.GeometryMath",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/geometry/GeometryMath.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/geometry/GeometryMath.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.geometry.GroundStationCoordinate",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.geometry.GroundStationCoordinate",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/geometry/GroundStationCoordinate.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/geometry/GroundStationCoordinate.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometry",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.geometry.GroundStationGeometry",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/geometry/GroundStationGeometry.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/geometry/GroundStationGeometry.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.geometry.LegacyJ2000Frames",
+    "new": "com.runisys.orbit.spacevisibility.domain.geometry.LegacyJ2000Frames",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/geometry/LegacyJ2000Frames.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/geometry/LegacyJ2000Frames.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.geometry.TemeEarthFixedFrames",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.geometry.TemeEarthFixedFrames",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/geometry/TemeEarthFixedFrames.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/geometry/TemeEarthFixedFrames.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.geometry.Vector3",
+    "new": "com.runisys.orbit.spacevisibility.domain.geometry.Vector3",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/geometry/Vector3.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/geometry/Vector3.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.BallisticCartesianPropagation",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.propagation.BallisticCartesianPropagation",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/propagation/BallisticCartesianPropagation.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.BallisticOrbitPropagation",
+    "new": "com.runisys.orbit.spacevisibility.domain.ballistic.propagation.BallisticOrbitPropagation",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/ballistic/propagation/BallisticOrbitPropagation.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.KeplerOrbitStateProvider",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.orbit.KeplerOrbitStateProvider",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/KeplerOrbitStateProvider.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/orbit/KeplerOrbitStateProvider.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitDefinition",
+    "new": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitDefinition",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool",
+    "new": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationTool",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitState",
+    "new": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitState",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitState.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitState.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitStateProvider",
+    "new": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitStateProvider",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitStateProvider.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitStateProvider.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitTime",
+    "new": "com.runisys.orbit.spacevisibility.domain.orbit.OrbitTime",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitTime.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitTime.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.OrekitDataInitializer",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.orbit.OrekitDataInitializer",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/OrekitDataInitializer.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/orbit/OrekitDataInitializer.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.SpaceOrbitStateProvider",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.orbit.SpaceOrbitStateProvider",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/SpaceOrbitStateProvider.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/orbit/SpaceOrbitStateProvider.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.SpaceTimeFrames",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.orbit.SpaceTimeFrames",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/SpaceTimeFrames.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/orbit/SpaceTimeFrames.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProvider",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.orbit.TleOrbitStateProvider",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/orbit/TleOrbitStateProvider.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/orbit/TleOrbitStateProvider.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.IlluminationConstraint",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.illumination.IlluminationConstraint",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/IlluminationConstraint.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/illumination/IlluminationConstraint.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.IlluminationState",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.illumination.IlluminationState",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/IlluminationState.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/illumination/IlluminationState.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraint",
+    "new": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraint",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraint.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraint.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath",
+    "new": "com.runisys.orbit.spacevisibility.domain.payload.PayloadConstraintMath",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraintMath.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraintMath.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.PayloadType",
+    "new": "com.runisys.orbit.spacevisibility.domain.payload.PayloadType",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/PayloadType.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/payload/PayloadType.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.PayloadVisibilityEvaluator",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.PayloadVisibilityEvaluator",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/PayloadVisibilityEvaluator.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/PayloadVisibilityEvaluator.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.SolarGeometry",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.illumination.SolarGeometry",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/SolarGeometry.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/illumination/SolarGeometry.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.StandardPayloads",
+    "new": "com.runisys.orbit.spacevisibility.domain.payload.StandardPayloads",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/StandardPayloads.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/payload/StandardPayloads.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.payload.VisibilitySample",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilitySample",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/payload/VisibilitySample.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/VisibilitySample.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.time.LegacyJ2000Time",
+    "new": "com.runisys.orbit.spacevisibility.domain.time.LegacyJ2000Time",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/time/LegacyJ2000Time.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/time/LegacyJ2000Time.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.CombinationConstraint",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.CombinationConstraint",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/CombinationConstraint.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/CombinationConstraint.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.CombinationWindow",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.CombinationWindow",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/CombinationWindow.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/CombinationWindow.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.CombinationWindowCalculator",
+    "new": "com.runisys.orbit.spacevisibility.domain.space.visibility.CombinationWindowCalculator",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/CombinationWindowCalculator.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/space/visibility/CombinationWindowCalculator.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.SampledStateRuns",
+    "new": "com.runisys.orbit.spacevisibility.domain.window.SampledStateRuns",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/SampledStateRuns.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/window/SampledStateRuns.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.ScanStatisticsAccumulator",
+    "new": "com.runisys.orbit.spacevisibility.domain.window.ScanStatisticsAccumulator",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/ScanStatisticsAccumulator.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/window/ScanStatisticsAccumulator.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.StateInterval",
+    "new": "com.runisys.orbit.spacevisibility.domain.window.StateInterval",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/StateInterval.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/window/StateInterval.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.TimeInterval",
+    "new": "com.runisys.orbit.spacevisibility.domain.window.TimeInterval",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/TimeInterval.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/window/TimeInterval.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.TimeWindowScanner",
+    "new": "com.runisys.orbit.spacevisibility.domain.window.TimeWindowScanner",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/window/TimeWindowScanner.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.WindowIntervals",
+    "new": "com.runisys.orbit.spacevisibility.domain.window.WindowIntervals",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.domain.window.WindowNormalizer",
+    "new": "com.runisys.orbit.spacevisibility.domain.window.WindowNormalizer",
+    "oldPath": "com/runisys/orbit/spacevisibility/domain/window/WindowNormalizer.java",
+    "newPath": "com/runisys/orbit/spacevisibility/domain/window/WindowNormalizer.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.config.MybatisPlusConfiguration",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.MybatisPlusConfiguration",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/config/MybatisPlusConfiguration.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/MybatisPlusConfiguration.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileConfiguration",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileConfiguration",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileConfiguration.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/ballistic/files/BallisticFileConfiguration.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileStorage",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/ballistic/files/BallisticFileStorage.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.files.ManagedFileException",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.ManagedFileException",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/files/ManagedFileException.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/ballistic/files/ManagedFileException.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.files.TrajectoryFileResolver",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.TrajectoryFileResolver",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/files/TrajectoryFileResolver.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/ballistic/files/TrajectoryFileResolver.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.DemoDataInitializer",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.DemoDataInitializer",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/DemoDataInitializer.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/DemoDataInitializer.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.SatelliteEntity",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.entity.SatelliteEntity",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/SatelliteEntity.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/entity/SatelliteEntity.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.StationEntity",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.entity.StationEntity",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/StationEntity.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/entity/StationEntity.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.TargetEntity",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.entity.TargetEntity",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/TargetEntity.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/entity/TargetEntity.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.entity.VisibilityTaskResultEntity",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.entity.VisibilityTaskResultEntity",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/entity/VisibilityTaskResultEntity.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/entity/VisibilityTaskResultEntity.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.SatelliteMapper",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.mapper.SatelliteMapper",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/SatelliteMapper.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/mapper/SatelliteMapper.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.StationMapper",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.mapper.StationMapper",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/StationMapper.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/mapper/StationMapper.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.TargetMapper",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.mapper.TargetMapper",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/TargetMapper.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/mapper/TargetMapper.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.persistence.mapper.VisibilityTaskResultMapper",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.space.persistence.mapper.VisibilityTaskResultMapper",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/persistence/mapper/VisibilityTaskResultMapper.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/space/persistence/mapper/VisibilityTaskResultMapper.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.web.ClosingSafeNio2Protocol",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.common.web.ClosingSafeNio2Protocol",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/web/ClosingSafeNio2Protocol.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/common/web/ClosingSafeNio2Protocol.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.infrastructure.web.TomcatProtocolCustomizer",
+    "new": "com.runisys.orbit.spacevisibility.infrastructure.common.web.TomcatProtocolCustomizer",
+    "oldPath": "com/runisys/orbit/spacevisibility/infrastructure/web/TomcatProtocolCustomizer.java",
+    "newPath": "com/runisys/orbit/spacevisibility/infrastructure/common/web/TomcatProtocolCustomizer.java"
+  },
+  {
+    "old": "com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication",
+    "new": "com.runisys.orbit.spacevisibility.SpaceTargetVisibleApplication",
+    "oldPath": "com/runisys/orbit/spacevisibility/SpaceTargetVisibleApplication.java",
+    "newPath": "com/runisys/orbit/spacevisibility/SpaceTargetVisibleApplication.java"
+  },
+  {
+    "old": "db.migration.V2__ReplaceNameUniqueKeys",
+    "new": "db.migration.V2__ReplaceNameUniqueKeys",
+    "oldPath": "db/migration/V2__ReplaceNameUniqueKeys.java",
+    "newPath": "db/migration/V2__ReplaceNameUniqueKeys.java"
+  },
+  {
+    "old": "db.migration.V6__normalize_space_payload_distance_unit",
+    "new": "db.migration.V6__normalize_space_payload_distance_unit",
+    "oldPath": "db/migration/V6__normalize_space_payload_distance_unit.java",
+    "newPath": "db/migration/V6__normalize_space_payload_distance_unit.java"
+  }
+]

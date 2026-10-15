@@ -3,13 +3,13 @@ package com.runisys.orbit.spacevisibility.application.ballistic;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileModels.FileReference;
+import com.runisys.orbit.spacevisibility.application.ballistic.contract.BallisticFileModels.FileReference;
 import com.runisys.orbit.spacevisibility.api.ballistic.BallisticRetimeController;
-import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileConfiguration;
-import com.runisys.orbit.spacevisibility.infrastructure.files.BallisticFileStorage;
-import com.runisys.orbit.spacevisibility.infrastructure.files.ManagedFileException;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter;
-import com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter.RetimeInput;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileConfiguration;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileStorage;
+import com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.ManagedFileException;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter;
+import com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter.RetimeInput;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.springframework.http.ResponseEntity;
@@ -119,7 +119,7 @@ class BallisticRetimeServiceTest {
                     catch (InterruptedException ex) { Thread.currentThread().interrupt(); throw new IOException(ex); }
                     return lease;
                 }
-                @Override public synchronized com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileModels.FileReference registerResult(
+                @Override public synchronized com.runisys.orbit.spacevisibility.application.ballistic.contract.BallisticFileModels.FileReference registerResult(
                         String path, String task, String target) throws IOException {
                     if (leasedInput[0] != null) {
                         // 登记阶段再清理一次：输入租约必须一直覆盖原读取、重定时写出和输出登记，不能提前释放。
@@ -134,12 +134,12 @@ class BallisticRetimeServiceTest {
             String location;
             String id;
             if (uploaded) {
-                com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileModels.FileReference reference = storage.upload(
+                com.runisys.orbit.spacevisibility.application.ballistic.contract.BallisticFileModels.FileReference reference = storage.upload(
                         new ByteArrayInputStream(Files.readAllBytes(source())), "source.csv", "text/csv", "retime");
                 location = reference.serverPath; id = reference.fileId;
             } else {
                 Path generated = Files.copy(source(), config.results.resolve("source-result.csv"));
-                com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileModels.FileReference reference = storage.registerResult(generated.toString(), "source", "source");
+                com.runisys.orbit.spacevisibility.application.ballistic.contract.BallisticFileModels.FileReference reference = storage.registerResult(generated.toString(), "source", "source");
                 location = reference.serverPath; id = reference.fileId;
             }
             ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -163,7 +163,7 @@ class BallisticRetimeServiceTest {
     void 管理输入变大保持原计算500包体且目录错误仍先于新增限额() throws Exception {
         BallisticFileConfiguration config = config(32, 60000);
         BallisticFileStorage storage = new BallisticFileStorage(config, mapper);
-        com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileModels.FileReference uploaded = storage.upload(new ByteArrayInputStream(new byte[]{1}), "source.csv", "text/csv", "retime");
+        com.runisys.orbit.spacevisibility.application.ballistic.contract.BallisticFileModels.FileReference uploaded = storage.upload(new ByteArrayInputStream(new byte[]{1}), "source.csv", "text/csv", "retime");
         Files.write(Paths.get(uploaded.serverPath), Files.readAllBytes(source()));
         BallisticRetimeService service = new BallisticRetimeService(storage);
         BallisticRetimeController controller = new BallisticRetimeController(service, mapper);

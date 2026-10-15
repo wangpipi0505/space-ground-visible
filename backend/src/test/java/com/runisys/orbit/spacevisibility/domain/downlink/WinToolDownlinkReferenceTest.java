@@ -1,12 +1,15 @@
 package com.runisys.orbit.spacevisibility.domain.downlink;
 
-import com.runisys.orbit.spacevisibility.domain.geometry.GroundStationCoordinate;
-import com.runisys.orbit.spacevisibility.domain.geometry.GroundStationGeometry;
+import com.runisys.orbit.spacevisibility.domain.space.downlink.DownlinkPlanner;
+import com.runisys.orbit.spacevisibility.domain.space.downlink.IlluminationRequirement;
+
+import com.runisys.orbit.spacevisibility.domain.space.geometry.GroundStationCoordinate;
+import com.runisys.orbit.spacevisibility.domain.space.geometry.GroundStationGeometry;
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
 import com.runisys.orbit.spacevisibility.domain.orbit.OrbitStateProvider;
-import com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProvider;
-import com.runisys.orbit.spacevisibility.domain.payload.IlluminationState;
-import com.runisys.orbit.spacevisibility.domain.payload.SolarGeometry;
+import com.runisys.orbit.spacevisibility.domain.space.orbit.TleOrbitStateProvider;
+import com.runisys.orbit.spacevisibility.domain.space.illumination.IlluminationState;
+import com.runisys.orbit.spacevisibility.domain.space.illumination.SolarGeometry;
 import com.runisys.orbit.spacevisibility.domain.window.TimeInterval;
 import org.junit.jupiter.api.Test;
 

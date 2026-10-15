@@ -1,0 +1,584 @@
+{
+  "totals": {
+    "tests": 351,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "reports": [
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileControllerIntegrationTest.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticFileInputCompatibilityTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticFitHttpTest.xml",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticFitWorkingDirectoryTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticMultipartHttpTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticRetimeHttpTest.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticSimulationHttpTest.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticVisibilityHttpTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.BallisticVisibilityWebTest.xml",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.StandardPayloadRequestTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.StandardPayloadValidationTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.ballistic.VisibilityRequestMultiPayloadTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.common.ApiCorsConfigurationTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.common.ApiExceptionHandlerTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.space.PlanningTaskControllerIntegrationTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.space.SpaceVisibilityControllerIntegrationTest.xml",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.space.StandardPayloadHttpTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.api.space.VisibilityTaskResultControllerIntegrationTest.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.ballistic.BallisticRetimeServiceTest.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.ballistic.BallisticSimulationServiceTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.ballistic.BallisticTrajectoryServiceTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.DownlinkPlanningServiceTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.DownlinkWindowValidatorTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.OrbitStateProviderFactoryTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.PayloadConstraintFactoryTest.xml",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.PlanningFacadeServiceLoggingTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.PlanningFacadeServicePayloadTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.PlanningFailureReasonFormatterTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.PlanningTaskServiceTest.xml",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.VisibilityExecutorConfigurationTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.VisibilityPlanningServiceTest.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.VisibilityTaskResultServiceTest.xml",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.VisibilityTaskResultServiceUnitTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.WinToolAzimuthConventionAnalysisTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.WinToolReportFormatterTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.WinToolTargetWindowFourTargetCountReferenceTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.WinToolTargetWindowSixReferenceTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.application.space.WinToolTargetWindowSixTargetCountReferenceTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitterInterpolationTest.xml",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculatorMultiPayloadTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculatorRealTrajectoryMultiPayloadRegressionTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculatorResultTimeTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculatorVisibilityStabilityTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.ballistic.visibility.StandardPayloadScanTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.downlink.WinToolDownlinkReferenceTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.geometry.SharedGeometryTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.orbit.BallisticOrbitBindingTest.xml",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.orbit.BallisticPropagationIsolationTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.orbit.OrbitPropagationToolTest.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.orbit.TimeFrameAdaptersTest.xml",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadMathTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.payload.StandardPayloadSolarContextTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.payload.WinToolAttitudeConventionDiagnosticTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.downlink.DownlinkPlannerTest.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.downlink.IlluminationRequirementTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.geometry.GroundStationGeometryTest.xml",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.illumination.IlluminationConstraintTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.illumination.SolarGeometrySunSourceTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.illumination.SolarGeometryTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.orbit.KeplerOrbitStateProviderTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.orbit.SpaceOrbitStateProviderTest.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.orbit.SpacePropagationIsolationTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.orbit.TleOrbitStateProviderAlpha5Test.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.orbit.TleOrbitStateProviderTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.visibility.CombinationWindowCalculatorTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.visibility.ObservationSampleEvaluatorTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.visibility.PayloadVisibilityEvaluatorTest.xml",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityArcTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.space.visibility.VisibilityConstraintPlannerTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.window.ScanStatisticsAccumulatorTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.window.SharedWindowTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.window.TimeWindowScannerTest.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.domain.window.WindowNormalizerTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticFileStorageTest.xml",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.BallisticResultWorkspaceTest.xml",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.TrajectoryFileResolverTest.xml",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.ballistic.files.TrajectoryFileScopeTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.common.web.Nio2ShutdownRaceTest.xml",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.common.web.TomcatProtocolCustomizerTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.space.persistence.DemoDataInitializerTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.space.persistence.SatelliteMapperIntegrationTest.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "TEST-com.runisys.orbit.spacevisibility.infrastructure.space.persistence.StationMapperIntegrationTest.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}

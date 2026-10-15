@@ -1,7 +1,9 @@
 package com.runisys.orbit.spacevisibility.api.ballistic;
 
 import com.runisys.orbit.spacevisibility.application.ballistic.BallisticVisibilityService;
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
-import java.io.OutputStreamWriter;
-import java.nio.charset.StandardCharsets;
 
 /** 窗口搜索 HTTP 边界：绑定请求、调用应用服务、输出既有 JSON；计算及文件下载由各自层负责。 */
 @RestController

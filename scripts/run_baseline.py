@@ -51,8 +51,10 @@ def capture(backend, output, runtime=None, evidence=None):
         evidence / 'runner-classpath.log')
     classpath = str(backend / 'target/classes') + os.pathsep + cp_file.read_text().strip()
     # A17 之后产品不再提供旧包。原版仍编译冻结探针，新版编译仅调整 Java 绑定的同条件探针。
-    unified = (backend / 'target/classes/com/runisys/orbit/spacevisibility/domain/ballistic/OrbitCalculator.class').exists()
-    runner_source = ROOT / ('verification/A17/BallisticBaseline.java' if unified else 'verification/T04/BallisticBaseline.java')
+    business_packages = (backend / 'target/classes/com/runisys/orbit/spacevisibility/domain/ballistic/visibility/OrbitCalculator.class').exists()
+    unified = business_packages or (backend / 'target/classes/com/runisys/orbit/spacevisibility/domain/ballistic/OrbitCalculator.class').exists()
+    runner_source = ROOT / ('verification/A18/BallisticBaseline.java' if business_packages else
+                          'verification/A17/BallisticBaseline.java' if unified else 'verification/T04/BallisticBaseline.java')
     runner_class = ('com.runisys.orbit.spacevisibility.api.ballistic.' if unified else 'com.tx.alg.api.') + 'BallisticBaseline'
     run([str(JAVA_HOME / 'bin/javac.exe'), '-encoding', 'UTF-8', '-cp', classpath,
          '-d', str(runtime), str(runner_source)], ROOT, evidence / 'runner-compile.log')

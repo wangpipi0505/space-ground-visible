@@ -1,7 +1,11 @@
 package com.runisys.orbit.spacevisibility.domain.window;
 
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator;
-import com.runisys.orbit.spacevisibility.domain.ballistic.OrbitCalculator.*;
+import com.runisys.orbit.spacevisibility.domain.space.visibility.CombinationConstraint;
+import com.runisys.orbit.spacevisibility.domain.space.visibility.CombinationWindow;
+import com.runisys.orbit.spacevisibility.domain.space.visibility.CombinationWindowCalculator;
+
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator;
+import com.runisys.orbit.spacevisibility.domain.ballistic.visibility.OrbitCalculator.*;
 import java.lang.reflect.Method;
 import java.time.Instant;
 import java.util.*;
@@ -80,7 +84,7 @@ public final class WindowReferenceScenarios {
         // 长到double秒无法表达每一纳秒的区间仅粗扫一次，检查内部Long路径和尾边界。
         result.put("longNanos", intervalList(TimeWindowScanner.scan(origin, origin.plusNanos(9007199254740993L),
                 10000000, 10000000, t -> true)));
-        Method stable = Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.BallisticArcSupport").getDeclaredMethod("stableVisibleArcs", List.class, int.class, double.class);
+        Method stable = Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticArcSupport").getDeclaredMethod("stableVisibleArcs", List.class, int.class, double.class);
         stable.setAccessible(true);
         List<SatelliteVisibilityResult> arcs = Arrays.asList(null, arc(1, 0, 0, 1), arc(2, 0, .000999999, 2),
                 arc(3, 0, .001, 2), arc(4, 10, 12, 3), arc(5, Double.NaN, Double.NaN, 3), arc(6, 0, -0.0, 2));
@@ -129,7 +133,7 @@ public final class WindowReferenceScenarios {
             }
             result.put("oldSatelliteWindows" + mode + ":" + output, perSatellite);
         }
-        Method hysteresis = Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.BallisticVisibilityGeometry").getDeclaredMethod("isTargetObservableFromSatelliteStable",
+        Method hysteresis = Class.forName("com.runisys.orbit.spacevisibility.domain.ballistic.visibility.BallisticVisibilityGeometry").getDeclaredMethod("isTargetObservableFromSatelliteStable",
                 Vector3.class, Vector3.class, SensorVisibilityConfig.class, double.class, boolean.class);
         hysteresis.setAccessible(true);
         List<Object> boundary = new ArrayList<Object>();

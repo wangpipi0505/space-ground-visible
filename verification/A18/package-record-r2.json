@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "archive": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261015-183404\\space-ground-visible-source.zip",
+  "bytes": 128025575,
+  "sha256": "74d839001fa99e5f174776d500bd4a19267299918c9b0fcb6134837103118e26",
+  "entries": 2513,
+  "groups": {
+    "backend": 2442,
+    "docs": 9,
+    "frontend": 61,
+    "源码包说明.md": 1
+  },
+  "mavenFiles": 1964,
+  "extraction": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A18\\extracted-20261015-183404",
+  "crcPassed": true,
+  "allSourceBytesMatched": true,
+  "forbiddenEntries": [],
+  "noOldPackage": true
+}

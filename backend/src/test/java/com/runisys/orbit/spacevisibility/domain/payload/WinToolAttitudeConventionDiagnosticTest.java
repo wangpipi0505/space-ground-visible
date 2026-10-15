@@ -1,8 +1,12 @@
 package com.runisys.orbit.spacevisibility.domain.payload;
 
+import com.runisys.orbit.spacevisibility.domain.space.illumination.IlluminationState;
+import com.runisys.orbit.spacevisibility.domain.space.illumination.SolarGeometry;
+import com.runisys.orbit.spacevisibility.domain.space.visibility.PayloadVisibilityEvaluator;
+
 import com.runisys.orbit.spacevisibility.domain.geometry.Vector3;
 import com.runisys.orbit.spacevisibility.domain.orbit.OrbitStateProvider;
-import com.runisys.orbit.spacevisibility.domain.orbit.TleOrbitStateProvider;
+import com.runisys.orbit.spacevisibility.domain.space.orbit.TleOrbitStateProvider;
 import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;

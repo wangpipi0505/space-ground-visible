@@ -1,0 +1,1420 @@
+{
+  "pid": 41024,
+  "args": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-Djava.awt.headless=true",
+    "-Dorekit.data.path=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A18\\before\\backend\\orekit-data",
+    "-jar",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A18\\before\\backend\\target\\space-target-visible-1.0.0-SNAPSHOT.jar",
+    "--spring.profiles.active=demo",
+    "--server.address=127.0.0.1",
+    "--server.port=56549",
+    "--spring.datasource.url=jdbc:h2:mem:a17;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE",
+    "--ballistic.files.root=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A18\\http-r2-before\\storage",
+    "--space.visibility.runtime.tomcat-protocol=org.apache.coyote.http11.Http11Nio2Protocol"
+  ],
+  "records": [
+    {
+      "name": "orbit-health",
+      "status": 200,
+      "contentType": "text/plain",
+      "response": "OK"
+    },
+    {
+      "name": "trajectory-health",
+      "status": 200,
+      "contentType": "text/plain",
+      "response": "OK"
+    },
+    {
+      "name": "fit/package102",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "taskName": "defaultFitTask",
+        "targetCount": 2,
+        "files": [
+          {
+            "targetId": "TGT-001",
+            "model": "BALLISTIC_MIDCOURSE_TWO_BODY",
+            "csvPath": "<generated>",
+            "pointCount": 1633,
+            "warnings": [
+              "已根据package102状态通过二体反向地面交点推算发射时间。推算发射时间=2026-07-01 07:52:18.000, 第一个package102时间=2026-07-01 07:57:00.000, 反推秒数=282.000",
+              "已根据package102状态通过二体正向地面交点推算落点时间。推算落点时间=2026-07-01 08:05:54.000, 最后一个package102时间=2026-07-01 07:57:03.000, 正推秒数=531.000",
+              "taskStartTime是任务/文件时间，不是物理发射时间。任务开始时间=2026-07-01 07:56:55.000, 推算发射时间=2026-07-01 07:52:18.000",
+              "taskEndTime是任务/文件时间，不是物理落点时间。任务结束时间=2026-07-01 07:57:10.000, 推算落点时间=2026-07-01 08:05:54.000",
+              "launch_time_code和发射点位置仅作为参考使用。推算发射时间=2026-07-01 07:52:18.000, 参考发射时间=2026-07-01 07:56:55.000, 时间差秒=-277.000, 位置偏差米=618718.118, 坐标系=J2000, 单位=0.1m",
+              "impact_time_code和落点位置仅作为参考使用。推算落点时间=2026-07-01 08:05:54.000, 参考落点时间=2026-07-01 07:57:10.000, 时间差秒=524.000, 位置偏差米=634931.133, 坐标系=J2000, 单位=0.1m",
+              "输出时间范围超出package102轨迹点覆盖区间，区间外已使用端点状态进行二体RK4外推。",
+              "Package102拟合在原始点之间使用受端点约束的Hermite平滑插值，区间外使用二体RK4动力学外推；命中package102原始时刻时保留源样本，以保证严格通过原始点。"
+            ]
+          },
+          {
+            "targetId": "TGT-002",
+            "model": "ORBITAL_TWO_BODY",
+            "csvPath": "<generated>",
+            "pointCount": 31,
+            "warnings": [
+              "在搜索范围内未能推算发射地面交点，使用launch_time_code作为兜底参考。发射时间=2026-07-01 07:56:55.000",
+              "在搜索范围内未能推算落地交点，使用秒级精度impact_time_code作为兜底参考。落点时间=2026-07-01 07:57:10.000",
+              "launch_time_code和发射点位置仅作为参考使用。推算发射时间=2026-07-01 07:56:55.000, 参考发射时间=2026-07-01 07:56:55.000, 时间差秒=0.000, 位置偏差米=163.169, 坐标系=J2000, 单位=0.1m",
+              "impact_time_code和落点位置仅作为参考使用。推算落点时间=2026-07-01 07:57:10.000, 参考落点时间=2026-07-01 07:57:10.000, 时间差秒=0.000, 位置偏差米=288.768, 坐标系=J2000, 单位=0.1m",
+              "输出时间范围超出package102轨迹点覆盖区间，区间外已使用端点状态进行二体RK4外推。",
+              "Package102拟合在原始点之间使用受端点约束的Hermite平滑插值，区间外使用二体RK4动力学外推；命中package102原始时刻时保留源样本，以保证严格通过原始点。"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "fit/package102-csv-0",
+      "bytes": 327928,
+      "sha256": "c8883da1988e9606640e0761a8115f1e2464af5fd49b846ca7e1093f1c341ab2"
+    },
+    {
+      "name": "fit/package102-csv-1",
+      "bytes": 6475,
+      "sha256": "d57606262288fdc1307f34a0c98f59202c71a9a92a50ad8169768a6de9f08c18"
+    },
+    {
+      "name": "simulate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "taskName": "defaultSimTask",
+        "targetCount": 1,
+        "files": [
+          {
+            "targetId": "SIM-001",
+            "model": "SYSTEM_SIMULATED_LAMBERT",
+            "csvPath": "<generated>",
+            "pointCount": 2576,
+            "warnings": [
+              "系统模拟使用端点约束Lambert射击法和二体RK4传播。",
+              "落点时间作为硬端点约束输入。落点时间=2026-06-04 04:42:55.000, 飞行时长秒=2575.000, 计算初速度米每秒=6817.698301",
+              "端点闭合检查：最终ECI偏差=0.000004 m."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "simulate-csv-0",
+      "bytes": 561736,
+      "sha256": "3dbfc8c5bc76cbe4f1e06b81fcba2ccc710c29acc84a011608150932c6f404a4"
+    },
+    {
+      "name": "retime",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "taskName": "A18-retime",
+        "targetCount": 1,
+        "files": [
+          {
+            "targetId": "RETIMED-TGT",
+            "model": "RETIMED_TRAJECTORY",
+            "csvPath": "<generated>",
+            "pointCount": 2576,
+            "warnings": [
+              "弹道文件重定时保持ECEF位置和速度不变；按新的绝对时刻重算ECI位置和速度，并更新时间列、dt列和timeIntervalMs列。"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "retime-csv",
+      "bytes": 593970,
+      "sha256": "14c30daaac33c31ec5b4b87b00d6745d0244614c0c4b77e3467616b3fab0171e"
+    },
+    {
+      "name": "fit/package102-empty",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: package102数据不能为空。"
+      }
+    },
+    {
+      "name": "fit/package102-null-output",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: package102数据不能为空。"
+      }
+    },
+    {
+      "name": "fit/package102-blank-output",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: package102数据不能为空。"
+      }
+    },
+    {
+      "name": "fit/package102-bad-number",
+      "status": 500,
+      "contentType": "application/json",
+      "response": {
+        "code": "INTERNAL_ERROR",
+        "error": "服务处理失败",
+        "requestId": "<generated>"
+      }
+    },
+    {
+      "name": "simulate-empty",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: launchTimeUtc不能为空。"
+      }
+    },
+    {
+      "name": "simulate-null-output",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: launchTimeUtc不能为空。"
+      }
+    },
+    {
+      "name": "simulate-blank-output",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: launchTimeUtc不能为空。"
+      }
+    },
+    {
+      "name": "simulate-bad-number",
+      "status": 500,
+      "contentType": "application/json",
+      "response": {
+        "code": "INTERNAL_ERROR",
+        "error": "服务处理失败",
+        "requestId": "<generated>"
+      }
+    },
+    {
+      "name": "retime-empty",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: trajectoryCsvPath不能为空。"
+      }
+    },
+    {
+      "name": "retime-null-output",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: trajectoryCsvPath不能为空。"
+      }
+    },
+    {
+      "name": "retime-blank-output",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "IllegalArgumentException: trajectoryCsvPath不能为空。"
+      }
+    },
+    {
+      "name": "retime-bad-number",
+      "status": 500,
+      "contentType": "application/json",
+      "response": {
+        "code": "INTERNAL_ERROR",
+        "error": "服务处理失败",
+        "requestId": "<generated>"
+      }
+    },
+    {
+      "name": "visibility-TWO_BODY-0",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "referenceUtc": "2026/07/01 07:57:00.000",
+        "payloadType": "对地监视",
+        "visibilityConstraint": {
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0.0,
+          "sunExclusionAngleDeg": 45.0,
+          "simpleConeHalfAngleDeg": null,
+          "halfConeAngleDeg": 57.5,
+          "innerConeAngleDeg": null,
+          "outerConeAngleDeg": null
+        },
+        "best": {
+          "offsetSecond": 1200,
+          "launchTimeUtc": "2026/07/01 08:17:00.000",
+          "launchTimeJ2000Sec": 836165819.9999999,
+          "payloadType": "对地监视",
+          "visibilityConstraint": {
+            "payloadType": "对地监视",
+            "maxDetectRangeKm": 0.0,
+            "sunExclusionAngleDeg": 45.0,
+            "simpleConeHalfAngleDeg": null,
+            "halfConeAngleDeg": 57.5,
+            "innerConeAngleDeg": null,
+            "outerConeAngleDeg": null
+          },
+          "finalVisibleWindow": null,
+          "visibleArcCount": 0,
+          "visiblePointCount": 0,
+          "visibleDurationSec": 0.0,
+          "targets": [
+            {
+              "targetId": "TGT-001",
+              "targetName": "真实弹道首历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:00.000",
+              "launchUTC": "2026/07/01 08:17:00.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165819.9999999,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            },
+            {
+              "targetId": "TGT-002",
+              "targetName": "真实弹道独立发射历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:10.000",
+              "launchUTC": "2026/07/01 08:17:10.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165830.0000001,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            }
+          ],
+          "visibleSatellites": []
+        },
+        "allResults": [
+          {
+            "offsetSecond": 1200,
+            "launchTimeUtc": "2026/07/01 08:17:00.000",
+            "launchTimeJ2000Sec": 836165819.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:00.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165819.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165830.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1210,
+            "launchTimeUtc": "2026/07/01 08:17:10.000",
+            "launchTimeJ2000Sec": 836165829.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165829.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165840.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1220,
+            "launchTimeUtc": "2026/07/01 08:17:20.000",
+            "launchTimeJ2000Sec": 836165839.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165839.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:30.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165850.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "visibility-TWO_BODY-1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "referenceUtc": "2026/07/01 07:57:00.000",
+        "payloadType": "对地监视",
+        "visibilityConstraint": {
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0.0,
+          "sunExclusionAngleDeg": 45.0,
+          "simpleConeHalfAngleDeg": null,
+          "halfConeAngleDeg": 57.5,
+          "innerConeAngleDeg": null,
+          "outerConeAngleDeg": null
+        },
+        "best": {
+          "offsetSecond": 1200,
+          "launchTimeUtc": "2026/07/01 08:17:00.000",
+          "launchTimeJ2000Sec": 836165819.9999999,
+          "payloadType": "对地监视",
+          "visibilityConstraint": {
+            "payloadType": "对地监视",
+            "maxDetectRangeKm": 0.0,
+            "sunExclusionAngleDeg": 45.0,
+            "simpleConeHalfAngleDeg": null,
+            "halfConeAngleDeg": 57.5,
+            "innerConeAngleDeg": null,
+            "outerConeAngleDeg": null
+          },
+          "finalVisibleWindow": null,
+          "visibleArcCount": 0,
+          "visiblePointCount": 0,
+          "visibleDurationSec": 0.0,
+          "targets": [
+            {
+              "targetId": "TGT-001",
+              "targetName": "真实弹道首历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:00.000",
+              "launchUTC": "2026/07/01 08:17:00.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165819.9999999,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            },
+            {
+              "targetId": "TGT-002",
+              "targetName": "真实弹道独立发射历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:10.000",
+              "launchUTC": "2026/07/01 08:17:10.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165830.0000001,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            }
+          ],
+          "visibleSatellites": []
+        },
+        "allResults": [
+          {
+            "offsetSecond": 1200,
+            "launchTimeUtc": "2026/07/01 08:17:00.000",
+            "launchTimeJ2000Sec": 836165819.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:00.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165819.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165830.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1210,
+            "launchTimeUtc": "2026/07/01 08:17:10.000",
+            "launchTimeJ2000Sec": 836165829.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165829.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165840.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1220,
+            "launchTimeUtc": "2026/07/01 08:17:20.000",
+            "launchTimeJ2000Sec": 836165839.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165839.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:30.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165850.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "visibility-J2_SECULAR-0",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "referenceUtc": "2026/07/01 07:57:00.000",
+        "payloadType": "对地监视",
+        "visibilityConstraint": {
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0.0,
+          "sunExclusionAngleDeg": 45.0,
+          "simpleConeHalfAngleDeg": null,
+          "halfConeAngleDeg": 57.5,
+          "innerConeAngleDeg": null,
+          "outerConeAngleDeg": null
+        },
+        "best": {
+          "offsetSecond": 1200,
+          "launchTimeUtc": "2026/07/01 08:17:00.000",
+          "launchTimeJ2000Sec": 836165819.9999999,
+          "payloadType": "对地监视",
+          "visibilityConstraint": {
+            "payloadType": "对地监视",
+            "maxDetectRangeKm": 0.0,
+            "sunExclusionAngleDeg": 45.0,
+            "simpleConeHalfAngleDeg": null,
+            "halfConeAngleDeg": 57.5,
+            "innerConeAngleDeg": null,
+            "outerConeAngleDeg": null
+          },
+          "finalVisibleWindow": null,
+          "visibleArcCount": 0,
+          "visiblePointCount": 0,
+          "visibleDurationSec": 0.0,
+          "targets": [
+            {
+              "targetId": "TGT-001",
+              "targetName": "真实弹道首历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:00.000",
+              "launchUTC": "2026/07/01 08:17:00.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165819.9999999,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            },
+            {
+              "targetId": "TGT-002",
+              "targetName": "真实弹道独立发射历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:10.000",
+              "launchUTC": "2026/07/01 08:17:10.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165830.0000001,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            }
+          ],
+          "visibleSatellites": []
+        },
+        "allResults": [
+          {
+            "offsetSecond": 1200,
+            "launchTimeUtc": "2026/07/01 08:17:00.000",
+            "launchTimeJ2000Sec": 836165819.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:00.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165819.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165830.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1210,
+            "launchTimeUtc": "2026/07/01 08:17:10.000",
+            "launchTimeJ2000Sec": 836165829.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165829.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165840.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1220,
+            "launchTimeUtc": "2026/07/01 08:17:20.000",
+            "launchTimeJ2000Sec": 836165839.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165839.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:30.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165850.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "visibility-J2_SECULAR-1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "referenceUtc": "2026/07/01 07:57:00.000",
+        "payloadType": "对地监视",
+        "visibilityConstraint": {
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0.0,
+          "sunExclusionAngleDeg": 45.0,
+          "simpleConeHalfAngleDeg": null,
+          "halfConeAngleDeg": 57.5,
+          "innerConeAngleDeg": null,
+          "outerConeAngleDeg": null
+        },
+        "best": {
+          "offsetSecond": 1200,
+          "launchTimeUtc": "2026/07/01 08:17:00.000",
+          "launchTimeJ2000Sec": 836165819.9999999,
+          "payloadType": "对地监视",
+          "visibilityConstraint": {
+            "payloadType": "对地监视",
+            "maxDetectRangeKm": 0.0,
+            "sunExclusionAngleDeg": 45.0,
+            "simpleConeHalfAngleDeg": null,
+            "halfConeAngleDeg": 57.5,
+            "innerConeAngleDeg": null,
+            "outerConeAngleDeg": null
+          },
+          "finalVisibleWindow": null,
+          "visibleArcCount": 0,
+          "visiblePointCount": 0,
+          "visibleDurationSec": 0.0,
+          "targets": [
+            {
+              "targetId": "TGT-001",
+              "targetName": "真实弹道首历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:00.000",
+              "launchUTC": "2026/07/01 08:17:00.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165819.9999999,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            },
+            {
+              "targetId": "TGT-002",
+              "targetName": "真实弹道独立发射历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:10.000",
+              "launchUTC": "2026/07/01 08:17:10.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165830.0000001,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            }
+          ],
+          "visibleSatellites": []
+        },
+        "allResults": [
+          {
+            "offsetSecond": 1200,
+            "launchTimeUtc": "2026/07/01 08:17:00.000",
+            "launchTimeJ2000Sec": 836165819.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:00.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165819.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165830.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1210,
+            "launchTimeUtc": "2026/07/01 08:17:10.000",
+            "launchTimeJ2000Sec": 836165829.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165829.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165840.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1220,
+            "launchTimeUtc": "2026/07/01 08:17:20.000",
+            "launchTimeJ2000Sec": 836165839.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165839.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:30.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165850.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "visibility-J2_NUMERICAL-0",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "referenceUtc": "2026/07/01 07:57:00.000",
+        "payloadType": "对地监视",
+        "visibilityConstraint": {
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0.0,
+          "sunExclusionAngleDeg": 45.0,
+          "simpleConeHalfAngleDeg": null,
+          "halfConeAngleDeg": 57.5,
+          "innerConeAngleDeg": null,
+          "outerConeAngleDeg": null
+        },
+        "best": {
+          "offsetSecond": 1200,
+          "launchTimeUtc": "2026/07/01 08:17:00.000",
+          "launchTimeJ2000Sec": 836165819.9999999,
+          "payloadType": "对地监视",
+          "visibilityConstraint": {
+            "payloadType": "对地监视",
+            "maxDetectRangeKm": 0.0,
+            "sunExclusionAngleDeg": 45.0,
+            "simpleConeHalfAngleDeg": null,
+            "halfConeAngleDeg": 57.5,
+            "innerConeAngleDeg": null,
+            "outerConeAngleDeg": null
+          },
+          "finalVisibleWindow": null,
+          "visibleArcCount": 0,
+          "visiblePointCount": 0,
+          "visibleDurationSec": 0.0,
+          "targets": [
+            {
+              "targetId": "TGT-001",
+              "targetName": "真实弹道首历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:00.000",
+              "launchUTC": "2026/07/01 08:17:00.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165819.9999999,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            },
+            {
+              "targetId": "TGT-002",
+              "targetName": "真实弹道独立发射历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:10.000",
+              "launchUTC": "2026/07/01 08:17:10.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165830.0000001,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            }
+          ],
+          "visibleSatellites": []
+        },
+        "allResults": [
+          {
+            "offsetSecond": 1200,
+            "launchTimeUtc": "2026/07/01 08:17:00.000",
+            "launchTimeJ2000Sec": 836165819.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:00.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165819.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165830.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1210,
+            "launchTimeUtc": "2026/07/01 08:17:10.000",
+            "launchTimeJ2000Sec": 836165829.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165829.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165840.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1220,
+            "launchTimeUtc": "2026/07/01 08:17:20.000",
+            "launchTimeJ2000Sec": 836165839.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165839.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:30.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165850.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "visibility-J2_NUMERICAL-1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": {
+        "referenceUtc": "2026/07/01 07:57:00.000",
+        "payloadType": "对地监视",
+        "visibilityConstraint": {
+          "payloadType": "对地监视",
+          "maxDetectRangeKm": 0.0,
+          "sunExclusionAngleDeg": 45.0,
+          "simpleConeHalfAngleDeg": null,
+          "halfConeAngleDeg": 57.5,
+          "innerConeAngleDeg": null,
+          "outerConeAngleDeg": null
+        },
+        "best": {
+          "offsetSecond": 1200,
+          "launchTimeUtc": "2026/07/01 08:17:00.000",
+          "launchTimeJ2000Sec": 836165819.9999999,
+          "payloadType": "对地监视",
+          "visibilityConstraint": {
+            "payloadType": "对地监视",
+            "maxDetectRangeKm": 0.0,
+            "sunExclusionAngleDeg": 45.0,
+            "simpleConeHalfAngleDeg": null,
+            "halfConeAngleDeg": 57.5,
+            "innerConeAngleDeg": null,
+            "outerConeAngleDeg": null
+          },
+          "finalVisibleWindow": null,
+          "visibleArcCount": 0,
+          "visiblePointCount": 0,
+          "visibleDurationSec": 0.0,
+          "targets": [
+            {
+              "targetId": "TGT-001",
+              "targetName": "真实弹道首历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:00.000",
+              "launchUTC": "2026/07/01 08:17:00.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165819.9999999,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            },
+            {
+              "targetId": "TGT-002",
+              "targetName": "真实弹道独立发射历元",
+              "csvPath": "<generated>",
+              "baseLaunchUTC": "2026/07/01 07:57:10.000",
+              "launchUTC": "2026/07/01 08:17:10.000",
+              "payloadType": "对地监视",
+              "launchTimeJ2000Sec": 836165830.0000001,
+              "finalVisibleWindow": null,
+              "visibleWindows": []
+            }
+          ],
+          "visibleSatellites": []
+        },
+        "allResults": [
+          {
+            "offsetSecond": 1200,
+            "launchTimeUtc": "2026/07/01 08:17:00.000",
+            "launchTimeJ2000Sec": 836165819.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:00.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165819.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165830.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1210,
+            "launchTimeUtc": "2026/07/01 08:17:10.000",
+            "launchTimeJ2000Sec": 836165829.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:10.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165829.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165840.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          },
+          {
+            "offsetSecond": 1220,
+            "launchTimeUtc": "2026/07/01 08:17:20.000",
+            "launchTimeJ2000Sec": 836165839.9999999,
+            "payloadType": "对地监视",
+            "visibilityConstraint": {
+              "payloadType": "对地监视",
+              "maxDetectRangeKm": 0.0,
+              "sunExclusionAngleDeg": 45.0,
+              "simpleConeHalfAngleDeg": null,
+              "halfConeAngleDeg": 57.5,
+              "innerConeAngleDeg": null,
+              "outerConeAngleDeg": null
+            },
+            "finalVisibleWindow": null,
+            "visibleArcCount": 0,
+            "visiblePointCount": 0,
+            "visibleDurationSec": 0.0,
+            "targets": [
+              {
+                "targetId": "TGT-001",
+                "targetName": "真实弹道首历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:00.000",
+                "launchUTC": "2026/07/01 08:17:20.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165839.9999999,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              },
+              {
+                "targetId": "TGT-002",
+                "targetName": "真实弹道独立发射历元",
+                "csvPath": "<generated>",
+                "baseLaunchUTC": "2026/07/01 07:57:10.000",
+                "launchUTC": "2026/07/01 08:17:30.000",
+                "payloadType": "对地监视",
+                "launchTimeJ2000Sec": 836165850.0000001,
+                "finalVisibleWindow": null,
+                "visibleWindows": []
+              }
+            ],
+            "visibleSatellites": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "visibility-invalid",
+      "status": 400,
+      "contentType": "application/json",
+      "response": {
+        "error": "弹道文件位置不能为空。"
+      }
+    }
+  ]
+}

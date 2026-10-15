@@ -7,7 +7,7 @@
 核心算法类：
 
 ```text
-com.runisys.orbit.spacevisibility.domain.ballistic.TargetTrajectoryFitter
+com.runisys.orbit.spacevisibility.domain.ballistic.trajectory.TargetTrajectoryFitter
 ```
 
 正式Spring Boot HTTP控制器：

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "openApiOnlySourceLocationsChanged": true,
+  "originalDocumentHeadings": {
+    "ORBIT_VISIBILITY_API.md": 12,
+    "TARGET_TRAJECTORY_FIT_API.md": 18
+  },
+  "originalDirectories": [
+    {
+      "name": "space",
+      "files": 526,
+      "differences": []
+    },
+    {
+      "name": "ballistic",
+      "files": 171,
+      "differences": []
+    }
+  ],
+  "frontendFilesUnchanged": 93,
+  "frontendLockUnchanged": true
+}

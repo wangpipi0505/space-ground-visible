@@ -40,8 +40,10 @@ def main():
              '-Dmdep.outputFile=' + str(cp_file)], args.backend.resolve(), evidence / 'space-runner-classpath.log')
         dependencies = cp_file.read_text().strip()
     classpath = str(classes) + os.pathsep + dependencies
+    business_packages = (classes / 'com/runisys/orbit/spacevisibility/api/space/SpaceVisibilityController.class').exists()
+    runner = ROOT / ('verification/A18/SpaceBaseline.java' if business_packages else 'verification/T04/SpaceBaseline.java')
     run([str(JAVA_HOME / 'bin/javac.exe'), '-encoding', 'UTF-8', '-cp', classpath, '-d', str(runtime),
-         str(ROOT / 'verification/T04/SpaceBaseline.java')], ROOT, evidence / 'space-runner-compile.log')
+         str(runner)], ROOT, evidence / 'space-runner-compile.log')
     run([str(JAVA_HOME / 'bin/java.exe'), '-Dfile.encoding=UTF-8', '-Djava.awt.headless=true',
          '-Dorekit.data.path=' + str(args.orekit_data.resolve()), '-cp',
          str(runtime) + os.pathsep + classpath, 'SpaceBaseline', str(args.output.resolve())],

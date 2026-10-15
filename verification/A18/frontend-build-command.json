@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\pnpm.cmd",
+    "build"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A18\\frontend",
+  "startedUnix": 1792060115.3243942,
+  "durationSec": 4.548410654067993,
+  "exitCode": 0,
+  "stdoutSha256": "e9bb9ccffe3159d72effebc159f9a52d1c79b0250705cbf45373815d5f3e22b5",
+  "stderrSha256": "c84ea2df1b0a6e03e63632fac62d81237bed86af7173126badd943cb02418e2e"
+}

@@ -27,3 +27,5 @@ application-local.yml
 !verification/A07/**/*.stderr.log
 # A17 数值驱动的实际命令日志用于回归复核；运行副本仍全部忽略。
 !verification/A17/numeric-*/**/*.log
+# A18 数值驱动日志与运行副本分开，实际验证日志进入验收记录。
+!verification/A18/numeric-*/**/*.log

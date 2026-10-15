@@ -1,0 +1,21 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+实际HTTP操作=35，契约类型=61
+2026-10-15 18:24:36.343 ERROR 18108 --- [1-auto-1-exec-4] org.apache.tomcat.util.net.Nio2Endpoint  : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at sun.nio.ch.WindowsAsynchronousServerSocketChannelImpl$AcceptTask.failed(WindowsAsynchronousServerSocketChannelImpl.java:284) ~[na:1.8.0_472]
+	at sun.nio.ch.Iocp$EventHandlerTask.run(Iocp.java:399) ~[na:1.8.0_472]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_472]
+
