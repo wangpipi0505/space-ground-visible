@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "G:\\5-YG\\space-ground-visible\\verification\\A09\\software\\run_software.py",
+    "http"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\software",
+  "exitCode": 0,
+  "stdoutSha256": "9c67640f4e5065b689c8b120838a94b630477089e544b6c0ea3eea7d7097a1de",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

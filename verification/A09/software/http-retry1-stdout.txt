@@ -1,0 +1,7 @@
+上传响应字段=['fileId', 'originalName', 'sizeBytes', 'contentType', 'serverPath']
+C0 HTTP完成；字节数=915432
+C1 HTTP完成；字节数=688513
+C2 HTTP完成；字节数=448671
+C3 HTTP完成；字节数=448671
+C4 HTTP完成；字节数=153622
+C5 HTTP完成；字节数=409970

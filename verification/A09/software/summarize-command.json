@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "G:\\5-YG\\space-ground-visible\\verification\\A09\\software\\summarize_software.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\software",
+  "exitCode": 0,
+  "stdoutSha256": "b798452cb2d28a0b482e86351caf44162cc48ea5b4874847bffb4172b04aaf01",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

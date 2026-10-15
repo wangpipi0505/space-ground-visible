@@ -1,0 +1,220 @@
+{
+  "samplesPerSatellite": 857,
+  "maskRows": 10284,
+  "maskPath": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\software\\visibility-samples.csv",
+  "maskSha256": "cafbfa8fbdb4d44adb586d94cdec9150827be7969dbd8a85bb5c6e0a0a75d92c",
+  "maxHttpRelativeTimeRoundingSec": 4.232560968375765e-10,
+  "cumulativeConditionsAreSubsets": true,
+  "conditions": [
+    {
+      "condition": "C0",
+      "requestSha256": "def4e39c721340d944e6baa07b3c85fac3b4d09615768d4638fc1b508761f773",
+      "responseSha256": "14ad62580207422a97d040e35a562ada8da79dc3835b8e3b4d7f8771294d74da",
+      "status": 200,
+      "visibleArcCount": 2,
+      "visiblePointCount": 1573,
+      "visibleDurationSec": 1570.900000215,
+      "bySatellite": {
+        "SAT-A": 719,
+        "SAT-B": 854
+      },
+      "arcs": [
+        {
+          "satellite": "SAT-A",
+          "startUtc": "2026/07/01 08:45:00.000",
+          "endUtc": "2026/07/01 08:56:58.000",
+          "startJ2000Sec": 836167499.9999999,
+          "endJ2000Sec": 836168217.9999999,
+          "pointCount": 719,
+          "durationSeconds": 718.0
+        },
+        {
+          "satellite": "SAT-B",
+          "startUtc": "2026/07/01 08:45:03.000",
+          "endUtc": "2026/07/01 08:59:15.900",
+          "startJ2000Sec": 836167502.9999999,
+          "endJ2000Sec": 836168355.9000001,
+          "pointCount": 854,
+          "durationSeconds": 852.900000215
+        }
+      ]
+    },
+    {
+      "condition": "C1",
+      "requestSha256": "720f58d06a33623ebcdb6bf920ac3c0f4826ac44cdb1b6948e41e233e5672820",
+      "responseSha256": "2c86e28d16e71f1dbc1b8407a56ea61865cf5dfad6f4ab3a7d203e1bdcb5ae28",
+      "status": 200,
+      "visibleArcCount": 3,
+      "visiblePointCount": 1174,
+      "visibleDurationSec": 1170.900000215,
+      "bySatellite": {
+        "SAT-A": 521,
+        "SAT-B": 653
+      },
+      "arcs": [
+        {
+          "satellite": "SAT-B",
+          "startUtc": "2026/07/01 08:45:28.000",
+          "endUtc": "2026/07/01 08:51:48.000",
+          "startJ2000Sec": 836167527.9999999,
+          "endJ2000Sec": 836167907.9999999,
+          "pointCount": 381,
+          "durationSeconds": 380.0
+        },
+        {
+          "satellite": "SAT-B",
+          "startUtc": "2026/07/01 08:54:45.000",
+          "endUtc": "2026/07/01 08:59:15.900",
+          "startJ2000Sec": 836168084.9999999,
+          "endJ2000Sec": 836168355.9000001,
+          "pointCount": 272,
+          "durationSeconds": 270.900000215
+        },
+        {
+          "satellite": "SAT-A",
+          "startUtc": "2026/07/01 08:45:00.000",
+          "endUtc": "2026/07/01 08:53:40.000",
+          "startJ2000Sec": 836167499.9999999,
+          "endJ2000Sec": 836168019.9999999,
+          "pointCount": 521,
+          "durationSeconds": 520.0
+        }
+      ]
+    },
+    {
+      "condition": "C2",
+      "requestSha256": "3419c4f0f31594bd1be9bb90405ce65b8b42f48b4b0910cd219df1fd188c2fb6",
+      "responseSha256": "51f796f67d604f488c803f53a8626e4259107bff6614425ee3b150c729797de5",
+      "status": 200,
+      "visibleArcCount": 2,
+      "visiblePointCount": 760,
+      "visibleDurationSec": 757.900000215,
+      "bySatellite": {
+        "SAT-A": 488,
+        "SAT-B": 272
+      },
+      "arcs": [
+        {
+          "satellite": "SAT-A",
+          "startUtc": "2026/07/01 08:45:33.000",
+          "endUtc": "2026/07/01 08:53:40.000",
+          "startJ2000Sec": 836167532.9999999,
+          "endJ2000Sec": 836168019.9999999,
+          "pointCount": 488,
+          "durationSeconds": 487.0
+        },
+        {
+          "satellite": "SAT-B",
+          "startUtc": "2026/07/01 08:54:45.000",
+          "endUtc": "2026/07/01 08:59:15.900",
+          "startJ2000Sec": 836168084.9999999,
+          "endJ2000Sec": 836168355.9000001,
+          "pointCount": 272,
+          "durationSeconds": 270.900000215
+        }
+      ]
+    },
+    {
+      "condition": "C3",
+      "requestSha256": "e7f6bedb46b65edd06070fbcefb47806bc3d3f4e29227c7ecb66afbd6a906ada",
+      "responseSha256": "51f796f67d604f488c803f53a8626e4259107bff6614425ee3b150c729797de5",
+      "status": 200,
+      "visibleArcCount": 2,
+      "visiblePointCount": 760,
+      "visibleDurationSec": 757.900000215,
+      "bySatellite": {
+        "SAT-A": 488,
+        "SAT-B": 272
+      },
+      "arcs": [
+        {
+          "satellite": "SAT-A",
+          "startUtc": "2026/07/01 08:45:33.000",
+          "endUtc": "2026/07/01 08:53:40.000",
+          "startJ2000Sec": 836167532.9999999,
+          "endJ2000Sec": 836168019.9999999,
+          "pointCount": 488,
+          "durationSeconds": 487.0
+        },
+        {
+          "satellite": "SAT-B",
+          "startUtc": "2026/07/01 08:54:45.000",
+          "endUtc": "2026/07/01 08:59:15.900",
+          "startJ2000Sec": 836168084.9999999,
+          "endJ2000Sec": 836168355.9000001,
+          "pointCount": 272,
+          "durationSeconds": 270.900000215
+        }
+      ]
+    },
+    {
+      "condition": "C4",
+      "requestSha256": "f4423b25701aeb6bc8e13457dfd4fdfde2dc5fd4febcfa79abed06c98f9c701d",
+      "responseSha256": "4d9726fc85df5bcf430716edcc353bfaee2f22341b3ed8be96b5530ccc5c377d",
+      "status": 200,
+      "visibleArcCount": 2,
+      "visiblePointCount": 246,
+      "visibleDurationSec": 244.0,
+      "bySatellite": {
+        "SAT-A": 196,
+        "SAT-B": 50
+      },
+      "arcs": [
+        {
+          "satellite": "SAT-A",
+          "startUtc": "2026/07/01 08:45:33.000",
+          "endUtc": "2026/07/01 08:48:48.000",
+          "startJ2000Sec": 836167532.9999999,
+          "endJ2000Sec": 836167727.9999999,
+          "pointCount": 196,
+          "durationSeconds": 195.0
+        },
+        {
+          "satellite": "SAT-B",
+          "startUtc": "2026/07/01 08:54:45.000",
+          "endUtc": "2026/07/01 08:55:34.000",
+          "startJ2000Sec": 836168084.9999999,
+          "endJ2000Sec": 836168133.9999999,
+          "pointCount": 50,
+          "durationSeconds": 49.0
+        }
+      ]
+    },
+    {
+      "condition": "C5",
+      "requestSha256": "febe29c718424e853bd7cd91f51fd991d2ad93cec29a2ae49d4649a0195ce3f5",
+      "responseSha256": "201456f808036d0f9b5f5b7d679050692b7f6313cde9e1e79a5b62a18e15ee74",
+      "status": 200,
+      "visibleArcCount": 2,
+      "visiblePointCount": 693,
+      "visibleDurationSec": 690.900000215,
+      "bySatellite": {
+        "SAT-A": 409,
+        "SAT-B": 284
+      },
+      "arcs": [
+        {
+          "satellite": "SAT-A",
+          "startUtc": "2026/07/01 08:50:10.000",
+          "endUtc": "2026/07/01 08:56:58.000",
+          "startJ2000Sec": 836167809.9999999,
+          "endJ2000Sec": 836168217.9999999,
+          "pointCount": 409,
+          "durationSeconds": 408.0
+        },
+        {
+          "satellite": "SAT-B",
+          "startUtc": "2026/07/01 08:54:33.000",
+          "endUtc": "2026/07/01 08:59:15.900",
+          "startJ2000Sec": 836168072.9999999,
+          "endJ2000Sec": 836168355.9000001,
+          "pointCount": 284,
+          "durationSeconds": 282.900000215
+        }
+      ]
+    }
+  ],
+  "uploadRequestSha256": "20e2f1517bcf7a2da40399fc645254e569f9b0da8191b466b24372701592c609",
+  "uploadResponseSha256": "93155bd5bb4af9440a5605bcf1c8f154ee18a4186ac7847c0e7690af242dd629",
+  "uploadStatus": 201
+}

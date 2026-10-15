@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "-version"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\software",
+  "exitCode": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "b55e3e77ab33f87563b6d95e641e0a33daf0c23959cad9c67ea3f931f1dfb347"
+}

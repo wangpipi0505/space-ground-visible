@@ -73,6 +73,9 @@ verification/A07/**/*.log -text -whitespace
 # A08标题布局修复保留真实浏览器/构建原始流。
 verification/A08/** -text whitespace=cr-at-eol
 verification/A08/**/*.txt -text -whitespace
+# A09实测脚本及受控输入摘要绑定实际验证字节，提交时保留原始换行。
+verification/A09/** -text whitespace=cr-at-eol
+verification/A09/**/*.md -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 # 整体审查修复的新证据单独绑定，二进制后缀也可能保存真实 CRLF 终端文本。
 verification/补充验收修复/** -text whitespace=cr-at-eol
 verification/补充验收修复/**/*.bin -text -whitespace

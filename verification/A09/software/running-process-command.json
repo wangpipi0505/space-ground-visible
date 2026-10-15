@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-CimInstance Win32_Process -Filter \"ProcessId = 31752\" | Select-Object ProcessId,ExecutablePath,CommandLine | ConvertTo-Json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\software",
+  "exitCode": 0,
+  "stdoutSha256": "d620f8de0e8c3465cf6044ec127290a9866a0cad9840daec9ae06abdad8201ce",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

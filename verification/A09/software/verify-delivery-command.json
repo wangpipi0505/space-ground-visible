@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "G:\\5-YG\\space-ground-visible\\verification\\A09\\software\\verify_delivery.py"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\software",
+  "exitCode": 0,
+  "stdoutSha256": "cedf5ca909cba71318c5cb7cbf4a1ddc93a987a34cd0e154225541a31474d28e",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

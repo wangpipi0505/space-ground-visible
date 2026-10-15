@@ -1,0 +1,41 @@
+{
+  "fullRows": 9311,
+  "ephemerisRows": 8560,
+  "samples": 857,
+  "first": "2026/07/01 08:45:00.000",
+  "last": "2026/07/01 08:59:15.900",
+  "lastTSec": "855.9000002145767",
+  "probeSha256": "344982e348781984cf4c9b1840d7526f94d75baae8a0fee18e18f335b56dbaea",
+  "outputs": [
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\inputs\\full-states.csv",
+      "sha256": "86c8e91bc9e8facd07f66ffaed6034295079c165258d0bdcefbc35f651985439",
+      "bytes": 3684138
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\inputs\\original-times.csv",
+      "sha256": "18f2c08a6ef0188f8b98ab3a915a87797eb521d4307def2e942c79b253200c60",
+      "bytes": 289080
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\inputs\\samples.csv",
+      "sha256": "969fd5e3f67250ac149a30de913151c2d60dcc2d14b5163b7e0326984baaeff0",
+      "bytes": 42778
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\inputs\\SAT_A.e",
+      "sha256": "84a3692572fcc5cf43bedd1990a4052b66d5077a5dd9028d9684386297b442c0",
+      "bytes": 1103490
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\inputs\\SAT_B.e",
+      "sha256": "b82b74522e90e5be86d2f1e0e2cd9bc7c54a2e7f5be821db83b46905a99ff87b",
+      "bytes": 1094868
+    },
+    {
+      "path": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A09\\inputs\\TARGET.e",
+      "sha256": "a9d9c55a90f1e1be6d17f1fad27b68dba9f76f68a2512233160c9c752b5c9b48",
+      "bytes": 618042
+    }
+  ]
+}

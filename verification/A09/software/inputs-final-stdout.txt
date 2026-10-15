@@ -1,0 +1,5 @@
+running-process exitCode=0
+java-version exitCode=0
+compile-probe exitCode=0
+export-inputs exitCode=0
+受控输入完成：G:\5-YG\space-ground-visible\verification\runtime\A09\inputs

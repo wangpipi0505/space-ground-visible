@@ -1,0 +1,5 @@
+{
+    "ProcessId":  31752,
+    "ExecutablePath":  "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "CommandLine":  "\"C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe\" -Djava.awt.headless=true -Dfile.encoding=UTF-8 -jar G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\release\\server.jar --server.port=8080 --server.address=127.0.0.1 --spring.profiles.active=demo --spring.config.additional-location=file:G:/5-YG/space-ground-visible/deploy/application-deploy.yml"
+}

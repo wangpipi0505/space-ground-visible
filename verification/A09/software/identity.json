@@ -1,0 +1,12 @@
+{
+  "runningPid": 31752,
+  "jar": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\local-app\\20261014-171837\\release\\server.jar",
+  "jarSha256": "79c13e8c50ccc6361f434d0a9e6fb4a57e4d0a0a85e6cee33cde1e090e33c90a",
+  "startupPointerSha256": "fb447363c780b676a37a82121d00445d050122058580b228a6ab5f353aebfdb9",
+  "sourceManifestSha256": "8d8c230eff7f72f7d1e9c2fec8ad86b6bea0cddae3522bfb0eb6f90030dbf231",
+  "sourceFiles": 635,
+  "sourceDifferences": [],
+  "classesMatchingRunningJar": 299,
+  "csvSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+  "csvBytes": 1507045
+}
