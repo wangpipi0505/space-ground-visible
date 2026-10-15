@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "document": "docs/ORBIT_VISIBILITY_API.md",
+      "originalSha256": "6f818527fc3f480fdafed62f00a54e32ba5fdb7f4ecfe90c294256810f26441e",
+      "currentSha256": "ee220d77b6dd5e08c1fe8fe2d39d3883b4326432102f0282d0d5802f17b361f0",
+      "headings": [
+        "## 一、功能范围",
+        "## 二、Spring Boot 接口示例",
+        "### 请求字段",
+        "## 三、弹道文件格式",
+        "## 四、网络路径与文件流",
+        "## 五、输出结构",
+        "## 六、核心算法口径",
+        "## 七、当前算法优化",
+        "## 八、Java 调用示例",
+        "## 九、JSON 输入输出示例",
+        "### 9.1 输入参数 JSON 示例",
+        "### 9.2 输出参数 JSON 示例"
+      ],
+      "jsonBlocks": 7,
+      "boundKinds": [
+        "visibility",
+        "visibility",
+        "visibility"
+      ]
+    },
+    {
+      "document": "docs/TARGET_TRAJECTORY_FIT_API.md",
+      "originalSha256": "32e6a54f4c05a4b3d2a6a91c79f945efa49052fce4c7e856df4920635f2beedc",
+      "currentSha256": "bc8748527b7b494e33f8664cf6efc12b673ace85cb0833078e15e11e4b64cc34",
+      "headings": [
+        "## 一、接口范围",
+        "## 二、102 包拟合接口",
+        "### FitRequest 字段",
+        "### Package102Record 字段",
+        "## 三、系统模拟弹道接口",
+        "### SimulationRequest 字段",
+        "## 四、弹道文件重定时接口",
+        "### RetimeTrajectoryRequest 字段",
+        "## 五、模型选择",
+        "## 六、输入限制",
+        "## 七、输出文件命名",
+        "## 八、JSON 输入输出示例",
+        "### 8.1 102 包拟合输入 JSON 示例",
+        "### 8.2 102 包拟合输出 JSON 示例",
+        "### 8.3 系统模拟弹道输入 JSON 示例",
+        "### 8.4 系统模拟弹道输出 JSON 示例",
+        "### 8.5 弹道文件重定时输入 JSON 示例",
+        "### 8.6 弹道文件重定时输出 JSON 示例"
+      ],
+      "jsonBlocks": 12,
+      "boundKinds": [
+        "fit-result",
+        "fit",
+        "simulate",
+        "retime",
+        "fit",
+        "fit-result",
+        "simulate",
+        "simulate",
+        "fit-result",
+        "retime",
+        "fit-result"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/orbit/health"
+    },
+    {
+      "method": "POST",
+      "path": "/api/orbit/visibility/search"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/payloads/preview"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/files"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/files"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/{fileId}/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/{fileId}/download"
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/fit/package102"
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/simulate"
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/retime"
+    }
+  ],
+  "dtoExamples": 14,
+  "originalApiFilesByteEqual": 16,
+  "productChanged": false,
+  "distinctOperations": 10,
+  "fullFitExamples": 2,
+  "scope": "文档格式/JSON/真实DTO与标准载荷校验；2个拟合示例完整计算写入隔离目录；未运行HTTP、窗口搜索、STK或性能测试"
+}

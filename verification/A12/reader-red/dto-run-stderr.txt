@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.IllegalArgumentException: 每个目标至少需要两个已观测的package102轨迹点。
+	at com.tx.alg.trajectory.TargetTrajectoryFitter.completeTrajectoryInput(TargetTrajectoryFitter.java:547)
+	at com.tx.alg.trajectory.TargetTrajectoryFitter.fitPackage102ToCsv(TargetTrajectoryFitter.java:509)
+	at DocumentDtoProbe.main(DocumentDtoProbe.java:33)

@@ -56,6 +56,7 @@ pnpm dev --host 127.0.0.1
 - [专项精度测试报告（A04）](verification/A04/精度测试报告.md)：新编译77项专项测试、15/9/21严格新旧对照、同刻插值留出误差和时间/坐标边界；[独立复审](verification/A04/独立精度复审报告.md)。在项目根运行 `python -X utf8 -B verification/A04/delivery_check.py` 可只读核对已交付证据，完整数值重算的本机资产前提见报告第10节。
 - [软件功能使用说明（A03编写、A07更新）](docs/软件功能使用说明.md)：安装/正式启动、空间操作链、弹道两级菜单与参数表、完整非生产输入与真实截图、时间/单位/文件失败恢复；[A03历史来源核验](verification/A03/验证报告.md)。
 - [新版完整接口文档（A02）](docs/接口文档.md)与[OpenAPI 3.0.3](docs/openapi/openapi.json)：35条活动操作、完整嵌套字段、实际状态/样例、载荷/UTC/CSV和文件生命周期合同；[A02验证证据](verification/A02/验证报告.md)。
+- [原格式窗口接口分册](docs/ORBIT_VISIBILITY_API.md)与[原格式拟合接口分册](docs/TARGET_TRAJECTORY_FIT_API.md)：沿用原交付的章节、字段表和JSON输入输出示例，按当前标准载荷及Web文件流程更新。
 - [T29 HTTP 说明与可执行示例（历史来源）](docs/接口使用说明.md)：保留原示例入口；当前完整字段、序列化及状态合同以新版 A02 文档为准。
 - [载荷、时间与 CSV 口径](docs/载荷时间与文件口径.md)：十字段单位/特殊值、两种时间口径及速度约定。
 - [独立外推工具及 Orekit 后续方案](docs/独立外推工具与后续方案.md)：普通 Java8 调用、模型与线程边界，D01—D06 进入条件。

@@ -89,3 +89,5 @@ output/playwright/** -text -whitespace
 *.xlsx binary
 # A11保留编译和数值回归命令的原始日志字节，摘要不受Git行尾转换影响。
 verification/A11/**/*.log -text -whitespace
+# A12文档DTO核验命令输出按原字节保存。
+verification/A12/**/*.txt -text -whitespace

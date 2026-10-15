@@ -1,0 +1,5 @@
+Exception in thread "main" java.lang.IllegalArgumentException: 不支持的载荷分类：SPACE。支持：对地监视、对空监视、对地跟踪、对空跟踪。
+	at com.tx.alg.OrbitCalculator$PayloadType.fromText(OrbitCalculator.java:224)
+	at com.tx.alg.OrbitCalculator$SensorVisibilityConfig.forPayload(OrbitCalculator.java:267)
+	at com.tx.alg.api.VisibilityRequest.toSensorVisibilityConfig(VisibilityRequest.java:391)
+	at DocumentDtoProbe.main(DocumentDtoProbe.java:23)

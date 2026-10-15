@@ -1,0 +1,508 @@
+[
+  {
+    "document": "ORBIT_VISIBILITY_API.md",
+    "block": 1,
+    "kind": "visibility",
+    "value": {
+      "ballistics": [
+        {
+          "csvPath": "C:/service-data/trajectory/trajectory.csv",
+          "baseLaunchUTC": "2026/07/01 07:57:00.000",
+          "targetId": "TGT-001",
+          "targetName": "目标1"
+        }
+      ],
+      "startOffsetSec": -1800,
+      "stepSizeSec": 10,
+      "numCalculations": 361,
+      "sensorFovDeg": 140.0,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 1,
+      "orbitModel": "J2_NUMERICAL",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-A-01",
+              "payloadName": "对地载荷",
+              "payloadType": "GROUND",
+              "minDistanceKm": 0.0,
+              "maxDistanceKm": 2500.0,
+              "azimuthMinDeg": 0.0,
+              "azimuthMaxDeg": 360.0,
+              "elevationMinDeg": -90.0,
+              "elevationMaxDeg": 90.0,
+              "angleRateDegPerSec": 0.3,
+              "sunAvoidHalfAngleDeg": 45.0,
+              "startupAngleRateDegPerSec": -1.0
+            },
+            {
+              "payloadId": "PAYLOAD-A-02",
+              "payloadName": "对空载荷",
+              "payloadType": "SPACE",
+              "minDistanceKm": 0.0,
+              "maxDistanceKm": 1200.0,
+              "azimuthMinDeg": 0.0,
+              "azimuthMaxDeg": 360.0,
+              "elevationMinDeg": -90.0,
+              "elevationMaxDeg": 90.0,
+              "angleRateDegPerSec": 0.0,
+              "sunAvoidHalfAngleDeg": 45.0,
+              "startupAngleRateDegPerSec": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "document": "ORBIT_VISIBILITY_API.md",
+    "block": 4,
+    "kind": "visibility",
+    "value": {
+      "ballistics": [
+        {
+          "csvPath": "C:/service-data/trajectory/trajectory_A.csv",
+          "baseLaunchUTC": "2026/07/01 07:57:00.000",
+          "targetId": "TGT-001",
+          "targetName": "目标一"
+        },
+        {
+          "csvPath": "C:/service-data/trajectory/trajectory_B.csv",
+          "baseLaunchUTC": "2026/07/01 07:58:20.000",
+          "targetId": "TGT-002",
+          "targetName": "目标二"
+        }
+      ],
+      "startOffsetSec": -1800,
+      "stepSizeSec": 10,
+      "numCalculations": 361,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 1,
+      "orbitModel": "J2_NUMERICAL",
+      "satellites": [
+        {
+          "satelliteId": "SAT-A",
+          "name": "SAT-A",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 30.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-A-01",
+              "payloadName": "对地载荷",
+              "payloadType": "GROUND",
+              "minDistanceKm": 0.0,
+              "maxDistanceKm": 2500.0,
+              "azimuthMinDeg": 0.0,
+              "azimuthMaxDeg": 360.0,
+              "elevationMinDeg": -90.0,
+              "elevationMaxDeg": 90.0,
+              "angleRateDegPerSec": 0.3,
+              "sunAvoidHalfAngleDeg": 45.0,
+              "startupAngleRateDegPerSec": -1.0
+            },
+            {
+              "payloadId": "PAYLOAD-A-02",
+              "payloadName": "对空载荷",
+              "payloadType": "SPACE",
+              "minDistanceKm": 0.0,
+              "maxDistanceKm": 1200.0,
+              "azimuthMinDeg": 0.0,
+              "azimuthMaxDeg": 360.0,
+              "elevationMinDeg": -90.0,
+              "elevationMaxDeg": 90.0,
+              "angleRateDegPerSec": 0.0,
+              "sunAvoidHalfAngleDeg": 45.0,
+              "startupAngleRateDegPerSec": -1.0
+            }
+          ]
+        },
+        {
+          "satelliteId": "SAT-B",
+          "name": "SAT-B",
+          "semiMajorAxisM": 7530612.0,
+          "eccentricity": 0.00085,
+          "inclinationDeg": 64.8,
+          "raanDeg": 120.0,
+          "argumentOfPerigeeDeg": 270.0,
+          "meanAnomalyDeg": 0.0,
+          "epochUtc": "2026/07/01 10:00:00.000",
+          "payloads": [
+            {
+              "payloadId": "PAYLOAD-B-01",
+              "payloadName": "对空载荷",
+              "payloadType": "SPACE",
+              "minDistanceKm": 0.0,
+              "maxDistanceKm": 1600.0,
+              "azimuthMinDeg": 0.0,
+              "azimuthMaxDeg": 360.0,
+              "elevationMinDeg": -90.0,
+              "elevationMaxDeg": 90.0,
+              "angleRateDegPerSec": 0.0,
+              "sunAvoidHalfAngleDeg": 45.0,
+              "startupAngleRateDegPerSec": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "document": "ORBIT_VISIBILITY_API.md",
+    "block": 5,
+    "kind": "visibility",
+    "value": {
+      "ballisticCsvPath": "C:/service-data/trajectory/trajectory.csv",
+      "baseLaunchUtc": "2026/07/01 07:57:00.000",
+      "startOffsetSec": -600,
+      "stepSizeSec": 10,
+      "numCalculations": 121,
+      "sensorFovDeg": 140.0,
+      "payloadType": "对空跟踪",
+      "maxDetectRangeKm": 1200.0,
+      "sunExclusionAngleDeg": 45.0,
+      "targetSampleStepSec": 1.0,
+      "trajectoryPointOutput": 0,
+      "orbitModel": "J2_NUMERICAL",
+      "satellites": []
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 1,
+    "kind": "fit-result",
+    "value": {
+      "taskName": "taskA",
+      "targetCount": 1,
+      "files": [
+        {
+          "targetId": "T001",
+          "model": "BALLISTIC_MIDCOURSE_TWO_BODY",
+          "csvPath": "output/trajectory-fit/taskA_..._T001_....csv",
+          "pointCount": 1200,
+          "warnings": []
+        }
+      ]
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 2,
+    "kind": "fit",
+    "value": {
+      "taskName": "taskA",
+      "taskStartTime": "2026-07-01 07:56:58",
+      "taskEndTime": "2026-07-01 08:05:00",
+      "interpolationStepSec": 0.5,
+      "package102": [
+        {
+          "track_tgt_id": "T001",
+          "tack3d_time_code": "2026-07-01 07:57:00",
+          "tack3d_tgt_pos_x": "70000000",
+          "tack3d_tgt_pos_y": "0",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "T001",
+          "tack3d_time_code": "2026-07-01 07:57:00.500",
+          "tack3d_tgt_pos_x": "70005000",
+          "tack3d_tgt_pos_y": "500",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000010",
+          "tack3d_tgt_vel_y": "1000020",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 07:57:10",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        }
+      ]
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 3,
+    "kind": "simulate",
+    "value": {
+      "taskName": "simTask",
+      "targetId": "SIM001",
+      "taskStartTime": "2026-07-01 07:57:00",
+      "taskEndTime": "2026-07-01 08:11:20",
+      "launchTimeUtc": "2026-07-01 07:57:00",
+      "impactTimeUtc": "2026-07-01 08:11:15.900",
+      "launchPointCoordFrame": "LLA",
+      "launchPointX": 111.57,
+      "launchPointY": 38.7,
+      "launchPointZ": 1600.0,
+      "impactPointCoordFrame": "LLA",
+      "impactPointX": 86.1746,
+      "impactPointY": 41.725,
+      "impactPointZ": 1000.0,
+      "outputPointDurationSec": 1.0
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 4,
+    "kind": "retime",
+    "value": {
+      "taskName": "retimeTask",
+      "targetId": "RET-001",
+      "trajectoryCsvPath": "C:/service-data/trajectory/output/trajectory-fit/source.csv",
+      "launchTimeUtc": "2026-07-01 09:00:00.000"
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 5,
+    "kind": "fit",
+    "value": {
+      "taskName": "taskA",
+      "taskStartTime": "2026-07-01 07:56:58.000",
+      "taskEndTime": "2026-07-01 08:05:00.000",
+      "interpolationStepSec": 0.5,
+      "package102": [
+        {
+          "track_tgt_id": "T001",
+          "tack3d_time_code": "2026-07-01 07:57:00.000",
+          "tack3d_tgt_pos_x": "70000000",
+          "tack3d_tgt_pos_y": "0",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000000",
+          "tack3d_tgt_vel_y": "1000000",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 08:11:15.900",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        },
+        {
+          "track_tgt_id": "T001",
+          "tack3d_time_code": "2026-07-01 07:57:00.500",
+          "tack3d_tgt_pos_x": "70005000",
+          "tack3d_tgt_pos_y": "500",
+          "tack3d_tgt_pos_z": "0",
+          "tack3d_tgt_vel_x": "10000010",
+          "tack3d_tgt_vel_y": "1000020",
+          "tack3d_tgt_vel_z": "0",
+          "tack3d_tgt_acc_x": "0",
+          "tack3d_tgt_acc_y": "0",
+          "tack3d_tgt_acc_z": "0",
+          "prop_tgt_type_8": "0x01",
+          "prop_tgt_shape_8": "0x02",
+          "prop_tgt_flight_phase_8": "0x01",
+          "prob_tgt_critical_incident": "0xFF",
+          "prob_tgt_critical_incident_time_code": "",
+          "launch_time_code": "2026-07-01 07:56:55.000",
+          "launch_coord_frame": "J2000",
+          "launch_pos_x": "69950000",
+          "launch_pos_y": "-5000",
+          "launch_pos_z": "0",
+          "launch_pos_unit": "0.1m",
+          "impact_time_code": "2026-07-01 08:11:15.900",
+          "impact_coord_frame": "J2000",
+          "impact_pos_x": "70100000",
+          "impact_pos_y": "10000",
+          "impact_pos_z": "0",
+          "impact_pos_unit": "0.1m"
+        }
+      ]
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 6,
+    "kind": "fit-result",
+    "value": {
+      "taskName": "taskA",
+      "targetCount": 1,
+      "files": [
+        {
+          "targetId": "T001",
+          "model": "BALLISTIC_MIDCOURSE_TWO_BODY",
+          "csvPath": "C:/service-data/trajectory/output/trajectory-fit/taskA_20260701_075658_20260701_080500_T001_20260701_101530_123.csv",
+          "pointCount": 1698,
+          "warnings": [
+            "Package102 fitting used two-body RK4 dynamics. Exact package102 timestamps were reset to source samples to guarantee hard pass-through."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 8,
+    "kind": "simulate",
+    "value": {
+      "taskName": "simTask",
+      "targetId": "SIM001",
+      "taskStartTime": "2026-07-01 07:57:00.000",
+      "taskEndTime": "2026-07-01 08:11:20.000",
+      "launchTimeUtc": "2026-07-01 07:57:00.000",
+      "impactTimeUtc": "2026-07-01 08:11:15.900",
+      "launchPointCoordFrame": "LLA",
+      "launchPointX": 111.57,
+      "launchPointY": 38.7,
+      "launchPointZ": 1600.0,
+      "impactPointCoordFrame": "LLA",
+      "impactPointX": 86.1746,
+      "impactPointY": 41.725,
+      "impactPointZ": 1000.0,
+      "outputPointDurationSec": 1.0,
+      "phaseEvents": []
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 9,
+    "kind": "simulate",
+    "value": {
+      "taskName": "simTask",
+      "targetId": "SIM001",
+      "taskStartTime": "2026-07-01 07:57:00.000",
+      "taskEndTime": "2026-07-01 08:11:20.000",
+      "launchTimeUtc": "2026-07-01 07:57:00.000",
+      "impactTimeUtc": "2026-07-01 08:11:15.900",
+      "launchPointCoordFrame": "J2000",
+      "launchPointUnit": "m",
+      "launchPointX": 2167790.227,
+      "launchPointY": 4775481.109,
+      "launchPointZ": 3618557.253,
+      "impactPointCoordFrame": "J2000",
+      "impactPointUnit": "m",
+      "impactPointX": 3578635.76,
+      "impactPointY": 3522525.227,
+      "impactPointZ": 3919735.591,
+      "outputPointDurationSec": 1.0,
+      "phaseEvents": [
+        {
+          "phaseType": "BOOST",
+          "eventType": "CUTOFF",
+          "eventTime": "2026-07-01 07:59:25.100",
+          "dynamics": "RESERVED"
+        }
+      ]
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 10,
+    "kind": "fit-result",
+    "value": {
+      "taskName": "simTask",
+      "targetCount": 1,
+      "files": [
+        {
+          "targetId": "SIM001",
+          "model": "SYSTEM_SIMULATED_LAMBERT",
+          "csvPath": "C:/service-data/trajectory/output/trajectory-fit/simTask_20260701_075700_20260701_081120_SIM001_20260701_101612_045.csv",
+          "pointCount": 856,
+          "warnings": [
+            "System simulation used endpoint-constrained Lambert shooting and two-body RK4 propagation.",
+            "Simulation impact time was supplied by request."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 11,
+    "kind": "retime",
+    "value": {
+      "taskName": "retimeTask",
+      "targetId": "RET-001",
+      "trajectoryCsvPath": "C:/service-data/trajectory/output/trajectory-fit/simTask_20260701_075700_20260701_081120_SIM001_20260701_101612_045.csv",
+      "launchTimeUtc": "2026-07-01 09:00:00.000"
+    }
+  },
+  {
+    "document": "TARGET_TRAJECTORY_FIT_API.md",
+    "block": 12,
+    "kind": "fit-result",
+    "value": {
+      "taskName": "retimeTask",
+      "targetCount": 1,
+      "files": [
+        {
+          "targetId": "RET-001",
+          "model": "RETIMED_TRAJECTORY",
+          "csvPath": "C:/service-data/trajectory/output/trajectory-fit/retimeTask_2026-07-01_09_00_00.000_RET-001_20260717_101612_045.csv",
+          "pointCount": 856,
+          "warnings": [
+            "弹道文件重定时保持ECEF位置和速度不变；按新的绝对时刻重算ECI位置和速度，并更新时间列、dt列和timeIntervalMs列。"
+          ]
+        }
+      ]
+    }
+  }
+]
