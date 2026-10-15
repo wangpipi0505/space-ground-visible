@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "commit": "2ade800038ff28adf8f7be43943c8f7424a73224",
+  "branch": "refs/heads/codex/ballistic-workbench-ui",
+  "tag": "refs/tags/acceptance/2026-10-15/A18",
+  "preservedReferences": 52,
+  "actualReferences": 57,
+  "normalAtomicPush": true,
+  "expectedBranchMatches": true,
+  "acceptanceTagCommit": "2ade800038ff28adf8f7be43943c8f7424a73224"
+}

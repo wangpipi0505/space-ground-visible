@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "git",
+    "ls-remote",
+    "origin"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible",
+  "startedUnix": 1792060776.494797,
+  "durationSec": 1.3019249439239502,
+  "exitCode": 0,
+  "stdoutSha256": "fa60dca4f4304737819e0974ff523e16c815aa69896677ea8b948bc172224c37",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
