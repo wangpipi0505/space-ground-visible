@@ -1,0 +1,16 @@
+{
+  "pushStartedUtc": "2026-10-15T06:04:56Z",
+  "pushFinishedUtc": "2026-10-15T06:05:00Z",
+  "refs": {
+    "refs/heads/main": "ae213f34d826b64fb29f1ed2f75ddf4107419dcc",
+    "refs/heads/codex/ballistic-workbench-ui": "ae213f34d826b64fb29f1ed2f75ddf4107419dcc",
+    "refs/tags/acceptance/2026-10-15/A10": "ae213f34d826b64fb29f1ed2f75ddf4107419dcc"
+  },
+  "allThreePointToA10Commit": true,
+  "verificationFinishedUtc": "2026-10-15T06:05:01Z",
+  "verificationCommand": "git ls-remote origin refs/heads/main refs/heads/codex/ballistic-workbench-ui refs/tags/acceptance/2026-10-15/A10",
+  "pushCommand": "git push --atomic origin HEAD:refs/heads/main HEAD:refs/heads/codex/ballistic-workbench-ui refs/tags/acceptance/2026-10-15/A10",
+  "verificationExitCode": 0,
+  "commit": "ae213f34d826b64fb29f1ed2f75ddf4107419dcc",
+  "pushExitCode": 0
+}
