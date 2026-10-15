@@ -1,0 +1,15 @@
+{
+  "args": [
+    "git",
+    "push",
+    "--atomic",
+    "origin",
+    "HEAD:refs/heads/main",
+    "HEAD:refs/heads/codex/ballistic-workbench-ui",
+    "refs/tags/acceptance/2026-10-15/A12"
+  ],
+  "exitCode": 0,
+  "checkedAtUtc": "2026-10-15T07:47:56.334779+00:00",
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "6c7b5c5c16ace5f66fa7be8039e72e75b0ffda172b07ac089b098c08b019892b"
+}
