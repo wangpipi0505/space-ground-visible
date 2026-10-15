@@ -1,0 +1,8 @@
+{
+  "initialIssue": "原记录路径不存在，首次读取失败",
+  "expectedPath": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261015-163728\\space-ground-visible-source-with-maven-20261015-163728.zip",
+  "recoveredPath": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261015-163728\\space-ground-visible-source.zip",
+  "expectedSha256": "4238e426aa5dd1efe274de617ede9cc91fe5b8ec6f9e1f9ec033d0614f8267bd",
+  "actualSha256": "4238e426aa5dd1efe274de617ede9cc91fe5b8ec6f9e1f9ec033d0614f8267bd",
+  "recoveredBySameBytes": true
+}

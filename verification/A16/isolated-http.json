@@ -1,0 +1,101 @@
+{
+  "args": [
+    "C:/Program Files/Eclipse Adoptium/jdk-8.0.472.8-hotspot/bin/java.exe",
+    "-jar",
+    "target/ballistic-integration-probe-1.0.0.jar",
+    "--server.port=63736",
+    "--ballistic.files.root=G:\\5-YG\\space-ground-visible\\verification\\runtime\\A16\\isolated-data"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A16\\integration-probe",
+  "successfulOperations": [
+    {
+      "method": "GET",
+      "path": "/api/orbit/health",
+      "status": 200,
+      "responseBytes": 2,
+      "responseSha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3"
+    },
+    {
+      "method": "GET",
+      "path": "/api/trajectory/health",
+      "status": 200,
+      "responseBytes": 2,
+      "responseSha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/payloads/preview",
+      "status": 200,
+      "responseBytes": 298,
+      "responseSha256": "8e26dee554d5a5fcc0bef97cfcc5e0f01e8f52567e96be460f9786dad61e1df1"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/files",
+      "status": 201,
+      "responseBytes": 256,
+      "responseSha256": "b680316259386e19df2e866c6fecb96902f67bcc996dbc6383d63ba0cc52c208"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/a3e91d73-6250-4b0c-82b6-3d5c47738954/preview?page=1&limit=2",
+      "status": 200,
+      "responseBytes": 848,
+      "responseSha256": "36e9160f661dfbe543395fd667658e73e11f7b6eb0a384e80faf2d9554ead101"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ballistic/files/a3e91d73-6250-4b0c-82b6-3d5c47738954/download",
+      "status": 200,
+      "responseBytes": 1507045,
+      "responseSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+    },
+    {
+      "method": "POST",
+      "path": "/api/orbit/visibility/search",
+      "status": 200,
+      "responseBytes": 2468,
+      "responseSha256": "9e06f016b3dfdbfa4ef1fbe1197e4f6759d5f82ef45b37675b3b657172470577"
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/fit/package102",
+      "status": 200,
+      "responseBytes": 1811,
+      "responseSha256": "af2a8e9c8f3ff4a014cc559c2182febf10f70e37efd3847b652e2573f2d462a8"
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/simulate",
+      "status": 200,
+      "responseBytes": 764,
+      "responseSha256": "45aff27d6b96892e3b6e130ec74384dbeb01ec8fd581794b1999f74b4580c726"
+    },
+    {
+      "method": "POST",
+      "path": "/api/trajectory/retime",
+      "status": 200,
+      "responseBytes": 476,
+      "responseSha256": "6ff8fa6981927a1cbe2d08e03692d8e71c64c94be271d9908efeee39005f7f0a"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ballistic/files/register-result",
+      "status": 201,
+      "responseBytes": 400,
+      "responseSha256": "83eb8b5d0036eb6be175610c41ea8a8f9392658637c0d81c40e59536a710b6c0"
+    }
+  ],
+  "preservedOriginalSpaceTypes": 4,
+  "passed": true,
+  "fitPoints": 1629,
+  "simulationPoints": 857,
+  "retimePoints": 857,
+  "downloadByteEqual": true,
+  "sampleSha256": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8",
+  "stoppedOwnProcess": true,
+  "processId": 40232,
+  "stdoutSha256": "975a201405c32fbc2f8543f28b130872f741dd60094d7f3c66d583fe5a83c54f",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "registeredOperationCount": 11
+}

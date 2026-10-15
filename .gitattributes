@@ -95,3 +95,5 @@ verification/A12/**/*.txt -text -whitespace
 verification/A13/**/*.txt -text -whitespace
 # A15离线Maven构建及隔离启动日志保留实际命令双流字节。
 verification/A15/**/*.txt -text -whitespace
+# A16保留增量集成编译、端点注册及HTTP核验日志的实际字节。
+verification/A16/**/*.txt -text -whitespace

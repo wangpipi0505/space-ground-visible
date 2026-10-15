@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "archive": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261015-172803\\space-ground-visible-source.zip",
+  "bytes": 128016550,
+  "sha256": "16a5cc828665b26b5205765c9a4102e778b487514b24a8aaaad91f3ccf4ef2c8",
+  "entries": 2511,
+  "mavenFiles": 1964,
+  "updated": [
+    "源码包说明.md",
+    "backend/代码说明.md",
+    "docs/弹道增量代码集成说明.md"
+  ],
+  "allOtherA15EntryBytesEqual": true,
+  "crcPassed": true,
+  "guideLinksValid": true,
+  "noManifest": true,
+  "previousArchive": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261015-163728\\space-ground-visible-source.zip",
+  "previousSha256": "4238e426aa5dd1efe274de617ede9cc91fe5b8ec6f9e1f9ec033d0614f8267bd"
+}

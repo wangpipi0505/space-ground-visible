@@ -1,0 +1,33 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-10-15 17:23:22.586  INFO 40232 --- [           main] i.v.IntegrationProbeApplication          : Starting IntegrationProbeApplication v1.0.0 using Java 1.8.0_472 on WIN-REJ8TF34DM4 with PID 40232 (G:\5-YG\space-ground-visible\verification\runtime\A16\integration-probe\target\ballistic-integration-probe-1.0.0.jar started by Administrator in G:\5-YG\space-ground-visible\verification\runtime\A16\integration-probe)
+2026-10-15 17:23:22.589  INFO 40232 --- [           main] i.v.IntegrationProbeApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-10-15 17:23:23.314  INFO 40232 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 63736 (http)
+2026-10-15 17:23:23.320  INFO 40232 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15 17:23:23.321  INFO 40232 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-15 17:23:23.364  INFO 40232 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-15 17:23:23.364  INFO 40232 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 740 ms
+2026-10-15 17:23:23.561  INFO 40232 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 63736 (http) with context path ''
+2026-10-15 17:23:23.566  INFO 40232 --- [           main] i.v.IntegrationProbeApplication          : Started IntegrationProbeApplication in 1.187 seconds (JVM running for 1.41)
+BALLISTIC_MAPPING_COUNT=11
+BALLISTIC_MAPPING={GET [/api/orbit/health]}
+BALLISTIC_MAPPING={GET [/api/trajectory/health]}
+BALLISTIC_MAPPING={GET [/api/v1/ballistic/files/{fileId}/download]}
+BALLISTIC_MAPPING={GET [/api/v1/ballistic/files/{fileId}/preview]}
+BALLISTIC_MAPPING={POST [/api/orbit/visibility/search], consumes [application/json], produces [application/json]}
+BALLISTIC_MAPPING={POST [/api/trajectory/fit/package102], consumes [application/json], produces [application/json]}
+BALLISTIC_MAPPING={POST [/api/trajectory/retime], consumes [application/json], produces [application/json]}
+BALLISTIC_MAPPING={POST [/api/trajectory/simulate], consumes [application/json], produces [application/json]}
+BALLISTIC_MAPPING={POST [/api/v1/ballistic/files/register-result]}
+BALLISTIC_MAPPING={POST [/api/v1/ballistic/files]}
+BALLISTIC_MAPPING={POST [/api/v1/ballistic/payloads/preview]}
+2026-10-15 17:23:23.683  INFO 40232 --- [io-63736-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-15 17:23:23.683  INFO 40232 --- [io-63736-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-15 17:23:23.684  INFO 40232 --- [io-63736-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

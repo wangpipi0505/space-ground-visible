@@ -1,0 +1,292 @@
+{
+  "roots": [
+    "com/tx/alg/",
+    "com/runisys/orbit/spacevisibility/api/ballistic/",
+    "com/runisys/orbit/spacevisibility/application/ballistic/",
+    "com/runisys/orbit/spacevisibility/infrastructure/files/"
+  ],
+  "files": [
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileController.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "c2cc858ca3ee7c4635d5c2a2f6bf35a0330bfcb09bf908d2467c373e8c1e8362"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileExceptionHandler.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "5904d2ddfe3281c7bf6be46ab9ee71ee148066eb347a08483244a4065d3ded7b"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFileModels.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "a9b789229680e5f59705ca91820ff41de969c38157de58bb1a949e5b0571d1dc"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticFitController.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "62de008a72db544880f8adbc1381ab6355f71b0e9f2ceabcbee62141c43b0316"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticMultipartExceptionResolver.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "833bcc89d207fbc0708c2260b2ce97c2bb4e69435ad066dc23e41dc2e2fbe2a8"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticPayloadController.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "49acd51941137e956f72ce4bd21d58ef5044854e29333f4c37c010dbf8ac00ef"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticRetimeController.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "059e8684dce4ce96b1e513f39695d3d3dff2f2f0d3f63b51f9e7f336caa9a17a"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticSimulationController.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "2f676e6478d167e1e08ab096dfd6e9d2fb9022a2c999c00d40bc07bdf4bb90de"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/api/ballistic/BallisticVisibilityController.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "1ffb8bd19992696b6b16b191d5b63eadae371891773e5d4dc3c5ed74beb40211"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticFileService.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "f0ab80b0026e6118ffb6c0bf9778631572f5709d26e51d37d144782a29a6e512"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticFitService.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "372fe97e0018c106c07266b5be75e9bd3bb5aa9f36fe92ba69fbdfa7859fb0a5"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticRetimeService.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "c7919ee99033a3a6b8ad500604e1b903a03b5341eb15be544eff9c6768702b83"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticSimulationService.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "fb483b03506c544e7757677e8121aacb0b31fd5466c6be5b332460b5f002c448"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticTrajectoryService.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "43d7896d05fc8c3d495de9c09be7e9b3148dcd66cc0ba052120aa103ace6256b"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/application/ballistic/BallisticVisibilityService.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "84a0689d2fffba26fa68f0db09d2872f9b75e995d798ac3e881e7729817f0290"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/geometry/GeometryMath.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "475e091aea6aa79bd122474b375ca3755fcfdb68bec05eb940fb19c151a55a0f"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/geometry/LegacyJ2000Frames.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "d01a9c10ac770ff0070d71a1c1f46738b5ec78c3d3a78cfa047c014e25c6c9c5"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/geometry/Vector3.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "原空间版已有，内容有变化",
+      "sha256Lf": "c62013eef8a29b34e64d78cdb2cd3f3be657702d8e3e454f25e9c33a1f8565dc"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/BallisticCartesianPropagation.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "802f3cf690482e277e2f6df9e90f8bbb2bf11c36ec3d420f55d35ec45fee87a9"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/BallisticOrbitPropagation.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "40ba3cdfeec2425cf1497c5df9c4495469cd391b76f28e0e15ef1df8e54ecfe4"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitDefinition.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "1babd4e78dbf3801a7f37b38d72f0446ad83ff1e6803eb6d921d6466652d9f48"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitPropagationTool.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "395ae8900952ac6d5a9ab93a393b896562bc3a355125b17c0821bb53d6e1ff85"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitState.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "6bb44c6c824eee826e9bd9d24ee415024eda07e71b36247e022ca03aa79a1ca6"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/orbit/OrbitTime.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "67782ca1f60117b61a170eef511da482de17926eac18cb57d654350cdf8e1f8f"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraint.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "与原空间版相同",
+      "sha256Lf": "078530029705ed6b144ba97803f1485bf30486c7b41e7a814a9c8ad5f637c7a1"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/payload/PayloadConstraintMath.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "dce798fc16eb0265aca0a43bb774d8154b82769470b401a03d95a3eead8de010"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/payload/PayloadType.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "原空间版已有，内容有变化",
+      "sha256Lf": "65e1204cfc00a5450aec1099d8785b57c7629c816d359480aaf61d79b66be4de"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/payload/StandardPayloads.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "2fcee3df270ffb6ca335b7c3dd4421274798f601fd142e8e4b235ab5253280c2"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/time/LegacyJ2000Time.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "fdacb204e744006b846402f2f9d5e9ceac0de547d2c8341637f75ba63017f489"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/window/SampledStateRuns.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "37de464ddc0e425c3ca4ba293fb009bf79a3b211ba20264ca2db682957d13c14"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/window/TimeInterval.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "与原空间版相同",
+      "sha256Lf": "44101e131ec5d15e6cd6b53c66826c399d315c200dfac4891848c5f02ad0eb35"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/domain/window/WindowIntervals.java",
+      "kind": "公共依赖",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "a1913749e69293cde7ed1723c104d4c0e96550d00badde1498dbe340c9ac8710"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileConfiguration.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "f003df14c57fcdfc9cacad3460ba376ac87eac0e992026e6d984456b626563ad"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/infrastructure/files/BallisticFileStorage.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "f744c9fff13ef59a0e7642d12d80c20b11e678e0b2412df43137385866a67195"
+    },
+    {
+      "path": "com/runisys/orbit/spacevisibility/infrastructure/files/ManagedFileException.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "ac89a9a897393b592f360a49bc119ed1d4283353d002f3edbf1a8738d6e4c426"
+    },
+    {
+      "path": "com/tx/alg/BallisticArcSupport.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "accdc3171f44b6f3bbed3890126d69f434a5baf2c4abc4942aa664eb174dbb51"
+    },
+    {
+      "path": "com/tx/alg/BallisticLaunchSearch.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "33aac7da0a47728d807cec85cfedbcb857b5c61e91b2da7b6c84aa28fbc766b9"
+    },
+    {
+      "path": "com/tx/alg/BallisticResultWriter.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "bd7ce35be29bfc72cd934bde8748ba705dc83bbdc353b8ff0f797fbad5d4b027"
+    },
+    {
+      "path": "com/tx/alg/BallisticSampledWindows.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "5051361c8b559e3d0cdde4c86be33ae0be95e7bc36c53434366e788fbf48f6e4"
+    },
+    {
+      "path": "com/tx/alg/BallisticTrajectoryReader.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "d0e517406a9c287e8e0dea4962cd78fe6168bc75e6f104b6f9cfadd5ea6f2b50"
+    },
+    {
+      "path": "com/tx/alg/BallisticVisibilityGeometry.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "5019c548dc6edc1787d7744129f5430c0580917902861b3862e62b3fc9c5f995"
+    },
+    {
+      "path": "com/tx/alg/OrbitCalculator.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "147bbb86993f66aefe6e03ee96ef4174111810d4303fe01ebbd21047757789ba"
+    },
+    {
+      "path": "com/tx/alg/TrajectoryFileResolver.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "de08ea49204fba52aafa881fcdf06ade5926667c2fc758df587a2193bb10931d"
+    },
+    {
+      "path": "com/tx/alg/api/OrbitVisibilityController.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "52bee9c19721e97e88f653b61d955e1c6b510d8f1a4853f4d1d305224b046940"
+    },
+    {
+      "path": "com/tx/alg/api/TargetTrajectoryFitController.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "f2105de29c2d75c9d3cd7ace3f4faef7db330acb2e0b1d305c380e9c13fb8859"
+    },
+    {
+      "path": "com/tx/alg/api/VisibilityRequest.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "619de18b0e4aec091a6c2a2cbaa2c44f7abf02585430601a3020b8336b67d73f"
+    },
+    {
+      "path": "com/tx/alg/trajectory/TargetTrajectoryFitter.java",
+      "kind": "弹道目录",
+      "originalSpaceStatus": "新增",
+      "sha256Lf": "7aed74d27b2dffd35df6ffdf68ce21ad8c4216fba7d231ebca6ce1f4904d6805"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "dependencyClosure": 47,
+  "incrementToOriginalSpace": 43,
+  "reusedOriginalTypes": 4,
+  "registeredOperations": 11,
+  "successfulOperations": 11,
+  "sourceJavaUnchanged": true,
+  "archiveSha256": "16a5cc828665b26b5205765c9a4102e778b487514b24a8aaaad91f3ccf4ef2c8",
+  "entries": 2511
+}
