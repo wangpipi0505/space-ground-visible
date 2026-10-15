@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scope": "A17实际命令日志的暂存Git blob",
+  "files": 94,
+  "commandStreamHashPairs": 28,
+  "allCommandLogsMatchGitBlobs": true,
+  "publishedAcceptanceTagUnchanged": true
+}

@@ -1,0 +1,4 @@
+To https://github.com/wangpipi0505/space-ground-visible.git
+   192902f..5c38383  HEAD -> codex/ballistic-workbench-ui
+   192902f..5c38383  HEAD -> main
+ * [new tag]         acceptance/2026-10-15/A17 -> acceptance/2026-10-15/A17

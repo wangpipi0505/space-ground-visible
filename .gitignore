@@ -25,3 +25,5 @@ application-local.yml
 ## A07仅允许实际命令的原始双流证据；运行服务日志仍按原规则忽略。
 !verification/A07/**/*.stdout.log
 !verification/A07/**/*.stderr.log
+# A17 数值驱动的实际命令日志用于回归复核；运行副本仍全部忽略。
+!verification/A17/numeric-*/**/*.log
