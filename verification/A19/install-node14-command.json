@@ -1,0 +1,14 @@
+{
+  "command": [
+    "G:/5-YG/space-ground-visible/verification/runtime/A19/node-v14.21.3-win-x64/node.exe",
+    "G:/5-YG/space-ground-visible/verification/runtime/A19/pnpm7/package/bin/pnpm.cjs",
+    "install",
+    "--frozen-lockfile"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "startedUnix": 1792727631.4903045,
+  "durationSec": 18.34851837158203,
+  "exitCode": 0,
+  "stdoutSha256": "4f778dd535a02cf7b01919af07c53faf77cd81563213dba8c58fa16e76e6f146",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

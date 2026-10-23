@@ -1,32 +1,27 @@
-<script setup lang="ts">
+<script>
+export default { name: 'TaskResultDetailDrawer' }
+</script>
+
+<script setup>
 /** 展示父级已加载的历史任务请求和结果明细；关闭抽屉时发出 close 事件，由父级维护可见状态。 */
 import { computed } from 'vue'
-import type { PlanningTaskStatus, VisibilityTaskResultDetail } from '../api/types'
-
-defineOptions({ name: 'TaskResultDetailDrawer' })
-
-const props = defineProps<{
-  visible: boolean
-  loading: boolean
-  detail: VisibilityTaskResultDetail | null
-  formatTime: (time?: string | null) => string
-}>()
-
-const emit = defineEmits<{
-  close: []
-}>()
-
+const props = defineProps({
+  visible: { type: Boolean, required: true },
+  loading: { type: Boolean, required: true },
+  detail: { type: null, required: true },
+  formatTime: { type: Function, required: true },
+})
+const emit = defineEmits(['close'])
 /** 任务状态对应的中文标签与标签类型。 */
-const statusMeta: Record<PlanningTaskStatus, { text: string; type: 'info' | 'warning' | 'success' | 'danger' }> = {
+const statusMeta = {
   PENDING: { text: '排队中', type: 'warning' },
   RUNNING: { text: '执行中', type: 'warning' },
   SUCCEEDED: { text: '已完成', type: 'success' },
   FAILED: { text: '执行失败', type: 'danger' },
   CANCELLED: { text: '已取消', type: 'info' },
 }
-
 /** 将 JSON 原文格式化为便于核对的缩进文本；无法解析时原样展示。 */
-function formatJson(raw?: string | null): string {
+function formatJson(raw) {
   if (!raw) {
     return '（无内容）'
   }
@@ -36,7 +31,6 @@ function formatJson(raw?: string | null): string {
     return raw
   }
 }
-
 const requestJsonText = computed(() => formatJson(props.detail?.requestJson))
 const resultJsonText = computed(() => formatJson(props.detail?.resultJson))
 // 跳过清单独立持久化，不能只从受 500 条响应保护的 resultJson 中读取。
@@ -45,7 +39,7 @@ const skippedPairsJsonText = computed(() => formatJson(props.detail?.skippedPair
 
 <template>
   <el-drawer
-    :model-value="visible"
+    :visible="visible"
     title="任务结果记录明细"
     size="52%"
     data-test="task-result-detail-drawer"

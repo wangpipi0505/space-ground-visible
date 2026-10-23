@@ -1,16 +1,10 @@
-<script setup lang="ts">
+<script>
+export default { name: 'VisibilityPlanningStep' }
+</script>
+
+<script setup>
 /** 展示后台观测任务状态和目标弧段；参数由工作台维护，支持筛选、分页与确认选择。 */
 import { computed, ref, watch } from 'vue'
-import type {
-  IlluminationConstraintRequest,
-  ObservationConstraintRequest,
-  PlanningTaskStatus,
-  Satellite,
-  SatelliteSegment,
-  SelectionTarget,
-  VisibilityPlanResponse,
-  VisibilityPlanningTaskResponse,
-} from '../api/types'
 import { pageVisibilityTaskResults, putVisibilityTaskResultSelection } from '../api/visibilityTaskResults'
 import {
   collectSatelliteObservationStats,
@@ -19,130 +13,75 @@ import {
   toWinToolAzimuth,
 } from '../utils/winToolSummary'
 import { useSelectionConfirm } from '../composables/useSelectionConfirm'
-import type { TimeRange, VisibilityPlanMode } from '../composables/useVisibilityWorkbench'
-
-defineOptions({ name: 'VisibilityPlanningStep' })
-
-/** 弧段表行：后端弧段字段 + 展示辅助字段；组合弧段附带各星独立观测时段。 */
-interface ArcRow {
-  key: string
-  observerSatelliteNames: string
-  targetName: string
-  observationTypeName: string
-  observerIlluminationText: string
-  targetIlluminationName: string
-  startTime: string
-  endTime: string
-  durationSec: number
-  satelliteSegments?: SatelliteSegment[]
-}
-
-/** 同一目标下的一种观测卫星组合，以及该组合全部满足约束的弧段。 */
-interface CombinationResultGroup {
-  key: string
-  satelliteIds: string[]
-  satelliteNames: string[]
-  label: string
-  observationTypeName: string
-  arcs: ArcRow[]
-  totalDurationSec: number
-}
-
-/** 结果页的顶层单位：一个空间目标仅保留一个分组。 */
-interface TargetResultGroup {
-  targetId: string
-  targetName: string
-  combinations: CombinationResultGroup[]
-  /** 目标目录元数据：供 WinTool 格式摘要块渲染；目录缺失时为空。 */
-  targetNorad?: string
-  targetWeightKg?: number
-  firstOrbitLine?: string
-  secondOrbitLine?: string
-}
-
-const props = defineProps<{
-  satellites: Satellite[]
-  selectedWindowLabel: string
-  selectedWindowStartTime: string
-  selectedWindowEndTime: string
-  timeRange: TimeRange
-  form: {
-    coarseStepSec: number
-    fineStepSec: number
-    illuminationConstraint: IlluminationConstraintRequest
-    observationConstraints?: ObservationConstraintRequest[]
-  }
-  plan: VisibilityPlanResponse | null
-  loading: boolean
-  mode: VisibilityPlanMode
-  task: VisibilityPlanningTaskResponse | null
-  taskRunning: boolean
-  taskProgressPercent: number
-  formatTime: (time: string) => string
-  formatDuration: (durationSec: number) => string
-}>()
-
-const emit = defineEmits<{
-  plan: []
-  'update:mode': [mode: VisibilityPlanMode]
-  cancelTask: []
-}>()
-
+const props = defineProps({
+  satellites: { type: Array, required: true },
+  selectedWindowLabel: { type: String, required: true },
+  selectedWindowStartTime: { type: String, required: true },
+  selectedWindowEndTime: { type: String, required: true },
+  timeRange: { type: Array, required: true },
+  form: { type: null, required: true },
+  plan: { type: null, required: true },
+  loading: { type: Boolean, required: true },
+  mode: { type: null, required: true },
+  task: { type: null, required: true },
+  taskRunning: { type: Boolean, required: true },
+  taskProgressPercent: { type: Number, required: true },
+  formatTime: { type: Function, required: true },
+  formatDuration: { type: Function, required: true },
+})
+const emit = defineEmits(['plan', 'update:mode', 'cancelTask'])
 /** 供自定义光照组合复选框使用的三种精确状态。 */
 const illuminationStates = [
   { value: 'SUNLIT', label: '阳照' },
   { value: 'PENUMBRA', label: '半影' },
   { value: 'UMBRA', label: '本影' },
-] as const
-
+]
 /** 后台规划任务状态对应的中文标签。 */
-const taskStatusText: Record<PlanningTaskStatus, string> = {
+const taskStatusText = {
   PENDING: '排队中',
   RUNNING: '执行中',
   SUCCEEDED: '已完成',
   FAILED: '执行失败',
   CANCELLED: '已取消',
 }
-
 /**
  * 仅多星组合弧段可展开查看各星独立观测时段；单星弧段通过行样式隐藏展开按钮。
  */
-function arcRowClassName({ row }: { row: ArcRow }): string {
-  return (row.satelliteSegments?.length ?? 0) > 1
-    ? 'combination-arc-row' : 'single-arc-row'
+function arcRowClassName({ row }) {
+  return (row.satelliteSegments?.length ?? 0) > 1 ? 'combination-arc-row' : 'single-arc-row'
 }
-
 /** 每页只渲染有限目标组，避免全量规划结果使浏览器一次创建过多表格节点。 */
 const TARGET_RESULT_PAGE_SIZES = [10, 20, 50, 100]
 const targetResultTargetId = ref('ALL')
 const combinationFilter = ref('ALL')
 const targetResultPage = ref(1)
 const targetResultPageSize = ref(10)
-const expandedTargetIds = ref<string[]>([])
+const expandedTargetIds = ref([])
 const skippedPairsDialogVisible = ref(false)
-
 /** 组合成员的顺序不影响身份；用于让配置约束和接口返回稳定匹配。 */
-function combinationKey(satelliteIds: Array<string | number>): string {
-  return satelliteIds.map(String).sort((left, right) => left.localeCompare(right, 'zh-CN')).join('|')
+function combinationKey(satelliteIds) {
+  return satelliteIds
+    .map(String)
+    .sort((left, right) => left.localeCompare(right, 'zh-CN'))
+    .join('|')
 }
-
 /** 按参与卫星数量生成用户可读的组合类别。 */
-function combinationType(satelliteCount: number): string {
+function combinationType(satelliteCount) {
   if (satelliteCount === 1) return '单星观测'
   if (satelliteCount === 2) return '两星共同观测'
   if (satelliteCount === 3) return '三星共同观测'
   return `${satelliteCount}星共同观测`
 }
-
 /** 用当前任务卫星名称补全没有结果的配置组合，保证零命中约束也可识别。 */
-const satelliteNameById = computed(() => new Map(props.satellites.map((satellite) => [String(satellite.id), satellite.name])))
-
+const satelliteNameById = computed(
+  () => new Map(props.satellites.map((satellite) => [String(satellite.id), satellite.name])),
+)
 /**
  * 保留后端的目标和组合边界，禁止再把弧段展平成一张列表。
  * 后端会为同一目标的不同组合分别返回结果；这里仅合并同一目标、同一无序组合的弧段。
  */
-const targetResultGroups = computed<TargetResultGroup[]>(() => {
-  const targets = new Map<string, TargetResultGroup>()
+const targetResultGroups = computed(() => {
+  const targets = new Map()
   for (const result of props.plan?.results ?? []) {
     const target = targets.get(result.targetId) ?? {
       targetId: result.targetId,
@@ -154,7 +93,6 @@ const targetResultGroups = computed<TargetResultGroup[]>(() => {
       secondOrbitLine: result.secondOrbitLine ?? undefined,
     }
     if (!targets.has(result.targetId)) targets.set(result.targetId, target)
-
     const key = combinationKey(result.observerSatelliteIds)
     let combination = target.combinations.find((item) => item.key === key)
     if (!combination) {
@@ -172,58 +110,66 @@ const targetResultGroups = computed<TargetResultGroup[]>(() => {
     const arcs = result.arcs.map((arc) => ({
       ...arc,
       key: `${key}-${result.targetId}-${arc.startTime}`,
-      observerSatelliteNames: combination!.label,
+      observerSatelliteNames: combination.label,
       targetName: result.targetName,
-      observationTypeName: combination!.observationTypeName,
-      observerIlluminationText: arc.observerIlluminations.map((item) => `${item.satelliteName}：${item.stateName}`).join('；'),
+      observationTypeName: combination.observationTypeName,
+      observerIlluminationText: arc.observerIlluminations
+        .map((item) => `${item.satelliteName}：${item.stateName}`)
+        .join('；'),
       targetIlluminationName: arc.targetIllumination.stateName,
     }))
     combination.arcs.push(...arcs)
     combination.totalDurationSec += arcs.reduce((total, arc) => total + arc.durationSec, 0)
   }
-
   return [...targets.values()]
     .map((target) => ({
       ...target,
-      combinations: [...target.combinations].sort((left, right) => right.satelliteIds.length - left.satelliteIds.length
-        || left.label.localeCompare(right.label, 'zh-CN')),
+      combinations: [...target.combinations].sort(
+        (left, right) =>
+          right.satelliteIds.length - left.satelliteIds.length || left.label.localeCompare(right.label, 'zh-CN'),
+      ),
     }))
     .sort((left, right) => left.targetName.localeCompare(right.targetName, 'zh-CN'))
 })
-
 /** 本次已命中的目标直接生成下拉选项，避免输入框搜索与页面结果不一致。 */
-const targetResultOptions = computed(() => targetResultGroups.value.map((target) => ({
-  value: target.targetId,
-  label: `${target.targetName}（${target.targetId}）`,
-})))
-
+const targetResultOptions = computed(() =>
+  targetResultGroups.value.map((target) => ({
+    value: target.targetId,
+    label: `${target.targetName}（${target.targetId}）`,
+  })),
+)
 /** 组合筛选严格复用用户本次配置，不再以单星、两星、三星等类别推断。 */
 const configuredCombinationOptions = computed(() => {
-  const options = new Map<string, { value: string; label: string }>()
+  const options = new Map()
   for (const constraint of props.form.observationConstraints ?? []) {
     const key = combinationKey(constraint.satelliteIds)
     if (options.has(key)) continue
-    const label = constraint.satelliteIds.map((satelliteId) => satelliteNameById.value.get(String(satelliteId)) ?? String(satelliteId)).join(' + ')
+    const label = constraint.satelliteIds
+      .map((satelliteId) => satelliteNameById.value.get(String(satelliteId)) ?? String(satelliteId))
+      .join(' + ')
     options.set(key, { value: key, label: `${label} ≥ ${props.formatDuration(constraint.minDurationSec)}` })
   }
   return [...options.values()]
 })
-
 /** 两个下拉筛选器只影响当前结果的展示，不会修改已完成规划的原始结果。 */
 const filteredTargetResultGroups = computed(() => {
-  return targetResultGroups.value.map((target) => ({
-    ...target,
-    combinations: target.combinations.filter((combination) => combinationFilter.value === 'ALL'
-      || combination.key === combinationFilter.value),
-  })).filter((target) => target.combinations.length > 0
-    && (targetResultTargetId.value === 'ALL' || target.targetId === targetResultTargetId.value))
+  return targetResultGroups.value
+    .map((target) => ({
+      ...target,
+      combinations: target.combinations.filter(
+        (combination) => combinationFilter.value === 'ALL' || combination.key === combinationFilter.value,
+      ),
+    }))
+    .filter(
+      (target) =>
+        target.combinations.length > 0 &&
+        (targetResultTargetId.value === 'ALL' || target.targetId === targetResultTargetId.value),
+    )
 })
-
 const pagedTargetResultGroups = computed(() => {
   const start = (targetResultPage.value - 1) * targetResultPageSize.value
   return filteredTargetResultGroups.value.slice(start, start + targetResultPageSize.value)
 })
-
 /**
  * 按目标勾选与确认选择:勾选状态、合并完整时段(并集)与提交逻辑
  * 统一复用 useSelectionConfirm 组合式函数,组件只提供数据与依赖。
@@ -243,7 +189,6 @@ const {
   collectArcs: collectAllArcInputs,
   buildSelections,
 })
-
 /** 收集全部目标的弧段(带目标 ID),供确认选择计算勾选目标的合并完整时段。 */
 function collectAllArcInputs() {
   return targetResultGroups.value.flatMap((target) =>
@@ -257,9 +202,8 @@ function collectAllArcInputs() {
     ),
   )
 }
-
 /** 构建逐目标提交明细:目标元数据 + 合并完整窗口 + 逐星统计(WinTool 口径方位/天底角俯仰)。 */
-function buildSelections(targetIds: string[]): SelectionTarget[] {
+function buildSelections(targetIds) {
   return targetIds.map((targetId) => {
     const target = targetResultGroups.value.find((item) => item.targetId === targetId)
     if (!target) {
@@ -276,8 +220,12 @@ function buildSelections(targetIds: string[]): SelectionTarget[] {
       durationSec: aggregate.totalSec,
       distanceMinKm: Number.isFinite(aggregate.minDistanceKm) ? aggregate.minDistanceKm : null,
       distanceMaxKm: Number.isFinite(aggregate.maxDistanceKm) ? aggregate.maxDistanceKm : null,
-      azimuthRelativeMinusXMinDeg: Number.isFinite(aggregate.minAzimuthDeg) ? toWinToolAzimuth(aggregate.minAzimuthDeg, aggregate.letter) : null,
-      azimuthRelativeMinusXMaxDeg: Number.isFinite(aggregate.maxAzimuthDeg) ? toWinToolAzimuth(aggregate.maxAzimuthDeg, aggregate.letter) : null,
+      azimuthRelativeMinusXMinDeg: Number.isFinite(aggregate.minAzimuthDeg)
+        ? toWinToolAzimuth(aggregate.minAzimuthDeg, aggregate.letter)
+        : null,
+      azimuthRelativeMinusXMaxDeg: Number.isFinite(aggregate.maxAzimuthDeg)
+        ? toWinToolAzimuth(aggregate.maxAzimuthDeg, aggregate.letter)
+        : null,
       elevationZenithMinDeg: Number.isFinite(aggregate.minElevationDeg) ? aggregate.minElevationDeg + 90 : null,
       elevationZenithMaxDeg: Number.isFinite(aggregate.maxElevationDeg) ? aggregate.maxElevationDeg + 90 : null,
       maxAngleRateDegPerSec: aggregate.maxAngleRateDegPerSec,
@@ -290,63 +238,65 @@ function buildSelections(targetIds: string[]): SelectionTarget[] {
       firstOrbitLine: target.firstOrbitLine ?? null,
       secondOrbitLine: target.secondOrbitLine ?? null,
       combination: satelliteAggregates.map((item) => item.letter ?? item.satelliteName).join('+'),
-      mergedWindows: mergedWindows.map((segment) => ({ startTime: segment.startTime, endTime: segment.endTime, durationSec: segment.durationSec })),
+      mergedWindows: mergedWindows.map((segment) => ({
+        startTime: segment.startTime,
+        endTime: segment.endTime,
+        durationSec: segment.durationSec,
+      })),
       totalDurationSec: mergedWindows.reduce((total, segment) => total + segment.durationSec, 0),
       satellites,
     }
   })
 }
-
-function formatNumber(value: number, digits: number): string {
+function formatNumber(value, digits) {
   return Number.isFinite(value) ? value.toFixed(digits) : '—'
 }
-
 /** 目标合并观测时长 = 其全部组合时长之和(与后端任务摘要口径一致)。 */
-function sumTargetDurationSec(target: TargetResultGroup): number {
+function sumTargetDurationSec(target) {
   return target.combinations.reduce((total, combination) => total + combination.totalDurationSec, 0)
 }
-
 /** 摘要块的渲染视图:权重文本、组合时长与逐星统计瓦片。 */
-function getSummaryView(target: TargetResultGroup) {
+function getSummaryView(target) {
   const weightText = target.targetWeightKg == null ? '未知重量' : `${target.targetWeightKg.toFixed(2)} kg`
   const combos = target.combinations.map((combination) => ({
     label: combination.label,
     duration: props.formatDuration(combination.totalDurationSec),
   }))
-  const sats = collectSatelliteObservationStats(
-    target.combinations.flatMap((combination) => combination.arcs),
-  ).map((item) => ({
-    letterText: item.letter ?? item.satelliteName,
-    satelliteName: item.satelliteName,
-    windows: item.windows,
-    stats: [
-      { label: '距离范围', value: `${formatNumber(item.minDistanceKm, 2)} ~ ${formatNumber(item.maxDistanceKm, 2)} km` },
-      { label: '方位(相对-X)', value: formatAzimuthRange(item.minAzimuthDeg, item.maxAzimuthDeg, item.letter).text },
-      { label: '俯仰(天底角)', value: `${formatNumber(item.minElevationDeg + 90, 4)} ~ ${formatNumber(item.maxElevationDeg + 90, 4)} 度` },
-      { label: '最大相对角速度', value: `${formatNumber(item.maxAngleRateDegPerSec, 7)} 度/秒` },
-    ],
-  }))
+  const sats = collectSatelliteObservationStats(target.combinations.flatMap((combination) => combination.arcs)).map(
+    (item) => ({
+      letterText: item.letter ?? item.satelliteName,
+      satelliteName: item.satelliteName,
+      windows: item.windows,
+      stats: [
+        {
+          label: '距离范围',
+          value: `${formatNumber(item.minDistanceKm, 2)} ~ ${formatNumber(item.maxDistanceKm, 2)} km`,
+        },
+        { label: '方位(相对-X)', value: formatAzimuthRange(item.minAzimuthDeg, item.maxAzimuthDeg, item.letter).text },
+        {
+          label: '俯仰(天底角)',
+          value: `${formatNumber(item.minElevationDeg + 90, 4)} ~ ${formatNumber(item.maxElevationDeg + 90, 4)} 度`,
+        },
+        { label: '最大相对角速度', value: `${formatNumber(item.maxAngleRateDegPerSec, 7)} 度/秒` },
+      ],
+    }),
+  )
   return { weightText, combos, sats }
 }
-
-function summaryWeightText(target: TargetResultGroup): string {
+function summaryWeightText(target) {
   return target.targetWeightKg == null ? '未知重量' : `${target.targetWeightKg.toFixed(2)} kg`
 }
-
 /** 后端可能仅回传部分跳过明细，但总数始终以 totalSkippedPairs 为准。 */
 const skippedPairCount = computed(() => props.plan?.totalSkippedPairs ?? props.plan?.skippedPairs?.length ?? 0)
-
 /** 新的规划结果到达时，默认打开第一项目标，便于直接查看结果。 */
 watch(targetResultGroups, (groups) => {
   targetResultPage.value = 1
   expandedTargetIds.value = groups.length ? [groups[0].targetId] : []
 })
-
 /** 展示筛选条件或每页条数变化时，回到首页以避免展示空页；不会改变已展开的目标。 */
 watch([targetResultTargetId, combinationFilter, targetResultPageSize], () => {
   targetResultPage.value = 1
 })
-
 </script>
 
 <template>
@@ -377,8 +327,8 @@ watch([targetResultTargetId, combinationFilter, targetResultPageSize], () => {
         </el-form-item>
       </el-form>
       <div v-if="form.illuminationConstraint.mode === 'CUSTOM'" class="illumination-custom-editor">
-        <span>观测星允许状态：</span><el-checkbox-group v-model="form.illuminationConstraint.observerStates"><el-checkbox v-for="state in illuminationStates" :key="state.value" :value="state.value">{{ state.label }}</el-checkbox></el-checkbox-group>
-        <span>目标允许状态：</span><el-checkbox-group v-model="form.illuminationConstraint.targetStates"><el-checkbox v-for="state in illuminationStates" :key="state.value" :value="state.value">{{ state.label }}</el-checkbox></el-checkbox-group>
+        <span>观测星允许状态：</span><el-checkbox-group v-model="form.illuminationConstraint.observerStates"><el-checkbox v-for="state in illuminationStates" :key="state.value" :label="state.value">{{ state.label }}</el-checkbox></el-checkbox-group>
+        <span>目标允许状态：</span><el-checkbox-group v-model="form.illuminationConstraint.targetStates"><el-checkbox v-for="state in illuminationStates" :key="state.value" :label="state.value">{{ state.label }}</el-checkbox></el-checkbox-group>
       </div>
       <div v-if="task" data-test="task-progress" class="task-progress">
         <div class="planning-context">
@@ -412,7 +362,7 @@ watch([targetResultTargetId, combinationFilter, targetResultPageSize], () => {
         <el-collapse v-else v-model="expandedTargetIds" class="target-result-list">
           <el-collapse-item v-for="target in pagedTargetResultGroups" :key="target.targetId" :name="target.targetId" data-test="target-result-group">
             <template #title>
-              <div class="target-result-title"><el-checkbox class="target-select-checkbox" data-test="target-select-checkbox" :model-value="isTargetSelected(target.targetId)" @click.stop @change="(value: unknown) => toggleTargetSelection(target.targetId, Boolean(value))" /><strong>{{ target.targetName }}</strong><span>目标 ID：{{ target.targetId }}</span><el-tag size="small">{{ target.combinations.length }} 个观测组合</el-tag></div>
+              <div class="target-result-title"><el-checkbox class="target-select-checkbox" data-test="target-select-checkbox" :value="isTargetSelected(target.targetId)" @click.native.stop @change="(value) => toggleTargetSelection(target.targetId, Boolean(value))" /><strong>{{ target.targetName }}</strong><span>目标 ID：{{ target.targetId }}</span><el-tag size="small">{{ target.combinations.length }} 个观测组合</el-tag></div>
             </template>
             <section v-for="combination in target.combinations" :key="combination.key" class="combination-result-group" data-test="combination-result-group">
               <div class="combination-result-header">
@@ -439,7 +389,7 @@ watch([targetResultTargetId, combinationFilter, targetResultPageSize], () => {
             </section>
           </el-collapse-item>
         </el-collapse>
-        <el-pagination v-if="filteredTargetResultGroups.length" v-model:current-page="targetResultPage" v-model:page-size="targetResultPageSize" class="target-result-pagination" layout="total, sizes, prev, pager, next, jumper" :page-sizes="TARGET_RESULT_PAGE_SIZES" :total="filteredTargetResultGroups.length" />
+        <el-pagination v-if="filteredTargetResultGroups.length" :current-page.sync="targetResultPage" :page-size.sync="targetResultPageSize" class="target-result-pagination" layout="total, sizes, prev, pager, next, jumper" :page-sizes="TARGET_RESULT_PAGE_SIZES" :total="filteredTargetResultGroups.length" />
         </div>
         <div class="result-block">
           <div class="result-block-title">摘要信息</div>
@@ -471,7 +421,7 @@ watch([targetResultTargetId, combinationFilter, targetResultPageSize], () => {
           </el-collapse-item>
         </el-collapse>
         </div>
-        <el-dialog v-model="skippedPairsDialogVisible" :teleported="false" title="跳过记录" width="min(900px, 90vw)">
+        <el-dialog :visible.sync="skippedPairsDialogVisible" title="跳过记录" width="min(900px, 90vw)">
           <p v-if="skippedPairCount > (plan.skippedPairs?.length ?? 0)" class="skipped-detail-note">当前响应展示前 {{ plan.skippedPairs?.length ?? 0 }} 条，跳过总数为 {{ skippedPairCount }} 条。</p>
           <el-table v-if="plan.skippedPairs?.length" :data="plan.skippedPairs" data-test="skipped-pairs-table" size="small" max-height="420">
             <el-table-column prop="observerSatelliteName" label="观测星" min-width="120" />

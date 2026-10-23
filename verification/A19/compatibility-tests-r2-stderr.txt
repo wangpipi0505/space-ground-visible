@@ -1,0 +1,8 @@
+stderr | src/components/TaskResultRecordsPanel.spec.js > TaskResultRecordsPanel > A19 实际关键词框按 Enter 使用相同筛选条件重新查询
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskSatelliteSelectionStep.spec.js > TaskSatelliteSelectionStep > A19 实际输入框按 Enter 继续触发卫星查询
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+

@@ -1,28 +1,22 @@
-<script setup lang="ts">
-/** 展示下传窗口与自选范围；选择和校验事件确定后续观测规划的时间边界。 */
-import type { TimeRange } from '../composables/useVisibilityWorkbench'
+<script>
+export default { name: 'WindowSelectionPanel' }
+</script>
 
-defineOptions({ name: 'WindowSelectionPanel' })
-
-defineProps<{
-  rows: Array<{ key: string; sourceLabel: string; sourceCount: number; startTime: string; endTime: string; durationSec: number }>
-  singleWindows?: Array<{ key: string; satelliteName: string; stationName: string; startTime: string; endTime: string; durationSec: number }>
-  skippedLinks?: Array<{ satelliteName: string; stationName: string; stage: string; reason: string }>
-  totalSkippedLinks?: number
-  customWindowRange: TimeRange
-  loading: boolean
-  selectedWindowLabel: string
-  selectedWindowStartTime: string
-  selectedWindowEndTime: string
-  formatTime: (time: string) => string
-  formatDuration: (durationSec: number) => string
-}>()
-
-const emit = defineEmits<{
-  selectPlanned: [startTime: string, endTime: string, label: string]
-  validateCustom: []
-  'update:customWindowRange': [timeRange: TimeRange]
-}>()
+<script setup>
+defineProps({
+  rows: { type: Array, required: true },
+  singleWindows: { type: Array },
+  skippedLinks: { type: Array },
+  totalSkippedLinks: { type: Number },
+  customWindowRange: { type: Array, required: true },
+  loading: { type: Boolean, required: true },
+  selectedWindowLabel: { type: String, required: true },
+  selectedWindowStartTime: { type: String, required: true },
+  selectedWindowEndTime: { type: String, required: true },
+  formatTime: { type: Function, required: true },
+  formatDuration: { type: Function, required: true },
+})
+const emit = defineEmits(['selectPlanned', 'validateCustom', 'update:customWindowRange'])
 </script>
 
 <template>
@@ -36,14 +30,14 @@ const emit = defineEmits<{
       <el-table-column prop="sourceLabel" label="连续覆盖链路" min-width="190" /><el-table-column prop="sourceCount" label="链路数" width="70" />
       <el-table-column label="起止时间" min-width="190"><template #default="scope">{{ formatTime(scope.row.startTime) }}<br>{{ formatTime(scope.row.endTime) }}</template></el-table-column>
       <el-table-column label="时长" width="78"><template #default="scope">{{ formatDuration(scope.row.durationSec) }}</template></el-table-column>
-      <el-table-column label="使用" width="62"><template #default="scope"><el-button text type="primary" @click="emit('selectPlanned', scope.row.startTime, scope.row.endTime, `连续下传覆盖：${scope.row.sourceLabel}`)">选择</el-button></template></el-table-column>
+      <el-table-column label="使用" width="62"><template #default="scope"><el-button type="text" data-text-type="primary" @click="emit('selectPlanned', scope.row.startTime, scope.row.endTime, `连续下传覆盖：${scope.row.sourceLabel}`)">选择</el-button></template></el-table-column>
     </el-table>
     <el-table v-if="singleWindows?.length" :data="singleWindows" data-test="single-window-table" size="small" max-height="200" class="single-window-table" empty-text="暂无单星窗口">
       <el-table-column prop="satelliteName" label="卫星" min-width="130" />
       <el-table-column prop="stationName" label="地面站" min-width="110" />
       <el-table-column label="起止时间" min-width="190"><template #default="scope">{{ formatTime(scope.row.startTime) }}<br>{{ formatTime(scope.row.endTime) }}</template></el-table-column>
       <el-table-column label="时长" width="78"><template #default="scope">{{ formatDuration(scope.row.durationSec) }}</template></el-table-column>
-      <el-table-column label="使用" width="62"><template #default="scope"><el-button text type="primary" @click="emit('selectPlanned', scope.row.startTime, scope.row.endTime, `单星下传：${scope.row.satelliteName}—${scope.row.stationName}`)">选择</el-button></template></el-table-column>
+      <el-table-column label="使用" width="62"><template #default="scope"><el-button type="text" data-text-type="primary" @click="emit('selectPlanned', scope.row.startTime, scope.row.endTime, `单星下传：${scope.row.satelliteName}—${scope.row.stationName}`)">选择</el-button></template></el-table-column>
     </el-table>
     <el-alert v-if="(totalSkippedLinks ?? 0) > 0" data-test="skipped-links-summary" type="warning" :closable="false" show-icon>
       <template #title>下传规划跳过 {{ totalSkippedLinks }} 条站星链路；未跳过的链路已正常完成。</template>
@@ -56,7 +50,7 @@ const emit = defineEmits<{
       <el-table-column prop="reason" label="跳过原因" min-width="200" show-overflow-tooltip />
     </el-table>
     <div class="custom-window-editor">
-      <el-date-picker :model-value="customWindowRange" type="datetimerange" range-separator="至" start-placeholder="开始" end-placeholder="结束" @update:model-value="$emit('update:customWindowRange', $event as TimeRange)" />
+      <el-date-picker :value="customWindowRange" type="datetimerange" range-separator="至" start-placeholder="开始" end-placeholder="结束" @input="$emit('update:customWindowRange', $event)" />
       <el-button :loading="loading" @click="emit('validateCustom')">校验自选</el-button>
     </div>
   </el-card>

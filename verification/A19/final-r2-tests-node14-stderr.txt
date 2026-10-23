@@ -1,0 +1,1206 @@
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 双星初始可编辑，末格input直接进入361扫描请求且目标UTC优先于默认
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/App.spec.js > App > A06 弹道仅两个一级入口且拟合下三子页保留空间入口
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticFitView.spec.js > T23 拟合页面状态 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > A19 点击实际目标复选框保持折叠组展开状态
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticSimulationView.spec.js > T24 模拟页面与实际结果引用 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskResultRecordsPanel.spec.js > TaskResultRecordsPanel > A19 实际关键词框按 Enter 使用相同筛选条件重新查询
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/SatellitePayloadPanel.spec.js > SatellitePayloadPanel > provides a persistent space payload save action for every selected satellite
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/BallisticWindowResults.spec.js > T22 原结果层级与真实点展示 > 全部偏移可选、两弧层级及点表保持服务累计，跨180度不画贯穿假线
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskSatelliteSelectionStep.spec.js > TaskSatelliteSelectionStep > A19 实际输入框按 Enter 继续触发卫星查询
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/utils/ballisticRetime.spec.js > T25 重定时完整CSV命名列 > 未知文本/列重排/缺dt/负标记保留，跨日非整秒UTC及原点表按列名显示
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TargetSelectionStep.spec.js > TargetSelectionStep > collects a minimum mass and plain-text target exclusion condition
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/ObservationConstraintPanel.spec.js > ObservationConstraintPanel > allows direct editing of an existing combination duration
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/WindowSelectionPanel.spec.js > WindowSelectionPanel > binds merged coverage windows to their contributing link summary
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskResultDetailDrawer.spec.js > TaskResultDetailDrawer > shows the persisted full skipped-pair list separately from result JSON
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > A19 卫星根数输入在 Element UI 内保留可访问名称
+Error: Unable to find input[aria-label="SAT-A 卫星名称"] within: <section aria-label="弹道载荷配置" class="ballistic-payload-view ballistic-workspace">
+  <header class="ballistic-page-header">
+    <h2>可视窗口计算</h2><span class="ballistic-badge">示例配置</span><span class="ballistic-muted">2 颗卫星</span>
+  </header>
+  <section aria-label="弹道文件与窗口计算" class="ballistic-window-controls ballistic-workbench-grid">
+    <div class="ballistic-input-column">
+      <div class="ballistic-input-scroll">
+        <section class="ballistic-panel">
+          <fieldset class="ballistic-native-form">
+            <legend>卫星六根数表</legend>
+            <div class="ballistic-orbit-toolbar">
+              <form class="el-form el-form--label-top">
+                <div class="el-form-item"><label class="el-form-item__label">示例星座</label>
+                  <div class="el-form-item__content">
+                    <div class="el-select" data-test="constellation-example">
+                      <!---->
+                      <div class="el-input el-input--suffix">
+                        <!----><input type="text" readonly="readonly" autocomplete="off" placeholder="请选择" class="el-input__inner">
+                        <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!----><!----></span>
+                        <!----></span>
+                        <!---->
+                        <!---->
+                      </div>
+                      <transition-stub name="el-zoom-in-top">
+                        <div class="el-select-dropdown el-popper" style="display: none;">
+                          <div class="el-scrollbar" style="display: none;">
+                            <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                              <ul class="el-scrollbar__view el-select-dropdown__list">
+                                <!---->
+                                <li class="el-select-dropdown__item selected"><span>默认双星星座 SAT-A/SAT-B</span></li>
+                                <li class="el-select-dropdown__item"><span>太阳同步四星星座</span></li>
+                                <li class="el-select-dropdown__item"><span>MEO导航六星星座</span></li>
+                                <li class="el-select-dropdown__item"><span>Molniya高椭圆三星星座</span></li>
+                              </ul>
+                            </div>
+                            <div class="el-scrollbar__bar is-horizontal">
+                              <div class="el-scrollbar__thumb" style="width: 0px; transform: translateX(0%);"></div>
+                            </div>
+                            <div class="el-scrollbar__bar is-vertical">
+                              <div class="el-scrollbar__thumb" style="height: 0px; transform: translateY(0%);"></div>
+                            </div>
+                          </div>
+                          <p class="el-select-dropdown__empty">
+                            无数据
+                          </p>
+                        </div>
+                      </transition-stub>
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </form><button type="button" class="el-button el-button--primary" data-test="load-constellation">
+                <!---->
+                <!----><span>载入示例</span></button>
+            </div>
+            <div class="ballistic-table-scroll">
+              <div class="el-table el-table--fit el-table--border el-table--enable-row-hover el-table--enable-row-transition el-table--small" table-layout="auto">
+                <div class="hidden-columns">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+                <div class="el-table__header-wrapper">
+                  <table cellspacing="0" cellpadding="0" border="0" class="el-table__header">
+                    <colgroup></colgroup>
+                    <thead class="">
+                      <tr class=""></tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="el-table__body-wrapper is-scrolling-none">
+                  <table cellspacing="0" cellpadding="0" border="0" class="el-table__body">
+                    <colgroup></colgroup>
+                    <tbody>
+                      <tr class="el-table__row"></tr>
+                      <tr class="el-table__row"></tr>
+                      <!---->
+                    </tbody>
+                  </table>
+                  <!---->
+                  <!---->
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <div class="el-table__column-resize-proxy" style="display: none;"></div>
+              </div>
+            </div>
+            <details class="ballistic-generator">
+              <summary>按种子生成星座</summary>
+              <form class="el-form ballistic-field-grid el-form--label-top">
+                <div class="el-form-item"><label class="el-form-item__label">星座名</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">轨道平面数</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="number" autocomplete="off" data-generator-field="planeCount" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">每平面卫星数</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="number" autocomplete="off" data-generator-field="satellitesPerPlane" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">种子半长轴（米）</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="number" autocomplete="off" data-generator-field="semiMajorAxisM" step="any" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">种子偏心率</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="number" autocomplete="off" data-generator-field="eccentricity" step="any" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">种子倾角（度）</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="number" autocomplete="off" data-generator-field="inclinationDeg" step="any" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">种子升交点赤经（度）</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="number" autocomplete="off" data-generator-field="raanDeg" step="any" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">种子近地点幅角（度）</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="number" autocomplete="off" data-generator-field="argumentOfPerigeeDeg" step="any" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">种子平近点角（度）</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="number" autocomplete="off" data-generator-field="meanAnomalyDeg" step="any" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">历元 UTC</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" data-generator-field="epochUtc" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </form><button type="button" class="el-button el-button--primary" data-test="generate-constellation">
+                <!---->
+                <!----><span>生成星座</span></button>
+              <!---->
+            </details>
+            <details class="ballistic-catalog">
+              <summary>从目录选择卫星</summary>
+              <form class="el-form el-form--label-top">
+                <div class="el-form-item"><label class="el-form-item__label">配置卫星</label>
+                  <div class="el-form-item__content">
+                    <div class="el-select" data-test="catalog-satellite-select">
+                      <div class="el-select__tags" style="max-width: -32px; width: 100%;">
+                        <!---->
+                        <transition-group-stub></transition-group-stub><input type="text" autocomplete="off" class="el-select__input" style="flex-grow: 1; width: -0.625%; max-width: -42px;">
+                      </div>
+                      <div class="el-input el-input--suffix">
+                        <!----><input tabindex="-1" type="text" readonly="readonly" autocomplete="off" placeholder="选择配置卫星" class="el-input__inner">
+                        <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!----><!----></span>
+                        <!----></span>
+                        <!---->
+                        <!---->
+                      </div>
+                      <transition-stub name="el-zoom-in-top">
+                        <div class="el-select-dropdown el-popper is-multiple" style="display: none;">
+                          <div class="el-scrollbar" style="display: none;">
+                            <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                              <ul class="el-scrollbar__view el-select-dropdown__list">
+                                <!---->
+                                <li class="el-select-dropdown__item selected"><span>SAT-A</span></li>
+                                <li class="el-select-dropdown__item selected"><span>SAT-B</span></li>
+                              </ul>
+                            </div>
+                            <div class="el-scrollbar__bar is-horizontal">
+                              <div class="el-scrollbar__thumb" style="width: 0px; transform: translateX(0%);"></div>
+                            </div>
+                            <div class="el-scrollbar__bar is-vertical">
+                              <div class="el-scrollbar__thumb" style="height: 0px; transform: translateY(0%);"></div>
+                            </div>
+                          </div>
+                          <p class="el-select-dropdown__empty">
+                            无数据
+                          </p>
+                        </div>
+                      </transition-stub>
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </form>
+            </details><button type="button" class="el-button el-button--default el-button--small" data-test="add-manual-satellite">
+              <!---->
+              <!----><span>新增手工卫星</span></button>
+          </fieldset>
+          <!---->
+        </section>
+        <fieldset class="ballistic-native-form ballistic-panel">
+          <legend>弹道目标</legend>
+          <div class="ballistic-section-heading"><span class="ballistic-muted">CSV / Excel</span><button type="button" class="el-button el-button--default">
+              <!---->
+              <!----><span>新增目标</span></button></div>
+          <article data-target-id="TGT-1" class="ballistic-target">
+            <fieldset>
+              <form class="el-form ballistic-field-grid el-form--label-top">
+                <div class="el-form-item"><label class="el-form-item__label">目标名称</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+                <div class="el-form-item"><label class="el-form-item__label">文件来源</label>
+                  <div class="el-form-item__content">
+                    <div class="el-select" data-test="window-source">
+                      <!---->
+                      <div class="el-input el-input--suffix">
+                        <!----><input type="text" readonly="readonly" autocomplete="off" placeholder="请选择" class="el-input__inner">
+                        <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!----><!----></span>
+                        <!----></span>
+                        <!---->
+                        <!---->
+                      </div>
+                      <transition-stub name="el-zoom-in-top">
+                        <div class="el-select-dropdown el-popper" style="display: none;">
+                          <div class="el-scrollbar" style="display: none;">
+                            <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                              <ul class="el-scrollbar__view el-select-dropdown__list">
+                                <!---->
+                                <li class="el-select-dropdown__item selected"><span>本地上传</span></li>
+                                <li class="el-select-dropdown__item"><span>网络地址</span></li>
+                                <li class="el-select-dropdown__item"><span>已生成弹道</span></li>
+                              </ul>
+                            </div>
+                            <div class="el-scrollbar__bar is-horizontal">
+                              <div class="el-scrollbar__thumb" style="width: 0px; transform: translateX(0%);"></div>
+                            </div>
+                            <div class="el-scrollbar__bar is-vertical">
+                              <div class="el-scrollbar__thumb" style="height: 0px; transform: translateY(0%);"></div>
+                            </div>
+                          </div>
+                          <p class="el-select-dropdown__empty">
+                            无数据
+                          </p>
+                        </div>
+                      </transition-stub>
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </form>
+              <div class="ballistic-file-picker">
+                <form class="el-form el-form--label-top">
+                  <div class="el-form-item"><label class="el-form-item__label">选择文件</label>
+                    <div class="el-form-item__content">
+                      <div>
+                        <div tabindex="0" class="el-upload el-upload--text"><button type="button" class="el-button el-button--default">
+                            <!---->
+                            <!----><span>选择弹道文件</span></button><input type="file" name="file" accept=".csv,.xlsx,.xls,.xlsm" class="el-upload__input"></div>
+                      </div>
+                      <transition-stub name="el-zoom-in-top">
+                        <!---->
+                      </transition-stub>
+                    </div>
+                  </div>
+                </form><button type="button" class="el-button el-button--default" data-test="upload-default-window">
+                  <!---->
+                  <!----><span>使用示例弹道</span></button>
+              </div>
+              <!---->
+              <!---->
+              <div class="ballistic-actions">
+                <!----><button type="button" class="el-button el-button--default">
+                  <!---->
+                  <!----><span>删除目标</span></button></div>
+              <details>
+                <summary>目标时间与来源详情</summary>
+                <form class="el-form ballistic-field-grid el-form--label-top">
+                  <div class="el-form-item"><label class="el-form-item__label">目标 ID</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input">
+                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                      </div>
+                      <transition-stub name="el-zoom-in-top">
+                        <!---->
+                      </transition-stub>
+                    </div>
+                  </div>
+                  <div class="el-form-item"><label class="el-form-item__label">基准发射 UTC</label>
+                    <div class="el-form-item__content">
+                      <div class="el-input">
+                        <!----><input type="text" autocomplete="off" data-test="target-base-utc" placeholder="留空沿文件历元" class="el-input__inner">
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                      </div>
+                      <transition-stub name="el-zoom-in-top">
+                        <!---->
+                      </transition-stub>
+                    </div>
+                  </div>
+                </form>
+                <p class="ballistic-muted">目标时间优先于默认时间；均留空时采用文件历元。输入按 UTC 字面值处理。</p>
+                <!---->
+                <!---->
+                <!---->
+              </details>
+            </fieldset>
+            <!---->
+            <!---->
+            <!---->
+          </article>
+          <details>
+            <summary>多目标默认时间</summary>
+            <form class="el-form el-form--label-top">
+              <div class="el-form-item"><label class="el-form-item__label">默认基准发射 UTC</label>
+                <div class="el-form-item__content">
+                  <div class="el-input">
+                    <!----><input type="text" autocomplete="off" data-test="default-base-utc" placeholder="目标留空时采用；再留空沿文件历元" class="el-input__inner">
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                  <transition-stub name="el-zoom-in-top">
+                    <!---->
+                  </transition-stub>
+                </div>
+              </div>
+            </form>
+          </details>
+        </fieldset>
+        <fieldset class="ballistic-native-form ballistic-panel">
+          <legend>发射时间搜索</legend>
+          <form class="el-form ballistic-field-grid ballistic-search-fields el-form--label-top">
+            <div class="el-form-item"><label class="el-form-item__label">起始偏移 (s)</label>
+              <div class="el-form-item__content">
+                <div class="el-input">
+                  <!----><input type="number" autocomplete="off" data-option="startOffsetSec" step="1" class="el-input__inner">
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+            <div class="el-form-item"><label class="el-form-item__label">步长 (s)</label>
+              <div class="el-form-item__content">
+                <div class="el-input">
+                  <!----><input type="number" autocomplete="off" data-option="stepSizeSec" step="1" class="el-input__inner">
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+            <div class="el-form-item"><label class="el-form-item__label">搜索次数</label>
+              <div class="el-form-item__content">
+                <div class="el-input">
+                  <!----><input type="number" autocomplete="off" data-option="numCalculations" step="1" class="el-input__inner">
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+          </form>
+          <p class="ballistic-search-summary">-500 → 3100 秒 · 每 10 秒一次 · 共 361 次</p>
+          <details>
+            <summary>模型与采样</summary>
+            <form class="el-form ballistic-field-grid el-form--label-top">
+              <div class="el-form-item"><label class="el-form-item__label">目标采样步长 (s，≤0 自动)</label>
+                <div class="el-form-item__content">
+                  <div class="el-input">
+                    <!----><input type="number" autocomplete="off" data-option="targetSampleStepSec" step="any" class="el-input__inner">
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                  <transition-stub name="el-zoom-in-top">
+                    <!---->
+                  </transition-stub>
+                </div>
+              </div>
+              <div class="el-form-item"><label class="el-form-item__label">轨道模型</label>
+                <div class="el-form-item__content">
+                  <div class="el-select">
+                    <!---->
+                    <div class="el-input el-input--suffix">
+                      <!----><input type="text" readonly="readonly" autocomplete="off" placeholder="请选择" class="el-input__inner">
+                      <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!----><!----></span>
+                      <!----></span>
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <div class="el-select-dropdown el-popper" style="display: none;">
+                        <div class="el-scrollbar" style="display: none;">
+                          <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                            <ul class="el-scrollbar__view el-select-dropdown__list">
+                              <!---->
+                              <li class="el-select-dropdown__item"><span>TWO_BODY</span></li>
+                              <li class="el-select-dropdown__item"><span>J2_SECULAR</span></li>
+                              <li class="el-select-dropdown__item selected"><span>J2_NUMERICAL</span></li>
+                            </ul>
+                          </div>
+                          <div class="el-scrollbar__bar is-horizontal">
+                            <div class="el-scrollbar__thumb" style="width: 0px; transform: translateX(0%);"></div>
+                          </div>
+                          <div class="el-scrollbar__bar is-vertical">
+                            <div class="el-scrollbar__thumb" style="height: 0px; transform: translateY(0%);"></div>
+                          </div>
+                        </div>
+                        <p class="el-select-dropdown__empty">
+                          无数据
+                        </p>
+                      </div>
+                    </transition-stub>
+                  </div>
+                  <transition-stub name="el-zoom-in-top">
+                    <!---->
+                  </transition-stub>
+                </div>
+              </div>
+              <div class="el-form-item"><label class="el-form-item__label">轨迹点输出</label>
+                <div class="el-form-item__content">
+                  <div class="el-select" data-option="trajectoryPointOutput">
+                    <!---->
+                    <div class="el-input el-input--suffix">
+                      <!----><input type="text" readonly="readonly" autocomplete="off" placeholder="请选择" class="el-input__inner">
+                      <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!----><!----></span>
+                      <!----></span>
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <div class="el-select-dropdown el-popper" style="display: none;">
+                        <div class="el-scrollbar" style="display: none;">
+                          <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                            <ul class="el-scrollbar__view el-select-dropdown__list">
+                              <!---->
+                              <li class="el-select-dropdown__item selected"><span>输出窗口内轨迹点</span></li>
+                              <li class="el-select-dropdown__item"><span>仅窗口摘要</span></li>
+                            </ul>
+                          </div>
+                          <div class="el-scrollbar__bar is-horizontal">
+                            <div class="el-scrollbar__thumb" style="width: 0px; transform: translateX(0%);"></div>
+                          </div>
+                          <div class="el-scrollbar__bar is-vertical">
+                            <div class="el-scrollbar__thumb" style="height: 0px; transform: translateY(0%);"></div>
+                          </div>
+                        </div>
+                        <p class="el-select-dropdown__empty">
+                          无数据
+                        </p>
+                      </div>
+                    </transition-stub>
+                  </div>
+                  <transition-stub name="el-zoom-in-top">
+                    <!---->
+                  </transition-stub>
+                </div>
+              </div>
+            </form>
+            <p class="ballistic-muted">偏移相对于各目标基准发射时间；起点、步长、次数与末次偏移须为安全整数。卫星历元留空采用 2026/07/01 10:00:00 UTC。</p>
+          </details>
+        </fieldset>
+        <section tabindex="-1" class="ballistic-panel ballistic-payload-panel">
+          <div class="ballistic-section-heading">
+            <h3>载荷约束</h3>
+            <form class="el-form el-form--label-top">
+              <div class="el-form-item"><label class="el-form-item__label">当前卫星</label>
+                <div class="el-form-item__content">
+                  <div class="el-select" data-test="current-payload-satellite">
+                    <!---->
+                    <div class="el-input el-input--suffix">
+                      <!----><input type="text" readonly="readonly" autocomplete="off" placeholder="请选择" class="el-input__inner">
+                      <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!----><!----></span>
+                      <!----></span>
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <div class="el-select-dropdown el-popper" style="display: none;">
+                        <div class="el-scrollbar" style="display: none;">
+                          <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                            <ul class="el-scrollbar__view el-select-dropdown__list">
+                              <!---->
+                              <li class="el-select-dropdown__item"><span>SAT-A · 1 个载荷</span></li>
+                              <li class="el-select-dropdown__item"><span>SAT-B · 1 个载荷</span></li>
+                            </ul>
+                          </div>
+                          <div class="el-scrollbar__bar is-horizontal">
+                            <div class="el-scrollbar__thumb" style="width: 0px; transform: translateX(0%);"></div>
+                          </div>
+                          <div class="el-scrollbar__bar is-vertical">
+                            <div class="el-scrollbar__thumb" style="height: 0px; transform: translateY(0%);"></div>
+                          </div>
+                        </div>
+                        <p class="el-select-dropdown__empty">
+                          无数据
+                        </p>
+                      </div>
+                    </transition-stub>
+                  </div>
+                  <transition-stub name="el-zoom-in-top">
+                    <!---->
+                  </transition-stub>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="el-card planning-card is-never-shadow" data-payload-satellite-id="MANUAL-1" style="display: none;">
+            <div class="el-card__header">
+              <div class="compact-card-header"><span class="ballistic-muted">1 个载荷</span><button type="button" class="el-button el-button--default" data-test="add-ballistic-payload-MANUAL-1">
+                  <!---->
+                  <!----><span>新增载荷</span></button></div>
+            </div>
+            <div class="el-card__body">
+              <!---->
+              <details data-payload-id="MANUAL-1-P1" class="ballistic-payload-item">
+                <summary><strong>载荷1 · SPACE</strong><span class="ballistic-payload-summary">距离 1000–4000 km · 方位 90–270° · 俯仰 -90–0°</span><span class="ballistic-muted">展开编辑</span>
+                  <!---->
+                </summary>
+                <div class="payload-identity">
+                  <form class="el-form el-form--label-top">
+                    <div class="el-form-item"><label class="el-form-item__label">载荷名称</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input">
+                          <!----><input type="text" autocomplete="off" class="el-input__inner">
+                          <!---->
+                          <!---->
+                          <!---->
+                          <!---->
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="standard-payload-editor payload-compact">
+                  <form class="el-form payload-form el-form--label-top">
+                    <div class="el-form-item" data-field="payloadType"><label class="el-form-item__label">载荷类型</label>
+                      <div class="el-form-item__content">
+                        <div class="el-select">
+                          <!---->
+                          <div class="el-input el-input--suffix">
+                            <!----><input type="text" readonly="readonly" autocomplete="off" placeholder="请选择" class="el-input__inner">
+                            <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!----><!----></span>
+                            <!----></span>
+                            <!---->
+                            <!---->
+                          </div>
+                          <transition-stub name="el-zoom-in-top">
+                            <div class="el-select-dropdown el-popper" style="display: none;">
+                              <div class="el-scrollbar" style="display: none;">
+                                <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                                  <ul class="el-scrollbar__view el-select-dropdown__list">
+                                    <!---->
+                                    <li class="el-select-dropdown__item selected"><span>对空载荷</span></li>
+                                    <li class="el-select-dropdown__item"><span>对地载荷</span></li>
+                                  </ul>
+                                </div>
+                                <div class="el-scrollbar__bar is-horizontal">
+                                  <div class="el-scrollbar__thumb" style="width: 0px; transform: translateX(0%);"></div>
+                                </div>
+                                <div class="el-scrollbar__bar is-vertical">
+                                  <div class="el-scrollbar__thumb" style="height: 0px; transform: translateY(0%);"></div>
+                                </div>
+                              </div>
+                              <p class="el-select-dropdown__empty">
+                                无数据
+                              </p>
+                            </div>
+                          </transition-stub>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="minDistanceKm"><label class="el-form-item__label">距离下限 (km)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="1000" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="maxDistanceKm"><label class="el-form-item__label">距离上限 (km)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="4000" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="azimuthMinDeg"><label class="el-form-item__label">方位角下限 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="90" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="azimuthMaxDeg"><label class="el-form-item__label">方位角上限 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="270" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="elevationMinDeg"><label class="el-form-item__label">俯仰角下限 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="-90" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="elevationMaxDeg"><label class="el-form-item__label">俯仰角上限 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="0" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="angleRateDegPerSec"><label class="el-form-item__label">跟踪角速度 (°/s)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="0.3" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="sunAvoidHalfAngleDeg"><label class="el-form-item__label">太阳回避半角 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="90" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="startupAngleRateDegPerSec"><label class="el-form-item__label">启动角速度 (°/s)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="0.07" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                  </form>
+                  <details class="ballistic-help">
+                    <summary>单位与约束说明</summary>
+                    <p>距离上限 0 不限；方位/俯仰双端留空不限。LVLH 方位 0° 沿速度方向，俯仰正向背离地球；SPACE 俯仰下限 −90°，GROUND 下限 −91°。</p>
+                    <p>对空跟踪角速度 0/−1 不限；对地 0 为真实零上限，不支持 −1。太阳回避 0 关闭；启动角速度留空/−1 禁用，其余非负值仅为元数据。</p>
+                  </details>
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+                <div class="payload-action"><button type="button" class="el-button el-button--default" data-test="remove-ballistic-payload">
+                    <!---->
+                    <!----><span>删除载荷</span></button></div>
+              </details>
+            </div>
+          </div>
+          <div class="el-card planning-card is-never-shadow" data-payload-satellite-id="MANUAL-2" style="display: none;">
+            <div class="el-card__header">
+              <div class="compact-card-header"><span class="ballistic-muted">1 个载荷</span><button type="button" class="el-button el-button--default" data-test="add-ballistic-payload-MANUAL-2">
+                  <!---->
+                  <!----><span>新增载荷</span></button></div>
+            </div>
+            <div class="el-card__body">
+              <!---->
+              <details data-payload-id="MANUAL-2-P2" class="ballistic-payload-item">
+                <summary><strong>载荷2 · SPACE</strong><span class="ballistic-payload-summary">距离 1000–4000 km · 方位 90–270° · 俯仰 -90–0°</span><span class="ballistic-muted">展开编辑</span>
+                  <!---->
+                </summary>
+                <div class="payload-identity">
+                  <form class="el-form el-form--label-top">
+                    <div class="el-form-item"><label class="el-form-item__label">载荷名称</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input">
+                          <!----><input type="text" autocomplete="off" class="el-input__inner">
+                          <!---->
+                          <!---->
+                          <!---->
+                          <!---->
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="standard-payload-editor payload-compact">
+                  <form class="el-form payload-form el-form--label-top">
+                    <div class="el-form-item" data-field="payloadType"><label class="el-form-item__label">载荷类型</label>
+                      <div class="el-form-item__content">
+                        <div class="el-select">
+                          <!---->
+                          <div class="el-input el-input--suffix">
+                            <!----><input type="text" readonly="readonly" autocomplete="off" placeholder="请选择" class="el-input__inner">
+                            <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!----><!----></span>
+                            <!----></span>
+                            <!---->
+                            <!---->
+                          </div>
+                          <transition-stub name="el-zoom-in-top">
+                            <div class="el-select-dropdown el-popper" style="display: none;">
+                              <div class="el-scrollbar" style="display: none;">
+                                <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                                  <ul class="el-scrollbar__view el-select-dropdown__list">
+                                    <!---->
+                                    <li class="el-select-dropdown__item selected"><span>对空载荷</span></li>
+                                    <li class="el-select-dropdown__item"><span>对地载荷</span></li>
+                                  </ul>
+                                </div>
+                                <div class="el-scrollbar__bar is-horizontal">
+                                  <div class="el-scrollbar__thumb" style="width: 0px; transform: translateX(0%);"></div>
+                                </div>
+                                <div class="el-scrollbar__bar is-vertical">
+                                  <div class="el-scrollbar__thumb" style="height: 0px; transform: translateY(0%);"></div>
+                                </div>
+                              </div>
+                              <p class="el-select-dropdown__empty">
+                                无数据
+                              </p>
+                            </div>
+                          </transition-stub>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="minDistanceKm"><label class="el-form-item__label">距离下限 (km)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="1000" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="maxDistanceKm"><label class="el-form-item__label">距离上限 (km)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="4000" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="azimuthMinDeg"><label class="el-form-item__label">方位角下限 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="90" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="azimuthMaxDeg"><label class="el-form-item__label">方位角上限 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="270" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="elevationMinDeg"><label class="el-form-item__label">俯仰角下限 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="-90" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="elevationMaxDeg"><label class="el-form-item__label">俯仰角上限 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="0" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="angleRateDegPerSec"><label class="el-form-item__label">跟踪角速度 (°/s)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="0.3" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="sunAvoidHalfAngleDeg"><label class="el-form-item__label">太阳回避半角 (°)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="90" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                    <div class="el-form-item" data-field="startupAngleRateDegPerSec"><label class="el-form-item__label">启动角速度 (°/s)</label>
+                      <div class="el-form-item__content">
+                        <div class="el-input-number is-controls-right"><span role="button" class="el-input-number__decrease"><i class="el-icon-arrow-down"></i></span><span role="button" class="el-input-number__increase"><i class="el-icon-arrow-up"></i></span>
+                          <div class="el-input">
+                            <!----><input type="text" autocomplete="off" max="Infinity" min="-Infinity" class="el-input__inner" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="-Infinity" aria-valuenow="0.07" aria-disabled="false">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                          </div>
+                        </div>
+                        <transition-stub name="el-zoom-in-top">
+                          <!---->
+                        </transition-stub>
+                      </div>
+                    </div>
+                  </form>
+                  <details class="ballistic-help">
+                    <summary>单位与约束说明</summary>
+                    <p>距离上限 0 不限；方位/俯仰双端留空不限。LVLH 方位 0° 沿速度方向，俯仰正向背离地球；SPACE 俯仰下限 −90°，GROUND 下限 −91°。</p>
+                    <p>对空跟踪角速度 0/−1 不限；对地 0 为真实零上限，不支持 −1。太阳回避 0 关闭；启动角速度留空/−1 禁用，其余非负值仅为元数据。</p>
+                  </details>
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+                <div class="payload-action"><button type="button" class="el-button el-button--default" data-test="remove-ballistic-payload">
+                    <!---->
+                    <!----><span>删除载荷</span></button></div>
+              </details>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="ballistic-compute-bar"><span>2 颗卫星 · 2 个载荷 · 1 个目标</span>
+        <div class="ballistic-compute-actions"><button type="button" class="el-button el-button--default" data-test="open-payload-settings">
+            <!---->
+            <!----><span>载荷设置</span></button><button type="button" class="el-button ballistic-primary-action el-button--primary" data-test="compute-window">
+            <!---->
+            <!----><span>计算可见窗口</span></button></div>
+      </div>
+    </div>
+    <aside data-test="window-result-panel" aria-label="窗口计算结果" class="ballistic-results-column ballistic-panel">
+      <div class="ballistic-section-heading">
+        <h3>窗口结果</h3><span class="ballistic-badge">待计算</span>
+      </div>
+      <!---->
+      <div class="ballistic-empty-state"><span class="ballistic-state-mark">↗</span>
+        <h3>等待计算</h3>
+        <p>选择弹道文件后，点击“计算可见窗口”。</p>
+      </div>
+    </aside>
+  </section>
+</section>
+ ❯ VueWrapper.get node_modules/.pnpm/@vue+test-utils@1.3.6_kszqv4ntea7le2tfdnfsk4vbta/node_modules/@vue/test-utils/dist/vue-test-utils.esm.js:10618:11
+ ❯ VueWrapper.wrapper.<computed> [as get] src/test/vueTestUtils.js:13:41
+     11|     if (!wrapper[method]) continue
+     12|     const original = wrapper[method].bind(wrapper)
+     13|     wrapper[method] = (...args) => wrap(original(...args))
+       |                                         ^
+     14|   }
+     15|   for (const method of ['findAll', 'findAllComponents']) {
+ ❯ src/views/BallisticPayloadConfigurationView.spec.js:13:20
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

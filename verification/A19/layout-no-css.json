@@ -1,0 +1,34 @@
+[
+  {
+    "finished": "http://127.0.0.1:5176/"
+  },
+  {
+    "finished": "http://127.0.0.1:5176/assets/index-2c7099d7.css"
+  },
+  {
+    "finished": "http://127.0.0.1:5176/assets/index-b6929535.js"
+  },
+  {
+    "finished": "http://127.0.0.1:5176/api/v1/space/health"
+  },
+  {
+    "finished": "http://127.0.0.1:5176/favicon.svg"
+  },
+  {
+    "finished": "http://127.0.0.1:5176/api/v1/space/defaults"
+  },
+  {
+    "finished": "http://127.0.0.1:5176/api/v1/space/stations"
+  },
+  {
+    "finished": "http://127.0.0.1:5176/api/v1/space/targets/belong-options"
+  },
+  {
+    "finished": "http://127.0.0.1:5176/api/v1/space/satellites/page?pageNumber=1&pageSize=50"
+  },
+  {
+    "loaded": true,
+    "title": "空间目标可见窗口规划",
+    "textLength": 913
+  }
+]

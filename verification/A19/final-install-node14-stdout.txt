@@ -1,0 +1,8 @@
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+
+> space-ground-visible-frontend@0.0.0 preinstall G:\5-YG\space-ground-visible\frontend
+> node scripts/check-node.cjs
+
+Done in 953ms

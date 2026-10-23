@@ -1,23 +1,16 @@
-<script setup lang="ts">
-/** 编辑同一目标的联合观测卫星及共同可见时长，以事件交给工作台验证和保存。 */
-import type { Satellite } from '../api/types'
-import type { ObservationConstraintForm } from '../composables/useVisibilityWorkbench'
+<script>
+export default { name: 'ObservationConstraintPanel' }
+</script>
 
-defineOptions({ name: 'ObservationConstraintPanel' })
-
-const props = defineProps<{
-  satellites: Satellite[]
-  draft: ObservationConstraintForm
-  constraints: ObservationConstraintForm[]
-}>()
-
-const emit = defineEmits<{
-  add: []
-  remove: [index: number]
-}>()
-
+<script setup>
+const props = defineProps({
+  satellites: { type: Array, required: true },
+  draft: { type: null, required: true },
+  constraints: { type: Array, required: true },
+})
+const emit = defineEmits(['add', 'remove'])
 /** 将卫星标识转换为便于核对的名称。 */
-function satelliteName(satelliteId: number): string {
+function satelliteName(satelliteId) {
   return props.satellites.find((satellite) => satellite.id === satelliteId)?.name ?? String(satelliteId)
 }
 </script>
@@ -33,7 +26,7 @@ function satelliteName(satelliteId: number): string {
       </div>
       <div class="observation-editor">
         <el-checkbox-group v-model="draft.satelliteIds" class="task-satellite-checks">
-          <el-checkbox-button v-for="satellite in satellites" :key="satellite.id" :value="satellite.id">{{ satellite.name }}</el-checkbox-button>
+          <el-checkbox-button v-for="satellite in satellites" :key="satellite.id" :label="satellite.id">{{ satellite.name }}</el-checkbox-button>
         </el-checkbox-group>
         <div class="constraint-duration-editor"><span class="constraint-guide-step">2</span><span>共同可见时长（秒）</span><el-input-number v-model="draft.minDurationSec" :min="0" controls-position="right" /></div>
         <el-button type="primary" @click="emit('add')">添加组合约束</el-button>
@@ -41,7 +34,7 @@ function satelliteName(satelliteId: number): string {
       <el-table :data="constraints" size="small" max-height="210" empty-text="未设置组合时，默认分别输出每颗已选卫星的观测结果">
         <el-table-column label="卫星组合" min-width="180"><template #default="scope">{{ scope.row.satelliteIds.map(satelliteName).join(' + ') }}</template></el-table-column>
         <el-table-column label="共同可见时长（秒）" width="170"><template #default="scope"><el-input-number data-test="constraint-duration" v-model="scope.row.minDurationSec" :min="0" controls-position="right" /></template></el-table-column>
-        <el-table-column label="操作" width="70"><template #default="scope"><el-button text type="danger" @click="emit('remove', scope.$index)">删除</el-button></template></el-table-column>
+        <el-table-column label="操作" width="70"><template #default="scope"><el-button type="text" data-text-type="danger" @click="emit('remove', scope.$index)">删除</el-button></template></el-table-column>
       </el-table>
     </template>
   </el-card>

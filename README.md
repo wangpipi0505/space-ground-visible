@@ -9,13 +9,13 @@
 | 目录 | 用途 |
 | --- | --- |
 | `backend/` | 标准 Maven 工程，`api/application/domain/infrastructure` 分层；Java 8、Spring Boot 2.7.18、Orekit 12.0 |
-| `frontend/` | 独立 Vue 3 / TypeScript / Element Plus / Vite 工程；依赖版本由原 `pnpm-lock.yaml` 冻结 |
+| `frontend/` | 独立 Vue 2.7 / JavaScript / Element UI / Vite 工程；依赖版本由原 `pnpm-lock.yaml` 冻结 |
 | `deploy/` | 正式独立构建、打包、启动脚本及 Nginx/外置配置模板 |
 | `docs/` | 接口、载荷、数值与后续方案；`docs/examples/` 提供可执行 HTTP 示例 |
 | `test-data/` | 有来源/校验值的必要参考数据及黄金基准，属于回归输入，不是生产输出 |
 | `verification/` | 各事项实际命令、报告及审查证据；`verification/runtime/` 为忽略的运行数据 |
 
-已实测工具组合：Java `1.8.0_472`、Maven `3.9.16`、Node `24.16.0`、pnpm `11.21.0`。工具版本与依赖版本分别管理，不自动升级原锁文件或后端依赖；详见[部署说明](deploy/部署说明.md)。当前进度与完成条件以[待办事项台账](docs/待办事项台账.md)为准。
+本分支工具组合：Java `1.8.0_472`、Maven `3.9.16`、Node `14.21.3`、pnpm `7.33.7`。前端按A19用户要求迁移至Vue 2与JavaScript，依赖使用本分支锁文件；详见[部署说明](deploy/部署说明.md)。当前进度与完成条件以[待办事项台账](docs/待办事项台账.md)及[补充验收台账](docs/补充验收台账.md)为准。
 
 ## 本机快速演示
 

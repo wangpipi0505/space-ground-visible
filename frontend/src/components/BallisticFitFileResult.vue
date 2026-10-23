@@ -1,35 +1,48 @@
-<script setup lang="ts">
+<script>
+export default { name: 'BallisticFitFileResult' }
+</script>
+
+<script setup>
 /**
  * 一个实际FileResult对应一个独立状态：登记失败不伪报计算失败；预览/完整CSV/下载分开可重试。
  * props.csvPath仅来自原响应，HTTP辅助返回的fileId负责访问；不读取浏览器本机路径。
  */
 import { onMounted, ref, shallowRef } from 'vue'
-import type { BallisticFitFile, FitCsvPoint } from '../api/ballisticFitTypes'
-import type { BallisticFilePreview, BallisticFileReference } from '../api/ballisticFiles'
 import { registerBallisticResult, previewBallisticFile, downloadBallisticFile } from '../api/ballisticFiles'
 import { saveBallisticBlob } from '../api/ballisticHttp'
 import { ApiRequestError } from '../api/client'
 import { parseFitCsv } from '../utils/ballisticFit'
 import BallisticFitTrajectory from './BallisticFitTrajectory.vue'
-const props = withDefaults(defineProps<{ file: BallisticFitFile; taskName: string; resultLabel?: string }>(), { resultLabel: '拟合' })
+const props = defineProps({
+  file: { type: null, required: true },
+  taskName: { type: String, required: true },
+  resultLabel: { type: String, default: '拟合' },
+})
 /** 共享文件能力只在真实登记201后告知父级引用，重新登记开始先撤销旧引用以防失效路径被继续选择。 */
-const emit = defineEmits<{ reference: [value: BallisticFileReference | undefined] }>()
-const reference = shallowRef<BallisticFileReference>()
-const preview = shallowRef<BallisticFilePreview>()
-const points = shallowRef<FitCsvPoint[]>([])
-const registering = ref(false), previewing = ref(false), trajectoryLoading = ref(false), downloading = ref(false)
-const registerError = ref(''), previewError = ref(''), trajectoryError = ref(''), downloadError = ref('')
+const emit = defineEmits(['reference'])
+const reference = shallowRef()
+const preview = shallowRef()
+const points = shallowRef([])
+const registering = ref(false),
+  previewing = ref(false),
+  trajectoryLoading = ref(false),
+  downloading = ref(false)
+const registerError = ref(''),
+  previewError = ref(''),
+  trajectoryError = ref(''),
+  downloadError = ref('')
 const requestedPage = ref(1)
-function message(failure: unknown): string { return failure instanceof Error ? failure.message : '文件辅助请求失败，请检查服务连接' }
+function message(failure) {
+  return failure instanceof Error ? failure.message : '文件辅助请求失败，请检查服务连接'
+}
 /** 404表示服务引用已失效/注销；撤销父级候选，但保留本页原计算成功及独立错误供恢复登记。
  * 普通400格式或500读取错误不证明引用注销，不能因此删另一来源的可用结果。
  */
-function revokeMissingReference(failure: unknown): void {
+function revokeMissingReference(failure) {
   if (failure instanceof ApiRequestError && failure.status === 404) emit('reference', undefined)
 }
-
 /** 登记只在真实201后开放操作；原服务在文件缺失时注销ID，文件恢复后允许重新登记获得实际新引用。 */
-async function register(): Promise<void> {
+async function register() {
   if (registering.value) return
   registering.value = true
   registerError.value = ''
@@ -41,21 +54,29 @@ async function register(): Promise<void> {
     reference.value = await registerBallisticResult(props.file.csvPath, props.taskName, props.file.targetId)
     emit('reference', reference.value)
     await Promise.all([loadPreview(1), loadTrajectory()])
-  } catch (failure) { registerError.value = message(failure) }
-  finally { registering.value = false }
+  } catch (failure) {
+    registerError.value = message(failure)
+  } finally {
+    registering.value = false
+  }
 }
 /** 保留原文本与服务分页；失败显示原页仍在，重试请求失败页，不改轨迹或计算。 */
-async function loadPreview(page: number): Promise<void> {
+async function loadPreview(page) {
   if (!reference.value || previewing.value) return
   requestedPage.value = page
   previewing.value = true
   previewError.value = ''
-  try { preview.value = await previewBallisticFile(reference.value.fileId, page) }
-  catch (failure) { previewError.value = message(failure); revokeMissingReference(failure) }
-  finally { previewing.value = false }
+  try {
+    preview.value = await previewBallisticFile(reference.value.fileId, page)
+  } catch (failure) {
+    previewError.value = message(failure)
+    revokeMissingReference(failure)
+  } finally {
+    previewing.value = false
+  }
 }
 /** 完整CSV通过真实HTTP Blob获取，拟合/模拟严格21列，重定时按必要命名列解析；页预览不能冒充完整轨迹。 */
-async function loadTrajectory(): Promise<void> {
+async function loadTrajectory() {
   if (!reference.value || trajectoryLoading.value) return
   trajectoryLoading.value = true
   trajectoryError.value = ''
@@ -63,19 +84,30 @@ async function loadTrajectory(): Promise<void> {
   try {
     const download = await downloadBallisticFile(reference.value.fileId)
     const parsed = parseFitCsv(await download.blob.text(), props.file.model === 'RETIMED_TRAJECTORY' ? 'retime' : 'fit')
-    if (parsed.length !== props.file.pointCount) throw new Error(`完整CSV行数${parsed.length}与原结果点数${props.file.pointCount}不一致，暂停轨迹展示`)
+    if (parsed.length !== props.file.pointCount)
+      throw new Error(`完整CSV行数${parsed.length}与原结果点数${props.file.pointCount}不一致，暂停轨迹展示`)
     points.value = parsed
-  } catch (failure) { trajectoryError.value = message(failure); revokeMissingReference(failure) }
-  finally { trajectoryLoading.value = false }
+  } catch (failure) {
+    trajectoryError.value = message(failure)
+    revokeMissingReference(failure)
+  } finally {
+    trajectoryLoading.value = false
+  }
 }
 /** 每次下载取当前服务原字节，失败不保存错误JSON；不使用图形数据重导CSV。 */
-async function download(): Promise<void> {
+async function download() {
   if (!reference.value || downloading.value) return
   downloading.value = true
   downloadError.value = ''
-  try { const data = await downloadBallisticFile(reference.value.fileId); saveBallisticBlob(data.blob, data.filename) }
-  catch (failure) { downloadError.value = message(failure); revokeMissingReference(failure) }
-  finally { downloading.value = false }
+  try {
+    const data = await downloadBallisticFile(reference.value.fileId)
+    saveBallisticBlob(data.blob, data.filename)
+  } catch (failure) {
+    downloadError.value = message(failure)
+    revokeMissingReference(failure)
+  } finally {
+    downloading.value = false
+  }
 }
 onMounted(register)
 </script>

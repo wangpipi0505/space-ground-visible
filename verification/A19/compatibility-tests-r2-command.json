@@ -1,0 +1,16 @@
+{
+  "command": [
+    "G:/5-YG/space-ground-visible/verification/runtime/A19/node-v14.21.3-win-x64/node.exe",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "src/components/TaskSatelliteSelectionStep.spec.js",
+    "src/components/TaskResultRecordsPanel.spec.js",
+    "src/components/VisibilityPlanningStep.spec.js"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "startedUnix": 1792728569.8326461,
+  "durationSec": 4.211165904998779,
+  "exitCode": 0,
+  "stdoutSha256": "e542ed8ff0d44746e2c53b80dd43f4475c33c7df3d9ddcbab7ebf68ebaeef318",
+  "stderrSha256": "3d3bf454218c6fbad6e79b607a3abb4ac0899228b29b013ce7d69b900de76fcf"
+}

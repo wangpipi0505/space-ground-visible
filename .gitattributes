@@ -104,3 +104,5 @@ verification/A17/**/*.log -text -whitespace
 # A18 构建、契约、数值和交付验证日志保留实际字节。
 verification/A18/**/*.txt -text -whitespace
 verification/A18/**/*.log -text -whitespace
+# A19 Node 14迁移的实际命令双流保持原始字节。
+verification/A19/**/*.txt -text -whitespace

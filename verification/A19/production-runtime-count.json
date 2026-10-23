@@ -1,0 +1,12 @@
+[
+  {
+    "path": "verification\\runtime\\A19\\unminified\\assets\\index-7a0e7425.js",
+    "sha256": "dfb21d21e4b6395d23129b56b58d8a3059451662590cc67c9665c740d9050a7f",
+    "vueRuntimeLicenseCount": 2
+  },
+  {
+    "path": "frontend\\dist\\assets\\index-b6929535.js",
+    "sha256": "aaf467d94504c6fdcc6cd208e7211cb443d9a20c38f69e4e373fb6a4e786937c",
+    "vueRuntimeLicenseCount": 1
+  }
+]

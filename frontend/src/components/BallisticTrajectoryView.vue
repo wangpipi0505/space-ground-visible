@@ -1,32 +1,59 @@
-<script setup lang="ts">
+<script>
+export default { name: 'BallisticTrajectoryView' }
+</script>
+
+<script setup>
 /**
  * 真实窗口内点的轻量SVG与分页表；props.points保留完整原数据，分页只影响显示。
  * 经纬图跨±180°断线，避免假连线；高度图横轴原relativeTimeSec，纵轴米，不重新采样或插值。
  */
 import { computed, ref, watch } from 'vue'
-import type { BallisticTrajectoryPoint } from '../api/ballisticWindowTypes'
-const props = defineProps<{ points: BallisticTrajectoryPoint[]; identity: string; pointOutput: 0 | 1 }>()
+const props = defineProps({
+  points: { type: Array, required: true },
+  identity: { type: String, required: true },
+  pointOutput: { type: null, required: true },
+})
 const page = ref(1)
 const pageSize = 100
-watch(() => props.points, () => { page.value = 1 })
+watch(
+  () => props.points,
+  () => {
+    page.value = 1
+  },
+)
 const displayed = computed(() => props.points.slice((page.value - 1) * pageSize, page.value * pageSize))
-const longitudePath = computed(() => props.points.map((point, index) => {
-  const previous = props.points[index - 1]
-  const command = !previous || Math.abs(point.longitudeDeg - previous.longitudeDeg) > 180 ? 'M' : 'L'
-  return `${command}${30 + (point.longitudeDeg + 180) / 360 * 720},${20 + (90 - point.latitudeDeg) / 180 * 360}`
-}).join(' '))
+const longitudePath = computed(() =>
+  props.points
+    .map((point, index) => {
+      const previous = props.points[index - 1]
+      const command = !previous || Math.abs(point.longitudeDeg - previous.longitudeDeg) > 180 ? 'M' : 'L'
+      return `${command}${30 + ((point.longitudeDeg + 180) / 360) * 720},${20 + ((90 - point.latitudeDeg) / 180) * 360}`
+    })
+    .join(' '),
+)
 const bounds = computed(() => {
-  let minTime = Infinity, maxTime = -Infinity, minHeight = Infinity, maxHeight = -Infinity
+  let minTime = Infinity,
+    maxTime = -Infinity,
+    minHeight = Infinity,
+    maxHeight = -Infinity
   for (const point of props.points) {
-    minTime = Math.min(minTime, point.relativeTimeSec); maxTime = Math.max(maxTime, point.relativeTimeSec)
-    minHeight = Math.min(minHeight, point.heightM); maxHeight = Math.max(maxHeight, point.heightM)
+    minTime = Math.min(minTime, point.relativeTimeSec)
+    maxTime = Math.max(maxTime, point.relativeTimeSec)
+    minHeight = Math.min(minHeight, point.heightM)
+    maxHeight = Math.max(maxHeight, point.heightM)
   }
   return { minTime, maxTime, minHeight, maxHeight }
 })
-const heightPath = computed(() => props.points.map((point, index) => {
-  const { minTime, maxTime, minHeight, maxHeight } = bounds.value
-  return `${index ? 'L' : 'M'}${40 + (point.relativeTimeSec - minTime) / (maxTime - minTime || 1) * 700},${20 + (maxHeight - point.heightM) / (maxHeight - minHeight || 1) * 220}`
-}).join(' '))
+const heightPath = computed(() =>
+  props.points
+    .map((point, index) => {
+      const { minTime, maxTime, minHeight, maxHeight } = bounds.value
+      return `${index ? 'L' : 'M'}${40 + ((point.relativeTimeSec - minTime) / (maxTime - minTime || 1)) * 700},${
+        20 + ((maxHeight - point.heightM) / (maxHeight - minHeight || 1)) * 220
+      }`
+    })
+    .join(' '),
+)
 </script>
 
 <template>

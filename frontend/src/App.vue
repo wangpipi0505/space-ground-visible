@@ -1,11 +1,14 @@
-<script setup lang="ts">
+<script>
+export default { name: 'App' }
+</script>
+
+<script setup>
 /** 空间规划入口：连接卫星、载荷、站星链路、目录与后台任务状态，并切换历史结果视图。 */
 import { computed, onMounted, ref } from 'vue'
 import './styles/ballistic-workspace.css'
 import BallisticPayloadConfigurationView from './views/BallisticPayloadConfigurationView.vue'
 import BallisticFitView from './views/BallisticFitView.vue'
 import BallisticSimulationView from './views/BallisticSimulationView.vue'
-import type { GeneratedBallisticResult } from './api/ballisticFiles'
 import BallisticRetimeView from './views/BallisticRetimeView.vue'
 import DownlinkPlanningStep from './components/DownlinkPlanningStep.vue'
 import ObservationConstraintPanel from './components/ObservationConstraintPanel.vue'
@@ -18,7 +21,6 @@ import TaskSatelliteSelectionStep from './components/TaskSatelliteSelectionStep.
 import VisibilityPlanningStep from './components/VisibilityPlanningStep.vue'
 import WindowSelectionPanel from './components/WindowSelectionPanel.vue'
 import { useVisibilityWorkbench } from './composables/useVisibilityWorkbench'
-
 const {
   addObservationConstraint,
   belongOptions,
@@ -76,19 +78,28 @@ const {
   visibilityTaskRunning,
   visibilityTimeRange,
 } = useVisibilityWorkbench()
-
 /** 原工作台始终由 tabs 保留挂载；弹道草稿首次打开后同样保留，不重置任务、目录选择或草稿。 */
-const activeView = ref<'workbench' | 'records' | 'ballistic-payloads' | 'ballistic-fit'>('workbench')
+const activeView = ref('workbench')
 /** 拟合父页只管理三个子入口；各子页首次访问后保留挂载和真实生成引用。 */
-const activeFitView = ref<'package102' | 'simulation' | 'retime'>('package102')
+const activeFitView = ref('package102')
 /** 三种来源独立撤销，仅合并真实201引用并按fileId去重；刷新不持久化，不复制卫星载荷草稿。 */
-const simulationResults = ref<GeneratedBallisticResult[]>([])
-const fitResults = ref<GeneratedBallisticResult[]>([])
-const retimeResults = ref<GeneratedBallisticResult[]>([])
-const generatedBallisticResults = computed(() => [...new Map([...simulationResults.value, ...fitResults.value, ...retimeResults.value].map(item => [item.reference.fileId, item])).values()])
+const simulationResults = ref([])
+const fitResults = ref([])
+const retimeResults = ref([])
+const generatedBallisticResults = computed(() => [
+  ...new Map(
+    [...simulationResults.value, ...fitResults.value, ...retimeResults.value].map((item) => [
+      item.reference.fileId,
+      item,
+    ]),
+  ).values(),
+])
 /** 当前目录页加已选任务星，分页后仍可选到空间既有任务星；弹道拥有独立选择/草稿。 */
-const payloadSatelliteOptions = computed(() => [...new Map([...satellites.value, ...selectedTaskSatellites.value].map((satellite) => [satellite.id, satellite])).values()])
-
+const payloadSatelliteOptions = computed(() => [
+  ...new Map(
+    [...satellites.value, ...selectedTaskSatellites.value].map((satellite) => [satellite.id, satellite]),
+  ).values(),
+])
 onMounted(() => {
   initialize()
 })
@@ -112,7 +123,7 @@ onMounted(() => {
               </div>
             </div>
         <TaskSatelliteSelectionStep
-          v-model:keyword="satelliteKeyword"
+          :keyword.sync="satelliteKeyword"
           :loading="loadingReference"
           :satellites="satellites"
           :selected-satellites="selectedTaskSatellites"
@@ -120,7 +131,7 @@ onMounted(() => {
           :page-number="satellitePageNumber"
           :page-size="satellitePageSize"
           @query="queryTaskSatellites"
-          @page-change="changeSatellitePage"
+          @pageChange="changeSatellitePage"
           @toggle="toggleTaskSatellite"
         />
         <SatellitePayloadPanel
@@ -130,12 +141,12 @@ onMounted(() => {
           :loading-satellite-ids="loadingSatellitePayloadIds"
           :saving-satellite-id="savingSatellitePayloadId"
           @save="saveSatellitePayload"
-          @select-type="selectSatellitePayloadType"
+          @selectType="selectSatellitePayloadType"
         />
         <StationConstraintStep
           :stations="stations"
           :constraints="downlinkForm.stations"
-          @stations-change="updateSelectedStations"
+          @stationsChange="updateSelectedStations"
         />
       </section>
 
@@ -152,16 +163,16 @@ onMounted(() => {
           :stations="stations"
           :station-constraints="downlinkForm.stations"
           :links="downlinkForm.links"
-          @toggle-link="toggleSatelliteStationLink"
+          @toggleLink="toggleSatelliteStationLink"
         />
         <DownlinkPlanningStep
-          v-model:time-range="downlinkTimeRange"
+          :time-range.sync="downlinkTimeRange"
           :form="downlinkForm"
           :loading="pendingAction === 'plan-downlink'"
           @plan="runDownlinkPlan"
         />
         <WindowSelectionPanel
-          v-model:custom-window-range="customWindowRange"
+          :custom-window-range.sync="customWindowRange"
           :rows="downlinkRows"
           :single-windows="singleWindowRows"
           :skipped-links="downlinkPlan?.skippedLinks"
@@ -172,8 +183,8 @@ onMounted(() => {
           :selected-window-end-time="selectedWindowEndTime"
           :format-time="formatTime"
           :format-duration="formatDuration"
-          @select-planned="selectPlannedWindow"
-          @validate-custom="validateCustomWindow"
+          @selectPlanned="selectPlannedWindow"
+          @validateCustom="validateCustomWindow"
         />
       </section>
 
@@ -195,7 +206,7 @@ onMounted(() => {
           :page-number="targetPageNumber"
           :page-size="targetPageSize"
           @query="queryTargets()"
-          @page-change="queryTargets"
+          @pageChange="queryTargets"
         />
         <ObservationConstraintPanel
           :satellites="selectedTaskSatellites"
@@ -205,7 +216,7 @@ onMounted(() => {
           @remove="removeObservationConstraint"
         />
         <VisibilityPlanningStep
-          v-model:mode="visibilityPlanMode"
+          :mode.sync="visibilityPlanMode"
           :satellites="selectedTaskSatellites"
           :selected-window-label="selectedWindowLabel"
           :selected-window-start-time="selectedWindowStartTime"
@@ -220,7 +231,7 @@ onMounted(() => {
           :format-time="formatTime"
           :format-duration="formatDuration"
           @plan="runVisibilityPlan"
-          @cancel-task="cancelVisibilityTaskPlan"
+          @cancelTask="cancelVisibilityTaskPlan"
         />
           </section>
         </section>

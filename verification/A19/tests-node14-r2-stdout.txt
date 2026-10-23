@@ -1,0 +1,102 @@
+
+> space-ground-visible-frontend@0.0.0 test G:\5-YG\space-ground-visible\frontend
+> vitest run
+
+
+ RUN  v0.34.6 G:/5-YG/space-ground-visible/frontend
+
+stdout | unknown test
+Download the Vue Devtools extension for a better development experience:
+https://github.com/vuejs/vue-devtools
+You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+
+ ❯ src/components/VisibilityPlanningStep.spec.js  (11 tests | 1 failed) 687ms
+   ❯ src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > uses configured filters, paginates ten targets per page, and opens skipped pairs in a dialog
+     → expected undefined to be true // Object.is equality
+ ❯ src/views/BallisticSwingAlignment.spec.js  (0 test)
+ ❯ src/views/BallisticRetimeView.spec.js  (0 test)
+ ✓ src/components/TaskResultRecordsPanel.spec.js  (5 tests) 221ms
+ ❯ src/views/BallisticSimulationView.spec.js  (0 test)
+ ❯ src/App.spec.js  (0 test)
+ ❯ src/components/StandardPayloadEditor.spec.js  (4 tests | 3 failed) 107ms
+   ❯ src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明
+     → expected undefined to match object { elevationMinDeg: -90 }
+   ❯ src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 九个数字字段清空为null并展示成对校验与LVLH说明
+     → expected undefined to match object { azimuthMinDeg: null, …(1) }
+   ❯ src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 切换类型事件交由业务包装处理且标准事件不带身份
+     → expected undefined to deeply equal [ [ 'GROUND' ] ]
+ ❯ src/components/BallisticWindowControls.spec.js  (3 tests | 3 failed) 96ms
+   ❯ src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口
+     → Cannot read property '$options' of undefined
+   ❯ src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退
+     → Cannot read property '$options' of undefined
+   ❯ src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 原生选择上传/预览后提交同一载荷UTC，计算失败清旧结果，替换失败清文件引用
+     → Cannot read property '$options' of undefined
+ ✓ src/components/BallisticWindowResults.spec.js  (2 tests) 65ms
+ ✓ src/components/SatellitePayloadPanel.spec.js  (3 tests) 87ms
+ ❯ src/views/BallisticPayloadConfigurationView.spec.js  (3 tests | 3 failed) 205ms
+   ❯ src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 示例朝地球俯仰与空间标准、新增和目录默认隔离
+     → Cannot read property '$options' of undefined
+   ❯ src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功
+     → Response is not a constructor
+   ❯ src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 当前星切换保持原草稿身份且初始就有结果位置
+     → Cannot read property '$options' of undefined
+ ❯ src/utils/ballisticFit.spec.js  (13 tests | 3 failed) 18ms
+   ❯ src/utils/ballisticFit.spec.js > T23 原102输入与CSV > 包字符串、UTC、全部别名保持同值，仅显式省略旧输出目录
+     → Object.hasOwn is not a function
+   ❯ src/utils/ballisticFit.spec.js > T23 原102输入与CSV > 一条记录允许进入原服务，不在浏览器擅自限制为三点
+     → Object.hasOwn is not a function
+   ❯ src/utils/ballisticFit.spec.js > T23 原102输入与CSV > taskName:null按原DTO同值提交，原缺省任务名由后端回退
+     → Object.hasOwn is not a function
+ ❯ src/api/ballisticWindow.spec.js  (5 tests | 3 failed) 4ms
+   ❯ src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 上传真实FormData不写JSON头；预览分页及下载中文原名/字节
+     → Response is not a constructor
+   ❯ src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 原计算路径独立且原响应空白/数值/字节不重新序列化，失败下载不返回错误文件
+     → Response is not a constructor
+   ❯ src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 空间/辅助/计算独立部署根保持各自完整含义
+     → Response is not a constructor
+ ❯ src/api/ballisticFit.spec.js  (2 tests | 2 failed) 3ms
+   ❯ src/api/ballisticFit.spec.js > T23 原拟合与登记HTTP > 原字段原值发送，原响应字节保留，201登记返回独立引用
+     → Response is not a constructor
+   ❯ src/api/ballisticFit.spec.js > T23 原拟合与登记HTTP > 原400错误中文转呈
+     → expected [Function] to throw error including '无有效观测点' but got 'Response is not a constructor'
+ ❯ src/api/ballisticRetime.spec.js  (3 tests | 3 failed) 1ms
+   ❯ src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 上传200不能冒充201真实引用
+     → Response is not a constructor
+   ❯ src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 四字段同值且原响应字节不包装
+     → Response is not a constructor
+   ❯ src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 原400与500全文保留
+     → Response is not a constructor
+ ❯ src/utils/ballisticSimulation.spec.js  (2 tests | 1 failed) 5ms
+   ❯ src/utils/ballisticSimulation.spec.js > T24 原模拟输入合同 > 完整原字段、事件、null、别名、字面UTC、回退步长不转换不丢失
+     → Object.hasOwn is not a function
+ ❯ src/api/ballisticPayloads.spec.js  (2 tests | 2 failed) 1ms
+   ❯ src/api/ballisticPayloads.spec.js > 弹道载荷独立API > 默认目标为完整ballistic路径且保留身份与原值
+     → Response is not a constructor
+   ❯ src/api/ballisticPayloads.spec.js > 弹道载荷独立API > 独立部署base不受空间base影响并显示400中文错误
+     → Response is not a constructor
+ ❯ src/api/ballisticSimulation.spec.js  (2 tests | 2 failed) 1ms
+   ❯ src/api/ballisticSimulation.spec.js > T24 原模拟HTTP与登记边界 > 原路径、原值和完整HTTP字节保留，无包装/model字段
+     → Response is not a constructor
+   ❯ src/api/ballisticSimulation.spec.js > T24 原模拟HTTP与登记边界 > 原400中文不包新错误，200登记不能冒充201引用
+     → Response is not a constructor
+ ✓ src/components/ObservationConstraintPanel.spec.js  (1 test) 24ms
+ ✓ src/components/TargetSelectionStep.spec.js  (1 test) 31ms
+ ✓ src/components/TaskSatelliteSelectionStep.spec.js  (2 tests) 36ms
+ ✓ src/components/WindowSelectionPanel.spec.js  (1 test) 25ms
+ ❯ src/views/BallisticFitView.spec.js  (0 test)
+ ✓ src/utils/ballisticRetime.spec.js  (3 tests) 60ms
+ ✓ src/composables/useVisibilityWorkbench.spec.js  (15 tests) 31ms
+ ✓ src/components/TaskResultDetailDrawer.spec.js  (1 test) 28ms
+ ✓ src/utils/winToolSummary.spec.js  (6 tests) 2ms
+ ✓ src/utils/standardPayload.spec.js  (2 tests) 2ms
+ ✓ src/views/BallisticElementConsistency.spec.js  (1 test) 1ms
+
+ Test Files  16 failed | 13 passed (29)
+      Tests  26 failed | 67 passed (93)
+   Start at  11:56:20
+   Duration  15.00s (transform 658ms, setup 11.70s, collect 677ms, tests 1.74s, environment 102ms, prepare 87ms)
+
+ ELIFECYCLE  Test failed. See above for more details.

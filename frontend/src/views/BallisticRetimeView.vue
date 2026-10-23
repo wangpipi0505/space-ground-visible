@@ -1,99 +1,173 @@
-<script setup lang="ts">
-/** 正式重定时页：Element Plus CSV 上传或当前会话已登记结果→原请求→共享分页/完整曲线/原字节下载。
+<script>
+export default { name: 'BallisticRetimeView' }
+</script>
+
+<script setup>
+/** 正式重定时页：Element UI CSV 上传或当前会话已登记结果→原请求→共享分页/完整曲线/原字节下载。
  * ECEF保持原轨迹，原服务按新UTC重算J2000 ECI；不在浏览器重拟合、转换时间或拼本机路径。
  * props为App三来源合并候选，references仅上报本页本次真实201结果，撤销不影响其它来源。
  */
 import { computed, ref, shallowRef, watch } from 'vue'
-import type { UploadFile } from 'element-plus'
 import { retimeBallisticTrajectory } from '../api/ballisticRetime'
-import type { BallisticRetimeRequest } from '../api/ballisticRetime'
-import type { BallisticFitHttpResult } from '../api/ballisticFit'
 import { uploadBallisticFile, previewBallisticFile } from '../api/ballisticFiles'
-import type { BallisticFileReference, BallisticFilePreview, GeneratedBallisticResult } from '../api/ballisticFiles'
 import { saveBallisticBlob } from '../api/ballisticHttp'
 import BallisticFitFileResult from '../components/BallisticFitFileResult.vue'
-
-const props = defineProps<{ generatedResults?: GeneratedBallisticResult[] }>()
-const emit = defineEmits<{ references: [value: GeneratedBallisticResult[]] }>()
-const sourceMode = ref<'upload' | 'generated'>('upload'), generatedId = ref('')
-const source = shallowRef<BallisticFileReference>(), preview = shallowRef<BallisticFilePreview>()
-const taskName = ref('retimeTrajectory'), targetId = ref('RET-001'), launchTimeUtc = ref('2026-07-01 09:00:00.000')
-const nullTask = ref(false), nullTarget = ref(false)
-const uploading = ref(false), computing = ref(false), previewing = ref(false)
-const error = ref(''), previewError = ref('')
-const result = shallowRef<BallisticFitHttpResult>(), submitted = shallowRef<BallisticRetimeRequest>()
-const references = shallowRef<Record<number, GeneratedBallisticResult>>({}), runIdentity = ref(0)
+const props = defineProps({ generatedResults: { type: Array } })
+const emit = defineEmits(['references'])
+const sourceMode = ref('upload'),
+  generatedId = ref('')
+const source = shallowRef(),
+  preview = shallowRef()
+const taskName = ref('retimeTrajectory'),
+  targetId = ref('RET-001'),
+  launchTimeUtc = ref('2026-07-01 09:00:00.000')
+const nullTask = ref(false),
+  nullTarget = ref(false)
+const uploading = ref(false),
+  computing = ref(false),
+  previewing = ref(false)
+const error = ref(''),
+  previewError = ref('')
+const result = shallowRef(),
+  submitted = shallowRef()
+const references = shallowRef({}),
+  runIdentity = ref(0)
 let sourceIdentity = 0
-function message(failure: unknown): string { return failure instanceof Error ? failure.message : '请求失败，请检查服务连接' }
+function message(failure) {
+  return failure instanceof Error ? failure.message : '请求失败，请检查服务连接'
+}
 /** 唯一表单到四原字段；字符串/null同值，UTC保留字面原文，绝不经Date或默认北京时间。 */
-function draft(): BallisticRetimeRequest {
-  return { taskName: nullTask.value ? null : taskName.value, targetId: nullTarget.value ? null : targetId.value, trajectoryCsvPath: source.value?.serverPath || '', launchTimeUtc: launchTimeUtc.value }
+function draft() {
+  return {
+    taskName: nullTask.value ? null : taskName.value,
+    targetId: nullTarget.value ? null : targetId.value,
+    trajectoryCsvPath: source.value?.serverPath || '',
+    launchTimeUtc: launchTimeUtc.value,
+  }
 }
 const changed = computed(() => submitted.value && JSON.stringify(draft()) !== JSON.stringify(submitted.value))
 /** 来源切换/新上传先撤旧引用；异步序号保证旧慢上传/预览不会覆盖新来源身份。 */
-function clearSource(): void {
-  sourceIdentity += 1; source.value = undefined; preview.value = undefined; previewError.value = ''; generatedId.value = ''; previewing.value = false
+function clearSource() {
+  sourceIdentity += 1
+  source.value = undefined
+  preview.value = undefined
+  previewError.value = ''
+  generatedId.value = ''
+  previewing.value = false
 }
 watch(sourceMode, clearSource)
-watch(() => props.generatedResults, () => {
-  if (sourceMode.value !== 'generated' || !generatedId.value) return
-  const current = props.generatedResults?.find(item => item.reference.fileId === generatedId.value && item.reference.serverPath === source.value?.serverPath)
-  if (!current) { clearSource(); error.value = '原选择结果已撤销或失效，请重新选择真实登记结果' }
-})
+watch(
+  () => props.generatedResults,
+  () => {
+    if (sourceMode.value !== 'generated' || !generatedId.value) return
+    const current = props.generatedResults?.find(
+      (item) => item.reference.fileId === generatedId.value && item.reference.serverPath === source.value?.serverPath,
+    )
+    if (!current) {
+      clearSource()
+      error.value = '原选择结果已撤销或失效，请重新选择真实登记结果'
+    }
+  },
+)
 /** 预览只作辅助；成功上传并不代表原CSV合法，预览失败仍可交给原算法按原顺序校验。 */
-async function loadSourcePreview(reference: BallisticFileReference, identity: number): Promise<void> {
-  previewing.value = true; previewError.value = ''
-  try { const data = await previewBallisticFile(reference.fileId); if (identity === sourceIdentity) preview.value = data }
-  catch (failure) { if (identity === sourceIdentity) previewError.value = message(failure) }
-  finally { if (identity === sourceIdentity) previewing.value = false }
+async function loadSourcePreview(reference, identity) {
+  previewing.value = true
+  previewError.value = ''
+  try {
+    const data = await previewBallisticFile(reference.fileId)
+    if (identity === sourceIdentity) preview.value = data
+  } catch (failure) {
+    if (identity === sourceIdentity) previewError.value = message(failure)
+  } finally {
+    if (identity === sourceIdentity) previewing.value = false
+  }
 }
-async function chooseFile(uploadFile: UploadFile): Promise<void> {
+async function chooseFile(uploadFile) {
   if (uploading.value || computing.value) return
   const file = uploadFile.raw
-  clearSource(); error.value = ''
+  clearSource()
+  error.value = ''
   if (!file) return
-  const identity = sourceIdentity; uploading.value = true
+  const identity = sourceIdentity
+  uploading.value = true
   try {
     const reference = await uploadBallisticFile(file)
     if (identity !== sourceIdentity) return
     source.value = reference
     await loadSourcePreview(reference, identity)
-  } catch (failure) { if (identity === sourceIdentity) error.value = message(failure) }
-  finally { uploading.value = false }
+  } catch (failure) {
+    if (identity === sourceIdentity) error.value = message(failure)
+  } finally {
+    uploading.value = false
+  }
 }
 /** 使用原目标身份的实际登记引用，不重上传，不由响应路径伪造fileId。 */
-async function chooseGenerated(id: string): Promise<void> {
+async function chooseGenerated(id) {
   if (computing.value) return
-  clearSource(); error.value = ''
-  const selected = props.generatedResults?.find(item => item.reference.fileId === id)
+  clearSource()
+  error.value = ''
+  const selected = props.generatedResults?.find((item) => item.reference.fileId === id)
   if (!selected) return
-  generatedId.value = id; source.value = selected.reference
+  generatedId.value = id
+  source.value = selected.reference
   await loadSourcePreview(selected.reference, sourceIdentity)
 }
 /** 先截取有效来源再撤自身旧候选：支持上次重定时再次输入，父级watch撤销不能把本次请求改为空。
  * 服务响应只绑定该不可变快照；新尝试/失败清旧成功，忙时防重复。共享文件组件key隔离旧慢登记。
  */
-async function calculate(): Promise<void> {
+async function calculate() {
   if (computing.value || uploading.value) return
   const request = draft()
-  result.value = undefined; submitted.value = undefined; references.value = {}; emit('references', []); error.value = ''
-  if (!request.trajectoryCsvPath) { error.value = '请选择上传成功或真实登记的CSV引用；不接受浏览器本机路径'; return }
+  result.value = undefined
+  submitted.value = undefined
+  references.value = {}
+  emit('references', [])
+  error.value = ''
+  if (!request.trajectoryCsvPath) {
+    error.value = '请选择上传成功或真实登记的CSV引用；不接受浏览器本机路径'
+    return
+  }
   computing.value = true
-  try { const response = await retimeBallisticTrajectory(request); submitted.value = request; result.value = response; runIdentity.value += 1 }
-  catch (failure) { error.value = message(failure) }
-  finally { computing.value = false }
+  try {
+    const response = await retimeBallisticTrajectory(request)
+    submitted.value = request
+    result.value = response
+    runIdentity.value += 1
+  } catch (failure) {
+    error.value = message(failure)
+  } finally {
+    computing.value = false
+  }
 }
 /** 只接受本次挂载共享组件真实201事件；其撤销/重新登记事件删除本次对应文件候选。 */
-function updateReference(index: number, reference: BallisticFileReference | undefined): void {
+function updateReference(index, reference) {
   const file = result.value?.response.files[index]
   if (!file) return
   const next = { ...references.value }
-  if (reference) next[index] = { targetId: file.targetId, targetName: `重定时/${result.value?.response.taskName}/${file.targetId}`, reference }
+  if (reference)
+    next[index] = {
+      targetId: file.targetId,
+      targetName: `重定时/${result.value?.response.taskName}/${file.targetId}`,
+      reference,
+    }
   else delete next[index]
-  references.value = next; emit('references', Object.values(next))
+  references.value = next
+  emit('references', Object.values(next))
 }
-function exportInput(): void { if (submitted.value) saveBallisticBlob(new Blob([JSON.stringify(submitted.value, null, 2)], { type: 'application/json;charset=utf-8' }), '重定时实际提交.json') }
-function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([result.value.rawBytes], { type: 'application/json;charset=utf-8' }), '重定时原响应.json') }
+function exportInput() {
+  if (submitted.value)
+    saveBallisticBlob(
+      new Blob([JSON.stringify(submitted.value, null, 2)], { type: 'application/json;charset=utf-8' }),
+      '重定时实际提交.json',
+    )
+}
+function exportResult() {
+  if (result.value)
+    saveBallisticBlob(
+      new Blob([result.value.rawBytes], { type: 'application/json;charset=utf-8' }),
+      '重定时原响应.json',
+    )
+}
 </script>
 
 <template>
@@ -105,8 +179,8 @@ function exportResult(): void { if (result.value) saveBallisticBlob(new Blob([re
         <fieldset class="ballistic-native-form ballistic-panel" :disabled="computing || uploading">
           <legend>轨迹来源</legend>
           <el-form label-position="top"><el-form-item label="来源"><el-select v-model="sourceMode" data-test="retime-source-mode"><el-option value="upload" label="上传CSV" /><el-option value="generated" label="已生成结果" /></el-select></el-form-item></el-form>
-          <el-form v-if="sourceMode === 'upload'" label-position="top"><el-form-item label="选择轨迹CSV"><el-upload :auto-upload="false" :show-file-list="false" accept=".csv,text/csv" :disabled="computing || uploading" :on-change="chooseFile"><el-button>选择 CSV 文件</el-button></el-upload></el-form-item></el-form>
-          <el-form v-else label-position="top"><el-form-item label="选择结果"><el-select :model-value="generatedId" data-test="retime-result-select" @update:model-value="chooseGenerated"><el-option value="" label="请选择拟合、模拟或重定时结果" /><el-option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId" :label="`${item.targetName} · ${item.reference.originalName}`" /></el-select></el-form-item></el-form>
+          <el-form v-if="sourceMode === 'upload'" label-position="top"><el-form-item label="选择轨迹CSV"><el-upload action="" :auto-upload="false" :show-file-list="false" accept=".csv,text/csv" :disabled="computing || uploading" :on-change="chooseFile"><el-button>选择 CSV 文件</el-button></el-upload></el-form-item></el-form>
+          <el-form v-else label-position="top"><el-form-item label="选择结果"><el-select :value="generatedId" data-test="retime-result-select" @input="chooseGenerated"><el-option value="" label="请选择拟合、模拟或重定时结果" /><el-option v-for="item in generatedResults || []" :key="item.reference.fileId" :value="item.reference.fileId" :label="`${item.targetName} · ${item.reference.originalName}`" /></el-select></el-form-item></el-form>
           <p v-if="source" data-test="retime-source-reference">{{ source.originalName }} · {{ source.sizeBytes }} 字节<span v-if="preview"> · {{ preview.totalRows }} 行</span></p>
           <p v-if="uploading" role="status">正在上传CSV…</p>
           <p v-if="previewing" role="status">正在读取来源预览…</p>

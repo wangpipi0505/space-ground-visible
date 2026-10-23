@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:/Program Files/nodejs/node.exe",
+    "node_modules/vitest/vitest.mjs",
+    "run"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "startedUnix": 1792727126.5675452,
+  "durationSec": 75.9345190525055,
+  "exitCode": 0,
+  "stdoutSha256": "c750f94dd41ccb79c3b56699010a3fb190e32b4e0407887c6f7397e31bc8809c",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

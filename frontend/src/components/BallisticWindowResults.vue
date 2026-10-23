@@ -1,36 +1,55 @@
-<script setup lang="ts">
+<script>
+export default { name: 'BallisticWindowResults' }
+</script>
+
+<script setup>
 /** 原格式器结果按偏移→卫星→载荷→目标→弧段呈现；只展示返回层级，不补不可见星。 */
 import { computed, ref, shallowRef, watch } from 'vue'
-import type { BallisticVisibleArc, BallisticWindowResponse } from '../api/ballisticWindowTypes'
 import BallisticTrajectoryView from './BallisticTrajectoryView.vue'
-const props = defineProps<{ result: BallisticWindowResponse; pointOutput: 0 | 1 }>()
-const emit = defineEmits<{ edit: [section: 'payloads' | 'search'] }>()
+const props = defineProps({ result: { type: null, required: true }, pointOutput: { type: null, required: true } })
+const emit = defineEmits(['edit'])
 const selectedIndex = ref(0)
-const selectedArc = shallowRef<{ arc: BallisticVisibleArc; identity: string }>()
-const offsets = computed(() => props.result.allResults.length ? props.result.allResults : props.result.best ? [props.result.best] : [])
+const selectedArc = shallowRef()
+const offsets = computed(() =>
+  props.result.allResults.length ? props.result.allResults : props.result.best ? [props.result.best] : [],
+)
 const selectedOffset = computed(() => offsets.value[selectedIndex.value])
 /** 将服务原有层级摊平成展示行，行内保留实际弧段引用以打开原轨迹。 */
 const arcRows = computed(() => {
   const offset = selectedOffset.value
   if (!offset) return []
-  return offset.visibleSatellites.flatMap((satellite) => satellite.payloadResults.flatMap((payload) => payload.targets.flatMap((target) => target.visibleArcs.map((arc) => ({
-    key: `${satellite.satelliteIndex}/${payload.payloadId}/${target.targetId}/${arc.arcIndex}`,
-    satellite,
-    payload,
-    target,
-    arc,
-  })))))
+  return offset.visibleSatellites.flatMap((satellite) =>
+    satellite.payloadResults.flatMap((payload) =>
+      payload.targets.flatMap((target) =>
+        target.visibleArcs.map((arc) => ({
+          key: `${satellite.satelliteIndex}/${payload.payloadId}/${target.targetId}/${arc.arcIndex}`,
+          satellite,
+          payload,
+          target,
+          arc,
+        })),
+      ),
+    ),
+  )
 })
-watch(() => props.result, () => {
-  const index = offsets.value.findIndex((offset) => offset.offsetSecond === props.result.best?.offsetSecond)
-  selectedIndex.value = index < 0 ? 0 : index
+watch(
+  () => props.result,
+  () => {
+    const index = offsets.value.findIndex((offset) => offset.offsetSecond === props.result.best?.offsetSecond)
+    selectedIndex.value = index < 0 ? 0 : index
+    selectedArc.value = undefined
+  },
+  { immediate: true },
+)
+watch(selectedIndex, () => {
   selectedArc.value = undefined
-}, { immediate: true })
-watch(selectedIndex, () => { selectedArc.value = undefined })
-
+})
 /** 选择对象直接引用服务弧段，不复制/归并点；身份包括当前偏移与四级层次。 */
-function showArc(arc: BallisticVisibleArc, identity: string): void {
-  selectedArc.value = { arc, identity: `偏移${selectedOffset.value?.offsetSecond}秒 / ${identity} / 弧段${arc.arcIndex}` }
+function showArc(arc, identity) {
+  selectedArc.value = {
+    arc,
+    identity: `偏移${selectedOffset.value?.offsetSecond}秒 / ${identity} / 弧段${arc.arcIndex}`,
+  }
 }
 </script>
 

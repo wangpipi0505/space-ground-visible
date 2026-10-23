@@ -1,0 +1,13 @@
+{
+  "command": [
+    "G:/5-YG/space-ground-visible/verification/runtime/A19/node-v14.21.3-win-x64/node.exe",
+    "G:/5-YG/space-ground-visible/verification/runtime/A19/pnpm7/package/bin/pnpm.cjs",
+    "build"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "startedUnix": 1792729052.703096,
+  "durationSec": 4.979848146438599,
+  "exitCode": 0,
+  "stdoutSha256": "a49bfa8e3c94ebedcc705a696efca271f4b4e266dc446b13c98f3d1c24b0cc57",
+  "stderrSha256": "769ca5ce68f677b545fc7cc701049b1a70c2588034a567d77385b9931102d03d"
+}

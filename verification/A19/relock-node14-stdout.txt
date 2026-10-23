@@ -1,0 +1,17 @@
+ WARN  `node_modules` is present. Lockfile only installation will make it out-of-date
+Progress: resolved 0, reused 1, downloaded 0, added 0
+ WARN  deprecated vue@2.7.16: Vue 2 has reached EOL and is no longer actively maintained. See https://v2.vuejs.org/eol/ for more details.
+Progress: resolved 8, reused 8, downloaded 0, added 0
+ WARN  deprecated whatwg-encoding@2.0.0: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+ WARN  deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+ WARN  deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+Progress: resolved 121, reused 120, downloaded 0, added 0
+Progress: resolved 155, reused 131, downloaded 1, added 0
+Progress: resolved 164, reused 138, downloaded 2, added 0
+Progress: resolved 165, reused 138, downloaded 2, added 0
+Progress: resolved 168, reused 142, downloaded 4, added 0
+Progress: resolved 169, reused 142, downloaded 4, added 0
+Progress: resolved 169, reused 143, downloaded 4, added 0
+
+Done in 9.5s
+Progress: resolved 170, reused 144, downloaded 4, added 0, done

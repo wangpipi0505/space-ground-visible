@@ -1,0 +1,116 @@
+{
+  "records": [
+    {
+      "file": "api/ballisticFiles.js",
+      "functions": 4,
+      "equal": true
+    },
+    {
+      "file": "api/ballisticFit.js",
+      "functions": 1,
+      "equal": true
+    },
+    {
+      "file": "api/ballisticFitTypes.js",
+      "functions": 0,
+      "equal": true
+    },
+    {
+      "file": "api/ballisticHttp.js",
+      "functions": 2,
+      "equal": true
+    },
+    {
+      "file": "api/ballisticPayloads.js",
+      "functions": 1,
+      "equal": true
+    },
+    {
+      "file": "api/ballisticRetime.js",
+      "functions": 1,
+      "equal": true
+    },
+    {
+      "file": "api/ballisticSimulation.js",
+      "functions": 1,
+      "equal": true
+    },
+    {
+      "file": "api/ballisticWindow.js",
+      "functions": 1,
+      "equal": true
+    },
+    {
+      "file": "api/ballisticWindowTypes.js",
+      "functions": 0,
+      "equal": true
+    },
+    {
+      "file": "api/client.js",
+      "functions": 7,
+      "equal": true
+    },
+    {
+      "file": "api/types.js",
+      "functions": 0,
+      "equal": true
+    },
+    {
+      "file": "api/visibilityTaskResults.js",
+      "functions": 5,
+      "equal": true
+    },
+    {
+      "file": "api/visibilityTasks.js",
+      "functions": 4,
+      "equal": true
+    },
+    {
+      "file": "utils/ballisticFit.js",
+      "functions": 4,
+      "equal": true
+    },
+    {
+      "file": "utils/ballisticSimulation.js",
+      "functions": 4,
+      "equal": true
+    },
+    {
+      "file": "utils/ballisticSwingDefaults.js",
+      "functions": 6,
+      "equal": true
+    },
+    {
+      "file": "utils/ballisticWindow.js",
+      "functions": 5,
+      "equal": true
+    },
+    {
+      "file": "utils/standardPayload.js",
+      "functions": 3,
+      "equal": true
+    },
+    {
+      "file": "utils/winToolSummary.js",
+      "functions": 7,
+      "equal": true
+    },
+    {
+      "file": "composables/useSelectionConfirm.js",
+      "functions": 4,
+      "equal": true
+    },
+    {
+      "file": "composables/useVisibilityTaskRecords.js",
+      "functions": 8,
+      "equal": true
+    },
+    {
+      "file": "composables/useVisibilityWorkbench.js",
+      "functions": 43,
+      "equal": true
+    }
+  ],
+  "functions": 111,
+  "allowedCompatibility": "仅useVisibilityWorkbench字典写入/删除改用Vue.set/del"
+}

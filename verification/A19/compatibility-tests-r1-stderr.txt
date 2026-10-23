@@ -1,0 +1,62 @@
+stderr | src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > A19 点击实际目标复选框保持折叠组展开状态
+[Vue warn]: Error in setup: "TypeError: Cannot read property 'stateName' of null"
+
+found in
+
+---> <VisibilityPlanningStep> at G:/5-YG/space-ground-visible/frontend/src/components/VisibilityPlanningStep.vue
+       <Root>
+TypeError: Cannot read property 'stateName' of null
+    at G:\5-YG\space-ground-visible\frontend\src\components\VisibilityPlanningStep.vue:97:60
+    at Array.map (<anonymous>)
+    at VueComponent.<anonymous> (G:\5-YG\space-ground-visible\frontend\src\components\VisibilityPlanningStep.vue:90:34)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at Object.get value [as value] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1326:29)
+    at VueComponent.getter (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1405:31)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at doWatch (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1550:32)
+    at Module.watch (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1377:12)
+[Vue warn]: Error in render: "TypeError: Cannot read property 'selectedTargetIds' of undefined"
+
+found in
+
+---> <VisibilityPlanningStep> at G:/5-YG/space-ground-visible/frontend/src/components/VisibilityPlanningStep.vue
+       <Root>
+TypeError: Cannot read property 'selectedTargetIds' of undefined
+    at Proxy.render (G:\5-YG\space-ground-visible\frontend\src\components\VisibilityPlanningStep.vue:257:4354)
+    at VueComponent.Vue._render (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:2602:28)
+    at VueComponent.updateComponent (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3840:27)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at new Watcher (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3402:51)
+    at mountComponent (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3857:5)
+    at VueComponent.Vue.$mount (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:8708:12)
+    at init (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:4369:19)
+    at createComponent (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:6509:17)
+    at createElm (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:6463:13)
+
+stderr | src/components/TaskResultRecordsPanel.spec.js > TaskResultRecordsPanel > A19 实际关键词框按 Enter 使用相同筛选条件重新查询
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskSatelliteSelectionStep.spec.js > TaskSatelliteSelectionStep > A19 实际输入框按 Enter 继续触发卫星查询
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > A19 点击实际目标复选框保持折叠组展开状态
+TypeError: Cannot read property 'selectedTargetIds' of undefined
+ ❯ Proxy.render src/components/VisibilityPlanningStep.vue:257:4354
+
+ ❯ VueComponent.Vue._render node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:2602:28
+ ❯ VueComponent.updateComponent node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3840:27
+ ❯ Watcher.get node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3412:33
+ ❯ new Watcher node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3402:51
+ ❯ mountComponent node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3857:5
+ ❯ VueComponent.Vue.$mount node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:8708:12
+ ❯ init node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:4369:19
+ ❯ createComponent node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:6509:17
+ ❯ createElm node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:6463:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

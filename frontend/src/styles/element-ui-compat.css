@@ -1,0 +1,19 @@
+/** Element UI 2 的默认控件为 40px；恢复既有页面的 32px 输入、24px 表格按钮与紧凑行高。 */
+.el-input__inner { height: 32px; line-height: 32px; }
+.el-input__icon { line-height: 32px; }
+.el-button { height: 32px; padding: 8px 15px; }
+.el-button--small, .el-table--small .el-button { height: 24px; padding: 5px 11px; font-size: 12px; }
+.el-button--text { height: auto; border: 0; background: transparent; }
+.el-button--text[data-text-type="danger"] { color: #f56c6c; }
+.el-form--label-top .el-form-item__label { display: block; padding: 0; margin-bottom: 8px; line-height: 22px; }
+.ballistic-workspace .el-form--label-top .el-form-item__label { margin-bottom: 4px; line-height: 20px; }
+.el-form-item__content { display: flex; flex-wrap: wrap; align-items: center; line-height: 32px; }
+.el-input-number { width: 150px; max-width: 100%; line-height: 30px; }
+.el-select { width: 100%; }
+.el-tag { height: 24px; line-height: 22px; }
+.el-tag--small { height: 20px; line-height: 18px; }
+.el-checkbox-button__inner { padding: 8px 15px; line-height: 14px; }
+.el-input-number.is-controls-right .el-input-number__increase,
+.el-input-number.is-controls-right .el-input-number__decrease { line-height: 15px; }
+.el-table--small { font-size: 12px; }
+.el-table--small th, .el-table--small td { padding: 6px 0; }

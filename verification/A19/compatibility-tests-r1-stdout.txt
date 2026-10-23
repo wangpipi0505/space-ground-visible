@@ -1,0 +1,21 @@
+
+ RUN  v0.34.6 G:/5-YG/space-ground-visible/frontend
+
+stdout | unknown test
+Download the Vue Devtools extension for a better development experience:
+https://github.com/vuejs/vue-devtools
+You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+
+ ❯ src/components/VisibilityPlanningStep.spec.js  (12 tests | 1 failed) 693ms
+   ❯ src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > A19 点击实际目标复选框保持折叠组展开状态
+     → Cannot read property 'selectedTargetIds' of undefined
+ ✓ src/components/TaskResultRecordsPanel.spec.js  (6 tests) 254ms
+ ✓ src/components/TaskSatelliteSelectionStep.spec.js  (3 tests) 52ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 20 passed (21)
+   Start at  12:07:39
+   Duration  3.21s (transform 448ms, setup 1.58s, collect 284ms, tests 999ms, environment 103ms, prepare 84ms)
+

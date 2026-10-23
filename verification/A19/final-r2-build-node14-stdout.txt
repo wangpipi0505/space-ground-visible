@@ -1,0 +1,15 @@
+
+> space-ground-visible-frontend@0.0.0 build G:\5-YG\space-ground-visible\frontend
+> vite build
+
+vite v4.5.14 building for production...
+transforming...
+✓ 345 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.52 kB │ gzip:   0.41 kB
+dist/assets/element-icons-ab40a589.woff     28.20 kB
+dist/assets/element-icons-a30f5b3b.ttf      55.96 kB
+dist/assets/index-2c7099d7.css             267.92 kB │ gzip:  42.28 kB
+dist/assets/index-06ffc764.js            1,136.46 kB │ gzip: 322.71 kB
+✓ built in 3.68s

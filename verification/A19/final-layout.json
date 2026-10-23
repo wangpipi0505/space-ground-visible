@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "id": "workbench",
+      "numericControls": 7,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "id": "ballistic-payloads",
+      "numericControls": 0,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "id": "ballistic-fit",
+      "numericControls": 0,
+      "overflow": false
+    },
+    {
+      "width": 1000,
+      "id": "workbench",
+      "numericControls": 7,
+      "overflow": false
+    },
+    {
+      "width": 1000,
+      "id": "ballistic-payloads",
+      "numericControls": 0,
+      "overflow": false
+    },
+    {
+      "width": 1000,
+      "id": "ballistic-fit",
+      "numericControls": 0,
+      "overflow": false
+    }
+  ]
+}

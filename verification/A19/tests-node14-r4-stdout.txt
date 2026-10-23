@@ -1,0 +1,73 @@
+
+> space-ground-visible-frontend@0.0.0 test G:\5-YG\space-ground-visible\frontend
+> vitest run
+
+
+ RUN  v0.34.6 G:/5-YG/space-ground-visible/frontend
+
+stdout | unknown test
+Download the Vue Devtools extension for a better development experience:
+https://github.com/vuejs/vue-devtools
+You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+
+ ❯ src/App.spec.js  (11 tests | 11 failed) 1524ms
+   ❯ src/App.spec.js > App > A06 弹道仅两个一级入口且拟合下三子页保留空间入口
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > does not render health status controls in the page header
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > lays out satellite selection, link planning, and target planning side by side
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > uses dedicated panels for station links and observation constraints
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > 导航弹道配置后返回仍保留独立草稿与空间工作台
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > loads only the first satellite catalog page and sends target pagination parameters
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > shows imported catalog fields and mass for satellites and targets
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > uses the selected downlink window as the only visibility planning time range
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > sends recommended illumination constraint with millisecond fine step
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > runs visibility planning as a background task and loads the finished result
+     → satellites.value is not iterable
+   ❯ src/App.spec.js > App > T25拟合模拟重定时引用隔离并供窗口及再次重定时选择
+     → Cannot read property '$emit' of undefined
+     → satellites.value is not iterable
+ ✓ src/views/BallisticFitView.spec.js  (7 tests) 998ms
+ ✓ src/views/BallisticPayloadConfigurationView.spec.js  (3 tests) 443ms
+ ✓ src/components/StandardPayloadEditor.spec.js  (4 tests) 99ms
+ ✓ src/views/BallisticSwingAlignment.spec.js  (18 tests) 4484ms
+ ✓ src/components/VisibilityPlanningStep.spec.js  (11 tests) 667ms
+ ✓ src/views/BallisticRetimeView.spec.js  (7 tests) 548ms
+ ✓ src/views/BallisticSimulationView.spec.js  (5 tests) 248ms
+ ✓ src/components/BallisticWindowControls.spec.js  (3 tests) 194ms
+ ✓ src/components/TaskResultRecordsPanel.spec.js  (5 tests) 190ms
+ ✓ src/components/SatellitePayloadPanel.spec.js  (3 tests) 77ms
+ ✓ src/utils/ballisticRetime.spec.js  (3 tests) 57ms
+ ✓ src/components/BallisticWindowResults.spec.js  (2 tests) 58ms
+ ✓ src/components/TaskSatelliteSelectionStep.spec.js  (2 tests) 37ms
+ ✓ src/components/TargetSelectionStep.spec.js  (1 test) 28ms
+ ✓ src/composables/useVisibilityWorkbench.spec.js  (15 tests) 26ms
+ ✓ src/components/ObservationConstraintPanel.spec.js  (1 test) 23ms
+ ✓ src/components/WindowSelectionPanel.spec.js  (1 test) 18ms
+ ✓ src/components/TaskResultDetailDrawer.spec.js  (1 test) 16ms
+ ✓ src/utils/ballisticFit.spec.js  (13 tests) 14ms
+ ✓ src/api/ballisticWindow.spec.js  (5 tests) 11ms
+ ✓ src/api/ballisticPayloads.spec.js  (2 tests) 8ms
+ ✓ src/views/BallisticElementConsistency.spec.js  (1 test) 2ms
+ ✓ src/utils/ballisticSimulation.spec.js  (2 tests) 2ms
+ ✓ src/api/ballisticFit.spec.js  (2 tests) 2ms
+ ✓ src/api/ballisticRetime.spec.js  (3 tests) 2ms
+ ✓ src/api/ballisticSimulation.spec.js  (2 tests) 1ms
+ ✓ src/utils/standardPayload.spec.js  (2 tests) 1ms
+ ✓ src/utils/winToolSummary.spec.js  (6 tests) 1ms
+
+ Test Files  1 failed | 28 passed (29)
+      Tests  11 failed | 130 passed (141)
+   Start at  12:00:33
+   Duration  23.72s (transform 550ms, setup 12.09s, collect 1.41s, tests 9.78s, environment 98ms, prepare 87ms)
+
+ ELIFECYCLE  Test failed. See above for more details.

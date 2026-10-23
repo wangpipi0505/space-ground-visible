@@ -1,0 +1,68 @@
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 双星初始可编辑，末格input直接进入361扫描请求且目标UTC优先于默认
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticFitView.spec.js > T23 拟合页面状态 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > groups one target once, nests its observation combinations, and renders a separate summary block
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 示例朝地球俯仰与空间标准、新增和目录默认隔离
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticSimulationView.spec.js > T24 模拟页面与实际结果引用 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskResultRecordsPanel.spec.js > TaskResultRecordsPanel > loads persisted task result records on mount
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/utils/ballisticRetime.spec.js > T25 重定时完整CSV命名列 > 未知文本/列重排/缺dt/负标记保留，跨日非整秒UTC及原点表按列名显示
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/SatellitePayloadPanel.spec.js > SatellitePayloadPanel > provides a persistent space payload save action for every selected satellite
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/BallisticWindowResults.spec.js > T22 原结果层级与真实点展示 > 全部偏移可选、两弧层级及点表保持服务累计，跨180度不画贯穿假线
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskSatelliteSelectionStep.spec.js > TaskSatelliteSelectionStep > shows selected satellites by name without appending internal IDs
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TargetSelectionStep.spec.js > TargetSelectionStep > collects a minimum mass and plain-text target exclusion condition
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/ObservationConstraintPanel.spec.js > ObservationConstraintPanel > allows direct editing of an existing combination duration
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/WindowSelectionPanel.spec.js > WindowSelectionPanel > binds merged coverage windows to their contributing link summary
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskResultDetailDrawer.spec.js > TaskResultDetailDrawer > shows the persisted full skipped-pair list separately from result JSON
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+

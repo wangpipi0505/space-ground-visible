@@ -1,23 +1,57 @@
-<script setup lang="ts">
+<script>
+export default { name: 'BallisticFitTrajectory' }
+</script>
+
+<script setup>
 /**
  * 全部真实CSV行的ECI XY投影与XYZ/相对UTC秒曲线；直接连接相邻导出点，不平滑或生成插值。
  * 四图红色标记仅isOriginal=1，原点表保持CSV文本。dt拟合/模拟为相邻毫秒，重定时为累计毫秒且可缺省；timeIntervalMs为相邻毫秒，UTC原文本不转换。
  */
 import { computed } from 'vue'
-import type { FitCsvPoint } from '../api/ballisticFitTypes'
-const props = defineProps<{ points: FitCsvPoint[]; identity: string; retimed?: boolean }>()
-type Axis = 'eciX' | 'eciY' | 'eciZ' | 'relativeTimeSec'
+const props = defineProps({
+  points: { type: Array, required: true },
+  identity: { type: String, required: true },
+  retimed: { type: Boolean },
+})
 const originals = computed(() => props.points.filter((point) => point.original))
-const graphs = computed(() => ([['eciX', 'eciY', 'ECI XY投影', 'X m', 'Y m'], ['relativeTimeSec', 'eciX', 'ECI X / 相对UTC时间', '相对UTC s', 'X m'], ['relativeTimeSec', 'eciY', 'ECI Y / 相对UTC时间', '相对UTC s', 'Y m'], ['relativeTimeSec', 'eciZ', 'ECI Z / 相对UTC时间', '相对UTC s', 'Z m']] as const).map(([horizontal, vertical, label, xUnit, yUnit]) => {
-  const bounds = (axis: Axis) => {
-    let min = Infinity, max = -Infinity
-    for (const point of props.points) { min = Math.min(min, point[axis]); max = Math.max(max, point[axis]) }
-    return { min, max }
-  }
-  const x = bounds(horizontal), y = bounds(vertical)
-  const project = (point: FitCsvPoint) => ({ x: 45 + (point[horizontal] - x.min) / (x.max - x.min || 1) * 670, y: 20 + (y.max - point[vertical]) / (y.max - y.min || 1) * 220 })
-  return { label, xUnit, yUnit, x, y, path: props.points.map((point, index) => { const position = project(point); return `${index ? 'L' : 'M'}${position.x},${position.y}` }).join(' '), markers: originals.value.map(project) }
-}))
+const graphs = computed(() =>
+  [
+    ['eciX', 'eciY', 'ECI XY投影', 'X m', 'Y m'],
+    ['relativeTimeSec', 'eciX', 'ECI X / 相对UTC时间', '相对UTC s', 'X m'],
+    ['relativeTimeSec', 'eciY', 'ECI Y / 相对UTC时间', '相对UTC s', 'Y m'],
+    ['relativeTimeSec', 'eciZ', 'ECI Z / 相对UTC时间', '相对UTC s', 'Z m'],
+  ].map(([horizontal, vertical, label, xUnit, yUnit]) => {
+    const bounds = (axis) => {
+      let min = Infinity,
+        max = -Infinity
+      for (const point of props.points) {
+        min = Math.min(min, point[axis])
+        max = Math.max(max, point[axis])
+      }
+      return { min, max }
+    }
+    const x = bounds(horizontal),
+      y = bounds(vertical)
+    const project = (point) => ({
+      x: 45 + ((point[horizontal] - x.min) / (x.max - x.min || 1)) * 670,
+      y: 20 + ((y.max - point[vertical]) / (y.max - y.min || 1)) * 220,
+    })
+    return {
+      label,
+      xUnit,
+      yUnit,
+      x,
+      y,
+      path: props.points
+        .map((point, index) => {
+          const position = project(point)
+          return `${index ? 'L' : 'M'}${position.x},${position.y}`
+        })
+        .join(' '),
+      markers: originals.value.map(project),
+    }
+  }),
+)
 </script>
 
 <template>

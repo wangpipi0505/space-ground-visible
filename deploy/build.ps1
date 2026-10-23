@@ -28,6 +28,6 @@ if ($Component -in @('frontend','all')) {
     try {
         & pnpm.cmd install --frozen-lockfile; if ($LASTEXITCODE) { throw '冻结锁安装失败' }
         & pnpm.cmd test; if ($LASTEXITCODE) { throw '前端测试失败' }
-        & pnpm.cmd build; if ($LASTEXITCODE) { throw '前端类型检查或构建失败' }
+        & pnpm.cmd build; if ($LASTEXITCODE) { throw '前端构建失败' }
     } finally { Pop-Location }
 }

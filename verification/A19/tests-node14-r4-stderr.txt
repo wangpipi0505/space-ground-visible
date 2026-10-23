@@ -1,0 +1,485 @@
+stderr | src/App.spec.js > App > A06 弹道仅两个一级入口且拟合下三子页保留空间入口
+[Vue warn]: Error in render: "TypeError: satellites.value is not iterable"
+
+found in
+
+---> <App> at G:/5-YG/space-ground-visible/frontend/src/App.vue
+       <Root>
+TypeError: satellites.value is not iterable
+    at VueComponent.<anonymous> (G:\5-YG\space-ground-visible\frontend\src\App.vue:31:75)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at Object.get value [as value] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1326:29)
+    at Object.get [as payloadSatelliteOptions] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1147:28)
+    at Proxy.render (G:\5-YG\space-ground-visible\frontend\src\App.vue:62:5808)
+    at VueComponent.Vue._render (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:2602:28)
+    at VueComponent.updateComponent (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3840:27)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.run (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3488:32)
+[Vue warn]: Error in render: "TypeError: satellites.value is not iterable"
+
+found in
+
+---> <App> at G:/5-YG/space-ground-visible/frontend/src/App.vue
+       <Root>
+TypeError: satellites.value is not iterable
+    at VueComponent.<anonymous> (G:\5-YG\space-ground-visible\frontend\src\App.vue:31:75)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at Object.get value [as value] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1326:29)
+    at Object.get [as payloadSatelliteOptions] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1147:28)
+    at Proxy.render (G:\5-YG\space-ground-visible\frontend\src\App.vue:62:5808)
+    at VueComponent.Vue._render (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:2602:28)
+    at VueComponent.updateComponent (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3840:27)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.run (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3488:32)
+
+stderr | src/App.spec.js > App > does not render health status controls in the page header
+[Vue warn]: Error in render: "TypeError: satellites.value is not iterable"
+
+found in
+
+---> <App> at G:/5-YG/space-ground-visible/frontend/src/App.vue
+       <Root>
+TypeError: satellites.value is not iterable
+    at VueComponent.<anonymous> (G:\5-YG\space-ground-visible\frontend\src\App.vue:31:75)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at Object.get value [as value] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1326:29)
+    at Object.get [as payloadSatelliteOptions] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1147:28)
+    at Proxy.render (G:\5-YG\space-ground-visible\frontend\src\App.vue:62:5808)
+    at VueComponent.Vue._render (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:2602:28)
+    at VueComponent.updateComponent (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3840:27)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.run (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3488:32)
+
+stderr | src/App.spec.js > App > lays out satellite selection, link planning, and target planning side by side
+[Vue warn]: Error in render: "TypeError: satellites.value is not iterable"
+
+found in
+
+---> <App> at G:/5-YG/space-ground-visible/frontend/src/App.vue
+       <Root>
+TypeError: satellites.value is not iterable
+    at VueComponent.<anonymous> (G:\5-YG\space-ground-visible\frontend\src\App.vue:31:75)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at Object.get value [as value] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1326:29)
+    at Object.get [as payloadSatelliteOptions] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1147:28)
+    at Proxy.render (G:\5-YG\space-ground-visible\frontend\src\App.vue:62:5808)
+    at VueComponent.Vue._render (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:2602:28)
+    at VueComponent.updateComponent (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3840:27)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.run (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3488:32)
+
+stderr | src/App.spec.js > App > uses dedicated panels for station links and observation constraints
+[Vue warn]: Error in render: "TypeError: satellites.value is not iterable"
+
+found in
+
+---> <App> at G:/5-YG/space-ground-visible/frontend/src/App.vue
+       <Root>
+TypeError: satellites.value is not iterable
+    at VueComponent.<anonymous> (G:\5-YG\space-ground-visible\frontend\src\App.vue:31:75)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at Object.get value [as value] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1326:29)
+    at Object.get [as payloadSatelliteOptions] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:1147:28)
+    at Proxy.render (G:\5-YG\space-ground-visible\frontend\src\App.vue:62:5808)
+    at VueComponent.Vue._render (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:2602:28)
+    at VueComponent.updateComponent (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3840:27)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.run (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3488:32)
+
+stderr | src/App.spec.js > App > 导航弹道配置后返回仍保留独立草稿与空间工作台
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <ElTabPane> at packages/tabs/src/tab-pane.vue
+         <ElTabs> at packages/tabs/src/tabs.vue
+           <App> at G:/5-YG/space-ground-visible/frontend/src/App.vue
+             <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <ElTabPane> at packages/tabs/src/tab-pane.vue
+           <ElTabs> at packages/tabs/src/tabs.vue
+             <App> at G:/5-YG/space-ground-visible/frontend/src/App.vue
+               <Root>
+
+stderr | src/views/BallisticFitView.spec.js > T23 拟合页面状态 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 示例朝地球俯仰与空间标准、新增和目录默认隔离
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 当前星切换保持原草稿身份且初始就有结果位置
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 双星初始可编辑，末格input直接进入361扫描请求且目标UTC优先于默认
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 四示例星座及种子生成遵循原平面相位，替换不复用身份
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 semiMajorAxisM，纠正后才替换
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 eccentricity，纠正后才替换
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 inclinationDeg，纠正后才替换
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 raanDeg，纠正后才替换
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 argumentOfPerigeeDeg，纠正后才替换
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 meanAnomalyDeg，纠正后才替换
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 非法种子UTC保持当前星座，合法UTC落表到秒及空值落原J2000可纠正
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.4 e=0.0008504
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.5 e=0.0008505
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.49 e=0.0008515
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 受控未完成窗口HTTP冻结六根数与目标扫描，跨页忙态由原父级busy维持
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+
+stderr | src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > groups one target once, nests its observation combinations, and renders a separate summary block
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticSimulationView.spec.js > T24 模拟页面与实际结果引用 > A07 初始结果区说明下一步且主动作可直接使用
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <Root>
+
+stderr | src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <Root>
+
+stderr | src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 原生选择上传/预览后提交同一载荷UTC，计算失败清旧结果，替换失败清文件引用
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <Root>
+
+stderr | src/components/TaskResultRecordsPanel.spec.js > TaskResultRecordsPanel > loads persisted task result records on mount
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/SatellitePayloadPanel.spec.js > SatellitePayloadPanel > provides a persistent space payload save action for every selected satellite
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/utils/ballisticRetime.spec.js > T25 重定时完整CSV命名列 > 未知文本/列重排/缺dt/负标记保留，跨日非整秒UTC及原点表按列名显示
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/BallisticWindowResults.spec.js > T22 原结果层级与真实点展示 > 全部偏移可选、两弧层级及点表保持服务累计，跨180度不画贯穿假线
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskSatelliteSelectionStep.spec.js > TaskSatelliteSelectionStep > shows selected satellites by name without appending internal IDs
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TargetSelectionStep.spec.js > TargetSelectionStep > collects a minimum mass and plain-text target exclusion condition
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/ObservationConstraintPanel.spec.js > ObservationConstraintPanel > allows direct editing of an existing combination duration
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/WindowSelectionPanel.spec.js > WindowSelectionPanel > binds merged coverage windows to their contributing link summary
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskResultDetailDrawer.spec.js > TaskResultDetailDrawer > shows the persisted full skipped-pair list separately from result JSON
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/App.spec.js > App > A06 弹道仅两个一级入口且拟合下三子页保留空间入口
+ FAIL  src/App.spec.js > App > does not render health status controls in the page header
+ FAIL  src/App.spec.js > App > lays out satellite selection, link planning, and target planning side by side
+ FAIL  src/App.spec.js > App > uses dedicated panels for station links and observation constraints
+ FAIL  src/App.spec.js > App > 导航弹道配置后返回仍保留独立草稿与空间工作台
+ FAIL  src/App.spec.js > App > loads only the first satellite catalog page and sends target pagination parameters
+ FAIL  src/App.spec.js > App > shows imported catalog fields and mass for satellites and targets
+ FAIL  src/App.spec.js > App > uses the selected downlink window as the only visibility planning time range
+ FAIL  src/App.spec.js > App > sends recommended illumination constraint with millisecond fine step
+ FAIL  src/App.spec.js > App > runs visibility planning as a background task and loads the finished result
+ FAIL  src/App.spec.js > App > T25拟合模拟重定时引用隔离并供窗口及再次重定时选择
+TypeError: satellites.value is not iterable
+ ❯ VueComponent.<anonymous> src/App.vue:31:75
+     29| const generatedBallisticResults = computed(() => [...new Map([...simul…
+     30| /** 当前目录页加已选任务星，分页后仍可选到空间既有任务星；弹道拥有独立…
+     31| const payloadSatelliteOptions = computed(() => [...new Map([...satelli…
+       |                                                                           ^
+     32| onMounted(() => {
+     33|     initialize();
+ ❯ Watcher.get node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3412:33
+ ❯ Watcher.evaluate node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3513:27
+ ❯ Object.get value [as value] node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:1326:29
+ ❯ Object.get [as payloadSatelliteOptions] node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:1147:28
+ ❯ Proxy.render src/App.vue:62:5808
+ ❯ VueComponent.Vue._render node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:2602:28
+ ❯ VueComponent.updateComponent node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3840:27
+ ❯ Watcher.get node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3412:33
+ ❯ Watcher.run node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3488:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  src/App.spec.js > App > T25拟合模拟重定时引用隔离并供窗口及再次重定时选择
+TypeError: Cannot read property '$emit' of undefined
+ ❯ src/App.spec.js:249:63
+    247|         await wrapper.get('#tab-ballistic-fit').trigger('click');
+    248|         await flushPromises();
+    249|         wrapper.findComponent({ name: 'BallisticFitView' }).vm.$emit('…
+       |                                                               ^
+    250|         await wrapper.get('#tab-simulation').trigger('click');
+    251|         await flushPromises();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+

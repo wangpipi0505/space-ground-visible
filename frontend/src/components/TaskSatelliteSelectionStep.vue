@@ -1,38 +1,29 @@
-<script setup lang="ts">
-/** 任务卫星筛选与分页选择；列表由工作台提供，查询、翻页和勾选通过事件回传。 */
-import type { Satellite } from '../api/types'
+<script>
+export default { name: 'TaskSatelliteSelectionStep' }
+</script>
 
-defineOptions({ name: 'TaskSatelliteSelectionStep' })
-
-const props = defineProps<{
-  keyword: string
-  loading: boolean
-  satellites: Satellite[]
-  selectedSatellites: Satellite[]
-  total: number
-  pageNumber: number
-  pageSize: number
-}>()
-
-const emit = defineEmits<{
-  'update:keyword': [keyword: string]
-  query: []
-  pageChange: [pageNumber: number]
-  toggle: [satellite: Satellite, selected: boolean]
-}>()
-
+<script setup>
+const props = defineProps({
+  keyword: { type: String, required: true },
+  loading: { type: Boolean, required: true },
+  satellites: { type: Array, required: true },
+  selectedSatellites: { type: Array, required: true },
+  total: { type: Number, required: true },
+  pageNumber: { type: Number, required: true },
+  pageSize: { type: Number, required: true },
+})
+const emit = defineEmits(['update:keyword', 'query', 'pageChange', 'toggle'])
 /** 判断当前卫星是否已加入本次任务卫星集合。 */
-function isSelected(satelliteId: number): boolean {
+function isSelected(satelliteId) {
   return props.selectedSatellites.some((satellite) => satellite.id === satelliteId)
 }
-
 /**
  * 将当前目录行加入或移出任务卫星集合。
  *
  * @param satellite 当前目录行
  * @param selected 勾选状态
  */
-function handleToggle(satellite: Satellite, selected: boolean): void {
+function handleToggle(satellite, selected) {
   emit('toggle', satellite, selected)
 }
 </script>
@@ -43,11 +34,11 @@ function handleToggle(satellite: Satellite, selected: boolean): void {
       <div class="compact-card-header"><h2>任务卫星</h2><el-tag type="info">{{ selectedSatellites.length }} 颗</el-tag></div>
     </template>
     <div class="task-filter-row">
-      <el-input :model-value="keyword" clearable placeholder="输入卫星名称、OBJECT_ID、NORAD_CAT_ID 或 SCID" @update:model-value="emit('update:keyword', String($event))" @keyup.enter="emit('query')" />
+      <el-input :value="keyword" clearable placeholder="输入卫星名称、OBJECT_ID、NORAD_CAT_ID 或 SCID" @input="emit('update:keyword', String($event))" @keyup.enter.native="emit('query')" />
       <el-button type="primary" :loading="loading" @click="emit('query')">筛选卫星</el-button>
     </div>
     <el-table :data="satellites" row-key="id" size="small" max-height="330" show-overflow-tooltip empty-text="未查询到可选卫星">
-      <el-table-column label="任务选择" width="94"><template #default="scope"><el-checkbox :model-value="isSelected(scope.row.id)" @update:model-value="handleToggle(scope.row, Boolean($event))" /></template></el-table-column>
+      <el-table-column label="任务选择" width="94"><template #default="scope"><el-checkbox :value="isSelected(scope.row.id)" @input="handleToggle(scope.row, Boolean($event))" /></template></el-table-column>
       <el-table-column prop="id" label="ID" width="90" />
       <el-table-column prop="name" label="卫星名称" min-width="170" />
       <el-table-column prop="objectId" label="OBJECT_ID" min-width="135" />

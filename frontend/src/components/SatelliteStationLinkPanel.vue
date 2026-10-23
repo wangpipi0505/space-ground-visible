@@ -1,33 +1,25 @@
-<script setup lang="ts">
-/** 维护已选卫星与地面站的下传链路；仅回传关联变更，不在组件内计算窗口。 */
-import type { Satellite, Station } from '../api/types'
-import type { StationConstraintForm } from '../composables/useVisibilityWorkbench'
+<script>
+export default { name: 'SatelliteStationLinkPanel' }
+</script>
 
-defineOptions({ name: 'SatelliteStationLinkPanel' })
-
-const props = defineProps<{
-  satellites: Satellite[]
-  stations: Station[]
-  stationConstraints: StationConstraintForm[]
-  links: Array<{ satelliteId: number; stationId: string }>
-}>()
-
-const emit = defineEmits<{
-  toggleLink: [satelliteId: number, stationId: string, selected: boolean]
-}>()
-
+<script setup>
+const props = defineProps({
+  satellites: { type: Array, required: true },
+  stations: { type: Array, required: true },
+  stationConstraints: { type: Array, required: true },
+  links: { type: Array, required: true },
+})
+const emit = defineEmits(['toggleLink'])
 /** 判断当前卫星与地面站是否已作为本次下传链路被互选。 */
-function isLinked(satelliteId: number, stationId: string): boolean {
+function isLinked(satelliteId, stationId) {
   return props.links.some((link) => link.satelliteId === satelliteId && link.stationId === stationId)
 }
-
 /** 将矩阵复选状态转发给工作台状态管理器。 */
-function toggleLink(satelliteId: number, stationId: string, selected: boolean): void {
+function toggleLink(satelliteId, stationId, selected) {
   emit('toggleLink', satelliteId, stationId, selected)
 }
-
 /** 仅展示已经被勾选为本次任务约束的地面站。 */
-function isStationSelected(stationId: string): boolean {
+function isStationSelected(stationId) {
   return props.stationConstraints.some((constraint) => constraint.stationId === stationId)
 }
 </script>
@@ -44,7 +36,7 @@ function isStationSelected(stationId: string): boolean {
       <div v-for="station in stations.filter((item) => isStationSelected(item.id))" :key="station.id" class="link-matrix-row" role="row">
         <span role="rowheader"><strong>{{ station.name }}</strong><small>{{ station.id }}</small></span>
         <span v-for="satellite in satellites" :key="satellite.id" role="cell">
-          <el-checkbox :model-value="isLinked(satellite.id, station.id)" :aria-label="`${satellite.name} 对 ${station.name} 下传`" @update:model-value="toggleLink(satellite.id, station.id, Boolean($event))" />
+          <el-checkbox :value="isLinked(satellite.id, station.id)" :aria-label="`${satellite.name} 对 ${station.name} 下传`" @input="toggleLink(satellite.id, station.id, Boolean($event))" />
         </span>
       </div>
     </div>

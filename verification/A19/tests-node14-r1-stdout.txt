@@ -1,0 +1,204 @@
+
+> space-ground-visible-frontend@0.0.0 test G:\5-YG\space-ground-visible\frontend
+> vitest run
+
+
+ RUN  v0.34.6 G:/5-YG/space-ground-visible/frontend
+
+stdout | unknown test
+Download the Vue Devtools extension for a better development experience:
+https://github.com/vuejs/vue-devtools
+You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+
+ ❯ src/components/VisibilityPlanningStep.spec.js  (11 tests | 6 failed) 645ms
+   ❯ src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > groups one target once, nests its observation combinations, and renders a separate summary block
+     → Cannot read property 'bind' of undefined
+   ❯ src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > uses configured filters, paginates ten targets per page, and opens skipped pairs in a dialog
+     → Cannot read property 'bind' of undefined
+   ❯ src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > shows a qualified parent window without rendering its illumination fragments
+     → Cannot read property 'bind' of undefined
+   ❯ src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > locks full-target planning to a background task with progress
+     → Cannot read property 'bind' of undefined
+   ❯ src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > hides the cancel button once the background task has finished
+     → Cannot read property 'bind' of undefined
+   ❯ src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > keeps skipped pair details out of the main result area until the dialog is opened
+     → Cannot read property 'bind' of undefined
+ ✓ src/composables/useVisibilityWorkbench.spec.js  (15 tests) 32ms
+ ❯ src/views/BallisticSwingAlignment.spec.js  (18 tests | 17 failed) 326ms
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 双星初始可编辑，末格input直接进入361扫描请求且目标UTC优先于默认
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 四示例星座及种子生成遵循原平面相位，替换不复用身份
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 102默认表可直接提交；导入别名/未知字段后编辑末格仍保留编码和同一草稿
+     → Cannot read property 'bind' of undefined
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 semiMajorAxisM，纠正后才替换
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 eccentricity，纠正后才替换
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 inclinationDeg，纠正后才替换
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 raanDeg，纠正后才替换
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 argumentOfPerigeeDeg，纠正后才替换
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 生成前拒绝空种子 meanAnomalyDeg，纠正后才替换
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 非法种子UTC保持当前星座，合法UTC落表到秒及空值落原J2000可纠正
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.4 e=0.0008504
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.5 e=0.0008505
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 星座生成复现Java表格量化 a=7530612.49 e=0.0008515
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 默认八行新增第九行和删除后新增沿原defaultNewRow，字符串直接提交
+     → Cannot read property '1' of undefined
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 模拟恢复Swing默认且最后input未失焦直接提交，兼容字段保留
+     → Cannot read property '1' of undefined
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 102修改已知叶值保留未知JSON兼容字段且非法步长能在原表单纠正
+     → Cannot read property 'bind' of undefined
+   ❯ src/views/BallisticSwingAlignment.spec.js > A06 Swing输入恢复 > 受控未完成窗口HTTP冻结六根数与目标扫描，跨页忙态由原父级busy维持
+     → _vm.validateStandardPayload is not a function
+ ❯ src/App.spec.js  (11 tests | 11 failed) 130ms
+   ❯ src/App.spec.js > App > A06 弹道仅两个一级入口且拟合下三子页保留空间入口
+     → expected [] to deeply equal [ '规划工作台', '任务结果记录', '可视窗口计算', …(1) ]
+   ❯ src/App.spec.js > App > does not render health status controls in the page header
+     → Cannot read property 'bind' of undefined
+   ❯ src/App.spec.js > App > lays out satellite selection, link planning, and target planning side by side
+     → Cannot read property 'bind' of undefined
+   ❯ src/App.spec.js > App > uses dedicated panels for station links and observation constraints
+     → Cannot read property 'bind' of undefined
+   ❯ src/App.spec.js > App > 导航弹道配置后返回仍保留独立草稿与空间工作台
+     → Cannot read property 'bind' of undefined
+   ❯ src/App.spec.js > App > loads only the first satellite catalog page and sends target pagination parameters
+     → Cannot read property 'bind' of undefined
+   ❯ src/App.spec.js > App > shows imported catalog fields and mass for satellites and targets
+     → expected [] to have a length of 2 but got +0
+   ❯ src/App.spec.js > App > uses the selected downlink window as the only visibility planning time range
+     → Cannot read property 'bind' of undefined
+   ❯ src/App.spec.js > App > sends recommended illumination constraint with millisecond fine step
+     → Cannot read property 'bind' of undefined
+   ❯ src/App.spec.js > App > runs visibility planning as a background task and loads the finished result
+     → Cannot read property 'bind' of undefined
+   ❯ src/App.spec.js > App > T25拟合模拟重定时引用隔离并供窗口及再次重定时选择
+     → Cannot read property 'bind' of undefined
+ ❯ src/views/BallisticRetimeView.spec.js  (7 tests | 7 failed) 303ms
+   ❯ src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > A07 初始结果区说明下一步且主动作可直接使用
+     → Cannot read property 'bind' of undefined
+   ❯ src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > 辅助404注销仅撤本次候选仍保留计算成功与错误，原文件恢复可重新201登记
+     → expected [] to have a length of 1 but got +0
+   ❯ src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > 旧慢预览在来源切换或候选撤销后撤销busy，且旧finally不能清新来源busy
+     → expected '弹道重定时调整发射时间轨迹来源来源上传CSV已生成结果选择结果请选择拟合、…' to include '正在读取来源预览'
+   ❯ src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > 来源预览失败与计算独立，保留201引用可执行原计算且忙时防重复
+     → expected '弹道重定时调整发射时间轨迹来源来源上传CSV已生成结果选择结果请选择拟合、…' to include '预览独立失败'
+   ❯ src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > 上传201/预览→四字段原UTC→2576行四图→登记事件/快照，改输入过期失败清旧成功
+     → expected '弹道重定时调整发射时间轨迹来源来源上传CSV已生成结果选择轨迹CSV选择 …' to include '源1'
+   ❯ src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > 已有引用切换/失效清旧路径，null同值提交，上传失败不能沿用旧引用
+     → [vue-test-utils]: wrapper.setValue() cannot be called on a <input type="checkbox" /> element. Use wrapper.setChecked() instead
+   ❯ src/views/BallisticRetimeView.spec.js > T25 重定时页面真实引用 > 自身上次结果再次输入先截真实路径再撤自身候选，忙时防重复，旧慢登记不能污染新身份
+     → Unexpected token u in JSON at position 0
+ ❯ src/views/BallisticFitView.spec.js  (0 test)
+ ❯ src/views/BallisticSimulationView.spec.js  (5 tests | 4 failed) 173ms
+   ❯ src/views/BallisticSimulationView.spec.js > T24 模拟页面与实际结果引用 > A07 初始结果区说明下一步且主动作可直接使用
+     → Cannot read property 'bind' of undefined
+   ❯ src/views/BallisticSimulationView.spec.js > T24 模拟页面与实际结果引用 > 原JSON导入、核心编辑保留高级字段、原结果全文、201引用、完整四曲线、快照与失败恢复
+     → Cannot read property '1' of undefined
+   ❯ src/views/BallisticSimulationView.spec.js > T24 模拟页面与实际结果引用 > 本地非法JSON不发送HTTP，忙时防重复
+     → expected "spy" to be called 1 times, but got 0 times
+   ❯ src/views/BallisticSimulationView.spec.js > T24 模拟页面与实际结果引用 > 核心数值框非法/舍入文本不能默默沿用旧合法JSON发起计算
+     → Response is not a constructor
+ ❯ src/api/ballisticWindow.spec.js  (5 tests | 3 failed) 3ms
+   ❯ src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 上传真实FormData不写JSON头；预览分页及下载中文原名/字节
+     → Response is not a constructor
+   ❯ src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 原计算路径独立且原响应空白/数值/字节不重新序列化，失败下载不返回错误文件
+     → Response is not a constructor
+   ❯ src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 空间/辅助/计算独立部署根保持各自完整含义
+     → Response is not a constructor
+ ❯ src/components/BallisticWindowControls.spec.js  (3 tests | 3 failed) 92ms
+   ❯ src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口
+     → Cannot read property '$options' of undefined
+   ❯ src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退
+     → Cannot read property '$options' of undefined
+   ❯ src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 原生选择上传/预览后提交同一载荷UTC，计算失败清旧结果，替换失败清文件引用
+     → Cannot read property '$options' of undefined
+ ❯ src/components/TaskResultRecordsPanel.spec.js  (5 tests | 1 failed) 179ms
+   ❯ src/components/TaskResultRecordsPanel.spec.js > TaskResultRecordsPanel > opens the detail drawer with formatted request and result JSON
+     → Cannot read property 'bind' of undefined
+ ❯ src/components/BallisticWindowResults.spec.js  (2 tests | 2 failed) 49ms
+   ❯ src/components/BallisticWindowResults.spec.js > T22 原结果层级与真实点展示 > 全部偏移可选、两弧层级及点表保持服务累计，跨180度不画贯穿假线
+     → expected '2可见弧段4 s累计可见时长30 s最优发射偏移参考 UTC UTC候选发…' to include '12000'
+   ❯ src/components/BallisticWindowResults.spec.js > T22 原结果层级与真实点展示 > point0和全空如实说明，不生成人工轨迹
+     → expected '2可见弧段4 s累计可见时长10 s最优发射偏移参考 UTC UTC候选发…' to include '本次轨迹点输出为0'
+ ❯ src/views/BallisticPayloadConfigurationView.spec.js  (3 tests | 3 failed) 23ms
+   ❯ src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 示例朝地球俯仰与空间标准、新增和目录默认隔离
+     → _vm.validateStandardPayload is not a function
+   ❯ src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功
+     → Response is not a constructor
+   ❯ src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 当前星切换保持原草稿身份且初始就有结果位置
+     → _vm.validateStandardPayload is not a function
+ ✓ src/utils/winToolSummary.spec.js  (6 tests) 3ms
+ ❯ src/components/SatellitePayloadPanel.spec.js  (3 tests | 3 failed) 28ms
+   ❯ src/components/SatellitePayloadPanel.spec.js > SatellitePayloadPanel > provides a persistent space payload save action for every selected satellite
+     → _vm.validateStandardPayload is not a function
+   ❯ src/components/SatellitePayloadPanel.spec.js > SatellitePayloadPanel > renders the same unified parameter fields for a ground payload
+     → _vm.validateStandardPayload is not a function
+   ❯ src/components/SatellitePayloadPanel.spec.js > SatellitePayloadPanel > warns before a legacy ground cone profile is replaced by unified fields
+     → _vm.validateStandardPayload is not a function
+ ✓ src/utils/ballisticRetime.spec.js  (3 tests) 57ms
+ ❯ src/components/StandardPayloadEditor.spec.js  (4 tests | 3 failed) 105ms
+   ❯ src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明
+     → expected undefined to match object { elevationMinDeg: -90 }
+   ❯ src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 九个数字字段清空为null并展示成对校验与LVLH说明
+     → expected undefined to match object { azimuthMinDeg: null, …(1) }
+   ❯ src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 切换类型事件交由业务包装处理且标准事件不带身份
+     → expected undefined to deeply equal [ [ 'GROUND' ] ]
+stdout | unknown test
+<empty line>
+ ❯ src/utils/ballisticFit.spec.js  (13 tests | 3 failed) 16ms
+   ❯ src/utils/ballisticFit.spec.js > T23 原102输入与CSV > 包字符串、UTC、全部别名保持同值，仅显式省略旧输出目录
+     → Object.hasOwn is not a function
+   ❯ src/utils/ballisticFit.spec.js > T23 原102输入与CSV > 一条记录允许进入原服务，不在浏览器擅自限制为三点
+     → Object.hasOwn is not a function
+   ❯ src/utils/ballisticFit.spec.js > T23 原102输入与CSV > taskName:null按原DTO同值提交，原缺省任务名由后端回退
+     → Object.hasOwn is not a function
+ ✓ src/utils/standardPayload.spec.js  (2 tests) 2ms
+ ❯ src/utils/ballisticSimulation.spec.js  (2 tests | 1 failed) 2ms
+   ❯ src/utils/ballisticSimulation.spec.js > T24 原模拟输入合同 > 完整原字段、事件、null、别名、字面UTC、回退步长不转换不丢失
+     → Object.hasOwn is not a function
+ ❯ src/api/ballisticFit.spec.js  (2 tests | 2 failed) 2ms
+   ❯ src/api/ballisticFit.spec.js > T23 原拟合与登记HTTP > 原字段原值发送，原响应字节保留，201登记返回独立引用
+     → Response is not a constructor
+   ❯ src/api/ballisticFit.spec.js > T23 原拟合与登记HTTP > 原400错误中文转呈
+     → expected [Function] to throw error including '无有效观测点' but got 'Response is not a constructor'
+ ❯ src/api/ballisticRetime.spec.js  (3 tests | 3 failed) 2ms
+   ❯ src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 上传200不能冒充201真实引用
+     → Response is not a constructor
+   ❯ src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 四字段同值且原响应字节不包装
+     → Response is not a constructor
+   ❯ src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 原400与500全文保留
+     → Response is not a constructor
+ ❯ src/components/TargetSelectionStep.spec.js  (0 test)
+ ❯ src/components/WindowSelectionPanel.spec.js  (0 test)
+ ❯ src/api/ballisticPayloads.spec.js  (2 tests | 2 failed) 1ms
+   ❯ src/api/ballisticPayloads.spec.js > 弹道载荷独立API > 默认目标为完整ballistic路径且保留身份与原值
+     → Response is not a constructor
+   ❯ src/api/ballisticPayloads.spec.js > 弹道载荷独立API > 独立部署base不受空间base影响并显示400中文错误
+     → Response is not a constructor
+ ❯ src/api/ballisticSimulation.spec.js  (2 tests | 2 failed) 1ms
+   ❯ src/api/ballisticSimulation.spec.js > T24 原模拟HTTP与登记边界 > 原路径、原值和完整HTTP字节保留，无包装/model字段
+     → Response is not a constructor
+   ❯ src/api/ballisticSimulation.spec.js > T24 原模拟HTTP与登记边界 > 原400中文不包新错误，200登记不能冒充201引用
+     → Response is not a constructor
+ ❯ src/components/TaskSatelliteSelectionStep.spec.js  (0 test)
+ ✓ src/components/TaskResultDetailDrawer.spec.js  (1 test) 22ms
+ ✓ src/views/BallisticElementConsistency.spec.js  (1 test) 1ms
+ ❯ src/components/ObservationConstraintPanel.spec.js  (0 test)
+
+ Test Files  23 failed | 6 passed (29)
+      Tests  76 failed | 53 passed (129)
+   Start at  11:54:32
+   Duration  15.75s (transform 678ms, setup 11.86s, collect 1.17s, tests 2.20s, environment 110ms, prepare 93ms)
+
+ ELIFECYCLE  Test failed. See above for more details.

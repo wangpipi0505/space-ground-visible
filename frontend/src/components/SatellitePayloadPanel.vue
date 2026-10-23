@@ -1,63 +1,59 @@
-<script setup lang="ts">
+<script>
+export default { name: 'SatellitePayloadPanel' }
+</script>
+
+<script setup>
 /** 按卫星编辑长期载荷；加载与保存状态来自父级，对空与对地字段按原接口回显。 */
 import { ref, watch } from 'vue'
 import StandardPayloadEditor from './StandardPayloadEditor.vue'
 import { validateStandardPayload } from '../utils/standardPayload'
-import type { PayloadProfileConfiguration, PayloadProfilesResponse, PayloadType, Satellite } from '../api/types'
-
-defineOptions({ name: 'SatellitePayloadPanel' })
-
-const props = defineProps<{
-  satellites: Satellite[]
-  configurations: Record<number, PayloadProfilesResponse | undefined>
-  forms: Record<number, PayloadProfileConfiguration>
-  loadingSatelliteIds: number[]
-  savingSatelliteId: number | null
-}>()
-
-const emit = defineEmits<{
-  save: [satelliteId: number]
-  selectType: [satelliteId: number, payloadType: PayloadType]
-}>()
-
+const props = defineProps({
+  satellites: { type: Array, required: true },
+  configurations: { type: null, required: true },
+  forms: { type: null, required: true },
+  loadingSatelliteIds: { type: Array, required: true },
+  savingSatelliteId: { type: null, required: true },
+})
+const emit = defineEmits(['save', 'selectType'])
 /** 当前展开的卫星载荷配置项；未配置的卫星默认展开，便于直接补全参数。 */
-const activeSatelliteIds = ref<number[]>([])
-
-watch(() => [props.satellites, props.configurations] as const, () => {
-  const validIds = new Set(props.satellites.map((satellite) => satellite.id))
-  const kept = activeSatelliteIds.value.filter((id) => validIds.has(id))
-  const unconfigured = props.satellites
-    .filter((satellite) => !isConfigured(satellite.id))
-    .map((satellite) => satellite.id)
-  activeSatelliteIds.value = [...new Set([...kept, ...unconfigured])]
-}, { immediate: true, deep: true })
-
+const activeSatelliteIds = ref([])
+watch(
+  () => [props.satellites, props.configurations],
+  () => {
+    const validIds = new Set(props.satellites.map((satellite) => satellite.id))
+    const kept = activeSatelliteIds.value.filter((id) => validIds.has(id))
+    const unconfigured = props.satellites
+      .filter((satellite) => !isConfigured(satellite.id))
+      .map((satellite) => satellite.id)
+    activeSatelliteIds.value = [...new Set([...kept, ...unconfigured])]
+  },
+  { immediate: true, deep: true },
+)
 /** 返回某颗任务卫星的当前载荷配置状态；尚未读取完成时视为未配置。 */
-function configurationFor(satelliteId: number): PayloadProfilesResponse {
+function configurationFor(satelliteId) {
   return props.configurations[satelliteId] ?? { activePayloadType: null, profiles: [] }
 }
-
 /** 活动类型代表当前参与规划的配置；只要存在任一 profile 即表示卫星已完成至少一类长期配置。 */
-function isConfigured(satelliteId: number): boolean {
+function isConfigured(satelliteId) {
   return configurationFor(satelliteId).profiles.length > 0
 }
-
 /** 判断当前卫星的持久化载荷配置是否仍在读取。 */
-function isLoading(satelliteId: number): boolean {
+function isLoading(satelliteId) {
   return props.loadingSatelliteIds.includes(satelliteId)
 }
-
 /**
  * 旧版本的对地记录只有天底锥角，无法映射为统一姿态窗口。它仍可查看但不能静默沿用，
  * 因此前端在用户切换到该配置时明确提示重新核对并保存完整参数。
  */
-function isLegacyGroundProfile(satelliteId: number): boolean {
+function isLegacyGroundProfile(satelliteId) {
   const form = props.forms[satelliteId]
-  return form?.payloadType === 'GROUND'
-    && configurationFor(satelliteId).profiles.some((profile) =>
-      profile.payloadType === 'GROUND' && profile.legacyGroundProfile === true)
+  return (
+    form?.payloadType === 'GROUND' &&
+    configurationFor(satelliteId).profiles.some(
+      (profile) => profile.payloadType === 'GROUND' && profile.legacyGroundProfile === true,
+    )
+  )
 }
-
 </script>
 
 <template>
@@ -85,8 +81,8 @@ function isLegacyGroundProfile(satelliteId: number): boolean {
         <StandardPayloadEditor
           :model-value="forms[satellite.id]"
           :disabled="isLoading(satellite.id) || savingSatelliteId === satellite.id"
-          @update:model-value="forms[satellite.id] = $event"
-          @select-type="emit('selectType', satellite.id, $event)"
+          @update:modelValue="forms[satellite.id] = $event"
+          @selectType="emit('selectType', satellite.id, $event)"
         />
         <div class="payload-action"><span>对空与对地配置独立保存；保存的类型会成为后续规划的活动载荷</span><el-button :data-test="`save-payload-${satellite.id}`" type="primary" size="small" :loading="savingSatelliteId === satellite.id" :disabled="isLoading(satellite.id) || validateStandardPayload(forms[satellite.id]).length > 0" @click="emit('save', satellite.id)">保存并启用</el-button></div>
       </el-collapse-item>

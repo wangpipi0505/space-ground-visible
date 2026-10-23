@@ -1,0 +1,2 @@
+### Error
+Error: cdpSession.send: Target page, context or browser has been closed

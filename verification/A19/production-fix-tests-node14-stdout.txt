@@ -1,0 +1,49 @@
+
+> space-ground-visible-frontend@0.0.0 test G:\5-YG\space-ground-visible\frontend
+> vitest run
+
+
+ RUN  v0.34.6 G:/5-YG/space-ground-visible/frontend
+
+stdout | unknown test
+Download the Vue Devtools extension for a better development experience:
+https://github.com/vuejs/vue-devtools
+You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+
+ ✓ src/views/BallisticSwingAlignment.spec.js  (18 tests) 4877ms
+ ✓ src/App.spec.js  (11 tests) 1569ms
+ ✓ src/views/BallisticFitView.spec.js  (7 tests) 933ms
+ ✓ src/views/BallisticPayloadConfigurationView.spec.js  (4 tests) 564ms
+ ✓ src/views/BallisticRetimeView.spec.js  (7 tests) 539ms
+ ✓ src/components/VisibilityPlanningStep.spec.js  (12 tests) 629ms
+ ✓ src/views/BallisticSimulationView.spec.js  (5 tests) 272ms
+ ✓ src/components/TaskResultRecordsPanel.spec.js  (6 tests) 268ms
+ ✓ src/components/BallisticWindowControls.spec.js  (3 tests) 220ms
+ ✓ src/components/StandardPayloadEditor.spec.js  (4 tests) 99ms
+ ✓ src/components/SatellitePayloadPanel.spec.js  (3 tests) 81ms
+ ✓ src/components/TaskSatelliteSelectionStep.spec.js  (3 tests) 52ms
+ ✓ src/components/BallisticWindowResults.spec.js  (2 tests) 57ms
+ ✓ src/utils/ballisticRetime.spec.js  (3 tests) 58ms
+ ✓ src/components/TargetSelectionStep.spec.js  (1 test) 35ms
+ ✓ src/composables/useVisibilityWorkbench.spec.js  (15 tests) 47ms
+ ✓ src/components/ObservationConstraintPanel.spec.js  (1 test) 25ms
+ ✓ src/components/WindowSelectionPanel.spec.js  (1 test) 19ms
+ ✓ src/components/TaskResultDetailDrawer.spec.js  (1 test) 16ms
+ ✓ src/utils/ballisticFit.spec.js  (13 tests) 16ms
+ ✓ src/api/ballisticWindow.spec.js  (5 tests) 14ms
+ ✓ src/api/ballisticPayloads.spec.js  (2 tests) 8ms
+ ✓ src/utils/standardPayload.spec.js  (2 tests) 2ms
+ ✓ src/api/ballisticFit.spec.js  (2 tests) 1ms
+ ✓ src/utils/ballisticSimulation.spec.js  (2 tests) 3ms
+ ✓ src/views/BallisticElementConsistency.spec.js  (1 test) 3ms
+ ✓ src/api/ballisticRetime.spec.js  (3 tests) 1ms
+ ✓ src/api/ballisticSimulation.spec.js  (2 tests) 1ms
+ ✓ src/utils/winToolSummary.spec.js  (6 tests) 2ms
+
+ Test Files  29 passed (29)
+      Tests  145 passed (145)
+   Start at  12:30:39
+   Duration  24.76s (transform 495ms, setup 12.42s, collect 1.45s, tests 10.41s, environment 102ms, prepare 86ms)
+

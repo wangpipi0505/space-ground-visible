@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:/Program Files/nodejs/node.exe",
+    "node_modules/vite/bin/vite.js",
+    "build"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "startedUnix": 1792727255.1652508,
+  "durationSec": 1.3283991813659668,
+  "exitCode": 0,
+  "stdoutSha256": "0fbbcefba3d7d1e4d8ede7c9c1c418c5c3c3774e94d5f86d5d983a2b27d4a835",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

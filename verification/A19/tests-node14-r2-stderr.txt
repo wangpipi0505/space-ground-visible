@@ -1,0 +1,1248 @@
+stderr | src/components/TaskResultRecordsPanel.spec.js > TaskResultRecordsPanel > loads persisted task result records on mount
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <Root>
+[Vue warn]: Missing required prop: "action"
+
+found in
+
+---> <ElUpload> at packages/upload/src/index.vue
+       <ElFormItem> at packages/form/src/form-item.vue
+         <ElForm> at packages/form/src/form.vue
+           <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+             <Root>
+[Vue warn]: Invalid prop: type check failed for prop "action". Expected String, got Undefined 
+
+found in
+
+---> <Upload> at packages/upload/src/upload.vue
+       <ElUpload> at packages/upload/src/index.vue
+         <ElFormItem> at packages/form/src/form-item.vue
+           <ElForm> at packages/form/src/form.vue
+             <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+               <Root>
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+
+stderr | src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <Root>
+[Vue warn]: Missing required prop: "action"
+
+found in
+
+---> <ElUpload> at packages/upload/src/index.vue
+       <ElFormItem> at packages/form/src/form-item.vue
+         <ElForm> at packages/form/src/form.vue
+           <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+             <Root>
+[Vue warn]: Invalid prop: type check failed for prop "action". Expected String, got Undefined 
+
+found in
+
+---> <Upload> at packages/upload/src/upload.vue
+       <ElUpload> at packages/upload/src/index.vue
+         <ElFormItem> at packages/form/src/form-item.vue
+           <ElForm> at packages/form/src/form.vue
+             <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+               <Root>
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+
+stderr | src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 原生选择上传/预览后提交同一载荷UTC，计算失败清旧结果，替换失败清文件引用
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <Root>
+[Vue warn]: Missing required prop: "action"
+
+found in
+
+---> <ElUpload> at packages/upload/src/index.vue
+       <ElFormItem> at packages/form/src/form-item.vue
+         <ElForm> at packages/form/src/form.vue
+           <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+             <Root>
+[Vue warn]: Invalid prop: type check failed for prop "action". Expected String, got Undefined 
+
+found in
+
+---> <Upload> at packages/upload/src/upload.vue
+       <ElUpload> at packages/upload/src/index.vue
+         <ElFormItem> at packages/form/src/form-item.vue
+           <ElForm> at packages/form/src/form.vue
+             <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+               <Root>
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+
+stderr | src/components/BallisticWindowResults.spec.js > T22 原结果层级与真实点展示 > 全部偏移可选、两弧层级及点表保持服务累计，跨180度不画贯穿假线
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/SatellitePayloadPanel.spec.js > SatellitePayloadPanel > provides a persistent space payload save action for every selected satellite
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 示例朝地球俯仰与空间标准、新增和目录默认隔离
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+[Vue warn]: Missing required prop: "action"
+
+found in
+
+---> <ElUpload> at packages/upload/src/index.vue
+       <ElFormItem> at packages/form/src/form-item.vue
+         <ElForm> at packages/form/src/form.vue
+           <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+             <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+               <Root>
+[Vue warn]: Invalid prop: type check failed for prop "action". Expected String, got Undefined 
+
+found in
+
+---> <Upload> at packages/upload/src/upload.vue
+       <ElUpload> at packages/upload/src/index.vue
+         <ElFormItem> at packages/form/src/form-item.vue
+           <ElForm> at packages/form/src/form.vue
+             <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+               <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+                 <Root>
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Missing required prop: "action"
+
+found in
+
+---> <ElUpload> at packages/upload/src/index.vue
+       <ElFormItem> at packages/form/src/form-item.vue
+         <ElForm> at packages/form/src/form.vue
+           <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+             <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+               <Root>
+[Vue warn]: Invalid prop: type check failed for prop "action". Expected String, got Undefined 
+
+found in
+
+---> <Upload> at packages/upload/src/upload.vue
+       <ElUpload> at packages/upload/src/index.vue
+         <ElFormItem> at packages/form/src/form-item.vue
+           <ElForm> at packages/form/src/form.vue
+             <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+               <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+                 <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+
+stderr | src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 当前星切换保持原草稿身份且初始就有结果位置
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+       <Root>
+[Vue warn]: Avoid using Array as root value for reactive() as it cannot be tracked in watch() or watchEffect(). Use ref() instead. This is a Vue-2-only limitation.
+
+found in
+
+---> <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+       <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+         <Root>
+[Vue warn]: Missing required prop: "action"
+
+found in
+
+---> <ElUpload> at packages/upload/src/index.vue
+       <ElFormItem> at packages/form/src/form-item.vue
+         <ElForm> at packages/form/src/form.vue
+           <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+             <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+               <Root>
+[Vue warn]: Invalid prop: type check failed for prop "action". Expected String, got Undefined 
+
+found in
+
+---> <Upload> at packages/upload/src/upload.vue
+       <ElUpload> at packages/upload/src/index.vue
+         <ElFormItem> at packages/form/src/form-item.vue
+           <ElForm> at packages/form/src/form.vue
+             <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+               <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+                 <Root>
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Injection "elForm" not found
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Missing required prop: "action"
+
+found in
+
+---> <ElUpload> at packages/upload/src/index.vue
+       <ElFormItem> at packages/form/src/form-item.vue
+         <ElForm> at packages/form/src/form.vue
+           <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+             <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+               <Root>
+[Vue warn]: Invalid prop: type check failed for prop "action". Expected String, got Undefined 
+
+found in
+
+---> <Upload> at packages/upload/src/upload.vue
+       <ElUpload> at packages/upload/src/index.vue
+         <ElFormItem> at packages/form/src/form-item.vue
+           <ElForm> at packages/form/src/form.vue
+             <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+               <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+                 <Root>
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+[Vue warn]: Property or method "elForm" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://v2.vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+[Vue warn]: Error in render: "TypeError: Cannot read property '$options' of undefined"
+
+found in
+
+---> <ElFormItem> at packages/form/src/form-item.vue
+       <BallisticWindowControls> at G:/5-YG/space-ground-visible/frontend/src/components/BallisticWindowControls.vue
+         <BallisticPayloadConfigurationView> at G:/5-YG/space-ground-visible/frontend/src/views/BallisticPayloadConfigurationView.vue
+           <Root>
+TypeError: Cannot read property '$options' of undefined
+    at VueComponent.form (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23679:29)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as form] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at VueComponent.getRules (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23803:28)
+    at VueComponent.isRequired (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\element-ui@2.15.14_vue@2.7.16\node_modules\[4melement-ui[24m\lib\element-ui.common.js:23697:24)
+    at Watcher.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3412:33)
+    at Watcher.evaluate (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:3513:27)
+    at VueComponent.computedGetter [as isRequired] (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5480:25)
+    at Object.get (G:\5-YG\space-ground-visible\frontend\node_modules\[4m.pnpm[24m\vue@2.7.16\node_modules\[4mvue[24m\dist\vue.runtime.common.dev.js:5280:26)
+
+stderr | src/components/ObservationConstraintPanel.spec.js > ObservationConstraintPanel > allows direct editing of an existing combination duration
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TargetSelectionStep.spec.js > TargetSelectionStep > collects a minimum mass and plain-text target exclusion condition
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskSatelliteSelectionStep.spec.js > TaskSatelliteSelectionStep > shows selected satellites by name without appending internal IDs
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/WindowSelectionPanel.spec.js > WindowSelectionPanel > binds merged coverage windows to their contributing link summary
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/utils/ballisticRetime.spec.js > T25 重定时完整CSV命名列 > 未知文本/列重排/缺dt/负标记保留，跨日非整秒UTC及原点表按列名显示
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+stderr | src/components/TaskResultDetailDrawer.spec.js > TaskResultDetailDrawer > shows the persisted full skipped-pair list separately from result JSON
+[vue-test-utils]: Global error handler detected (Vue.config.errorHandler). 
+Vue Test Utils sets a custom error handler to throw errors thrown by instances. If you want this behavior in your tests, you must remove the global error handler.
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/App.spec.js [ src/App.spec.js ]
+ FAIL  src/views/BallisticFitView.spec.js [ src/views/BallisticFitView.spec.js ]
+ FAIL  src/views/BallisticRetimeView.spec.js [ src/views/BallisticRetimeView.spec.js ]
+ FAIL  src/views/BallisticSimulationView.spec.js [ src/views/BallisticSimulationView.spec.js ]
+ FAIL  src/views/BallisticSwingAlignment.spec.js [ src/views/BallisticSwingAlignment.spec.js ]
+Error: [@vue/compiler-sfc] withDefaults can only be used with type-based defineProps declaration.
+
+G:/5-YG/space-ground-visible/frontend/src/components/BallisticFitFileResult.vue
+10 |  import { parseFitCsv } from '../utils/ballisticFit';
+11 |  import BallisticFitTrajectory from './BallisticFitTrajectory.vue';
+12 |  const props = withDefaults(defineProps({ file: { type: null, required: true }, taskName: { type: String, required: true }, resultLabel: { type: String } }), { resultLabel: '拟合' });
+   |                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 |  /** 共享文件能力只在真实登记201后告知父级引用，重新登记开始先撤销旧引用以防失效路径被继续选择。 */
+   |  ^^^^^^^^^
+14 |  const emit = defineEmits(["reference"]);
+ ❯ error node_modules/.pnpm/@vue+compiler-sfc@2.7.16/node_modules/@vue/compiler-sfc/dist/compiler-sfc.js:8394:15
+ ❯ processWithDefaults node_modules/.pnpm/@vue+compiler-sfc@2.7.16/node_modules/@vue/compiler-sfc/dist/compiler-sfc.js:8445:17
+ ❯ Object.compileScript node_modules/.pnpm/@vue+compiler-sfc@2.7.16/node_modules/@vue/compiler-sfc/dist/compiler-sfc.js:8852:25
+ ❯ resolveScript node_modules/.pnpm/@vitejs+plugin-vue2@2.3.3_vite@4.5.14+vue@2.7.16/node_modules/@vitejs/plugin-vue2/dist/index.mjs:127:37
+ ❯ genScriptCode node_modules/.pnpm/@vitejs+plugin-vue2@2.3.3_vite@4.5.14+vue@2.7.16/node_modules/@vitejs/plugin-vue2/dist/index.mjs:844:18
+ ❯ transformMain node_modules/.pnpm/@vitejs+plugin-vue2@2.3.3_vite@4.5.14+vue@2.7.16/node_modules/@vitejs/plugin-vue2/dist/index.mjs:763:54
+ ❯ TransformContext.transform node_modules/.pnpm/@vitejs+plugin-vue2@2.3.3_vite@4.5.14+vue@2.7.16/node_modules/@vitejs/plugin-vue2/dist/index.mjs:1104:16
+ ❯ Object.transform node_modules/.pnpm/vite@4.5.14_@types+node@26.6.5/node_modules/vite/dist/node/chunks/dep-827b23df.js:44356:62
+ ❯ loadAndTransform node_modules/.pnpm/vite@4.5.14_@types+node@26.6.5/node_modules/vite/dist/node/chunks/dep-827b23df.js:55088:29
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/31]⎯
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 26 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/api/ballisticFit.spec.js > T23 原拟合与登记HTTP > 原字段原值发送，原响应字节保留，201登记返回独立引用
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticFit.spec.js:9:57
+      7|     it('原字段原值发送，原响应字节保留，201登记返回独立引用', async ()…
+      8|         const raw = '{ "taskName":"中文", "targetCount":1,"files":[{"t…
+      9|         const fetchMock = vi.fn().mockResolvedValueOnce(new Response(r…
+       |                                                         ^
+     10|         vi.stubGlobal('fetch', fetchMock);
+     11|         const input = { package102: [{ tack3d_time_code: '202607010757…
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/31]⎯
+
+ FAIL  src/api/ballisticFit.spec.js > T23 原拟合与登记HTTP > 原400错误中文转呈
+AssertionError: expected [Function] to throw error including '无有效观测点' but got 'Response is not a constructor'
+
+- Expected
++ Received
+
+- 无有效观测点
++ Response is not a constructor
+
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/31]⎯
+
+ FAIL  src/api/ballisticPayloads.spec.js > 弹道载荷独立API > 默认目标为完整ballistic路径且保留身份与原值
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticPayloads.spec.js:8:53
+      6|     it('默认目标为完整ballistic路径且保留身份与原值', async () => {
+      7|         const payload = { payloadId: 'P-1', payloadName: '跟踪', ...cr…
+      8|         const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.…
+       |                                                     ^
+      9|         vi.stubGlobal('fetch', fetchMock);
+     10|         expect(await previewBallisticPayload(payload)).toEqual(payload…
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/31]⎯
+
+ FAIL  src/api/ballisticPayloads.spec.js > 弹道载荷独立API > 独立部署base不受空间base影响并显示400中文错误
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticPayloads.spec.js:16:53
+     14|         vi.stubEnv('VITE_API_BASE_URL', 'https://space.example/api/v1/…
+     15|         vi.stubEnv('VITE_BALLISTIC_API_BASE_URL', 'https://ballistic.e…
+     16|         const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.…
+       |                                                     ^
+     17|         vi.stubGlobal('fetch', fetchMock);
+     18|         const { previewBallisticPayload: isolatedPreview } = await imp…
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/31]⎯
+
+ FAIL  src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 上传200不能冒充201真实引用
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticRetime.spec.js:8:58
+      6|     afterEach(() => vi.unstubAllGlobals());
+      7|     it('上传200不能冒充201真实引用', async () => {
+      8|         vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(…
+       |                                                          ^
+      9|         await expect(uploadBallisticFile(new File(['CSV'], '原.csv')))…
+     10|     });
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/31]⎯
+
+ FAIL  src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 四字段同值且原响应字节不包装
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticRetime.spec.js:13:53
+     11|     it('四字段同值且原响应字节不包装', async () => {
+     12|         const raw = '{ "taskName": "重定时", "targetCount": 0, "files"…
+     13|         const fetchMock = vi.fn().mockResolvedValue(new Response(raw));
+       |                                                     ^
+     14|         vi.stubGlobal('fetch', fetchMock);
+     15|         const request = { taskName: null, targetId: null, trajectoryCs…
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/31]⎯
+
+ FAIL  src/api/ballisticRetime.spec.js > T25 重定时原HTTP合同 > 原400与500全文保留
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticRetime.spec.js:23:62
+
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/31]⎯
+
+ FAIL  src/api/ballisticSimulation.spec.js > T24 原模拟HTTP与登记边界 > 原路径、原值和完整HTTP字节保留，无包装/model字段
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticSimulation.spec.js:9:53
+      7|     it('原路径、原值和完整HTTP字节保留，无包装/model字段', async () =>…
+      8|         const raw = '{ "taskName": "模拟", "targetCount": 0, "files": …
+      9|         const fetchMock = vi.fn().mockResolvedValue(new Response(raw));
+       |                                                     ^
+     10|         vi.stubGlobal('fetch', fetchMock);
+     11|         const request = { taskName: null, launchTimeUtc: '2026-06-04 0…
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/31]⎯
+
+ FAIL  src/api/ballisticSimulation.spec.js > T24 原模拟HTTP与登记边界 > 原400中文不包新错误，200登记不能冒充201引用
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticSimulation.spec.js:19:62
+
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/31]⎯
+
+ FAIL  src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 上传真实FormData不写JSON头；预览分页及下载中文原名/字节
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticWindow.spec.js:13:57
+
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/31]⎯
+
+ FAIL  src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 原计算路径独立且原响应空白/数值/字节不重新序列化，失败下载不返回错误文件
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticWindow.spec.js:31:57
+     29|     it('原计算路径独立且原响应空白/数值/字节不重新序列化，失败下载不返…
+     30|         const raw = '{\n "referenceUtc":"UTC", "best":null, "allResult…
+     31|         const fetchMock = vi.fn().mockResolvedValueOnce(new Response(r…
+       |                                                         ^
+     32|         vi.stubGlobal('fetch', fetchMock);
+     33|         const result = await searchBallisticWindows(request());
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/31]⎯
+
+ FAIL  src/api/ballisticWindow.spec.js > T22 原文件与窗口 HTTP/协议 > 空间/辅助/计算独立部署根保持各自完整含义
+TypeError: Response is not a constructor
+ ❯ src/api/ballisticWindow.spec.js:74:57
+     72|         vi.stubEnv('VITE_BALLISTIC_API_BASE_URL', 'https://files.examp…
+     73|         vi.stubEnv('VITE_BALLISTIC_COMPUTE_BASE_URL', 'https://compute…
+     74|         const fetchMock = vi.fn().mockResolvedValueOnce(new Response('…
+       |                                                         ^
+     75|         vi.stubGlobal('fetch', fetchMock);
+     76|         const isolatedCompute = await import('./ballisticWindow');
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/31]⎯
+
+ FAIL  src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 固定操作栏显示草稿载荷计数并提供真实载荷编辑入口
+ FAIL  src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > T24 显式选择真实登记结果、Windows精确来源、UTC沿文件，注销后禁止旧成功回退
+ FAIL  src/components/BallisticWindowControls.spec.js > T22 单一草稿文件与计算状态 > 原生选择上传/预览后提交同一载荷UTC，计算失败清旧结果，替换失败清文件引用
+ FAIL  src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 示例朝地球俯仰与空间标准、新增和目录默认隔离
+ FAIL  src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 当前星切换保持原草稿身份且初始就有结果位置
+TypeError: Cannot read property '$options' of undefined
+ ❯ VueComponent.form node_modules/.pnpm/element-ui@2.15.14_vue@2.7.16/node_modules/element-ui/lib/element-ui.common.js:23679:29
+ ❯ Watcher.get node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3412:33
+ ❯ Watcher.evaluate node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3513:27
+ ❯ VueComponent.computedGetter [as form] node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:5480:25
+ ❯ VueComponent.getRules node_modules/.pnpm/element-ui@2.15.14_vue@2.7.16/node_modules/element-ui/lib/element-ui.common.js:23803:28
+ ❯ VueComponent.isRequired node_modules/.pnpm/element-ui@2.15.14_vue@2.7.16/node_modules/element-ui/lib/element-ui.common.js:23697:24
+ ❯ Watcher.get node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3412:33
+ ❯ Watcher.evaluate node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:3513:27
+ ❯ VueComponent.computedGetter [as isRequired] node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:5480:25
+ ❯ Object.get node_modules/.pnpm/vue@2.7.16/node_modules/vue/dist/vue.runtime.common.dev.js:5280:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/31]⎯
+
+ FAIL  src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 弹道紧凑模式末格input立即更新，空间默认仍使用原控件与两段说明
+AssertionError: expected undefined to match object { elevationMinDeg: -90 }
+
+- Expected: 
+Object {
+  "elevationMinDeg": -90,
+}
+
++ Received: 
+undefined
+
+ ❯ src/components/StandardPayloadEditor.spec.js:12:67
+     10|         input.element.value = '-90';
+     11|         await input.trigger('input');
+     12|         expect(wrapper.emitted('update:modelValue')?.at(-1)?.[0]).toMa…
+       |                                                                   ^
+     13|         expect(wrapper.find('.ballistic-help').exists()).toBe(true);
+     14|         await wrapper.setProps({ compact: false });
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/31]⎯
+
+ FAIL  src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 九个数字字段清空为null并展示成对校验与LVLH说明
+AssertionError: expected undefined to match object { azimuthMinDeg: null, …(1) }
+
+- Expected: 
+Object {
+  "azimuthMaxDeg": 270,
+  "azimuthMinDeg": null,
+}
+
++ Received: 
+undefined
+
+ ❯ src/components/StandardPayloadEditor.spec.js:26:67
+     24|         await input.trigger('change');
+     25|         await input.trigger('blur');
+     26|         expect(wrapper.emitted('update:modelValue')?.at(-1)?.[0]).toMa…
+       |                                                                   ^
+     27|         await wrapper.setProps({ modelValue: { ...createDefaultPayload…
+     28|         expect(wrapper.text()).toContain('方位角上下限必须同时填写或同…
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/31]⎯
+
+ FAIL  src/components/StandardPayloadEditor.spec.js > 共用标准载荷编辑器 > 切换类型事件交由业务包装处理且标准事件不带身份
+AssertionError: expected undefined to deeply equal [ [ 'GROUND' ] ]
+
+- Expected: 
+Array [
+  Array [
+    "GROUND",
+  ],
+]
+
++ Received: 
+undefined
+
+ ❯ src/components/StandardPayloadEditor.spec.js:35:47
+     33|         const wrapper = mount(StandardPayloadEditor, { props: { modelV…
+     34|         wrapper.findComponent({ name: 'ElSelect' }).vm.$emit('input', …
+     35|         expect(wrapper.emitted('selectType')).toEqual([['GROUND']]);
+       |                                               ^
+     36|         expect(wrapper.emitted('update:modelValue')).toBeUndefined();
+     37|     });
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/31]⎯
+
+ FAIL  src/components/VisibilityPlanningStep.spec.js > VisibilityPlanningStep > uses configured filters, paginates ten targets per page, and opens skipped pairs in a dialog
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected: 
+true
+
++ Received: 
+undefined
+
+ ❯ src/components/VisibilityPlanningStep.spec.js:157:80
+    155|         expect(wrapper.get('[data-test="skipped-pairs-button"]').text(…
+    156|         await wrapper.get('[data-test="skipped-pairs-button"]').trigge…
+    157|         expect(wrapper.getComponent({ name: 'ElDialog' }).props('model…
+       |                                                                                ^
+    158|     });
+    159|     it('shows a qualified parent window without rendering its illumina…
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/31]⎯
+
+ FAIL  src/utils/ballisticFit.spec.js > T23 原102输入与CSV > 包字符串、UTC、全部别名保持同值，仅显式省略旧输出目录
+TypeError: Object.hasOwn is not a function
+ ❯ Module.parseFitInput src/utils/ballisticFit.js:49:37
+     47|     if (value.interpolationStepSec !== undefined && (typeof value.inte…
+     48|         throw new Error('interpolationStepSec须为有限数且至少0.001秒，…
+     49|     const omittedOutputDir = Object.hasOwn(value, 'outputDir');
+       |                                     ^
+     50|     const { outputDir: omittedDirectory, ...preserved } = value;
+     51|     void omittedDirectory;
+ ❯ src/utils/ballisticFit.spec.js:11:24
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/31]⎯
+
+ FAIL  src/utils/ballisticFit.spec.js > T23 原102输入与CSV > 一条记录允许进入原服务，不在浏览器擅自限制为三点
+TypeError: Object.hasOwn is not a function
+ ❯ Module.parseFitInput src/utils/ballisticFit.js:49:37
+     47|     if (value.interpolationStepSec !== undefined && (typeof value.inte…
+     48|         throw new Error('interpolationStepSec须为有限数且至少0.001秒，…
+     49|     const omittedOutputDir = Object.hasOwn(value, 'outputDir');
+       |                                     ^
+     50|     const { outputDir: omittedDirectory, ...preserved } = value;
+     51|     void omittedDirectory;
+ ❯ src/utils/ballisticFit.spec.js:22:16
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/31]⎯
+
+ FAIL  src/utils/ballisticFit.spec.js > T23 原102输入与CSV > taskName:null按原DTO同值提交，原缺省任务名由后端回退
+TypeError: Object.hasOwn is not a function
+ ❯ Module.parseFitInput src/utils/ballisticFit.js:49:37
+     47|     if (value.interpolationStepSec !== undefined && (typeof value.inte…
+     48|         throw new Error('interpolationStepSec须为有限数且至少0.001秒，…
+     49|     const omittedOutputDir = Object.hasOwn(value, 'outputDir');
+       |                                     ^
+     50|     const { outputDir: omittedDirectory, ...preserved } = value;
+     51|     void omittedDirectory;
+ ❯ src/utils/ballisticFit.spec.js:28:16
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/31]⎯
+
+ FAIL  src/utils/ballisticSimulation.spec.js > T24 原模拟输入合同 > 完整原字段、事件、null、别名、字面UTC、回退步长不转换不丢失
+TypeError: Object.hasOwn is not a function
+ ❯ Module.parseSimulationInput src/utils/ballisticSimulation.js:51:37
+     49|             validateFields(event, eventStrings, eventNumbers);
+     50|     }
+     51|     const omittedOutputDir = Object.hasOwn(value, 'outputDir');
+       |                                     ^
+     52|     const { outputDir, ...request } = value;
+     53|     void outputDir;
+ ❯ src/utils/ballisticSimulation.spec.js:13:16
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/31]⎯
+
+ FAIL  src/views/BallisticPayloadConfigurationView.spec.js > 弹道双星多载荷配置生产视图 > 不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功
+TypeError: Response is not a constructor
+ ❯ src/views/BallisticPayloadConfigurationView.spec.js:26:51
+     24|     });
+     25|     it('不用预览HTTP即可计算，非法载荷阻止提交，失败不伪造成功', async…
+     26|         const fetcher = vi.fn().mockResolvedValue(new Response('{"erro…
+       |                                                   ^
+     27|         vi.stubGlobal('fetch', fetcher);
+     28|         const wrapper = mount(BallisticPayloadConfigurationView, { pro…
+ ❯ processTicksAndRejections internal/process/task_queues.js:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/31]⎯
+

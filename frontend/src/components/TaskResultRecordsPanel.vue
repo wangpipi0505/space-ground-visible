@@ -1,16 +1,13 @@
-<script setup lang="ts">
+<script>
+export default { name: 'TaskResultRecordsPanel' }
+</script>
+
+<script setup>
 /** 查询后台任务历史记录；分页、状态、备注与明细均通过服务端结果接口维护。 */
 import { onMounted } from 'vue'
-import type { PlanningTaskStatus, VisibilityTaskResultSummary } from '../api/types'
 import { useVisibilityTaskRecords } from '../composables/useVisibilityTaskRecords'
 import TaskResultDetailDrawer from './TaskResultDetailDrawer.vue'
-
-defineOptions({ name: 'TaskResultRecordsPanel' })
-
-const props = defineProps<{
-  formatTime: (time: string) => string
-}>()
-
+const props = defineProps({ formatTime: { type: Function, required: true } })
 const {
   closeDetail,
   detail,
@@ -30,31 +27,27 @@ const {
   savingRemarkId,
   total,
 } = useVisibilityTaskRecords()
-
 onMounted(() => {
   void loadRecords(1)
 })
-
 /** 任务状态对应的中文标签与标签类型。 */
-const statusMeta: Record<PlanningTaskStatus, { text: string; type: 'info' | 'warning' | 'success' | 'danger' }> = {
+const statusMeta = {
   PENDING: { text: '排队中', type: 'warning' },
   RUNNING: { text: '执行中', type: 'warning' },
   SUCCEEDED: { text: '已完成', type: 'success' },
   FAILED: { text: '执行失败', type: 'danger' },
   CANCELLED: { text: '已取消', type: 'info' },
 }
-
 /** 供筛选下拉框使用的任务状态选项。 */
-const statusOptions: Array<{ value: PlanningTaskStatus; label: string }> = [
+const statusOptions = [
   { value: 'PENDING', label: '排队中' },
   { value: 'RUNNING', label: '执行中' },
   { value: 'SUCCEEDED', label: '已完成' },
   { value: 'FAILED', label: '执行失败' },
   { value: 'CANCELLED', label: '已取消' },
 ]
-
 /** 抽屉内的时间字段允许为空，空值显示占位符。 */
-function formatNullableTime(time?: string | null): string {
+function formatNullableTime(time) {
   return time ? props.formatTime(time) : '—'
 }
 </script>
@@ -76,7 +69,7 @@ function formatNullableTime(time?: string | null): string {
         clearable
         placeholder="按任务标识或备注搜索"
         data-test="task-result-keyword"
-        @keyup.enter="queryRecords"
+        @keyup.enter.native="queryRecords"
       />
       <el-button type="primary" :loading="loading" data-test="query-task-results" @click="queryRecords">查询</el-button>
       <el-button :loading="loading" @click="loadRecords()">刷新</el-button>
@@ -92,8 +85,8 @@ function formatNullableTime(time?: string | null): string {
       <el-table-column prop="taskId" label="任务标识" min-width="220" />
       <el-table-column label="状态" width="100">
         <template #default="scope">
-          <el-tag :type="statusMeta[(scope.row as VisibilityTaskResultSummary).status].type" effect="plain">
-            {{ statusMeta[(scope.row as VisibilityTaskResultSummary).status].text }}
+          <el-tag :type="statusMeta[(scope.row).status].type" effect="plain">
+            {{ statusMeta[(scope.row).status].text }}
           </el-tag>
         </template>
       </el-table-column>
@@ -110,9 +103,9 @@ function formatNullableTime(time?: string | null): string {
       <el-table-column prop="remark" label="备注" min-width="140" />
       <el-table-column label="操作" width="170" fixed="right">
         <template #default="scope">
-          <el-button text type="primary" data-test="open-task-result-detail" @click="openDetail(scope.row.id)">明细</el-button>
-          <el-button text type="primary" :loading="savingRemarkId === scope.row.id" data-test="edit-task-result-remark" @click="editRemark(scope.row)">备注</el-button>
-          <el-button text type="danger" data-test="delete-task-result" @click="removeRecord(scope.row)">删除</el-button>
+          <el-button type="text" data-text-type="primary" data-test="open-task-result-detail" @click="openDetail(scope.row.id)">明细</el-button>
+          <el-button type="text" data-text-type="primary" :loading="savingRemarkId === scope.row.id" data-test="edit-task-result-remark" @click="editRemark(scope.row)">备注</el-button>
+          <el-button type="text" data-text-type="danger" data-test="delete-task-result" @click="removeRecord(scope.row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>

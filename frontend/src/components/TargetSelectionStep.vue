@@ -1,25 +1,19 @@
-<script setup lang="ts">
-/** 目标目录筛选与分页展示；校验历元及质量条件后通过 query 事件加载服务端目录。 */
-import type { BelongOption, Target, TargetFilterBreakdown } from '../api/types'
-import type { TargetQueryForm } from '../composables/useVisibilityWorkbench'
+<script>
+export default { name: 'TargetSelectionStep' }
+</script>
 
-defineOptions({ name: 'TargetSelectionStep' })
-
-defineProps<{
-  form: TargetQueryForm
-  belongOptions: BelongOption[]
-  loading: boolean
-  targets: Target[]
-  filterBreakdown?: TargetFilterBreakdown
-  total: number
-  pageNumber: number
-  pageSize: number
-}>()
-
-const emit = defineEmits<{
-  query: []
-  pageChange: [pageNumber: number]
-}>()
+<script setup>
+defineProps({
+  form: { type: null, required: true },
+  belongOptions: { type: Array, required: true },
+  loading: { type: Boolean, required: true },
+  targets: { type: Array, required: true },
+  filterBreakdown: { type: null },
+  total: { type: Number, required: true },
+  pageNumber: { type: Number, required: true },
+  pageSize: { type: Number, required: true },
+})
+const emit = defineEmits(['query', 'pageChange'])
 </script>
 
 <template>

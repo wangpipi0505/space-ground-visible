@@ -1,0 +1,25 @@
+{
+  "requestsEqualExceptTemporaryPath": true,
+  "responsesEqualExceptTemporaryPath": true,
+  "csvFilesByteEqual": 4,
+  "pageErrors": [],
+  "operations": [
+    {
+      "name": "window",
+      "status": 200
+    },
+    {
+      "name": "fit",
+      "status": 200
+    },
+    {
+      "name": "simulation",
+      "status": 200
+    },
+    {
+      "name": "retime",
+      "status": 200
+    }
+  ],
+  "productionEvidenceSha256": "c6a72e05f1d81f15b62855f145de4444f2cfb0dbbcdafd9b5718f4c02da186cb"
+}

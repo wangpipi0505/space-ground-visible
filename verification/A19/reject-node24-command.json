@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:/Program Files/nodejs/node.exe",
+    "scripts/check-node.cjs"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\frontend",
+  "startedUnix": 1792728931.3618898,
+  "durationSec": 0.056986331939697266,
+  "exitCode": 1,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "f4ebc05338e1eb988e947fccf705a720cc2d1e3280a3a389536ec1be6c7bfe24"
+}
