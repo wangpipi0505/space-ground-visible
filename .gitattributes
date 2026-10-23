@@ -106,3 +106,5 @@ verification/A18/**/*.txt -text -whitespace
 verification/A18/**/*.log -text -whitespace
 # A19 Node 14迁移的实际命令双流保持原始字节。
 verification/A19/**/*.txt -text -whitespace
+# A20 打包、解压构建及浏览器检查保留实际命令输出字节。
+verification/A20/**/*.txt -text -whitespace

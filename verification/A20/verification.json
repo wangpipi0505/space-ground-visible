@@ -1,0 +1,28 @@
+{
+  "extraction": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A20\\relocated-extraction",
+  "buildExitCode": 0,
+  "installedAfterExtraction": false,
+  "distBytesIdenticalAfterRebuild": false,
+  "distBefore": {
+    "favicon.svg": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+    "icons.svg": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a",
+    "index.html": "1117a0a0bf620ce76c1491a11d410f2b719ee7964360ff9df4118ef963ee6824",
+    "assets/element-icons-a30f5b3b.ttf": "a30f5b3ba6a48822eae041e0ca5412a289125e4ba661d047dae565ac43b4a6b2",
+    "assets/element-icons-ab40a589.woff": "ab40a58972be2ceab32e7e35dab3131b959aae63835d7bda1a79ae51f9a73c17",
+    "assets/index-2fc04db6.js": "aaf467d94504c6fdcc6cd208e7211cb443d9a20c38f69e4e373fb6a4e786937c",
+    "assets/index-52243172.css": "52243172eef072d17324df68548da66215a365bc55b00acf3e419084fa9647ca",
+    "samples/trajectory-0.1s-standard.csv": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+  },
+  "distAfter": {
+    "favicon.svg": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+    "icons.svg": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a",
+    "index.html": "33fca1606152078b7b8361ca799d82433063d71bb0112fa9ede2652267a6721a",
+    "assets/element-icons-a30f5b3b.ttf": "a30f5b3ba6a48822eae041e0ca5412a289125e4ba661d047dae565ac43b4a6b2",
+    "assets/element-icons-ab40a589.woff": "ab40a58972be2ceab32e7e35dab3131b959aae63835d7bda1a79ae51f9a73c17",
+    "assets/index-52243172.css": "52243172eef072d17324df68548da66215a365bc55b00acf3e419084fa9647ca",
+    "assets/index-f8050f12.js": "caa776cc9757231cf6af82f7115cfbf4fd6047178818c5a954884c5f1a52080e",
+    "samples/trajectory-0.1s-standard.csv": "5734dbfce47108374d390497f40b61a1246c451d945604c0d61c5b6f2005fec8"
+  },
+  "vueRuntimeCount": 1,
+  "lockUnchanged": true
+}

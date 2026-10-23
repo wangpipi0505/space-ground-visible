@@ -1,0 +1,28 @@
+{
+  "archives": [
+    {
+      "kind": "dist",
+      "path": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261023-144356\\dist.zip",
+      "bytes": 1011222,
+      "sha256": "9c9735fb4fcd33a80037391b0bd6221c73ce4fa65f1999518ccf13ed131b6111"
+    },
+    {
+      "kind": "complete",
+      "path": "G:\\5-YG\\space-ground-visible\\output\\deliverables\\20261023-144356\\space-ground-visible-vue2-source-dist-dependencies.zip",
+      "bytes": 151941273,
+      "sha256": "528e5f5b3ed69e4cf703e06737a3b90e0f11065db13c7e313bc4a3fe757deca2"
+    }
+  ],
+  "entries": 10389,
+  "groups": {
+    "源码包说明.md": 1,
+    "backend": 2442,
+    "docs": 9,
+    "frontend": 7937
+  },
+  "dependencyFiles": 7866,
+  "mavenFiles": 1964,
+  "crcPassed": true,
+  "allBytesMatched": true,
+  "links": []
+}

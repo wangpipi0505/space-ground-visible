@@ -1,0 +1,17 @@
+{
+  "args": [
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A19\\node-v14.21.3-win-x64\\node.exe",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A19\\pnpm7\\package\\bin\\pnpm.cjs",
+    "install",
+    "--offline",
+    "--frozen-lockfile",
+    "--config.node-linker=hoisted",
+    "--config.extend-node-path=false",
+    "--package-import-method=copy"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A20\\prepared\\frontend",
+  "exitCode": 0,
+  "durationSec": 12.027865886688232,
+  "stdoutSha256": "35c84edff95960fabb5d06e864c7401210b3776f76e761bd58e379d7574f135d",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

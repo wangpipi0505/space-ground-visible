@@ -1,0 +1,35 @@
+### Result
+{"pages":["workbench","ballistic-payloads","ballistic-fit","simulation","retime"],"pageErrors":[],"assets":[{"url":"http://127.0.0.1:5178/","status":200},{"url":"http://127.0.0.1:5178/assets/index-52243172.css","status":200},{"url":"http://127.0.0.1:5178/assets/index-f8050f12.js","status":200},{"url":"http://127.0.0.1:5178/assets/element-icons-ab40a589.woff","status":200},{"url":"http://127.0.0.1:5178/favicon.svg","status":200}],"backendMode":"模拟503，仅检查静态页面和导航"}
+### Ran Playwright code
+```js
+await (async (page) => {
+  const errors = [];
+  const responses = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('response', response => { if (!response.url().includes('/api/')) responses.push({ url: response.url(), status: response.status() }); });
+  // 这里只验收解压后构建的前端页面，服务不可用的路径单独模拟，不借此声明计算接口已重测。
+  await page.route('**/api/**', route => route.fulfill({ status: 503, contentType: 'application/json', body: '{"message":"静态交付检查：未连接后端"}' }));
+  await page.goto('http://127.0.0.1:5178/');
+  const pages = [];
+  for (const id of ['workbench', 'ballistic-payloads', 'ballistic-fit']) {
+    await page.locator(`#tab-${id}`).click();
+    await page.waitForTimeout(150);
+    pages.push(id);
+  }
+  for (const id of ['simulation', 'retime']) {
+    await page.locator(`#tab-${id}`).click();
+    await page.waitForTimeout(150);
+    pages.push(id);
+  }
+  if (errors.length) throw new Error(JSON.stringify(errors));
+  if (responses.some(response => response.status >= 400)) throw new Error(JSON.stringify(responses));
+  return { pages, pageErrors: errors, assets: responses, backendMode: '模拟503，仅检查静态页面和导航' };
+}
+)(page);
+```
+### Page
+- Page URL: http://127.0.0.1:5178/
+- Page Title: 空间目标可见窗口规划
+- Console: 5 errors, 0 warnings
+### Events
+- New console entries: .playwright-cli\console-2026-10-23T06-49-41-933Z.log#L1-L5

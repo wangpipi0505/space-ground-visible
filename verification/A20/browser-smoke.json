@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "workbench",
+    "ballistic-payloads",
+    "ballistic-fit",
+    "simulation",
+    "retime"
+  ],
+  "pageErrors": [],
+  "assets": [
+    {
+      "url": "http://127.0.0.1:5178/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5178/assets/index-52243172.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5178/assets/index-f8050f12.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5178/assets/element-icons-ab40a589.woff",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5178/favicon.svg",
+      "status": 200
+    }
+  ],
+  "backendMode": "模拟503，仅检查静态页面和导航"
+}

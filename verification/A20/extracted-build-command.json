@@ -1,0 +1,12 @@
+{
+  "args": [
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A19\\node-v14.21.3-win-x64\\node.exe",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A19\\pnpm7\\package\\bin\\pnpm.cjs",
+    "build"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A20\\relocated-extraction\\frontend",
+  "exitCode": 0,
+  "durationSec": 6.456038475036621,
+  "stdoutSha256": "1a2effd65af6643b85d69283137181586be44d81d8b8fcc4f8a6b26891a05aba",
+  "stderrSha256": "769ca5ce68f677b545fc7cc701049b1a70c2588034a567d77385b9931102d03d"
+}
