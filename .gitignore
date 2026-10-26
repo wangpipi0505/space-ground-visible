@@ -7,6 +7,8 @@ backend/storage/
 backend/logs/
 /logs/
 /output/deliverables/
+# 原版与当前版窗口计算实算结果只供本地交付核对，不进入源码。
+/output/window-output-comparison-*/
 backend/maven-repository/
 backend/src/main/resources/static/
 verification/baseline-copies/

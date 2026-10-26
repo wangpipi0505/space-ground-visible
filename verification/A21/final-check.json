@@ -1,0 +1,8 @@
+{
+  "bothOutputsExistAndMatchHashes": true,
+  "sameRequestAndInputHashes": true,
+  "sameOriginalJarOutput": true,
+  "verifiedCommandStreams": 10,
+  "byteIdentical": true,
+  "jsonDifferences": 0
+}

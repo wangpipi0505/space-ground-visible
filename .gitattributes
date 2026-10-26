@@ -108,3 +108,7 @@ verification/A18/**/*.log -text -whitespace
 verification/A19/**/*.txt -text -whitespace
 # A20 打包、解压构建及浏览器检查保留实际命令输出字节。
 verification/A20/**/*.txt -text -whitespace
+# A21 原版与当前窗口实算的原始命令双流保持字节，不格式化日志。
+verification/A21/**/*.txt -text -whitespace
+# 请求及命令元数据绑定实际运行SHA，提交不转换其换行。
+verification/A21/**/*.json -text whitespace=cr-at-eol
