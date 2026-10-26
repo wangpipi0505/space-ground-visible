@@ -1,0 +1,18 @@
+{
+  "args": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-Djava.awt.headless=true",
+    "-cp",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A22\\authority-source-classes;G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\dependencies\\runtime-jars\\*",
+    "WindowOutputProbe",
+    "original",
+    "G:\\5-YG\\space-ground-visible\\verification\\A22\\request.json",
+    "G:\\Code\\Code-V3\\visibility-trajectory\\output\\window-output-comparison-A22-20261026-152613\\visibility-result.json"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A22",
+  "exitCode": 0,
+  "durationSec": 1.570138692855835,
+  "stdoutSha256": "37ac6f52294fd435941f99ac1114c8f1a69dcfe457c1bd6630e98754f00b38c5",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

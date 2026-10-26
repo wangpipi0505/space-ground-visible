@@ -1,0 +1,24 @@
+{
+  "args": [
+    "C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.472.8-hotspot\\bin\\javac.exe",
+    "-encoding",
+    "UTF-8",
+    "-source",
+    "8",
+    "-target",
+    "8",
+    "-cp",
+    "G:\\Code\\Code-V3\\alg\\deliverables\\alg-0723\\dependencies\\runtime-jars\\*",
+    "-sourcepath",
+    "G:\\Code\\Code-V3\\visibility-trajectory\\src\\main\\java",
+    "-d",
+    "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A22\\authority-source-classes",
+    "G:\\Code\\Code-V3\\visibility-trajectory\\src\\main\\java\\com\\tx\\alg\\api\\OrbitVisibilityController.java",
+    "G:\\5-YG\\space-ground-visible\\verification\\A21\\WindowOutputProbe.java"
+  ],
+  "cwd": "G:\\5-YG\\space-ground-visible\\verification\\runtime\\A22",
+  "exitCode": 0,
+  "durationSec": 5.753540515899658,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

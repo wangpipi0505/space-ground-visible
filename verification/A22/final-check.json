@@ -1,0 +1,10 @@
+{
+  "allFourOutputsMatchHashes": true,
+  "allFourByteIdentical": true,
+  "allSourceHashesUnchanged": true,
+  "requestAndTrajectoryMatched": true,
+  "commandStreamsMatched": 12,
+  "authorityBootJarProductClassesEqualPlainJar": 156,
+  "A21OnlyCsvPathDifferences": 362,
+  "sameTrajectoryBytesAsA21": true
+}

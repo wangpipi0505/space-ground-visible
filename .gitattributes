@@ -112,3 +112,6 @@ verification/A20/**/*.txt -text -whitespace
 verification/A21/**/*.txt -text -whitespace
 # 请求及命令元数据绑定实际运行SHA，提交不转换其换行。
 verification/A21/**/*.json -text whitespace=cr-at-eol
+# A22 权威工作副本实算对比保留命令双流和请求/摘要的实际字节。
+verification/A22/**/*.txt -text -whitespace
+verification/A22/**/*.json -text whitespace=cr-at-eol
